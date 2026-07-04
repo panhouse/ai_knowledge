@@ -17,4 +17,5 @@ part: 3
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [AIクローラーとコンテンツ権利](ai-crawlers-content-rights.md)
+- [中国のAI規制](china-ai-regulation.md)
