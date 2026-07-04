@@ -17,4 +17,4 @@ part: 3
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [生成AI利用における情報漏洩対策](information-leakage-prevention.md)
