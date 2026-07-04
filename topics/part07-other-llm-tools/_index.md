@@ -18,4 +18,4 @@ part: 7
 
 ## 収録ページ
 
-- [Claude(Anthropic)](claude.md)
+(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
