@@ -19,3 +19,4 @@ part: 2
 ## 収録ページ
 
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
+- [ChatGPTのモデル比較と使い分け](chatgpt-model-comparison.md)

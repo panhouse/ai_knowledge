@@ -70,7 +70,8 @@ dify.aiでSandbox(無料プラン)のアカウントを作成し、社内FAQを1
 
 ## 関連トピック
 
-- (今後、Difyワークフロー・n8n/Makeに関するページを追加予定)
+- [Difyのワークフロー機能(ノードの基本)](dify-workflow-basics.md)
+- (今後、n8n/Makeに関するページを追加予定)
 
 ## 更新履歴
 

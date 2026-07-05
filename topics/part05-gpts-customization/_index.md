@@ -16,3 +16,4 @@ part: 5
 ## 収録ページ
 
 - [GPTsの作り方と公開設定](gpts-creation-basics.md)
+- [GPTsのナレッジファイル(Knowledge)活用法](gpts-knowledge-files.md)
