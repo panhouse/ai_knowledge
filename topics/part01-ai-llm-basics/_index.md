@@ -19,3 +19,4 @@ part: 1
 ## 収録ページ
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
+- [LLMの仕組み:トークン化と次単語予測](llm-tokenization-and-prediction.md)
