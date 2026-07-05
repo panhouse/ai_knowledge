@@ -22,3 +22,4 @@ part: 4
 ## 収録ページ
 
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
+- [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)

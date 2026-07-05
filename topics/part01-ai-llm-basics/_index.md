@@ -19,3 +19,4 @@ part: 1
 ## 収録ページ
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
+- [生成AIの発展の歴史](ai-history-and-evolution.md)

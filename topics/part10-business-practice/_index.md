@@ -19,3 +19,4 @@ part: 10
 ## 収録ページ
 
 - [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [生成AIによるBPR(業務プロセス再構築)](generative-ai-bpr.md)
