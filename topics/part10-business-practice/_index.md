@@ -19,3 +19,4 @@ part: 10
 ## 収録ページ
 
 - [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [ChatGPTを使った文章作成・編集のコツ](ai-writing-and-editing.md)

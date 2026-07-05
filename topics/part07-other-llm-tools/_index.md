@@ -19,3 +19,4 @@ part: 7
 ## 収録ページ
 
 - [Google Geminiの基本](google-gemini-basics.md)
+- [Claude(Anthropic)の基本](claude-basics.md)

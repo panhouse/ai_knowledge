@@ -19,3 +19,4 @@ part: 1
 ## 収録ページ
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
+- [LLMの仕組み:確率的単語予測と学習プロセス](llm-mechanism-basics.md)
