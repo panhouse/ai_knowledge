@@ -22,3 +22,4 @@ part: 4
 ## 収録ページ
 
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
+- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot.md)

@@ -18,3 +18,4 @@ part: 3
 ## 収録ページ
 
 - [生成AI利用における情報漏洩対策](information-leakage-prevention.md)
+- [ハルシネーションの仕組みと対策](hallucination-countermeasures.md)
