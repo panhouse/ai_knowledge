@@ -15,4 +15,4 @@ part: 5
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [GPTsの作り方と公開設定](gpts-creation-basics.md)

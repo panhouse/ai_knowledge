@@ -18,4 +18,4 @@ part: 1
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)

@@ -18,4 +18,4 @@ part: 2
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
