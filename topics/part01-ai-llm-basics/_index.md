@@ -19,3 +19,4 @@ part: 1
 ## 収録ページ
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
+- [トークンとは何か](what-are-tokens.md)

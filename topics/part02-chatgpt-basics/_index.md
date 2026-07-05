@@ -19,3 +19,4 @@ part: 2
 ## 収録ページ
 
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
+- [ChatGPTの初期設定とデータ利用のオプトアウト設定](chatgpt-initial-setup-and-data-controls.md)
