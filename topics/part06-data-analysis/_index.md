@@ -17,3 +17,4 @@ part: 6
 ## 収録ページ
 
 - [AIが扱いやすいデータ形式](ai-friendly-data-formats.md)
+- [ChatGPTのデータアナリスト機能(Advanced Data Analysis)](chatgpt-advanced-data-analysis.md)

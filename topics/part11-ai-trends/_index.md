@@ -15,4 +15,4 @@ part: 11
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [AIエージェント(Agentic AI)の基礎](ai-agent-basics.md)
