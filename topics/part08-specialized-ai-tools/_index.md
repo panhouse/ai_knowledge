@@ -34,3 +34,4 @@ part: 8
 - [Perplexityの基本](perplexity-basics.md)
 - [GenSparkの基本](genspark-basics.md)
 - [GitHub Copilotの基本(コーディング支援AI)](github-copilot-basics.md)
+- [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](video-generation-ai-basics.md)
