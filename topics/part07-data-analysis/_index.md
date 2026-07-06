@@ -29,3 +29,4 @@ part: 7
 - [Embedding(埋め込み)とは何か](embedding-basics.md)
 - [RAGの精度を上げる方法](rag-accuracy-improvement.md)
 - [ベクトルデータベースの基本(Embeddingとの関係)](vector-database-basics.md)
+- [Reranking(再ランク付け)の基本](reranking-basics.md)
