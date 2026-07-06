@@ -18,3 +18,4 @@ part: 9
 ## 収録ページ
 
 - [Difyとは何か](dify-basics.md)
+- [Difyワークフローの主要ノードと組み立て方](dify-workflow-nodes.md)
