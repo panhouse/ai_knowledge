@@ -26,3 +26,4 @@ part: 4
 - [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot.md)
 - [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](zero-few-shot-and-cot-prompting.md)
 - [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
+- [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)

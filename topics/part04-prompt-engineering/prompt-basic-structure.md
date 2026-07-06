@@ -118,7 +118,8 @@ OpenAI・Anthropic・Googleの各社も公式ドキュメントで共通して�
 
 ## 関連トピック
 
-- (今後、Zero-shot/Few-shot、Chain of Thoughtなど入門〜応用手法のページを追加予定)
+- [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
+- (今後、Chain of Thoughtなど入門〜応用手法のページを追加予定)
 
 ## 更新履歴
 

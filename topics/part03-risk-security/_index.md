@@ -22,3 +22,4 @@ part: 3
 - [ハルシネーションの仕組みと対策](hallucination-countermeasures.md)
 - [ハルシネーションとは何か・対策](hallucination-and-countermeasures.md)
 - [ハルシネーション(AIの誤情報生成)への対策](hallucination-countermeasures.md)
+- [ハルシネーションとは何か・実務での対策](hallucination-and-countermeasures.md)

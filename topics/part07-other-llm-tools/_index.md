@@ -22,3 +22,4 @@ part: 7
 - [NotebookLMの基本](notebooklm-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [NotebookLMの基本と使い方](notebooklm-basics.md)
+- [NotebookLMの使い方](notebooklm-basics.md)

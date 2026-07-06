@@ -19,3 +19,4 @@ part: 5
 - [GPTsのナレッジファイルとアクション連携](gpts-knowledge-and-actions.md)
 - [GPTsのナレッジファイルとカスタムアクション](gpts-knowledge-and-actions.md)
 - [GPTsのナレッジファイル活用](gpts-knowledge-files.md)
+- [GPTsのナレッジファイル(Knowledge)活用法](gpts-knowledge-files.md)
