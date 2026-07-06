@@ -21,3 +21,4 @@ part: 2
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
 - [ChatGPTのモデル比較](chatgpt-model-comparison.md)
 - [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)
+- [ChatGPTの初期設定とデータ学習オプトアウト](chatgpt-initial-setup-data-opt-out.md)

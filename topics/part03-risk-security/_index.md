@@ -20,3 +20,4 @@ part: 3
 - [生成AI利用における情報漏洩対策](information-leakage-prevention.md)
 - [生成AIのハルシネーション対策](hallucination-mitigation.md)
 - [ハルシネーションの仕組みと対策](hallucination-countermeasures.md)
+- [ハルシネーションとは何か・対策](hallucination-and-countermeasures.md)

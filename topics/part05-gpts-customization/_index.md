@@ -17,3 +17,4 @@ part: 5
 
 - [GPTsの作り方と公開設定](gpts-creation-basics.md)
 - [GPTsのナレッジファイルとアクション連携](gpts-knowledge-and-actions.md)
+- [GPTsのナレッジファイルとカスタムアクション](gpts-knowledge-and-actions.md)
