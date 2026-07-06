@@ -28,5 +28,4 @@ part: 4
 - [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
 - [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
 - [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot-prompting.md)
-- [Zero-shotプロンプティングとFew-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
 - [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)

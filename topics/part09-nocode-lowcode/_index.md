@@ -19,7 +19,3 @@ part: 9
 
 - [Difyとは何か](dify-basics.md)
 - [Difyワークフローの基本](dify-workflow-basics.md)
-- [Difyのワークフロー機能(ノードの基本)](dify-workflow-basics.md)
-- [Difyワークフローの基本(ノードの種類と組み方)](dify-workflow-basics.md)
-- [Difyのワークフロー機能の基本](dify-workflow-basics.md)
-- [Difyワークフローの作り方](dify-workflow-basics.md)
