@@ -5,6 +5,9 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part03-risk-security/ai-regulation-and-governance-trends.md): 新規執筆(EU AI Actのリスク階層と2026年時点の適用時期、日本のAI推進法・AI事業者ガイドライン第1.2版、米国州法動向、企業向けチェックリスト)
+- [バッチ処理(Batch API)の基本](topics/part08-api-development/batch-api-basics.md): 新規執筆(OpenAI/Anthropic/GeminiのBatch API比較、JSONLでの実行例、リアルタイムAPIとの使い分け)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](topics/part10-business-practice/ai-research-and-information-gathering.md): 新規執筆(ChatGPT/Gemini/Perplexity/ClaudeのDeep Research比較、業務ユースケース、出典検証ワークフロー)
 - [ChatGPTのCanvas機能](topics/part02-chatgpt-basics/chatgpt-canvas-feature.md): 新規執筆(部分編集・ショートカットコマンド・バージョン履歴、GPT-5.5系でのライティングブロック統合、Claude Artifacts/Gemini Canvas/Copilot Pagesとの比較)
 - [Tree of Thought(ToT)プロンプティング](topics/part04-prompt-engineering/tree-of-thought-prompting.md): 新規執筆(CoTとの違い、単発プロンプトでの実践パターン、推論モデル時代における位置づけ)
 - [LLMの得意・不得意と挙動の特性](topics/part01-ai-llm-basics/llm-strengths-and-limitations.md): 新規執筆(計算ミス・ナレッジカットオフ・コンテキストウィンドウ劣化等の構造的原因と業務での信頼度早見表)
