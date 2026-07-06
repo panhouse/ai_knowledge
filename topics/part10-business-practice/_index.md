@@ -24,3 +24,4 @@ part: 10
 - [ChatGPTを使った文章作成・編集のコツ](ai-writing-and-editing.md)
 - [生成AIによる文章作成・編集の実践](ai-writing-and-editing.md)
 - [AIを使った文章作成・編集の実務](ai-writing-and-editing.md)
+- [生成AIによる文章作成・編集の実務](ai-writing-and-editing.md)

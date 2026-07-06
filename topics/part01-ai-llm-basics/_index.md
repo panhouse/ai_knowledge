@@ -25,3 +25,4 @@ part: 1
 - [トークンとは何か](what-are-tokens.md)
 - [トークンとは何か(仕組みと数え方)](token-basics.md)
 - [LLMの仕組み:トークン化と次単語予測](llm-tokenization-and-prediction.md)
+- [トークンとは何か](token-basics.md)
