@@ -25,3 +25,4 @@ part: 2
 - [ChatGPTの初期設定とデータ利用のオプトアウト設定](chatgpt-initial-setup-and-data-controls.md)
 - [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-data-opt-out.md)
 - [ChatGPTのモデル一覧と使い分け](chatgpt-model-lineup.md)
+- [ChatGPTの初期設定とカスタム指示の書き方](chatgpt-custom-instructions.md)

@@ -29,3 +29,4 @@ part: 4
 - [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
 - [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot-prompting.md)
 - [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)
+- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティングの使い分け](zero-shot-few-shot-cot-prompting.md)
