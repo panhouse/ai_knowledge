@@ -55,4 +55,4 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 
 ## 収録ページ
 
-(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [物流・運輸における生成AI活用事例](logistics-transportation-ai-use-cases.md)
