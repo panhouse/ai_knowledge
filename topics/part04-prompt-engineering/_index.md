@@ -27,3 +27,4 @@ part: 4
 - [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)
 - [ロール(役割)プロンプティング](role-prompting.md)
 - [Tree of Thought(ToT)プロンプティング](tree-of-thought-prompting.md)
+- [メタプロンプティング](meta-prompting.md)
