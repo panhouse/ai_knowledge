@@ -21,3 +21,4 @@ part: 9
 - [Difyワークフローの基本](dify-workflow-basics.md)
 - [Difyワークフローの主要ノードと組み立て方](dify-workflow-nodes.md)
 - [DifyでのRAG実装(ナレッジベースの作成とワークフロー連携)](dify-rag-implementation.md)
+- [n8nの基本](n8n-basics.md)
