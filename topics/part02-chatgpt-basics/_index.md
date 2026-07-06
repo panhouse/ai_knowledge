@@ -26,3 +26,4 @@ part: 2
 - [ChatGPTのモデル比較と使い分け](chatgpt-model-comparison.md)
 - [ChatGPTの初期設定とデータ利用(学習)オプトアウト](chatgpt-initial-setup-and-opt-out.md)
 - [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-data-opt-out.md)
+- [ChatGPTのモデル一覧と使い分け](chatgpt-model-lineup.md)

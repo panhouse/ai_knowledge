@@ -24,3 +24,4 @@ part: 7
 - [NotebookLMの基本と使い方](notebooklm-basics.md)
 - [NotebookLMの使い方](notebooklm-basics.md)
 - [NotebookLMの基本と使い方](notebooklm-basics.md)
+- [NotebookLMの使い方](notebooklm-basics.md)

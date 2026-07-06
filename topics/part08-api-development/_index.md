@@ -24,3 +24,4 @@ part: 8
 - [Function Calling(Tool Use)の基本](function-calling.md)
 - [Function Calling(関数呼び出し)の基本](function-calling-basics.md)
 - [Function Calling(Tool Use)の基本](function-calling-basics.md)
+- [Function Calling(関数呼び出し)の使い方](function-calling.md)

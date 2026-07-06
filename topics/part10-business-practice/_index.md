@@ -25,3 +25,4 @@ part: 10
 - [生成AIによる文章作成・編集の実践](ai-writing-and-editing.md)
 - [AIを使った文章作成・編集の実務](ai-writing-and-editing.md)
 - [生成AIによる文章作成・編集の実務](ai-writing-and-editing.md)
+- [生成AIによるBPR(業務プロセス再構築)](generative-ai-bpr.md)
