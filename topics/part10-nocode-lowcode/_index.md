@@ -28,3 +28,4 @@ part: 10
 - [n8nの基本](n8n-basics.md)
 - [Makeの基本](make-basics.md)
 - [Zapierの基本](zapier-basics.md)
+- [n8n・Make・Zapierの比較と使い分け](automation-tools-comparison.md)
