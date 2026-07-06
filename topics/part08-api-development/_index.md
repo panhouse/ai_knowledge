@@ -22,3 +22,5 @@ part: 8
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)
 - [バッチ処理(Batch API)の基本](batch-api-basics.md)
 - [MCP(Model Context Protocol)の基本](mcp-basics.md)
+- [JSONモード・Structured Outputsの基本](json-mode-structured-outputs.md)
+- [GAS(Google Apps Script)からのAI API連携](gas-ai-api-integration.md)

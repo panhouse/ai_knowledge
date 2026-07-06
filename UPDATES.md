@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [GAS(Google Apps Script)からのAI API連携](topics/part08-api-development/gas-ai-api-integration.md): 新規執筆(UrlFetchApp・PropertiesServiceによるAPIキー管理、カスタム関数の実装例、OpenAI/Gemini/Claude呼び出しの違い、Gmail自動下書き・Docs要約への応用、実行時間制限・再計算による予期しない課金への注意点)
 - [RAGの精度を上げる方法](topics/part06-data-analysis/rag-accuracy-improvement.md): 新規執筆(チャンキング・ハイブリッド検索・リランキング・クエリ書き換え・メタデータフィルタリングの5レバーと症状別診断テーブル、Difyでの具体的な設定手順、ゴールデンセットによる精度評価の方法)
 - [JSONモード・Structured Outputsの基本](topics/part08-api-development/json-mode-structured-outputs.md): 新規執筆(JSONモードとStructured Outputsの違い、制約付きデコーディングの仕組み、Function Callingとの役割の区別、OpenAI/Anthropic/Geminiのパラメータ対応表とコピペ用最小例)
 - [n8nの基本](topics/part09-nocode-lowcode/n8n-basics.md): 新規執筆(ノードベースのワークフロー自動化、AI Agentノード・LangChain統合、セルフホスト/クラウドの違い、Dify/Zapier/Makeとの比較表、Gmail要約→Slack通知の実装例)
