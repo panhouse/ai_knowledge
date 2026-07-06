@@ -2,7 +2,7 @@
 title: MCP(Model Context Protocol)の基本
 part: 8
 chapter: 第4章 MCP
-tags: [MCP, Model Context Protocol, Claude, 外部連携, コネクタ, AIエージェント]
+tags: [MCP, Model Context Protocol, AIエージェント, ツール連携, コネクタ]
 created: 2026-07-06
 updated: 2026-07-06
 ---
@@ -38,7 +38,18 @@ MCPサーバーが外部に公開する機能は主に3種類(MCPの「プリミ
 - **Function Calling**は、モデルが「この関数をこの引数で呼びたい」という意思表示を返す仕組みそのもの。1つのアプリの中で、モデルとツールをどう「会話」させるかという部分を担う。
 - **MCP**は、その「呼び出す先のツール・データ」を、どのAIアプリからでも同じ手順でつなげられるように標準化した「配線・接続の規格」。
 
-言い換えると、MCPサーバーの内部では最終的にモデルがFunction Calling(またはそれに相当する仕組み)でツールを呼び出しており、MCPはその手前の「接続そのもの」を毎回作り直さなくて済むようにする役割を持つ。「Function Callingは呼び出しの文法、MCPはその文法を使う相手(サーバー)を毎回開発しなくて済むようにする配線」とイメージすると整理しやすい。
+言い換えると、MCPサーバーの内部では最終的にモデルがFunction Calling(またはそれに相当する仕組み)でツールを呼び出しており、MCPはその手前の「接続そのもの」を毎回作り直さなくて済むようにする役割を持つ。「Function Callingは呼び出しの文法、MCPはその文法を使う相手(サーバー)を毎回開発しなくて済むようにする配線」とイメージすると整理しやすい。両者の違いを表にすると次のようになる。
+
+| 観点 | Function Calling(Tool Calling) | MCP(Model Context Protocol) |
+|---|---|---|
+| 担っている層 | モデルとツールの「会話の文法」(モデルが呼び出し要求を返す仕組みそのもの) | AIアプリと外部サービスをつなぐ「配線・接続の規格」 |
+| 主語 | 1つのAIモデル・1つのアプリの中で完結する仕組み | 複数のAIアプリ(クライアント)と複数の接続先(サーバー)をまたいで使い回せる仕組み |
+| 実装単位 | ツール(関数)ごとにアプリ側でスキーマ定義・実行コードを書く | 接続先ごとに「MCPサーバー」を1つ用意すれば、対応する全クライアントから使い回せる |
+| 再利用性 | 基本的にそのアプリ専用(他のAIアプリに移植するには作り直しが必要) | サーバーを1回作れば、Claude・ChatGPT・対応IDEなど複数クライアントから流用できる |
+| 決める人 | 各AI開発元(OpenAI・Anthropic・Google)がAPI仕様を個別に決める | オープンな共通規格(2025年12月にAgentic AI Foundationへ移管され、特定企業に依存しない中立的なガバナンスに) |
+| 組み合わせ数 | AIアプリ×接続先の数だけ個別実装が必要になりやすい(組み合わせ爆発) | AIアプリ・接続先とも「MCP対応」でありさえすれば配線は共通化される |
+
+なお、2025年12月9日にAnthropicはMCPをLinux Foundation傘下の新組織「Agentic AI Foundation(AAIF)」に寄贈し、OpenAI・Block(共同創設)、Google・Microsoft・AWS・Cloudflare・Bloomberg(支援)が参加する、特定企業に依存しないガバナンス体制に移行した。これによりMCPは「Anthropicの規格」から「業界共通のオープンスタンダード」としての位置づけがより明確になっている。
 
 ## 使いどころ・使い分け
 
@@ -56,9 +67,10 @@ MCPサーバーが外部に公開する機能は主に3種類(MCPの「プリミ
 
 ### 主なMCPサーバー・クライアントの例(2026年7月時点)
 
-- **クライアント(MCP対応のAIアプリ)**: Claude Desktop、Claude Code、ChatGPTデスクトップアプリ・ChatGPT Apps(2025年9月対応)、OpenAIのAgents SDK、各種AI対応IDE(Cursor等)
-- **サーバー(接続先の例)**: Slack、Google Drive/Google Workspace、GitHub(公式サーバーがGo言語で提供されリポジトリ・Issue・PR・CI/CD操作に対応)、Git、Postgres、Puppeteer(ブラウザ操作)など。Anthropicが公開する参照実装リポジトリ(`modelcontextprotocol/servers`)には、ファイル操作・Web取得・時刻変換など汎用的なサーバーの例が揃っている
-- Claudeの「Connectors Directory(コネクタ ディレクトリ)」には、2026年7月時点で500件を超えるMCP連携が登録されている
+- **クライアント(MCP対応のAIアプリ)**: Claude Desktop、Claude Code、ChatGPTデスクトップアプリ・ChatGPT Apps(2025年9月対応、2025年後半にはChatGPT本体にもMCPクライアント機能が本格搭載)、OpenAIのAgents SDK、Google Gemini(2026年半ばに自社サービス向けの公式MCP対応とGemini向けのマネージドリモートサーバーを提供開始)、Microsoft Copilot、各種AI対応IDE(Cursor、VS Code等)
+- **サーバー(接続先の例)**: Slack、Google Drive/Google Workspace、GitHub(公式サーバーがGo言語で提供されリポジトリ・Issue・PR・CI/CD操作に対応)、Notion、Git、Postgres、Puppeteer(ブラウザ操作)など。Anthropicが公開する参照実装リポジトリ(`modelcontextprotocol/servers`)には、ファイル操作・Web取得・時刻変換など汎用的なサーバーの例が揃っている
+- **公式MCPレジストリ**: 2025年9月に公開された公式レジストリ(`registry.modelcontextprotocol.io`)には、2026年5月時点で約9,600件のサーバー、バージョン違いを含めると約29,000件が登録されている。プロトコル自体は2025年12月にAnthropicからLinux Foundation傘下の「Agentic AI Foundation(AAIF)」に寄贈され、OpenAI・Block(共同創設)、Google・Microsoft・AWS・Cloudflare・Bloomberg(支援)が参加する中立的なガバナンス体制になった
+- Claudeの「Connectors Directory(コネクタ ディレクトリ)」には、2026年7月時点で500件を超えるMCP連携が登録されている。また2026年1月には、Figma・Slackなど外部サービスのUIプレビューやインタラクティブ要素をチャット内に直接表示できる拡張仕様「MCP Apps」への対応も始まっている
 
 ### 非エンジニアがClaudeで既存コネクタを有効にする手順(画面操作のみ、コード不要)
 
@@ -78,9 +90,14 @@ MCP自体の利用に追加のライセンス料はかからないオープン�
 ## 注意点・よくある誤解
 
 - **MCP対応=安全とは限らない**: MCPサーバーに与える権限(読み取りだけか、書き込み・削除までできるか)は接続先ごとに異なる。特に社外で公開されている非公式のMCPサーバーを安易に信頼して認証情報を渡すと、データ漏えいや意図しない操作のリスクがある。信頼できる提供元(公式・大手ベンダー)のサーバーを優先し、権限は必要最小限に絞る
+- **プロンプトインジェクションの新しい入口になる**: MCPの最大のセキュリティ課題は、[プロンプトインジェクション](../part03-risk-security/prompt-injection-basics.md)(AIに対して悪意ある指示を紛れ込ませ、意図しない動作をさせる攻撃)の攻撃面がMCP経由で大きく広がる点にある。代表的な手口は次の3つ。
+  - **ツールポイズニング(tool poisoning)**: 一見普通のMCPサーバーが、ツールの説明文(description)の中に人間には見えにくい悪意ある指示を埋め込んでおき、AIがそれを「正規の指示」として実行してしまう
+  - **ラグプル攻撃(rug pull)**: 導入時には安全なツール説明だったのに、利用者が承認した後でサーバー側がこっそり説明文を書き換え、危険な指示に差し替える
+  - **confused deputy(混乱した代理人)問題**: 高い権限を持つAIエージェントが、外部から読み込んだ文書(例: GitHubのIssueやチケットの本文)に仕込まれた指示に従わされ、本来アクセスすべきでない社外の第三者に対して権限を「代理行使」させられてしまう(例: 公開Issueの内容がきっかけで非公開リポジトリの情報が外部に送信される)
+  - 対策としては、MCPサーバーの提供元を信頼できる相手に限定する、ツールに渡す権限をタスクに必要な最小限にする、重要な操作(送信・削除・決済など)の前に人間の承認を挟む、可能であればツールの説明文やレスポンス内容を事前にレビュー・監視する、といった多層防御が推奨されている
 - **「MCPを入れれば何でもできる」ではない**: MCPは接続の規格にすぎず、実際に何ができるかは接続先のMCPサーバーが何のToolsやResourcesを公開しているかに依存する。欲しい連携のMCPサーバーがまだ存在しなければ、自社で開発するかカスタムコードで対応するしかない
 - **Function Callingと同じものだと誤解しやすい**: 前述のとおり、MCPは「接続の標準化」、Function Callingは「モデルがツールを呼び出す仕組み」で役割が異なる。両者は排他的ではなく、MCPサーバーの内部でFunction Calling相当の仕組みが動いていると理解するとよい
-- **進化が非常に速い分野**: 2024年11月の登場から1年強でOpenAI・Google・Microsoftなど主要ベンダーが相次いで対応を表明しており、仕様・対応状況・利用可能なコネクタの一覧は数か月単位で更新されている。導入判断の前には必ず公式情報で最新状況を確認する
+- **進化が非常に速い分野**: 2024年11月の登場から1年強でOpenAI・Google・Microsoftなど主要ベンダーが相次いで対応を表明し、2025年12月にはガバナンスもAgentic AI Foundationへ移管された。仕様・対応状況・利用可能なコネクタの一覧は数か月単位で更新されているため、導入判断の前には必ず公式情報で最新状況を確認する
 
 ## 最初の一歩
 
@@ -89,9 +106,15 @@ MCP自体の利用に追加のライセンス料はかからないオープン�
 ## 関連トピック
 
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)
+- [OpenAI APIの基本](openai-api-basics.md)
 - [Claude(Anthropic)の基本](../part07-other-llm-tools/claude-basics.md)
+- [プロンプトインジェクションとは何か(仕組みと対策)](../part03-risk-security/prompt-injection-basics.md)
 
 ## 更新履歴
+
+### 2026-07-06: Function Callingとの比較表・ガバナンス動向・セキュリティ節を追加
+- **内容**: Function CallingとMCPの違いを表形式で整理し、2025年12月にAnthropicがMCPをLinux Foundation傘下の「Agentic AI Foundation(AAIF)」に寄贈しOpenAI・Google・Microsoft等が参加する中立ガバナンスに移行したこと、公式MCPレジストリの登録件数(2026年5月時点で約9,600サーバー)、ChatGPT・Geminiの公式MCP対応状況、MCP Apps拡張を追記。「注意点」にツールポイズニング・ラグプル攻撃・confused deputy問題などプロンプトインジェクション関連のMCP固有リスクと対策を追加し、関連トピックにプロンプトインジェクションページへのリンクを追加
+- **出典**: [Linux Foundation: Announces the Formation of the Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), [Anthropic: Donating the Model Context Protocol and establishing the Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation), [TechCrunch: OpenAI, Anthropic, and Block join new Linux Foundation effort](https://techcrunch.com/2025/12/09/openai-anthropic-and-block-join-new-linux-foundation-effort-to-standardize-the-ai-agent-era/), [OpenAI: OpenAI co-founds the Agentic AI Foundation](https://openai.com/index/agentic-ai-foundation/), [WorkOS: Everything your team needs to know about MCP in 2026](https://workos.com/blog/everything-your-team-needs-to-know-about-mcp-in-2026), [Checkmarx Zero: 11 Emerging AI Security Risks with MCP](https://checkmarx.com/zero-post/11-emerging-ai-security-risks-with-mcp-model-context-protocol/), [Aptible: Prompt injection in MCP - how tool poisoning works](https://www.aptible.com/mcp-security/mcp-prompt-injection), [Invariant Labs: MCP Security Notification - Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks), [OWASP: MCP Tool Poisoning](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning), [Simon Willison: Model Context Protocol has prompt injection security problems](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: MCP(Model Context Protocol)の定義、ホスト・クライアント・サーバーの三者構成、Function Callingとの役割の違い(接続の標準化 vs 呼び出しの仕組み)、使いどころの判断基準、ClaudeでのMCPコネクタの有効化手順(画面操作)、主なMCPサーバー・クライアントの例、セキュリティ面の注意点を整理

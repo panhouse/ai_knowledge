@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- 既存8ページの内容を精査・補強(いずれも同日の並行実行により先に新規執筆済みだったため、事実確認のうえ加筆のみ実施): [LLMの得意・不得意と挙動の特性](topics/part01-ai-llm-basics/llm-strengths-and-limitations.md)(分類・因果推論の弱さ、タスク振り分けチェックリストを追加)/ [ChatGPTのメモリ(Memory)機能](topics/part02-chatgpt-basics/chatgpt-memory-feature.md)(Dreaming機能、EEA既定オフ、Copilotとの対応を追加)/ [RAG(検索拡張生成)の基本](topics/part06-data-analysis/rag-basics.md)(Agentic RAG・GraphRAGの節を追加)/ [Gem(Geminiのカスタムボット機能)の基本](topics/part07-other-llm-tools/gemini-gem-feature.md)(共有の期限設定を追加)/ [MCP(Model Context Protocol)の基本](topics/part08-api-development/mcp-basics.md)(Agentic AI Foundationへの移管経緯、ツールポイズニング等のセキュリティ観点を追加)/ [DifyでのRAG実装](topics/part09-nocode-lowcode/dify-rag-implementation.md)(自前構築との比較表を追加)/ [生成AI導入のROI測定・効果測定の考え方](topics/part10-business-practice/ai-roi-measurement.md)(ガバナンス整備コストを追加)/ [AGI(汎用人工知能)とは何か](topics/part11-ai-trends/what-is-agi.md)(ARC-AGI-2の最新スコアを追加)
 - [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](topics/part02-chatgpt-basics/chatgpt-agent-mode-feature.md): 新規執筆(Operator・Deep Researchが統合された経緯、仮想ブラウザでの自律操作とTasks(スケジュール実行)の違い、対応プラン・クレジット制の利用上限、プロンプトインジェクションが「解決しきれない」とするOpenAIの見解を含む注意点)
 - [Embedding(埋め込み)とは何か](topics/part06-data-analysis/embedding-basics.md): 新規執筆(文章を意味の近さで比較できる数値ベクトルに変換する仕組み、セマンティック検索・重複検知・クラスタリングへの応用、埋め込みモデル間の非互換性という落とし穴、OpenAI/Google/Cohere等の主要モデル比較表)
 - [Zapierの基本](topics/part09-nocode-lowcode/zapier-basics.md): 新規執筆(Zapという基本単位と9,000以上のアプリ連携、Zapier Copilot・Zapier Agents(旧Zapier Central)・AI ActionsといったAI関連機能、n8n/Make/Difyとの比較表、タスク課金の料金プラン、フォーム回答のAI分類→Slack通知の実装例)

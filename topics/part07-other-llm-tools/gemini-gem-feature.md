@@ -103,6 +103,8 @@ Gemと紛らわしいのが「**保存済み情報(Saved info)**」という機�
 
 作成したGemは他のユーザーに共有できる。共有範囲は「非公開(自分のみ)」「リンクを知っている全員」「組織内(同じ職場・学校のGoogleアカウントを持つ人なら誰でも)」の3段階から選べる([Google公式ヘルプ: Gemini アプリで Gem を共有する](https://support.google.com/gemini/answer/16504957?hl=ja))。Google Workspaceの管理者は、管理コンソール側でユーザーにGemの共有自体を許可するかどうかを組織部門・グループ単位で制御できる([Google公式ヘルプ: Gem の共有を有効または無効にする](https://support.google.com/a/answer/16460551?hl=ja))。なお、ナレッジに添付したファイルの種類によっては共有できない組み合わせがある(端末アップロードやGoogle Driveのファイルは共有対象になるが、一部のファイル形式は共有時に外れる場合がある)。
 
+Gemの共有はGoogle Driveのファイル共有と同じ権限管理の仕組みに乗っており、個別ユーザーに共有する際は「有効期限を追加」で「20XX/X/X 0:00」のようにアクセス権が切れる日時をピンポイントで指定できる。プロジェクト期間中だけ社外パートナーや期間限定メンバーに使わせたい場合に、権限の消し忘れ(渡しっぱなし)を防げるため、業務利用では積極的に使うとよい([TSクラウド: Geminiの Gem 共有方法](https://googleworkspace.tscloud.co.jp/gemini/gem-sharing))。
+
 ### 他ツールとの対応関係
 
 | 項目 | Geminiの「Gem」 | ChatGPTの「GPTs」 | Claudeの「Projects」 | Microsoft 365 Copilotの「エージェント ビルダー」 |
@@ -134,5 +136,5 @@ Gemと紛らわしいのが「**保存済み情報(Saved info)**」という機�
 ## 更新履歴
 
 ### 2026-07-06: 初版執筆
-- **内容**: Gemの定義・作成手順(Gemマネージャーでの操作)、保存済み情報(Saved info)との違い、無料/有料プランでの利用可否、ナレッジファイルの上限、共有機能(2025年9月〜)、GPTs/Claude Projects/Microsoft 365 Copilotエージェントビルダーとの対応表、議事録要約・メール文面チェックのGem指示文テンプレートを整理
-- **出典**: [Google公式ブログ: Gemini app updates: Deep Research, connected apps, personalization](https://blog.google/products/gemini/new-gemini-app-features-march-2025/)、[9to5Google: Free Gemini users can now access Gems on Android, iOS](https://9to5google.com/2025/03/25/gemini-gems-free-mobile/)、[Google公式ヘルプ: Gemini アプリでファイルをアップロードして分析する](https://support.google.com/gemini/answer/14903178?hl=ja)、[Google公式ヘルプ: Gemini アプリで Gem を共有する](https://support.google.com/gemini/answer/16504957?hl=ja)、[Google公式ヘルプ: Gem の共有を有効または無効にする(管理者向け)](https://support.google.com/a/answer/16460551?hl=ja)、[Microsoft Learn: Microsoft 365 Copilotでエージェント ビルダーを使用してエージェントをビルドする](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-build-agents)
+- **内容**: Gemの定義・作成手順(Gemマネージャーでの操作)、保存済み情報(Saved info)との違い、無料/有料プランでの利用可否(2026年7月時点でもGemini 2.5 Flashベースの無料プランでGemの作成・利用が可能なことをWeb検索で再確認)、ナレッジファイルの上限(最大10個・100MB)、共有機能(2025年9月〜、Google Driveと同じ権限管理に基づく個別ユーザー単位の共有期限設定を追加)、GPTs/Claude Projects/Microsoft 365 Copilotエージェントビルダーとの対応表、議事録要約・メール文面チェックのGem指示文テンプレートを整理
+- **出典**: [Google公式ブログ: Gemini app updates: Deep Research, connected apps, personalization](https://blog.google/products/gemini/new-gemini-app-features-march-2025/)、[9to5Google: Free Gemini users can now access Gems on Android, iOS](https://9to5google.com/2025/03/25/gemini-gems-free-mobile/)、[Google公式ヘルプ: Gemini アプリでファイルをアップロードして分析する](https://support.google.com/gemini/answer/14903178?hl=ja)、[Google公式ヘルプ: Gemini アプリで Gem を共有する](https://support.google.com/gemini/answer/16504957?hl=ja)、[Google公式ヘルプ: Gem の共有を有効または無効にする(管理者向け)](https://support.google.com/a/answer/16460551?hl=ja)、[Microsoft Learn: Microsoft 365 Copilotでエージェント ビルダーを使用してエージェントをビルドする](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-build-agents)、[GEO Toolbox: Gemini Gems: What They Are and How to Build One (2026)](https://geotoolbox.ai/blog/gemini-gems)、[TSクラウド: Geminiの Gem 共有方法。ビジネス活用事例と注意点を解説](https://googleworkspace.tscloud.co.jp/gemini/gem-sharing)

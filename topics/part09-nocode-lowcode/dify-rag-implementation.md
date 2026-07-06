@@ -25,14 +25,32 @@ Difyのナレッジは単体でも「ナレッジ」タブから直接チャッ�
 
 ## 使いどころ・使い分け
 
-### 索引方式:高品質(High Quality)か経済的(Economical)か
+### 自前でRAGを構築する場合とDifyを使う場合
+
+| 観点 | 自前でRAGを構築(LangChain等+ベクトルDBを自社実装) | Difyのナレッジベース機能 |
+|---|---|---|
+| 導入スピード | 設計・実装・インフラ構築が必要で数週間〜 | 画面操作のみで数十分〜数時間 |
+| 必要スキル | Pythonでの開発、ベクトルDB・埋め込みモデルの知識 | 不要(ノーコード) |
+| チャンク分割・検索方式の自由度 | 完全に自由(独自アルゴリズムも実装可能) | 用意された選択肢(汎用/親子/Q&A、ベクトル/全文/ハイブリッド)の範囲内 |
+| 他システムとの統合 | 柔軟(任意のAPI・DBと連携可能) | Difyのワークフロー・チャットボット・API経由が基本 |
+| 運用・保守 | インフラ監視・ライブラリ更新など自社で対応 | Dify側(クラウド版)またはセルフホストの範囲で完結 |
+| コスト構造 | サーバー・ベクトルDB・埋め込みAPIの実費 | Difyのプラン料金(+高品質インデックス利用時の埋め込みAPI実費) |
+| 向いているケース | 独自の検索アルゴリズムやUIが必要、大規模・特殊要件がある | 社内FAQ・マニュアル検索など定型的なRAGを素早く立ち上げたい |
+
+判断の目安はシンプルで、「検索精度をアルゴリズムレベルで作り込みたい・大規模カスタマイズが前提」なら自前構築、「まずは定型的なRAGチャットボットを素早く立ち上げたい」ならDifyのナレッジベース機能で十分なことが多い。Difyを選んだ場合でも、内部の索引方式・検索方式の選択肢によって精度とコストのバランスは大きく変わるため、続く「実務での使い方」で設定項目ごとの選び方を扱う。
+
+## 実務での使い方
+
+### 索引方式・検索方式の選び方(設定前に決めておくこと)
+
+**索引方式:高品質(High Quality)か経済的(Economical)か**
 
 | 索引方式 | 仕組み | 向いているケース |
 |---|---|---|
 | **高品質(High Quality)** | 埋め込みモデルでチャンクをベクトル化し、意味の近さで検索する | 精度を優先したい本番運用のFAQボット・社内問い合わせ対応。基本はこちらを選ぶ |
 | **経済的(Economical)** | 各チャンクから10個のキーワードを抽出し、キーワード一致で検索する簡易モード | 埋め込みAPIのコストを抑えたい試作段階、精度より低コストを優先する社内検証 |
 
-### 検索方法:ベクトル検索・全文検索・ハイブリッド検索
+**検索方法:ベクトル検索・全文検索・ハイブリッド検索**
 
 | 検索方法 | 何で探すか | 向いているケース |
 |---|---|---|
@@ -42,14 +60,12 @@ Difyのナレッジは単体でも「ナレッジ」タブから直接チャッ�
 
 ハイブリッド検索では、リランキングモデルを使わない場合でも「重み設定(Weighted Score)」でセマンティック優先/キーワード優先の配分を自分で調整できる。リランキングモデルを有効にすると、この重み設定の代わりにリランキングモデルがベクトル検索・全文検索双方の候補を再採点して並べ替える。
 
-### リランキング(再採点)を使うべきか
+**リランキング(再採点)を使うべきか**
 
 リランキング(Rerank)は、Cohere RerankやJina Rerankerなどの専用モデルで、検索直後の候補チャンクを「質問との関連度」で再採点し直す任意機能(既定は無効)。Top-K(取得件数)とスコア閾値の設定は、リランキングモデルを有効にした場合にのみ効果を持つ点に注意する。
 
 - **リランキングを入れた方がよい場合**: ナレッジの文書量が多く、単純な検索では関連度の低いチャンクが上位に混ざりやすいとき。回答精度を上げたい本番運用
 - **入れなくてよい場合**: 資料が少量(数十件以下)で、そのままでも十分な精度が出ている試作段階。リランキングは検索のたびに追加のAPI呼び出しが発生するため、応答速度とコストがやや増える点も考慮する
-
-## 実務での使い方
 
 ### 1. ナレッジベースを作成する(画面操作)
 
@@ -134,6 +150,6 @@ Difyのナレッジは単体でも「ナレッジ」タブから直接チャッ�
 ## 更新履歴
 
 ### 2026-07-06: 初版執筆
-- **内容**: Dify上でのRAG実装手順として、ナレッジベース作成(対応データソース・ドキュメント形式・汎用/親子チャンク/Q&A形式のチャンク設定・高品質/経済的インデックス・埋め込みモデルの選択肢)、検索設定(ベクトル/全文/ハイブリッド検索、Top-K、スコア閾値、リランキングモデル)、ワークフローへの知識検索ノードの組み込み方(クエリ変数・出力`result`・LLMノードのコンテキスト変数連携)、社内規程FAQチャットボットの具体例、チャンクサイズの日英差やノイズ除去などの実務のコツを整理
+- **内容**: Dify上でのRAG実装手順として、ナレッジベース作成(対応データソース・ドキュメント形式・汎用/親子チャンク/Q&A形式のチャンク設定・高品質/経済的インデックス・埋め込みモデルの選択肢)、検索設定(ベクトル/全文/ハイブリッド検索、Top-K、スコア閾値、リランキングモデル)、ワークフローへの知識検索ノードの組み込み方(クエリ変数・出力`result`・LLMノードのコンテキスト変数連携)、社内規程FAQチャットボットの具体例、チャンクサイズの日英差やノイズ除去などの実務のコツを整理。「使いどころ・使い分け」に自前RAG構築とDifyのナレッジベース機能の比較表を追加し、索引方式・検索方式の選び方は実務での使い方セクションに整理し直した
 - **出典**: [Dify Blog: Introducing Parent-child Retrieval for Enhanced Knowledge](https://dify.ai/blog/introducing-parent-child-retrieval-for-enhanced-knowledge)、[Dify Blog: Introducing Hybrid Search and Rerank to Improve the Retrieval Accuracy of the RAG System](https://dify.ai/blog/hybrid-search-rerank-rag-improvement)、[Dify Docs: Specify the Index Method and Retrieval Settings](https://docs.dify.ai/en/use-dify/knowledge/create-knowledge/setting-indexing-methods)、[Dify Docs: List of Model Providers](https://docs.dify.ai/getting-started/readme/model-providers)、[Dify Docs(日本語): 知識検索ノード](https://docs.dify.ai/ja-jp/guides/workflow/node/knowledge-retrieval)、[Dify Docs(日本語): チャンクモードの指定](https://docs.dify.ai/ja-jp/guides/knowledge-base/create-knowledge-and-upload-documents/chunking-and-cleaning-text)、[note(NITI Technology): 第6回【Dify】インデックスモード比較「High Quality」と「Economical」](https://note.com/niti_technology/n/n2cb49ecd934c)、[note(AI開発ラボ): 【徹底解説】Difyのチャンク分割とは?](https://note.com/ai_dev_lab/n/n71d60d9c2a70)、[Dify Blog: Multimodal retrieval is now available in the knowledge-Base](https://dify.ai/blog/multimodal-retrieval-is-now-available-in-the-knowledge-base)
 - **注記**: 一部の公式ドキュメント(docs.dify.ai配下、dify.aiブログ)は直接アクセスができなかったため、検索エンジンのスニペット経由で内容を確認した。細かい画面文言・数値(既定値など)は掲載前に公式サイトでの再確認を推奨

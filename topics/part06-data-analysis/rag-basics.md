@@ -2,7 +2,7 @@
 title: RAG(検索拡張生成)の基本
 part: 6
 chapter: 第3章 RAG
-tags: [RAG, 検索拡張生成, ベクトル検索, チャンク化, ハルシネーション対策]
+tags: [RAG, 検索拡張生成, 社内文書検索, ハルシネーション対策, ベクトル検索, チャンク化]
 created: 2026-07-06
 updated: 2026-07-06
 ---
@@ -31,17 +31,26 @@ RAGの処理は、大きく分けて「資料の準備」と「回答の生成�
 
 キーワード検索(単語が一致するかどうか)と違い、ベクトル検索は「意味の近さ」で探すため、「有休の繰越」という質問で「年次有給休暇の持ち越し」と書かれた資料がヒットする、といった表記ゆれに強いのが特徴。
 
+### 発展形:エージェント型RAG・GraphRAG
+
+2025〜2026年にかけて、上記の「検索して1回で答える」という基本形に、さらに手を加えた発展系が実務でも使われ始めている。
+
+- **エージェント型RAG(Agentic RAG)**: 検索を1回で終わらせず、AIエージェント(自律的に判断して複数の手順をこなすAI)が「この検索結果では不十分」と判断したら検索条件を変えて再検索したり、複数の情報源を使い分けたりを自律的に繰り返す方式。複数の文書をまたいで推論する必要がある複雑な質問や、法務・医療のように誤りの許容度が低い業務で効果を発揮するとされる一方、検索を何度も繰り返す分トークン消費と応答時間が単純なRAGの数倍になりやすく、FAQボットのような単純な一問一答には過剰装備になりやすい
+- **GraphRAG**: 文書同士の関係性(人物・組織・出来事のつながりなど)をあらかじめ「知識グラフ」(ノードとエッジで関係を表現したデータ構造)に整理しておき、ベクトル検索と組み合わせて検索する方式。「AとBの関係」のように複数の文書をまたいだ関連性を問う質問に強い
+
+いずれも2026年時点ではDify・n8nなどのノーコードツールが標準機能として搭載する段階には至っておらず、自前でシステムを構築するチーム向けの選択肢という位置づけ。業務でRAGを使う場合は、まず本ページで扱う基本形(1回検索して回答する方式)で十分なケースがほとんどで、「複数資料をまたいだ複雑な質問に答えられない」という壁にぶつかってから発展形の採用を検討すればよい。
+
 ## 使いどころ・使い分け
 
 AIに社内知識を持たせる方法は主に3つあり、資料の量・更新頻度・予算に応じて使い分ける。
 
-| 方法 | 向いているケース | 向かないケース |
-|---|---|---|
-| **チャットに資料を直接貼り付け・都度アップロード** | 資料が短い(数ページ)、1回限りの質問、すぐ試したい | 資料が大量にある、繰り返し同じ資料を参照する業務 |
-| **RAG(ファイルアップロード機能・ナレッジベース・NotebookLMなど)** | 資料が多い(数十〜数千ページ)、頻繁に更新される、複数人が繰り返し参照する、社内FAQ・マニュアル・議事録の検索 | ごく少量の資料しかない(オーバースペック)、AI自身に「話し方」や「専門分野の型」を覚え込ませたい場合 |
-| **ファインチューニング(追加学習)** | 特定の文体・専門用語の使い方そのものをAIの応答スタイルに焼き付けたい、大量の対話ログで応答の癖を学習させたい | 事実情報を最新に保ちたいだけの場合(学習し直すコストが高く更新に不向き) |
+| 方法 | 概要 | 向いているケース | 向かないケース |
+|---|---|---|---|
+| **長文コンテキスト投入**(資料をチャットに直接貼り付け・都度アップロード) | 検索を挟まず、資料そのものをまるごとAIへの指示文(プロンプト)に含めて読ませる | 資料が短い(数ページ〜コンテキストウィンドウ=AIが一度に読み書きできる文章量の上限に収まる分量)、1回限りの質問、すぐ試したい | 資料が大量にある、繰り返し同じ資料を参照する業務(毎回全文を読み込み直すため料金がかさみ、[コンテキスト腐敗](../part01-ai-llm-basics/context-window-basics.md)で回答精度が落ちやすい) |
+| **RAG**(ファイルアップロード機能・ナレッジベース・NotebookLMなど) | 質問のたびに関連部分だけを検索して読ませる | 資料が多い(数十〜数千ページ)、頻繁に更新される、複数人が繰り返し参照する、社内FAQ・マニュアル・議事録の検索 | ごく少量の資料しかない(オーバースペック)、AI自身に「話し方」や「専門分野の型」を覚え込ませたい場合 |
+| **ファインチューニング**(追加学習) | 大量のデータでAIモデル自体に追加の学習をさせ、応答の傾向を書き換える | 特定の文体・専門用語の使い方そのものをAIの応答スタイルに焼き付けたい、大量の対話ログで応答の癖を学習させたい | 事実情報を最新に保ちたいだけの場合(学習し直すコストが高く更新に不向き) |
 
-判断の目安はシンプルで、「資料が数ページで済むならそのまま貼る」「資料が多い・増え続ける・複数人で使うならRAG」「AIの答え方の癖や専門用語の使いこなし自体を変えたいならファインチューニング」と考えるとよい。実務ではほぼRAG(またはRAG相当の機能)を選ぶことになる。
+判断の目安はシンプルで、「資料が数ページで済むならそのまま貼る(長文コンテキスト投入)」「資料が多い・増え続ける・複数人で使うならRAG」「AIの答え方の癖や専門用語の使いこなし自体を変えたいならファインチューニング」と考えるとよい。実務ではほぼRAG(またはRAG相当の機能)を選ぶことになる。
 
 ## 実務での使い方
 
@@ -100,10 +109,15 @@ ChatGPT・NotebookLM・Geminiのファイル参照機能は、既存の個人向
 ## 関連トピック
 
 - [AIが扱いやすいデータ形式](./ai-friendly-data-formats.md)
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](./chatgpt-advanced-data-analysis.md)
+- [Embedding(埋め込み)とは何か](./embedding-basics.md)
+- [RAGの精度を上げる方法](./rag-accuracy-improvement.md)
+- [ベクトルデータベースの基本(Embeddingとの関係)](./vector-database-basics.md)
 - [NotebookLMの基本](../part07-other-llm-tools/notebooklm-basics.md)
+- [DifyでのRAG実装(ナレッジベースの作成とワークフロー連携)](../part09-nocode-lowcode/dify-rag-implementation.md)
 
 ## 更新履歴
 
 ### 2026-07-06: 初版執筆
-- **内容**: RAGの基本概念(何が解決されるか)、チャンク化・埋め込み・検索・生成という基本フロー、直接貼り付け/RAG/ファインチューニングの使い分け、ChatGPT・NotebookLM・Gemini・Copilot・Difyでの具体的な設定手順、チャンク精度に関する実務のコツを整理
-- **出典**: [Sky株式会社: RAG（Retrieval-Augmented Generation）とは？](https://www.skygroup.jp/media/article/4054/)、[窓の杜: 生成AIを活用するならRAGも使いこなそう！～ChatGPT＆Claudeのプロジェクト、GoogleのNotebook LM、どれを選ぶ？](https://forest.watch.impress.co.jp/docs/serial/yaaiwatch/1672414.html)、[Dify公式ドキュメント: ナレッジベース](https://docs.dify.ai/ja-jp/guides/knowledge-base)、[Zenn: ナレッジの設定：チャンク / インデックス / 検索方法 / ReRank / メタデータ](https://zenn.dev/kentaichimura/books/e48a042e40c657/viewer/2fbfb4)、[Google NotebookLM ヘルプ: ノートブックの新しいソースを追加または検索する](https://support.google.com/notebooklm/answer/16215270?hl=ja)、[Google ドライブ ヘルプ: Google Workspace with Gemini でソースを使用する方法](https://support.google.com/drive/answer/16813283?hl=ja)、[CloudNative BLOGs: Copilotを組織に展開するために ~ Microsoft Copilot for Microsoft 365 2つの機能 ~](https://blog.cloudnative.co.jp/23310/)、[ソフトバンク クラウドテクノロジーブログ: RAGの回答精度改善に最も必要なデータ改善のイロハ](https://www.softbank.jp/biz/blog/cloud-technology/articles/202412/tips-to-improve-rag/)、[Unstructured: Chunking Strategies for RAG: Best Practices and Key Methods](https://unstructured.io/blog/chunking-for-rag-best-practices)
+- **内容**: RAGの基本概念(何が解決されるか)、チャンク化・埋め込み・検索・生成という基本フロー、直接貼り付け(長文コンテキスト投入)/RAG/ファインチューニングの使い分け表、ChatGPT・NotebookLM・Gemini・Copilot・Difyでの具体的な設定手順、チャンク精度に関する実務のコツ、エージェント型RAG(Agentic RAG)・GraphRAGといった発展形の位置づけを整理
+- **出典**: [Sky株式会社: RAG（Retrieval-Augmented Generation）とは？](https://www.skygroup.jp/media/article/4054/)、[窓の杜: 生成AIを活用するならRAGも使いこなそう！～ChatGPT＆Claudeのプロジェクト、GoogleのNotebook LM、どれを選ぶ？](https://forest.watch.impress.co.jp/docs/serial/yaaiwatch/1672414.html)、[Dify公式ドキュメント: ナレッジベース](https://docs.dify.ai/ja-jp/guides/knowledge-base)、[Zenn: ナレッジの設定：チャンク / インデックス / 検索方法 / ReRank / メタデータ](https://zenn.dev/kentaichimura/books/e48a042e40c657/viewer/2fbfb4)、[Google NotebookLM ヘルプ: ノートブックの新しいソースを追加または検索する](https://support.google.com/notebooklm/answer/16215270?hl=ja)、[Google ドライブ ヘルプ: Google Workspace with Gemini でソースを使用する方法](https://support.google.com/drive/answer/16813283?hl=ja)、[CloudNative BLOGs: Copilotを組織に展開するために ~ Microsoft Copilot for Microsoft 365 2つの機能 ~](https://blog.cloudnative.co.jp/23310/)、[ソフトバンク クラウドテクノロジーブログ: RAGの回答精度改善に最も必要なデータ改善のイロハ](https://www.softbank.jp/biz/blog/cloud-technology/articles/202412/tips-to-improve-rag/)、[Unstructured: Chunking Strategies for RAG: Best Practices and Key Methods](https://unstructured.io/blog/chunking-for-rag-best-practices)、[IBM: What is Agentic RAG?](https://www.ibm.com/think/topics/agentic-rag)、[Redis Blog: Agentic RAG: How enterprises are surmounting the limits of traditional RAG](https://redis.io/blog/agentic-rag-how-enterprises-are-surmounting-the-limits-of-traditional-rag/)、[生成AI社内活用ナビ: RAGの精度を高める新技術「Agentic RAG」とは？仕組みとメリットを解説](https://officebot.jp/columns/technology/agentic-rag-2/)
