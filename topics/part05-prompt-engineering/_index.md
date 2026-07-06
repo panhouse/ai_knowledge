@@ -37,3 +37,4 @@ part: 5
 - [タスク分解プロンプティング(複雑な依頼をステップに分ける技法)](task-decomposition-prompting.md)
 - [自己整合性(Self-Consistency)プロンプティング](self-consistency-prompting.md)
 - [点数法(ルーブリック採点)プロンプティング](rubric-scoring-prompting.md)
+- [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](prompt-testing-and-iteration.md)
