@@ -28,3 +28,4 @@ part: 9
 - [MCP(Model Context Protocol)の基本](mcp-basics.md)
 - [JSONモード・Structured Outputsの基本](json-mode-structured-outputs.md)
 - [GAS(Google Apps Script)からのAI API連携](gas-ai-api-integration.md)
+- [Google Gemini APIの基本](google-gemini-api-basics.md)
