@@ -26,6 +26,7 @@ part: 5
 ## 収録ページ
 
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
+- [システムプロンプトの役割と書き方](system-prompt-basics.md)
 - [プロンプトテンプレート化(変数管理・再利用のコツ)](prompt-templating.md)
 - [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
 - [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
