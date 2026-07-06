@@ -19,3 +19,4 @@ part: 1
 ## 収録ページ
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
+- [トークンとは何か(LLMの処理単位と料金・コンテキストウィンドウの関係)](token-basics.md)
