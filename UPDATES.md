@@ -5,6 +5,8 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [GPTsにおけるプロンプトインジェクション対策](topics/part05-gpts-customization/gpts-prompt-injection-defense.md): 新規執筆(システムプロンプト抽出・Actions悪用等の攻撃シナリオ、防御用指示文の実例、公開前チェックリスト)
+- [DifyでのRAG実装(ナレッジベースの作成とワークフロー連携)](topics/part09-nocode-lowcode/dify-rag-implementation.md): 新規執筆(ナレッジベース作成手順、チャンク・検索設定、知識取得ノードの組み込み、社内FAQボットの実装例)
 - [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part03-risk-security/ai-regulation-and-governance-trends.md): 新規執筆(EU AI Actのリスク階層と2026年時点の適用時期、日本のAI推進法・AI事業者ガイドライン第1.2版、米国州法動向、企業向けチェックリスト)
 - [バッチ処理(Batch API)の基本](topics/part08-api-development/batch-api-basics.md): 新規執筆(OpenAI/Anthropic/GeminiのBatch API比較、JSONLでの実行例、リアルタイムAPIとの使い分け)
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](topics/part10-business-practice/ai-research-and-information-gathering.md): 新規執筆(ChatGPT/Gemini/Perplexity/ClaudeのDeep Research比較、業務ユースケース、出典検証ワークフロー)
