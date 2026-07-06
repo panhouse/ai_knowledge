@@ -26,3 +26,4 @@ part: 4
 - [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
 - [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)
 - [ロール(役割)プロンプティング](role-prompting.md)
+- [Tree of Thought(ToT)プロンプティング](tree-of-thought-prompting.md)
