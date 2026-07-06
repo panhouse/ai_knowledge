@@ -92,6 +92,7 @@ DeepSeekが注目された最大の理由は「オープンウェイト戦略」
 - [Google Geminiの基本](./google-gemini-basics.md)
 - [Claude(Anthropic)の基本](./claude-basics.md)
 - [Microsoft Copilotの基本](./microsoft-copilot-basics.md)
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](./local-llm-basics.md)
 - [生成AI利用における情報漏洩対策](../part03-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴

@@ -24,4 +24,6 @@ part: 7
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
 - [DeepSeekの基本](deepseek-basics.md)
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 - [Perplexityの基本](perplexity-basics.md)
+- [GenSparkの基本](genspark-basics.md)
