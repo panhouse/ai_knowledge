@@ -37,6 +37,7 @@ G検定(JDLA)のシラバスを参考に、試験対策ではなく
 ## 収録ページ
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
+- [「強いAI・弱いAI」とAI効果、特化型/汎用型AIの基本](strong-weak-ai-and-ai-effect-basics.md)
 - [生成AIの発展の歴史](ai-history-and-evolution.md)
 - [機械学習の基礎(教師あり学習・教師なし学習・強化学習)](machine-learning-basics.md)
 - [ディープラーニング(深層学習)の基礎](deep-learning-basics.md)
