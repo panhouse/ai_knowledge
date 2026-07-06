@@ -24,3 +24,4 @@ part: 7
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
 - [DeepSeekの基本](deepseek-basics.md)
+- [Perplexityの基本](perplexity-basics.md)

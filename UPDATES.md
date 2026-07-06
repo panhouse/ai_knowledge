@@ -5,6 +5,8 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [ReAct(Reasoning and Acting)プロンプティング](topics/part04-prompt-engineering/react-prompting.md): 新規執筆(Thought→Action→Observationループの仕組みと原論文の評価結果、CoT/ToTとの比較表、コピペ用テンプレート2種、ChatGPT/Claude/Gemini/LangChainでの対応付け)
+- [Perplexityの基本](topics/part07-other-llm-tools/perplexity-basics.md): 新規執筆(検索特化型AIというカテゴリの位置づけ、Sonarモデル・Pro Search・Focus・Deep Research・Spaces・Cometブラウザ、料金プラン、ChatGPT/Gemini検索機能との使い分け)
 - [ChatGPTのWeb検索機能](topics/part02-chatgpt-basics/chatgpt-web-search-feature.md): 新規執筆(Bing・OAI-SearchBotによる仕組み、自動判定と手動オンの手順、Deep Researchとの使い分け、Gemini/Copilot/Perplexityとの対応表)
 - [ChatGPTの画像生成機能](topics/part02-chatgpt-basics/chatgpt-image-generation-feature.md): 新規執筆(DALL-E 3からGPT Image 2への進化、会話形式での反復編集、C2PAによる出所証明、プラン別上限、業務用プロンプト例、Gemini/Copilot/Midjourneyとの比較)
 - [DeepSeekの基本](topics/part07-other-llm-tools/deepseek-basics.md): 新規執筆(オープンウェイト戦略と低コスト開発の主張の信頼性、V4-Pro/V4-Flashのラインナップ、チャット・API・自社ホスティングの使い方、日本のデジタル庁・個人情報保護委員会の注意喚起と他国の利用制限動向)

@@ -28,3 +28,4 @@ part: 4
 - [ロール(役割)プロンプティング](role-prompting.md)
 - [Tree of Thought(ToT)プロンプティング](tree-of-thought-prompting.md)
 - [メタプロンプティング](meta-prompting.md)
+- [ReAct(Reasoning and Acting)プロンプティング](react-prompting.md)
