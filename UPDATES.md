@@ -5,6 +5,13 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](topics/part09-nocode-lowcode/dify-api-integration.md): 新規執筆(APIキー発行手順、chat-messages/completion-messages/workflows/runの使い分け、curl・GAS連携の実装例、埋め込みウィジェット・n8n連携との違い、APIキー管理とレート制限の注意点)
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part07-other-llm-tools/local-llm-basics.md): 新規執筆(オープンウェイトモデルを自社機材で動かす仕組み、Ollama/LM Studioの使い方、パラメータ数とPCスペックの目安、クラウドAPIとの比較表、Llama/Gemma/Mistral/DeepSeek/Qwen/gpt-ossのライセンス比較)
+- [GenSparkの基本](topics/part07-other-llm-tools/genspark-basics.md): 新規執筆(Mixture-of-Agentsアーキテクチャ、Sparkpage・Super Agent・AI Slides/Sheets/Docs・Call For Me等の機能、Perplexity/ChatGPT/Geminiとの比較表、料金プラン、日本語対応状況と注意点)
+- [プロンプトテンプレート化(変数管理・再利用のコツ)](topics/part04-prompt-engineering/prompt-templating.md): 新規執筆(変数プレースホルダーによるプロンプトの再利用・属人化防止、議事録要約/メール返信/レビューのコピペ用テンプレート3種、ChatGPT/Claude/Gemini/Difyの対応表)
+- [タスク分解プロンプティング(複雑な依頼をステップに分ける技法)](topics/part04-prompt-engineering/task-decomposition-prompting.md): 新規執筆(巨大な依頼を工程に分けて段階処理する技法。CoT/ReActとの粒度の違い、1メッセージ内明示型・複数ターン型・Dify/n8nノード分解型の実例)
+- [ベクトルデータベースの基本(Embeddingとの関係)](topics/part06-data-analysis/vector-database-basics.md): 新規執筆(キーワード検索との違い、コサイン類似度・近似最近傍探索(ANN)の仕組み、Pinecone/Weaviate/Qdrant/Chroma/pgvector/Dify内蔵DBの比較表、自分で構築が必要なケースと意識不要なケースの区別、料金モデル、Embeddingモデル変更時の再ベクトル化に関する注意点)
+- [点数法(ルーブリック採点)プロンプティング](topics/part04-prompt-engineering/rubric-scoring-prompting.md): 新規執筆(評価観点を数値基準化して自己採点・改善させる技法、LLM-as-a-judgeとG-Evalの知見、使いどころ判断基準、自己採点・比較採点・基準作成のコピペ例、Dify/n8nでの生成→採点→分岐の実装イメージ、自己評価バイアスの注意点)
 - [GAS(Google Apps Script)からのAI API連携](topics/part08-api-development/gas-ai-api-integration.md): 新規執筆(UrlFetchApp・PropertiesServiceによるAPIキー管理、カスタム関数の実装例、OpenAI/Gemini/Claude呼び出しの違い、Gmail自動下書き・Docs要約への応用、実行時間制限・再計算による予期しない課金への注意点)
 - [RAGの精度を上げる方法](topics/part06-data-analysis/rag-accuracy-improvement.md): 新規執筆(チャンキング・ハイブリッド検索・リランキング・クエリ書き換え・メタデータフィルタリングの5レバーと症状別診断テーブル、Difyでの具体的な設定手順、ゴールデンセットによる精度評価の方法)
 - [JSONモード・Structured Outputsの基本](topics/part08-api-development/json-mode-structured-outputs.md): 新規執筆(JSONモードとStructured Outputsの違い、制約付きデコーディングの仕組み、Function Callingとの役割の区別、OpenAI/Anthropic/Geminiのパラメータ対応表とコピペ用最小例)
