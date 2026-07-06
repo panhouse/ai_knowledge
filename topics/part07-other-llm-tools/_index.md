@@ -23,3 +23,4 @@ part: 7
 - [NotebookLMの基本](notebooklm-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
+- [DeepSeekの基本](deepseek-basics.md)

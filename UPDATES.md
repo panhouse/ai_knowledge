@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [DeepSeekの基本](topics/part07-other-llm-tools/deepseek-basics.md): 新規執筆(オープンウェイト戦略と低コスト開発の主張の信頼性、V4-Pro/V4-Flashのラインナップ、チャット・API・自社ホスティングの使い方、日本のデジタル庁・個人情報保護委員会の注意喚起と他国の利用制限動向)
 - [メタプロンプティング](topics/part04-prompt-engineering/meta-prompting.md): 新規執筆(実務的な「プロンプト生成・改善」と学術的な「タスク非依存の思考の枠組み」の整理、コピペ用の生成・改善・出力フィードバック型プロンプト例、OpenAI Playground/Anthropic Console/Vertex AI Prompt Optimizer/GPT Builder/Gemini Gemの対応表)
 - [Gem(Geminiのカスタムボット機能)の基本](topics/part07-other-llm-tools/gemini-gem-feature.md): 新規執筆(Gemの作成手順、Saved infoとの違い、GPTs/Claude Projects/Copilot Studioとの比較)
 - [AGI(汎用人工知能)とは何か](topics/part11-ai-trends/what-is-agi.md): 新規執筆(定義が定まらない理由、主要研究機関のスタンスの違い、ベンダーのAGI発言を読み解くための判断軸)
