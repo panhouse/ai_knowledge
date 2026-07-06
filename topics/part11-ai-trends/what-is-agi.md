@@ -1,0 +1,85 @@
+---
+title: "AGI(汎用人工知能)とは何か"
+part: 11
+chapter: "第1章 AI市場の動向"
+tags: [AGI, ASI, 生成AI動向, AI戦略, ベンダー選定]
+created: 2026-07-06
+updated: 2026-07-06
+---
+
+# AGI(汎用人工知能)とは何か
+
+## これは何か
+
+「弊社は2027年にAGIを実現する」「このモデルはAGIに近づいた」——AIベンダーのブログやニュースで「AGI(Artificial General Intelligence、汎用人工知能)」という言葉を目にする機会が増えている。だが実はAGIには業界で合意された定義も、「達成した/していない」を判定する共通テストも存在しない。この状態のまま言葉だけを受け取ると、根拠の薄い期待や不安に振り回され、目の前のツールを「今日何に使えるか」という現実的な判断が疎かになる。AGIを、特定の企業の主張ではなく「評価の物差し」として理解しておくことが、AI戦略を語るうえでの土台になる。
+
+大まかに言えば、AGIとは「人間が知的にこなせるほぼすべてのタスクで、人間と同等以上の能力を発揮するAI」を指す概念である。特定の1タスクのために作られた「特化型AI(Narrow AI)」(例: スパムメール判定だけを行うAI、将棋だけを指すAI)とは対極にあり、また現在のChatGPTやGeminiのような大規模言語モデル(LLM)とも区別される。今日のLLMは非常に幅広いタスクに対応できる汎用性を持つが、専門分野での高度な推論・長期記憶を要する計画・身体を伴う実世界操作などでは人間の熟練者に安定して届いていない。「幅は広いが、深さと安定性が人間に届いていない」のが現在地であり、AGIはその先にある「深さも幅も人間以上」という仮想的な到達点を指す言葉、と捉えると位置づけが掴みやすい。
+
+## 仕組み・背景
+
+AGIという言葉に単一の定義がないのは、測定の基準が「能力ベース」と「経済的インパクトベース」の少なくとも2系統に分かれていることが大きい。
+
+**経済的インパクトベースの定義**の代表がOpenAIの創業時の憲章(Charter)で、AGIを「ほとんどの経済的価値のある仕事で人間を上回る、高度に自律的なシステム(highly autonomous systems that outperform humans at most economically valuable work)」と定義している(参照: [OpenAI Charter](https://openai.com/charter/))。この定義は「儲かる仕事を代替できるか」という基準であり、知能の中身よりも経済への影響を測る発想に近い。
+
+**能力ベースの定義**の代表例が、Google DeepMindの研究チームが2023年に提唱し2024年に論文化した「Levels of AGI(AGIのレベル分け)」フレームワークで、自動運転のレベル分け(レベル0〜5)に倣い、AIの汎用性(どれだけ幅広いタスクに対応できるか)と性能(人間のどの水準に達しているか、未熟〜新人〜熟練者〜専門家〜超人的)の2軸でAIの進捗を段階的に評価しようとするものである。同チームは2026年3月にも「認知能力」の観点から進捗を測る改訂フレームワークを公開しており、"AGIが達成された瞬間"を一点で判定するのではなく、連続的な進捗として捉える発想が研究コミュニティでは主流になりつつある(参照: [DeepMind: Levels of AGI](https://arxiv.org/abs/2311.02462)、[DeepMind: Measuring Progress Toward AGI](https://arxiv.org/html/2605.28405))。
+
+一方、Anthropicは「AGI」という言葉自体をあまり使わない立場を取っている。共同創業者でCEOのDario Amodeiは自身のエッセイの中で「AGIという言葉は好きではない」と明言し、SF的な連想がつきまとう「AGI」の代わりに、「未解決の数理定理を証明できる」「優れた小説を書ける」「難しいコードベースをゼロから書ける」といった具体的な能力の列挙で「powerful AI(強力なAI)」を説明する方式を採っている(参照: [Dario Amodei: Machines of Loving Grace](https://darioamodei.com/essay/machines-of-loving-grace))。
+
+定義が定まらない実害は、2025年まで存在したOpenAIとMicrosoftの提携契約にも表れていた。両社の契約には「OpenAIの取締役会がAGI達成を宣言した時点でMicrosoftのライセンスが打ち切られる」という、通称「AGI条項」が盛り込まれていたが、"AGI達成"を客観的に判定する基準がなく、取締役会の主観的判断に委ねられる不安定な条項になっていた。2026年4月、両社はこの条項自体を契約から削除する形で合意しており、「契約や規制の根拠として使うには、AGIという言葉は曖昧すぎる」という実務的な教訓を残した(参照: [Simon Willison: Tracking the history of the now-deceased OpenAI Microsoft AGI clause](https://simonwillison.net/2026/Apr/27/now-deceased-agi-clause/))。
+
+## 使いどころ・使い分け
+
+AGIは「導入するかどうかを選ぶ製品カテゴリ」ではなく、AIの実力を評価するための「物差し(概念)」である。実務での向き合い方は次のように整理できる。
+
+| 観点 | 特化型AI(Narrow AI) | 現在の生成AI・LLM(2026年時点) | AGI(仮想的な到達点) |
+|---|---|---|---|
+| 対応できるタスクの幅 | 特定の1タスクのみ(例: スパム判定、需要予測) | 文章・コード・画像など非常に幅広いタスクに対応 | 人間が知的にこなせるほぼ全タスク |
+| 性能の水準 | 対象タスクでは人間を上回ることも多い | タスクによって新人〜専門家レベルまで幅がある。ハルシネーションや長期計画の不安定さが残る | 全領域で人間の熟練者〜専門家水準以上、かつ安定 |
+| 現時点での実在性 | すでに実用化・大量導入されている | すでに実用化されている(本サイトが扱う対象) | 実現時期・定義とも未確定の仮説的な概念 |
+| ビジネス上の扱い方 | 個別業務への適用可否で判断する | [向く業務・向かない業務の切り分け](../part10-business-practice/ai-task-suitability.md)で判断する | ベンダーの主張を評価する「物差し」として使う。導入計画の前提にはしない |
+
+判断基準として持っておきたいのは、「目の前のツールが今日できること」と「ベンダーが将来できると約束していること」を切り分けることである。AGIの実現時期は前者ではなく後者に属する話であり、業務のAI活用計画は前者(今日の実力)を基準に立てるのが原則になる。
+
+## 実務での使い方
+
+AGIという概念は、ビジネスパーソンにとって「何かを設定する」対象ではない。使い道は主に2つ、(1) ベンダーやメディアの「AGI」発言を読み解く物差しとして使う、(2) 社内のAI戦略議論で期待値を揃えるための共通言語として使う、である。
+
+### ベンダーのAGI関連発言を読み解くチェックリスト
+
+AIベンダーやその経営者が「AGI」に言及した記事を読むときは、次の3点を確認するとよい。
+
+1. **どの定義で語っているか**: 「経済的価値のある仕事を代替できるか」(OpenAI型)なのか、「特定の認知タスクで人間の専門家水準に達したか」(DeepMind型)なのか、それとも定義を明示していないのか。定義を示さずに「AGIに到達した」と語る主張は、マーケティング的な誇張である可能性を疑う
+2. **誰の予測で、どの程度の確度か**: 経営者個人の見通しなのか、査読を経た研究チームの分析なのか。同じ2026年のダボス会議の場でも、AnthropicのDario Amodei氏は「1年以内にソフトウェア開発者の仕事のほとんどをAIが代替し、2年以内に複数分野でノーベル賞級の研究水準に達する」という強気の見通しを語った一方、Google DeepMindのDemis Hassabis氏は「(人間レベルのAGIには)5〜10年、この10年間で実現する確率は五分五分」と述べ、さらにMeta出身でAI研究の重鎮であるYann LeCun氏は「現在のLLMを訓練する延長線上に人間レベルの知能はない」と、そもそものアプローチに異を唱えている。同じ業界のトップ同士でも数年単位・アプローチ単位で意見が割れている、という事実そのものが重要な情報である(参照: [Fortune: AI luminaries at Davos clash over how close human-level intelligence really is](https://fortune.com/2026/01/23/deepmind-demis-hassabis-anthropic-dario-amodei-yann-lecun-ai-davos/))
+3. **契約・投資判断の根拠にできる話か**: OpenAIとMicrosoftの提携契約から「AGI条項」自体が削除された経緯が示す通り、「AGI達成」を客観的に判定する基準は業界内にも存在しない。社内の投資判断や契約条件を、特定企業の「AGI宣言」に依存させないことが安全策になる
+
+### 社内のAI戦略議論での使い方
+
+経営層や事業部門から「AGIが来たらうちの会社はどうなるのか」と問われた際は、次のような整理で答えると建設的な議論になりやすい。
+
+- 「AGI」を待つ・恐れるのではなく、[生成AIに向く業務・向かない業務の切り分け](../part10-business-practice/ai-task-suitability.md)で今使えるAIの適用範囲を広げていく方が、投資対効果が読みやすい
+- ベンダーのロードマップ上の「AGI」「次世代モデルで実現」といった将来約束は、意思決定の前提ではなく参考情報として扱う
+- 半年〜1年単位でLLMの実力そのものは着実に上がっているため、「AGIが来るかどうか」よりも「今のモデルで新しくできるようになったことは何か」を定点観測する方が実務的である
+
+## 注意点・よくある誤解
+
+- **「AGI」と「AIエージェント」は別の軸の話**: [AIエージェントとは何か](ai-agent-basics.md)で扱う「エージェンティックAI」は、目標を渡せば計画・実行まで自律的にこなす、現時点で実在する製品パターンを指す。一方でAGIは、その自律実行の"中身の知能"が人間並みかどうかという、まだ実現していない仮説的な能力水準の話である。「エージェント機能が搭載された=AGIに近づいた」という短絡は誤り
+- **ベンチマークの高得点=AGI達成ではない**: 「ARC-AGI」のように、AIの汎化能力(見たことのないパターンに対応する力)を測ろうとする専用ベンチマークも存在するが、特定ベンチマークでの高スコアは「そのテストが測る種類の推論に強い」ことを示すに過ぎず、AGIの達成を意味しない。運営元のARC Prize自身も、スコアの推移を"進捗の目安"として位置づけている(参照: [ARC Prize: ARC-AGI-2](https://arcprize.org/arc-agi/2))
+- **「AGIは実質死語」という見方もある**: OpenAIのSam Altman氏自身が2025年に「AGIという言葉自体があまり有用ではなくなってきた」と発言しており、各社が独自の物差しで「AGIに近い」と語れてしまう状況そのものが問題視されている(参照: [CNBC: Sam Altman now says AGI is 'not a super useful term'](https://www.cnbc.com/2025/08/11/sam-altman-says-agi-is-a-pointless-term-experts-agree.html))。「AGI」を含む発言は、発言者ごとに前提が異なる可能性を常に疑ってよい
+- **ASI(Artificial Superintelligence、人工超知能)はさらにその先の概念**: AGIが「人間と同等」を指すのに対し、ASIはあらゆる知的領域で人間の最も優れた専門家を大きく上回る水準を指す、AGIとは区別される仮想的な概念である。AGIが実現していない以上ASIの実現時期を論じるのはさらに投機性が高いが、一部の経営者はAGIよりASIの議論に軸足を移しつつあり、この点も「まだ実現していない将来予測の話をしている」という前提を忘れずに読む必要がある
+- **AGI論争に時間を使いすぎない**: 社内で「AGIが来たらどうする」という抽象論に時間を割くより、[生成AIに向く業務・向かない業務の切り分け](../part10-business-practice/ai-task-suitability.md)で今のツールの適用範囲を広げる方が、投資対効果の観点で優先度が高いことが多い
+
+## 最初の一歩
+
+次にニュースやベンダー資料で「AGI」という言葉を見かけたら、「どの定義(経済的インパクト/能力レベル)で使われているか」「発言者は誰で、どの程度の確度の予測か」の2点をその場で確認する癖をつける。それだけで、根拠のない期待や不安に振り回されず、目の前のツールの実力評価に意識を戻せる。
+
+## 関連トピック
+
+- [AIエージェントとは何か](ai-agent-basics.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part10-business-practice/ai-task-suitability.md)
+- [LLMの得意・不得意](../part01-ai-llm-basics/llm-strengths-and-limitations.md)
+
+## 更新履歴
+
+### 2026-07-06: 初版執筆
+- **内容**: AGIの定義が業界で統一されていない背景(経済的インパクトベース/能力ベースの2系統)、OpenAI・Google DeepMind・Anthropicそれぞれの立場の違い、2026年時点の主要人物間のタイムライン論争(ダボス会議でのAmodei・Hassabis・LeCunの対立)、OpenAI-Microsoft間の「AGI条項」削除の経緯、ASIとの違い、ベンダーのAGI関連発言を読み解く実務的なチェックリストを整理
+- **出典**: [OpenAI Charter](https://openai.com/charter/)、[Simon Willison: Tracking the history of the now-deceased OpenAI Microsoft AGI clause](https://simonwillison.net/2026/Apr/27/now-deceased-agi-clause/)、[Dario Amodei: Machines of Loving Grace](https://darioamodei.com/essay/machines-of-loving-grace)、[Google DeepMind: Levels of AGI for Operationalizing Progress on the Path to AGI](https://arxiv.org/abs/2311.02462)、[Google DeepMind: Measuring Progress Toward AGI: A Cognitive Framework](https://arxiv.org/html/2605.28405)、[Fortune: AI luminaries at Davos clash over how close human-level intelligence really is](https://fortune.com/2026/01/23/deepmind-demis-hassabis-anthropic-dario-amodei-yann-lecun-ai-davos/)、[CNBC: Sam Altman now says AGI is 'not a super useful term' — and he's not alone](https://www.cnbc.com/2025/08/11/sam-altman-says-agi-is-a-pointless-term-experts-agree.html)、[ARC Prize: ARC-AGI-2](https://arcprize.org/arc-agi/2)

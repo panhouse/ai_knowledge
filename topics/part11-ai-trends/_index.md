@@ -16,3 +16,4 @@ part: 11
 ## 収録ページ
 
 - [AIエージェントとは何か](ai-agent-basics.md)
+- [AGI(汎用人工知能)とは何か](what-is-agi.md)
