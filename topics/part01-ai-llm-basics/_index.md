@@ -22,3 +22,4 @@ part: 1
 - [トークンとは何か](tokens-in-llm.md)
 - [トークンとは何か:LLMの単位とコストへの影響](tokens-and-tokenization.md)
 - [LLMの仕組み:確率的単語予測と学習プロセス](llm-mechanism-basics.md)
+- [トークンとは何か](what-are-tokens.md)

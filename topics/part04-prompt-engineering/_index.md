@@ -25,3 +25,4 @@ part: 4
 - [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](prompting-techniques-basics.md)
 - [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot.md)
 - [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](zero-few-shot-and-cot-prompting.md)
+- [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)

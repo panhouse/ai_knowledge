@@ -21,3 +21,4 @@ part: 7
 - [Google Geminiの基本](google-gemini-basics.md)
 - [NotebookLMの基本](notebooklm-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)
+- [NotebookLMの基本と使い方](notebooklm-basics.md)

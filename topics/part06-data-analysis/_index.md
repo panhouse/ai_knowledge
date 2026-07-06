@@ -20,3 +20,4 @@ part: 6
 - [ChatGPTのデータアナリスト機能の使い方](chatgpt-data-analyst.md)
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](chatgpt-data-analysis.md)
 - [ChatGPTのデータ分析(Advanced Data Analysis)機能](chatgpt-data-analysis.md)
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](chatgpt-advanced-data-analysis.md)
