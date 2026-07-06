@@ -27,3 +27,4 @@ part: 7
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 - [Perplexityの基本](perplexity-basics.md)
 - [GenSparkの基本](genspark-basics.md)
+- [Grok(xAI)の基本](grok-basics.md)

@@ -24,3 +24,4 @@ part: 9
 - [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](dify-api-integration.md)
 - [n8nの基本](n8n-basics.md)
 - [Makeの基本](make-basics.md)
+- [Zapierの基本](zapier-basics.md)

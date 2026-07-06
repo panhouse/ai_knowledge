@@ -5,6 +5,13 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [Embedding(埋め込み)とは何か](topics/part06-data-analysis/embedding-basics.md): 新規執筆(文章を意味の近さで比較できる数値ベクトルに変換する仕組み、セマンティック検索・重複検知・クラスタリングへの応用、埋め込みモデル間の非互換性という落とし穴、OpenAI/Google/Cohere等の主要モデル比較表)
+- [Zapierの基本](topics/part09-nocode-lowcode/zapier-basics.md): 新規執筆(Zapという基本単位と9,000以上のアプリ連携、Zapier Copilot・Zapier Agents(旧Zapier Central)・AI ActionsといったAI関連機能、n8n/Make/Difyとの比較表、タスク課金の料金プラン、フォーム回答のAI分類→Slack通知の実装例)
+- [Grok(xAI)の基本](topics/part07-other-llm-tools/grok-basics.md): 新規執筆(xAIのGrokの位置づけとX連携、モデレーション方針を巡る過去の炎上事例、SuperGrok等の料金プラン、ChatGPT/Claude/Geminiとの比較表、日本での利用状況)
+- [生成AI導入のROI測定・効果測定の考え方](topics/part10-business-practice/ai-roi-measurement.md): 新規執筆(MIT NANDA「95%のパイロットが測定可能なリターンを生んでいない」調査とGartner・McKinseyの導入率/価値創出率ギャップの整理、個人・チーム/プロセス・組織の3階層ROI測定フレームワーク、先行指標と遅行指標の使い分け、コピペで使えるROI測定ワークシート、ベースライン欠如・隠れコスト・生存者バイアスなどの測定上の落とし穴)
+- [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](topics/part01-ai-llm-basics/context-window-basics.md): 新規執筆(コンテキストウィンドウの定義とトークン・RAGとの関係、Lost in the Middle/コンテキスト腐敗(context rot)という精度劣化現象、OpenAI/Anthropic/Google/xAI/Metaのモデル別コンテキストウィンドウ比較表、モデル上限とアプリ・契約プラン上限の違い、限界を見分けるサインと対処法)
+- [プロンプトインジェクションとは何か(仕組みと対策)](topics/part03-risk-security/prompt-injection-basics.md): 新規執筆(直接的/間接的プロンプトインジェクションの区別とジェイルブレイクとの違い、Simon Willisonの「悪の三要素」によるリスク判断基準、EchoLeak(Microsoft 365 Copilot)の実例、ChatGPT/Claude/Copilot/Geminiの防御機能と確認ポイント)
+- [推論モデル(Reasoning Model)とは何か](topics/part01-ai-llm-basics/reasoning-model-basics.md): 新規執筆(即答モデルとの対比による定義、OpenAI o1を起点とする経緯、2026年7月時点のOpenAI/Anthropic/Google/DeepSeekの即答・推論モデル対応表、タスク別使い分け表、主要ツールでの切り替え場所、思考トークンの課金の仕組み、推論モデルでもハルシネーションが減らない点の注意)
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part11-ai-trends/ai-industry-major-players-trends.md): 新規執筆(OpenAI・Google・Anthropic・Microsoft・Amazon・Meta・xAIの立ち位置の違い、2026年4〜5月の主要提携(Microsoft-OpenAI・Google-Anthropic・Amazon-Anthropic・SoftBank-OpenAI・SpaceX-xAI等)、資金調達の規模感、ベンダー選定の判断軸)
 - [生成AI時代の働き方とスキルの変化](topics/part11-ai-trends/ai-era-work-and-skills.md): 新規執筆(代替されやすい/されにくい業務タスクの傾向、AI Divide(AI活用格差)の実態、プロンプトエンジニアリングの基礎リテラシー化、職種別の変化の比較表、個人のリテラシー向上策と企業のリスキリング支援制度)
 - [Makeの基本](topics/part09-nocode-lowcode/make-basics.md): 新規執筆(シナリオ・モジュールという基本単位、Integromatからのリブランド経緯、AIモジュールとMake AI Agents、n8n/Dify/Zapierとの比較表、2025年8月のオペレーション→クレジット課金変更、フォーム回答のAI分類→スプレッドシート記録の実装例)
