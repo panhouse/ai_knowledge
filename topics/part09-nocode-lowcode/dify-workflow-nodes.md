@@ -120,7 +120,7 @@ Difyでチャットフローアプリを新規作成し、「開始→質問分�
 
 - [Difyとは何か](dify-basics.md)
 - [Function Calling(関数呼び出し)の基本](../part08-api-development/function-calling-basics.md)
-- [GPTsのナレッジファイル機能](../part05-gpts-customization/gpts-knowledge-files.md)
+- [GPTsのナレッジファイル機能](../part05-gpts-customization/gpts-knowledge-and-actions.md)
 
 ## 更新履歴
 

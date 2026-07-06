@@ -63,7 +63,7 @@ updated: 2026-07-04
 
 ## 関連トピック
 
-- [ハルシネーションの仕組みと対策](hallucination-countermeasures.md)
+- [ハルシネーションの仕組みと対策](hallucination-and-countermeasures.md)
 - (今後、著作権リスクに関するページを追加予定)
 
 ## 更新履歴
