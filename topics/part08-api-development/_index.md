@@ -21,3 +21,4 @@ part: 8
 - [OpenAI APIの基本](openai-api-basics.md)
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)
 - [Function Calling(Tool Use)の基本](function-calling.md)
+- [MCP(Model Context Protocol)の基本](mcp-basics.md)

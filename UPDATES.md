@@ -8,6 +8,14 @@
 - [ChatGPTの初期設定とカスタム指示の書き方](topics/part02-chatgpt-basics/chatgpt-custom-instructions.md): 新規執筆(カスタム指示の設定手順・記入例・メモリ機能との使い分け)
 - [Difyワークフローの主要ノードと組み立て方](topics/part09-nocode-lowcode/dify-workflow-nodes.md): 新規執筆(主要ノードの役割と問い合わせ分類チャットボットの組み立て例)
 - [「AIエージェント」とは何か(チャットボットとの違いと代表製品)](topics/part11-ai-trends/ai-agents-overview.md): 新規執筆(AIエージェントの定義・チャットボットとの違い・代表製品の整理)
+- [ChatGPTのメモリ(Memory)機能](topics/part02-chatgpt-basics/chatgpt-memory-feature.md): 新規執筆(メモリの仕組み・確認/削除手順・カスタム指示との使い分け・Claude/Geminiとの対応関係)
+- [ChatGPTの「プロジェクト」機能](topics/part02-chatgpt-basics/chatgpt-projects-feature.md): 新規執筆(プロジェクトの仕組み・普通のチャット/カスタムGPTとの使い分け・作成手順・プラン別ファイル数上限)
+- [生成AIの著作権リスクと実務での注意点](topics/part03-risk-security/copyright-risks-in-generative-ai.md): 新規執筆(著作権法30条の4・類似性/依拠性の考え方、用途別リスク早見表、公開前チェックリスト、主要ベンダーの補償規定比較)
+- [ロール(役割)プロンプティング](topics/part04-prompt-engineering/role-prompting.md): 新規執筆(役割設定が効くタスク/効きにくいタスクの整理、業務別コピペ用プロンプト5例、ツール横断の設定場所)
+- [RAG(検索拡張生成)の基本](topics/part06-data-analysis/rag-basics.md): 新規執筆(チャンク化・埋め込み・検索・生成の基本フロー、直接貼り付け/RAG/ファインチューニングの使い分け、主要ツールでの設定手順)
+- [Microsoft Copilotの基本](topics/part07-other-llm-tools/microsoft-copilot-basics.md): 新規執筆(乱立する「Copilot」各製品の整理、料金プラン、Microsoft Graphによるグラウンディングとデータ保護)
+- [MCP(Model Context Protocol)の基本](topics/part08-api-development/mcp-basics.md): 新規執筆(ホスト・クライアント・サーバーの構成、Function Callingとの違い、Claudeでのコネクタ有効化手順)
+- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](topics/part10-business-practice/ai-presentation-and-document-creation.md): 新規執筆(ツール別の使い分け、箇条書きメモをスライド構成に変換するプロンプト例、Copilot/Gemini/Gamma等の具体手順)
 
 ## 2026-07-05
 - [トークンとは何か](topics/part01-ai-llm-basics/tokens-in-llm.md): 新規執筆
