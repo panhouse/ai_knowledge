@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [JSONモード・Structured Outputsの基本](topics/part08-api-development/json-mode-structured-outputs.md): 新規執筆(JSONモードとStructured Outputsの違い、制約付きデコーディングの仕組み、Function Callingとの役割の区別、OpenAI/Anthropic/Geminiのパラメータ対応表とコピペ用最小例)
 - [n8nの基本](topics/part09-nocode-lowcode/n8n-basics.md): 新規執筆(ノードベースのワークフロー自動化、AI Agentノード・LangChain統合、セルフホスト/クラウドの違い、Dify/Zapier/Makeとの比較表、Gmail要約→Slack通知の実装例)
 - [ReAct(Reasoning and Acting)プロンプティング](topics/part04-prompt-engineering/react-prompting.md): 新規執筆(Thought→Action→Observationループの仕組みと原論文の評価結果、CoT/ToTとの比較表、コピペ用テンプレート2種、ChatGPT/Claude/Gemini/LangChainでの対応付け)
 - [Perplexityの基本](topics/part07-other-llm-tools/perplexity-basics.md): 新規執筆(検索特化型AIというカテゴリの位置づけ、Sonarモデル・Pro Search・Focus・Deep Research・Spaces・Cometブラウザ、料金プラン、ChatGPT/Gemini検索機能との使い分け)
