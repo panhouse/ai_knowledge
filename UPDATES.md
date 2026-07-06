@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [RAGの精度を上げる方法](topics/part06-data-analysis/rag-accuracy-improvement.md): 新規執筆(チャンキング・ハイブリッド検索・リランキング・クエリ書き換え・メタデータフィルタリングの5レバーと症状別診断テーブル、Difyでの具体的な設定手順、ゴールデンセットによる精度評価の方法)
 - [JSONモード・Structured Outputsの基本](topics/part08-api-development/json-mode-structured-outputs.md): 新規執筆(JSONモードとStructured Outputsの違い、制約付きデコーディングの仕組み、Function Callingとの役割の区別、OpenAI/Anthropic/Geminiのパラメータ対応表とコピペ用最小例)
 - [n8nの基本](topics/part09-nocode-lowcode/n8n-basics.md): 新規執筆(ノードベースのワークフロー自動化、AI Agentノード・LangChain統合、セルフホスト/クラウドの違い、Dify/Zapier/Makeとの比較表、Gmail要約→Slack通知の実装例)
 - [ReAct(Reasoning and Acting)プロンプティング](topics/part04-prompt-engineering/react-prompting.md): 新規執筆(Thought→Action→Observationループの仕組みと原論文の評価結果、CoT/ToTとの比較表、コピペ用テンプレート2種、ChatGPT/Claude/Gemini/LangChainでの対応付け)
