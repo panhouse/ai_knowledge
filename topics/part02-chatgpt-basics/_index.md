@@ -25,3 +25,5 @@ part: 2
 - [ChatGPTのメモリ(Memory)機能](chatgpt-memory-feature.md)
 - [ChatGPTの「プロジェクト」機能](chatgpt-projects-feature.md)
 - [ChatGPTのCanvas機能](chatgpt-canvas-feature.md)
+- [ChatGPTのWeb検索機能](chatgpt-web-search-feature.md)
+- [ChatGPTの画像生成機能](chatgpt-image-generation-feature.md)

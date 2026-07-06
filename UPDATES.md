@@ -5,6 +5,8 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [ChatGPTのWeb検索機能](topics/part02-chatgpt-basics/chatgpt-web-search-feature.md): 新規執筆(Bing・OAI-SearchBotによる仕組み、自動判定と手動オンの手順、Deep Researchとの使い分け、Gemini/Copilot/Perplexityとの対応表)
+- [ChatGPTの画像生成機能](topics/part02-chatgpt-basics/chatgpt-image-generation-feature.md): 新規執筆(DALL-E 3からGPT Image 2への進化、会話形式での反復編集、C2PAによる出所証明、プラン別上限、業務用プロンプト例、Gemini/Copilot/Midjourneyとの比較)
 - [DeepSeekの基本](topics/part07-other-llm-tools/deepseek-basics.md): 新規執筆(オープンウェイト戦略と低コスト開発の主張の信頼性、V4-Pro/V4-Flashのラインナップ、チャット・API・自社ホスティングの使い方、日本のデジタル庁・個人情報保護委員会の注意喚起と他国の利用制限動向)
 - [メタプロンプティング](topics/part04-prompt-engineering/meta-prompting.md): 新規執筆(実務的な「プロンプト生成・改善」と学術的な「タスク非依存の思考の枠組み」の整理、コピペ用の生成・改善・出力フィードバック型プロンプト例、OpenAI Playground/Anthropic Console/Vertex AI Prompt Optimizer/GPT Builder/Gemini Gemの対応表)
 - [Gem(Geminiのカスタムボット機能)の基本](topics/part07-other-llm-tools/gemini-gem-feature.md): 新規執筆(Gemの作成手順、Saved infoとの違い、GPTs/Claude Projects/Copilot Studioとの比較)
