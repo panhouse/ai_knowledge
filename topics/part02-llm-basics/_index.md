@@ -28,3 +28,4 @@ part: 2
 - [LLMの得意・不得意と挙動の特性](llm-strengths-and-limitations.md)
 - [推論モデル(Reasoning Model)とは何か](reasoning-model-basics.md)
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](context-window-basics.md)
+- [ファインチューニング・RAG・プロンプトの使い分け](finetuning-vs-rag-vs-prompting.md)

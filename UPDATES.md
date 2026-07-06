@@ -5,6 +5,12 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [機械学習の基礎(教師あり学習・教師なし学習・強化学習)](topics/part01-ai-basics/machine-learning-basics.md): 新規執筆(教師あり/教師なし/強化学習の違いと業務での使い分け、代表アルゴリズムの概要、LLMが3手法を工程ごとに組み合わせて作られている位置づけ)
+- [ディープラーニング(深層学習)の基礎](topics/part01-ai-basics/deep-learning-basics.md): 新規執筆(ニューラルネットワーク・活性化関数・誤差逆伝播・勾配消失・GPUの役割・CNN/RNNの登場、生成AIブームとGPU投資競争へのつながり)
+- [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): 新規執筆(3手法の比較表と判断フロー、OpenAIのFine-tuning API終了(2026年5月)等の最新動向、ファインチューニングは知識追加ではなく口調・形式の矯正に向くという実務上の誤解の整理)
+- [ガードレール(生成AIの入出力安全対策)の基本](topics/part04-risk-security/ai-guardrails-basics.md): 新規執筆(入力フィルタ・システムプロンプト制約・出力フィルタ・専用分類モデルの4分類、OpenAI Moderation API/Azure AI Content Safety/Llama Guard/NeMo Guardrails/Anthropic Constitutional Classifiersの比較、多層防御の考え方)
+- [自己整合性(Self-Consistency)プロンプティング](topics/part05-prompt-engineering/self-consistency-prompting.md): 新規執筆(複数回答の多数決による精度向上の仕組み、1チャット完結版・複数回投げる版・API並列版の3つの再現方法、推論モデル台頭による位置づけの変化)
+- [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): 新規執筆(Claude.aiとAPIの契約の違い、Messages APIの呼び出し方とAPIキー取得手順、料金体系、Tool Use/Extended Thinking/Prompt Caching/Batch APIの概要、OpenAI APIとの比較表)
 - 既存8ページの内容を精査・補強(いずれも同日の並行実行により先に新規執筆済みだったため、事実確認のうえ加筆のみ実施): [LLMの得意・不得意と挙動の特性](topics/part01-ai-llm-basics/llm-strengths-and-limitations.md)(分類・因果推論の弱さ、タスク振り分けチェックリストを追加)/ [ChatGPTのメモリ(Memory)機能](topics/part02-chatgpt-basics/chatgpt-memory-feature.md)(Dreaming機能、EEA既定オフ、Copilotとの対応を追加)/ [RAG(検索拡張生成)の基本](topics/part06-data-analysis/rag-basics.md)(Agentic RAG・GraphRAGの節を追加)/ [Gem(Geminiのカスタムボット機能)の基本](topics/part07-other-llm-tools/gemini-gem-feature.md)(共有の期限設定を追加)/ [MCP(Model Context Protocol)の基本](topics/part08-api-development/mcp-basics.md)(Agentic AI Foundationへの移管経緯、ツールポイズニング等のセキュリティ観点を追加)/ [DifyでのRAG実装](topics/part09-nocode-lowcode/dify-rag-implementation.md)(自前構築との比較表を追加)/ [生成AI導入のROI測定・効果測定の考え方](topics/part10-business-practice/ai-roi-measurement.md)(ガバナンス整備コストを追加)/ [AGI(汎用人工知能)とは何か](topics/part11-ai-trends/what-is-agi.md)(ARC-AGI-2の最新スコアを追加)
 - [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](topics/part02-chatgpt-basics/chatgpt-agent-mode-feature.md): 新規執筆(Operator・Deep Researchが統合された経緯、仮想ブラウザでの自律操作とTasks(スケジュール実行)の違い、対応プラン・クレジット制の利用上限、プロンプトインジェクションが「解決しきれない」とするOpenAIの見解を含む注意点)
 - [Embedding(埋め込み)とは何か](topics/part06-data-analysis/embedding-basics.md): 新規執筆(文章を意味の近さで比較できる数値ベクトルに変換する仕組み、セマンティック検索・重複検知・クラスタリングへの応用、埋め込みモデル間の非互換性という落とし穴、OpenAI/Google/Cohere等の主要モデル比較表)
