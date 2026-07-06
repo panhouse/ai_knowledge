@@ -22,7 +22,7 @@ GASはGoogleのクラウド上でスクリプトが実行される仕組みで�
 
 これに加えて、スプレッドシートのセルに`=AI_SUMMARIZE(A1)`のように書ける**カスタム関数**(`@customfunction`という注釈を付けて定義する関数)を作れる点がGAS連携の大きな強みで、AI呼び出しを「関数」として業務担当者の手元まで届けられる。ただしカスタム関数には後述する実行時間・権限面の制約がある。さらに時間主導型のトリガー(一定間隔で自動実行する仕組み)を設定すれば、夜間バッチのような定期実行も組める。
 
-Google自身のGemini APIについては、Google Cloudの公式Codelab(「Automate Google Workspace tasks with the Gemini API」)がGASからの呼び出し方法を解説しており、この組み合わせが公式にドキュメント化されている点はOpenAI・Anthropicとの違いといえる。ただし技術的な仕組みは同じで、Geminiだから使える専用の組み込み関数(GmailApp・DriveAppのような「Advanced Service」)がAI呼び出し用に用意されているわけではなく、実体は「APIキー+UrlFetchApp」というOpenAI・Claudeと変わらない方式である。
+Google自身のGemini APIについては、Google Cloudの公式Codelab(「Automate Google Workspace tasks with the Gemini API」)がGASからの呼び出し方法を解説しており、この組み合わせが公式にドキュメント化されている点はOpenAI・Anthropicとの違いといえる。手軽に試すだけなら、この記事のOpenAI・Claudeと同じ「APIキー+UrlFetchApp」方式で十分だが、Geminiにはもう一段"native"な選択肢もある。GASのスクリプトエディタには**Vertex AI**という組み込みのAdvanced Service(GmailApp・DriveAppと同じ位置づけの、コードを書かずに有効化できる専用サービス)があり、左メニューの「サービス」の「+」→「Vertex AI API」を追加すると、UrlFetchAppを自分で書かなくても`VertexAI.Endpoints.generateContent(payload, model)`のような専用メソッドでGemini(例: Gemini 2.5 Flash)を呼び出せる。ただしこちらは個人のAPIキーではなく、課金を有効化したGoogle CloudプロジェクトとAgent Platform API(旧Vertex AI API)の有効化が前提になるため、セットアップはAI StudioのAPIキー方式より重い。**個人・小規模チームでまず試すならAPIキー+UrlFetchApp、社内で既にGoogle Cloudプロジェクトを運用しているならVertex AI Advanced Serviceの方がAPIキーの受け渡し・失効管理が要らず安全**、という使い分けになる。本記事では汎用性の高いAPIキー+UrlFetchApp方式を中心に解説する。
 
 ## 使いどころ・使い分け
 
@@ -59,6 +59,8 @@ Googleスプレッドシートを開き、メニューの「拡張機能」→�
 3. 「スクリプト プロパティを追加」をクリックし、プロパティ(名前)に`OPENAI_API_KEY`のような分かりやすい名前、値にAPIキー本体を入力
 4. 「スクリプト プロパティを保存」をクリック
 
+(エディタのバージョンによっては、この画面に「スクリプト プロパティ」欄が表示されない場合がある。その場合は下記コードの`setProperty()`の行だけを一時的にエディタに貼り付けて1回だけ実行し、キーを保存したらその行は削除する、という方法でも同じ結果になる。)
+
 コード側からは次のように読み出す。
 
 ```javascript
@@ -87,7 +89,7 @@ function AI_SUMMARIZE(text) {
   const url = 'https://api.openai.com/v1/chat/completions';
 
   const payload = {
-    model: '(使用するモデル名。例: gpt-4.1-mini のような軽量・低コストモデル)',
+    model: '(使用するモデル名。2026年7月時点ではGPT-5.4 mini/nanoのような軽量・低コストモデルが候補。必ず platform.openai.com/docs/models で最新のモデル名を確認する)',
     messages: [
       { role: 'system', content: '与えられた文章を日本語で1文に要約して。要約以外の説明は出力しない。' },
       { role: 'user', content: text }
@@ -137,7 +139,7 @@ Geminiを呼ぶ場合のコード例(APIキーはURLに付ける点がOpenAI/Cla
 function AI_SUMMARIZE_GEMINI(text) {
   if (!text) return '';
   const apiKey = PropertiesService.getScriptProperties().getProperty('GEMINI_API_KEY');
-  const model = '(使用するモデル名。例: Gemini Flash系の軽量モデル)';
+  const model = '(使用するモデル名。例: Gemini Flash系の軽量モデル。ai.google.dev/gemini-api/docs/models で最新のモデル名を確認する)';
   const url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model
     + ':generateContent?key=' + apiKey;
 
@@ -246,5 +248,5 @@ OpenAI・Gemini・Claudeのいずれか1つでAPIキーを取得し、スプレ�
 ## 更新履歴
 
 ### 2026-07-06: 初版執筆
-- **内容**: GASからOpenAI/Gemini/Claude各APIをUrlFetchApp経由で呼び出す方法、PropertiesServiceによるAPIキーの安全な保存手順(画面の場所まで含む)、カスタム関数(`=AI_SUMMARIZE(A1)`)の実装例、Gmail自動下書き・Docs要約への応用、トリガー設定手順、実行時間制限・再計算による予期しない課金などの注意点を整理
-- **出典**: [Google for Developers: Class UrlFetchApp](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app)、[UrlFetchApp: The Unofficial Documentation](https://justin.poehnelt.com/posts/definitive-guide-to-urlfetchapp/)、[Google for Developers: プロパティ サービス](https://developers.google.com/apps-script/guides/properties)、[Google for Developers: Quotas for Google Services](https://developers.google.com/apps-script/guides/services/quotas)、[Google for Developers: Authorization for Google Services](https://developers.google.com/apps-script/guides/services/authorization)、[Google for Developers: Installable Triggers](https://developers.google.com/apps-script/guides/triggers/installable)、[Google Codelabs: Automate Google Workspace tasks with the Gemini API](https://codelabs.developers.google.com/codelabs/gemini-workspace)、[Google AI for Developers: Gemini API text generation](https://ai.google.dev/gemini-api/docs/text-generation)、[Claude Platform Docs: Messages API](https://docs.anthropic.com/en/api/messages)、[8bees.net: Google Apps Script 新エディターでのプロパティ設定場所](https://8bees.net/gas%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E8%A8%AD%E5%AE%9A%E5%A0%B4%E6%89%80)、[take-it-easy.site: スクリプトプロパティで機密情報と設定値を安全に管理する完全ガイド](https://blog.take-it-easy.site/gas/using-script-properties-in-gas/)、[LION AI: Google Apps Script（GAS）とは？できること・始め方・活用事例を徹底解説](https://www.lion-ai.co.jp/articles/google-apps-script-gas)
+- **内容**: GASからOpenAI/Gemini/Claude各APIをUrlFetchApp経由で呼び出す方法、PropertiesServiceによるAPIキーの安全な保存手順(画面の場所まで含む)、カスタム関数(`=AI_SUMMARIZE(A1)`)の実装例、GeminiのVertex AI Advanced Serviceという代替経路、Gmail自動下書き・Docs要約への応用、トリガー設定手順、実行時間制限・再計算による予期しない課金などの注意点を整理
+- **出典**: [Google for Developers: Class UrlFetchApp](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app)、[UrlFetchApp: The Unofficial Documentation](https://justin.poehnelt.com/posts/definitive-guide-to-urlfetchapp/)、[Google for Developers: プロパティ サービス](https://developers.google.com/apps-script/guides/properties)、[Google for Developers: Quotas for Google Services](https://developers.google.com/apps-script/guides/services/quotas)、[Google for Developers: Authorization for Google Services](https://developers.google.com/apps-script/guides/services/authorization)、[Google for Developers: Installable Triggers](https://developers.google.com/apps-script/guides/triggers/installable)、[Google Codelabs: Automate Google Workspace tasks with the Gemini API](https://codelabs.developers.google.com/codelabs/gemini-workspace)、[Google for Developers: Vertex AI Service (Apps Script Advanced Services)](https://developers.google.com/apps-script/advanced/vertex-ai)、[Google for Developers: Quickstart: Generate text using Agent Platform](https://developers.google.com/apps-script/quickstart/vertex-ai)、[Google AI for Developers: Gemini API text generation](https://ai.google.dev/gemini-api/docs/text-generation)、[Claude Platform Docs: Messages API](https://docs.anthropic.com/en/api/messages)、[OpenAI: Introducing GPT-5.4 mini and nano](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)、[8bees.net: Google Apps Script 新エディターでのプロパティ設定場所](https://8bees.net/gas%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E8%A8%AD%E5%AE%9A%E5%A0%B4%E6%89%80)、[take-it-easy.site: スクリプトプロパティで機密情報と設定値を安全に管理する完全ガイド](https://blog.take-it-easy.site/gas/using-script-properties-in-gas/)、[AutoWorker: スプレッドシートでChatGPTライクの応答を返すカスタム関数を作成する方法](https://auto-worker.com/blog/?p=7167)、[LION AI: Google Apps Script（GAS）とは？できること・始め方・活用事例を徹底解説](https://www.lion-ai.co.jp/articles/google-apps-script-gas)
