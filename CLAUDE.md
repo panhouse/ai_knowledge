@@ -89,7 +89,31 @@ Part 12 は一時的な受け皿であり、内容が育って体系側に居場
 4. **目次更新**: 新規ページを作成したら、そのパートの `_index.md` の「収録ページ」一覧に追加する
 5. **更新ログ**: `UPDATES.md` の先頭に今朝の執筆・改訂内容を記録する
    (下記フォーマット。**過去分は削除・編集しない**。全履歴を残す)
-6. **コミット**: main に直接コミットして push する(PRは作らない)
+6. **コミット**: 下記「ブランチ運用ルール」に従い、作業ブランチ `routine/daily-updates` にコミットして push する(mainへ直接pushしない。PRは作らない)
+
+## ブランチ運用ルール
+
+ルーティンの成果物はすべて固定の作業ブランチ **`routine/daily-updates`** に積む。
+毎回ランダムな名前のブランチを新規作成しないこと。mainへのマージはユーザー側で行う。
+
+1. 作業開始時に `git fetch origin` する
+2. `origin/routine/daily-updates` が**存在しない場合**: 最新の `origin/main` からブランチを切る
+   ```bash
+   git checkout -b routine/daily-updates origin/main
+   ```
+3. `origin/routine/daily-updates` が**存在する場合**: そのブランチをチェックアウトし、
+   最新の main を取り込んでから作業する(コンフリクトした場合は main 側を正とする)
+   ```bash
+   git checkout -B routine/daily-updates origin/routine/daily-updates
+   git merge origin/main
+   ```
+4. 執筆・目次更新・更新ログまで終えたらコミットし、`origin/routine/daily-updates` に push する
+   ```bash
+   git push origin routine/daily-updates
+   ```
+5. **重複執筆の防止**: 執筆トピックの選定は、main だけでなく
+   `routine/daily-updates` 上の未マージ分も含めた最新状態を基準に行う
+   (同じトピックを別ファイル名で再執筆しない)
 
 ### UPDATES.md のフォーマット
 
