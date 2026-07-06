@@ -24,3 +24,4 @@ part: 1
 - [LLMの仕組み:確率的単語予測と学習プロセス](llm-mechanism-basics.md)
 - [トークンとは何か](what-are-tokens.md)
 - [トークンとは何か(仕組みと数え方)](token-basics.md)
+- [LLMの仕組み:トークン化と次単語予測](llm-tokenization-and-prediction.md)
