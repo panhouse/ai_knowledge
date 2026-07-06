@@ -26,4 +26,3 @@ part: 1
 - [トークンとは何か(仕組みと数え方)](token-basics.md)
 - [LLMの仕組み:トークン化と次単語予測](llm-tokenization-and-prediction.md)
 - [生成AIの発展の歴史](ai-history-and-evolution.md)
-- [トークンとは何か(LLMの処理単位と料金・コンテキストウィンドウの関係)](token-basics.md)
