@@ -19,3 +19,4 @@ part: 7
 ## 収録ページ
 
 - [Google Geminiの基本](google-gemini-basics.md)
+- [NotebookLMの基本と使い方](notebooklm-basics.md)
