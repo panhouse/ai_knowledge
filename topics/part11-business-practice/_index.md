@@ -26,6 +26,7 @@ part: 11
 ## 収録ページ
 
 - [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [Human in the Loop(人間参加型)の業務設計](human-in-the-loop-basics.md)
 - [生成AIによる文章作成・編集の実務活用](ai-writing-and-editing.md)
 - [生成AIによるBPR(業務プロセス再構築)](generative-ai-bpr.md)
 - [生成AI導入のROI測定・効果測定の考え方](ai-roi-measurement.md)
