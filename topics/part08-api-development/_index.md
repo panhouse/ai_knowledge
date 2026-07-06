@@ -10,11 +10,13 @@ part: 8
 ### 第1章 OpenAI API基礎
 
 ### 第2章 API活用実践
-- バッチ処理、Function Calling、JSONモード
+- バッチ処理、Function Calling、JSON/Structured Outputs
 
-### 第3章 GAS連携
+### 第3章 業務ツール連携
+- GAS連携、スプレッドシート/業務システム連携
 
-### 第4章 MCP
+### 第4章 MCP・エージェント連携
+- MCP、外部ツール接続
 
 ## 収録ページ
 

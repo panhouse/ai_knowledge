@@ -14,24 +14,24 @@
 
 | Part | テーマ | 主な内容 |
 |------|--------|----------|
-| [Part 1](topics/part01-ai-llm-basics/_index.md) | AI・LLM基礎 | AIの全体像と歴史、LLMの基礎、LLMの特性と注意点 |
-| [Part 2](topics/part02-chatgpt-basics/_index.md) | ChatGPT基礎 | 概要・プラン比較、基本操作、主要機能 |
-| [Part 3](topics/part03-risk-security/_index.md) | リスク管理・セキュリティ | 情報漏洩対策、ハルシネーション対策、著作権・法的リスク |
-| [Part 4](topics/part04-prompt-engineering/_index.md) | プロンプトエンジニアリング | 基本原則、入門〜応用手法、ベストプラクティス |
-| [Part 5](topics/part05-gpts-customization/_index.md) | GPTs・カスタマイズ | GPTsの基礎、高度な活用 |
-| [Part 6](topics/part06-data-analysis/_index.md) | データ活用・分析 | データ形式、ChatGPTによる分析、RAG |
-| [Part 7](topics/part07-other-llm-tools/_index.md) | 他の主要LLM・AIツール | Gemini、Claude、Copilot、検索特化型AIなど |
-| [Part 8](topics/part08-api-development/_index.md) | API・開発連携 | OpenAI API、Function Calling、GAS連携、MCP |
-| [Part 9](topics/part09-nocode-lowcode/_index.md) | ノーコード・ローコード開発 | Dify、n8n、Make、AIエージェント |
-| [Part 10](topics/part10-business-practice/_index.md) | 業務活用・実践 | 業務切り分け、文章作成、資料作成、リサーチ |
-| [Part 11](topics/part11-ai-trends/_index.md) | AI動向・将来展望 | AI市場の動向、AGI、AI時代の働き方 |
-| [Part 12](topics/part12-uncategorized/_index.md) | 未分類 | 上記の体系に収まらない情報を一旦集約する場所 |
+| [Part 1](topics/part01-ai-llm-basics/_index.md) | AI・LLM基礎 | 全体像と歴史、LLMの仕組み、モデルの種類と選び方、特性と限界、周辺概念 |
+| [Part 2](topics/part02-chatgpt-basics/_index.md) | ChatGPT基礎 | プランとモデルの選び方、初期設定とデータ保護、記憶・文脈の管理、主要機能 |
+| [Part 3](topics/part03-risk-security/_index.md) | リスク管理・セキュリティ | 情報漏洩・データ管理、攻撃と防御、ハルシネーション対策、法務・ガバナンス |
+| [Part 4](topics/part04-prompt-engineering/_index.md) | プロンプトエンジニアリング | 基本原則、例示と誘導、思考を引き出す手法、エージェント的手法、評価と改善 |
+| [Part 5](topics/part05-gpts-customization/_index.md) | GPTs・カスタマイズ | GPTsの基礎、高度な活用、他ツールのカスタムボット |
+| [Part 6](topics/part06-data-analysis/_index.md) | データ活用・分析 | データ形式、ChatGPTによる分析、RAGの基礎、精度改善と基盤 |
+| [Part 7](topics/part07-other-llm-tools/_index.md) | 他の主要LLM・AIツール | Gemini系、対抗LLM、ローカル・オープンモデル、検索特化型AI、選び方 |
+| [Part 8](topics/part08-api-development/_index.md) | API・開発連携 | OpenAI API、API活用実践、業務ツール連携、MCP・エージェント連携 |
+| [Part 9](topics/part09-nocode-lowcode/_index.md) | ノーコード・ローコード開発 | Dify基礎、Difyワークフロー、自動化・連携ツール、AIエージェント構築 |
+| [Part 10](topics/part10-business-practice/_index.md) | 業務活用・実践 | 導入の設計、文章・コミュニケーション、資料作成、リサーチ、職種別ユースケース |
+| [Part 11](topics/part11-ai-trends/_index.md) | AI動向・将来展望 | 技術トレンド、主要プレイヤーの動向、AGIと働き方、日本における動向 |
+| [Part 12](topics/part12-uncategorized/_index.md) | 業種別 生成AI活用事例 | 製造・小売・金融・医療など業種ごとの活用事例(+未分類の受け皿) |
 
 ## 仕組み
 
 1. 毎朝ルーティンが知識体系(Part 1〜11)の未執筆トピックから10件を選定
 2. Web検索(日英)で裏取り・最新情報を確認しながら、教材品質のガイドページを執筆
-3. 体系に収まらないテーマは Part 12 に一旦集約
+3. 業種別の活用事例は Part 12 に整理(体系に収まらないテーマは Part 12 末尾の「その他・未分類」へ一旦集約)
 4. 執筆・改訂内容を [UPDATES.md](UPDATES.md) に記録して main に直接コミット
 
 詳細な運用ルールは [CLAUDE.md](CLAUDE.md) を参照。
