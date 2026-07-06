@@ -21,6 +21,7 @@ GPTs(ChatGPT)、Gem(Gemini)、Copilot Agent、Claude Projects など、
 
 ## 収録ページ
 
+- [カスタムAIの基礎(共通設計原則)](custom-ai-design-principles.md)
 - [GPTsの作り方と公開設定](gpts-creation-basics.md)
 - [Gem(Geminiのカスタムボット機能)の基本](gemini-gem-feature.md)
 - [Claude(Anthropic)の「プロジェクト」機能の基本](claude-projects-basics.md)
