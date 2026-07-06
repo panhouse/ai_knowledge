@@ -18,6 +18,8 @@ part: 6
 
 ### 第4章 RAGの精度改善と基盤
 - 精度向上テクニック、ベクトルDB、評価の考え方
+- セマンティック検索、Reranking(再ランク付け)
+- グラフRAG(GraphRAG)、Agentic RAG
 
 ## 収録ページ
 

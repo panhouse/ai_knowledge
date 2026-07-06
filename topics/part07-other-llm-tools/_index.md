@@ -15,11 +15,20 @@ part: 7
 
 ### 第3章 ローカル・オープンモデル
 - ローカルLLM、オープンウェイトの選び方
+- Ollama、Hugging Face、量子化(モデル軽量化)
 
 ### 第4章 検索特化型AI
 - Perplexity、GenSpark
 
-### 第5章 ツール横断の選び方
+### 第5章 コーディング支援AI
+- Cursor、GitHub Copilot、Cline、Windsurf
+
+### 第6章 画像・動画・音声の生成AI
+- 画像生成: Midjourney、Stable Diffusion、DALL-E 3
+- 動画生成: Sora、Runway(Gen-3)、Luma Dream Machine、Kling
+- 音声・音楽生成: Suno、Udio、ElevenLabs
+
+### 第7章 ツール横断の選び方
 - 用途別のツール選定マップ、コスト・機能比較
 
 ## 収録ページ

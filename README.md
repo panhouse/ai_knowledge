@@ -20,7 +20,7 @@
 | [Part 4](topics/part04-prompt-engineering/_index.md) | プロンプトエンジニアリング | 基本原則、例示と誘導、思考を引き出す手法、エージェント的手法、評価と改善 |
 | [Part 5](topics/part05-gpts-customization/_index.md) | GPTs・カスタマイズ | GPTsの基礎、高度な活用、他ツールのカスタムボット |
 | [Part 6](topics/part06-data-analysis/_index.md) | データ活用・分析 | データ形式、ChatGPTによる分析、RAGの基礎、精度改善と基盤 |
-| [Part 7](topics/part07-other-llm-tools/_index.md) | 他の主要LLM・AIツール | Gemini系、対抗LLM、ローカル・オープンモデル、検索特化型AI、選び方 |
+| [Part 7](topics/part07-other-llm-tools/_index.md) | 他の主要LLM・AIツール | Gemini系、対抗LLM、ローカル・オープンモデル、検索特化型AI、コーディング支援、画像・動画・音声生成、選び方 |
 | [Part 8](topics/part08-api-development/_index.md) | API・開発連携 | OpenAI API、API活用実践、業務ツール連携、MCP・エージェント連携 |
 | [Part 9](topics/part09-nocode-lowcode/_index.md) | ノーコード・ローコード開発 | Dify基礎、Difyワークフロー、自動化・連携ツール、AIエージェント構築 |
 | [Part 10](topics/part10-business-practice/_index.md) | 業務活用・実践 | 導入の設計、文章・コミュニケーション、資料作成、リサーチ、職種別ユースケース |
