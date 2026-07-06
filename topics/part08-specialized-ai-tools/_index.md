@@ -33,3 +33,4 @@ part: 8
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 - [Perplexityの基本](perplexity-basics.md)
 - [GenSparkの基本](genspark-basics.md)
+- [GitHub Copilotの基本(コーディング支援AI)](github-copilot-basics.md)

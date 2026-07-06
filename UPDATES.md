@@ -5,6 +5,9 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
+- [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): 新規執筆(コード補完→Chat→Agent Mode→自律型coding agentへの機能進化、2026年6月のAI Credits従量課金移行後の料金プラン、Cursor/Windsurf/Clineとの比較、非エンジニア向け導入判断ポイント)
+- [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): 新規執筆(パラメータ数と性能・コストのトレードオフ、SLMが選ばれる理由、マルチモーダル/VLMの業務活用、主要モデルの規模・料金比較表、モデル名から世代を読み取るコツ)
 - [機械学習の基礎(教師あり学習・教師なし学習・強化学習)](topics/part01-ai-basics/machine-learning-basics.md): 新規執筆(教師あり/教師なし/強化学習の違いと業務での使い分け、代表アルゴリズムの概要、LLMが3手法を工程ごとに組み合わせて作られている位置づけ)
 - [ディープラーニング(深層学習)の基礎](topics/part01-ai-basics/deep-learning-basics.md): 新規執筆(ニューラルネットワーク・活性化関数・誤差逆伝播・勾配消失・GPUの役割・CNN/RNNの登場、生成AIブームとGPU投資競争へのつながり)
 - [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): 新規執筆(3手法の比較表と判断フロー、OpenAIのFine-tuning API終了(2026年5月)等の最新動向、ファインチューニングは知識追加ではなく口調・形式の矯正に向くという実務上の誤解の整理)

@@ -26,3 +26,4 @@ part: 12
 - [AGI(汎用人工知能)とは何か](what-is-agi.md)
 - [生成AI時代の働き方とスキルの変化](ai-era-work-and-skills.md)
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](ai-industry-major-players-trends.md)
+- [日本における生成AI動向(採用状況・主要プレイヤー・政策)](japan-generative-ai-landscape.md)
