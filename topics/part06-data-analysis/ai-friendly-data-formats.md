@@ -66,7 +66,7 @@ ChatGPTのAdvanced Data Analysis(旧Code Interpreter)やGeminiは、CSV・TSV・
 
 ## 関連トピック
 
-- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](./chatgpt-data-analysis.md)
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](./chatgpt-advanced-data-analysis.md)
 - (今後、RAGの仕組みのページを追加予定)
 
 ## 更新履歴

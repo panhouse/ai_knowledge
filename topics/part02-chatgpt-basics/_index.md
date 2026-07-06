@@ -19,12 +19,8 @@ part: 2
 ## 収録ページ
 
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
-- [ChatGPTのモデル比較](chatgpt-model-comparison.md)
-- [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)
-- [ChatGPTの初期設定とデータ学習オプトアウト](chatgpt-initial-setup-data-opt-out.md)
-- [ChatGPTの初期設定とデータ利用のオプトアウト設定](chatgpt-initial-setup-and-data-controls.md)
-- [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-data-opt-out.md)
 - [ChatGPTのモデル一覧と使い分け](chatgpt-model-lineup.md)
+- [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)
 - [ChatGPTの初期設定とカスタム指示の書き方](chatgpt-custom-instructions.md)
 - [ChatGPTのメモリ(Memory)機能](chatgpt-memory-feature.md)
 - [ChatGPTの「プロジェクト」機能](chatgpt-projects-feature.md)

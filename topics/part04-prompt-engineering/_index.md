@@ -22,11 +22,7 @@ part: 4
 ## 収録ページ
 
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
-- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](prompting-techniques-basics.md)
-- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot.md)
-- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](zero-few-shot-and-cot-prompting.md)
-- [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
 - [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
-- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot-prompting.md)
+- [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
 - [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)
 - [ロール(役割)プロンプティング](role-prompting.md)

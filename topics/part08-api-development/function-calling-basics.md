@@ -4,7 +4,7 @@ part: 8
 chapter: 第2章 API活用実践
 tags: [API, Function Calling, Tool Use, AIエージェント]
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-07-06
 ---
 
 # Function Calling(Tool Calling)の基本
@@ -116,7 +116,7 @@ Function Callingの処理は、次の5ステップで進む。
 |---|---|---|---|
 | 機能の呼称 | Function calling(APIパラメータは`tools`) | Tool use | Function calling(呼称はOpenAIと同じ) |
 | ツール定義のキー | `tools` → `type: "function"` の中に `name` / `description` / `parameters` | `tools` の中に `name` / `description` / `input_schema` | `tools` の中の `function_declarations` に `name` / `description` / `parameters` |
-| モデルからの呼び出し要求 | レスポンスの `tool_calls`(`function.name`と`function.arguments`) | `stop_reason: "tool_use"` と `tool_use` コンテンツブロック(`name`と`input`) | `functionCall`(`name`と`args`) |
+| モデルからの呼び出し要求 | レスポンスの `tool_calls`(`function.name`と`function.arguments`。argumentsはJSON文字列なのでパースが必要) | `stop_reason: "tool_use"` と `tool_use` コンテンツブロック(`name`と`input`。inputは解析済みオブジェクト) | `functionCall`(`name`と`args`) |
 | 実行結果の返し方 | `role: "tool"` のメッセージ(`tool_call_id`を紐付け) | `tool_result` コンテンツブロック(`tool_use_id`を紐付け) | `functionResponse`(`name`と`response`) |
 | 厳密スキーマ一致の機能 | Structured Outputs / strictモード | strict tool use | 対応するSchema制約(サポート属性は限定的) |
 | 備考 | 旧`functions`/`function_call`パラメータは非推奨で`tools`/`tool_choice`に統一済み | 「Tool Search Tool」で大量ツールを検索方式で扱う機能などを追加 | Gemini 3系では関数呼び出し前の内部思考(thought signature)をSDKが自動処理 |
@@ -128,11 +128,27 @@ Function Callingの処理は、次の5ステップで進む。
 - **社内システム連携チャットボット**: 「在庫確認」「注文状況照会」「休暇残日数の確認」などの関数を用意し、チャットボットが必要に応じて社内DB・基幹システムのAPIを呼び出して回答する
 - **AIエージェントによる実行タスク**: 「カレンダーに予定を登録する」「チケット管理システムに起票する」「特定のフォーマットでメールを下書きする」といった関数をツールとして登録し、AIに実際の作業を代行させる
 - **構造化データ抽出**: 契約書や問い合わせメールから「会社名・金額・希望納期」などをツール呼び出しの引数という形で抜き出させ、そのままシステムに登録する(この用途は次章で扱うJSONモード/Structured Outputsとも重なる)
-- **ノーコードツールでの実装**: DifyやMakeなどのAIワークフローツールでも「ツール」「アクション」という名前でこの仕組みが提供されており、コードを書かずに社内APIと接続できる場合がある
+- **計算・コード実行の委譲**: 計算やコード実行など、LLMが不得意な処理を専用の関数・実行環境に委譲する
+
+### ノーコード・ローコードツールでの位置づけ
+
+コードを書かなくても、主要ツールでは「ツール」「アクション」という名前でこの仕組みが提供されている。
+
+| ツール | 対応する機能・設定場所 |
+|---|---|
+| ChatGPTのカスタムGPT | 「GPTを編集」→「設定」→「Actions」タブでOpenAPIスキーマを登録すると、Function Callingの仕組みで外部APIを呼び出す |
+| Dify | ワークフロー/エージェントの「ツール」欄で、OpenAPIスキーマからカスタムツールを登録するか、既存のツールプラグインを追加する |
+| GAS(Google Apps Script) | `UrlFetchApp`でモデルのAPIを呼び、返ってきた`tool_calls`/`tool_use`をコード側で判定して、社内API・スプレッドシート操作の関数を実行する分岐処理を自分で書く |
+| Zapier / Make / n8n | AIアプリのステップに「アクション」を渡すことで、Function Calling相当の判断をZapier/Make側の分岐ロジックが担う場合がある |
+
+### MCP(Model Context Protocol)との関係
+
+MCPはFunction Callingを置き換えるものではなく、その「配線」を標準化する共通規格である。Function Callingだけで運用すると、ツールを使うモデル・アプリの組み合わせごとに個別にスキーマを定義し、実行コードを書く必要がある(ツールが10個、連携先が3つあれば30通りの実装が発生しうる)。MCPは「MCPサーバー」としてツールを1回実装しておけば、Claude・ChatGPT・その他のMCP対応クライアントから同じ形式で呼び出せるようにする、いわば「電源の規格(Function Calling)」に対する「プラグの形(MCP)」のような位置づけ。AnthropicのAPIにも「MCPコネクタ」があり、リモートのMCPサーバーに接続してツールを呼び出せる(内部的にはTool Useの仕組みの上で動いている)。
 
 ## 注意点・よくある誤解
 
 - **モデルは引数を「それらしく」補完することがある**: 必須の情報がユーザーの発言に含まれていなくても、モデルが場所や日付などの値を勝手に推測して埋めてしまう場合がある。特に軽量・高速なモデルほどこの傾向が出やすい。関数を実行する前に、引数の値が本当に妥当か(空文字でないか、存在するIDか等)を必ずコード側で検証する。
+- **引数をそのまま実行に使うのは危険**: モデルが生成した引数をSQLクエリやシェルコマンドに無検証で渡すと、インジェクションなどのセキュリティリスクにつながる。必ずバリデーション・サニタイズを行う。
 - **間違ったツールを呼ぶ・不要な時に呼んでしまうこともある**: ツールの`description`(説明文)が曖昧だと、モデルが意図と異なるツールを選んでしまうことがある。ツールの説明は「いつ使うべきか」「いつ使うべきでないか」まで具体的に書くと精度が上がる。
 - **実行前の安全確認(Human-in-the-loop)を軽視しない**: メール送信・決済・データ削除など取り返しのつかない操作をツール化する場合、モデルの呼び出し要求をそのまま無条件に実行するのは危険。金額や対象が一定の条件を超える場合は人間の承認を挟む、実行ログを残す、権限を最小限にするなど、セキュリティ面の設計が必須になる(この観点はセキュリティ関連のトピックで別途扱う)。
 - **JSONモード/Structured Outputsとの混同**: 「決まった形式でデータを出力させたい」だけであれば、外部実行を伴わないJSONモードやStructured Outputsの方がシンプルな場合がある。外部システムへの問い合わせ・操作が必要かどうかで使い分ける。
@@ -140,13 +156,17 @@ Function Callingの処理は、次の5ステップで進む。
 
 ## 最初の一歩
 
-すでにOpenAI・Anthropic・GeminiいずれかのAPIキーを持っているなら、天気や社内FAQなど1つだけの簡単な関数(例: 都市名から固定の天気データを返すダミー関数)を`tools`として定義し、実際にモデルが「呼び出し要求」を返してくる様子を一度手元で確認してみる。
+すでにOpenAI・Anthropic・GeminiいずれかのAPIキーを持っているなら、天気や社内FAQなど1つだけの簡単な関数(例: 都市名から固定の天気データを返すダミー関数)を`tools`として定義し、実際にモデルが「呼び出し要求」を返してくる様子を一度手元で確認してみる。コードを書かずに試すなら、OpenAI PlaygroundやAnthropic Console(platform.claude.com)の画面上でツールを定義して挙動を観察するのが最短。
 
 ## 関連トピック
 
 - [OpenAI APIの基本](openai-api-basics.md)
 
 ## 更新履歴
+
+### 2026-07-06: 重複ページの統合
+- **内容**: 同一トピックの重複ページ `function-calling.md` を本ページに統合。ノーコード・ローコードツールでの位置づけ(カスタムGPTのActions/Dify/GAS/Zapier等)、MCPとの関係、引数のインジェクション対策、Playground/Consoleでの試し方を取り込んだ
+- **出典**: [OpenAI Help Center: Function Calling in the OpenAI API](https://help.openai.com/en/articles/8555517-function-calling-in-the-openai-api)、[Model Context Protocol 公式仕様(Tools)](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)、[Descope: What Is the Model Context Protocol (MCP) and How It Works](https://www.descope.com/learn/post/mcp)
 
 ### 2026-07-05: 初版執筆
 - **内容**: Function Calling(Tool Calling)の基本的な仕組み(5ステップ)、OpenAI/Anthropic/Geminiでの呼称・実装の違い、最小構成の概念コード例、業務活用例、引数のハルシネーションや実行前の安全確認などの注意点を整理

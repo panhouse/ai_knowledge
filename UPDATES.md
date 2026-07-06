@@ -7,7 +7,7 @@
 ## 2026-07-06
 - [ChatGPTの初期設定とカスタム指示の書き方](topics/part02-chatgpt-basics/chatgpt-custom-instructions.md): 新規執筆(カスタム指示の設定手順・記入例・メモリ機能との使い分け)
 - [Difyワークフローの主要ノードと組み立て方](topics/part09-nocode-lowcode/dify-workflow-nodes.md): 新規執筆(主要ノードの役割と問い合わせ分類チャットボットの組み立て例)
-- [「AIエージェント」とは何か(チャットボットとの違いと代表製品)](topics/part11-ai-trends/ai-agents-overview.md): 新規執筆(AIエージェントの定義・チャットボットとの違い・代表製品の整理)
+- [「AIエージェント」とは何か(チャットボットとの違いと代表製品)](topics/part11-ai-trends/ai-agent-basics.md): 新規執筆(AIエージェントの定義・チャットボットとの違い・代表製品の整理)
 - [ChatGPTのメモリ(Memory)機能](topics/part02-chatgpt-basics/chatgpt-memory-feature.md): 新規執筆(メモリの仕組み・確認/削除手順・カスタム指示との使い分け・Claude/Geminiとの対応関係)
 - [ChatGPTの「プロジェクト」機能](topics/part02-chatgpt-basics/chatgpt-projects-feature.md): 新規執筆(プロジェクトの仕組み・普通のチャット/カスタムGPTとの使い分け・作成手順・プラン別ファイル数上限)
 - [生成AIの著作権リスクと実務での注意点](topics/part03-risk-security/copyright-risks-in-generative-ai.md): 新規執筆(著作権法30条の4・類似性/依拠性の考え方、用途別リスク早見表、公開前チェックリスト、主要ベンダーの補償規定比較)
@@ -18,41 +18,41 @@
 - [生成AIによるプレゼン資料・ドキュメント作成の実務活用](topics/part10-business-practice/ai-presentation-and-document-creation.md): 新規執筆(ツール別の使い分け、箇条書きメモをスライド構成に変換するプロンプト例、Copilot/Gemini/Gamma等の具体手順)
 
 ## 2026-07-05
-- [トークンとは何か](topics/part01-ai-llm-basics/tokens-in-llm.md): 新規執筆
-- [ChatGPTのモデル比較](topics/part02-chatgpt-basics/chatgpt-model-comparison.md): 新規執筆
-- [生成AIのハルシネーション対策](topics/part03-risk-security/hallucination-mitigation.md): 新規執筆
-- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/prompting-techniques-basics.md): 新規執筆
+- [トークンとは何か](topics/part01-ai-llm-basics/what-are-tokens.md): 新規執筆
+- [ChatGPTのモデル比較](topics/part02-chatgpt-basics/chatgpt-model-lineup.md): 新規執筆
+- [生成AIのハルシネーション対策](topics/part03-risk-security/hallucination-and-countermeasures.md): 新規執筆
+- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-and-few-shot-prompting.md): 新規執筆
 - [GPTsのナレッジファイルとアクション連携](topics/part05-gpts-customization/gpts-knowledge-and-actions.md): 新規執筆
-- [ChatGPTのデータアナリスト機能の使い方](topics/part06-data-analysis/chatgpt-data-analyst.md): 新規執筆
+- [ChatGPTのデータアナリスト機能の使い方](topics/part06-data-analysis/chatgpt-advanced-data-analysis.md): 新規執筆
 - [NotebookLMの基本](topics/part07-other-llm-tools/notebooklm-basics.md): 新規執筆
 - [Function Calling(Tool Calling)の基本](topics/part08-api-development/function-calling-basics.md): 新規執筆
 - [生成AIによる文章作成・編集の実務活用](topics/part10-business-practice/ai-writing-and-editing.md): 新規執筆
-- [AIエージェントとは何か](topics/part11-ai-trends/ai-agents-basics.md): 新規執筆(Part 11の初回ページ)
-- [トークンとは何か:LLMの単位とコストへの影響](topics/part01-ai-llm-basics/tokens-and-tokenization.md): 新規執筆
+- [AIエージェントとは何か](topics/part11-ai-trends/ai-agent-basics.md): 新規執筆(Part 11の初回ページ)
+- [トークンとは何か:LLMの単位とコストへの影響](topics/part01-ai-llm-basics/what-are-tokens.md): 新規執筆
 - [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-opt-out.md): 新規執筆
-- [ハルシネーションの仕組みと対策](topics/part03-risk-security/hallucination-countermeasures.md): 新規執筆
-- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-few-shot-cot.md): 新規執筆
-- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part06-data-analysis/chatgpt-data-analysis.md): 新規執筆
+- [ハルシネーションの仕組みと対策](topics/part03-risk-security/hallucination-and-countermeasures.md): 新規執筆
+- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-and-few-shot-prompting.md): 新規執筆
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part06-data-analysis/chatgpt-advanced-data-analysis.md): 新規執筆
 - [Claude(Anthropic)の基本](topics/part07-other-llm-tools/claude-basics.md): 新規執筆
 - [Difyワークフローの基本](topics/part09-nocode-lowcode/dify-workflow-basics.md): 新規執筆
-- [生成AIによる文章作成・編集の実践](topics/part10-business-practice/ai-writing-editing.md): 新規執筆
+- [生成AIによる文章作成・編集の実践](topics/part10-business-practice/ai-writing-and-editing.md): 新規執筆
 - [LLMの仕組み:確率的単語予測と学習プロセス](topics/part01-ai-llm-basics/llm-mechanism-basics.md): 新規執筆
-- [ChatGPTの初期設定とデータ学習オプトアウト](topics/part02-chatgpt-basics/chatgpt-initial-setup-data-opt-out.md): 新規執筆
+- [ChatGPTの初期設定とデータ学習オプトアウト](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-opt-out.md): 新規執筆
 - [ハルシネーションとは何か・対策](topics/part03-risk-security/hallucination-and-countermeasures.md): 新規執筆
-- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-few-shot-and-cot-prompting.md): 新規執筆
-- [Function Calling(Tool Use)の基本](topics/part08-api-development/function-calling.md): 新規執筆
+- [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-and-few-shot-prompting.md): 新規執筆
+- [Function Calling(Tool Use)の基本](topics/part08-api-development/function-calling-basics.md): 新規執筆
 - [AIエージェントとは何か](topics/part11-ai-trends/ai-agent-basics.md): 新規執筆
 - [トークンとは何か](topics/part01-ai-llm-basics/what-are-tokens.md): 新規執筆
-- [ChatGPTの初期設定とデータ利用のオプトアウト設定](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-data-controls.md): 新規執筆
+- [ChatGPTの初期設定とデータ利用のオプトアウト設定](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-opt-out.md): 新規執筆
 - [Chain-of-Thought(CoT)プロンプティング](topics/part04-prompt-engineering/chain-of-thought-prompting.md): 新規執筆
-- [GPTsのナレッジファイル活用](topics/part05-gpts-customization/gpts-knowledge-files.md): 新規執筆
+- [GPTsのナレッジファイル活用](topics/part05-gpts-customization/gpts-knowledge-and-actions.md): 新規執筆
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part06-data-analysis/chatgpt-advanced-data-analysis.md): 新規執筆
-- [トークンとは何か(仕組みと数え方)](topics/part01-ai-llm-basics/token-basics.md): 新規執筆
+- [トークンとは何か(仕組みと数え方)](topics/part01-ai-llm-basics/what-are-tokens.md): 新規執筆
 - [Zero-shot・Few-shotプロンプティング](topics/part04-prompt-engineering/zero-shot-and-few-shot-prompting.md): 新規執筆
-- [LLMの仕組み:トークン化と次単語予測](topics/part01-ai-llm-basics/llm-tokenization-and-prediction.md): 新規執筆
-- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-few-shot-cot-prompting.md): 新規執筆
-- [ChatGPTのデータ分析機能(Advanced Data Analysis)](topics/part06-data-analysis/chatgpt-data-analysis-feature.md): 新規執筆
-- [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-data-opt-out.md): 新規執筆
+- [LLMの仕組み:トークン化と次単語予測](topics/part01-ai-llm-basics/llm-mechanism-basics.md): 新規執筆
+- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-and-few-shot-prompting.md): 新規執筆
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)](topics/part06-data-analysis/chatgpt-advanced-data-analysis.md): 新規執筆
+- [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-opt-out.md): 新規執筆
 - [生成AIの発展の歴史](topics/part01-ai-llm-basics/ai-history-and-evolution.md): 新規執筆
 - [ChatGPTのモデル一覧と使い分け](topics/part02-chatgpt-basics/chatgpt-model-lineup.md): 新規執筆
 - [プロンプトにおけるMarkdown活用](topics/part04-prompt-engineering/prompt-markdown-structuring.md): 新規執筆
