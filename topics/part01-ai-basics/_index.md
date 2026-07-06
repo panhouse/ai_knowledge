@@ -40,3 +40,4 @@ G検定(JDLA)のシラバスを参考に、試験対策ではなく
 - [生成AIの発展の歴史](ai-history-and-evolution.md)
 - [機械学習の基礎(教師あり学習・教師なし学習・強化学習)](machine-learning-basics.md)
 - [ディープラーニング(深層学習)の基礎](deep-learning-basics.md)
+- [AIプロジェクトの進め方と評価指標の基礎](ai-project-and-evaluation-basics.md)
