@@ -16,3 +16,4 @@ part: 11
 ## 収録ページ
 
 - [AIエージェントとは何か](ai-agents-basics.md)
+- [AIエージェントとは何か:自律型AIの基礎と代表例](ai-agents-basics.md)

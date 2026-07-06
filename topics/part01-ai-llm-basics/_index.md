@@ -20,3 +20,4 @@ part: 1
 
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
 - [トークンとは何か](tokens-in-llm.md)
+- [トークンとは何か:LLMの単位とコストへの影響](tokens-and-tokenization.md)

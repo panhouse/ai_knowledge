@@ -69,7 +69,7 @@ APIの料金は「トークン(文章を分割した単位)」ごとの従量課
 
 ## 関連トピック
 
-- (今後、Function Calling・バッチ処理・MCPに関するページを追加予定)
+- [Function Calling(Tool Use)の基本](function-calling-basics.md)
 
 ## 更新履歴
 

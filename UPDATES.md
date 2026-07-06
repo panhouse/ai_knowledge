@@ -15,6 +15,16 @@
 - [Function Calling(Tool Calling)の基本](topics/part08-api-development/function-calling-basics.md): 新規執筆
 - [生成AIによる文章作成・編集の実務活用](topics/part10-business-practice/ai-writing-and-editing.md): 新規執筆
 - [AIエージェントとは何か](topics/part11-ai-trends/ai-agents-basics.md): 新規執筆(Part 11の初回ページ)
+- [トークンとは何か:LLMの単位とコストへの影響](topics/part01-ai-llm-basics/tokens-and-tokenization.md): 新規執筆
+- [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part02-chatgpt-basics/chatgpt-initial-setup-and-opt-out.md): 新規執筆
+- [ハルシネーションの仕組みと対策](topics/part03-risk-security/hallucination-countermeasures.md): 新規執筆
+- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](topics/part04-prompt-engineering/zero-shot-few-shot-cot.md): 新規執筆
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part06-data-analysis/chatgpt-data-analysis.md): 新規執筆
+- [Claude(Anthropic)の基本](topics/part07-other-llm-tools/claude-basics.md): 新規執筆
+- [Function Calling(Tool Use)の基本](topics/part08-api-development/function-calling-basics.md): 新規執筆
+- [Difyワークフローの基本](topics/part09-nocode-lowcode/dify-workflow-basics.md): 新規執筆
+- [生成AIによる文章作成・編集の実践](topics/part10-business-practice/ai-writing-editing.md): 新規執筆
+- [AIエージェントとは何か:自律型AIの基礎と代表例](topics/part11-ai-trends/ai-agents-basics.md): 新規執筆
 
 ## 2026-07-04
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-llm-basics/ai-classification-and-generative-ai.md): 新規執筆

@@ -23,3 +23,4 @@ part: 4
 
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
 - [Zero-shot・Few-shot・Chain-of-Thoughtプロンプティング](prompting-techniques-basics.md)
+- [Zero-shot/Few-shot/Chain-of-Thoughtプロンプティング](zero-shot-few-shot-cot.md)
