@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [LLMの得意・不得意と挙動の特性](topics/part01-ai-llm-basics/llm-strengths-and-limitations.md): 新規執筆(計算ミス・ナレッジカットオフ・コンテキストウィンドウ劣化等の構造的原因と業務での信頼度早見表)
 - [ChatGPTの初期設定とカスタム指示の書き方](topics/part02-chatgpt-basics/chatgpt-custom-instructions.md): 新規執筆(カスタム指示の設定手順・記入例・メモリ機能との使い分け)
 - [Difyワークフローの主要ノードと組み立て方](topics/part09-nocode-lowcode/dify-workflow-nodes.md): 新規執筆(主要ノードの役割と問い合わせ分類チャットボットの組み立て例)
 - [「AIエージェント」とは何か(チャットボットとの違いと代表製品)](topics/part11-ai-trends/ai-agent-basics.md): 新規執筆(AIエージェントの定義・チャットボットとの違い・代表製品の整理)
