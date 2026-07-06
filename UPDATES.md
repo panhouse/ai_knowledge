@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [ChatGPTのCanvas機能](topics/part02-chatgpt-basics/chatgpt-canvas-feature.md): 新規執筆(部分編集・ショートカットコマンド・バージョン履歴、GPT-5.5系でのライティングブロック統合、Claude Artifacts/Gemini Canvas/Copilot Pagesとの比較)
 - [Tree of Thought(ToT)プロンプティング](topics/part04-prompt-engineering/tree-of-thought-prompting.md): 新規執筆(CoTとの違い、単発プロンプトでの実践パターン、推論モデル時代における位置づけ)
 - [LLMの得意・不得意と挙動の特性](topics/part01-ai-llm-basics/llm-strengths-and-limitations.md): 新規執筆(計算ミス・ナレッジカットオフ・コンテキストウィンドウ劣化等の構造的原因と業務での信頼度早見表)
 - [ChatGPTの初期設定とカスタム指示の書き方](topics/part02-chatgpt-basics/chatgpt-custom-instructions.md): 新規執筆(カスタム指示の設定手順・記入例・メモリ機能との使い分け)

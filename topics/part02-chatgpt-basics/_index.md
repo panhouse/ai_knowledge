@@ -24,3 +24,4 @@ part: 2
 - [ChatGPTの初期設定とカスタム指示の書き方](chatgpt-custom-instructions.md)
 - [ChatGPTのメモリ(Memory)機能](chatgpt-memory-feature.md)
 - [ChatGPTの「プロジェクト」機能](chatgpt-projects-feature.md)
+- [ChatGPTのCanvas機能](chatgpt-canvas-feature.md)
