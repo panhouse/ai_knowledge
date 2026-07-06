@@ -18,3 +18,7 @@ part: 6
 
 - [AIが扱いやすいデータ形式](ai-friendly-data-formats.md)
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](chatgpt-advanced-data-analysis.md)
+- [RAG(検索拡張生成)の基本](rag-basics.md)
+- [Embedding(埋め込み)とは何か](embedding-basics.md)
+- [RAGの精度を上げる方法](rag-accuracy-improvement.md)
+- [ベクトルデータベースの基本(Embeddingとの関係)](vector-database-basics.md)

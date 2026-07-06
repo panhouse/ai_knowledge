@@ -22,3 +22,6 @@ part: 1
 - [トークンとは何か](what-are-tokens.md)
 - [LLMの仕組み:確率的単語予測と学習プロセス](llm-mechanism-basics.md)
 - [生成AIの発展の歴史](ai-history-and-evolution.md)
+- [LLMの得意・不得意と挙動の特性](llm-strengths-and-limitations.md)
+- [推論モデル(Reasoning Model)とは何か](reasoning-model-basics.md)
+- [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](context-window-basics.md)

@@ -22,6 +22,13 @@ part: 4
 ## 収録ページ
 
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
+- [プロンプトテンプレート化(変数管理・再利用のコツ)](prompt-templating.md)
 - [Zero-shot・Few-shotプロンプティング](zero-shot-and-few-shot-prompting.md)
 - [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md)
 - [プロンプトにおけるMarkdown活用](prompt-markdown-structuring.md)
+- [ロール(役割)プロンプティング](role-prompting.md)
+- [Tree of Thought(ToT)プロンプティング](tree-of-thought-prompting.md)
+- [メタプロンプティング](meta-prompting.md)
+- [ReAct(Reasoning and Acting)プロンプティング](react-prompting.md)
+- [タスク分解プロンプティング(複雑な依頼をステップに分ける技法)](task-decomposition-prompting.md)
+- [点数法(ルーブリック採点)プロンプティング](rubric-scoring-prompting.md)
