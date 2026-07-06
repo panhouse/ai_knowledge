@@ -19,3 +19,4 @@ part: 8
 ## 収録ページ
 
 - [OpenAI APIの基本](openai-api-basics.md)
+- [Function Calling(Tool Calling)の基本](function-calling-basics.md)
