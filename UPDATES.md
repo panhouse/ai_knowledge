@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](topics/part02-chatgpt-basics/chatgpt-agent-mode-feature.md): 新規執筆(Operator・Deep Researchが統合された経緯、仮想ブラウザでの自律操作とTasks(スケジュール実行)の違い、対応プラン・クレジット制の利用上限、プロンプトインジェクションが「解決しきれない」とするOpenAIの見解を含む注意点)
 - [Embedding(埋め込み)とは何か](topics/part06-data-analysis/embedding-basics.md): 新規執筆(文章を意味の近さで比較できる数値ベクトルに変換する仕組み、セマンティック検索・重複検知・クラスタリングへの応用、埋め込みモデル間の非互換性という落とし穴、OpenAI/Google/Cohere等の主要モデル比較表)
 - [Zapierの基本](topics/part09-nocode-lowcode/zapier-basics.md): 新規執筆(Zapという基本単位と9,000以上のアプリ連携、Zapier Copilot・Zapier Agents(旧Zapier Central)・AI ActionsといったAI関連機能、n8n/Make/Difyとの比較表、タスク課金の料金プラン、フォーム回答のAI分類→Slack通知の実装例)
 - [Grok(xAI)の基本](topics/part07-other-llm-tools/grok-basics.md): 新規執筆(xAIのGrokの位置づけとX連携、モデレーション方針を巡る過去の炎上事例、SuperGrok等の料金プラン、ChatGPT/Claude/Geminiとの比較表、日本での利用状況)

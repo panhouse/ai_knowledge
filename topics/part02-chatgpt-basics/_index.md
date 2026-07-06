@@ -27,3 +27,4 @@ part: 2
 - [ChatGPTのCanvas機能](chatgpt-canvas-feature.md)
 - [ChatGPTのWeb検索機能](chatgpt-web-search-feature.md)
 - [ChatGPTの画像生成機能](chatgpt-image-generation-feature.md)
+- [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](chatgpt-agent-mode-feature.md)
