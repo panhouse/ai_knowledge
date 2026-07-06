@@ -5,6 +5,8 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-06
+- [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part11-ai-trends/ai-industry-major-players-trends.md): 新規執筆(OpenAI・Google・Anthropic・Microsoft・Amazon・Meta・xAIの立ち位置の違い、2026年4〜5月の主要提携(Microsoft-OpenAI・Google-Anthropic・Amazon-Anthropic・SoftBank-OpenAI・SpaceX-xAI等)、資金調達の規模感、ベンダー選定の判断軸)
+- [生成AI時代の働き方とスキルの変化](topics/part11-ai-trends/ai-era-work-and-skills.md): 新規執筆(代替されやすい/されにくい業務タスクの傾向、AI Divide(AI活用格差)の実態、プロンプトエンジニアリングの基礎リテラシー化、職種別の変化の比較表、個人のリテラシー向上策と企業のリスキリング支援制度)
 - [Makeの基本](topics/part09-nocode-lowcode/make-basics.md): 新規執筆(シナリオ・モジュールという基本単位、Integromatからのリブランド経緯、AIモジュールとMake AI Agents、n8n/Dify/Zapierとの比較表、2025年8月のオペレーション→クレジット課金変更、フォーム回答のAI分類→スプレッドシート記録の実装例)
 - [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](topics/part09-nocode-lowcode/dify-api-integration.md): 新規執筆(APIキー発行手順、chat-messages/completion-messages/workflows/runの使い分け、curl・GAS連携の実装例、埋め込みウィジェット・n8n連携との違い、APIキー管理とレート制限の注意点)
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part07-other-llm-tools/local-llm-basics.md): 新規執筆(オープンウェイトモデルを自社機材で動かす仕組み、Ollama/LM Studioの使い方、パラメータ数とPCスペックの目安、クラウドAPIとの比較表、Llama/Gemma/Mistral/DeepSeek/Qwen/gpt-ossのライセンス比較)
