@@ -19,3 +19,4 @@ part: 2
 ## 収録ページ
 
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
+- [ChatGPTの初期設定とカスタム指示の書き方](chatgpt-custom-instructions.md)
