@@ -26,3 +26,4 @@ GPTs(ChatGPT)、Gem(Gemini)、Copilot Agent、Claude Projects など、
 - [Claude(Anthropic)の「プロジェクト」機能の基本](claude-projects-basics.md)
 - [GPTsのナレッジファイルとアクション連携](gpts-knowledge-and-actions.md)
 - [GPTsにおけるプロンプトインジェクション対策](gpts-prompt-injection-defense.md)
+- [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](custom-ai-cross-tool-prompt-injection-defense.md)
