@@ -44,3 +44,4 @@ G検定(JDLA)のシラバスを参考に、試験対策ではなく
 - [ディープラーニング(深層学習)の基礎](deep-learning-basics.md)
 - [AIプロジェクトの進め方と評価指標の基礎](ai-project-and-evaluation-basics.md)
 - [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](recognition-ai-applications.md)
+- [フレーム問題・シンボルグラウンディング問題とチューリングテスト](classic-ai-problems-and-turing-test.md)
