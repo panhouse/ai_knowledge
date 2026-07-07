@@ -59,6 +59,7 @@
 - [マーケティング職における生成AI活用](topics/part11-business-practice/marketing-ai-use-cases.md): 新規執筆(マーケティング業務フェーズ別のAI活用マップと広告コピー・SNS投稿・ペルソナ設計・記事構成案のプロンプト例)
 - [企画職における生成AI活用](topics/part11-business-practice/planning-ai-use-cases.md): 新規執筆(発散/収束フェーズ別のAI活用マップ、SCAMPER法での壁打ち、TAM/SAM/SOMでの市場規模仮説作成、シナリオ分析プロンプト例)
 - [営業職における生成AI活用](topics/part11-business-practice/sales-ai-use-cases.md): 新規執筆(商談準備→提案→フォロー→CRM管理の業務フェーズ別AI活用マップ、商談解析ツール・SFA組み込みAIの整理)
+- [生成AI導入による組織構造・マネジメントへの影響](topics/part12-ai-trends/generative-ai-organizational-impact.md): 新規執筆(スパン・オブ・コントロールの拡大と組織フラット化、CAIO等の新設役職、管理職の関与度が活用度を左右するというGallup調査、日本企業のAIチャンピオン制度事例)
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
 - [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): 新規執筆(コード補完→Chat→Agent Mode→自律型coding agentへの機能進化、2026年6月のAI Credits従量課金移行後の料金プラン、Cursor/Windsurf/Clineとの比較、非エンジニア向け導入判断ポイント)
