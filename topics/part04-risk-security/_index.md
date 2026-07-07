@@ -28,3 +28,4 @@ part: 4
 - [ハルシネーションとは何か・対策](hallucination-and-countermeasures.md)
 - [生成AIの著作権リスクと実務での注意点](copyright-risks-in-generative-ai.md)
 - [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](ai-regulation-and-governance-trends.md)
+- [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](ai-content-detection-and-watermarking-basics.md)
