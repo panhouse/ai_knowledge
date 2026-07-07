@@ -14,6 +14,7 @@
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): 新規執筆(Gemini/Claude/Copilotの学習利用オプトアウトとカスタム指示の設定場所・既定値を整理し、ChatGPTを含む4ツール横断の比較表を追加)
 - [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](topics/part03-ai-chat-tools/ai-chat-tools-voice-comparison.md): 新規執筆(ChatGPT/Gemini/Claude/Copilotの音声対話機能をツール横断で比較、対応言語・無料利用可否・画面共有機能の比較表、起動手順、ロールプレイ用コピペ指示文)
 - [主要AIチャットツールのWeb検索機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-web-search-comparison.md): 新規執筆(4ツールの検索エンジン・手動切替場所・利用制限・出典表示方法の比較表、Perplexity等の検索特化型AIとの使い分け)
+- [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](topics/part04-risk-security/ai-content-detection-and-watermarking-basics.md): 新規執筆(C2PA/Content Credentialsとの来歴方式、SynthIDの透かし方式、AI検出ツールの誤判定リスクを整理)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
