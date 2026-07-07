@@ -29,3 +29,4 @@ part: 9
 - [JSONモード・Structured Outputsの基本](json-mode-structured-outputs.md)
 - [GAS(Google Apps Script)からのAI API連携](gas-ai-api-integration.md)
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](business-system-api-integration-basics.md)
+- [Google Gemini APIの基本](google-gemini-api-basics.md)
