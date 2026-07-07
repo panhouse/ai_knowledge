@@ -22,6 +22,7 @@ part: 12
 
 ## 収録ページ
 
+- [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](ai-model-trends-basics.md)
 - [AIエージェントとは何か](ai-agent-basics.md)
 - [AGI(汎用人工知能)とは何か](what-is-agi.md)
 - [生成AI時代の働き方とスキルの変化](ai-era-work-and-skills.md)
