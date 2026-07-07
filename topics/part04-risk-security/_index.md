@@ -31,3 +31,4 @@ part: 4
 - [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](ai-regulation-and-governance-trends.md)
 - [シャドーAI(無許可利用)対策](shadow-ai-basics.md)
 - [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](ai-content-detection-and-watermarking-basics.md)
+- [社内AI利用ガイドラインの作り方](ai-internal-guideline-basics.md)
