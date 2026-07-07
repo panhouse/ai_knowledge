@@ -38,6 +38,7 @@ ChatGPT / Gemini / Claude / Copilot などの汎用AIチャットツールを、
 - [ChatGPTのWeb検索機能](chatgpt-web-search-feature.md)
 - [ChatGPTの画像生成機能](chatgpt-image-generation-feature.md)
 - [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](chatgpt-agent-mode-feature.md)
+- [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](ai-chat-tools-image-generation-comparison.md)
 - [Google Geminiの基本](google-gemini-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
