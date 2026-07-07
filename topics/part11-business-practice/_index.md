@@ -35,3 +35,4 @@ part: 11
 - [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](ai-image-and-visual-creation-for-business.md)
 - [バックオフィス職における生成AI活用](backoffice-ai-use-cases.md)
 - [カスタマーサポート職における生成AI活用事例](customer-support-ai-use-cases.md)
+- [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
