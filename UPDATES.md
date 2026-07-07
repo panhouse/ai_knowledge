@@ -10,6 +10,7 @@
 - [主要AIチャットツールのCanvas/Artifacts機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-canvas-artifacts-comparison.md): 新規執筆(4ツールの表示位置・起動方法・共同編集/共有・エクスポート先・対応プランの比較表、Copilot Canvas(Project Firenze)との違い)
 - [主要AIチャットツールのデータ分析機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-data-analysis-comparison.md): 新規執筆(ChatGPT/Gemini/Claude/Copilotのデータ分析機能をツール横断で比較)
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): 新規執筆(ChatGPT/Gemini/Copilot内蔵の画像生成機能とClaudeの非対応・代替手段の横並び比較、プラン別の生成枚数・解像度・商用利用補償、日本語対応度、コピペ用プロンプトの型、専業画像生成AIとの使い分け軸)
+- [主要AIチャットツールのメモリ・プロジェクト機能比較(Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-memory-and-context-comparison.md): 新規執筆(Gemini/Claude/Microsoft Copilotのメモリ・プロジェクト系機能の横断比較)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
