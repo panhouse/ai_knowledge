@@ -22,6 +22,7 @@
 - [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): 新規執筆(無許可利用が起きる背景、ガートナージャパン等の実態調査データ、対応アプローチの比較、可視化・承認・分業の3ステップとコピペ用ガイドライン文面)
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): 新規執筆(テストケース設計、A/Bでのバリアント比較、モデルアップグレード時の再検証、軽量バージョン管理の進め方)
 - [システムプロンプトの役割と書き方](topics/part05-prompt-engineering/system-prompt-basics.md): 新規執筆(通常プロンプトとの違い、OpenAI/Anthropic/Gemini APIの実装比較、ChatGPT/Claude/Gemini/Copilot/Difyの設定場所とコピペ用テンプレート)
+- [Microsoft Copilot Studioによるカスタムエージェント作成の基本](topics/part06-custom-ai/copilot-agent-builder-basics.md): 新規執筆(エージェントビルダーとCopilot Studioの違い、作成手順、Copilotクレジット料金体系、GPTs/Gem/Claude Projectsとの対応表)
 
 ## 2026-07-06
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)

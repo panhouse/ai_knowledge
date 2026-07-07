@@ -22,6 +22,7 @@ GPTs(ChatGPT)、Gem(Gemini)、Copilot Agent、Claude Projects など、
 ## 収録ページ
 
 - [GPTsの作り方と公開設定](gpts-creation-basics.md)
+- [Microsoft Copilot Studioによるカスタムエージェント作成の基本](copilot-agent-builder-basics.md)
 - [Gem(Geminiのカスタムボット機能)の基本](gemini-gem-feature.md)
 - [Claude(Anthropic)の「プロジェクト」機能の基本](claude-projects-basics.md)
 - [GPTsのナレッジファイルとアクション連携](gpts-knowledge-and-actions.md)
