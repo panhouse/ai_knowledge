@@ -53,6 +53,9 @@
 - [カスタマーサポート職における生成AI活用事例](topics/part11-business-practice/customer-support-ai-use-cases.md): 新規執筆(RAG一次対応チャットボット、エージェントアシスト、通話要約とCRM入力、感情分析・エスカレーション、多言語対応、応対品質レビューの6場面とプロンプト例)
 - [経理・財務職における生成AI活用事例](topics/part11-business-practice/finance-accounting-ai-use-cases.md): 新規執筆(AI-OCRによる証憑データ化、予実差異コメント・契約書レビューのプロンプト例、電帳法・インボイス制度対応の留意点)
 - [人事(HR)職における生成AI活用事例](topics/part11-business-practice/hr-ai-use-cases.md): 新規執筆(求人票・面接質問・オンボーディング資料作成、社内規程Q&Aチャットボット、評価コメント支援、候補者個人情報・差別リスクの留意点)
+- [Human in the Loop(人間参加型)の業務設計](topics/part11-business-practice/human-in-the-loop-basics.md): 新規執筆(HITL/HOTL/HOOTLの自動化スペクトラム、リスク×精度による確認強度の設計、Dify Human InputノードやSlack承認フローの実装)
+
+## 2026-07-06
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
 - [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): 新規執筆(コード補完→Chat→Agent Mode→自律型coding agentへの機能進化、2026年6月のAI Credits従量課金移行後の料金プラン、Cursor/Windsurf/Clineとの比較、非エンジニア向け導入判断ポイント)
