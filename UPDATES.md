@@ -19,6 +19,7 @@
 - [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](topics/part06-custom-ai/custom-ai-cross-tool-prompt-injection-defense.md): 新規執筆(ナレッジファイル経由・接続先経由の2つの攻撃経路、GeminiJack等の実例、防御的指示文テンプレート)
 - [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](topics/part07-data-analysis/rag-evaluation-basics.md): 新規執筆(検索と生成の失敗を切り分ける評価の考え方、RAGAS/LLM-as-a-judgeの使い分け)
 - [量子化(モデル軽量化)の基本](topics/part08-specialized-ai-tools/quantization-basics.md): 新規執筆(GGUF/GPTQ/AWQ等の方式比較、Q4_K_M等の表記の読み方、PTQ/QATの違い、用途別の量子化レベル選定基準)
+- [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): 新規執筆(エージェント間連携の標準規格、MCPとの役割分担)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
