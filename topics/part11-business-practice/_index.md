@@ -33,3 +33,4 @@ part: 11
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](ai-research-and-information-gathering.md)
 - [生成AI導入の社内展開・浸透のすすめ方](ai-adoption-rollout-basics.md)
 - [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](ai-image-and-visual-creation-for-business.md)
+- [バックオフィス職における生成AI活用](backoffice-ai-use-cases.md)
