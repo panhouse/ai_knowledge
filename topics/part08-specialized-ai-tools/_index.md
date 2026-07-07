@@ -40,3 +40,4 @@ part: 8
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](huggingface-basics.md)
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](image-generation-ai-basics.md)
 - [特化型AIツールの選び方(用途別マップと比較)](specialized-ai-tools-selection-guide.md)
+- [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](video-generation-ai-basics.md)
