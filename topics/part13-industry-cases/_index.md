@@ -63,3 +63,4 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 - [宿泊・観光業における生成AI活用事例](hospitality-tourism-ai-use-cases.md)
 - [IT・情報通信における生成AI活用事例](it-telecom-ai-use-cases.md)
 - [物流・運輸における生成AI活用事例](logistics-transportation-ai-use-cases.md)
+- [製造業における生成AI活用事例](manufacturing-ai-use-cases.md)
