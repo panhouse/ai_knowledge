@@ -66,3 +66,4 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 - [製造業における生成AI活用事例](manufacturing-ai-use-cases.md)
 - [メディア・広告・エンタメにおける生成AI活用事例](media-entertainment-ai-use-cases.md)
 - [士業・専門サービスにおける生成AI活用事例](professional-services-ai-use-cases.md)
+- [公共・自治体における生成AI活用事例](public-sector-ai-use-cases.md)
