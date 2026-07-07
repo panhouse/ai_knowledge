@@ -34,3 +34,4 @@ part: 8
 - [Perplexityの基本](perplexity-basics.md)
 - [GenSparkの基本](genspark-basics.md)
 - [GitHub Copilotの基本(コーディング支援AI)](github-copilot-basics.md)
+- [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](audio-music-generation-ai-basics.md)
