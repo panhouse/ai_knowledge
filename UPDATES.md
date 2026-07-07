@@ -8,6 +8,7 @@
 - [フレーム問題・シンボルグラウンディング問題とチューリングテスト](topics/part01-ai-basics/classic-ai-problems-and-turing-test.md): 新規執筆(AI哲学の古典的3問題とAIエージェント・ハルシネーション・GPT-4.5のチューリングテスト合格報告との関連整理)
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Agent/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): 新規執筆(4社のエージェントモード・スケジュールタスクの名称・対応プラン・料金比較表、Gemini Sparkの日本未提供、「Cowork」名称の重複に関する注意点)
 - [主要AIチャットツールのCanvas/Artifacts機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-canvas-artifacts-comparison.md): 新規執筆(4ツールの表示位置・起動方法・共同編集/共有・エクスポート先・対応プランの比較表、Copilot Canvas(Project Firenze)との違い)
+- [主要AIチャットツールのデータ分析機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-data-analysis-comparison.md): 新規執筆(ChatGPT/Gemini/Claude/Copilotのデータ分析機能をツール横断で比較)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
