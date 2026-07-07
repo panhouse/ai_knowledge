@@ -40,3 +40,4 @@ part: 11
 - [人事(HR)職における生成AI活用事例](hr-ai-use-cases.md)
 - [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
 - [企画職における生成AI活用](planning-ai-use-cases.md)
+- [営業職における生成AI活用](sales-ai-use-cases.md)
