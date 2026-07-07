@@ -20,6 +20,7 @@
 - [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](topics/part07-data-analysis/rag-evaluation-basics.md): 新規執筆(検索と生成の失敗を切り分ける評価の考え方、RAGAS/LLM-as-a-judgeの使い分け)
 - [量子化(モデル軽量化)の基本](topics/part08-specialized-ai-tools/quantization-basics.md): 新規執筆(GGUF/GPTQ/AWQ等の方式比較、Q4_K_M等の表記の読み方、PTQ/QATの違い、用途別の量子化レベル選定基準)
 - [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): 新規執筆(エージェント間連携の標準規格、MCPとの役割分担)
+- [法務職における生成AI活用事例](topics/part11-business-practice/legal-ai-use-cases.md): 新規執筆(契約書レビュー・ドラフト作成・法令調査・社内FAQ・研修資料・平易な要約のプロンプト例、LegalOn Cloud/GVA assist(OLGA)/Harvey/Robin AIと汎用AIの使い分け、法律分野特有のハルシネーションと情報漏洩の注意点)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)

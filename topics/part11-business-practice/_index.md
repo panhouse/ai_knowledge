@@ -41,3 +41,4 @@ part: 11
 - [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
 - [企画職における生成AI活用](planning-ai-use-cases.md)
 - [営業職における生成AI活用](sales-ai-use-cases.md)
+- [法務職における生成AI活用事例](legal-ai-use-cases.md)
