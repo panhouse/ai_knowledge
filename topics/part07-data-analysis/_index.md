@@ -32,3 +32,4 @@ part: 7
 - [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](graphrag-and-agentic-rag-basics.md)
 - [Reranking(再ランク付け)の基本](reranking-basics.md)
 - [セマンティック検索の基本](semantic-search-basics.md)
+- [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](rag-evaluation-basics.md)

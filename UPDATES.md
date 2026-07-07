@@ -17,6 +17,7 @@
 - [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](topics/part04-risk-security/ai-content-detection-and-watermarking-basics.md): 新規執筆(C2PA/Content Credentialsとの来歴方式、SynthIDの透かし方式、AI検出ツールの誤判定リスクを整理)
 - [社内AI利用ガイドラインの作り方](topics/part04-risk-security/ai-internal-guideline-basics.md): 新規執筆(AI事業者ガイドライン第1.2版・JDLA生成AI利用ガイドライン・IPAテキスト生成AI導入運用ガイドラインの使い分け、盛り込むべき項目、コピペ用見出し骨子)
 - [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](topics/part06-custom-ai/custom-ai-cross-tool-prompt-injection-defense.md): 新規執筆(ナレッジファイル経由・接続先経由の2つの攻撃経路、GeminiJack等の実例、防御的指示文テンプレート)
+- [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](topics/part07-data-analysis/rag-evaluation-basics.md): 新規執筆(検索と生成の失敗を切り分ける評価の考え方、RAGAS/LLM-as-a-judgeの使い分け)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
