@@ -37,3 +37,4 @@ part: 8
 - [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](audio-music-generation-ai-basics.md)
 - [Clineの基本(コーディング支援AI)](cline-basics.md)
 - [Cursorの基本(AIコードエディタ)](cursor-basics.md)
+- [Hugging Faceの基本(AIモデル・データセットのハブ)](huggingface-basics.md)
