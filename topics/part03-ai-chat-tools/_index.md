@@ -28,6 +28,7 @@ ChatGPT / Gemini / Claude / Copilot などの汎用AIチャットツールを、
 
 ## 収録ページ
 
+- [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](ai-chat-tools-plan-model-comparison.md)
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
 - [ChatGPTのモデル一覧と使い分け](chatgpt-model-lineup.md)
 - [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)
