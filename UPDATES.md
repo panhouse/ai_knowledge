@@ -40,6 +40,9 @@
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): 新規執筆(主要ツールの比較・プロンプト例・料金・DALL-E3のGPT Imageへの移行を整理)
 - [特化型AIツールの選び方(用途別マップと比較)](topics/part08-specialized-ai-tools/specialized-ai-tools-selection-guide.md): 新規執筆(Part8各章の代表ツールを課題の入口から逆引きできる用途別選定マップ、カテゴリ間比較表、汎用チャットAIとの機能対応表)
 - [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](topics/part08-specialized-ai-tools/video-generation-ai-basics.md): 新規執筆(Sora/Runway/Luma Dream Machine/Kling AIの最新モデル・料金比較、Soraのサービス終了スケジュール、著作権・肖像権の注意点)
+- [Windsurfの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/windsurf-basics.md): 新規執筆(OpenAI買収交渉決裂→Google技術ライセンス→Cognition買収という経緯、2026年6月のDevin Desktopへの改称、最新料金プラン、Cursor/Copilot/Clineとの比較)
+
+## 2026-07-06
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
 - [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): 新規執筆(コード補完→Chat→Agent Mode→自律型coding agentへの機能進化、2026年6月のAI Credits従量課金移行後の料金プラン、Cursor/Windsurf/Clineとの比較、非エンジニア向け導入判断ポイント)
