@@ -24,6 +24,7 @@ part: 4
 
 - [生成AI利用における情報漏洩対策](information-leakage-prevention.md)
 - [プロンプトインジェクションとは何か(仕組みと対策)](prompt-injection-basics.md)
+- [ジェイルブレイク(脱獄)とは何か・対策](jailbreak-basics.md)
 - [ガードレール(生成AIの入出力安全対策)の基本](ai-guardrails-basics.md)
 - [ハルシネーションとは何か・対策](hallucination-and-countermeasures.md)
 - [生成AIの著作権リスクと実務での注意点](copyright-risks-in-generative-ai.md)
