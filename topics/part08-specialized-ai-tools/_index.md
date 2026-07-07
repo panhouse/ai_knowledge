@@ -42,3 +42,4 @@ part: 8
 - [特化型AIツールの選び方(用途別マップと比較)](specialized-ai-tools-selection-guide.md)
 - [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](video-generation-ai-basics.md)
 - [Windsurfの基本(コーディング支援AI)](windsurf-basics.md)
+- [量子化(モデル軽量化)の基本](quantization-basics.md)
