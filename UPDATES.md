@@ -22,6 +22,7 @@
 - [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): 新規執筆(エージェント間連携の標準規格、MCPとの役割分担)
 - [法務職における生成AI活用事例](topics/part11-business-practice/legal-ai-use-cases.md): 新規執筆(契約書レビュー・ドラフト作成・法令調査・社内FAQ・研修資料・平易な要約のプロンプト例、LegalOn Cloud/GVA assist(OLGA)/Harvey/Robin AIと汎用AIの使い分け、法律分野特有のハルシネーションと情報漏洩の注意点)
 - [研究開発(R&D)職における生成AI活用事例](topics/part11-business-practice/rd-ai-use-cases.md): 新規執筆(文献調査・実験計画補助・データ分析・特許調査・特許明細書ドラフト等の活用シーン別プロンプト例、Elicit/Consensus/SciSpaceの比較、学術論文の捏造引用増加と未公開発明情報入力による特許新規性喪失リスクを整理)
+- [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part12-ai-trends/ai-model-trends-basics.md): 新規執筆(主要ラボのモデル系譜と更新頻度、ベンチマークの読み方、乗り換え判断チェックリスト)
 
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
