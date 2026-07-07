@@ -30,3 +30,4 @@ part: 7
 - [RAGの精度を上げる方法](rag-accuracy-improvement.md)
 - [ベクトルデータベースの基本(Embeddingとの関係)](vector-database-basics.md)
 - [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](graphrag-and-agentic-rag-basics.md)
+- [Reranking(再ランク付け)の基本](reranking-basics.md)
