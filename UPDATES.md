@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-07
+- [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part12-ai-trends/multimodal-ai-trends.md): 新規執筆(GPT-4oを起点としたネイティブ・マルチモーダルの経緯、2026年のGemini Omni・Qwen3.5-Omniなど「Omniモデル」の動向、統合モデルと専門特化ツールの使い分け基準)
+
 ## 2026-07-06
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
