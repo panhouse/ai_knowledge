@@ -48,6 +48,7 @@
 - [n8n・Make・Zapierの比較と使い分け](topics/part10-nocode-lowcode/automation-tools-comparison.md): 新規執筆(料金モデル・セルフホスト可否・学習コスト・AI機能・日本語対応の横並び比較表、「うちの会社ならどれ」判断チェックリストと業務シーン別のおすすめ)
 - [ノーコードでのAIエージェント構築(Dify・n8n・Makeでの実務例)](topics/part10-nocode-lowcode/nocode-ai-agent-building.md): 新規執筆(Dify/n8n/MakeそれぞれのAIエージェント構築方法の比較、問い合わせ自動振り分け・社内ITヘルプデスクの実務例)
 - [生成AI導入の社内展開・浸透のすすめ方](topics/part11-business-practice/ai-adoption-rollout-basics.md): 新規執筆(段階的ロールアウト設計、AIチャンピオン制度の作り方、研修設計、利用ガイドラインとの連携、利用率・継続率のモニタリング)
+- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](topics/part11-business-practice/ai-image-and-visual-creation-for-business.md): 新規執筆(スライド表紙・SNSバナー・アイコンセット・製品モックアップ等、業務での画像生成活用とツール横断の商用利用条件・著作権注意点を整理)
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
 - [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): 新規執筆(コード補完→Chat→Agent Mode→自律型coding agentへの機能進化、2026年6月のAI Credits従量課金移行後の料金プラン、Cursor/Windsurf/Clineとの比較、非エンジニア向け導入判断ポイント)
