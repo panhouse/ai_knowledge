@@ -41,6 +41,7 @@
 - [特化型AIツールの選び方(用途別マップと比較)](topics/part08-specialized-ai-tools/specialized-ai-tools-selection-guide.md): 新規執筆(Part8各章の代表ツールを課題の入口から逆引きできる用途別選定マップ、カテゴリ間比較表、汎用チャットAIとの機能対応表)
 - [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](topics/part08-specialized-ai-tools/video-generation-ai-basics.md): 新規執筆(Sora/Runway/Luma Dream Machine/Kling AIの最新モデル・料金比較、Soraのサービス終了スケジュール、著作権・肖像権の注意点)
 - [Windsurfの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/windsurf-basics.md): 新規執筆(OpenAI買収交渉決裂→Google技術ライセンス→Cognition買収という経緯、2026年6月のDevin Desktopへの改称、最新料金プラン、Cursor/Copilot/Clineとの比較)
+- [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](topics/part09-api-development/business-system-api-integration-basics.md): 新規執筆(3つの連携経路の使い分け、kintone/Slack/Power Automateの実装例、Salesforceでの公式AI機能優先の考え方)
 
 ## 2026-07-06
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
