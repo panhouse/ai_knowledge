@@ -24,6 +24,7 @@ part: 12
 
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](ai-model-trends-basics.md)
 - [AIエージェントとは何か](ai-agent-basics.md)
+- [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](multimodal-ai-trends.md)
 - [AGI(汎用人工知能)とは何か](what-is-agi.md)
 - [生成AI時代の働き方とスキルの変化](ai-era-work-and-skills.md)
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](ai-industry-major-players-trends.md)
