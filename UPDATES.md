@@ -20,6 +20,7 @@
 - [ChatGPTの音声(Advanced Voice Mode)機能](topics/part03-ai-chat-tools/chatgpt-voice-mode-feature.md): 新規執筆(音声ネイティブモデルによる低遅延・感情表現、起動方法、Gemini Live/Copilot Voice/Claudeとのツール横断比較、プラン別利用制限)
 - [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): 新規執筆(DAN・Skeleton Key等のロールプレイ型、Crescendo攻撃・Many-shot jailbreaking等の段階的攻撃、エンコーディング型手口とChatGPT/Claude/Gemini/Copilotの防御機能比較)
 - [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): 新規執筆(無許可利用が起きる背景、ガートナージャパン等の実態調査データ、対応アプローチの比較、可視化・承認・分業の3ステップとコピペ用ガイドライン文面)
+- [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): 新規執筆(テストケース設計、A/Bでのバリアント比較、モデルアップグレード時の再検証、軽量バージョン管理の進め方)
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): 新規執筆(カスタム指示・ナレッジ・会話履歴の統合、容量上限とRAGモードへの自動切り替え、GPTs/Gemとの比較表、Team/Enterpriseでの共有設定)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): 新規執筆(帝国データバンクの企業導入率34.5%調査、総務省の個人利用率国際比較、NTT/富士通/NEC/ソフトバンク/Sakana AI等の国内主要プレイヤーの位置づけ、海外製汎用ツールとの使い分け判断軸)
 - [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): 新規執筆(コード補完→Chat→Agent Mode→自律型coding agentへの機能進化、2026年6月のAI Credits従量課金移行後の料金プラン、Cursor/Windsurf/Clineとの比較、非エンジニア向け導入判断ポイント)
