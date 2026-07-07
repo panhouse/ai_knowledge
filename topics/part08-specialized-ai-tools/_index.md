@@ -38,3 +38,4 @@ part: 8
 - [Clineの基本(コーディング支援AI)](cline-basics.md)
 - [Cursorの基本(AIコードエディタ)](cursor-basics.md)
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](huggingface-basics.md)
+- [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](image-generation-ai-basics.md)
