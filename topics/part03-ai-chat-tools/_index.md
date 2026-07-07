@@ -34,6 +34,7 @@ ChatGPT / Gemini / Claude / Copilot などの汎用AIチャットツールを、
 - [ChatGPTの初期設定とカスタム指示の書き方](chatgpt-custom-instructions.md)
 - [ChatGPTのメモリ(Memory)機能](chatgpt-memory-feature.md)
 - [ChatGPTの「プロジェクト」機能](chatgpt-projects-feature.md)
+- [主要AIチャットツールのメモリ・プロジェクト機能比較(Gemini・Claude・Copilot)](ai-chat-tools-memory-and-context-comparison.md)
 - [ChatGPTのCanvas機能](chatgpt-canvas-feature.md)
 - [ChatGPTのWeb検索機能](chatgpt-web-search-feature.md)
 - [ChatGPTの画像生成機能](chatgpt-image-generation-feature.md)
