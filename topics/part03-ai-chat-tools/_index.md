@@ -46,6 +46,7 @@ ChatGPT / Gemini / Claude / Copilot などの汎用AIチャットツールを、
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Agent/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)](ai-chat-tools-agent-tasks-comparison.md)
 - [主要AIチャットツールのCanvas/Artifacts機能比較(ChatGPT・Gemini・Claude・Copilot)](ai-chat-tools-canvas-artifacts-comparison.md)
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](ai-chat-tools-image-generation-comparison.md)
+- [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](ai-chat-tools-voice-comparison.md)
 - [Google Geminiの基本](google-gemini-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
