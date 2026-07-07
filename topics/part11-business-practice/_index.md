@@ -36,3 +36,4 @@ part: 11
 - [バックオフィス職における生成AI活用](backoffice-ai-use-cases.md)
 - [カスタマーサポート職における生成AI活用事例](customer-support-ai-use-cases.md)
 - [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
+- [人事(HR)職における生成AI活用事例](hr-ai-use-cases.md)
