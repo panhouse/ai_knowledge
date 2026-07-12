@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-11
+- [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
+
 ## 2026-07-07
 - [フレーム問題・シンボルグラウンディング問題とチューリングテスト](topics/part01-ai-basics/classic-ai-problems-and-turing-test.md): 新規執筆(AI哲学の古典的3問題とAIエージェント・ハルシネーション・GPT-4.5のチューリングテスト合格報告との関連整理)
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Agent/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): 新規執筆(4社のエージェントモード・スケジュールタスクの名称・対応プラン・料金比較表、Gemini Sparkの日本未提供、「Cowork」名称の重複に関する注意点)

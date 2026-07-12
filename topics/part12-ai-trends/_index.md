@@ -23,6 +23,7 @@ part: 12
 ## 収録ページ
 
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](ai-model-trends-basics.md)
+- [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](ai-benchmark-performance-research.md)
 - [AIエージェントとは何か](ai-agent-basics.md)
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](multimodal-ai-trends.md)
 - [AGI(汎用人工知能)とは何か](what-is-agi.md)
