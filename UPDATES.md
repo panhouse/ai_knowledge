@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-14
+- [品質管理・QA職における生成AI活用事例](topics/part11-business-practice/quality-assurance-ai-use-cases.md): 新規執筆(ソフトウェアQA・製造業QAの双方における生成AI活用シーンとプロンプト例)
+
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
 
