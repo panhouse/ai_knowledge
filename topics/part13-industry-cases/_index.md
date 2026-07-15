@@ -77,3 +77,4 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 - [自動車業界における生成AI活用事例](automotive-industry-ai-use-cases.md)
 - [介護業界における生成AI活用事例](eldercare-ai-use-cases.md)
 - [航空業界における生成AI活用事例](airline-industry-ai-use-cases.md)
+- [スポーツ業界における生成AI活用事例](sports-industry-ai-use-cases.md)
