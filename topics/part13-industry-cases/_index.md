@@ -73,3 +73,4 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 - [小売・流通・ECにおける生成AI活用事例](retail-ai-use-cases.md)
 - [アパレル・ファッション業界における生成AI活用事例](apparel-fashion-ai-use-cases.md)
 - [人材紹介・人材サービス業における生成AI活用事例](staffing-recruiting-industry-ai-use-cases.md)
+- [自動車業界における生成AI活用事例](automotive-industry-ai-use-cases.md)
