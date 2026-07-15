@@ -47,3 +47,4 @@ part: 11
 - [情報システム(IT)部門における生成AI活用事例](information-systems-ai-use-cases.md)
 - [購買・調達職における生成AI活用事例](procurement-ai-use-cases.md)
 - [カスタマーサクセス職における生成AI活用事例](customer-success-ai-use-cases.md)
+- [品質管理・QA職における生成AI活用事例](quality-assurance-ai-use-cases.md)
