@@ -21,6 +21,8 @@
 - [人材紹介・人材サービス業における生成AI活用事例](topics/part13-industry-cases/staffing-recruiting-industry-ai-use-cases.md): 新規執筆(人材紹介・人材サービス業がAIマッチング・スカウト文面生成・面接調整に生成AIを活用する事例)
 ## 2026-07-14
 - [自動車業界における生成AI活用事例](topics/part13-industry-cases/automotive-industry-ai-use-cases.md): 新規執筆(ディーラーの商談支援・車載AIアシスタント・整備支援・スペックシート作成の実例整理)
+## 2026-07-14
+- [介護業界における生成AI活用事例](topics/part13-industry-cases/eldercare-ai-use-cases.md): 新規執筆(介護記録・ケアプラン作成支援・家族報告・シフト作成における生成AI活用事例カタログ)
 
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
