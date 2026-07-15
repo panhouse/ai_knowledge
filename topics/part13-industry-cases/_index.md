@@ -61,6 +61,7 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 - [教育における生成AI活用事例](education-ai-use-cases.md)
 - [エネルギー・電力・インフラにおける生成AI活用事例](energy-infrastructure-ai-use-cases.md)
 - [金融・保険における生成AI活用事例](finance-insurance-ai-use-cases.md)
+- [外食・フードサービス業における生成AI活用事例](food-service-ai-use-cases.md)
 - [医療・ヘルスケアにおける生成AI活用事例](healthcare-ai-use-cases.md)
 - [宿泊・観光業における生成AI活用事例](hospitality-tourism-ai-use-cases.md)
 - [IT・情報通信における生成AI活用事例](it-telecom-ai-use-cases.md)

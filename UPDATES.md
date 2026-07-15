@@ -10,6 +10,7 @@
 - [エネルギー・電力・インフラにおける生成AI活用事例](topics/part13-industry-cases/energy-infrastructure-ai-use-cases.md): 新規執筆(Part13第12章「その他・未分類」、電力・ガス事業者の設備保全・需要予測・顧客対応・規制対応事例)
 - [購買・調達職における生成AI活用事例](topics/part11-business-practice/procurement-ai-use-cases.md): 新規執筆(RFP/RFQ作成、見積比較、サプライヤーリスク評価、契約一次レビュー、価格交渉準備、支出分析のプロンプト例と主要調達プラットフォームのAI機能比較)
 - [農業における生成AI活用事例](topics/part13-industry-cases/agriculture-ai-use-cases.md): 新規執筆(Part13第12章その他・未分類。営農相談チャットボット・病害虫診断の説明生成・補助金申請書類ドラフト・需要予測レポート・EC商品説明文の5領域を整理)
+- [外食・フードサービス業における生成AI活用事例](topics/part13-industry-cases/food-service-ai-use-cases.md): 新規執筆(電話予約対応・需要予測に基づく発注量算出・シフト作成・メニュー開発・多言語メニュー/口コミ返信/SNS販促文の5領域を整理)
 
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
