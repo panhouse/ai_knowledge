@@ -27,6 +27,8 @@
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part11-business-practice/product-manager-ai-use-cases.md): 新規執筆(PRDドラフト・フィードバック要約・ユーザーストーリー作成など、企画職と切り分けたPdM特有のAI活用シーンを整理)
 ## 2026-07-15
 - [秘書・エグゼクティブアシスタント職における生成AI活用事例](topics/part11-business-practice/executive-assistant-ai-use-cases.md): 新規執筆(日程調整メール・AI日程調整アシスタント・会議前ブリーフィング・受信トレイのトリアージ・お礼状・出張旅程整理・議事録フォローアップ)
+## 2026-07-15
+- [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part11-business-practice/data-analyst-ai-use-cases.md): 新規執筆(text-to-SQL・ダッシュボードのナレーティブ要約・BIツール組み込みAI機能の比較)
 
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
