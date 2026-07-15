@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-15
+- [保育・幼児教育における生成AI活用事例](topics/part13-industry-cases/childcare-early-education-ai-use-cases.md): 新規執筆(保育記録要約・連絡帳/おたより作成・指導案下書き・シフト作成のAI活用事例カタログ)
+
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
 
