@@ -58,6 +58,7 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 (まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
 - [建設・不動産における生成AI活用事例](construction-realestate-ai-use-cases.md)
 - [教育における生成AI活用事例](education-ai-use-cases.md)
+- [エネルギー・電力・インフラにおける生成AI活用事例](energy-infrastructure-ai-use-cases.md)
 - [金融・保険における生成AI活用事例](finance-insurance-ai-use-cases.md)
 - [医療・ヘルスケアにおける生成AI活用事例](healthcare-ai-use-cases.md)
 - [宿泊・観光業における生成AI活用事例](hospitality-tourism-ai-use-cases.md)

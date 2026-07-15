@@ -7,6 +7,7 @@
 ## 2026-07-13
 - [情報システム(IT)部門における生成AI活用事例](topics/part11-business-practice/information-systems-ai-use-cases.md): 新規執筆(社内ヘルプデスクのRAG型FAQボット化、障害対応のログ解析・インシデント要約、シャドーAIの可視化・OAuth棚卸し、手順書自動生成、ライセンス・コスト管理を整理)
 - [広報・PR職における生成AI活用事例](topics/part11-business-practice/pr-communications-ai-use-cases.md): 新規執筆(プレスリリース・Q&A作成・メディアモニタリング・危機管理広報・IR資料等のプロンプト例とマーケティング職とのすみ分け)
+- [エネルギー・電力・インフラにおける生成AI活用事例](topics/part13-industry-cases/energy-infrastructure-ai-use-cases.md): 新規執筆(Part13第12章「その他・未分類」、電力・ガス事業者の設備保全・需要予測・顧客対応・規制対応事例)
 
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
