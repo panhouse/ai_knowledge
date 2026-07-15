@@ -49,3 +49,4 @@ part: 11
 - [カスタマーサクセス職における生成AI活用事例](customer-success-ai-use-cases.md)
 - [品質管理・QA職における生成AI活用事例](quality-assurance-ai-use-cases.md)
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](product-manager-ai-use-cases.md)
+- [秘書・エグゼクティブアシスタント職における生成AI活用事例](executive-assistant-ai-use-cases.md)
