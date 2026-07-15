@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-15
+- [スポーツ業界における生成AI活用事例](topics/part13-industry-cases/sports-industry-ai-use-cases.md): 新規執筆(MLB Statcast・NBA Inside the Game・Wimbledon×IBM watsonx・楽天AI解説者・Jリーグ/NPB/Bリーグのダイナミックプライシング・ロボット審判/SAOTなどスポーツ業界の実名事例を整理)
+
 ## 2026-07-11
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 未整形のまま放置されていたベンチマーク調査メモを教材ページの型に再構成し、2026年7月時点の最新スコアに更新
 
