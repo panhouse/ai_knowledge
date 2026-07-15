@@ -39,6 +39,7 @@ part: 11
 - [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
 - [人事(HR)職における生成AI活用事例](hr-ai-use-cases.md)
 - [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
+- [広報・PR職における生成AI活用事例](pr-communications-ai-use-cases.md)
 - [企画職における生成AI活用](planning-ai-use-cases.md)
 - [営業職における生成AI活用](sales-ai-use-cases.md)
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
