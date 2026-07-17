@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-17
+- [美容業界(理美容・エステ・ネイル)における生成AI活用事例](topics/part13-industry-cases/beauty-industry-ai-use-cases.md): 新規執筆(ヘアスタイル・ネイルデザインの提案画像生成、LINE×AIチャットボット予約対応、SNS投稿文生成、口コミ返信、肌診断・パーソナライズ、インバウンド多言語対応を整理)
+
 ## 2026-07-13
 - [情報システム(IT)部門における生成AI活用事例](topics/part11-business-practice/information-systems-ai-use-cases.md): 新規執筆(社内ヘルプデスクのRAG型FAQボット化、障害対応のログ解析・インシデント要約、シャドーAIの可視化・OAuth棚卸し、手順書自動生成、ライセンス・コスト管理を整理)
 - [広報・PR職における生成AI活用事例](topics/part11-business-practice/pr-communications-ai-use-cases.md): 新規執筆(プレスリリース・Q&A作成・メディアモニタリング・危機管理広報・IR資料等のプロンプト例とマーケティング職とのすみ分け)
