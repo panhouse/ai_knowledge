@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-17
+- [総務職における生成AI活用事例](topics/part11-business-practice/general-affairs-ai-use-cases.md): 新規執筆(会議室・備品管理のFAQボット化、契約書ファイリング・更新期限管理、来客・郵便物対応の自動化、防災マニュアル改訂などを整理)
+
 ## 2026-07-13
 - [情報システム(IT)部門における生成AI活用事例](topics/part11-business-practice/information-systems-ai-use-cases.md): 新規執筆(社内ヘルプデスクのRAG型FAQボット化、障害対応のログ解析・インシデント要約、シャドーAIの可視化・OAuth棚卸し、手順書自動生成、ライセンス・コスト管理を整理)
 - [広報・PR職における生成AI活用事例](topics/part11-business-practice/pr-communications-ai-use-cases.md): 新規執筆(プレスリリース・Q&A作成・メディアモニタリング・危機管理広報・IR資料等のプロンプト例とマーケティング職とのすみ分け)
