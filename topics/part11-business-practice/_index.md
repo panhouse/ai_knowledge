@@ -52,3 +52,7 @@ part: 11
 - [秘書・エグゼクティブアシスタント職における生成AI活用事例](executive-assistant-ai-use-cases.md)
 - [データアナリスト/BIアナリスト職における生成AI活用事例](data-analyst-ai-use-cases.md)
 - [内部監査職における生成AI活用事例](internal-audit-ai-use-cases.md)
+- [総務職における生成AI活用事例](general-affairs-ai-use-cases.md)
+- [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](information-security-ai-use-cases.md)
+- [デザイナー・クリエイティブ職における生成AI活用事例](designer-creative-ai-use-cases.md)
+- [翻訳・通訳担当における生成AI活用事例](translation-interpretation-ai-use-cases.md)
