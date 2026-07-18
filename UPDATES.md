@@ -6,6 +6,7 @@
 
 ## 2026-07-17
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part11-business-practice/designer-creative-ai-use-cases.md): 新規執筆(ムードボード・Figma AI・ワイヤーフレーム下書き・フィードバック整理・クライアント向けナラティブなどデザイナーの制作フロー特有の活用事例を整理)
+- [翻訳・通訳担当における生成AI活用事例](topics/part11-business-practice/translation-interpretation-ai-use-cases.md): 新規執筆(DeepL用語集・ポストエディット・Zoom/Teams/Google Meetのリアルタイム通訳機能・字幕/吹き替えツールを整理)
 
 ## 2026-07-13
 - [情報システム(IT)部門における生成AI活用事例](topics/part11-business-practice/information-systems-ai-use-cases.md): 新規執筆(社内ヘルプデスクのRAG型FAQボット化、障害対応のログ解析・インシデント要約、シャドーAIの可視化・OAuth棚卸し、手順書自動生成、ライセンス・コスト管理を整理)
