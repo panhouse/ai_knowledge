@@ -51,3 +51,4 @@ part: 11
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](product-manager-ai-use-cases.md)
 - [秘書・エグゼクティブアシスタント職における生成AI活用事例](executive-assistant-ai-use-cases.md)
 - [データアナリスト/BIアナリスト職における生成AI活用事例](data-analyst-ai-use-cases.md)
+- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](production-management-scm-ai-use-cases.md)
