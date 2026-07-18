@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-18
+- [海運・港湾業界における生成AI活用事例](topics/part13-industry-cases/maritime-shipping-ai-use-cases.md): 新規執筆(船舶運航最適化・港湾ターミナル自動化・通関書類作成支援を物流・運輸ページと切り分けて整理)
 - [NPO・非営利団体における生成AI活用事例](topics/part13-industry-cases/npo-nonprofit-ai-use-cases.md): 新規執筆(助成金申請書作成・ファンドレイジング・多言語相談対応・議事録自動化と非営利団体向け割引プログラムを整理)
 - [化学・素材業界における生成AI活用事例](topics/part13-industry-cases/chemical-materials-industry-ai-use-cases.md): 新規執筆(マテリアルズインフォマティクスによる材料開発と、三井化学の生成AIによる新規用途探索・特許検索の事例を整理)
 - [製薬業界における生成AI活用事例](topics/part13-industry-cases/pharmaceutical-industry-ai-use-cases.md): 新規執筆(創薬・治験文書作成支援・MR/MSLの実務における生成AI活用を医療・ヘルスケアページと切り分けて整理)
