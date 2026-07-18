@@ -79,3 +79,4 @@ Part 1〜12 が「概念・手法の教科書」であるのに対し、ここ�
 - [航空業界における生成AI活用事例](airline-industry-ai-use-cases.md)
 - [スポーツ業界における生成AI活用事例](sports-industry-ai-use-cases.md)
 - [鉄道業界における生成AI活用事例](railway-industry-ai-use-cases.md)
+- [食品製造業における生成AI活用事例](food-manufacturing-ai-use-cases.md)
