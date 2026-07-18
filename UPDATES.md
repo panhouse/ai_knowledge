@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-18
+- [NPO・非営利団体における生成AI活用事例](topics/part13-industry-cases/npo-nonprofit-ai-use-cases.md): 新規執筆(助成金申請書作成・ファンドレイジング・多言語相談対応・議事録自動化と非営利団体向け割引プログラムを整理)
 - [化学・素材業界における生成AI活用事例](topics/part13-industry-cases/chemical-materials-industry-ai-use-cases.md): 新規執筆(マテリアルズインフォマティクスによる材料開発と、三井化学の生成AIによる新規用途探索・特許検索の事例を整理)
 - [製薬業界における生成AI活用事例](topics/part13-industry-cases/pharmaceutical-industry-ai-use-cases.md): 新規執筆(創薬・治験文書作成支援・MR/MSLの実務における生成AI活用を医療・ヘルスケアページと切り分けて整理)
 - [ゲーム業界における生成AI活用事例](topics/part13-industry-cases/game-industry-ai-use-cases.md): 新規執筆(NPC対話生成・プロシージャル生成・QAテスト自動化・ローカライズの4領域とGDC 2026調査による業界の否定的な受け止め方を整理)
