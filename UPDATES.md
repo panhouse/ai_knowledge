@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-18
+- [ゲーム業界における生成AI活用事例](topics/part13-industry-cases/game-industry-ai-use-cases.md): 新規執筆(NPC対話生成・プロシージャル生成・QAテスト自動化・ローカライズの4領域とGDC 2026調査による業界の否定的な受け止め方を整理)
 - [人材育成・研修(L&D)担当における生成AI活用事例](topics/part11-business-practice/learning-development-ai-use-cases.md): 新規執筆(研修構成案・ナレーション原稿・ロールプレイ台本のプロンプト例、AIロープレツールとの使い分けを整理)
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part11-business-practice/production-management-scm-ai-use-cases.md): 新規執筆(専用SCM/需要予測AIと汎用チャットAIの使い分け、特急対応シミュレーション・予実差異コメント・サプライヤーリスクスクリーニングのプロンプト例を整理)
 ## 2026-07-17
