@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-17
+- [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part11-business-practice/information-security-ai-use-cases.md): 新規執筆(アラート一次トリアージ、フィッシング解析、インシデントレポート作成、脆弱性優先順位付け、意識向上研修の5シーンとSecurity Copilot等のAI SOCツール比較を整理)
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part11-business-practice/designer-creative-ai-use-cases.md): 新規執筆(ムードボード・Figma AI・ワイヤーフレーム下書き・フィードバック整理・クライアント向けナラティブなどデザイナーの制作フロー特有の活用事例を整理)
 - [翻訳・通訳担当における生成AI活用事例](topics/part11-business-practice/translation-interpretation-ai-use-cases.md): 新規執筆(DeepL用語集・ポストエディット・Zoom/Teams/Google Meetのリアルタイム通訳機能・字幕/吹き替えツールを整理)
 
