@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-17
+- [鉄道業界における生成AI活用事例](topics/part13-industry-cases/railway-industry-ai-use-cases.md): 新規執筆(設備・車両の予知保全、インシデント復旧支援、みどりの窓口・チャットボット、多言語対応、ダイヤ最適化、社内マニュアルの6領域を整理)
 - [内部監査職における生成AI活用事例](topics/part11-business-practice/internal-audit-ai-use-cases.md): 新規執筆(リスクベース監査計画・証跡サンプリング・監査報告書ドラフト・J-SOX文書化・継続的監査/異常検知と、監査対象部門と同じAIベンダーを使う独立性リスクを整理)
 - [総務職における生成AI活用事例](topics/part11-business-practice/general-affairs-ai-use-cases.md): 新規執筆(会議室・備品管理のFAQボット化、契約書ファイリング・更新期限管理、来客・郵便物対応の自動化、防災マニュアル改訂などを整理)
 - [食品製造業における生成AI活用事例](topics/part13-industry-cases/food-manufacturing-ai-use-cases.md): 新規執筆(異物検査AI・需要予測・新商品開発・食品表示/HACCP文書ドラフト作成を整理)
