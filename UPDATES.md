@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-17
+- [内部監査職における生成AI活用事例](topics/part11-business-practice/internal-audit-ai-use-cases.md): 新規執筆(リスクベース監査計画・証跡サンプリング・監査報告書ドラフト・J-SOX文書化・継続的監査/異常検知と、監査対象部門と同じAIベンダーを使う独立性リスクを整理)
 - [総務職における生成AI活用事例](topics/part11-business-practice/general-affairs-ai-use-cases.md): 新規執筆(会議室・備品管理のFAQボット化、契約書ファイリング・更新期限管理、来客・郵便物対応の自動化、防災マニュアル改訂などを整理)
 - [食品製造業における生成AI活用事例](topics/part13-industry-cases/food-manufacturing-ai-use-cases.md): 新規執筆(異物検査AI・需要予測・新商品開発・食品表示/HACCP文書ドラフト作成を整理)
 - [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part11-business-practice/information-security-ai-use-cases.md): 新規執筆(アラート一次トリアージ、フィッシング解析、インシデントレポート作成、脆弱性優先順位付け、意識向上研修の5シーンとSecurity Copilot等のAI SOCツール比較を整理)
