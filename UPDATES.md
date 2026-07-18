@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-17
+- [出版・印刷業における生成AI活用事例](topics/part13-industry-cases/publishing-printing-ai-use-cases.md): 新規執筆(原稿校正・海外ライセンス向けマンガ翻訳・表紙デザイン生成・印刷会社の校正審査支援・電子書籍アクセシビリティ・AIナレーションオーディオブックを整理)
 - [半導体・電機業界における生成AI活用事例](topics/part13-industry-cases/semiconductor-electronics-ai-use-cases.md): 新規執筆(Part13第1章 製造業。チップ設計支援(EDA AIツール)・ウェハ欠陥検出・ファブ予知保全・データシート生成・サプライチェーン枯渇予測・設計データの機密保護を整理)
 - [鉄道業界における生成AI活用事例](topics/part13-industry-cases/railway-industry-ai-use-cases.md): 新規執筆(設備・車両の予知保全、インシデント復旧支援、みどりの窓口・チャットボット、多言語対応、ダイヤ最適化、社内マニュアルの6領域を整理)
 - [内部監査職における生成AI活用事例](topics/part11-business-practice/internal-audit-ai-use-cases.md): 新規執筆(リスクベース監査計画・証跡サンプリング・監査報告書ドラフト・J-SOX文書化・継続的監査/異常検知と、監査対象部門と同じAIベンダーを使う独立性リスクを整理)
