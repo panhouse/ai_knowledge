@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-18
+- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part11-business-practice/production-management-scm-ai-use-cases.md): 新規執筆(専用SCM/需要予測AIと汎用チャットAIの使い分け、特急対応シミュレーション・予実差異コメント・サプライヤーリスクスクリーニングのプロンプト例を整理)
 ## 2026-07-17
 - [美容業界(理美容・エステ・ネイル)における生成AI活用事例](topics/part13-industry-cases/beauty-industry-ai-use-cases.md): 新規執筆(ヘアスタイル・ネイルデザインの提案画像生成、LINE×AIチャットボット予約対応、SNS投稿文生成、口コミ返信、肌診断・パーソナライズ、インバウンド多言語対応を整理)
 - [出版・印刷業における生成AI活用事例](topics/part13-industry-cases/publishing-printing-ai-use-cases.md): 新規執筆(原稿校正・海外ライセンス向けマンガ翻訳・表紙デザイン生成・印刷会社の校正審査支援・電子書籍アクセシビリティ・AIナレーションオーディオブックを整理)
