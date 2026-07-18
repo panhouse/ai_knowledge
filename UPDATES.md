@@ -6,6 +6,22 @@
 
 ## 2026-07-18
 - [NPO・非営利団体における生成AI活用事例](topics/part13-industry-cases/npo-nonprofit-ai-use-cases.md): 新規執筆(助成金申請書作成・ファンドレイジング・多言語相談対応・議事録自動化と非営利団体向け割引プログラムを整理)
+- [化学・素材業界における生成AI活用事例](topics/part13-industry-cases/chemical-materials-industry-ai-use-cases.md): 新規執筆(マテリアルズインフォマティクスによる材料開発と、三井化学の生成AIによる新規用途探索・特許検索の事例を整理)
+- [製薬業界における生成AI活用事例](topics/part13-industry-cases/pharmaceutical-industry-ai-use-cases.md): 新規執筆(創薬・治験文書作成支援・MR/MSLの実務における生成AI活用を医療・ヘルスケアページと切り分けて整理)
+- [ゲーム業界における生成AI活用事例](topics/part13-industry-cases/game-industry-ai-use-cases.md): 新規執筆(NPC対話生成・プロシージャル生成・QAテスト自動化・ローカライズの4領域とGDC 2026調査による業界の否定的な受け止め方を整理)
+- [人材育成・研修(L&D)担当における生成AI活用事例](topics/part11-business-practice/learning-development-ai-use-cases.md): 新規執筆(研修構成案・ナレーション原稿・ロールプレイ台本のプロンプト例、AIロープレツールとの使い分けを整理)
+- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part11-business-practice/production-management-scm-ai-use-cases.md): 新規執筆(専用SCM/需要予測AIと汎用チャットAIの使い分け、特急対応シミュレーション・予実差異コメント・サプライヤーリスクスクリーニングのプロンプト例を整理)
+## 2026-07-17
+- [美容業界(理美容・エステ・ネイル)における生成AI活用事例](topics/part13-industry-cases/beauty-industry-ai-use-cases.md): 新規執筆(ヘアスタイル・ネイルデザインの提案画像生成、LINE×AIチャットボット予約対応、SNS投稿文生成、口コミ返信、肌診断・パーソナライズ、インバウンド多言語対応を整理)
+- [出版・印刷業における生成AI活用事例](topics/part13-industry-cases/publishing-printing-ai-use-cases.md): 新規執筆(原稿校正・海外ライセンス向けマンガ翻訳・表紙デザイン生成・印刷会社の校正審査支援・電子書籍アクセシビリティ・AIナレーションオーディオブックを整理)
+- [半導体・電機業界における生成AI活用事例](topics/part13-industry-cases/semiconductor-electronics-ai-use-cases.md): 新規執筆(Part13第1章 製造業。チップ設計支援(EDA AIツール)・ウェハ欠陥検出・ファブ予知保全・データシート生成・サプライチェーン枯渇予測・設計データの機密保護を整理)
+- [鉄道業界における生成AI活用事例](topics/part13-industry-cases/railway-industry-ai-use-cases.md): 新規執筆(設備・車両の予知保全、インシデント復旧支援、みどりの窓口・チャットボット、多言語対応、ダイヤ最適化、社内マニュアルの6領域を整理)
+- [内部監査職における生成AI活用事例](topics/part11-business-practice/internal-audit-ai-use-cases.md): 新規執筆(リスクベース監査計画・証跡サンプリング・監査報告書ドラフト・J-SOX文書化・継続的監査/異常検知と、監査対象部門と同じAIベンダーを使う独立性リスクを整理)
+- [総務職における生成AI活用事例](topics/part11-business-practice/general-affairs-ai-use-cases.md): 新規執筆(会議室・備品管理のFAQボット化、契約書ファイリング・更新期限管理、来客・郵便物対応の自動化、防災マニュアル改訂などを整理)
+- [食品製造業における生成AI活用事例](topics/part13-industry-cases/food-manufacturing-ai-use-cases.md): 新規執筆(異物検査AI・需要予測・新商品開発・食品表示/HACCP文書ドラフト作成を整理)
+- [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part11-business-practice/information-security-ai-use-cases.md): 新規執筆(アラート一次トリアージ、フィッシング解析、インシデントレポート作成、脆弱性優先順位付け、意識向上研修の5シーンとSecurity Copilot等のAI SOCツール比較を整理)
+- [デザイナー・クリエイティブ職における生成AI活用事例](topics/part11-business-practice/designer-creative-ai-use-cases.md): 新規執筆(ムードボード・Figma AI・ワイヤーフレーム下書き・フィードバック整理・クライアント向けナラティブなどデザイナーの制作フロー特有の活用事例を整理)
+- [翻訳・通訳担当における生成AI活用事例](topics/part11-business-practice/translation-interpretation-ai-use-cases.md): 新規執筆(DeepL用語集・ポストエディット・Zoom/Teams/Google Meetのリアルタイム通訳機能・字幕/吹き替えツールを整理)
 
 ## 2026-07-13
 - [情報システム(IT)部門における生成AI活用事例](topics/part11-business-practice/information-systems-ai-use-cases.md): 新規執筆(社内ヘルプデスクのRAG型FAQボット化、障害対応のログ解析・インシデント要約、シャドーAIの可視化・OAuth棚卸し、手順書自動生成、ライセンス・コスト管理を整理)
@@ -16,27 +32,17 @@
 - [外食・フードサービス業における生成AI活用事例](topics/part13-industry-cases/food-service-ai-use-cases.md): 新規執筆(電話予約対応・需要予測に基づく発注量算出・シフト作成・メニュー開発・多言語メニュー/口コミ返信/SNS販促文の5領域を整理)
 ## 2026-07-14
 - [カスタマーサクセス職における生成AI活用事例](topics/part11-business-practice/customer-success-ai-use-cases.md): 新規執筆(ヘルススコア算出・解約予兆検知・QBR資料作成などCS特有の活用シーンとGainsight/ChurnZero等の比較を整理)
-## 2026-07-14
 - [品質管理・QA職における生成AI活用事例](topics/part11-business-practice/quality-assurance-ai-use-cases.md): 新規執筆(ソフトウェアQA・製造業QAの双方における生成AI活用シーンとプロンプト例)
-## 2026-07-14
 - [アパレル・ファッション業界における生成AI活用事例](topics/part13-industry-cases/apparel-fashion-ai-use-cases.md): 新規執筆(トレンド予測・AI生成モデル画像・バーチャル試着・パーソナルスタイリングの業界特有事例を整理)
-## 2026-07-14
 - [人材紹介・人材サービス業における生成AI活用事例](topics/part13-industry-cases/staffing-recruiting-industry-ai-use-cases.md): 新規執筆(人材紹介・人材サービス業がAIマッチング・スカウト文面生成・面接調整に生成AIを活用する事例)
-## 2026-07-14
 - [自動車業界における生成AI活用事例](topics/part13-industry-cases/automotive-industry-ai-use-cases.md): 新規執筆(ディーラーの商談支援・車載AIアシスタント・整備支援・スペックシート作成の実例整理)
-## 2026-07-14
 - [介護業界における生成AI活用事例](topics/part13-industry-cases/eldercare-ai-use-cases.md): 新規執筆(介護記録・ケアプラン作成支援・家族報告・シフト作成における生成AI活用事例カタログ)
 ## 2026-07-15
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part11-business-practice/product-manager-ai-use-cases.md): 新規執筆(PRDドラフト・フィードバック要約・ユーザーストーリー作成など、企画職と切り分けたPdM特有のAI活用シーンを整理)
-## 2026-07-15
 - [秘書・エグゼクティブアシスタント職における生成AI活用事例](topics/part11-business-practice/executive-assistant-ai-use-cases.md): 新規執筆(日程調整メール・AI日程調整アシスタント・会議前ブリーフィング・受信トレイのトリアージ・お礼状・出張旅程整理・議事録フォローアップ)
-## 2026-07-15
 - [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part11-business-practice/data-analyst-ai-use-cases.md): 新規執筆(text-to-SQL・ダッシュボードのナレーティブ要約・BIツール組み込みAI機能の比較)
-## 2026-07-15
 - [航空業界における生成AI活用事例](topics/part13-industry-cases/airline-industry-ai-use-cases.md): 新規執筆(顧客対応・収益管理・整備・クルースケジューリング・混雑予測の業種別事例カタログ)
-## 2026-07-15
 - [保育・幼児教育における生成AI活用事例](topics/part13-industry-cases/childcare-early-education-ai-use-cases.md): 新規執筆(保育記録要約・連絡帳/おたより作成・指導案下書き・シフト作成のAI活用事例カタログ)
-## 2026-07-15
 - [スポーツ業界における生成AI活用事例](topics/part13-industry-cases/sports-industry-ai-use-cases.md): 新規執筆(MLB Statcast・NBA Inside the Game・Wimbledon×IBM watsonx・楽天AI解説者・Jリーグ/NPB/Bリーグのダイナミックプライシング・ロボット審判/SAOTなどスポーツ業界の実名事例を整理)
 
 ## 2026-07-11
@@ -66,16 +72,13 @@
 ## 2026-07-06
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 新規執筆(ダートマス会議・フレーム問題・エキスパートシステム・シンボルグラウンディング問題による2度のAIの冬と、生成AIブームへの教訓)
 
-## 2026-07-06
 - [AIプロジェクトの進め方と評価指標の基礎](topics/part01-ai-basics/ai-project-and-evaluation-basics.md): 新規執筆(教師データ・アノテーションの内製/外注、過学習の原因と対策、正解率/適合率/再現率/F1の業務目線での使い分け、PoCの進め方とよくある失敗パターン)
 - [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](topics/part01-ai-basics/recognition-ai-applications.md): 新規執筆(画像認識の4タスク・音声認識・従来型NLP・異常検知・需要予測の仕組みと業務活用事例、生成AIとの使い分け)
 - [「強いAI・弱いAI」とAI効果、特化型/汎用型AIの基本](topics/part01-ai-basics/strong-weak-ai-and-ai-effect-basics.md): 新規執筆(サールの中国語の部屋論法、AI効果、特化型/汎用型AIの整理と現行LLMの位置づけ)
 
-## 2026-07-06
 - [Transformer・Attention機構とスケーリング則の基本](topics/part02-llm-basics/transformer-attention-and-scaling-laws.md): 新規執筆(RNN/LSTMの限界とAttention機構による並列処理・長文脈対応、Self-Attention/Multi-Head Attention/Positional Encodingの役割、Chinchilla則とテスト時計算という第4の軸、2026年時点の「スケーリングの壁」論争)
 - [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): 新規執筆(4ツールの無料・個人有料・法人プランの料金とモデルラインナップの横並び比較、乗り換え判断基準)
 
-## 2026-07-06
 - [ChatGPTの音声(Advanced Voice Mode)機能](topics/part03-ai-chat-tools/chatgpt-voice-mode-feature.md): 新規執筆(音声ネイティブモデルによる低遅延・感情表現、起動方法、Gemini Live/Copilot Voice/Claudeとのツール横断比較、プラン別利用制限)
 - [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): 新規執筆(DAN・Skeleton Key等のロールプレイ型、Crescendo攻撃・Many-shot jailbreaking等の段階的攻撃、エンコーディング型手口とChatGPT/Claude/Gemini/Copilotの防御機能比較)
 - [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): 新規執筆(無許可利用が起きる背景、ガートナージャパン等の実態調査データ、対応アプローチの比較、可視化・承認・分業の3ステップとコピペ用ガイドライン文面)
@@ -83,17 +86,14 @@
 - [システムプロンプトの役割と書き方](topics/part05-prompt-engineering/system-prompt-basics.md): 新規執筆(通常プロンプトとの違い、OpenAI/Anthropic/Gemini APIの実装比較、ChatGPT/Claude/Gemini/Copilot/Difyの設定場所とコピペ用テンプレート)
 - [Microsoft Copilot Studioによるカスタムエージェント作成の基本](topics/part06-custom-ai/copilot-agent-builder-basics.md): 新規執筆(エージェントビルダーとCopilot Studioの違い、作成手順、Copilotクレジット料金体系、GPTs/Gem/Claude Projectsとの対応表)
 
-## 2026-07-06
 - [カスタムAIの基礎(共通設計原則)](topics/part06-custom-ai/custom-ai-design-principles.md): 新規執筆(GPTs/Gem/Claude Projects/Copilot Agent Builder共通の設計原則、作るべきか否かの判断基準、野良AI乱立対策、ツール横断の指示文テンプレート)
 - [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](topics/part07-data-analysis/graphrag-and-agentic-rag-basics.md): 新規執筆(通常RAGとの3方向比較表、導入判断チェックリスト、Microsoft GraphRAG/LangGraph/Difyでの実装手段)
 
-## 2026-07-06
 - [Reranking(再ランク付け)の基本](topics/part07-data-analysis/reranking-basics.md): 新規執筆(bi-encoder/cross-encoderの違い、Cohere Rerank・Jina・Voyage・BGE・日本語OSSリランカーの比較、Difyでの設定手順)
 - [セマンティック検索の基本](topics/part07-data-analysis/semantic-search-basics.md): 新規執筆(キーワード検索とセマンティック検索の比較、ハイブリッド検索の考え方と業務での使い分け)
 - [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](topics/part08-specialized-ai-tools/audio-music-generation-ai-basics.md): 新規執筆(音楽生成AIと音声合成・音声クローンAIの違い、Suno/Udio/ElevenLabsの2026年7月時点の料金・機能比較、研修ナレーション・広告BGM・多言語吹き替えの業務活用、著作権訴訟の現況と音声なりすまし詐欺への注意点)
 - [Clineの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/cline-basics.md): 新規執筆(OSS・BYOKというCopilotとは異なる料金構造、Plan/Actモード、GitHub Copilot/Cursor/Windsurfとの比較)
 
-## 2026-07-06
 - [Cursorの基本(AIコードエディタ)](topics/part08-specialized-ai-tools/cursor-basics.md): 新規執筆(Tab補完・Chat・Agent・Composer等の主要機能、複数モデル対応、2026年6月時点の料金プラン、GitHub Copilot/Windsurf/Clineとの比較、SpaceXによる買収動向)
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): 新規執筆(Models/Datasets/Spacesの3構成、モデルカードでのライセンス・Gated確認、ローカルLLMツールとの関係、Free/PRO/Team/Enterpriseの料金プラン)
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): 新規執筆(主要ツールの比較・プロンプト例・料金・DALL-E3のGPT Imageへの移行を整理)
@@ -102,7 +102,6 @@
 - [Windsurfの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/windsurf-basics.md): 新規執筆(OpenAI買収交渉決裂→Google技術ライセンス→Cognition買収という経緯、2026年6月のDevin Desktopへの改称、最新料金プラン、Cursor/Copilot/Clineとの比較)
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](topics/part09-api-development/business-system-api-integration-basics.md): 新規執筆(3つの連携経路の使い分け、kintone/Slack/Power Automateの実装例、Salesforceでの公式AI機能優先の考え方)
 
-## 2026-07-06
 - [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): 新規執筆(Gemini.appとAPIの違い、Google AI Studio/Vertex AI経由の2入口、APIキー取得手順、モデル指定(Pro/Flash/Flash-Lite)、料金体系、OpenAI/Anthropic APIとの3社比較表)
 - [n8n・Make・Zapierの比較と使い分け](topics/part10-nocode-lowcode/automation-tools-comparison.md): 新規執筆(料金モデル・セルフホスト可否・学習コスト・AI機能・日本語対応の横並び比較表、「うちの会社ならどれ」判断チェックリストと業務シーン別のおすすめ)
 - [ノーコードでのAIエージェント構築(Dify・n8n・Makeでの実務例)](topics/part10-nocode-lowcode/nocode-ai-agent-building.md): 新規執筆(Dify/n8n/MakeそれぞれのAIエージェント構築方法の比較、問い合わせ自動振り分け・社内ITヘルプデスクの実務例)
@@ -114,7 +113,6 @@
 - [人事(HR)職における生成AI活用事例](topics/part11-business-practice/hr-ai-use-cases.md): 新規執筆(求人票・面接質問・オンボーディング資料作成、社内規程Q&Aチャットボット、評価コメント支援、候補者個人情報・差別リスクの留意点)
 - [Human in the Loop(人間参加型)の業務設計](topics/part11-business-practice/human-in-the-loop-basics.md): 新規執筆(HITL/HOTL/HOOTLの自動化スペクトラム、リスク×精度による確認強度の設計、Dify Human InputノードやSlack承認フローの実装)
 
-## 2026-07-06
 - [マーケティング職における生成AI活用](topics/part11-business-practice/marketing-ai-use-cases.md): 新規執筆(マーケティング業務フェーズ別のAI活用マップと広告コピー・SNS投稿・ペルソナ設計・記事構成案のプロンプト例)
 - [企画職における生成AI活用](topics/part11-business-practice/planning-ai-use-cases.md): 新規執筆(発散/収束フェーズ別のAI活用マップ、SCAMPER法での壁打ち、TAM/SAM/SOMでの市場規模仮説作成、シナリオ分析プロンプト例)
 - [営業職における生成AI活用](topics/part11-business-practice/sales-ai-use-cases.md): 新規執筆(商談準備→提案→フォロー→CRM管理の業務フェーズ別AI活用マップ、商談解析ツール・SFA組み込みAIの整理)
