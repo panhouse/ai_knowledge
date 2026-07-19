@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-19
+- [NotebookLM(Gemini Notebook)の基本](topics/part08-specialized-ai-tools/notebooklm-basics.md): 「Gemini Notebook」への改称(2026-07-16)、料金プランの4段階再編、2026年の新機能を反映して最新化
+
 ## 2026-07-18
 - [海運・港湾業界における生成AI活用事例](topics/part13-industry-cases/maritime-shipping-ai-use-cases.md): 新規執筆(船舶運航最適化・港湾ターミナル自動化・通関書類作成支援を物流・運輸ページと切り分けて整理)
 - [NPO・非営利団体における生成AI活用事例](topics/part13-industry-cases/npo-nonprofit-ai-use-cases.md): 新規執筆(助成金申請書作成・ファンドレイジング・多言語相談対応・議事録自動化と非営利団体向け割引プログラムを整理)
