@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-21
+- [Human in the Loop(人間参加型)の業務設計](topics/part11-business-practice/human-in-the-loop-basics.md): EU AI Actの高リスク義務延期(2027年12月/2028年8月)、日本のAI事業者ガイドライン第1.2版のHITL要求、Meta社内エージェント事故・エージェント型ランサムウェア事例を反映して最新化・増強
+
 ## 2026-07-18
 - [海運・港湾業界における生成AI活用事例](topics/part13-industry-cases/maritime-shipping-ai-use-cases.md): 新規執筆(船舶運航最適化・港湾ターミナル自動化・通関書類作成支援を物流・運輸ページと切り分けて整理)
 - [NPO・非営利団体における生成AI活用事例](topics/part13-industry-cases/npo-nonprofit-ai-use-cases.md): 新規執筆(助成金申請書作成・ファンドレイジング・多言語相談対応・議事録自動化と非営利団体向け割引プログラムを整理)
