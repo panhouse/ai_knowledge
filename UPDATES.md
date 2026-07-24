@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-22
+- [プロンプトインジェクションとは何か(仕組みと対策)](topics/part04-risk-security/prompt-injection-basics.md): ◯◯の節を最新化・増強
 - [AIエージェントとは何か](topics/part12-ai-trends/ai-agent-basics.md): ChatGPT Work・Claude Cowork・Microsoft Autopilots等の新製品とセキュリティインシデント実態を反映して最新化
 - [Difyワークフローの基本](topics/part10-nocode-lowcode/dify-workflow-basics.md): ◯◯の節を最新化・増強
 - [RAG(検索拡張生成)の基本](topics/part07-data-analysis/rag-basics.md): 「ロングコンテキスト vs RAG」論争や各ツールの2026年アップデートを反映して最新化
