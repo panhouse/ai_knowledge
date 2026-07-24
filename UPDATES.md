@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-24
+- [AIプロジェクトの進め方と評価指標の基礎](topics/part01-ai-basics/ai-project-and-evaluation-basics.md): 生成AI(LLM)特有の評価手法(LLM-as-a-Judge・ゴールデンセット)の節を新設し、PoC頓挫の最新データを更新
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part08-specialized-ai-tools/local-llm-basics.md): Ollama/LM Studioの最新版とオープンウェイトモデル一覧の節を最新化・増強
 - [カスタムAIの基礎(共通設計原則)](topics/part06-custom-ai/custom-ai-design-principles.md): ツール横断の対応付け・料金条件とシャドーAIリスクの節を最新化・増強
 - [JSONモード・Structured Outputsの基本](topics/part09-api-development/json-mode-structured-outputs.md): Anthropic GA化・OpenAI Responses API・Gemini最新状況を反映して最新化
