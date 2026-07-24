@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-19
+- [OpenAI APIの基本](topics/part09-api-development/openai-api-basics.md): GPT-5.6(Sol/Terra/Luna)へのモデル刷新と料金体系を反映して最新化
 - [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): Cloud版料金の確定額化、セルフホスト3層構成(Community/Premium/Enterprise)、MCP対応・Agent App等の新機能を反映して最新化
 
 ## 2026-07-18
