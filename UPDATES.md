@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-22
+- [Function Calling(Tool Calling)の基本](topics/part09-api-development/function-calling-basics.md): OpenAI Responses APIへの移行とGemini 3のthought signatureを反映して最新化・増強
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): プラン別料金・Fable 5のアクセス条件の節を最新化・増強
 - [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): 各社の最新モデル・公式ガイド(GPT-5系・Gemini 3・Claude最新モデル)の推奨内容を最新化・増強
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](topics/part02-llm-basics/context-window-basics.md): 主要モデルのコンテキストウィンドウ比較の節を最新化・増強
