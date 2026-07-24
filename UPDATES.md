@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-22
+- [Difyワークフローの基本](topics/part10-nocode-lowcode/dify-workflow-basics.md): ◯◯の節を最新化・増強
 - [RAG(検索拡張生成)の基本](topics/part07-data-analysis/rag-basics.md): 「ロングコンテキスト vs RAG」論争や各ツールの2026年アップデートを反映して最新化
 - [生成AIによるBPR(業務プロセス再構築)](topics/part11-business-practice/generative-ai-bpr.md): これは何か・仕組み・使いどころ・注意点の節を最新化・増強
 - [Function Calling(Tool Calling)の基本](topics/part09-api-development/function-calling-basics.md): OpenAI Responses APIへの移行とGemini 3のthought signatureを反映して最新化・増強
