@@ -29,7 +29,7 @@ part: 8
 
 ## 収録ページ
 
-- [NotebookLMの基本](notebooklm-basics.md)
+- [NotebookLM(Gemini Notebook)の基本](notebooklm-basics.md)
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 - [Perplexityの基本](perplexity-basics.md)
 - [GenSparkの基本](genspark-basics.md)
