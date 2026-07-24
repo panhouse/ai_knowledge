@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-20
+- [IT・情報通信における生成AI活用事例](topics/part13-industry-cases/it-telecom-ai-use-cases.md): 事例を最新化(Verizon「Claude Code」全社配布・ソフトバンク「SoftVoice」・NTTドコモビジネス×三菱UFJ銀行・NTTデータ×NVIDIAを追加)
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): モデルラインナップ・料金・レート制限の節を最新化
 - [Perplexityの基本](topics/part08-specialized-ai-tools/perplexity-basics.md): 仕組み・料金・注意点を最新化(Comet無料化とエージェント化、Model Council、Internal Knowledge Search、利用上限騒動を反映)
 - [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): モデルラインナップ・料金・無料枠・Vertex AI改称を最新化
