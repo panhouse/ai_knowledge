@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-23
+- [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): 料金・モデルラインナップの節を2026年7月時点の最新状況に最新化・増強
 - [Gem(Geminiのカスタムボット機能)の基本](topics/part06-custom-ai/gemini-gem-feature.md): モデル・利用上限・Personal Intelligence改称などを最新化・増強
 - [Cursorの基本(AIコードエディタ)](topics/part08-specialized-ai-tools/cursor-basics.md): 料金・モデル・買収動向の節を最新化・増強
 - [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): 2026-07-28仕様改定・A2Aとの関係・認証セキュリティ実態の節を最新化・増強
