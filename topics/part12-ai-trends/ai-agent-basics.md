@@ -4,7 +4,7 @@ part: 12
 chapter: 第1章 技術トレンド
 tags: [AIエージェント, エージェンティックAI, 自律実行]
 created: 2026-07-05
-updated: 2026-07-06
+updated: 2026-07-22
 ---
 
 # AIエージェントとは何か
@@ -48,9 +48,9 @@ AIエージェントの内部では、次のような「エージェントルー
 | 分類 | 主な役割 | 代表的なサービス・機能 |
 |---|---|---|
 | コーディングエージェント | 要件から実装・テスト・デバッグまでを自律的に実行 | Anthropic Claude Code、GitHub Copilot(CLI・Agent Mode)、Devin(Cognition)、Cursor |
-| ブラウザ操作エージェント | Webサイトを実際に操作(検索・入力・購入など)して情報収集や作業を代行 | OpenAI ChatGPT Agent(旧Operator)、Google Gemini Spark(旧Project Mariner系機能を統合)、Perplexity Comet(エージェント機能を内蔵したChromiumベースのブラウザ) |
-| 業務自動化エージェント | 業務システム(CRM・ITSM・HRなど)に組み込まれ、定型業務を代行・オーケストレーション | Salesforce Agentforce、ServiceNow AI Agent Orchestrator、Microsoft Copilot Studio上のエージェント |
-| 汎用アシスタントエージェント | 特定領域に限らず、調査・資料作成・タスク遂行を横断的に代行 | ChatGPT Agent、Google Gemini Spark、Microsoft 365 Copilot(Word/Excel/PowerPoint連携)、Manus(サンドボックス化された仮想マシン上でブラウザ・ターミナル・ファイルを操作する汎用自律エージェント) |
+| ブラウザ操作エージェント | Webサイトを実際に操作(検索・入力・購入など)して情報収集や作業を代行 | OpenAI ChatGPT(ブラウザ操作機能を内蔵。単体アプリだった「ChatGPT Atlas」は2026年8月9日に終了予定で機能はChatGPT本体に統合)、Google Gemini Spark(旧Project Mariner系機能を統合)、Perplexity Comet(エージェント機能を内蔵したChromiumベースのブラウザ) |
+| 業務自動化エージェント | 業務システム(CRM・ITSM・HRなど)に組み込まれ、定型業務を代行・オーケストレーション | Salesforce Agentforce、ServiceNow AI Agent Orchestrator、Microsoft Copilot Studio上のエージェント、Microsoft「Autopilots」(Teams・Outlook・SharePoint等に横断で常駐する固有IDを持つ自律エージェント。第1弾は「Scout」) |
+| 汎用アシスタントエージェント | 特定領域に限らず、調査・資料作成・タスク遂行を横断的に代行 | OpenAI ChatGPT Work(2026年7月投入。GPT-5.6を搭載し、資料・表計算・簡易Webアプリ作成などの業務を数時間単位で任せられる)、Anthropic Claude Cowork(非エンジニア向けにファイル操作・連携アプリ操作を行うデスクトップ/Web/モバイル版エージェント)、Google Gemini Spark、Microsoft 365 Copilot(Word/Excel/PowerPoint連携)、Manus(サンドボックス化された仮想マシン上でブラウザ・ターミナル・ファイルを操作する汎用自律エージェント) |
 
 エージェント化すべきかどうかは、「ステップ数(工程が3段階以上に分かれるか)」「外部実行の必要性(実際にツールやシステムを操作する必要があるか)」「間違った場合の被害の大きさ(取り消せるか)」の3軸で考えるとよい。
 
@@ -68,7 +68,7 @@ AIエージェントの内部では、次のような「エージェントルー
 - 利用先システムがAPI化されておらず画面操作(GUI)しか手段がなく、かつ操作ミスの影響が大きい
 - 権限管理・ログ・承認フローといったガバナンスが未整備
 
-Gartnerは、自律型AIエージェントの導入パイロットのうち88%が本番運用まで進めず、生き残った11%は171%のROIを生んでいると分析しており、コスト超過・不明確な事業価値・不十分なリスク管理を理由に、2027年末までにエージェンティックAIプロジェクトの40%超が中止になると予測している。「向く業務」から小さく始め、ガバナンスを整えてから対象を広げるのが現実的な進め方になる(出典は更新履歴を参照)。
+Gartnerは、自律型AIエージェントの導入パイロットのうち88%が本番運用まで進めず、生き残った11%は171%のROIを生んでいると分析しており、コスト超過・不明確な事業価値・不十分なリスク管理を理由に、2027年末までにエージェンティックAIプロジェクトの40%超が中止になると予測している。一方で、業務アプリケーションへのエージェント組み込み自体は急速に進んでおり、Gartnerは2026年末までにエンタープライズアプリケーションの40%がタスク特化型AIエージェントを内蔵するようになる(2025年時点では5%未満)とも予測している。つまり「エージェント機能が付いたツールは急増するが、そのすべてが投資に見合う成果を出すわけではない」のが実態であり、「向く業務」から小さく始め、ガバナンスを整えてから対象を広げるのが現実的な進め方になる(出典は更新履歴を参照)。
 
 ## 実務での使い方
 
@@ -76,10 +76,10 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 
 | 提供元 | 主なエージェント機能 | 呼び方・入り口 |
 |---|---|---|
-| OpenAI | ChatGPT Agent(2025年8月にOperatorを統合した後継)、開発者向けOpenAI Agents SDK | ChatGPTの入力欄でツールを選び「エージェントで実行」を指定。開発者はAgents SDK(Python/JavaScript)で組み込む |
-| Anthropic | Claude Code(コーディングエージェント)、Claude Agent SDK、Computer Use(画面操作) | ターミナルで`claude`コマンドを実行。開発者はAgent SDK(Python/TypeScript)でカスタムエージェントを構築 |
-| Google | Gemini Spark(24時間稼働の個人向けエージェント。旧Project Mariner系のブラウザ操作機能を統合) | Geminiアプリで「Spark」を選択(2026年7月時点はAI Ultraプランでベータ提供)。企業向けはGemini Enterprise(旧Vertex AI Agentspace) |
-| Microsoft | Copilot Agents / Copilot Studio、Word・Excel・PowerPoint内の自律実行機能 | 各Office製品のCopilotボタンから、または「Copilot Studio」でエージェントを新規作成 |
+| OpenAI | ChatGPT Work(2026年7月9日発表。GPT-5.6搭載で、文書・表計算・プレゼン資料・簡易Webアプリ作成などを数時間単位で任せられる後継エージェント)、開発者向けOpenAI Agents SDK。ブラウザ単体アプリ「ChatGPT Atlas」は2026年8月9日で終了し、ブラウザ操作はChatGPT本体に統合 | ChatGPTの入力欄でモードを「Chat」から「Work」に切り替えて依頼。開発者はAgents SDK(Python/JavaScript)で組み込む |
+| Anthropic | Claude Code(コーディングエージェント)、Claude Cowork(非エンジニア向け。ファイル操作やSlack・Google Driveなど連携アプリの操作をデスクトップ/Web/モバイルで代行)、Claude Agent SDK、Computer Use(画面操作) | ターミナルで`claude`コマンドを実行、またはClaudeデスクトップアプリで「Cowork」を選択。開発者はAgent SDK(Python/TypeScript)でカスタムエージェントを構築 |
+| Google | Gemini Spark(24時間稼働の個人向けエージェント。旧Project Mariner系のブラウザ操作機能を統合) | Geminiアプリで「Spark」を選択。企業向けはGemini Enterprise内で機能フラグとして順次公開中で、SharePoint・OneDrive・ServiceNowなどの既存コネクタ経由で業務システムに接続する |
+| Microsoft | Copilot Agents / Copilot Studio、Word・Excel・PowerPoint内の自律実行機能、Work IQ API(2026年6月に一般提供開始。Copilotの文脈・実行機能をアプリ間で呼び出せる基盤API)、常駐型の「Autopilots」(第1弾「Scout」がTeams・Outlook・SharePoint等を横断) | 各Office製品のCopilotボタンから、または「Copilot Studio」でエージェントを新規作成。開発者はWork IQ APIをCopilotクレジット従量課金で呼び出す |
 | Salesforce | Agentforce | 「Agentforce Studio」でエージェントを設定し、CRM業務(リード対応・問い合わせ対応など)に組み込む |
 | ServiceNow | AI Agent Orchestrator / AI Agent Studio | Now Platform内の「AI Agent Studio」で、既存エージェントの利用またはカスタムエージェントの作成を行う |
 
@@ -112,6 +112,10 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 
 この一連の流れはチャットボットに1問ずつ聞いて回るより圧倒的に速いが、最終レビューの工程は省略しないことが重要である。
 
+### ログイン情報(パスワード)をどう扱うか
+
+ブラウザ操作エージェントに社内システムやSaaSへのログインを代行させる場合、最大の懸念は「パスワードそのものをAIに渡してよいか」という点である。この課題に対し、パスワード管理ツール側でエージェントに認証情報を直接見せずにログインだけを代行させる仕組みが登場している。たとえば1Passwordは2026年7月16日、Claudeのブラウザ機能向けに「1Password for Claude」を発表した。パスワードやワンタイムパスコードはAI本体・その文脈(コンテキスト)・Anthropic側のシステムのいずれにも渡らず、1Password側が安全なチャネル経由でログイン画面に直接入力する仕組みで、実行のたびに生体認証で承認する。同様の「エージェントにはログイン結果だけを渡し、認証情報そのものは渡さない」という設計思想は、他のパスワード管理ツールでも今後標準的になっていくと見られる。エージェントに社内システムを操作させる際は、パスワードを直接プロンプトや設定に書き込むのではなく、こうした仲介の仕組みを使えないか確認したい。
+
 ### 料金面で見ておくべきポイント
 
 エージェントは1回のゴール達成のために何ステップも「計画→実行→確認」を繰り返すため、同じ依頼でも単発のチャットより消費トークン量が数倍〜数十倍になりやすい。Anthropicは2026年6月15日から、Claude Agent SDKやClaude Code GitHub Actions経由の利用を、対話的なClaude Code利用とは別建てのトークン課金で計測するようになっており、エージェント経由の作業は事前にステップ数や予算の上限を決めておかないとコストが読みにくくなる点に注意したい。
@@ -119,11 +123,12 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 ## 注意点・よくある誤解
 
 - **「エージェント=文章がうまいチャットボット」ではない**: 依頼の単位が「1回の質問」から「ゴールの委任」に変わる点が本質的な違いであり、それに応じて権限設計・承認フローも作り直す必要がある。
-- **過大な権限付与のリスク**: あるエージェントに「ファイルの読み取り・書き込み・削除」の全権限を与えたところ、タスク実行中に重要な設定ファイルを誤って削除し、復旧に2日を要した事例が報告されている。ファイル削除や本番環境への書き込みなど、影響が大きい操作は最小権限(必要な範囲だけ)に絞るのが基本。
+- **過大な権限付与のリスク**: 開発者コミュニティで実際に起きた例として、学習プラットフォームDataTalks.Clubの運営者がインフラ移行作業をコーディングエージェント「Claude Code」に任せたところ、設定ファイルの不整合をきっかけに`terraform destroy`(インフラ一括削除)コマンドが実行され、本番のデータベースやサーバーごと2.5年分のデータが一時消失する事故が報告されている(24時間後にバックアップから復旧)。ファイル削除や本番環境への書き込みなど、取り消しが難しい操作は事前承認を必須にし、権限は業務に必要な最小限(最小権限)に絞るのが基本。
 - **プロンプトインジェクションのリスク**: ブラウザ操作エージェントやメール・Webページを読み込むエージェントは、閲覧先のページや受信メールに埋め込まれた悪意ある指示文に誘導され、意図しない操作を実行してしまう「プロンプトインジェクション」のリスクがある。外部コンテンツを読ませる用途では、実行前チェックや権限の絞り込みが特に重要。
+- **セキュリティインシデントはすでに「よくあること」になっている**: Cloud Security Alliance(CSA)とToken Securityが2026年4月に公表した調査では、社内でAIエージェントを運用する組織の65%が、この1年間にAIエージェントに起因するセキュリティインシデントを少なくとも1件経験しており、その内訳は機密データの漏えい(61%)、業務停止(43%)、意図しない操作の実行(41%)が上位を占める。「まだ起きていないリスク」ではなく「すでに多くの組織で起きている前提」で権限設計・監視体制を組むべき段階に来ている。
 - **ガバナンス整備が追いついていない**: Gartnerの調査では、自律型AIエージェントに対して成熟したガバナンス体制を持つ組織は21%にとどまるとされ、これが導入失敗の主因の一つとされている。FINRA(米国金融取引業規制機構)の2026年報告書も、エージェントの「自律性(人間の検証なしに行動する)」「スコープクリープ(想定より広い権限で動いてしまう)」「監査可能性の低さ(多段階の推論過程を後から追いにくい)」を主要リスクとして挙げており、重要な行動の前に人間の承認を必須にする「human-in-the-loop」、権限を業務に必要な最小限に絞る「スコープ設計」、行動ログを残す「監査証跡」の3点をセットで検討したい。
 - **「エージェント」は誇張されやすいマーケティング用語でもある**: Gartnerは、実質的な自律性を持たないRPA(定型作業の自動化)やチャットボットを「エージェント」と呼び替えて売る現象を「agent washing」と名付けており、「エージェント」を名乗る製品のうち本当に自律的といえるものはごく一部にとどまると指摘している。製品検討時は、実際に何ステップまで人手なしで完結できるのか、どの操作の前に人間の確認が入るのか(=次の一手を誰が決めるのか)を必ず確認すること。
-- **製品の統廃合が早いことを前提に選定する**: OperatorはChatGPT Agentに、Project MarinerはGemini(Spark/ブラウザ自動操作機能)に、それぞれ1年前後で統合・終了している。特定製品への過度な作り込みは避け、標準的なインターフェース(ブラウザ操作・ファイル操作・API連携・MCP)を軸に業務フローを設計する方が安全。
+- **製品の統廃合が早いことを前提に選定する**: OperatorはChatGPT Agentに、Project MarinerはGemini(Spark/ブラウザ自動操作機能)に、それぞれ1年前後で統合・終了している。単体ブラウザアプリとして投入された「ChatGPT Atlas」も2026年8月9日で終了し、機能はChatGPT本体に統合される予定で、後継の「ChatGPT Work」も発表からすぐに看板機能が入れ替わっている。特定製品への過度な作り込みは避け、標準的なインターフェース(ブラウザ操作・ファイル操作・API連携・MCP)を軸に業務フローを設計する方が安全。
 - **ハルシネーションは自律実行でも消えない**: 誤った前提のまま計画を立てて実行に進むと、その誤りが「実行結果」として現実の操作(送信・更新・購入など)に反映されてしまう。生成された情報を鵜呑みにせず、要所で人間が確認する設計が必要。
 
 ## 最初の一歩
@@ -138,6 +143,10 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 - [Difyとは何か](../part10-nocode-lowcode/dify-basics.md)
 
 ## 更新履歴
+
+### 2026-07-22: 主要プレイヤーの新製品と、セキュリティインシデントの実態を反映して最新化
+- **内容**: OpenAIの新エージェント「ChatGPT Work」(GPT-5.6搭載)投入と「ChatGPT Atlas」終了(2026年8月9日)、AnthropicのCoworkのWeb/モバイル展開、MicrosoftのWork IQ API一般提供と常駐型「Autopilots」、Googleのエンタープライズ向けコネクタ強化を分類表・ツール対応表に反映。エージェント導入率に関するGartnerの最新予測(2026年末までにエンタープライズアプリの40%がエージェント搭載)、CSA/Token Securityによるセキュリティインシデント実態調査(65%の組織が経験済み)、Claude Codeによる実際のインフラ削除事故、1Passwordの認証情報保護連携を追加し、注意点・実務での使い方を増強
+- **出典**: [Bloomberg: OpenAI Unveils ChatGPT Work Agent to Field Tasks for Hours](https://www.bloomberg.com/news/articles/2026-07-09/openai-unveils-chatgpt-work-agent-to-field-tasks-for-hours)、[OpenAI Help Center: Evolving Atlas into ChatGPT for browser-based agentic work](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work)、[TechCrunch: The coding agent wars are spilling into the rest of the office (Claude Cowork)](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)、[1Password: 1Password for Claude](https://1password.com/blog/1password-for-claude)、[Microsoft 365 Blog: Announcing the new Work IQ APIs](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/announcing-the-new-work-iq-apis/)、[TestingCatalog: Google plans to upgrade Gemini Enterprise connectors](https://www.testingcatalog.com/google-plans-to-upgrade-gemini-enterprise-connectors/)、[Gartner: Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025)、[Cloud Security Alliance: Autonomous but Not Controlled: AI Agent Incidents Now Common in Enterprises](https://cloudsecurityalliance.org/artifacts/autonomous-but-not-controlled-ai-agent-incidents-now-common-in-enterprises)、[Tom's Hardware: Claude Code deletes developers' production setup, including its database and snapshots](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-code-deletes-developers-production-setup-including-its-database-and-snapshots-2-5-years-of-records-were-nuked-in-an-instant)
 
 ### 2026-07-06: 重複ページの統合
 - **内容**: 同一テーマの重複ページ `ai-agents-basics.md`・`ai-agents-overview.md` を本ページに統合。ワークフローとエージェントの対比(Anthropicの定義)、エージェント化の3つの判断軸、Manus・Perplexity Cometの追加、競合調査の業務シナリオ例、FINRAの指摘するリスク3点、agent washingへの注意、製品統廃合を前提とした選定方針、関連トピックへのリンクを取り込んだ
