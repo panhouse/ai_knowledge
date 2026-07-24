@@ -12,6 +12,9 @@ part: 9
 
 ### 第2章 API活用実践
 - バッチ処理、Function Calling、JSON/Structured Outputs
+- リアルタイム音声API(OpenAI Realtime API、Gemini Live APIなど)によるボイスエージェント構築の基本。
+  [ChatGPTの音声モード機能](../part03-ai-chat-tools/chatgpt-voice-mode-feature.md)(アプリ利用者視点)とは異なり、
+  自社で音声botやIVRを開発する側の視点で扱う
 
 ### 第3章 業務ツール連携
 - GAS連携、スプレッドシート/業務システム連携
