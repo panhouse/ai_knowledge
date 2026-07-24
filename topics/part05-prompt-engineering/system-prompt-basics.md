@@ -4,7 +4,7 @@ part: 5
 chapter: 第1章 基本原則
 tags: [システムプロンプト, カスタム指示, System Prompt, API, カスタムAI]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-21
 ---
 
 # システムプロンプトの役割と書き方
@@ -41,12 +41,12 @@ API(開発者がプログラムからAIモデルを呼び出す際の窓口)で�
 
 | 提供元 | API | 実装方法 | 補足 |
 |---|---|---|---|
-| OpenAI | Chat Completions API | `messages`配列内の`role: "system"` | o1以降の推論モデル系では`role: "developer"`が`system`の役割を引き継いでおり、両者は実質同じ位置づけ |
-| OpenAI | Responses API(新方式) | トップレベルの`instructions`パラメータ | `input`配列とは別枠。優先度は`input`内の指示より高いが、`previous_response_id`で会話を継続する場合、前ターンの`instructions`は自動的に持ち越されないため、安定した指示は毎回再送する必要がある |
+| OpenAI | Chat Completions API | `messages`配列内の`role: "developer"`(o1以降の全モデルの標準ロール。`system`は旧世代モデル向けの後方互換として残るのみで非推奨) | 2025年に`system`から`developer`への呼称移行が完了しており、2026年7月時点で新規に実装するならGPT-4o等の旧世代を除き`developer`を使うのが基本 |
+| OpenAI | Responses API(推奨の新方式) | トップレベルの`instructions`パラメータ、または`role: "developer"`のメッセージ | `input`配列とは別枠。優先度は`input`内の指示より高いが、`previous_response_id`で会話を継続する場合、前ターンの`instructions`は自動的に持ち越されないため、安定した指示は毎回再送する必要がある。なお同社の旧「Assistants API」(会話・ファイル管理を丸ごと担っていたAPI)は2026年8月26日に廃止予定で、Responses APIへの移行が案内されている |
 | Anthropic(Claude) | Messages API | トップレベルの`system`パラメータ(文字列または配列) | `messages`配列の中の1要素ではなく、独立したフィールド。そのため「systemメッセージを会話の先頭に置く」という発想自体がなく、常に別枠で渡す。プロンプトキャッシュ(同じ入力を再利用してコスト・速度を最適化する仕組み)のキャッシュポイントもここに置ける |
 | Google(Gemini) | Gemini API | `systemInstruction`パラメータ(`role`と`parts`を持つオブジェクト) | モデルインスタンス生成時、またはリクエストごとに指定。Gemini全モデルで利用可能 |
 
-3社に共通するのは、「システムプロンプト用の指示は、ユーザーの発言とは別の入力枠に分離されており、モデル内部で優先的に扱われる」という設計思想である。自社でAIチャットボットやカスタムAIをAPI経由で作る場合、この`system`枠に固定の役割・ルールを入れ、ユーザーの発言は毎回変わる`user`枠に入れる、という分担が基本形になる。
+3社に共通するのは、「システムプロンプト用の指示は、ユーザーの発言とは別の入力枠に分離されており、モデル内部で優先的に扱われる」という設計思想である。自社でAIチャットボットやカスタムAIをAPI経由で作る場合、この専用枠に固定の役割・ルールを入れ、ユーザーの発言は毎回変わる`user`枠に入れる、という分担が基本形になる。
 
 ## 使いどころ・使い分け
 
@@ -66,13 +66,17 @@ API(開発者がプログラムからAIモデルを呼び出す際の窓口)で�
 
 | ツール | 機能名 | 設定場所 |
 |---|---|---|
-| ChatGPT(個人の全チャット共通) | カスタム指示 | 左下のアカウントアイコン→「パーソナライズ」→「カスタム指示」。「自分について」「回答方法」を各1,500文字まで登録可。トーンはスライダー調整、譲れないルールはテキストで補足するのが実務的 |
-| ChatGPT(プロジェクト単位) | プロジェクトの指示 | 対象プロジェクトを開く→プロジェクト内の設定から「指示」を入力。そのプロジェクト内の会話にのみ適用され、個人のカスタム指示とは独立して効く |
-| Claude | プロジェクトの指示(Project instructions) | 「Projects」からプロジェクトを作成・選択→歯車アイコン(設定)→「Project instructions」欄に入力し保存。ナレッジ(参照資料)の追加もここから行う |
-| Gemini | Gem(カスタムGem)の指示 | Geminiアプリの「Gem」メニュー→「新しいGemを作成」→指示ボックスに役割・ルールを入力。Gmail・Drive等の連携も同画面から設定 |
-| Microsoft 365 Copilot | エージェント ビルダーの「指示」 | エージェント作成後、エージェントの概要ページ→「指示」セクション→「編集」。プレーンテキストで入力でき、Markdown形式で書くと構成を正しく解釈しやすい |
+| ChatGPT(個人の全チャット共通) | カスタム指示 | 左下のアカウントアイコン→「パーソナライズ」→「カスタム指示」。「自分について」「回答方法」の2欄に各1,500文字まで登録可。別欄の「基本のスタイル」(Professional・Friendly等のプリセット+温かみ・熱量のスライダー)は口調だけを変える機能で、カスタム指示とは別枠 |
+| ChatGPT(プロジェクト単位) | プロジェクトの指示 | 対象プロジェクトを開く→プロジェクト名の右にある設定アイコン(歯車、または「…」の3点メニュー)→「Instructions(指示)」。そのプロジェクト内の会話にのみ適用され、グローバルなカスタム指示より優先される |
+| Claude | プロジェクトの指示(Project instructions) | 左サイドバーの「Projects」からプロジェクトを作成・選択→「Set project instructions」(既存プロジェクトでは設定アイコンから開く)→保存。ナレッジ(参照資料、1ファイル30MBまで)の追加も同じプロジェクト画面から行う |
+| Gemini(役割特化のカスタムボット) | Gem(カスタムGem)の指示 | gemini.google.com→左メニュー「Gemを表示」→「Gemマネージャー」→「+新しいGem」→指示欄に役割・ルールを入力。ナレッジ(アップロードファイル・Google Drive)の紐付けも同画面 |
+| Gemini(アプリ全体の恒常設定) | 「Geminiへのカスタム指示」(パーソナル インテリジェンス) | メニューアイコン→「設定とヘルプ」→「パーソナル インテリジェンス」→「Geminiへのカスタム指示」。**個人のGoogleアカウント限定**の機能で、職場・学校・管理対象アカウントでは利用できない点に注意 |
+| Microsoft Copilot(無料版・全チャット共通) | カスタム指示 | チャット画面右上の「…」→「設定」→「個人用設定」→カスタム指示のトグルをオン→「指示の編集」 |
+| Microsoft 365 Copilot(業務用エージェント) | エージェント ビルダーの「指示」 | Microsoft 365 Copilotアプリ左ペイン「エージェント」→「+新しいエージェント」→「構成」タブの「指示」欄。より本格的な配布・外部連携が必要ならCopilot Studio(copilotstudio.microsoft.com)の同名の欄を使う |
 | Dify(ノーコード開発ツール) | LLMブロックの「SYSTEM」プロンプト欄 | アプリのワークフロー編集画面→LLMブロックを選択→プロンプト設定で「SYSTEM」を選び入力(「USER」欄とは別枠) |
-| OpenAI API / Anthropic API / Gemini API | `system`ロール・`system`パラメータ・`systemInstruction` | プログラムから各APIを呼び出す際にパラメータとして指定(上表参照) |
+| OpenAI API / Anthropic API / Gemini API | `developer`ロール(旧`system`)・`system`パラメータ・`systemInstruction` | プログラムから各APIを呼び出す際にパラメータとして指定(上表参照) |
+
+Gemini・Copilotはそれぞれ「役割特化の専用ボットを作る仕組み」(Gem、エージェントビルダー)と「アプリ全体に効く恒常設定」(Geminiへのカスタム指示、Copilotのカスタム指示)の2階建てになっている点に注意。前者は[Gem(Geminiのカスタムボット機能)の基本](../part06-custom-ai/gemini-gem-feature.md)・[Microsoft Copilot Studioによるカスタムエージェント作成の基本](../part06-custom-ai/copilot-agent-builder-basics.md)、後者は本ページの表がそれぞれ対応する。
 
 ### 良いシステムプロンプトを書くコツ
 
@@ -113,7 +117,8 @@ ChatGPTのカスタム指示・Claude Projectsの指示・Gemの指示・APIの`
 - **システムプロンプトは「絶対のルール」ではない**: モデルは通常プロンプトより優先して扱う設計だが、ユーザー(あるいは悪意ある第三者が仕込んだ外部コンテンツ)からの巧妙な誘導によって指示が上書きされてしまうことがある。「システムプロンプトに書いておけば安全」という過信は禁物で、機密情報の保護や不正操作の防止を狙うなら、システムプロンプトの工夫だけに頼らず、外部からの入力を検証する・出力側でチェックするといった多層的な対策が必要になる。攻撃の仕組みと具体的な対策は[プロンプトインジェクションとは何か](../part04-risk-security/prompt-injection-basics.md)で詳しく扱っている
 - **長く書けば効くわけではない**: 情報を詰め込みすぎると、AIがどの指示を優先すべきか判断しづらくなり、逆に守られない項目が増える。まずは要点だけで運用し、実際に外れた挙動が出た部分だけ加筆する方が効率的
 - **個人のカスタム指示とプロジェクト単位の指示は別枠で管理される**: ChatGPTやClaudeでは、個人アカウント全体に効く設定と、特定プロジェクト・Gem内だけに効く設定が独立している。どちらに書いたか忘れて「なぜ設定した指示が効かないのか」と混乱しやすいので、用途に応じて登録場所を意識する
-- **APIの`system`と`developer`ロールの混在に注意**: OpenAIのAPIをコードから使う場合、モデルの世代によって`system`ロールと`developer`ロールのどちらを使うべきかが異なる。自社で開発する際は利用モデルの公式ドキュメントで現在の推奨ロールを確認する
+- **Geminiの「アプリ全体のカスタム指示」は個人アカウント限定**: 「Geminiへのカスタム指示」(パーソナル インテリジェンス)は、会社・学校の管理対象Googleアカウントでは利用できない。業務用アカウントで同等のことをしたい場合は、Gemの指示欄か、法人向けのGoogle Workspace with Geminiの設定を使う必要がある
+- **APIは`system`ロールから`developer`ロールへの移行が進んでいる**: OpenAIのAPIでは、o1以降の新しいモデルは`developer`ロールが標準になっており、`system`ロールは旧世代モデル向けの後方互換としてのみ残っている。自社で新規開発する際は、利用モデルの公式ドキュメントで現在の推奨ロールを確認する
 
 ## 最初の一歩
 
@@ -124,9 +129,18 @@ ChatGPTのカスタム指示・Claude Projectsの指示・Gemの指示・APIの`
 - [プロンプトの基本構成要素](prompt-basic-structure.md)
 - [プロンプトテンプレート化(変数管理・再利用のコツ)](prompt-templating.md)
 - [プロンプトインジェクションとは何か(仕組みと対策)](../part04-risk-security/prompt-injection-basics.md)
+- [ChatGPTの初期設定とカスタム指示の書き方](../part03-ai-chat-tools/chatgpt-custom-instructions.md)
+- [ChatGPTの「プロジェクト」機能](../part03-ai-chat-tools/chatgpt-projects-feature.md)
+- [Claude(Anthropic)の「プロジェクト」機能の基本](../part06-custom-ai/claude-projects-basics.md)
+- [Gem(Geminiのカスタムボット機能)の基本](../part06-custom-ai/gemini-gem-feature.md)
+- [Microsoft Copilot Studioによるカスタムエージェント作成の基本](../part06-custom-ai/copilot-agent-builder-basics.md)
 - [GPTsの作り方と公開設定](../part06-custom-ai/gpts-creation-basics.md)
 
 ## 更新履歴
+
+### 2026-07-21: ツール横断の対応表とAPI実装の記述を最新化
+- **内容**: ChatGPT・Claude・Gemini・Microsoft Copilotの設定場所を、各ツールの詳細ページ(2026-07-06執筆)と最新のWeb検索で再確認し、正確な画面遷移に更新。特にGeminiは「Gem(役割特化ボット)」と「Geminiへのカスタム指示(パーソナル インテリジェンス、個人アカウント限定)」、Copilotは「無料版のカスタム指示」と「M365 Copilotのエージェントビルダー」がそれぞれ別機能であることを明記。OpenAI APIは`system`ロールから`developer`ロールへの移行が完了している点、Assistants APIが2026年8月26日に廃止予定である点を追記し、関連トピックにツール別の詳細ページへのリンクを追加した
+- **出典**: [Google Gemini アプリ ヘルプ: カスタム指示で Gemini の回答をカスタマイズする](https://support.google.com/gemini/answer/16598625?hl=ja)、[Microsoft Learn: Microsoft 365 Copilotでエージェント ビルダーを使用してエージェントをビルドする](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-build-agents)、[Qiita: Microsoft 365無償版のCopilot Chatガイド(38)カスタム指示の使い方](https://qiita.com/Shinyas77/items/1b85ea7545d9f020ad5e)、[Dify Docs: LLM node](https://docs.dify.ai/en/guides/workflow/node/llm)、[Aurelio AI: OpenAI Developer Role](https://www.aurelio.ai/reference/openai-developer-role)、[Zoho Help: Deprecation Notice - OpenAI Assistants API will be shut down on August 26, 2026](https://help.zoho.com/portal/hi/community/topic/deprecation-notice-openai-assistants-api-will-be-shut-down-on-august-26-2026?page=54)
 
 ### 2026-07-06: 初版執筆
 - **内容**: システムプロンプトと通常プロンプトの違い、OpenAI/Anthropic/GeminiのAPIにおける実装方式の比較、ChatGPT・Claude・Gemini・Copilot・Difyでの設定場所、良い書き方のコツとコピペ用テンプレート、プロンプトインジェクションとの関係(過信への注意)をまとめた
