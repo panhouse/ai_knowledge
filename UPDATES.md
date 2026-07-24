@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-21
+- [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): モダリティ別の代表サービス例を現行世代に更新し、エージェントAIとの関係を追加
+
 ## 2026-07-20
 - [IT・情報通信における生成AI活用事例](topics/part13-industry-cases/it-telecom-ai-use-cases.md): 事例を最新化(Verizon「Claude Code」全社配布・ソフトバンク「SoftVoice」・NTTドコモビジネス×三菱UFJ銀行・NTTデータ×NVIDIAを追加)
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): モデルラインナップ・料金・レート制限の節を最新化
