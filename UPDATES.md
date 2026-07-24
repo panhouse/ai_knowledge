@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-24
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part08-specialized-ai-tools/local-llm-basics.md): Ollama/LM Studioの最新版とオープンウェイトモデル一覧の節を最新化・増強
 - [カスタムAIの基礎(共通設計原則)](topics/part06-custom-ai/custom-ai-design-principles.md): ツール横断の対応付け・料金条件とシャドーAIリスクの節を最新化・増強
 - [JSONモード・Structured Outputsの基本](topics/part09-api-development/json-mode-structured-outputs.md): Anthropic GA化・OpenAI Responses API・Gemini最新状況を反映して最新化
 - [Transformer・Attention機構とスケーリング則の基本](topics/part02-llm-basics/transformer-attention-and-scaling-laws.md): MoE・Mamba/SSMハイブリッドの実用化動向とスケーリングの壁論争の節を最新化・増強
