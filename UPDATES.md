@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-24
+- [Chain-of-Thought(CoT)プロンプティング](topics/part05-prompt-engineering/chain-of-thought-prompting.md): 推論モデルの進化(適応的思考・effortダイヤル)を反映して最新化・増強
 - [ベクトルデータベースの基本(Embeddingとの関係)](topics/part07-data-analysis/vector-database-basics.md): 主要製品の料金・機能を最新化し、Milvus/Zilliz・Elasticsearch/OpenSearchを追加
 - [Difyワークフローの主要ノードと組み立て方](topics/part10-nocode-lowcode/dify-workflow-nodes.md): ループノード・ヒューマン入力ノードなどの節を最新化・増強
 - [AIプロジェクトの進め方と評価指標の基礎](topics/part01-ai-basics/ai-project-and-evaluation-basics.md): 生成AI(LLM)特有の評価手法(LLM-as-a-Judge・ゴールデンセット)の節を新設し、PoC頓挫の最新データを更新
