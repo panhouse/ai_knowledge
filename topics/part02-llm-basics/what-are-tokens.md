@@ -4,7 +4,7 @@ part: 2
 chapter: 第1章 LLMの仕組み
 tags: [トークン, LLM基礎, コンテキストウィンドウ, 料金]
 created: 2026-07-05
-updated: 2026-07-06
+updated: 2026-07-21
 ---
 
 # トークンとは何か
@@ -23,7 +23,7 @@ AIは文章をそのまま理解しているわけではなく、まず文章を
 
 1. **料金はトークン単位で決まる**: API利用料は「入力トークン数」と「出力トークン数」それぞれに単価がかけられて計算される
 2. **読み込める文章量(コンテキストウィンドウ)もトークン単位**: 「128Kトークン」「100万トークン」のように表記され、これを超える量の文章は一度に読み込めない
-3. **言語によって同じ内容でもトークン数が変わる**: 日本語と英語では文字数とトークン数の関係が異なる(後述)。さらにモデルの世代が変わるとトークナイザー自体が変わり、同じ文章でもトークン数が増減することがある(例: Anthropicの新しいトークナイザーはClaude Opus 4.7以降・Claude Sonnet 5で採用されており、旧トークナイザー比で同じ文章でもおよそ3割トークン数が増える)
+3. **言語によって同じ内容でもトークン数が変わる**: 日本語と英語では文字数とトークン数の関係が異なる(後述)。さらにモデルの世代が変わるとトークナイザー自体が変わり、同じ文章でもトークン数が増減することがある(例: Anthropicは2026年4月にClaude Opus 4.7で新しいトークナイザーを導入し、その後Claude Opus 4.8・Claude Sonnet 5・Claude Fable 5にも同じ方式が採用された。旧トークナイザー比で、同じ文章でも英語の文章は最大4割程度、日本語などのCJK言語は1.5〜3.5割程度トークン数が増える傾向がある。ただし同じ現行世代でもClaude Sonnet 4.6・Claude Haiku 4.5は旧トークナイザーのままのため、モデルを切り替えただけでトークン数の見積もりがずれることがある)
 
 ## 使いどころ・使い分け
 
@@ -41,22 +41,24 @@ AIは文章をそのまま理解しているわけではなく、まず文章を
 
 ## 実務での使い方
 
-### 主要モデルのコンテキストウィンドウと料金(2026年7月時点)
+### 主要モデルのコンテキストウィンドウと料金(2026年7月21日時点)
 
-API利用時の料金とコンテキストウィンドウは次の通り(いずれも2026年7月5日時点の最新モデル)。金額はいずれも「100万トークンあたり」の米ドル建て。
+API利用時の料金とコンテキストウィンドウは次の通り。金額はいずれも「100万トークンあたり」の米ドル建て。
 
 | 提供元 | モデル(位置づけ) | コンテキストウィンドウ | 入力価格 | 出力価格 |
 |---|---|---|---|---|
-| Anthropic | Claude Opus 4.8(最上位モデル) | 100万トークン | $5 | $25 |
-| Anthropic | Claude Sonnet 5(標準モデル、ChatGPTでいうGPT-5.5相当の主力機) | 100万トークン | $2(2026年8月31日まで。以降$3) | $10(同上。以降$15) |
-| OpenAI | GPT-5.5(ChatGPTの既定モデル、2026年4月23日〜) | 約105万トークン(出力上限は12.8万トークン) | $5(キャッシュ読込時$0.50) | $30 |
-| OpenAI | GPT-5.2(前世代。ChatGPTからは退役済みだがAPIでは提供継続) | 27.2万トークン | $0.875 | $7 |
-| Google | Gemini 3.1 Pro(プレビュー版、最上位) | 100万トークン | $2(入力20万トークンまで)/$4(超過分) | $12/$18 |
+| Anthropic | Claude Fable 5(最上位・Mythos級、2026年7月1日〜一般提供) | 100万トークン | $10 | $50 |
+| Anthropic | Claude Opus 4.8(上位モデル) | 100万トークン | $5 | $25 |
+| Anthropic | Claude Sonnet 5(標準モデル) | 100万トークン | $2(2026年8月31日まで。以降$3) | $10(同上。以降$15) |
+| Anthropic | Claude Haiku 4.5(軽量・高速モデル) | 20万トークン | $1 | $5 |
+| OpenAI | GPT-5.6 Sol(最上位、2026年7月9日一般提供開始) | 約100万トークン(出力上限は12.8万トークン) | $5 | $30 |
+| OpenAI | GPT-5.5 Instant(ChatGPTアプリの既定モデル) | 約105万トークン(27.2万トークン超過分は帯域が切り替わる) | $5(27.2万トークン超過時は$10) | $30(同、$45) |
+| Google | Gemini 3.1 Pro(現行最上位) | 100万トークン | $2(入力20万トークンまで)/$4(超過分) | $12/$18 |
 
 補足:
-- OpenAIは2026年6月26日にGPT-5.6シリーズ(Sol/Terra/Luna)をプレビュー公開したが、当面は一部パートナー企業向けの限定提供で、一般のChatGPT・API利用者はまだ使えない。
-- GPT-5.5は入力が27.2万トークンを超えると、その利用全体の料金が入力2倍・出力1.5倍の帯域に切り替わる点に注意。
-- Claude Sonnet 5・Claude Opus 4.7以降は新しいトークナイザーを採用しており、同じ日本語文書でも旧世代モデル(Sonnet 4.5など)よりトークン数が多く出る傾向がある。
+- OpenAIはGPT-5.6シリーズ(最上位のSol、バランス型のTerra、低価格のLunaの3グレード)を2026年6月26日に一部パートナー企業向けの限定プレビューとして公開した後、わずか2週間ほどで2026年7月9日に一般提供へ切り替えた(Terra入力$2.5/出力$15、Luna入力$1/出力$6)。ただしChatGPTアプリの既定モデルは引き続き軽量な「GPT-5.5 Instant」のままで、GPT-5.6 Solは有料プランの「推論(reasoning)」オプションやAPI経由で使う形になっている
+- Claude Sonnet 5・Claude Opus 4.7以降・Claude Fable 5は新しいトークナイザーを採用しており、同じ日本語文書でも旧世代のトークナイザーのままのモデル(Claude Sonnet 4.6・Claude Haiku 4.5など)よりトークン数が多く出る傾向がある
+- Googleの次世代モデル「Gemini 3.5 Pro」は2026年7月時点でまだ正式リリース前(社内テスト・一部エンタープライズ向けプレビュー段階)のため本表には含めていない。リリース後は本ページを最新化する
 
 ### 日本語と英語のトークン換算の目安
 
@@ -146,6 +148,10 @@ print(len(enc.encode(text_ja)))  # 日本語のトークン数(同程度の内�
 - [OpenAI APIの基本](../part09-api-development/openai-api-basics.md)
 
 ## 更新履歴
+
+### 2026-07-21: モデルラインナップと料金・トークナイザーの節を最新化
+- **内容**: 主要モデルのコンテキストウィンドウ・料金表を更新(Claude Fable 5・Claude Haiku 4.5を追加、GPT-5.6シリーズ[Sol/Terra/Luna]の一般提供開始とGPT-5.5 Instantが引き続きChatGPT既定モデルである点を反映)。Anthropicの新トークナイザーがOpus 4.7以降・Sonnet 5・Fable 5に採用される一方、Sonnet 4.6・Haiku 4.5は旧トークナイザーのままである点を明記し、増加率を英語最大4割・CJK言語1.5〜3.5割程度に精緻化
+- **出典**: [Claude Sonnet 5's New Tokenizer: 41% More Tokens per Prompt - Synthorai](https://synthorai.io/blog/claude-sonnet-5-tokenizer/)、[Claude Token Counter, now with model comparisons - Simon Willison](https://simonwillison.net/2026/apr/20/claude-token-counts/)、[Claude Fable 5 and Claude Mythos 5 - Anthropic](https://www.anthropic.com/news/claude-fable-5-mythos-5)、[GPT-5.6: Frontier intelligence that scales with your ambition - OpenAI](https://openai.com/index/gpt-5-6/)、[GPT-5.6 in ChatGPT - OpenAI Help Center](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna)、[CJK Token Myth Busted — Measured Data - Mason AI Lab](https://masonailab.com/en/insights/token-efficiency/)、[Gemini 3.5 Pro delays due to coding performance - 9to5Google](https://9to5google.com/2026/07/16/gemini-3-5-pro-delays/)
 
 ### 2026-07-06: 重複ページの統合
 - **内容**: 重複していた token-basics.md / tokens-and-tokenization.md / tokens-in-llm.md、および llm-tokenization-and-prediction.md のトークン固有の記述を本ページに統合。BPEの仕組みと英語の公式目安(1トークン≈4文字≈0.75単語)、tiktokenのコード例、モデル間でトークン数を流用できない点、長文のチャンク分割・要約指示文の実例、思考トークンの課金、コンテキスト腐敗(context rot)の用語を追加
