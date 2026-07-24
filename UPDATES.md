@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-23
+- [Cursorの基本(AIコードエディタ)](topics/part08-specialized-ai-tools/cursor-basics.md): 料金・モデル・買収動向の節を最新化・増強
 - [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): 2026-07-28仕様改定・A2Aとの関係・認証セキュリティ実態の節を最新化・増強
 
 ## 2026-07-22
