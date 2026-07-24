@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-23
+- [医療・ヘルスケアにおける生成AI活用事例](topics/part13-industry-cases/healthcare-ai-use-cases.md): 2026年前半の最新動向(Dragon Copilotのエージェント化・OpenEvidenceのEHR統合導入拡大・国内新事例OPTiM AIホスピタル等)を反映して最新化・増強
 - [n8nの基本](topics/part10-nocode-lowcode/n8n-basics.md): AI関連機能(LangChainネイティブ統合・MCP対応・Human-in-the-Loop)と料金・会社動向の節を最新化・増強
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): GPT-5.6(Sol/Terra/Luna)導入によるモデル交代・レガシーモデル終了スケジュール・ChatGPT Work新設を反映して最新化
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part12-ai-trends/ai-model-trends-basics.md): 主要モデルの系譜・価格・ベンチマーク動向を最新化・増強
