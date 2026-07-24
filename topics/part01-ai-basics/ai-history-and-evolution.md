@@ -2,9 +2,9 @@
 title: 生成AIの発展の歴史
 part: 1
 chapter: 第2章 AIの歴史とブーム
-tags: [AI基礎, 生成AI, LLM, Transformer, 歴史]
+tags: [AI基礎, 生成AI, LLM, Transformer, 歴史, AIエージェント]
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-07-22
 ---
 
 # 生成AIの発展の歴史
@@ -45,7 +45,9 @@ GPT-3自体は2020年から存在したが、一般のビジネスパーソン�
 
 また2025年1月には、中国のDeepSeekが公開した推論モデル「DeepSeek-R1」が、フロンティアモデルに匹敵する性能を大幅に低いコストで実現したとして「DeepSeekショック」と呼ばれる衝撃を業界に与えた(発表直後、NVIDIAの時価総額が一時約6,000億ドル減少)。これは「性能を追うだけでなく、いかに効率よく同等の性能を出すか」という新しい競争軸を業界に持ち込んだ出来事として位置づけられる。
 
-2026年7月時点では、OpenAI(GPT-5系、6月にGPT-5.6のプレビューを一部限定公開)、Anthropic(Claude Opus 4.8、Claude Sonnet 5などエージェント性能を前面に出したモデル)、Google(Gemini 3系、Gemini 3.5)が、いずれも「推論の質」「エージェントとしての自律性」「マルチモーダル対応」を同時に競う段階に入っている。
+2026年7月時点では、OpenAI・Anthropic・Google・xAIの4社がいずれも「推論の質」「エージェントとしての自律性」「マルチモーダル対応」を同時に競う段階に入っている。7月だけでも、Grok 4.5(xAI、7月8日発表、コーディング・エージェント用途に特化した1.5兆パラメータ級モデル)、GPT-5.6シリーズ(OpenAI、7月9日にプレビュー公開、後述)、Gemini 3.6 Flash・3.5 Flash-Lite(Google、7月21日発表、次期「Gemini 4」の予告付き)と、主要3〜4社が立て続けに新モデルを発表する状態が続いている。
+
+この局面で見逃せないもう一つの変化が、**モデルの命名規則そのものの多様化**である。従来は「バージョン番号を上げる=性能を上げる」という単純な図式だったが、2026年に入り各社は「同じ世代の中に用途別の複数モデルを並べる」命名に移行した。たとえばOpenAIのGPT-5.6シリーズは、最上位の推論・長時間エージェント作業向け「Sol」、日常利用に適したバランス型「Terra」、最速・最安の「Luna」という3段構成で発表され、Anthropicも最上位モデル群を「Mythos」という区分の呼称で扱い、その中で安全対策を組み込んで一般提供する版を「Claude Fable 5」、限られた検証済み顧客のみに提供する制限のない版を「Claude Mythos 5」と呼び分けている。「モデル名を追いきれない」という悩みは、単に頻度が上がっただけでなく、1回の発表で複数の派生モデルが同時に出るようになったことが一因であり、判断基準は名前ではなく後述の「どの軸が伸びたか」で見るのが実務的である。
 
 ## 使いどころ・使い分け
 
@@ -82,9 +84,11 @@ GPT-3自体は2020年から存在したが、一般のビジネスパーソン�
 | OpenAI | openai.com/index(製品発表)、help.openai.com(モデルのリリースノート) | Thinking / oシリーズ(拡張推論) |
 | Anthropic | anthropic.com/news(製品発表)、anthropic.com/research | 拡張思考(Extended thinking) |
 | Google | blog.google(製品発表全般) | Deep Think / Thinking(思考予算の調整) |
+| xAI | x.ai(製品発表) | 推論強度(reasoning effort)の高中低切り替え |
 
 ### 2026年7月時点の主要な流れ(まとめ)
 
+- **モデルファミリーの階層化**: 1つのバージョンの中に「最上位・バランス型・高速廉価版」の複数モデルを並べて同時発表するのが標準になった(GPT-5.6のSol/Terra/Luna、Gemini 3.6 Flash/3.5 Flash-Liteなど)。新モデル発表を見るときは「ファミリー名」だけでなく「どの階層のモデルか」まで確認しないと、価格・性能を取り違える
 - **モデルのコモディティ化**: 軽量モデルの価格が下がり続け、高性能モデルを1回使うより、安価なモデルを大量に使う運用が主流になりつつある
 - **エージェント前提のアプリ設計**: 「人間が使うアプリ」から「AIエージェントが前提のアプリ」への移行が業界で進んでいる。社内システムを検討する際は、AIエージェントからの操作を前提にした設計かどうかも選定基準になりうる
 - **マルチエージェント化**: 単一のAIに全部任せるのではなく、役割の異なる複数のAIエージェントが分業する構成が増えている
@@ -96,6 +100,7 @@ GPT-3自体は2020年から存在したが、一般のビジネスパーソン�
 - **ベンチマークの数値だけで判断しない**: 各社が発表するベンチマークスコアは、実際の業務タスクとの相関が薄いことがある。自社のよくある業務(議事録要約、契約書チェックなど)で実際に試してから判断する方が確実
 - **「最新モデル=常に乗り換えるべき」ではない**: 推論モデルやエージェント機能はコスト・待ち時間が増える傾向がある。定型業務には旧世代の軽量モデルの方がコスト効率で優れることも多く、用途に応じた「使い分け」の発想が重要
 - **エージェント化はリスクも拡大させる**: AIが自律的にツールを操作できる範囲が広がるほど、誤った情報に基づいて誤操作をするリスクも大きくなる。重要なアクション(送金・外部への送信・契約締結など)の前には必ず人の承認を挟む運用にする
+- **発表直後の最上位モデルには慎重に**: プレビュー公開されたばかりのフロンティアモデルは、開発元自身の「システムカード(モデルの能力・安全性の検証結果をまとめた公式文書)」で挙動面の懸念が指摘されることがある(例: OpenAIはGPT-5.6 Solのプレビューで、特定条件下での「スキーミング(scheming、指示に反する隠れた挙動)」の増加を自ら公表している)。業務の重要な判断に使う前に、開発元のシステムカードやリリースノートに目を通し、既存の枯れたモデルと並行運用しながら様子を見るのが無難である
 
 ## 最初の一歩
 
@@ -106,6 +111,11 @@ OpenAI・Anthropic・Googleいずれかの公式発表ページ(または日本�
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
 
 ## 更新履歴
+
+### 2026-07-22: 2026年7月の新モデル発表とモデル命名の階層化を追記
+
+- **内容**: 局面5(エージェント化とマルチモーダル化)の記述を2026年7月時点に更新し、Grok 4.5(xAI)・GPT-5.6シリーズ(Sol/Terra/Luna)・Gemini 3.6 Flash/3.5 Flash-Lite(Gemini 4予告)の発表を反映。また「1世代の中に複数階層のモデルを並べる」命名規則の変化(GPT-5.6のSol/Terra/Luna、AnthropicのMythos-class = Claude Fable 5/Claude Mythos 5)を新設し、モデル名の複雑化の実態を整理。情報源の使い分け表にxAIを追加し、まとめに「モデルファミリーの階層化」の観点を追加。注意点に、発表直後のフロンティアモデルはシステムカードで挙動面の懸念(スキーミングなど)が指摘されることがあるため慎重に運用する、という実務上の注意を追加
+- **出典**: [OpenAI: Previewing GPT-5.6 Sol](https://openai.com/index/previewing-gpt-5-6-sol/)、[OpenAI Help Center: A preview of GPT-5.6 Sol, Terra, and Luna](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-5-6-sol-terra-and-luna)、[OpenAI Deployment Safety Hub: GPT-5.6 Preview System Card](https://deploymentsafety.openai.com/gpt-5-6-preview)、[Anthropic: Claude Fable 5 and Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5)、[TechCrunch: Anthropic's Claude Fable 5 is a version of Mythos the public can access today](https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-access-today/)、[Google Blog: Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)、[9to5Google: Google launches Gemini 3.6 Flash and 3.5 Flash-Lite, teases Gemini 4](https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/)、[Digital Applied: Grok 4.5 - SpaceX's 1.5T V9 Model](https://www.digitalapplied.com/blog/grok-4-5-cursor-data-flywheel-spacex-private-beta-2026)
 
 ### 2026-07-05: 初版執筆
 - **内容**: Transformer登場(2017年)からスケーリング則、ChatGPTショック(2022年)、事前学習から事後学習・テスト時計算へのシフト、推論モデルの登場、MCPによるエージェント標準化、DeepSeekショック(2025年)、2026年7月時点の最新動向までを、進化のドライバーの切り替わりという観点で整理
