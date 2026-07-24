@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-19
+- [NotebookLM(Gemini Notebook)の基本](topics/part08-specialized-ai-tools/notebooklm-basics.md): 「Gemini Notebook」への改称(2026-07-16)、料金プランの4段階再編、2026年の新機能を反映して最新化
 - [生成AI利用における情報漏洩対策](topics/part04-risk-security/information-leakage-prevention.md): 各ツールの法人向けデータ保護機能、MetaのAIエージェント権限暴走事例、国内最新調査データを反映して最新化
 - [Claude(Anthropic)の基本](topics/part03-ai-chat-tools/claude-basics.md): Sonnet 5の既定モデル化、Team席の料金、Claude Cowork・Memory・適応的な推論などを反映して最新化
 - [ChatGPTのプラン比較](topics/part03-ai-chat-tools/chatgpt-plan-comparison.md): GPT-5.6(Sol/Terra/Luna)投入とChatGPT Work、日本での広告展開を反映して最新化
