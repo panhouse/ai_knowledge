@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-24
+- [ハルシネーションとは何か・対策](topics/part04-risk-security/hallucination-and-countermeasures.md): ベンチマーク数値(Vectara次世代版・OpenAIの幻覚率削減)と法的トラブル事例を最新化・増強
+
 ## 2026-07-23
 - [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part04-risk-security/ai-regulation-and-governance-trends.md): EU AI Actのデジタル・オムニバス最終合意、米国州法(コロラド・テキサス・カリフォルニア)の施行状況、日本のプリンシプル・コード動向を反映して最新化・増強
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part13-industry-cases/healthcare-ai-use-cases.md): 2026年前半の最新動向(Dragon Copilotのエージェント化・OpenEvidenceのEHR統合導入拡大・国内新事例OPTiM AIホスピタル等)を反映して最新化・増強
