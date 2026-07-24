@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-23
+- [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): GPT-5.6(Sol/Terra/Luna)導入によるモデル交代・レガシーモデル終了スケジュール・ChatGPT Work新設を反映して最新化
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part12-ai-trends/ai-model-trends-basics.md): 主要モデルの系譜・価格・ベンチマーク動向を最新化・増強
 - [GenSparkの基本](topics/part08-specialized-ai-tools/genspark-basics.md): ◯◯の節を最新化・増強
 - [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): 料金・モデルラインナップの節を2026年7月時点の最新状況に最新化・増強
