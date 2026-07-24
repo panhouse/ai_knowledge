@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-23
+- [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part12-ai-trends/ai-model-trends-basics.md): 主要モデルの系譜・価格・ベンチマーク動向を最新化・増強
 - [GenSparkの基本](topics/part08-specialized-ai-tools/genspark-basics.md): ◯◯の節を最新化・増強
 - [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): 料金・モデルラインナップの節を2026年7月時点の最新状況に最新化・増強
 - [Gem(Geminiのカスタムボット機能)の基本](topics/part06-custom-ai/gemini-gem-feature.md): モデル・利用上限・Personal Intelligence改称などを最新化・増強
