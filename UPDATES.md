@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-20
+- [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): 料金プランの節を最新化(GitHub Copilot Max追加、Copilot Chat無料枠の組織規模別制限を反映)
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): モデル世代交代(GPT Image 2・Midjourney V8.1・Nano Banana 2 Lite)を反映して最新化
 - [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): モデル・料金・競合動向の節を最新化
 - [Grok(xAI)の基本](topics/part03-ai-chat-tools/grok-basics.md): SpaceXAIへの再編・Grok 4.5・料金プラン・ディープフェイク問題の進展を反映して最新化
