@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-21
+- [「強いAI・弱いAI」とAI効果、特化型/汎用型AIの基本](topics/part01-ai-basics/strong-weak-ai-and-ai-effect-basics.md): LLM時代の「理解しているか」論争(確率的オウム対創発的能力)とAIウォッシングのリスクを追記して最新化
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): モダリティ別の代表サービス例を現行世代に更新し、エージェントAIとの関係を追加
 
 ## 2026-07-20
