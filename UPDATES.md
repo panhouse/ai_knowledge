@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-20
+- [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): モデルラインナップ・料金・レート制限の節を最新化
 - [Perplexityの基本](topics/part08-specialized-ai-tools/perplexity-basics.md): 仕組み・料金・注意点を最新化(Comet無料化とエージェント化、Model Council、Internal Knowledge Search、利用上限騒動を反映)
 - [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): モデルラインナップ・料金・無料枠・Vertex AI改称を最新化
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 各社の戦略・提携・資金調達を2026年7月時点に最新化
