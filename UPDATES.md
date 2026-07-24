@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-22
+- [AIエージェントとは何か](topics/part12-ai-trends/ai-agent-basics.md): ChatGPT Work・Claude Cowork・Microsoft Autopilots等の新製品とセキュリティインシデント実態を反映して最新化
 - [Difyワークフローの基本](topics/part10-nocode-lowcode/dify-workflow-basics.md): ◯◯の節を最新化・増強
 - [RAG(検索拡張生成)の基本](topics/part07-data-analysis/rag-basics.md): 「ロングコンテキスト vs RAG」論争や各ツールの2026年アップデートを反映して最新化
 - [生成AIによるBPR(業務プロセス再構築)](topics/part11-business-practice/generative-ai-bpr.md): これは何か・仕組み・使いどころ・注意点の節を最新化・増強
