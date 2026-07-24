@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-21
+- [AIが扱いやすいデータ形式](topics/part07-data-analysis/ai-friendly-data-formats.md): 主要ツールのファイル上限とRAGメタデータのベストプラクティスの節を最新化・増強
 - [システムプロンプトの役割と書き方](topics/part05-prompt-engineering/system-prompt-basics.md): ツール横断の対応表とAPI実装の記述を最新化
 - [トークンとは何か](topics/part02-llm-basics/what-are-tokens.md): 主要モデルの料金・コンテキストウィンドウ表とAnthropic新トークナイザーの節を最新化(Claude Fable 5・GPT-5.6一般提供などを反映)
 - [LLMの仕組み:確率的単語予測と学習プロセス](topics/part02-llm-basics/llm-mechanism-basics.md): 仕組み・背景と実務での使い方の節を最新化・増強(GPT-5.6/Gemini 3.5 Proへのモデル名更新、DPO・RLAIF・MoEの記述を追加)
