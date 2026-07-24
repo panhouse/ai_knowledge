@@ -4,7 +4,7 @@ part: 3
 chapter: 第5章 主要ツール各論
 tags: [Copilot, Microsoft, Microsoft 365, GitHub Copilot, Windows]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-20
 ---
 
 # Microsoft Copilotの基本
@@ -26,13 +26,21 @@ Microsoftは2023年以降、生成AI機能を横展開する際にブランド�
 | 製品名 | 何をするか | どこで使うか | 主な対象者 |
 |---|---|---|---|
 | **Copilot(無料版)** | Web検索を土台にした汎用チャットAI。画像生成・音声対話・簡単な文章作成ができる | copilot.microsoft.com、Windows 11のタスクバー、Microsoft Edge、Copilotアプリ(iOS/Android) | 個人利用全般。社内データへのアクセスはなし |
-| **Microsoft 365 Copilot Chat** | 無料版と同じWeb中心のチャットに加え、エンタープライズ向けのデータ保護(後述)が適用され、簡易的なエージェント機能も使える | Microsoft 365(旧Office)アプリ内のサイドパネル、Teams | Microsoft 365ライセンスを持つ組織のユーザー全員(追加課金なしで利用可) |
+| **Microsoft 365 Copilot Chat** | 無料版と同じWeb中心のチャットに加え、エンタープライズ向けのデータ保護(後述)が適用され、簡易的なエージェント機能も使える。ただし2026年4月15日以降、Word/Excel/PowerPoint/OneNote内蔵チャットの扱いが組織規模で変わった(後述) | Microsoft 365(旧Office)アプリ内のサイドパネル、Teams、Outlook | Microsoft 365ライセンスを持つ組織のユーザー全員(追加課金なしで利用可。ただしWord/Excel/PowerPoint/OneNote内での利用条件に制限あり) |
 | **Microsoft 365 Copilot(旧称: Copilot for Microsoft 365)** | Word・Excel・PowerPoint・Outlook・Teamsの中に組み込まれ、自分がアクセス権を持つ社内のメール・ファイル・会議録などを根拠に文書作成・要約・分析を行う | Word/Excel/PowerPoint/Outlook/Teams内の「Copilot」ボタン、Copilotアプリ | Microsoft 365ライセンス保有企業のうち、追加のCopilotライセンスを購入したユーザー |
 | **Copilot Pro / Microsoft 365 Premium** | 個人(コンシューマー)向けに、Word・Excel・PowerPoint・OutlookでのAI機能や優先的なモデルアクセスを提供 | Microsoft 365 Personal/Familyのアプリ内 | 会社のライセンスではなく個人で契約する個人事業主・フリーランス等 |
 | **GitHub Copilot** | ソースコードの自動補完・チャットでのコード生成・自律的なコーディングエージェント | VS Code等のIDE、GitHub.com上のチャット | ソフトウェア開発者 |
 | **Copilot in Windows** | Windows 11のOS機能として、設定変更・アプリ操作の補助やチャットを提供 | Windows 11のタスクバーアイコン | Windows 11ユーザー全般 |
 
 「Copilot」とだけ言われたら、まず「無料のWeb版か」「会社のMicrosoft 365に統合された有料版か」「開発者向けのGitHub Copilotか」の3択に絞ると混乱しにくい。
+
+**2026年4月15日、「無料で使えるCopilot Chat」の範囲が縮小した点に注意。** Microsoftは2025年9月にWord/Excel/PowerPoint/OneNote内のCopilot Chatを追加課金なしで開放していたが、2026年4月15日以降は組織規模によって扱いが分かれている。
+
+- **ユーザー数2,000人超の組織**: 有料のMicrosoft 365 Copilotライセンスを持たないユーザーは、Word/Excel/PowerPoint/OneNote内のCopilot Chatにアクセスできなくなった
+- **ユーザー数2,000人以下の組織**: 引き続き無料で使えるが「standard access」という混雑時に品質・応答速度が落ちる制限付きアクセスになり、有料ライセンスへのアップグレード訴求が表示される
+- **どちらの場合もOutlookとWeb版(copilot.cloud.microsoft等)のCopilot Chatは影響を受けず、従来どおり利用できる**
+
+したがって「Word/ExcelでCopilotボタンが急に使えなくなった/重くなった」という問い合わせは、多くの場合この変更が原因である。
 
 ## 使いどころ・使い分け
 
@@ -59,29 +67,32 @@ Microsoftは2023年以降、生成AI機能を横展開する際にブランド�
 |---|---|---|
 | Copilot(無料) | $0 | copilot.microsoft.com・Windows・Edgeで利用可。社内データへのアクセスなし |
 | Microsoft 365 Premium | $19.99/月 | Word/Excel/PowerPoint/Outlook/OneNoteでのAI機能、優先的なモデルアクセス、6TBストレージ等を含む個人向け統合プラン。旧「Copilot Pro」の実質的な後継 |
-| Copilot Pro(既存契約者のみ) | $20/月 | 2025年後半に新規募集を終了。既存ユーザーは2026年8月1日のサポート終了まで継続利用可 |
+| Copilot Pro(既存契約者のみ) | $20/月 | 2025年後半に新規募集を終了。既存ユーザーは**2026年8月1日にサポート終了**予定(本ページ執筆時点で約2週間後)。未移行の既存ユーザーはMicrosoft 365 Premiumへの切り替えを急ぐ必要がある |
 
 **法人向け(Microsoft 365 Copilot、要:対象のMicrosoft 365ベースライセンス):**
 
 | プラン | 月額目安(1ユーザーあたり、年払い) | 対象 |
 |---|---|---|
-| Microsoft 365 Copilot Chat | 追加課金なし | 対象のMicrosoft 365ライセンス保有者は全員利用可(Web中心+簡易エージェント) |
-| Microsoft 365 Copilot(中小企業向け、300ユーザーまで) | 約$18〜21/ユーザー(2026年9月まで割引価格、以降値上げ予定) | Business Basic/Standard/Premiumに追加するアドオン |
-| Microsoft 365 Copilot(エンタープライズ向け) | $30/ユーザー(年契約) | E3/E5等のエンタープライズライセンスに追加するアドオン |
+| Microsoft 365 Copilot Chat | 追加課金なし | 対象のMicrosoft 365ライセンス保有者は全員利用可(Web中心+簡易エージェント。Word/Excel/PowerPoint/OneNote内での利用は前述の組織規模による制限あり) |
+| Microsoft 365 Copilot Business(中小企業向け、300ユーザーまで、アドオン単体) | $18/ユーザー(2026年9月30日までの割引価格、以降は通常価格$21に戻る予定) | Business Basic/Standard/Premiumに追加するアドオン |
+| Microsoft 365 Business Standard + Copilot(バンドルSKU) | $23.50/ユーザー(年払い) | ベースライセンス込みの統合プラン |
+| Microsoft 365 Business Premium + Copilot(バンドルSKU) | $32/ユーザー(年払い) | ベースライセンス込みの統合プラン。Teams・1TBストレージ・高度なセキュリティ込み |
+| Microsoft 365 Copilot(エンタープライズ向け、アドオン単体) | $30/ユーザー(年契約) | E3/E5等のエンタープライズライセンスに追加するアドオン |
 
-Copilotは単体販売されておらず、必ず対象のMicrosoft 365ベースライセンス(Business Basic/Standard/Premium、E3/E5等)を保有したうえでの追加(アドオン)購入になる点に注意。ベースライセンス込みの実質負担額は、中小企業向けで月$34〜43程度、エンタープライズ向けで月$66〜87程度になるとの試算もある。契約前には必ず[Microsoft公式の料金ページ](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing)で最新の金額・条件を確認すること。
+Copilotは単体販売されておらず、必ず対象のMicrosoft 365ベースライセンス(Business Basic/Standard/Premium、E3/E5等)を保有したうえでの追加(アドオン)購入になる点に注意。**2026年7月1日から、Copilotとは別にMicrosoft 365本体のライセンス価格自体も値上げされた**(Business Basicが月$6→$7、Business Standardが月$12.50→$14、E3が月$36→$39、E5が月$57→$60。Business Premiumは月$22で据え置き)。Copilotアドオン($30、エンタープライズ向け)と合算すると、実質負担額はE3契約で月$69程度、E5契約で月$90程度になる。契約前には必ず[Microsoft公式の料金ページ](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing)で最新の金額・条件を確認すること。
 
 **開発者向け(GitHub Copilot、2026年7月時点):**
 
 | プラン | 月額目安 | 内容 |
 |---|---|---|
-| GitHub Copilot Free | $0 | 自動モデル選択のみ、機能・利用量に制限 |
-| GitHub Copilot Pro | $10/月 | 月$10相当のAI Credits(利用量に応じて消費するクレジット制)込み |
-| GitHub Copilot Pro+ | $39/月 | 月$39相当のAI Credits込み、上位モデルへのアクセス |
+| GitHub Copilot Free | $0 | コード補完は月2,000件まで、モデルは自動選択、機能・利用量に制限 |
+| GitHub Copilot Pro | $10/月 | 月$15相当のAI Credits(利用量に応じて消費するクレジット制)込み。コード補完自体は無制限 |
+| GitHub Copilot Pro+ | $39/月 | 月$70相当のAI Credits込み、Claude Opus等の上位モデルへのアクセス |
+| GitHub Copilot Max | $100/月 | 月$200相当のAI Credits込み。エージェント機能を高頻度で使う開発者向けの新プラン(2026年に新設) |
 | GitHub Copilot Business | $19/ユーザー/月 | 組織向け、一元管理・ポリシー制御 |
-| GitHub Copilot Enterprise | 要問い合わせ | Business同等機能に加え優先アクセス・大容量クレジット |
+| GitHub Copilot Enterprise | $39/ユーザー/月 | Business同等機能に加え優先アクセス・大容量のAI Credits |
 
-2026年6月からGitHub Copilotは従量課金制(利用量に応じてクレジットを消費する仕組み)に移行しており、各プランの「基本料金に含まれる利用量」を超えると追加課金が発生する設計になっている。
+2026年6月1日からGitHub Copilotは全プランで従量課金制(1 AI Credit = $0.01として、チャット・エージェント利用やCLI等の利用量に応じてクレジットを消費する仕組み)に移行した。コード補完(オートコンプリート)自体はクレジットを消費せず無制限のままだが、チャット・エージェントモードでの利用が多い開発者は、プランに含まれるクレジットを超えると追加課金が発生する点に注意。
 
 ### 社内データの扱い方(commercial data protection)
 
@@ -90,6 +101,7 @@ Microsoft 365 CopilotとMicrosoft 365 Copilot Chatには「Enterprise Data Prote
 - **Microsoft Graphによるグラウンディング**: Copilotが回答を作る際、ユーザー本人がアクセス権を持つ範囲のメール・ファイル・チャット・会議データだけをMicrosoft Graph経由で参照する。他人の権限外データは参照されない
 - **プロンプト・応答はAIモデルの学習に使われない**: Copilotへの入力(プロンプト)や出力(応答)、Graph経由で読み込んだデータは「顧客データ」として扱われ、基盤モデルの追加学習には使われない契約になっている
 - **無料版のCopilotには適用されない**: 無料のCopilot(copilot.microsoft.com、Windows版)にはこの企業向け保護は適用されず、社内データへのアクセスもない。業務で社内文書を扱いたい場合は、必ずMicrosoft 365 Copilot(またはCopilot Chat)を使う必要がある
+- **Copilot Chatの企業向け保護そのものは無料枠でも有効**: 2026年4月以降のWord/Excel/PowerPoint/OneNote内アクセス制限は「利用できるか・品質が落ちるか」の話であり、利用できる範囲においてはCopilot Chat(無料枠)にも引き続きEnterprise Data Protectionが適用される
 
 ### 導入時の基本手順の目安
 
@@ -103,7 +115,8 @@ Microsoft 365 CopilotとMicrosoft 365 Copilot Chatには「Enterprise Data Prote
 - **「Copilot」という名前だけでは製品を特定できない**: 社内で「Copilotを使って」と言われたら、無料版か、Microsoft 365 Copilotか、GitHub Copilotかを必ず確認する。ライセンス費用も機能も別物である
 - **無料のCopilotに社内文書を貼り付けない**: 無料版は社内データへのアクセス権もエンタープライズ向けデータ保護もない。機密情報の要約・分析は必ずMicrosoft 365 CopilotかCopilot Chat(いずれも対象ライセンス保有者向け)で行う
 - **Copilot単体では契約できない**: 必ず対象のMicrosoft 365ベースライセンスが前提になるため、見積もりは「アドオン価格」だけでなく「ベースライセンス+アドオン」の合計で比較する
-- **料金・呼称の変更頻度が高い**: 2025年後半にCopilot Proが個人向けでは実質Microsoft 365 Premiumに統合されるなど、短期間で名称・料金体系が変わっている。本ページの数値は目安であり、契約前には必ず公式サイトで確認する
+- **料金・呼称の変更頻度が高い**: 2025年後半にCopilot Proが個人向けでは実質Microsoft 365 Premiumに統合され、2026年7月にはMicrosoft 365本体のライセンス価格も値上げされるなど、短期間で名称・料金体系が変わっている。本ページの数値は目安であり、契約前には必ず公式サイトで確認する
+- **「無料で使えるCopilot Chat」の範囲は組織規模で変わる**: 2026年4月15日以降、ユーザー数2,000人超の組織では有料ライセンスなしのWord/Excel/PowerPoint/OneNote内Copilot Chatが使えなくなった。全社導入前に自社の対象人数を確認し、必要な範囲は有料のMicrosoft 365 Copilotライセンスで賄う前提で予算を組む
 - **精度は「社内データの整備状況」に左右される**: SharePointやOneDriveのファイル権限・命名規則が乱雑だと、Copilotが正しいデータを見つけられず回答の質が落ちる。導入効果を出すには、Copilot導入前にファイル整理・アクセス権の棚卸しを行うのが実務上のコツ
 
 ## 最初の一歩
@@ -116,6 +129,10 @@ Microsoft 365 CopilotとMicrosoft 365 Copilot Chatには「Enterprise Data Prote
 - [Google Geminiの基本](./google-gemini-basics.md)
 
 ## 更新履歴
+
+### 2026-07-20: 料金プランとCopilot Chatの無料枠制限を最新化
+- **内容**: 2026年4月15日に実施されたユーザー数2,000人超の組織でのWord/Excel/PowerPoint/OneNote内Copilot Chat(無料枠)の利用制限を追記。GitHub Copilotの新プラン「Max」($100/月、$200相当のAI Credits)を追加し、Pro/Pro+のAI Credits金額($15/$70)およびEnterprise価格($39/ユーザー)を実際の数値に訂正。Microsoft 365本体のライセンス価格値上げ(2026年7月1日、Business Basic $6→$7、Business Standard $12.50→$14、E3 $36→$39、E5 $57→$60)とCopilot Businessアドオンの割引期限(2026年9月30日まで)を反映し、法人向け料金表をバンドルSKU価格を含めて更新。Copilot Proの個人向けサポート終了(2026年8月1日)が目前に迫っている旨を強調
+- **出典**: [Microsoft公式: Microsoft 365 Copilot Plans and Pricing](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing)、[Microsoft 365 Blog: Advancing Microsoft 365: New capabilities and pricing update](https://www.microsoft.com/en-us/microsoft-365/blog/2025/12/04/advancing-microsoft-365-new-capabilities-and-pricing-update/)、[GitHub公式: GitHub Copilot Plans & pricing](https://github.com/features/copilot/plans)、[Office Watch: Microsoft Kills Free Copilot Chat in Word, Excel and PowerPoint: What Happens on April 15](https://office-watch.com/2026/microsoft-removes-copilot-chat-word-excel-powerpoint-april-2026/)、[Computerworld: Microsoft backtracks on Copilot Chat access in M365 apps](https://www.computerworld.com/article/4150022/microsoft-backtracks-on-copilot-chat-access-in-m365-apps.html)
 
 ### 2026-07-06: 初版執筆
 - **内容**: 「Copilot」を名乗る複数の製品(無料Copilot、Microsoft 365 Copilot Chat、Microsoft 365 Copilot、Copilot Pro/Microsoft 365 Premium、GitHub Copilot、Copilot in Windows)の違いを整理し、2026年7月時点の料金プラン、Microsoft Graphによるグラウンディングとエンタープライズ向けデータ保護の仕組み、ChatGPT/Gemini/Claudeとの使い分けをまとめた
