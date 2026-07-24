@@ -2,9 +2,9 @@
 title: Function Calling(Tool Calling)の基本
 part: 9
 chapter: 第2章 API活用実践
-tags: [API, Function Calling, Tool Use, AIエージェント]
+tags: [API, Function Calling, Tool Use, AIエージェント, Responses API]
 created: 2026-07-05
-updated: 2026-07-06
+updated: 2026-07-22
 ---
 
 # Function Calling(Tool Calling)の基本
@@ -29,9 +29,11 @@ Function Callingの処理は、次の5ステップで進む。
 
 なお、2025〜2026年にかけて各社は以下のような機能拡張を進めている(詳細は本文末の出典を参照)。
 
-- **並列ツール呼び出し(parallel tool calls)**: 1回のやり取りで複数のツールを同時に呼び出せる機能。OpenAIのAPIでは`parallel_tool_calls`パラメータで制御でき、処理に依存関係がある場合(Aの結果がないとBを呼べない、など)はあえて無効化することが推奨されている。
-- **スキーマの厳密一致(strict mode)**: OpenAIの「Structured Outputs」やAnthropicの「strict tool use」など、モデルの出力を指定したJSON Schemaに完全一致させる仕組みが各社で整備され、引数の型崩れによるエラーが起きにくくなっている。
-- **大量のツールを扱う仕組み**: Anthropicの「Tool Search Tool」のように、数百〜数千個のツールをモデルのコンテキストに全部読み込ませず、必要な時だけ検索して呼び出す機能も登場している。
+- **並列ツール呼び出し(parallel tool calls)**: 1回のやり取りで複数のツールを同時に呼び出せる機能。OpenAIのAPIでは`parallel_tool_calls`パラメータで制御でき、処理に依存関係がある場合(Aの結果がないとBを呼べない、など)はあえて無効化することが推奨されている。Anthropicは並列ツール呼び出しがデフォルトで有効になっており、複数の`tool_use`ブロックへの結果は1つの`user`メッセージにまとめて返す必要がある。
+- **スキーマの厳密一致(strict mode)**: OpenAIの「Structured Outputs」(ツール定義に`"strict": true`を付ける)やAnthropicの「strict tool use」(ツール定義に`strict: true`、ベータヘッダー不要)など、モデルの出力を指定したJSON Schemaに完全一致させる仕組みが各社で整備され、引数の型崩れによるエラーが起きにくくなっている。
+- **大量のツールを扱う仕組み**: Anthropicの「Tool Search Tool」(`tool_search_tool_regex_20251119`/`tool_search_tool_bm25_20251119`)のように、数百〜数千個のツールをモデルのコンテキストに全部読み込ませず、使う可能性があるツールに`defer_loading: true`を付けて必要な時だけ検索・呼び出す機能も登場している。
+- **OpenAIのAPI体系の刷新**: OpenAIは2025年に「Responses API」を新設し、Function Calling・Web検索・コード実行・リモートMCPサーバー呼び出しなどを1つのAPIリクエストの中でエージェント的にループさせられるようにした。旧来の「Assistants API」は2026年8月26日に廃止予定であり、新規に実装するなら基本はResponses APIを使う(詳細は次項)。
+- **Gemini 3系の thought signature**: Gemini 3以降のモデルでFunction Callingを使う場合、モデルが返す`functionCall`パートには`thoughtSignature`(内部の思考過程を表す暗号化データ)が付与される。マルチターンの会話でこれを次のリクエストに含め忘れると、`400`エラー(thought signature is required)になる。公式SDK(Google Gen AI SDK)を使えば自動的に処理されるが、raw HTTPで直接APIを叩く場合は明示的に扱う必要がある。
 
 ## 使いどころ・使い分け
 
@@ -52,29 +54,30 @@ Function Callingの処理は、次の5ステップで進む。
 
 ### 最小構成のイメージ(概念コード)
 
-以下は「都市名を渡すと天気を返す関数」を例にした、ツール定義から結果返却までの一連の流れの概念的なイメージ。実際のパラメータ名は使用するAPI・SDKのバージョンで異なるため、必ず各社の最新リファレンスで確認すること。
+以下は「都市名を渡すと天気を返す関数」を例にした、ツール定義から結果返却までの一連の流れの概念的なイメージ。OpenAIの現行の推奨インターフェースである**Responses API**に近い形で書いているが、実際のパラメータ名は使用するAPI・SDKのバージョンで異なるため、必ず各社の最新リファレンスで確認すること。
 
 ```jsonc
 // 1. 開発者がツール(関数)のスキーマを定義してリクエストに含める
+// (Responses APIでは "function" のネストがなく、name/description/parametersが
+//  ツール定義に直接フラットに並ぶ点に注意。strict: true を付けるとスキーマに
+//  完全一致した引数だけを返すようになる)
 {
   "model": "(使用するモデル名)",
-  "messages": [
-    { "role": "user", "content": "東京の天気を教えて" }
-  ],
+  "input": "東京の天気を教えて",
   "tools": [
     {
       "type": "function",
-      "function": {
-        "name": "get_weather",
-        "description": "指定した都市の現在の天気を取得する",
-        "parameters": {
-          "type": "object",
-          "properties": {
-            "city": { "type": "string", "description": "都市名(例: 東京)" },
-            "unit": { "type": "string", "enum": ["celsius", "fahrenheit"] }
-          },
-          "required": ["city"]
-        }
+      "name": "get_weather",
+      "description": "指定した都市の現在の天気を取得する",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "city": { "type": "string", "description": "都市名(例: 東京)" },
+          "unit": { "type": "string", "enum": ["celsius", "fahrenheit"] }
+        },
+        "required": ["city", "unit"],
+        "additionalProperties": false
       }
     }
   ]
@@ -82,14 +85,14 @@ Function Callingの処理は、次の5ステップで進む。
 
 // 2. モデルは自分で天気APIを呼ぶのではなく、
 //    「この関数をこの引数で呼んでほしい」という要求だけを返す
+//    (output配列に type: "function_call" の要素として現れる)
 {
-  "tool_calls": [
+  "output": [
     {
-      "id": "call_abc123",
-      "function": {
-        "name": "get_weather",
-        "arguments": "{\"city\": \"東京\", \"unit\": \"celsius\"}"
-      }
+      "type": "function_call",
+      "call_id": "call_abc123",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"東京\", \"unit\": \"celsius\"}"
     }
   ]
 }
@@ -97,29 +100,32 @@ Function Callingの処理は、次の5ステップで進む。
 // 3. 開発者側のコードが実際に天気APIを呼び出し、結果を得る
 // (例: get_weather("東京", "celsius") -> {"temp": 29, "condition": "晴れ"})
 
-// 4. 実行結果を「この関数呼び出しへの回答」としてモデルに送り返す
+// 4. 実行結果を「この関数呼び出しへの回答」として、直前のinputに続けて送り返す
 {
-  "role": "tool",
-  "tool_call_id": "call_abc123",
-  "content": "{\"temp\": 29, \"condition\": \"晴れ\"}"
+  "type": "function_call_output",
+  "call_id": "call_abc123",
+  "output": "{\"temp\": 29, \"condition\": \"晴れ\"}"
 }
 
 // 5. モデルはこの結果を踏まえて、最終的な自然文の回答を生成する
 // -> 「東京は現在晴れ、気温29度です。」
 ```
 
-上記はOpenAIのAPIに近い形で書いているが、AnthropicのClaudeやGoogleのGeminiでもキー名が違うだけで考え方はまったく同じ(ツールのスキーマを渡す → モデルが呼び出し要求を返す → 開発者が実行 → 結果を返す)。
+**旧来のChat Completions API**(`/v1/chat/completions`)では、ツール定義は`{"type": "function", "function": {"name": ..., "parameters": ...}}`のように`function`キーの中にネストする形式で、モデルからの呼び出し要求はレスポンスの`tool_calls`配列(`function.name`/`function.arguments`)、結果は`role: "tool"`のメッセージ(`tool_call_id`で紐付け)として返す。Chat Completionsは引き続き使えるが、OpenAIは複数ツールの連鎖・組み込みツール(Web検索・コード実行・リモートMCPサーバーなど)との併用を前提とするならResponses APIへの移行を推奨している(Assistants APIは2026年8月26日に廃止予定)。
+
+AnthropicのClaudeやGoogleのGeminiでもキー名が違うだけで考え方はまったく同じ(ツールのスキーマを渡す → モデルが呼び出し要求を返す → 開発者が実行 → 結果を返す)。
 
 ### 各社での呼び方・実装の違い
 
-| 項目 | OpenAI | Anthropic(Claude) | Google(Gemini) |
+| 項目 | OpenAI(Responses API) | Anthropic(Claude) | Google(Gemini) |
 |---|---|---|---|
 | 機能の呼称 | Function calling(APIパラメータは`tools`) | Tool use | Function calling(呼称はOpenAIと同じ) |
-| ツール定義のキー | `tools` → `type: "function"` の中に `name` / `description` / `parameters` | `tools` の中に `name` / `description` / `input_schema` | `tools` の中の `function_declarations` に `name` / `description` / `parameters` |
-| モデルからの呼び出し要求 | レスポンスの `tool_calls`(`function.name`と`function.arguments`。argumentsはJSON文字列なのでパースが必要) | `stop_reason: "tool_use"` と `tool_use` コンテンツブロック(`name`と`input`。inputは解析済みオブジェクト) | `functionCall`(`name`と`args`) |
-| 実行結果の返し方 | `role: "tool"` のメッセージ(`tool_call_id`を紐付け) | `tool_result` コンテンツブロック(`tool_use_id`を紐付け) | `functionResponse`(`name`と`response`) |
-| 厳密スキーマ一致の機能 | Structured Outputs / strictモード | strict tool use | 対応するSchema制約(サポート属性は限定的) |
-| 備考 | 旧`functions`/`function_call`パラメータは非推奨で`tools`/`tool_choice`に統一済み | 「Tool Search Tool」で大量ツールを検索方式で扱う機能などを追加 | Gemini 3系では関数呼び出し前の内部思考(thought signature)をSDKが自動処理 |
+| ツール定義のキー | `tools`配列の要素に`type: "function"`と`name`/`description`/`parameters`をフラットに指定(旧Chat Completionsは`function`キーの中にネスト) | `tools`の中に`name`/`description`/`input_schema` | `tools`の中の`function_declarations`に`name`/`description`/`parameters` |
+| モデルからの呼び出し要求 | `output`配列の`type: "function_call"`要素(`call_id`/`name`/`arguments`。argumentsはJSON文字列なのでパースが必要) | `stop_reason: "tool_use"`と`tool_use`コンテンツブロック(`name`と`input`。inputは解析済みオブジェクト) | `functionCall`(`name`と`args`)。Gemini 3系は`thoughtSignature`も併せて返る |
+| 実行結果の返し方 | 次のリクエストの`input`に`type: "function_call_output"`(`call_id`と`output`)を追加 | `tool_result`コンテンツブロック(`tool_use_id`を紐付け)。複数の結果は1つの`user`メッセージにまとめる | `functionResponse`(`name`と`response`) |
+| 厳密スキーマ一致の機能 | Structured Outputs(ツール定義に`strict: true`) | strict tool use(ツール定義に`strict: true`、ベータヘッダー不要) | 対応するSchema制約(サポート属性は限定的) |
+| 並列ツール呼び出し | `parallel_tool_calls`パラメータで制御(既定は有効) | 既定で有効(結果は1メッセージにまとめて返す) | 対応(依存関係がなければ複数の`functionCall`が同時に返る) |
+| 備考 | 旧`functions`/`function_call`トップレベルパラメータは非推奨・廃止済み。Assistants APIは2026-08-26に廃止予定 | 「Tool Search Tool」(`tool_search_tool_regex_20251119`/`_bm25_20251119`)で大量ツールを検索方式で扱う機能を追加 | Gemini 3系はマルチターンの`functionCall`に`thoughtSignature`を含め忘れると400エラーになる。公式SDK利用時は自動処理される |
 
 いずれのプロバイダーも同時に複数のツール呼び出しを1ターンで返す「並列ツール呼び出し」に対応しているが、処理の順序に依存関係がある場合(前の結果がないと次の関数を呼べない場合など)は、並列実行をオフにする設定を使う必要がある。
 
@@ -153,6 +159,8 @@ MCPはFunction Callingを置き換えるものではなく、その「配線」�
 - **実行前の安全確認(Human-in-the-loop)を軽視しない**: メール送信・決済・データ削除など取り返しのつかない操作をツール化する場合、モデルの呼び出し要求をそのまま無条件に実行するのは危険。金額や対象が一定の条件を超える場合は人間の承認を挟む、実行ログを残す、権限を最小限にするなど、セキュリティ面の設計が必須になる(この観点はセキュリティ関連のトピックで別途扱う)。
 - **JSONモード/Structured Outputsとの混同**: 「決まった形式でデータを出力させたい」だけであれば、外部実行を伴わないJSONモードやStructured Outputsの方がシンプルな場合がある。外部システムへの問い合わせ・操作が必要かどうかで使い分ける。
 - **料金への影響**: ツールの定義(スキーマ)自体も入力トークンとしてAPI利用料に加算される。ツールの数が多い・説明文が長いほどコストが上がる点は見落とされがちなので、必要なツールだけを都度渡すなど設計上の工夫をする。
+- **OpenAIの実装は「どのAPIか」で形が変わる**: Chat Completions(ツール定義が`function`キーの中にネスト)とResponses API(フラットな構造)ではJSONの形が異なるため、他社ブログやサンプルコードをコピペする際は年式とAPIの種類を必ず確認する。新規実装ならResponses APIが基本(Assistants APIは2026年8月26日に廃止予定)。
+- **Gemini 3系のthought signature忘れによる400エラー**: raw HTTPやSDKの薄いラッパー経由で直接Gemini APIを叩いている場合、マルチターンの会話で前回の`functionCall`パートに付いていた`thoughtSignature`を次のリクエストに含め忘れると、「thought signature is required」という400エラーになる。公式のGoogle Gen AI SDKを使っていれば通常は自動処理されるが、独自にリクエストを組み立てている場合は要注意。
 
 ## 最初の一歩
 
@@ -163,6 +171,10 @@ MCPはFunction Callingを置き換えるものではなく、その「配線」�
 - [OpenAI APIの基本](openai-api-basics.md)
 
 ## 更新履歴
+
+### 2026-07-22: OpenAI Responses APIとGemini 3のthought signatureを反映して最新化
+- **内容**: OpenAIの標準インターフェースがResponses API(ツール定義がフラットな構造、`output`配列の`function_call`要素、`function_call_output`での結果返却)に移行した点を反映して概念コード例と各社比較表を全面改訂。Chat Completions(ネスト構造)は互換のため残っている旨と、Assistants APIが2026年8月26日に廃止予定である旨を追記。Anthropicの並列ツール呼び出しの既定値・Tool Search Toolの正式名称(`tool_search_tool_regex_20251119`/`_bm25_20251119`)を明確化。Gemini 3系で必須になった`thoughtSignature`(マルチターンで送り返さないと400エラー)を仕組み・比較表・注意点に追加
+- **出典**: [OpenAI: Function calling](https://developers.openai.com/api/docs/guides/function-calling)、[OpenAI: Migrate to the Responses API](https://developers.openai.com/api/docs/guides/migrate-to-responses)、[OpenAI: New tools and features in the Responses API](https://openai.com/index/new-tools-and-features-in-the-responses-api/)、[Google AI for Developers: Function calling with the Gemini API](https://ai.google.dev/gemini-api/docs/function-calling)、[Google AI for Developers: Thought signatures](https://ai.google.dev/gemini-api/docs/generate-content/thought-signatures)
 
 ### 2026-07-06: 重複ページの統合
 - **内容**: 同一トピックの重複ページ `function-calling.md` を本ページに統合。ノーコード・ローコードツールでの位置づけ(カスタムGPTのActions/Dify/GAS/Zapier等)、MCPとの関係、引数のインジェクション対策、Playground/Consoleでの試し方を取り込んだ
