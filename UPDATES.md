@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-21
+- [生成AIに向く業務・向かない業務の切り分け](topics/part11-business-practice/ai-task-suitability.md): AIエージェントの自律性・ガバナンスの節を最新化・増強(ジャギッド・フロンティアの平準化とAI事業者ガイドライン第1.2版を反映)
 - [Human in the Loop(人間参加型)の業務設計](topics/part11-business-practice/human-in-the-loop-basics.md): EU AI Actの高リスク義務延期(2027年12月/2028年8月)、日本のAI事業者ガイドライン第1.2版のHITL要求、Meta社内エージェント事故・エージェント型ランサムウェア事例を反映して最新化・増強
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part07-data-analysis/chatgpt-advanced-data-analysis.md): ファイル「ライブラリ」機能・GPT-5.6・ChatGPT Goを反映して最新化
 - [プロンプトの基本構成要素](topics/part05-prompt-engineering/prompt-basic-structure.md): PTCFフレームワークの追加、推論モデルでのステップバイステップ指示の要否、ツール横断の対応表を最新化・増強
