@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-24
+- [AIプロジェクトの進め方と評価指標の基礎](topics/part01-ai-basics/ai-project-and-evaluation-basics.md): 生成AI(LLM)特有の評価手法(LLM-as-a-Judge・ゴールデンセット)の節を新設し、PoC頓挫の最新データを更新
+
 ## 2026-07-18
 - [海運・港湾業界における生成AI活用事例](topics/part13-industry-cases/maritime-shipping-ai-use-cases.md): 新規執筆(船舶運航最適化・港湾ターミナル自動化・通関書類作成支援を物流・運輸ページと切り分けて整理)
 - [NPO・非営利団体における生成AI活用事例](topics/part13-industry-cases/npo-nonprofit-ai-use-cases.md): 新規執筆(助成金申請書作成・ファンドレイジング・多言語相談対応・議事録自動化と非営利団体向け割引プログラムを整理)
