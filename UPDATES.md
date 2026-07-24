@@ -6,6 +6,9 @@
 
 ## 2026-07-19
 - [ChatGPTのプラン比較](topics/part03-ai-chat-tools/chatgpt-plan-comparison.md): GPT-5.6(Sol/Terra/Luna)投入とChatGPT Work、日本での広告展開を反映して最新化
+- [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): プラン体系再編(Ultra 5x/20x化等)、モデルラインナップ、NotebookLMの「Gemini Notebook」への改称を反映して最新化
+- [OpenAI APIの基本](topics/part09-api-development/openai-api-basics.md): GPT-5.6(Sol/Terra/Luna)へのモデル刷新と料金体系を反映して最新化
+- [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): Cloud版料金の確定額化、セルフホスト3層構成(Community/Premium/Enterprise)、MCP対応・Agent App等の新機能を反映して最新化
 
 ## 2026-07-18
 - [海運・港湾業界における生成AI活用事例](topics/part13-industry-cases/maritime-shipping-ai-use-cases.md): 新規執筆(船舶運航最適化・港湾ターミナル自動化・通関書類作成支援を物流・運輸ページと切り分けて整理)
