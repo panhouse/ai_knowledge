@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-20
+- [Grok(xAI)の基本](topics/part03-ai-chat-tools/grok-basics.md): SpaceXAIへの再編・Grok 4.5・料金プラン・ディープフェイク問題の進展を反映して最新化
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): V4のGA移行・ピーク時課金・他国規制動向の節を最新化
 
 ## 2026-07-19
