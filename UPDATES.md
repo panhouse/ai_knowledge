@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-23
+- [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): 2026-07-28仕様改定・A2Aとの関係・認証セキュリティ実態の節を最新化・増強
+
 ## 2026-07-22
 - [プロンプトインジェクションとは何か(仕組みと対策)](topics/part04-risk-security/prompt-injection-basics.md): ◯◯の節を最新化・増強
 - [AIエージェントとは何か](topics/part12-ai-trends/ai-agent-basics.md): ChatGPT Work・Claude Cowork・Microsoft Autopilots等の新製品とセキュリティインシデント実態を反映して最新化
