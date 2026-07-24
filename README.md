@@ -20,11 +20,11 @@
 | [Part 4](topics/part04-risk-security/_index.md) | リスク管理・セキュリティ | 情報漏洩・データ管理、攻撃と防御、ハルシネーション対策、法務・ガバナンス |
 | [Part 5](topics/part05-prompt-engineering/_index.md) | プロンプトエンジニアリング | 基本原則、例示と誘導、思考を引き出す手法、エージェント的手法、評価と改善 |
 | [Part 6](topics/part06-custom-ai/_index.md) | カスタムAIの作成 | 設計の基礎、GPTs / Gem / Copilot Agent / Claude Projects、高度な活用と防御 |
-| [Part 7](topics/part07-data-analysis/_index.md) | データ活用・分析 | データ形式、チャットAIによる分析、RAGの基礎、精度改善と基盤 |
-| [Part 8](topics/part08-specialized-ai-tools/_index.md) | 特化型AIツール | 検索・リサーチ、コーディング支援、画像・動画・音声生成、ローカル・オープンモデル、選び方 |
-| [Part 9](topics/part09-api-development/_index.md) | API・開発連携 | LLM API基礎、API活用実践、業務ツール連携、MCP・エージェント連携 |
+| [Part 7](topics/part07-data-analysis/_index.md) | データ活用・分析 | データ形式、チャットAIによる分析、RAGの基礎、精度改善と基盤、画像・PDFの読み取り活用(Vision入力) |
+| [Part 8](topics/part08-specialized-ai-tools/_index.md) | 特化型AIツール | 検索・リサーチ、コーディング支援、画像・動画・音声生成、ローカル・オープンモデル(OSSライセンス比較含む)、選び方、会議・議事録AI |
+| [Part 9](topics/part09-api-development/_index.md) | API・開発連携 | LLM API基礎、API活用実践(リアルタイム音声API含む)、業務ツール連携、MCP・エージェント連携 |
 | [Part 10](topics/part10-nocode-lowcode/_index.md) | ノーコード・ローコード開発 | Dify基礎、Difyワークフロー、自動化・連携ツール、AIエージェント構築 |
-| [Part 11](topics/part11-business-practice/_index.md) | 業務活用・実践 | 導入の設計、文章・コミュニケーション、資料作成、リサーチ、職種別ユースケース |
+| [Part 11](topics/part11-business-practice/_index.md) | 業務活用・実践 | 導入の設計(コスト管理・予算配分含む)、文章・コミュニケーション、資料作成、リサーチ、職種別ユースケース |
 | [Part 12](topics/part12-ai-trends/_index.md) | AI動向・将来展望 | 技術トレンド、主要プレイヤーの動向、AGIと働き方、日本における動向 |
 | [Part 13](topics/part13-industry-cases/_index.md) | 業種別 生成AI活用事例 | 製造・小売・金融・医療など業種ごとの活用事例(+未分類の受け皿) |
 
