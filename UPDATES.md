@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-22
+- [生成AIの発展の歴史](topics/part01-ai-basics/ai-history-and-evolution.md): 2026年7月のモデル発表(Grok 4.5・GPT-5.6・Gemini 3.6 Flash)とモデル命名の階層化の節を最新化・増強
+
 ## 2026-07-21
 - [生成AIに向く業務・向かない業務の切り分け](topics/part11-business-practice/ai-task-suitability.md): AIエージェントの自律性・ガバナンスの節を最新化・増強(ジャギッド・フロンティアの平準化とAI事業者ガイドライン第1.2版を反映)
 - [Human in the Loop(人間参加型)の業務設計](topics/part11-business-practice/human-in-the-loop-basics.md): EU AI Actの高リスク義務延期(2027年12月/2028年8月)、日本のAI事業者ガイドライン第1.2版のHITL要求、Meta社内エージェント事故・エージェント型ランサムウェア事例を反映して最新化・増強
