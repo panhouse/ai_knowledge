@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-22
+- [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): 各社の最新モデル・公式ガイド(GPT-5系・Gemini 3・Claude最新モデル)の推奨内容を最新化・増強
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](topics/part02-llm-basics/context-window-basics.md): 主要モデルのコンテキストウィンドウ比較の節を最新化・増強
 - [生成AIの発展の歴史](topics/part01-ai-basics/ai-history-and-evolution.md): 2026年7月のモデル発表(Grok 4.5・GPT-5.6・Gemini 3.6 Flash)とモデル命名の階層化の節を最新化・増強
 
