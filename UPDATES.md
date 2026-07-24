@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-20
+- [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): モデルラインナップ・料金・無料枠・Vertex AI改称を最新化
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 各社の戦略・提携・資金調達を2026年7月時点に最新化
 - [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): 料金プランの節を最新化(GitHub Copilot Max追加、Copilot Chat無料枠の組織規模別制限を反映)
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): モデル世代交代(GPT Image 2・Midjourney V8.1・Nano Banana 2 Lite)を反映して最新化
