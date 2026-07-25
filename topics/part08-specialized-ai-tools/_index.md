@@ -49,3 +49,4 @@ part: 8
 - [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](video-generation-ai-basics.md)
 - [Windsurfの基本(コーディング支援AI)](windsurf-basics.md)
 - [量子化(モデル軽量化)の基本](quantization-basics.md)
+- [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](meeting-minutes-ai-basics.md)
