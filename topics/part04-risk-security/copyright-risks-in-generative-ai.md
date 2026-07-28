@@ -4,7 +4,7 @@ part: 4
 chapter: 第4章 法務・ガバナンス
 tags: [著作権, 法的リスク, 生成AI, 文化庁, 著作権法30条の4, 商用利用, 画像生成]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # 生成AIの著作権リスクと実務での注意点
@@ -80,6 +80,17 @@ AIが出力したものを公開・利用する段階では、AIかどうかに�
 
 料金・補償条件は各社とも改定頻度が高いため、契約・公開の前に必ず各社の最新の利用規約・製品ページで確認すること。
 
+### 海外の訴訟動向(2026年7月時点)
+
+自社が直接の当事者でなくても、大手AIベンダーの訴訟動向は「補償(indemnification)がどこまで信頼できるか」の判断材料になる。2026年7月には以下の進展があった。
+
+- **2026年7月20日**: 著者・出版社らがAnthropicを訴えていた著作権集団訴訟について、15億ドル規模の和解が裁判所に最終承認され、対象著作者への支払い手続きが開始された
+- **2026年7月14日**: Hachette・Cengage・Elsevierなど出版社と作家団体が、Geminiの学習データに著作権管理情報を削除した著作物が含まれていたとして、Googleを相手取り新たな集団訴訟を提起した
+- **2026年7月22日**: Concord Music・Universal Music Publishing・ABKCOが、楽曲の歌詞の無許諾利用を理由にAnthropicに対する訴訟の請求内容を拡大した
+- **2026年7月9日**: New York Timesら原告が、OpenAIとの著作権訴訟の証拠開示手続きで不利な証拠を隠したとして制裁を求める申立てを行った(訴訟本体の決着はついていない)
+
+これらはいずれも訴訟が続いている最中の動きであり、確定判決ではない。ただし「補償を謳っているベンダーでも、そのベンダー自身が著作権訴訟の当事者になっている」こと自体は、契約前のリスク評価で押さえておく価値がある。
+
 ## 注意点・よくある誤解
 
 - **「AIが作ったから自分の著作物ではない」と「AIが作ったから何をしても自由」は別問題**: 前者は権利の帰属の話、後者は既存作品への侵害の話。人間の創作的寄与が乏しければ自社の著作物として権利主張しにくくなる一方、依拠性・類似性が認められれば既存作品の著作権侵害にはなり得る。両方を混同しないこと
@@ -98,6 +109,10 @@ AIが出力したものを公開・利用する段階では、AIかどうかに�
 - [生成AI利用における情報漏洩対策](./information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-07-28: 海外の訴訟動向を追記
+- **内容**: Anthropicの15億ドル著作権集団訴訟和解の最終承認(7/20)、出版社らによるGoogleへの新規訴訟提起(7/14)、Concord Music等によるAnthropicへの訴訟拡大(7/22)、NYT対OpenAI訴訟での証拠開示を巡る制裁申立て(7/9)を「海外の訴訟動向」として追記
+- **出典**: [TechCrunch: Anthropic's landmark $1.5B copyright settlement is approved](https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/)、[TechCrunch: Google faces another AI training lawsuit from major publishers](https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/)、[CelebrityAccess: Music publishers expand copyright lawsuit against Anthropic over song lyrics](https://celebrityaccess.com/2026/07/27/music-publishers-expand-copyright-lawsuit-against-anthropic-over-song-lyrics/)、[TechCrunch: New York Times says OpenAI hid evidence in ChatGPT copyright trial](https://techcrunch.com/2026/07/09/new-york-times-says-openai-hid-evidence-in-chatgpt-copyright-trial/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: 生成AIの著作権リスクを「既存著作物への侵害リスク」と「AI生成物自体の著作物性」の2軸で整理し、著作権法30条の4・類似性/依拠性による侵害判断の考え方、用途別のリスク早見表、公開前チェックリスト、OpenAI/Google/Microsoft/Adobeの利用規約における出力の権利帰属・補償(indemnification)の比較をまとめた

@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-28
+- [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の著作権訴訟動向(Anthropic和解承認・Google新規提訴等)を追記して最新化
 - [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): WatchGuardの2026年7月調査データを追加して最新化
 - [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): ワークフロー型ジェイルブレイクと攻撃の商用化事例を反映して最新化
 - [ガードレール(生成AIの入出力安全対策)の基本](topics/part04-risk-security/ai-guardrails-basics.md): 新しい回避手口(Sockpuppeting)と防御側の誤検知事例を反映して最新化
