@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-27
+- [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part14-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 新規執筆(Part14第4章の初回ページ、Yoom・Anyflow・アステリア・JAPAN AI・エクサウィザーズを収録)
 ## 2026-07-26
 - [人事・採用AI企業一覧](topics/part14-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 新規執筆(人事・採用AI企業一覧)
 - [経理・会計AI企業一覧](topics/part14-japan-ai-companies/accounting-ai-companies-japan.md): 新規執筆(経理・会計AI企業一覧)
