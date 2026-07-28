@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-25
+- [コンサル・SIer系のAI企業一覧](topics/part14-japan-ai-companies/consulting-sier-ai-companies.md): 新規執筆
 - [オープンソースAIモデルのライセンス比較(商用利用時の論点)](topics/part08-specialized-ai-tools/open-source-model-license-comparison.md): 新規執筆
 - [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 新規執筆
 
