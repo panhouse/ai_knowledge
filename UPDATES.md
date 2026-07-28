@@ -6,6 +6,15 @@
 
 ## 2026-07-26
 - [議事録・文字起こしAI企業一覧](topics/part14-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 新規執筆(議事録・文字起こしAI企業一覧)
+- [契約書・法務AI企業一覧](topics/part14-japan-ai-companies/legal-contract-ai-companies-japan.md): 新規執筆(契約書・法務AI企業一覧)
+## 2026-07-25
+- [生成AI利用コストの管理・予算配分](topics/part11-business-practice/ai-cost-management-and-budgeting.md): 新規執筆
+- [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](topics/part08-specialized-ai-tools/meeting-minutes-ai-basics.md): 新規執筆
+- [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): 新規執筆
+- [リアルタイム音声API(ボイスエージェント構築)の基本](topics/part09-api-development/realtime-voice-api-basics.md): 新規執筆
+- [コンサル・SIer系のAI企業一覧](topics/part14-japan-ai-companies/consulting-sier-ai-companies.md): 新規執筆
+- [オープンソースAIモデルのライセンス比較(商用利用時の論点)](topics/part08-specialized-ai-tools/open-source-model-license-comparison.md): 新規執筆
+- [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 新規執筆
 
 ## 2026-07-24
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): ガバメントAI「源内」の国産クラウド実証・国産LLM各社の動き・政府予算の節を最新化・増強
