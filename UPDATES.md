@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-28
+- [ChatGPTのメモリ(Memory)機能](topics/part03-ai-chat-tools/chatgpt-memory-feature.md): Claude/Copilotの記憶機能アップデートと広告パーソナライズの注意点を反映して最新化
 ## 2026-07-27
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Agent/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): ◯◯の節を最新化・増強
 - [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](topics/part03-ai-chat-tools/chatgpt-agent-mode-feature.md): 2026年7月9日のChatGPT Work改名・3モード再編を反映して全面最新化・増強
