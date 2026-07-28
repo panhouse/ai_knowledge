@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-26
+- [議事録・文字起こしAI企業一覧](topics/part14-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 新規執筆(議事録・文字起こしAI企業一覧)
 - [契約書・法務AI企業一覧](topics/part14-japan-ai-companies/legal-contract-ai-companies-japan.md): 新規執筆(契約書・法務AI企業一覧)
 ## 2026-07-25
 - [生成AI利用コストの管理・予算配分](topics/part11-business-practice/ai-cost-management-and-budgeting.md): 新規執筆

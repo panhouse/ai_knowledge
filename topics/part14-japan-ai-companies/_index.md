@@ -61,6 +61,7 @@ Part 14 は **企業そのものの一覧カタログ**。教科書ページの�
 
 ## 収録ページ
 
+- [議事録・文字起こしAI企業一覧](meeting-minutes-ai-companies-japan.md)
 - [契約書・法務AI企業一覧](legal-contract-ai-companies-japan.md)
 (まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
 - [国産基盤モデル・研究開発系AI企業一覧](foundation-model-companies-japan.md)
