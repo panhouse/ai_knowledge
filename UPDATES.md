@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-28
+- [ChatGPTの初期設定とカスタム指示の書き方](topics/part03-ai-chat-tools/chatgpt-custom-instructions.md): 文字数上限が1,500文字→5,000文字(有料プラン)に引き上げられたことを反映して最新化
+
 ## 2026-07-24
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): ガバメントAI「源内」の国産クラウド実証・国産LLM各社の動き・政府予算の節を最新化・増強
 - [Chain-of-Thought(CoT)プロンプティング](topics/part05-prompt-engineering/chain-of-thought-prompting.md): 推論モデルの進化(適応的思考・effortダイヤル)を反映して最新化・増強
