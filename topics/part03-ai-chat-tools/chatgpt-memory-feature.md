@@ -4,7 +4,7 @@ part: 3
 chapter: 第3章 記憶・文脈の管理
 tags: [ChatGPT, メモリ機能, カスタム指示, パーソナライズ]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # ChatGPTのメモリ(Memory)機能
@@ -91,15 +91,17 @@ ChatGPTのパーソナライズ設定には、性質の異なる複数の仕組�
 
 ### 他ツールとの対応関係
 
-| 概念 | ChatGPT | Claude | Gemini | Microsoft Copilot |
+| 仕組み | ChatGPT | Claude | Gemini | Microsoft Copilot |
 |---|---|---|---|---|
-| 自動で蓄積される長期記憶 | メモリ(保存されたメモリ+チャット履歴を参照+Dreamingによる統合) | メモリ(2026年3月に無料プランを含む全プランへ展開) | パーソナルコンテキスト/「Memories」設定(既定でオン) | Microsoft 365 Copilotの「メモリ」(2026年後半に一般提供予定、順次展開中) |
-| 確認・管理画面 | 設定→パーソナライズ→メモリを管理 | 設定→Capabilities→「View and edit memory」 | Geminiアプリの設定内「Memories」(gemini.google.com/personal-context、Web版が最も充実) | プロフィールアイコン→設定→メモリ |
-| 一時停止・リセット | オフにする(既存メモリは保持)/個別削除・全削除 | Pause memory(一時停止、記憶は保持)/Reset memory(完全削除、取り消し不可) | 個別項目の削除 | 順次整備中(2026年7月時点で機能は発展途上) |
+| 自動で蓄積される長期記憶 | メモリ(保存されたメモリ+チャット履歴を参照+Dreamingによる統合) | メモリ(2026年3月に無料プランを含む全プランへ展開。2026年7月にカテゴリ別・個別編集可能な記憶エントリへ再構成) | パーソナルコンテキスト/「Memories」設定(既定でオン) | Microsoft 365 Copilotの「メモリ」+2026年7月に一般提供された「Copilotノートブック」(会話をまたいで文脈を保持する機能) |
+| 確認・管理画面 | 設定→パーソナライズ→メモリを管理 | 設定→Capabilities→「View and edit memory」 | Geminiアプリの設定内「Memories」(gemini.google.com/personal-context、Web版が最も充実) | プロフィールアイコン→設定→メモリ(2026年に画面が整理・再設計された) |
+| 一時停止・リセット | オフにする(既存メモリは保持)/個別削除・全削除 | Pause memory(一時停止、記憶は保持)/Reset memory(完全削除、取り消し不可) | 個別項目の削除 | メモリ設定画面から個別・一括の管理が可能(順次整備中) |
 | 記憶を残したくないときの機能 | 一時的なチャット(Temporary Chat) | シークレットモード(incognito) | シークレットモード相当の設定 | プライベートセッション相当の設定(順次整備中) |
 | 自分で書く固定指示との関係 | カスタム指示と併用 | Projectsのカスタム指示と併用 | Gemの「カスタム指示」と併用 | エージェントごとの指示と併用 |
+| 独自の付加機能 | ads(広告)パーソナライズにメモリ情報が利用される場合がある(後述) | 2026年7月に月次の記憶ダイジェストを振り返る「Reflect」(ベータ)、通知・記憶更新を抑制する「Time and focus」設定を追加 | – | Copilotノートブックでプロジェクト横断の永続的な文脈保持に対応 |
 
-Claudeのメモリは2026年3月に無料・Proを含む全ユーザーへ展開され、明示的な指示がなくても好みや進行中の作業を自動記録するようになった([Claude Help Center](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context))。Geminiの保存済み情報は2024年11月にGemini Advanced向けに先行導入された後、無料ユーザーにも展開されている([9to5Google](https://9to5google.com/2024/11/19/gemini-remember-saved-info/))。3社(4ツール)とも「自動で覚える長期記憶」と「自分で書く固定指示」を分けて持つ設計は共通している。
+Claudeのメモリは2026年3月に無料・Proを含む全ユーザーへ展開され、明示的な指示がなくても好みや進行中の作業を自動記録するようになった([Claude Help Center](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context))。2026年7月には、1日分をまとめた単一の要約から、カテゴリごとに個別編集できる記憶エントリへと構造が変わり、月次の記憶を振り返る「Reflect」(ベータ、メモリが有効な場合のみ)や、通知・記憶更新を抑制する「Time and focus」設定が追加された([Claude変更履歴](https://ppcbasic.com/changelog/claude-desktop/2026-07-09/))。Geminiの保存済み情報は2024年11月にGemini Advanced向けに先行導入された後、無料ユーザーにも展開されている([9to5Google](https://9to5google.com/2024/11/19/gemini-remember-saved-info/))。Microsoft 365 Copilotでは2026年7月に、会話をまたいで文脈を保持する「Copilotノートブック」が一般提供された([WindowsForum](https://windowsforum.com/threads/copilot-notebooks-come-to-microsoft-365-copilot-app-persistent-context-arrives-in-2026.435288/))。3社(4ツール)とも「自動で覚える長期記憶」と「自分で書く固定指示」を分けて持つ設計は共通している。
+
 
 ## 注意点・よくある誤解
 
@@ -110,6 +112,7 @@ Claudeのメモリは2026年3月に無料・Proを含む全ユーザーへ展開
 - **地域によって既定値が異なる**: EEA・英国・スイスなどではGDPR対応のためメモリが既定でオフになっている。海外拠点のメンバーと同じ設定だと思い込まない
 - **メモリが古くなると回答がずれる**: 異動・担当変更・方針転換があった後は、古いメモリが前提として残り続け、実態と合わない回答が出ることがある。定期的にメモリ一覧を見直し、不要になった項目は削除する
 - **法人プランでは管理者の設定次第で挙動が変わる**: Business/Enterprise/Eduでは管理者がワークスペース単位でメモリを無効化でき、その場合メンバー個人の設定に関わらず記憶が失われる。会社アカウントで挙動が想定と違う場合はIT管理者に有効化状況を確認する
+- **メモリが広告のパーソナライズに使われる場合がある**: 2026年に入りChatGPT(特にFree/Goプラン)で広告表示が拡大しており、メモリ・チャット履歴の内容が広告のターゲティングに反映されることがある。EU域内では広告パーソナライズへの明示的なオプトインが必須化された一方、米国などでは既定でオンになっている地域があるため、業務アカウントでは広告関連の設定もあわせて確認する([OpenAI Help Center: Ads FAQ](https://help.openai.com/en/articles/20001047-ads-in-chatgpt))
 
 ## 最初の一歩
 
@@ -122,6 +125,10 @@ Claudeのメモリは2026年3月に無料・Proを含む全ユーザーへ展開
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-07-28: 他ツール比較・広告パーソナライズの注意点を最新化
+- **内容**: Claudeのメモリがカテゴリ別・個別編集可能な記憶エントリへ再構成され、月次要約「Reflect」・通知抑制「Time and focus」が追加されたことを反映。Microsoft 365 Copilotで会話をまたぐ文脈保持機能「Copilotノートブック」が一般提供されたことを追加。ChatGPTの広告表示拡大に伴い、メモリ情報が広告パーソナライズに使われる場合がある点(EUは明示的オプトイン必須、他地域は既定オンの場合あり)を注意点に追記
+- **出典**: [OpenAI Help Center: Ads FAQ](https://help.openai.com/en/articles/20001047-ads-in-chatgpt)、[Claude変更履歴(2026-07-09)](https://ppcbasic.com/changelog/claude-desktop/2026-07-09/)、[WindowsForum: Copilot Notebooks come to Microsoft 365 Copilot app](https://windowsforum.com/threads/copilot-notebooks-come-to-microsoft-365-copilot-app-persistent-context-arrives-in-2026.435288/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: メモリ機能の仕組み(保存されたメモリ/チャット履歴を参照の連動、Dreamingによる記憶の統合)、カスタム指示・プロジェクトとの使い分け、設定画面での確認・削除手順、コピペで使える活用例、Free/Plus/Pro/Business・EnterpriseでのメモリとAutomatic Memory Managementの違い、EEA/英国/スイスでの既定オフ(GDPR対応)、Claude・Gemini・Microsoft Copilotとの対応表、プライバシー上の注意点を整理
