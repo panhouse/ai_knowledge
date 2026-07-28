@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-27
+- [研修・人材育成系の国内AI企業一覧](topics/part14-japan-ai-companies/ai-training-hr-development-companies-japan.md): 新規執筆(生成AI研修・AI人材育成を提供する国内企業7社のカタログ)
 - [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part14-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 新規執筆(Part14第4章の初回ページ、Yoom・Anyflow・アステリア・JAPAN AI・エクサウィザーズを収録)
 ## 2026-07-26
 - [人事・採用AI企業一覧](topics/part14-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 新規執筆(人事・採用AI企業一覧)

@@ -61,6 +61,7 @@ Part 14 は **企業そのものの一覧カタログ**。教科書ページの�
 
 ## 収録ページ
 
+- [研修・人材育成系の国内AI企業一覧](ai-training-hr-development-companies-japan.md)
 - [ノーコード・エージェント基盤系の国内AI企業一覧](nocode-agent-platform-ai-companies-japan.md)
 - [人事・採用AI企業一覧](hr-recruiting-ai-companies-japan.md)
 - [経理・会計AI企業一覧](accounting-ai-companies-japan.md)
