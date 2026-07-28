@@ -4,7 +4,7 @@ part: 6
 chapter: 第2章 主要ツールでの作り方
 tags: [Copilot Studio, Microsoft 365 Copilot, エージェントビルダー, Microsoft, カスタムAI]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # Microsoft Copilot Studioによるカスタムエージェント作成の基本
@@ -18,9 +18,11 @@ updated: 2026-07-06
 MicrosoftのAIエージェント構築手段は、機能の重さで2段階に分かれている。
 
 - **エージェントビルダー**: Microsoft 365 Copilotアプリ(Copilot Chat)に内蔵された軽量版。自然言語で「何をしてほしいか」を伝えると、AIが指示文・知識源・推奨プロンプトを自動生成する。Microsoft Graph(社内のメール・ファイル・Teams会話などの情報基盤)を前提に動き、Microsoft 365のセキュリティ・コンプライアンス設定をそのまま引き継ぐ。個人〜小規模チーム向けの「かんたん版」という位置づけ
-- **Copilot Studio**: Power Platform(Microsoftのノーコード開発基盤)上に構築された本格的な開発環境。指示・知識源に加えて、複数ステップの処理(トピック・フロー)、500以上のコネクタを使った外部システム連携(CRM・ERP・チケット管理システムなど)、Teams/SharePoint/Webサイト/Slackなど複数チャネルへの配布、社外の非ライセンスユーザーへの公開まで対応する
+- **Copilot Studio**: Power Platform(Microsoftのノーコード開発基盤)上に構築された本格的な開発環境。指示・知識源に加えて、複数ステップの処理(トピック・フロー)、1,400以上のコネクタを使った外部システム連携(CRM・ERP・チケット管理システムなど)、Teams/SharePoint/Webサイト/Slackなど複数チャネルへの配布、社外の非ライセンスユーザーへの公開まで対応する
 
 両者は完全に別物ではなく、エージェントビルダーで作った試作を「Copilot Studioにコピー」して、後から高度な機能へ拡張する移行パスが用意されている(Microsoft Learn: Choose between Agent Builder and Copilot Studio)。
+
+2026年7月7日、MicrosoftはCopilot Studioを土台から作り直す「リビルド」を発表した。個別のトピック・フローを積み上げる従来の設計から、新しい「エージェント型オーケストレーター」が複数ステップの複雑な作業を自動的に組み立てる方式へ移行し、構造化されたステップとエージェント的な判断を1つのキャンバス上で組み合わせられる「ワークフローデザイナー」を導入、設定タブも9個から4個に整理された。あわせて、指示や知識源をMarkdown形式の再利用可能な部品として扱う「Skills」や、エージェントビルダーで作ったエージェントを社内向けの「エージェントストア」に申請・公開する仕組みも加わった。
 
 料金の単位も2025年9月に変わった。以前は「メッセージ」単位の課金だったが、現在は**Copilotクレジット**という単位に統一され、応答の種類ごとに消費量が異なる仕組みになっている(詳細は後述)。
 
@@ -94,6 +96,8 @@ Teams、SharePoint、Microsoft 365 Copilot(Copilot Chat)、公開Webサイト、
 | Copilot Studioで社内利用(社員向けエージェント) | Microsoft 365 Copilotライセンス | 追加費用なし・クレジット消費なし(フェアユース前提) |
 | Copilot Studioで社外公開・非ライセンスユーザーへの提供 | Copilot Studioのスタンドアロンライセンス(テナント単位) | Copilotクレジットのパック購入: 25,000クレジット/パックで$200/月(日本円目安 ¥29,985/パック/月)。従量課金(PAYG)は1クレジットあたり$0.01(パック購入よりやや割高) |
 
+なお、2026年7月1日にMicrosoft 365自体のベースライセンス料金が値上げされており(例: E3が$36→$39/ユーザー/月、E5が$57→$60、F3が$8→$10)、Copilotクレジットの単価自体は変わらないものの、Copilotライセンスを載せる土台となるM365ライセンスのコストは上昇している。全社展開のコスト試算をする際は、Copilotクレジットの費用だけでなく、このベースライセンス値上げも合わせて確認するとよい。
+
 Copilotクレジットの消費量は応答の種類によって変わる。
 
 | アクション種別 | 消費クレジットの目安 |
@@ -110,7 +114,7 @@ Copilotクレジットの消費量は応答の種類によって変わる。
 |---|---|---|---|---|
 | 位置づけ | エージェントビルダー=個人・小チーム向け簡易版、Copilot Studio=部門・全社・社外向けの本格開発環境 | 個人〜組織向けのカスタムGPT作成機能 | 個人向けのカスタムボット作成機能 | 個人〜組織向けの資料+指示のワークスペース |
 | 必要プラン | エージェントビルダーはCopilot Chat/M365 Copilotライセンスに含まれ追加費用なし。Copilot Studioの社内利用も同様。社外公開はスタンドアロンライセンス+クレジット購入が必要 | Freeでは作成不可(Go/Plus以上が必要) | 無料プランでも作成・利用可 | Freeでも作成可(上限あり) |
-| 外部API・業務システム連携 | Power Platformの500以上のコネクタ、Dataverse、マルチステップワークフロー(Copilot Studio) | Actions(OpenAPIスキーマでの外部API呼び出し) | 非対応 | 非対応(Claude API側でTool Useを別途実装する必要) |
+| 外部API・業務システム連携 | Power Platformの1,400以上のコネクタ、Dataverse、マルチステップワークフロー(Copilot Studio) | Actions(OpenAPIスキーマでの外部API呼び出し) | 非対応 | 非対応(Claude API側でTool Useを別途実装する必要) |
 | 主な知識源 | SharePoint/OneDrive/Dataverse/公開Webサイト/Microsoft Graph横断検索 | アップロードファイル | アップロードファイル/Google Drive | アップロードファイル/Google Drive(Privateプロジェクト限定) |
 | 公開・配布範囲 | Teams/SharePoint/Microsoft 365 Copilot/Webサイト/Slack等マルチチャネル、社内〜社外顧客まで | 自分のみ/リンク共有/GPTストアでの一般公開 | 非公開/リンク共有/組織内共有 | Private、またはTeam/Enterprise内でのPublic共有 |
 | 外部の一般公開マーケットプレイス | なし(自組織のエージェントストアでの社内配布が基本) | あり(GPTストア) | なし | なし |
@@ -136,6 +140,10 @@ Microsoft 365 Copilotアプリの「エージェントビルダー」で、自�
 - [Microsoft Copilotの基本](../part03-ai-chat-tools/microsoft-copilot-basics.md)
 
 ## 更新履歴
+
+### 2026-07-28: Copilot Studioのリビルドとコネクタ数・料金情報を更新
+- **内容**: 2026年7月7日のCopilot Studioの全面リビルド(エージェント型オーケストレーター、ワークフローデザイナー、設定タブの9→4整理、Skills、エージェントストアへの公開)を追記。コネクタ数を「500以上」から現状の「1,400以上」に修正。2026年7月1日のMicrosoft 365ベースライセンス値上げ(E3 $36→$39等)を料金面の注記として追加
+- **出典**: [Microsoft Tech Community: Meet the new Copilot Studio, rebuilt for more complex multi-step work](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488)、[ChatForest: Microsoft Copilot Studio Rebuilt July 2026](https://chatforest.com/builders-log/microsoft-copilot-studio-rebuilt-july-2026-orchestrator-workflow-designer-builder-guide/)、[EPC Group: Copilot Studio Enterprise Agent Development 2026](https://www.epcgroup.net/answers/copilot-studio-enterprise-agent-development-2026)、[Kesslernity: M365 Copilot Agents Cost Model](https://www.kesslernity.com/blog/m365-copilot-agents-cost-model)
 
 ### 2026-07-06: 初版執筆
 - **内容**: Copilot Studioとエージェントビルダーの違い・使い分け、作成手順(アクセス方法・指示設定・知識源SharePoint/OneDrive等の追加・テスト・公開)、Copilotクレジットベースの料金体系(2025年9月移行、パック$200/25,000クレジット・PAYG $0.01/クレジット、応答種別ごとの消費クレジット目安)、M365 Copilotライセンスとの関係、GPTs/Gem/Claude Projectsとの4ツール対応表、社内問い合わせエージェントの指示文サンプルを整理
