@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-28
+- [ChatGPTの初期設定とカスタム指示の書き方](topics/part03-ai-chat-tools/chatgpt-custom-instructions.md): 文字数上限が1,500文字→5,000文字(有料プラン)に引き上げられたことを反映して最新化
 - [ChatGPTの「プロジェクト」機能](topics/part03-ai-chat-tools/chatgpt-projects-feature.md): 新エージェント機能「ChatGPT Work」との連携とデスクトップアプリ対応を反映して最新化
 - [ChatGPTのメモリ(Memory)機能](topics/part03-ai-chat-tools/chatgpt-memory-feature.md): Claude/Copilotの記憶機能アップデートと広告パーソナライズの注意点を反映して最新化
 ## 2026-07-27
