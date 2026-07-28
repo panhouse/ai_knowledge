@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-28
+- [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): WatchGuardの2026年7月調査データを追加して最新化
 - [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): ワークフロー型ジェイルブレイクと攻撃の商用化事例を反映して最新化
 - [ガードレール(生成AIの入出力安全対策)の基本](topics/part04-risk-security/ai-guardrails-basics.md): 新しい回避手口(Sockpuppeting)と防御側の誤検知事例を反映して最新化
 - [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): OpenAIの段階的終了スケジュールの中間締め切りとGemini 3系の提供状況を反映して最新化
