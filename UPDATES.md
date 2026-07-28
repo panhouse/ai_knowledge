@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-26
+- [経理・会計AI企業一覧](topics/part14-japan-ai-companies/accounting-ai-companies-japan.md): 新規執筆(経理・会計AI企業一覧)
 - [営業支援AI企業一覧](topics/part14-japan-ai-companies/sales-support-ai-companies-japan.md): 新規執筆(営業支援AI企業一覧)
 - [カスタマーサポートAI企業一覧](topics/part14-japan-ai-companies/customer-support-ai-companies-japan.md): 新規執筆(カスタマーサポートAI企業一覧)
 - [議事録・文字起こしAI企業一覧](topics/part14-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 新規執筆(議事録・文字起こしAI企業一覧)
