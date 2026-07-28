@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-28
+- [ガードレール(生成AIの入出力安全対策)の基本](topics/part04-risk-security/ai-guardrails-basics.md): 新しい回避手口(Sockpuppeting)と防御側の誤検知事例を反映して最新化
 - [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): OpenAIの段階的終了スケジュールの中間締め切りとGemini 3系の提供状況を反映して最新化
 - [LLMの得意・不得意と挙動の特性](topics/part02-llm-basics/llm-strengths-and-limitations.md): 最新モデルのナレッジカットオフとチャート読み取りベンチマークを反映して最新化
 - [ChatGPTの初期設定とカスタム指示の書き方](topics/part03-ai-chat-tools/chatgpt-custom-instructions.md): 文字数上限が1,500文字→5,000文字(有料プラン)に引き上げられたことを反映して最新化
