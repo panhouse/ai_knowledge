@@ -61,6 +61,7 @@ Part 14 は **企業そのものの一覧カタログ**。教科書ページの�
 
 ## 収録ページ
 
+- [営業支援AI企業一覧](sales-support-ai-companies-japan.md)
 - [カスタマーサポートAI企業一覧](customer-support-ai-companies-japan.md)
 - [議事録・文字起こしAI企業一覧](meeting-minutes-ai-companies-japan.md)
 - [契約書・法務AI企業一覧](legal-contract-ai-companies-japan.md)
