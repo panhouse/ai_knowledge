@@ -4,7 +4,7 @@ part: 3
 chapter: 第3章 記憶・文脈の管理
 tags: [ChatGPT, プロジェクト, Projects, カスタム指示, ファイル管理, ワークスペース]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # ChatGPTの「プロジェクト」機能
@@ -61,6 +61,10 @@ updated: 2026-07-06
 6. 既存のチャットをプロジェクトに移したい場合は、チャット一覧からそのチャットを対象プロジェクトへドラッグ、またはチャットメニューから「プロジェクトに移動」を選ぶ
 7. プロジェクトを切り替えるときは、サイドバーのプロジェクト一覧から対象プロジェクト名をクリックするだけでよい(会話・ファイル・指示はプロジェクトごとに独立して保持される)
 
+### プロジェクトと連携する新機能「ChatGPT Work」(2026年7月〜)
+
+2026年7月9日、OpenAIは新モデル世代「GPT-5.6」(愛称Sol/Terra/Luna)とあわせて、複数時間にわたる作業をプロジェクトの文脈を踏まえて代行する新エージェント機能「**ChatGPT Work**」を発表した。連携済みのファイル・アプリを横断し、資料のドラフト・表計算・スライド・簡易Webサイトなどの成果物を作成しながら、要所要所でユーザーの承認を挟んで長時間タスクを進める。Pro/Pro Lite/Enterprise/Eduから先行提供され、数日内にPlus/Businessにも展開された。プロジェクト内で「チャット」として質問するか、「Work」として長時間タスクを任せるかを選べるようになっており、Work側のスレッドもプロジェクトのファイル・指示を踏まえて動く。さらに2026年7月16日以降のデスクトップアプリ更新で、プロジェクトがデスクトップアプリにも表示されるようになり、WorkのスレッドはWeb・モバイル・デスクトップ間で同期される。エージェント機能自体の詳しい使い方・料金は[ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](chatgpt-agent-mode-feature.md)を参照。
+
 ### コピペで使えるプロジェクト指示の例
 
 ```
@@ -106,8 +110,13 @@ Claudeのプロジェクト機能の詳細は「[Claude(Anthropic)の基本](cla
 - [GPTs(カスタムGPT)作成の基本](../part06-custom-ai/gpts-creation-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)
 - [ChatGPTの初期設定とカスタム指示の書き方](./chatgpt-custom-instructions.md)
+- [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](chatgpt-agent-mode-feature.md)
 
 ## 更新履歴
+
+### 2026-07-28: 新エージェント機能「ChatGPT Work」との連携を追記
+- **内容**: 2026年7月9日のGPT-5.6発表とあわせて登場した新エージェント機能「ChatGPT Work」(複数時間タスクをプロジェクトの文脈を踏まえて代行)の概要と提供プラン、7月16日以降のデスクトップアプリでのプロジェクト表示・Work スレッドのマルチデバイス同期を追記
+- **出典**: [OpenAI: ChatGPT for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)、[MacRumors: OpenAI Announces GPT-5.6 And ChatGPT Work](https://www.macrumors.com/2026/07/09/openai-chatgpt-work/)、[9to5Mac: OpenAI updating ChatGPT desktop app with GPT Voice for talking through Work](https://9to5mac.com/2026/07/23/openai-updating-chatgpt-desktop-app-with-gpt-voice-for-talking-through-work/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: ChatGPTのプロジェクト機能の概要(チャット・ファイル・カスタム指示をまとめるワークスペース)、普通のチャット/プロジェクト/カスタムGPTの使い分け比較表、作成〜ファイル追加〜切り替えの手順、プラン別ファイル数上限(Free 5/Plus・Go・Edu 25/Pro・Business・Enterprise 40)、Claude ProjectsとGemini Gemsとの対応表を整理

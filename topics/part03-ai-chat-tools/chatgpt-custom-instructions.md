@@ -4,7 +4,7 @@ part: 3
 chapter: 第2章 初期設定とデータ保護
 tags: [ChatGPT, カスタム指示, パーソナライズ, メモリ, 初期設定]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # ChatGPTの初期設定とカスタム指示の書き方
@@ -62,7 +62,7 @@ updated: 2026-07-06
 - **1つ目の欄「ChatGPTに何を知っておいてほしいですか?」**:自分の職業・業界・専門知識のレベル・よく頼む作業内容などを書く
 - **2つ目の欄「ChatGPTにどのように応答してほしいですか?」**:文体・トーン・長さ・フォーマットなど、回答の「型」を書く
 
-各欄はおよそ1,500文字までが目安(仕様は改定される可能性があるため、入力時に画面上の残り文字数表示を確認する)。
+各欄の文字数上限は2026年7月15日頃、Pro・Enterprise・Business・Educationなどの有料プランでおよそ1,500文字から**5,000文字**へ引き上げられた(既存のチャットにも遡って適用される)。Free・Goプランは引き続き1,500文字が目安とされる。プランによる差やその後の変更もあり得るため、実際の設定時は画面上の残り文字数表示を確認するのが確実。
 
 ### コピペで使える記入例
 
@@ -124,6 +124,10 @@ updated: 2026-07-06
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
 
 ## 更新履歴
+
+### 2026-07-28: 文字数上限の引き上げを反映
+- **内容**: 2026年7月15日頃、Pro・Enterprise・Business・Educationなどの有料プランでカスタム指示の各欄の文字数上限が1,500文字から5,000文字に引き上げられたこと(既存チャットにも遡って適用、Free・Goは1,500文字のまま)を反映
+- **出典**: [CryptoBriefing: OpenAI ChatGPT Custom Instructions 5,000 Characters](https://cryptobriefing.com/openai-chatgpt-custom-instructions-5000-characters/)、[FindSkill: ChatGPT Custom Instructions 5,000 Characters](https://findskill.ai/blog/chatgpt-custom-instructions-5000-characters/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: ChatGPTのカスタム指示・パーソナライズ画面の設定場所、記入例(コピペ用)、メモリ機能との違いと使い分け、プロジェクト/一時的なチャットとの関係、Gemini・Microsoft Copilot・Claudeとの対応表を整理
