@@ -32,6 +32,7 @@ part: 11
 - [生成AIによる文章作成・編集の実務活用](ai-writing-and-editing.md)
 - [生成AIによるBPR(業務プロセス再構築)](generative-ai-bpr.md)
 - [生成AI導入のROI測定・効果測定の考え方](ai-roi-measurement.md)
+- [生成AI利用コストの管理・予算配分](ai-cost-management-and-budgeting.md)
 - [生成AIによるプレゼン資料・ドキュメント作成の実務活用](ai-presentation-and-document-creation.md)
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](ai-research-and-information-gathering.md)
 - [生成AI導入の社内展開・浸透のすすめ方](ai-adoption-rollout-basics.md)
