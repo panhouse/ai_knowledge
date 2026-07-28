@@ -6,6 +6,41 @@
 
 ## 2026-07-28
 - [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の著作権訴訟動向(Anthropic和解承認・Google新規提訴等)を追記して最新化
+- [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): WatchGuardの2026年7月調査データを追加して最新化
+- [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): ワークフロー型ジェイルブレイクと攻撃の商用化事例を反映して最新化
+- [ガードレール(生成AIの入出力安全対策)の基本](topics/part04-risk-security/ai-guardrails-basics.md): 新しい回避手口(Sockpuppeting)と防御側の誤検知事例を反映して最新化
+- [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): OpenAIの段階的終了スケジュールの中間締め切りとGemini 3系の提供状況を反映して最新化
+- [LLMの得意・不得意と挙動の特性](topics/part02-llm-basics/llm-strengths-and-limitations.md): 最新モデルのナレッジカットオフとチャート読み取りベンチマークを反映して最新化
+- [ChatGPTの初期設定とカスタム指示の書き方](topics/part03-ai-chat-tools/chatgpt-custom-instructions.md): 文字数上限が1,500文字→5,000文字(有料プラン)に引き上げられたことを反映して最新化
+- [ChatGPTの「プロジェクト」機能](topics/part03-ai-chat-tools/chatgpt-projects-feature.md): 新エージェント機能「ChatGPT Work」との連携とデスクトップアプリ対応を反映して最新化
+- [ChatGPTのメモリ(Memory)機能](topics/part03-ai-chat-tools/chatgpt-memory-feature.md): Claude/Copilotの記憶機能アップデートと広告パーソナライズの注意点を反映して最新化
+## 2026-07-27
+- [主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Agent/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): ◯◯の節を最新化・増強
+- [ChatGPTのエージェント機能(ChatGPT Agent)とスケジュールタスク(Tasks)](topics/part03-ai-chat-tools/chatgpt-agent-mode-feature.md): 2026年7月9日のChatGPT Work改名・3モード再編を反映して全面最新化・増強
+- [ChatGPTの画像生成機能](topics/part03-ai-chat-tools/chatgpt-image-generation-feature.md): モデル世代(GPT Image 1.5・GPT Image 2/ChatGPT Images 2.0・DALL-E 3完全終了)とプラン別上限の節を最新化・増強
+- [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](topics/part08-specialized-ai-tools/video-generation-ai-basics.md): Runway Media Router・Kling料金体系・Luma Ray3.14・Google Gemini Omni/Veo 3.1・ByteDance Seedance 2.5などの節を最新化・増強
+- [ChatGPTのWeb検索機能](topics/part03-ai-chat-tools/chatgpt-web-search-feature.md): 検索エンジン構成(Bing/Google)・広告表示・チャット内検索との違いの節を最新化・増強
+- [推論モデル(Reasoning Model)とは何か](topics/part02-llm-basics/reasoning-model-basics.md): 主要ベンダーの推論モデル世代交代(GPT-5.6 Sol/Claude Sonnet 5・Opus 4.8/Gemini 3.6 Flash・Deep Think/DeepSeek V4)の節を最新化・増強
+- [ChatGPTの音声(Advanced Voice Mode)機能](topics/part03-ai-chat-tools/chatgpt-voice-mode-feature.md): 新モデル「GPT-Live」への刷新の節を最新化・増強
+- [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): ◯◯の節を最新化・増強
+- [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](topics/part08-specialized-ai-tools/audio-music-generation-ai-basics.md): ◯◯の節を最新化・増強
+- [研修・人材育成系の国内AI企業一覧](topics/part14-japan-ai-companies/ai-training-hr-development-companies-japan.md): 新規執筆(生成AI研修・AI人材育成を提供する国内企業7社のカタログ)
+- [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part14-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 新規執筆(Part14第4章の初回ページ、Yoom・Anyflow・アステリア・JAPAN AI・エクサウィザーズを収録)
+## 2026-07-26
+- [人事・採用AI企業一覧](topics/part14-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 新規執筆(人事・採用AI企業一覧)
+- [経理・会計AI企業一覧](topics/part14-japan-ai-companies/accounting-ai-companies-japan.md): 新規執筆(経理・会計AI企業一覧)
+- [営業支援AI企業一覧](topics/part14-japan-ai-companies/sales-support-ai-companies-japan.md): 新規執筆(営業支援AI企業一覧)
+- [カスタマーサポートAI企業一覧](topics/part14-japan-ai-companies/customer-support-ai-companies-japan.md): 新規執筆(カスタマーサポートAI企業一覧)
+- [議事録・文字起こしAI企業一覧](topics/part14-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 新規執筆(議事録・文字起こしAI企業一覧)
+- [契約書・法務AI企業一覧](topics/part14-japan-ai-companies/legal-contract-ai-companies-japan.md): 新規執筆(契約書・法務AI企業一覧)
+## 2026-07-25
+- [生成AI利用コストの管理・予算配分](topics/part11-business-practice/ai-cost-management-and-budgeting.md): 新規執筆
+- [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](topics/part08-specialized-ai-tools/meeting-minutes-ai-basics.md): 新規執筆
+- [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): 新規執筆
+- [リアルタイム音声API(ボイスエージェント構築)の基本](topics/part09-api-development/realtime-voice-api-basics.md): 新規執筆
+- [コンサル・SIer系のAI企業一覧](topics/part14-japan-ai-companies/consulting-sier-ai-companies.md): 新規執筆
+- [オープンソースAIモデルのライセンス比較(商用利用時の論点)](topics/part08-specialized-ai-tools/open-source-model-license-comparison.md): 新規執筆
+- [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 新規執筆
 
 ## 2026-07-24
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part12-ai-trends/japan-generative-ai-landscape.md): ガバメントAI「源内」の国産クラウド実証・国産LLM各社の動き・政府予算の節を最新化・増強

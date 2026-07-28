@@ -4,7 +4,7 @@ part: 2
 chapter: 第4章 周辺の基礎概念
 tags: [ファインチューニング, RAG, プロンプトエンジニアリング, 使い分け, カスタマイズ]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # ファインチューニング・RAG・プロンプトの使い分け
@@ -59,9 +59,9 @@ updated: 2026-07-06
 
 ファインチューニングの提供状況は各社で大きく異なり、変化も速いため導入前に必ず最新情報を確認すること。
 
-- **OpenAI**: 自社サーバーで動かす「Fine-tuning API」を段階的に終了させる方針を2026年5月に発表した。2026年5月7日以降は未経験の組織による新規利用ができず、2027年1月6日には既存利用者も新規の学習ジョブを作成できなくなる(すでに作成済みのファインチューニング済みモデルの推論自体は、元になったベースモデルが提供終了になるまで継続)。OpenAIは、GPT-5.5のような新しい基盤モデルは指示追従性が高く、プロンプト+RAGの組み合わせで多くの用途をカバーできるとして、ファインチューニングからの移行を推奨している。
-- **Anthropic(Claude)**: 自社API単体でのファインチューニングは一般提供されておらず、Amazon Bedrock経由でClaude 3 Haikuなど一部モデルの微調整が可能な形で提供されている(データは利用者のAWS環境内に留まる)。
-- **Google(Gemini)**: Vertex AI上でGeminiモデルの教師ありチューニング(Supervised Fine-Tuning)機能が提供されている。料金・対応モデルは変更されやすいため、導入時はVertex AIの公式料金ページで最新状況を確認する。
+- **OpenAI**: 自社サーバーで動かす「Fine-tuning API」を段階的に終了させる方針を2026年5月に発表した。2026年5月7日以降は未経験の組織による新規利用ができず、2026年7月2日以降は60日以上利用実績のない組織も新規の学習ジョブを作成できなくなり、2027年1月6日には既存の利用者も含めて全面的に新規ジョブを作成できなくなる(すでに作成済みのファインチューニング済みモデルの推論自体は、元になったベースモデルが提供終了になるまで継続)。OpenAIは、GPT-5.6のような新しい基盤モデルは指示追従性が高く、プロンプト+RAGの組み合わせで多くの用途をカバーできるとして、ファインチューニングからの移行を推奨している。
+- **Anthropic(Claude)**: 自社API単体でのファインチューニングは一般提供されておらず、Amazon Bedrock経由でClaude 3 Haikuなど一部モデルの微調整が可能な形で提供されている(データは利用者のAWS環境内に留まる)。2026年7月時点で新たな自社ホスト型ファインチューニングの提供発表はない。
+- **Google(Gemini)**: Vertex AI上でGemini 2.5 Flash-Lite・2.5 Proなどの教師ありチューニング(Supervised Fine-Tuning)機能が提供されている。ただし2026年7月時点でGemini 3系はまだアローリスト(許可リスト)経由の申請制にとどまり、一般提供はされていない。料金・対応モデルは変更されやすいため、導入時はVertex AIの公式料金ページで最新状況を確認する。
 
 このように、2026年時点では「まずファインチューニングありき」で考えるより、「プロンプト→RAG」で解決できないかを先に検討し、それでも足りない場合にのみ提供元の最新のファインチューニング状況を調べる、という順番が現実的である。
 
@@ -107,6 +107,10 @@ updated: 2026-07-06
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](context-window-basics.md)
 
 ## 更新履歴
+
+### 2026-07-28: OpenAIの段階的終了スケジュールとGemini 3系の提供状況を更新
+- **内容**: OpenAI Fine-tuning APIの終了スケジュールに、2026年7月2日以降「60日以上利用実績のない組織は新規ジョブ作成不可」という中間的な締め切りが追加されたことを反映。Google Vertex AIのSupervised Fine-TuningがGemini 3系ではまだアローリスト申請制で一般提供されていないことを追記
+- **出典**: [OpenAI Community: OpenAI is winding down the Fine-tuning API and platform](https://community.openai.com/t/openai-is-winding-down-the-fine-tuning-api-and-platform-discussion-thread/1380522)、[Google Developer Forum: When will Supervised Fine-Tuning be available for Gemini 3.x models](https://discuss.google.dev/t/when-will-supervised-fine-tuning-be-available-for-gemini-3-x-models-on-vertex-ai/346487)
 
 ### 2026-07-06: 初版執筆
 - **内容**: プロンプト・RAG・ファインチューニングの仕組みの違い、比較表、判断フロー、相談テンプレートを整理。2026年5月のOpenAIによるFine-tuning API段階的終了の発表と、AnthropicはBedrock経由、GoogleはVertex AI経由でのファインチューニング提供状況を反映。
