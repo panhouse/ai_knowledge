@@ -4,7 +4,7 @@ part: 4
 chapter: 第2章 攻撃と防御
 tags: [ガードレール, コンテンツモデレーション, AI安全対策, ジェイルブレイク対策]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # ガードレール(生成AIの入出力安全対策)の基本
@@ -81,7 +81,8 @@ updated: 2026-07-06
 
 ## 注意点・よくある誤解
 
-- **「ガードレールを設定したから100%安全」ではない**: モデレーションAPIも分類モデルも確率的な判定であり、巧妙な言い回し(遠回しな表現、外国語への切り替え、文字を分割するなど)で回避される事例が継続的に報告されている。Anthropicが公表する研究でも、対策前に86%だったジェイルブレイク成功率を分類器で4.4%まで下げたと報告されているが、ゼロにはなっていない。「導入した」ことと「防げている」ことは別問題だと理解しておく。
+- **「ガードレールを設定したから100%安全」ではない**: モデレーションAPIも分類モデルも確率的な判定であり、巧妙な言い回し(遠回しな表現、外国語への切り替え、文字を分割するなど)で回避される事例が継続的に報告されている。Anthropicが公表する研究でも、対策前に86%だったジェイルブレイク成功率を分類器で4.4%まで下げたと報告されているが、ゼロにはなっていない。「導入した」ことと「防げている」ことは別問題だと理解しておく。2026年7月には、AIの応答側に偽の同意メッセージを差し込む「assistant prefill」を悪用した手口(通称Sockpuppeting)が11の主要LLM横断で報告され、モデルによって突破率にばらつき(報告値でGemini 2.5 Flash 15.7%、Claude 4 Sonnet 8.3%、GPT-4o 1.4%)があることも示された。ガードレール製品を導入していても、こうした新しい回避手口が継続的に見つかる前提で運用する
+- **ガードレールが「厳しすぎて」正当な業務を止めてしまう場合もある**: 2026年7月に報告されたある事例では、大量の攻撃ログをAI分析エージェントに読み込ませてインシデント調査(フォレンジック)をしようとした際、防御側であるはずのセキュリティ担当者の利用を、商用フロンティアモデルのガードレールが「攻撃的な内容」と誤認してブロックしてしまった。ガードレールは攻撃者だけでなく防御側の正当な利用も止めうる点を踏まえ、社内でこうした専門的な調査用途に使う場合は、より緩いモデレーション設定や専用の審査プロセスを用意しておくと業務が止まらない
 - **多層防御(defense in depth)が前提**: 上記の理由から、実務では「1つの仕組みで完全に防ぐ」のではなく、入力フィルタ・システムプロンプト・出力フィルタ・人間の確認ステップを重ねて、どれか1つが突破されても次の層で止める設計が基本になる。Azure AI Content Safetyのドキュメントも、Prompt Shields(入口)・Task Adherence(実行中)・PII検出(出口)を組み合わせる考え方を「defense in depth」と明示している。
 - **しきい値のチューニングが必要**: しきい値を厳しくしすぎると業務上正当な発言まで誤ブロックし(過検知)、緩めすぎると有害な内容を見逃す(過小検知)。公開後もブロックログを確認し、誤検知が多ければしきい値やルールを調整する運用が必要になる。
 - **ガードレールとジェイルブレイク対策は別物ではなく重なる**: 本ページで扱う入出力フィルタや分類モデルは、ジェイルブレイクや間接的プロンプトインジェクションに対する防御層の1つでもある。個々の攻撃手口の理解は[プロンプトインジェクションとは何か](prompt-injection-basics.md)、GPTs固有の防御指示の書き方は[GPTsにおけるプロンプトインジェクション対策](../part06-custom-ai/gpts-prompt-injection-defense.md)を参照し、本ページの内容と組み合わせて使う。
@@ -97,6 +98,10 @@ updated: 2026-07-06
 - [GPTsにおけるプロンプトインジェクション対策](../part06-custom-ai/gpts-prompt-injection-defense.md)
 
 ## 更新履歴
+
+### 2026-07-28: 新しい回避手口と防御側の誤検知事例を追記
+- **内容**: 2026年7月に報告された「assistant prefill」を悪用したジェイルブレイク手口(通称Sockpuppeting、11の主要LLM横断で報告)と、防御側のフォレンジック調査がガードレールに誤ってブロックされた事例を注意点に追記
+- **出典**: [Trend Micro: Sockpuppeting - How a Single Line Can Bypass LLM Safety Guardrails](https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/sockpuppeting-how-a-single-line-can-bypass-llm-safety-guardrails)、[malware.news: The Guardrails Problem Just Played Out on Both Sides of the Same Incident](https://malware.news/t/the-guardrails-problem-just-played-out-on-both-sides-of-the-same-incident/124212)
 
 ### 2026-07-06: 初版執筆
 - **内容**: ガードレールを「入力フィルタ」「システムプロンプトでの制約」「出力フィルタ」「専用の分類モデル」の4種類に整理し、公開範囲・リスクに応じた使い分けの判断基準、ChatGPT(GPTs)・Gemini・Copilot Studio・Difyの設定箇所の対応表、OpenAI Moderation API/OpenAI Guardrails・Azure AI Content Safety・Llama Guard・NeMo Guardrails・Anthropic Constitutional Classifiersといった専用製品/ライブラリの比較、多層防御(defense in depth)の考え方を整理

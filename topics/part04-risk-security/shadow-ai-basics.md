@@ -4,7 +4,7 @@ part: 4
 chapter: "第4章 法務・ガバナンス"
 tags: [シャドーAI, ガバナンス, セキュリティ, 情報システム部, IPA, Gartner, AI利用ポリシー]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-28
 ---
 
 # シャドーAI(無許可利用)対策
@@ -34,6 +34,7 @@ updated: 2026-07-06
 | Claude/Perplexityを個人アカウント経由で利用している割合 | Claude 58%、Perplexity 60%(ChatGPTは32.3%、Geminiは24.9%) | Cyberhaven Labs(同上) |
 | オフィスワーカーで未承認のAIツールを業務利用した経験がある | 66% | PagerDuty「シャドーAI職場調査」(2026年) |
 | シャドーAI起因のデータ侵害を経験した組織の平均被害額の上乗せ | 通常より67万ドル高い | IBM「Cost of a Data Breach Report」 |
+| 従業員が未承認のAIツールを業務利用している(グローバル調査) | 64% | WatchGuard「2026 Cybersecurity Hygiene Report」(2026年7月、8カ国の中小・中堅企業684名対象) |
 
 日本ではIPA(情報処理推進機構)の「情報セキュリティ10大脅威2026」組織編で、「AIの利用をめぐるサイバーリスク」が初登場でいきなり3位にランクインした。シャドーAI(従業員による機密情報の不用意な入力)はこの脅威の中核要素の一つとされており、ランサム攻撃・サプライチェーン攻撃と並ぶ経営リスクとして位置づけられている。
 
@@ -155,6 +156,10 @@ updated: 2026-07-06
 - [ガードレール(生成AIの入出力安全対策)の基本](./ai-guardrails-basics.md)
 
 ## 更新履歴
+
+### 2026-07-28: 最新の調査データを追加
+- **内容**: WatchGuard「2026 Cybersecurity Hygiene Report」(2026年7月、8カ国の中小・中堅企業対象)による、従業員の64%が未承認のAIツールを業務利用しているという調査結果を実態データの表に追加
+- **出典**: [GlobeNewswire: Employees Drive Rising Cybersecurity Risk As Shadow AI and Unsafe Work Habits Surge, WatchGuard Global Survey Finds](https://www.globenewswire.com/news-release/2026/07/14/3326924/0/en/Employees-Drive-Rising-Cybersecurity-Risk-As-Shadow-AI-and-Unsafe-Work-Habits-Surge-WatchGuard-Global-Survey-Finds.html)
 
 ### 2026-07-06: 初版執筆
 - **内容**: シャドーAIが起きる背景(導入スピードのギャップ、個人利用からの延長、AIエージェント経由の新しい経路)、実態調査データ(ガートナージャパン73%、Cyberhaven 39.7%、PagerDuty 66%、IPA10大脅威2026での3位ランクイン等)、全面禁止型/放置型/許可リスト型/分業モデルの比較、可視化→承認済みツール提供→分業体制構築の3ステップの実務手順、コピペ用ガイドライン文面と利用申請フォーム例を整理
