@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-27
+- [推論モデル(Reasoning Model)とは何か](topics/part02-llm-basics/reasoning-model-basics.md): 主要ベンダーの推論モデル世代交代(GPT-5.6 Sol/Claude Sonnet 5・Opus 4.8/Gemini 3.6 Flash・Deep Think/DeepSeek V4)の節を最新化・増強
 - [ChatGPTの音声(Advanced Voice Mode)機能](topics/part03-ai-chat-tools/chatgpt-voice-mode-feature.md): 新モデル「GPT-Live」への刷新の節を最新化・増強
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): ◯◯の節を最新化・増強
 - [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](topics/part08-specialized-ai-tools/audio-music-generation-ai-basics.md): ◯◯の節を最新化・増強
