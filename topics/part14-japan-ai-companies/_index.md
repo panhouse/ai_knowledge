@@ -62,3 +62,11 @@ Part 14 は **企業そのものの一覧カタログ**。教科書ページの�
 ## 収録ページ
 
 - [人事・採用AI企業一覧](hr-recruiting-ai-companies-japan.md)
+- [経理・会計AI企業一覧](accounting-ai-companies-japan.md)
+- [営業支援AI企業一覧](sales-support-ai-companies-japan.md)
+- [カスタマーサポートAI企業一覧](customer-support-ai-companies-japan.md)
+- [議事録・文字起こしAI企業一覧](meeting-minutes-ai-companies-japan.md)
+- [契約書・法務AI企業一覧](legal-contract-ai-companies-japan.md)
+(まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
+- [国産基盤モデル・研究開発系AI企業一覧](foundation-model-companies-japan.md)
+- [コンサル・SIer系のAI企業一覧](consulting-sier-ai-companies.md)
