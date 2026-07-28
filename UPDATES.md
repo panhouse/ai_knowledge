@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-27
+- [ChatGPTの画像生成機能](topics/part03-ai-chat-tools/chatgpt-image-generation-feature.md): モデル世代(GPT Image 1.5・GPT Image 2/ChatGPT Images 2.0・DALL-E 3完全終了)とプラン別上限の節を最新化・増強
 - [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](topics/part08-specialized-ai-tools/video-generation-ai-basics.md): Runway Media Router・Kling料金体系・Luma Ray3.14・Google Gemini Omni/Veo 3.1・ByteDance Seedance 2.5などの節を最新化・増強
 - [ChatGPTのWeb検索機能](topics/part03-ai-chat-tools/chatgpt-web-search-feature.md): 検索エンジン構成(Bing/Google)・広告表示・チャット内検索との違いの節を最新化・増強
 - [推論モデル(Reasoning Model)とは何か](topics/part02-llm-basics/reasoning-model-basics.md): 主要ベンダーの推論モデル世代交代(GPT-5.6 Sol/Claude Sonnet 5・Opus 4.8/Gemini 3.6 Flash・Deep Think/DeepSeek V4)の節を最新化・増強
