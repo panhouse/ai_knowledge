@@ -38,3 +38,4 @@ part: 7
 - [Reranking(再ランク付け)の基本](reranking-basics.md)
 - [セマンティック検索の基本](semantic-search-basics.md)
 - [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](rag-evaluation-basics.md)
+- [画像・PDFの読み取り活用(Vision入力)の基本](vision-input-basics.md)
