@@ -64,3 +64,4 @@ Part 14 は **企業そのものの一覧カタログ**。教科書ページの�
 (まだありません。新規ページを作成したらここに `- [タイトル](file-name.md)` の形で追記)
 
 - [国産基盤モデル・研究開発系AI企業一覧](foundation-model-companies-japan.md)
+- [コンサル・SIer系のAI企業一覧](consulting-sier-ai-companies.md)
