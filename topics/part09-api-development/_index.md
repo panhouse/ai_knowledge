@@ -24,6 +24,7 @@ part: 9
 
 ## 収録ページ
 
+- [主要LLM APIの横断比較(OpenAI・Anthropic・Google)](llm-api-cross-tool-comparison.md)
 - [OpenAI APIの基本](openai-api-basics.md)
 - [Anthropic API(Claude API)の基本](anthropic-api-basics.md)
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)

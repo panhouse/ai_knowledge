@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-30
+- [主要LLM APIの横断比較(OpenAI・Anthropic・Google)](topics/part09-api-development/llm-api-cross-tool-comparison.md): 新規執筆(3社のLLM APIを認証・料金・モデル命名の観点で横並び比較)
+
 ## 2026-07-28
 - [Microsoft Copilot Studioによるカスタムエージェント作成の基本](topics/part06-custom-ai/copilot-agent-builder-basics.md): 2026年7月のCopilot Studio全面リビルドとコネクタ数・M365ライセンス値上げを反映して最新化
 - [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の著作権訴訟動向(Anthropic和解承認・Google新規提訴等)を追記して最新化
