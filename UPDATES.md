@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-30
+- [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
 - [Zapierの基本](topics/part10-nocode-lowcode/zapier-basics.md): AI連携機能の節を最新化(旧「AI Actions」の開発終了とZapier MCPへの移行、料金プランの年払い/月払い明記、超過課金の上限を反映)
 - [主要LLM APIの横断比較(OpenAI・Anthropic・Google)](topics/part09-api-development/llm-api-cross-tool-comparison.md): 新規執筆(3社のLLM APIを認証・料金・モデル命名の観点で横並び比較)
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](topics/part09-api-development/business-system-api-integration-basics.md): kintone AI正式提供・Slack MCPサーバー・Power Automate AI Builderクレジット移行・Agentforce Builder刷新を反映して最新化
