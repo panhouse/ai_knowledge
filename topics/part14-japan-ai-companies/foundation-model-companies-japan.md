@@ -4,7 +4,7 @@ part: 14
 chapter: 第2章 基盤モデル・研究開発系
 tags: [基盤モデル, LLM, 国産LLM, オープンウェイト, 研究機関]
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-07-30
 ---
 
 # 国産基盤モデル・研究開発系AI企業一覧
@@ -19,9 +19,9 @@ updated: 2026-07-25
 
 - **一言で**: 深層学習を強みとする国内AIスタートアップの草分けで、フルスクラッチ開発の国産基盤モデル「PLaMo」シリーズを展開する。
 - **代表プロダクト・サービス**: PLaMo Prime(商用フラッグシップ、256K長文コンテキスト対応で2026年6月に「PLaMo 3.0 Prime」を正式リリース)、PLaMo Lite(エッジ向け軽量モデル)、PLaMo Translation(日本語特化の翻訳モデル)、PLaMo-VL(視覚言語モデル)、金融特化版PLaMo。
-- **特徴・強み**: 既存の海外モデルをベースにせず自社でフルスクラッチ学習している点が特徴。情報通信研究機構(NICT)との共同研究の成果も取り込む。デジタル庁の政府向け生成AI基盤「ガバメントAI」の試用モデルにも選定された実績がある。パラメータ数など詳細なアーキテクチャは非公開。
-- **料金の目安**: クラウドAPI、Amazon Bedrock Marketplace、Snowflake経由、オンプレミス提供など複数の提供形態があり、料金は契約形態により個別見積もり(要問い合わせ)。
-- **最終確認日**: 2026-07-25
+- **特徴・強み**: 既存の海外モデルをベースにせず自社でフルスクラッチ学習している点が特徴。情報通信研究機構(NICT)との共同研究の成果も取り込む。デジタル庁の政府向け生成AI基盤「ガバメントAI」の試用モデルにも選定された実績がある。「PLaMo 3.0 Prime」製品版そのもののパラメータ数は非公開だが、開発過程でHugging Face上に公開されている「PLaMo 3」系のベースモデル(2B/8B/31B/120B)から規模感を推測でき、MoE(Mixture of Experts、複数の専門家モデルを切り替える方式)ではなくDense(密結合)型のアーキテクチャを採用しているとされる。ベンチマークはJFBench・IFBench(指示追従)、MT-Bench、AIME 2024・GPQA-Diamond(数学・科学)、LiveCodeBench、BFCL v4(ツール利用)、LongBench v1/v2(長文コンテキスト)、lawqa_jp・MedRECT(日本語の法律・医療)、HELM Safetyなど15種前後で評価されており、同価格帯のQwen3.6-27B・gpt-oss-120bと比較してIFBench・JFBenchで上回るスコア(例: IFBenchでgpt-oss-120bが64.4%、Qwen3が51.2%に対しPLaMo 3.0 Primeはこれらを上回る)を公表している。
+- **料金の目安**: クラウドAPI、Amazon Bedrock Marketplace、Snowflake経由、オンプレミス提供など複数の提供形態があり、料金は契約形態により個別見積もり(要問い合わせ)。無料のAPIプランも用意されている。
+- **最終確認日**: 2026-07-30
 
 ### Sakana AI
 
@@ -125,6 +125,10 @@ updated: 2026-07-25
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](../part12-ai-trends/japan-generative-ai-landscape.md)
 
 ## 更新履歴
+
+### 2026-07-30: Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
+- **内容**: PLaMo 3.0 Primeのパラメータ数(製品版は非公開だが、公開されているPLaMo 3系ベースモデル2B/8B/31B/120Bから規模感を推測できる旨、およびDense型アーキテクチャである点)と、JFBench・IFBenchなど主要ベンチマークでのスコア傾向(同価格帯のQwen3.6-27B・gpt-oss-120bを上回る)を追記
+- **出典**: [PLaMo 3.0 Primeをリリースしました - Preferred Networks Tech Blog](https://tech.preferred.jp/ja/blog/plamo-3-0-prime-release/), [国産生成AI基盤モデルPLaMo 3.0 Primeを正式リリース - Preferred Networks](https://www.preferred.jp/ja/news/pr20260622), [大規模言語モデルの次期バージョンPLaMo 3シリーズにおける120B事前学習モデル、31B蒸留モデルの評価 - Preferred Networks Tech Blog](https://tech.preferred.jp/ja/blog/plamo_3_120b_distillation_cpt/), [大規模言語モデルの次期バージョン PLaMo 3 シリーズにおける8B, 31Bの小規模モデルによる事前学習の検証 - Preferred Networks Tech Blog](https://tech.preferred.jp/ja/blog/plamo_3_8b_31b/)
 
 ### 2026-07-25: 初版執筆
 - **内容**: 国内で独自の基盤モデル(LLM)を開発する13社・プロジェクト(Preferred Networks、Sakana AI、ELYZA、SB Intuitions、rinna、Turing、Kotoba Technologies、Stockmark、LLM-jp、Swallow LLMプロジェクト、NTT、富士通、サイバーエージェント)を新規収録。
