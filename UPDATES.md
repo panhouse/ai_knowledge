@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-30
+- [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 現在のAIバブル論の節を最新化(2026年のハイパースケーラー設備投資規模、Altman/Bezos/Huangの発言、スケーリング則の壁論争を反映)
 ## 2026-07-29
 - [生成AI導入のROI測定・効果測定の考え方](topics/part11-business-practice/ai-roi-measurement.md): McKinsey・BCG・Deloitte・Gartner・PwC Japan等の最新調査データでEBIT影響率・ROI達成率・日本企業の実態を最新化
 - [AGI(汎用人工知能)とは何か](topics/part12-ai-trends/what-is-agi.md): ARC-AGI-3の登場と経営者(Jensen Huang氏・Sam Altman氏)の相次ぐAGI/シンギュラリティ発言を反映して最新化
