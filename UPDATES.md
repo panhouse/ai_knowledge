@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-30
+- [GPTs・Gem・Copilot Agent・Claude Projectsの比較と使い分け](topics/part06-custom-ai/custom-ai-tools-comparison.md): 新規執筆(4ツールの機能・プラン要件・料金の横断比較と使い分けガイド)
+
 ## 2026-07-28
 - [Microsoft Copilot Studioによるカスタムエージェント作成の基本](topics/part06-custom-ai/copilot-agent-builder-basics.md): 2026年7月のCopilot Studio全面リビルドとコネクタ数・M365ライセンス値上げを反映して最新化
 - [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の著作権訴訟動向(Anthropic和解承認・Google新規提訴等)を追記して最新化
