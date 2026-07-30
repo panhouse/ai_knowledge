@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-29
+- [バッチ処理(Batch API)の基本](topics/part09-api-development/batch-api-basics.md): OpenAI/Anthropic/Google Geminiの3社比較表・料金/上限・結果保存期間を最新化し、Google Gemini Batch APIの節を新設
 - [RAGの精度を上げる方法](topics/part07-data-analysis/rag-accuracy-improvement.md): コンテキスト付与(Contextual Retrieval)・late chunking・エージェント型RAGを追加して最新化
 - [GPTsのナレッジファイルとアクション連携](topics/part06-custom-ai/gpts-knowledge-and-actions.md): OpenAIのワークスペースエージェント発表(2026年4月)を踏まえてGPTsの位置づけを最新化
 - [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part03-ai-chat-tools/chatgpt-initial-setup-and-opt-out.md): 人格プリセット名の修正とNYT訴訟由来のデータ保全命令解除(2025年10月)を反映して最新化
