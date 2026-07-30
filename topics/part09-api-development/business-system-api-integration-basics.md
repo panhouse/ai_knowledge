@@ -2,9 +2,9 @@
 title: "業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)"
 part: 9
 chapter: 第3章 業務ツール連携
-tags: [kintone, Slack, Power Automate, AI Builder, Salesforce, API連携, Webhook, 業務システム連携]
+tags: [kintone, kintone AI, Slack, Slack MCP, Power Automate, AI Builder, Salesforce, Agentforce Builder, API連携, Webhook, 業務システム連携]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-30
 ---
 
 # 業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)
@@ -49,10 +49,10 @@ updated: 2026-07-06
 
 | 業務システム | 標準の連携経路 | 補足 |
 |---|---|---|
-| kintone | JavaScriptカスタマイズ+`kintone.proxy()` | 既製プラグイン(例:「Smart at AI for kintone Powered by GPT」等)を使う選択肢もある |
-| Slack | Incoming Webhook(投稿専用)/ Events API・Bot Token(双方向) | 双方向にはサーバーが必要。手軽さ重視なら投稿専用から始める |
-| Microsoft Power Automate(Excel含む) | AI Builderのプロンプトビルダー、またはHTTPアクション | いずれもプレミアムライセンスが前提になることが多い |
-| Salesforce | Agentforce(Agent Builder)、Einstein、Flow+外部サービス連携 | まず公式のAI機能で要件が満たせないか確認するのが基本 |
+| kintone | JavaScriptカスタマイズ+`kintone.proxy()` | 2026年6月に標準AI機能「kintone AI」(検索AI・アプリ作成AI・要約・質問応答など6機能、クレジット制)が正式提供開始。既製プラグインの選択肢もある |
+| Slack | Incoming Webhook(投稿専用)/ Events API・Bot Token(双方向)/ Slack公式のMCPサーバー(2026年前半に一般提供) | 双方向の自作には常時稼働サーバーが必要。2026年3月に刷新されたSlackbotのAI機能やMCPサーバーで足りないか先に確認する価値がある |
+| Microsoft Power Automate(Excel含む) | AI Builderのプロンプトビルダー、またはHTTPアクション | いずれもプレミアムライセンスが前提になることが多い。AI Builderの旧クレジットは2026年11月1日に終了しCopilotクレジットへ移行 |
+| Salesforce | Agentforce(Agentforce Builder/Agentforce Studio)、Einstein、Flow+外部サービス連携 | 2026年7月13日の週から新規エージェント作成はAgentforce Studioに一本化。まず公式のAI機能で要件が満たせないか確認するのが基本 |
 
 ## 実務での使い方
 
@@ -99,6 +99,8 @@ kintoneのJavaScriptカスタマイズはブラウザ上で動くコードのた
 
 `kintone.proxy()`は「クロスドメイン制約を回避できる」だけで、APIキー自体の安全性を保証するものではない。この点は後述の注意点で扱う。
 
+なお、2026年6月にkintone標準のAI機能「kintone AI」(旧「kintone AIラボ」のβ機能が正式版に昇格したもの)が提供開始されており、検索AI・アプリ作成AI・要約・質問応答・文書生成など6つの機能をノーコードで使える(利用量に応じたクレジット制)。「過去の類似案件を要約したい」「自然言語で問い合わせたい」といった用途は、まずこのkintone AIで足りないかを確認し、特定のAIモデルを使いたい・独自の分岐ロジックを組みたいといった標準機能でカバーしきれない要件がある場合にのみ、以下の`kintone.proxy()`によるカスタマイズを検討するのが実務的な順序になる。
+
 ### Slack: Incoming WebhookとAI APIを組み合わせた最小実装例
 
 SlackとAIの連携は「Slackへ投稿するだけ(一方向)」か「Slackでのやり取りに反応する(双方向)」かで難易度が大きく変わる。
@@ -107,6 +109,8 @@ SlackとAIの連携は「Slackへ投稿するだけ(一方向)」か「Slackで�
 - **Events API + Bot Token(双方向)**: ユーザーの発言やメンションを検知して返信するには、Slackからのイベント通知を受け取る常時稼働のサーバー(またはSocket Mode)が必要になり、構築難易度が上がる
 
 まずはIncoming Webhookで「AIが生成した内容をSlackに自動投稿する」構成から始めるのが実務的な第一歩になる。
+
+なお、Slack自体も2026年に入ってAI連携の選択肢を大きく広げている。2026年3月にはSlackbotが会議の文字起こし・タスク実行・軽量CRMなど30以上のAI機能を備えた「エージェント的OS」に刷新され、2026年前半にはSlack公式のMCP(Model Context Protocol、AIエージェントが外部ツール・データへ安全にアクセスするための標準規格)サーバーとReal-Time Search APIが一般提供された。ClaudeやChatGPTなど主要AIツール側がすでにこのMCPサーバーに対応しているため、「Slackの会話データをAIに読ませて回答させたい」という汎用的な用途であれば、自前でWebhook/Events APIを実装するより先に、利用中のAIツールがSlackのMCPサーバーに対応していないかを確認する方が早い場合がある。以下で扱うIncoming Webhook・Events APIは、自社独自のロジックでSlackと連携したい場合の実装方法として引き続き有効。
 
 **手順1: Incoming Webhook URLを発行する(画面の場所)**
 
@@ -145,7 +149,7 @@ function notifySlackWithAiSummary(inquiryText) {
 
 Power Automateには、大きく2つのAI連携ルートがある。
 
-- **AI Builderのプロンプトビルダー**: GUIでプロンプトを書くだけでAIの呼び出しを組み込める、最もローコードなルート。旧「テキストを生成」アクションは非推奨となり、現在は新しい「プロンプトビルダー」アクションへの移行が案内されている。課金はAI Builderクレジット(その後Copilot Studioクレジットの二段構え、いわゆる「デュアルモードライセンス」)で行われ、2026年11月1日にシードクレジットの利用期限が切れる予定のため、既存フローがある場合は移行の要否を確認する必要がある
+- **AI Builderのプロンプトビルダー**: GUIでプロンプトを書くだけでAIの呼び出しを組み込める、最もローコードなルート。旧「テキストを生成」アクションは非推奨となり、現在は新しい「プロンプトビルダー」アクションへの移行が案内されている。課金はAI Builderクレジット(その後Copilot Studioクレジットの二段構え、いわゆる「デュアルモードライセンス」)で行われてきたが、2026年11月1日にシードクレジットが完全に廃止され、以降はCopilotクレジットへの一本化が必要になる。移行スケジュールの目安は、(1)2026年7〜9月: Power Platform管理センターで現在の消費量を確認、(2)2026年8〜9月: 必要なCopilotクレジット数を試算・購入、(3)2026年10月: 環境へのクレジット割り当てと事前テスト、(4)2026年10月末: 本番フローの動作確認、という4ステップ。既存フローがある場合は今のうちに確認しておく必要がある
 - **HTTPアクション+任意のAI API**: OpenAI・Azure OpenAI・ClaudeなどのAPIエンドポイントを、HTTPアクションから直接POSTする方法。プロンプトの自由度が高く、モデルの選択肢も広い
 
 いずれの方法も、HTTPアクションやAI Builder系アクションは「プレミアムコネクタ」に分類され、利用にはPower Automateのプレミアムライセンス(Per userまたはPer flowプラン)が別途必要になる点は共通の前提になる。
@@ -163,9 +167,9 @@ HTTPアクションの直後に「JSONの解析(Parse JSON)」アクションを
 
 ### Salesforceなど主要CRM: 公式AI機能を優先する考え方
 
-Salesforceは、Agentforce(自律的に判断して業務を遂行するAIエージェントを、ローコードの「Agent Builder」で作る仕組み)とEinstein(予測・分類・生成AIの基盤機能群)という2つのAI機能を統合している。独自にAPI連携を組む前に、まず次の公式ルートで要件が満たせないかを確認するのが基本的な考え方になる。
+Salesforceは、Agentforce(自律的に判断して業務を遂行するAIエージェントを、ローコードの「Agentforce Builder」で作る仕組み)とEinstein(予測・分類・生成AIの基盤機能群)という2つのAI機能を統合している。独自にAPI連携を組む前に、まず次の公式ルートで要件が満たせないかを確認するのが基本的な考え方になる。
 
-- **Agent Builder / Prompt Builder**: ローコードでAIエージェントやプロンプトを組み立てる公式機能
+- **Agentforce Builder(Agentforce Studio)/ Prompt Builder**: ローコードでAIエージェントやプロンプトを組み立てる公式機能。2026年7月13日の週から、Setup内の旧Agentforce Builderでは新規エージェントを作成できなくなり、新規作成はAgentforce Studio内のAgentforce Builderに一本化された(既存エージェントの編集・運用は旧画面でも引き続き可能)
 - **Flow + 外部サービス連携(Named Credentials)/ Apexコールアウト**: Salesforce標準の自動化機能から外部のAI APIを呼び出す、業務システム側にコードを書く経路(本ページの経路1に相当)
 - **MuleSoft連携**: 複数システムを横断する複雑な連携が必要な場合の統合基盤
 
@@ -176,8 +180,8 @@ Salesforceは、Agentforce(自律的に判断して業務を遂行するAIエー
 - **ブラウザ側のカスタマイズコードにAPIキーを直書きしない**: kintoneの`kintone.proxy()`はCORSを回避する仕組みであり、APIキー自体を隠す仕組みではない。リクエスト内容はブラウザ上のJavaScriptが組み立てるため、ブラウザの開発者ツールで通信内容を確認できる人にはキーが見える。本番運用では、プラグイン化して設定情報を保存する仕組みを使うか、自社サーバー(簡易なプロキシ)を経由させ、APIキーをブラウザ側に一切渡さない構成にする
 - **Slack Incoming Webhookは投稿専用の一方通行**: ユーザーの発言に反応してAIが返信するような双方向のやり取りには、Events API・Bot Tokenと常時稼働のサーバー(またはSocket Mode)が必要で、構築難易度が一段上がる。まず投稿専用の一方向連携から試し、双方向が必要になった段階でノーコード連携ツールや専用のBot構築サービスを検討する
 - **Power Automateのプレミアムコネクタには別ライセンスが必要**: HTTPアクションやAI Builder系アクションは「プレミアムコネクタ」扱いのため、Microsoft 365に付属する範囲のPower Automateだけでは動かず、Premium(Per userまたはPer flow)ライセンスの追加購入が前提になることが多い。導入前にライセンス費用を確認する
-- **AI Builderの旧アクションと課金体系は移行期にある**: 旧「テキストを生成」アクションは非推奨で、新しい「プロンプトビルダー」アクションへの移行が案内されている。AI Builderクレジットのシード分は2026年11月1日で利用期限を迎える予定のため、既存フローがある場合は早めに移行計画を確認する
-- **CRM等の大規模SaaSでは自前連携より公式AI機能を先に検討する**: Salesforceに限らず、業務システムベンダーが提供する公式のAIエージェント機能・生成AI機能は権限管理や監査ログが統合されており、独自にAPI連携を組むより運用上の安全性が高い場合が多い。要件が公式機能で満たせるかを先に確認してから、足りない部分だけ経路1〜3で補う
+- **AI Builderの旧クレジットは2026年11月1日で完全に廃止される**: 旧「テキストを生成」アクションは非推奨で、新しい「プロンプトビルダー」アクションへの移行が案内されている。AI Builderのシードクレジットは2026年11月1日に廃止され、以降はCopilotクレジットへの一本化が必須になる。既存フローがある場合は、Power Platform管理センターでの消費量確認から始め、10月末までに本番フローの動作確認を終えておく
+- **主要ベンダーの公式AI機能を先に確認する**: kintone AI(2026年6月正式提供)、刷新されたSlackbot・Slack MCPサーバー、Salesforce Agentforce(Agentforce Builder)など、業務システムベンダー自身が提供する公式AI機能は2026年に入って急速に充実している。これらは権限管理や監査ログが製品に統合されており、独自にAPI連携を組むより運用上の安全性が高い場合が多い。要件が公式機能で満たせるかを先に確認してから、足りない部分だけ経路1〜3で補う
 - **機密データの外部送信リスク**: 業務システムに保存された顧客情報・人事情報などをAI APIに渡す前に、社内の情報取り扱いルールやAI事業者のデータ保持ポリシーを確認する。特に経路3(ノーコード連携ツール中継)は、データが業務システム→中継ツール→AI APIという複数の第三者サービスを経由するため、経由先すべてを把握しておく
 
 ## 最初の一歩
@@ -193,6 +197,10 @@ Salesforceは、Agentforce(自律的に判断して業務を遂行するAIエー
 - [Zapierの基本](../part10-nocode-lowcode/zapier-basics.md)
 
 ## 更新履歴
+
+### 2026-07-30: 主要ベンダーの公式AI機能拡充を反映して最新化
+- **内容**: kintone標準AI機能「kintone AI」(2026年6月正式提供、検索AI・アプリ作成AI・要約・質問応答など6機能・クレジット制)、Slackbotの大幅刷新(2026年3月、30以上のAI機能)とSlack公式MCP(Model Context Protocol)サーバー・Real-Time Search APIの一般提供(2026年前半)、Power Automate AI Builderクレジットの完全廃止(2026年11月1日)に向けた具体的な移行スケジュール、Salesforce Agentforce Builderの旧画面(Setup内)での新規エージェント作成終了(2026年7月13日の週〜Agentforce Studioに一本化)を反映。あわせて「まず主要ベンダーの公式AI機能で足りないか確認する」という判断の観点を、Salesforce限定からkintone・Slackにも広げて全体に追記
+- **出典**: [サイボウズ株式会社: 「kintone AI」を正式提供](https://topics.cybozu.co.jp/news/2026/04/22-19405.html)、[はてなベース: kintone AIが正式提供開始|β版から昇格した6つのAI機能](https://hatenabase.jp/blog/kintone-ai-official-2026/)、[TNW: Slack's biggest AI update turns Slackbot into a desktop agent](https://thenextweb.com/news/slack-slackbot-30-ai-features-agentic)、[Slack Developer Docs: Overview - Slack MCP Server](https://docs.slack.dev/ai/slack-mcp-server/)、[Salesforce Newsroom: Slack Expands Platform to Power Secure, Context-Aware AI Apps and Agents](https://www.salesforce.com/news/stories/slack-context-aware-ai-apps-agents/)、[itdoor: AI Builderクレジット廃止2026年11月——Power Automate移行手順と代替策](https://www.itdoor.jp/art-0069-20260720/)、[itdoor: AI Builder終了前に——Power Automateクレジット移行の確認3点](https://www.itdoor.jp/art-0045-20260622/)、[Salesforce Help: Explore the Legacy Agentforce Builder](https://help.salesforce.com/s/articleView?id=ai.agent_builder_explore.htm&language=en_US&type=5)、[Releasebot: Agentforce Updates by Salesforce - April 2026](https://releasebot.io/updates/salesforce/agentforce)
 
 ### 2026-07-06: 初版執筆
 - **内容**: 業務システム・SaaSからAI APIへ連携する3つの経路(業務システム標準機能+簡易コード/自動化ツール内蔵AIコネクタ/ノーコード連携ツール中継)の整理と使い分け基準、kintoneの`kintone.proxy()`によるJavaScriptカスタマイズ実装例、SlackのIncoming Webhook(投稿専用)とEvents API(双方向)の違いおよびGASを使った最小実装例、Power AutomateのHTTPアクション設定例とAI Builderのプロンプトビルダーへの移行動向、Salesforce(Agentforce/Einstein)における公式AI機能優先の考え方、APIキー管理やライセンス面の注意点を整理

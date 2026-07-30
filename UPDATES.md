@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-30
+- [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](topics/part09-api-development/business-system-api-integration-basics.md): kintone AI正式提供・Slack MCPサーバー・Power Automate AI Builderクレジット移行・Agentforce Builder刷新を反映して最新化
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): トレンドモデル動向・Inference Providers・料金プランの節を最新化
 - [コーディング支援AIの選び方・比較(Cursor・GitHub Copilot・Cline・Windsurf)](topics/part08-specialized-ai-tools/coding-assistant-ai-comparison.md): 新規執筆(コーディング支援AI4ツールの横断比較ページ)
 - [セマンティック検索の基本](topics/part07-data-analysis/semantic-search-basics.md): Google Cloud Agent Search・Gleanの料金、Microsoft 365 Copilot Retrieval APIやNotion連携拡大などツール横断の対応付けを最新化
