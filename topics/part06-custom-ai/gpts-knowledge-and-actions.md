@@ -4,7 +4,7 @@ part: 6
 chapter: 第3章 高度な活用と防御
 tags: [GPTs, ナレッジファイル, Actions, RAG, プロンプトインジェクション]
 created: 2026-07-05
-updated: 2026-07-06
+updated: 2026-07-29
 ---
 
 # GPTsのナレッジファイルとアクション連携
@@ -12,6 +12,8 @@ updated: 2026-07-06
 ## これは何か
 
 GPTs(カスタムGPT)の基本設定(指示文・会話のきっかけなど)だけでは、GPTは「一般的な知識で応答するチャットボット」の域を出ない。社内規程や最新の在庫情報など、ChatGPTが学習していない・知らない情報を扱わせるには、**ナレッジファイル**(参照資料のアップロード)と**Actions**(外部APIとの連携)という2つの拡張機能が必要になる。この2つを使い分けられると、GPTsは「社内資料検索アシスタント」から「実際に外部システムを操作するアシスタント」まで一気に実務レベルへ引き上げられる。
+
+> **2026年7月時点の重要な動き**: OpenAIは2026年4月22日、GPTsの延長線上にある新機能「**ワークスペースエージェント(workspace agents)**」をChatGPT Business/Enterprise/Edu/Teachers向けに発表した。Codex(コード生成AI)を基盤にクラウド上で常時稼働し、Slack・Salesforce・SharePointなどの業務ツールに直接つながって複数ステップの作業を人手を介さず実行できる点がGPTsとの大きな違いである。法人プランでは今後、既存のGPTsをワークスペースエージェントへ変換する機能が案内される見込みで、OpenAIは組織向けの開発の主軸をワークスペースエージェント側に移しつつある。ただし個人向けのPlus/Proプランでは本ページで扱うGPTs(ナレッジファイル・Actions)は当面そのまま使え、GPT Storeも稼働を続けている。法人でGPTsを使っている場合は、今後の案内(変換ツールの提供時期など)を確認しておくとよい。
 
 ## 仕組み・背景
 
@@ -30,6 +32,8 @@ GPTs(カスタムGPT)の基本設定(指示文・会話のきっかけなど)だ
 | リスクの種類 | ファイル内容の意図しない開示 | 外部システムへの誤操作・過剰な権限付与 |
 
 両方を組み合わせることも多い(例: 「製品マニュアル」はナレッジファイルで持たせ、「在庫確認」はActionsで社内システムに問い合わせる)。
+
+もう1つの判断軸は「個人利用か、組織で作って配布・運用するか」。個人のPlus/Proプランでの利用や、社内の一部メンバーへの軽い共有であれば、これまで通りGPTsのナレッジファイル・Actionsで十分実務に使える。一方、ChatGPT Business/Enterprise/Edu/Teachersプランで「チーム全体が使う常時稼働の自動化」(定期実行・Slack通知・複数システムを跨いだ処理など)を組織として構築・運用したい場合は、後述のワークスペースエージェントへの移行を見据えて設計するほうが将来的な手戻りが少ない。
 
 もう1つの判断軸は「全文が必要か、一部の検索でよいか」。ナレッジファイルの検索は「関連しそうな断片」しかGPTに渡さないため、**資料の全文を踏まえた要約・添削のような作業には向かない**。そうした作業は会話中に都度ファイルを添付する方が確実である。整理すると、「質問に応じて資料の一部を検索して引用してほしい」ならナレッジ、「会話全体を通じて資料の全文を踏まえてほしい」ならその都度ファイル添付、「常に最新の値を取得してほしい・何かを実行してほしい」ならActionsやWeb検索機能、という使い分けになる。
 
@@ -117,9 +121,11 @@ A. (以下略)
 
 1. GPT編集画面のConfigureタブを開き、下部の「Actions」欄にある「Create new action」(新しいアクションを作成)をクリックする
 2. 「Authentication」で認証方式を選ぶ(認証なし/APIキー/OAuth)。社内APIの場合は多くがAPIキーまたはOAuth
-3. 「Schema」欄に、呼び出したいAPIのOpenAPIスキーマ(JSONまたはYAML)を貼り付ける。スキーマが正しければ、検出されたエンドポイントが一覧表示される
+3. 「Schema」欄に、呼び出したいAPIのOpenAPIスキーマ(JSONまたはYAML、`openapi`プロパティは`3.1.0`を指定)を貼り付ける。スキーマが正しければ、検出されたエンドポイントが一覧表示される
 4. 一般公開するGPTの場合はプライバシーポリシーのURL登録が必須になる
 5. 保存後、テスト会話でActionsが意図通り呼び出されるか確認する
+
+自分でOpenAPIスキーマを書くのが難しい場合は、Actions設定画面から呼び出せる「ActionsGPT」(スキーマ作成を支援する補助GPT)に、叩きたいAPIの情報を伝えて雛形を作らせる方法もある。また、ChatGPT上でのデバッグはやりづらいため、PostmanなどのAPIテストツールで先にAPI呼び出しが正しく動くことを確認してから貼り付けるとつまずきにくい。
 
 (画面名・ボタン文言はOpenAI側の更新で変わる可能性があるため、実際の画面表示を優先すること)
 
@@ -183,6 +189,10 @@ paths:
 - [AIが扱いやすいデータ形式](../part07-data-analysis/ai-friendly-data-formats.md)
 
 ## 更新履歴
+
+### 2026-07-29: ワークスペースエージェントへの移行動向を追記・実務手順を更新
+- **内容**: OpenAIが2026年4月22日に発表した「ワークスペースエージェント」(ChatGPT Business/Enterprise/Edu/Teachers向け、GPTsの後継機能)について、個人プラン(Plus/Pro)は当面影響がないことを含めて追記。使いどころ・使い分けに「個人利用か組織での常時稼働運用か」の判断軸を追加。Actions設定手順にActionsGPT(スキーマ作成支援)とOpenAPIバージョン(3.1.0)、Postmanでの事前テストの実務Tipsを追加。ナレッジファイルのアップロード上限(20ファイル/512MB/200万トークン)は2026年7月時点でも変更がないことを再確認
+- **出典**: [OpenAI: Introducing workspace agents in ChatGPT](https://openai.com/index/introducing-workspace-agents-in-chatgpt/)、[OpenAI Help Center: ChatGPT Workspace Agents for Enterprise and Business](https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business)、[OpenAI: Workspace agents for business](https://openai.com/business/workspace-agents/)、[OpenAI Developer Community: Knowledge file upload limitations](https://community.openai.com/t/knowledge-file-upload-limitations/1211638)、[OpenAI API: GPT Action authentication](https://developers.openai.com/api/docs/actions/authentication)、[OpenAI API: GPT Actions library](https://developers.openai.com/api/docs/actions/actions-library)
 
 ### 2026-07-06: 重複ページの統合
 - **内容**: `gpts-knowledge-files.md` を本ページへ統合(RAGの検索の仕組みの詳細、アップロード上限表、Instructions文例、ツール横断対応表、Code Interpreter経由の漏えい・初回メッセージで参照されない問題などの注意点を追加)

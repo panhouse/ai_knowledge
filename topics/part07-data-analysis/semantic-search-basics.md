@@ -4,7 +4,7 @@ part: 7
 chapter: 第4章 RAGの精度改善と基盤
 tags: [セマンティック検索, キーワード検索, ハイブリッド検索, BM25, RRF, エンタープライズサーチ]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-30
 ---
 
 # セマンティック検索の基本
@@ -38,7 +38,7 @@ updated: 2026-07-06
 
 ### ハイブリッド検索という「いいとこ取り」
 
-実務では、どちらか一方だけで運用するのではなく、両方を同時に実行して結果を統合する**ハイブリッド検索**が主流になりつつある。仕組みはシンプルで、同じ質問をキーワード検索とセマンティック検索の両方に投げ、それぞれが返す順位(ランキング)を**RRF(Reciprocal Rank Fusion、複数の検索結果の順位を1つの順位に統合する計算方法)**という手法で1つにまとめる。BM25のスコア(例: 12.4点)とベクトル検索の類似度(例: 0.85)は尺度がまったく異なり単純比較できないため、点数そのものではなく「順位」を基準に統合する点がポイント。Azure AI Searchのように、ハイブリッド検索の結果をさらに専用モデルで並べ替える「セマンティックランカー」を組み合わせた3段階構成を提供するサービスもある(再ランク付けの詳細は[RAGの精度を上げる方法](./rag-accuracy-improvement.md)の「リランキング」を参照)。
+実務では、どちらか一方だけで運用するのではなく、両方を同時に実行して結果を統合する**ハイブリッド検索**が主流になりつつある。仕組みはシンプルで、同じ質問をキーワード検索とセマンティック検索の両方に投げ、それぞれが返す順位(ランキング)を**RRF(Reciprocal Rank Fusion、複数の検索結果の順位を1つの順位に統合する計算方法)**という手法で1つにまとめる。BM25のスコア(例: 12.4点)とベクトル検索の類似度(例: 0.85)は尺度がまったく異なり単純比較できないため、点数そのものではなく「順位」を基準に統合する点がポイント。Azure AI Searchのように、ハイブリッド検索の結果をさらに専用モデルで並べ替える「セマンティックランカー」を組み合わせた3段階構成を提供するサービスもあり、2026年時点ではさらに一歩進んで、複雑な質問を複数のサブクエリに自動分解してからそれぞれを検索・統合する「エージェント的検索(agentic retrieval)」モードも実用段階に入っている(再ランク付けの詳細は[RAGの精度を上げる方法](./rag-accuracy-improvement.md)の「リランキング」を参照)。
 
 ## 使いどころ・使い分け
 
@@ -63,8 +63,8 @@ updated: 2026-07-06
 |---|---|---|
 | **ChatGPT(ファイルアップロード・プロジェクト機能)** | ファイルの内容を自動でEmbedding化し検索 | 特に設定不要。ファイルを追加するだけ |
 | **NotebookLM(Google)** | ソース追加時に自動でセマンティック検索を実行 | 特に設定不要 |
-| **Microsoft 365 Copilot / SharePoint** | テナント・利用者ごとに「意味索引(Semantic Index)」を自動生成し、キーワード的な理解に意味的な理解を組み合わせて検索。管理者が意味索引そのものをオフにすることはできず、サイト・ライブラリ単位で「Microsoft Searchでインデックスしない」設定にすることで意味索引への反映範囲を管理する | 利用者側の設定は基本不要。管理者は検索対象範囲(サイト・ライブラリの索引除外)を管理できる |
-| **Notionのエンタープライズ検索** | Notion内のページに加え、連携したSlack・Google Docsなども横断してセマンティック検索し、要約付きで回答(Business/Enterpriseプラン以上) | ワークスペース設定から連携アプリを追加するだけで有効化 |
+| **Microsoft 365 Copilot / SharePoint** | テナント・利用者ごとに「意味索引(Semantic Index)」を自動生成し、キーワード的な理解に意味的な理解を組み合わせて検索。管理者が意味索引そのものをオフにすることはできず、サイト・ライブラリ単位で「Microsoft Searchでインデックスしない」設定にすることで意味索引への反映範囲を管理する。2026年には開発者向けに、この意味索引へ直接問い合わせて回答の根拠テキストを取得できる「Microsoft 365 Copilot Retrieval API」が一般提供(GA)され、社内データを別のRAG基盤に複製・再インデックス化せずに自社アプリへ組み込めるようになった | 利用者側の設定は基本不要。管理者は検索対象範囲(サイト・ライブラリの索引除外)を管理できる。開発者はRetrieval APIを使って独自アプリから意味索引を検索できる |
+| **Notionのエンタープライズ検索** | Notion内のページに加え、Slack・Google Drive・GitHub・Jira・Microsoft Teams・SharePoint・Salesforceなど連携先を横断してセマンティック検索し、要約付きで回答(Business/Enterpriseプラン以上、一部機能はベータ)。管理者が特定ページを「検証済み」として認定でき、同じ内容の新旧資料が混在していても検索結果・AIの引用で正しい方を優先表示できる | ワークスペース設定から連携アプリを追加するだけで有効化。ページの「検証済み」設定は管理者が個別に行う |
 | **Slack AI(検索・まとめ機能)** | メッセージ内容をベクトル化して保存し、自然文の質問に対して意味的に近いスレッドを検索 | 有料プランでSlack AIを有効化するだけ |
 | **Dify(ナレッジベース)** | 「検索設定」で「ベクトル検索」「全文検索(キーワード)」「ハイブリッド検索」を明示的に選択できる | 「ナレッジ」→対象のナレッジベース→「設定」→「検索設定」から切り替え。具体的な手順・重み調整は[RAGの精度を上げる方法](./rag-accuracy-improvement.md)を参照 |
 | **Glean・Elasticsearch・Azure AI Search(企業向けエンタープライズサーチ)** | ハイブリッド検索(BM25+ベクトル検索+RRF)を標準機能として提供し、企業の複数システム(Slack、Google Workspace、Salesforce等)を横断検索する専用製品 | 管理者が導入・データ連携を設定。利用者は検索窓を使うだけ |
@@ -86,8 +86,8 @@ updated: 2026-07-06
 
 社内検索を強化する専用製品を検討する場合、目安として以下のような費用感になる。料金・プランは変更されやすいため、導入前に必ず各社公式サイトで確認すること。
 
-- **Glean**: 公開の料金表はなく個別見積もり。1ユーザーあたり月額$50〜75程度、最低契約規模は概ね100席前後からとされる
-- **Google Cloud Agent Search(旧Vertex AI Search)**: 無料枠として月10,000クエリまで利用可能。以降はクエリ数・保存データ量に応じた従量課金、または月間の最低クエリ数(1,000QPM)とストレージ(50GB)をコミットする定額寄りのプランを選べる
+- **Glean**: 公開の料金表はなく個別見積もり。基本のEnterprise Searchライセンスが1ユーザーあたり月額$45〜50程度、AIエージェント機能を含む「Work AI」アドオンが別途月額$15程度が目安とされる。最低契約規模は概ね100席前後、年間契約額は$50,000〜60,000程度からが相場とされる(いずれも非公式の推計であり、Glean自身は金額を公表していない)
+- **Google Cloud Agent Search(旧Vertex AI Search)**: 無料枠として月10,000クエリまで利用可能。従量課金(General Pricing)は標準(Standard Edition)が1,000クエリあたり$1.50、高度な機能を使うエンタープライズ(Enterprise Edition)が1,000クエリあたり$4.00が公式料金。月間1,500万クエリを超えるような大規模利用では、クエリ数・保存データ量をコミットする定額寄りの「Configurable Pricing」も選べる
 - **Microsoft 365 Copilot / SharePointの意味索引**: 対象データがすでにSharePoint・OneDriveにあれば追加のインフラ構築は不要。Copilotのライセンス費用(1人あたり月額数千円)に含まれる
 - **Dify(自前でRAGアプリを構築)**: ナレッジベース機能自体は無料利用枠の範囲で試せるが、埋め込みモデルの呼び出し料金・保存容量などが別途発生する。詳細は[Embedding(埋め込み)とは何か](./embedding-basics.md)の料金比較表を参照
 
@@ -111,6 +111,11 @@ updated: 2026-07-06
 - [RAGの精度を上げる方法](./rag-accuracy-improvement.md)
 
 ## 更新履歴
+
+### 2026-07-30: 料金・ツール横断の対応付けを最新化
+- **内容**: Google Cloud Agent Search(旧Vertex AI Search)の料金を公式の従量課金額(標準1,000クエリ$1.50、エンタープライズ1,000クエリ$4.00)に更新、Gleanの料金目安をEnterprise Searchライセンス($45〜50/月)とWork AIアドオン($15/月)に分けて具体化。Microsoft 365 Copilotの節に、開発者が意味索引へ直接問い合わせられる「Microsoft 365 Copilot Retrieval API」のGA(一般提供)を追記。Notionのエンタープライズ検索の節に連携先の拡大(Slack・Google Drive・GitHub・Jira・Teams・SharePoint・Salesforce等)と「検証済み」ページ機能を追記。ハイブリッド検索の節に、複雑な質問を自動でサブクエリに分解する「エージェント的検索(agentic retrieval)」の実用化を追記
+- **出典**: [Google Cloud: Agent Search pricing](https://cloud.google.com/generative-ai-app-builder/pricing)、[GoSearch: Glean Pricing Explained](https://www.gosearch.ai/blog/glean-pricing-explained/)、[Vendr: Glean Software Pricing & Plans 2026](https://www.vendr.com/marketplace/glean)、[Microsoft Learn: Microsoft 365 Copilot Retrieval API Overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/ai-services/retrieval/overview)、[Microsoft 365 Developer Blog: Microsoft 365 Copilot APIs: What's New and What's Next](https://devblogs.microsoft.com/microsoft365dev/microsoft-365-copilot-apis-whats-new-and-whats-next/)、[Notion: Notion 3.2 release notes (2026-01-20)](https://www.notion.com/releases/2026-01-20)、[Microsoft Learn: Hybrid Search Overview - Azure AI Search](https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview)、[Signisys: Azure AI Search: Enterprise Retrieval & RAG Guide (2026)](https://www.signisys.com/blog/azure-ai-search-the-complete-guide-to-enterprise-retrieval-and-rag-on-azure/)
+- **注記**: Glean・Google Cloud Agent Searchの料金は変更されやすいため、記事化・導入検討の前に必ず各社公式サイトで最終確認すること
 
 ### 2026-07-06: 初版執筆
 - **内容**: キーワード検索(BM25・転置インデックス)とセマンティック検索(Embeddingの類似度)の仕組みと比較表、RRFによるハイブリッド検索の考え方、業務シーン別の使い分け判断基準、ChatGPT/NotebookLM/Microsoft 365 Copilot・SharePoint/Notion/Slack AI/Dify/Glean・Vertex AI Searchでの実装状況とツール横断の対応付け、エンタープライズサーチ製品の料金目安、Copilotの意味索引をオフにできない点などの注意点を整理
