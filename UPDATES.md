@@ -6,6 +6,11 @@
 
 ## 2026-07-29
 - [バッチ処理(Batch API)の基本](topics/part09-api-development/batch-api-basics.md): OpenAI/Anthropic/Google Geminiの3社比較表・料金/上限・結果保存期間を最新化し、Google Gemini Batch APIの節を新設
+- [RAGの精度を上げる方法](topics/part07-data-analysis/rag-accuracy-improvement.md): コンテキスト付与(Contextual Retrieval)・late chunking・エージェント型RAGを追加して最新化
+- [GPTsのナレッジファイルとアクション連携](topics/part06-custom-ai/gpts-knowledge-and-actions.md): OpenAIのワークスペースエージェント発表(2026年4月)を踏まえてGPTsの位置づけを最新化
+- [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part03-ai-chat-tools/chatgpt-initial-setup-and-opt-out.md): 人格プリセット名の修正とNYT訴訟由来のデータ保全命令解除(2025年10月)を反映して最新化
+- [ロール(役割)プロンプティング](topics/part05-prompt-engineering/role-prompting.md): 研究知見(2026年の新しいペルソナプロンプティング論文)とツール横断の対応表(ChatGPTのカスタム指示文字数分岐・Gemini Gemsの無料開放・Claude Projectsの無料枠)を最新化
+- [機械学習の基礎(教師あり学習・教師なし学習・強化学習)](topics/part01-ai-basics/machine-learning-basics.md): 強化学習の節にRLHF以降の発展(DPO・GRPO・RLVR)と推論モデルとの関係を追記して最新化
 
 ## 2026-07-28
 - [Microsoft Copilot Studioによるカスタムエージェント作成の基本](topics/part06-custom-ai/copilot-agent-builder-basics.md): 2026年7月のCopilot Studio全面リビルドとコネクタ数・M365ライセンス値上げを反映して最新化
