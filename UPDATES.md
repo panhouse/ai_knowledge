@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-30
+- [コーディング支援AIの選び方・比較(Cursor・GitHub Copilot・Cline・Windsurf)](topics/part08-specialized-ai-tools/coding-assistant-ai-comparison.md): 新規執筆(コーディング支援AI4ツールの横断比較ページ)
 - [セマンティック検索の基本](topics/part07-data-analysis/semantic-search-basics.md): Google Cloud Agent Search・Gleanの料金、Microsoft 365 Copilot Retrieval APIやNotion連携拡大などツール横断の対応付けを最新化
 - [GPTs・Gem・Copilot Agent・Claude Projectsの比較と使い分け](topics/part06-custom-ai/custom-ai-tools-comparison.md): 新規執筆(4ツールの機能・プラン要件・料金の横断比較と使い分けガイド)
 - [Tree-of-Thought(ToT)プロンプティング](topics/part05-prompt-engineering/tree-of-thought-prompting.md): 推論モデルの効果レベルダイヤル(reasoning_effort/thinking_budget等)の標準化を反映して最新化
