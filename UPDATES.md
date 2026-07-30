@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-30
+- [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): トレンドモデル動向・Inference Providers・料金プランの節を最新化
+
 ## 2026-07-28
 - [Microsoft Copilot Studioによるカスタムエージェント作成の基本](topics/part06-custom-ai/copilot-agent-builder-basics.md): 2026年7月のCopilot Studio全面リビルドとコネクタ数・M365ライセンス値上げを反映して最新化
 - [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の著作権訴訟動向(Anthropic和解承認・Google新規提訴等)を追記して最新化
