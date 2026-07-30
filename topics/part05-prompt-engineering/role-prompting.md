@@ -4,7 +4,7 @@ part: 5
 chapter: 第2章 例示と誘導
 tags: [プロンプトエンジニアリング, ロールプロンプティング, ペルソナ, システムプロンプト, カスタム指示]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-29
 ---
 
 # ロール(役割)プロンプティング
@@ -22,7 +22,7 @@ LLM(大規模言語モデル)は、インターネット上の膨大なテキス
 - **一回限りの指定**: そのメッセージの中だけで「〇〇として、以下を確認して」と書く。単発の相談・下書き作成に向く
 - **永続的な指定**: システムプロンプト(APIの`system`パラメータ)やカスタム指示、Projects/Gemの指示欄に書き、会話全体・毎回の利用で効かせる。定型業務の繰り返しに向く
 
-なお、2025年以降の複数の研究では、ロールプロンプティングの効果は一様ではないことが確認されている。文章のトーン調整・ブレインストーミング・レビューの視点出しなど「観点や語り口を変えたいタスク」では効果が出やすい一方、事実確認・数値計算・コード生成など「正確性そのもの」が問われるタスクでは、専門家ペルソナを与えても精度が上がらない、むしろ下がるケースがあることが指摘されている(arXiv「Prompting Science Report 4: Playing Pretend: Expert Personas Don't Improve Factual Accuracy」)。ロールプロンプトは"魔法の精度向上ボタン"ではなく、"視点・トーンを操作するダイヤル"だと理解しておくとよい。
+なお、2025年以降、2026年に入ってからも複数の研究がロールプロンプティングの効果を検証しているが、結論は一貫して「タスク依存」である。文章のトーン調整・ブレインストーミング・レビューの視点出し・助言的なやり取り(医療・心理相談のような、慎重な専門家的フレーミングが有効な領域)など「観点や語り口を変えたいタスク」では効果が出やすい一方、事実確認・数値計算・コード生成など「正確性そのもの」が問われるタスクでは、専門家ペルソナを与えても精度が上がらない、むしろ下がるケースがあることが指摘されている(arXiv「Prompting Science Report 4: Playing Pretend: Expert Personas Don't Improve Factual Accuracy」、arXiv「When Does Persona Prompting Actually Help?」)。さらに、ペルソナ設定が回答内容そのものよりも「専門用語の密度は増えるが分かりやすさは下がる」といった副作用を生む場合があることや、主観的な判断が絡むタスクではペルソナ設定の影響が回答のばらつきの1割にも満たないとする研究もあり、「効けば必ず精度が上がる万能手法」ではない。ロールプロンプトは"魔法の精度向上ボタン"ではなく、"視点・トーンを操作するダイヤル"だと理解しておくとよい。
 
 ## 使いどころ・使い分け
 
@@ -104,11 +104,11 @@ LLM(大規模言語モデル)は、インターネット上の膨大なテキス
 
 | ツール | 一回限りのロール指定 | 永続的に保存する場所 |
 |---|---|---|
-| ChatGPT | メッセージ本文の冒頭に役割を書く | 画面左下のアカウントアイコン→「パーソナライズ」→「カスタム指示」の「自分について」「回答してほしい方法」欄(各1,500文字まで、無料プラン含む全プランで利用可) |
-| GPTs(ChatGPTのカスタムAI) | (GPTs自体が特定タスク専用なので通常は永続設定側で使う) | GPT作成画面(「GPTを作成」)の「Instructions(指示)」欄。Plus以上のプランが必要 |
-| Gemini | メッセージ本文の冒頭に役割を書く | gemini.google.com→左メニュー「Gemを表示」→「Gemを作成」の指示欄。Google公式はペルソナ・タスク・コンテキスト・出力形式の4要素を含めることを推奨 |
-| Claude | メッセージ本文の冒頭に役割を書く(APIなら`system`パラメータ) | claude.aiの「Projects」を作成し、「カスタム指示」欄に記載(Pro以上のプランが必要) |
-| Microsoft 365 Copilot | メッセージ本文の冒頭に役割を書く | 個人設定(「Copilotに自分について知ってほしいこと」欄)、または Copilot Studio でエージェントを作成しその指示欄に記載 |
+| ChatGPT | メッセージ本文の冒頭に役割を書く | 画面左下のアカウントアイコン→「設定」→「パーソナライズ」→「カスタム指示」の「自分について」「回答してほしい方法」欄。文字数上限は2026年7月15日の仕様変更でプランにより差があり、無料・Goプランは1,500文字まで、Plus/Pro/Business/Enterprise/Educationは5,000文字までに拡大 |
+| GPTs(ChatGPTのカスタムAI) | (GPTs自体が特定タスク専用なので通常は永続設定側で使う) | GPT作成画面(「GPTを作成」)の「Instructions(指示)」欄。作成にはPlus以上の有料プランが必要 |
+| Gemini | メッセージ本文の冒頭に役割を書く | gemini.google.com→左メニュー「Gemを表示」→「Gemを作成」の指示欄。無料のGoogleアカウント(18歳以上)でも作成・利用でき、利用回数の上限を外したい場合はGoogle AI Pro等の有料プランが有効。Google公式はペルソナ・タスク・コンテキスト・出力形式の4要素を含めることを推奨 |
+| Claude | メッセージ本文の冒頭に役割を書く(APIなら`system`パラメータ) | claude.aiの「Projects」を作成し、「カスタム指示」欄に記載。無料プランでも最大5個まで作成可能(Pro/Team/Enterpriseはより多くのプロジェクト・大きなナレッジ容量を利用可能) |
+| Microsoft 365 Copilot | メッセージ本文の冒頭に役割を書く | Copilot Chatの「設定」→「パーソナライズ」→「カスタム指示を編集」、または Copilot Studio でエージェントを作成しその指示欄に記載 |
 
 いずれのツールも「役割」単体ではなく、「役割+口調+出力形式+守ってほしい制約」をまとめてカスタム指示に書き込むのが実務上のコツ。役割だけを書いて満足せず、[プロンプトの基本構成要素](./prompt-basic-structure.md)にある他の要素(タスク・文脈・出力形式)と組み合わせること。
 
@@ -130,6 +130,10 @@ LLM(大規模言語モデル)は、インターネット上の膨大なテキス
 - [Claude(Anthropic)の基本](../part03-ai-chat-tools/claude-basics.md)
 
 ## 更新履歴
+
+### 2026-07-29: 研究知見とツール横断の対応表を最新化
+- **内容**: ロールプロンプティングの効果に関する研究知見を2026年の新しい論文で補強(助言的タスクでの有効性、専門用語密度とわかりやすさのトレードオフ、主観タスクでの効果の小ささに関する指摘を追加)。ツール横断の対応表を更新: ChatGPTのカスタム指示は2026年7月15日から文字数上限がプランにより1,500字/5,000字に分岐した点、Gemini Gemsが無料のGoogleアカウントでも作成可能になった点、Claude Projectsが無料プランでも(上限5個まで)利用可能な点、Microsoft 365 Copilotの設定導線を反映
+- **出典**: [Search Engine Journal: Research Shows Where Persona Prompting Works And When It Backfires](https://www.searchenginejournal.com/research-you-are-an-expert-prompts-can-damage-factual-accuracy/570397/)、[arXiv: When Does Persona Prompting Actually Help? A Retrieval and Metric Analysis of Expert Role Injection in LLMs](https://arxiv.org/abs/2605.29420)、[arXiv: The Prompt Makes the Person(a) - A Systematic Evaluation of Sociodemographic Persona Prompting for Large Language Models](https://arxiv.org/pdf/2507.16076)、[reconnAI: ChatGPT Triples Its Custom Instructions Limit to 5,000 Characters](https://reconn-ai.com/news/chatgpt-custom-instructions-5000-ai-visibility/)、[Claude Help Center: What are projects?](https://support.claude.com/en/articles/9517075-what-are-projects)、[cloudpack: カスタム Gem 作成のヒント関連解説(Gemini Gems カスタム指示ガイド)](https://cloudpack.jp/column/generative-ai/gemini-gem-custom-instructions.html)、[Microsoft Support: Customize how Microsoft 365 Copilot responds to you](https://support.microsoft.com/en-us/microsoft-365-copilot/customize-how-microsoft-365-copilot-responds-to-you)
 
 ### 2026-07-06: 初版執筆
 - **内容**: ロール(役割)プロンプティングの定義、システムプロンプト/カスタム指示との違い、効果が出やすいタスクと出にくいタスクの使い分け、業務別のコピペ用プロンプト5例、ChatGPT/GPTs/Gemini/Claude/Copilotでの「一回限り」と「永続設定」の置き場所、過度なペルソナ設定や正確性タスクでの限界に関する注意点を整理
