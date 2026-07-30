@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-29
+- [特化型AIツールの選び方(用途別マップと比較)](topics/part08-specialized-ai-tools/specialized-ai-tools-selection-guide.md): 第6章「会議・議事録AI」を選定マップ・比較表に追加し、Sora提供終了・Windsurf→Devin Desktop改名・各種料金を2026年7月時点に最新化
 - [バッチ処理(Batch API)の基本](topics/part09-api-development/batch-api-basics.md): OpenAI/Anthropic/Google Geminiの3社比較表・料金/上限・結果保存期間を最新化し、Google Gemini Batch APIの節を新設
 - [RAGの精度を上げる方法](topics/part07-data-analysis/rag-accuracy-improvement.md): コンテキスト付与(Contextual Retrieval)・late chunking・エージェント型RAGを追加して最新化
 - [GPTsのナレッジファイルとアクション連携](topics/part06-custom-ai/gpts-knowledge-and-actions.md): OpenAIのワークスペースエージェント発表(2026年4月)を踏まえてGPTsの位置づけを最新化
