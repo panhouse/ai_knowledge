@@ -42,6 +42,7 @@ part: 8
 - [GitHub Copilotの基本(コーディング支援AI)](github-copilot-basics.md)
 - [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](audio-music-generation-ai-basics.md)
 - [Clineの基本(コーディング支援AI)](cline-basics.md)
+- [コーディング支援AIの選び方・比較(Cursor・GitHub Copilot・Cline・Windsurf)](coding-assistant-ai-comparison.md)
 - [Cursorの基本(AIコードエディタ)](cursor-basics.md)
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](huggingface-basics.md)
 - [オープンソースAIモデルのライセンス比較(商用利用時の論点)](open-source-model-license-comparison.md)
