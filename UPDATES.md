@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-07-30
+- [主要LLM APIの横断比較(OpenAI・Anthropic・Google)](topics/part09-api-development/llm-api-cross-tool-comparison.md): 新規執筆(3社のLLM APIを認証・料金・モデル命名の観点で横並び比較)
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](topics/part09-api-development/business-system-api-integration-basics.md): kintone AI正式提供・Slack MCPサーバー・Power Automate AI Builderクレジット移行・Agentforce Builder刷新を反映して最新化
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): トレンドモデル動向・Inference Providers・料金プランの節を最新化
 - [コーディング支援AIの選び方・比較(Cursor・GitHub Copilot・Cline・Windsurf)](topics/part08-specialized-ai-tools/coding-assistant-ai-comparison.md): 新規執筆(コーディング支援AI4ツールの横断比較ページ)
