@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-31
+- [Zero-shot・Few-shotプロンプティング](topics/part05-prompt-engineering/zero-shot-and-few-shot-prompting.md): ツール横断の対応表と注意点(推論モデルでの逆効果・文脈内学習の研究知見)を最新化・増強
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
