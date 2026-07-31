@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-31
+- [生成AIによる文章作成・編集の実務活用](topics/part11-business-practice/ai-writing-and-editing.md): ツール横断の対応付け(ChatGPT Writing Blocks・Gemini in Docs新機能・Copilot Claude Sonnet 5統合・Claude Opus 5)の節を最新化・増強
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
