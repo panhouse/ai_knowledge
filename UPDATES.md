@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-31
+- [ディープラーニング(深層学習)の基礎](topics/part01-ai-basics/deep-learning-basics.md): スケーリング則の曲がり角(推論時計算へのシフト)・Transformer後継アーキテクチャ・NVIDIA業績とGPU地政学リスクの節を最新化
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
