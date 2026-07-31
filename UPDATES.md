@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-07-31
+- [小売・流通・ECにおける生成AI活用事例](topics/part13-industry-cases/retail-ai-use-cases.md): 需要予測(トライアルAI発注最適化)・問い合わせ対応(松屋フーズ・セブン&アイ)の節を最新化・増強
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
