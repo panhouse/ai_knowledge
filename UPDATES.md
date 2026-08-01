@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-01
+- [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): 2026年7月時点の普及状況(GitHubスター・組織数)とMCP側の統治団体AAIF・仕様更新の最新実績を反映して最新化
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
