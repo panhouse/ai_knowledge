@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-03
+- [主要AIチャットツールのメモリ・プロジェクト機能比較(Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-memory-and-context-comparison.md): Gemini(欧州展開)・Claude(メモリ表示方式刷新・Reflect追加)・Microsoft Copilot(Notebooks GA・ライセンス緩和)の節を最新化・増強
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
