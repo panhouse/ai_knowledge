@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-04
+- [バックオフィス職における生成AI活用](topics/part11-business-practice/backoffice-ai-use-cases.md): LINEヤフー人事総務AI活用・経費精算AIエージェント(freee/TOKIUM)・契約書レビューAI(LegalOn/OLGA)・AI事業者ガイドライン第1.2版・採用AIの職業安定法留意点を反映して最新化
+
 ## 2026-07-30
 - [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
