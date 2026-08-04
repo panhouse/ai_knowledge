@@ -1,6 +1,6 @@
 ---
 title: 経理・会計AI企業一覧
-part: 14
+part: 15
 chapter: "第3章 業務ドメイン特化ツール系"
 tags: [経理, 会計, 経費精算, AI-OCR, 請求書処理, バックオフィスSaaS]
 created: "2026-07-26"

@@ -1,6 +1,6 @@
 ---
 title: 研修・人材育成系の国内AI企業一覧
-part: 14
+part: 15
 chapter: 研修・人材育成系
 tags: []
 created: 2026-07-27

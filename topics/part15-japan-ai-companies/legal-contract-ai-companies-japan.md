@@ -1,6 +1,6 @@
 ---
 title: 契約書・法務AI企業一覧
-part: 14
+part: 15
 chapter: "第3章 業務ドメイン特化ツール系"
 tags: [法務, 契約書レビュー, LegalTech, CLM, 電子契約]
 created: "2026-07-26"

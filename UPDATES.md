@@ -4,8 +4,12 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-04
+- [Part 14: 職種別 生成AI活用事例](topics/part14-job-role-cases/_index.md): 新規パート追加(営業〜経営者まで13章の分類の地図、Part 11「職種別ユースケース」/ Part 13「業種別事例」との住み分け、事例ページに必須の4要素を定義)
+- 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part15-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
+
 ## 2026-07-30
-- [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
+- [国産基盤モデル・研究開発系AI企業一覧](topics/part15-japan-ai-companies/foundation-model-companies-japan.md): Preferred Networks(PLaMo)の節にパラメータ規模・ベンチマーク情報を追記
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvas終了(GPT-5.5でのブロック統合・o3レガシー退役予定)とChatGPT Workとの違いの節を最新化
 - [Zapierの基本](topics/part10-nocode-lowcode/zapier-basics.md): AI連携機能の節を最新化(旧「AI Actions」の開発終了とZapier MCPへの移行、料金プランの年払い/月払い明記、超過課金の上限を反映)
 - [主要LLM APIの横断比較(OpenAI・Anthropic・Google)](topics/part09-api-development/llm-api-cross-tool-comparison.md): 新規執筆(3社のLLM APIを認証・料金・モデル命名の観点で横並び比較)
@@ -49,21 +53,21 @@
 - [ChatGPTの音声(Advanced Voice Mode)機能](topics/part03-ai-chat-tools/chatgpt-voice-mode-feature.md): 新モデル「GPT-Live」への刷新の節を最新化・増強
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): ◯◯の節を最新化・増強
 - [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](topics/part08-specialized-ai-tools/audio-music-generation-ai-basics.md): ◯◯の節を最新化・増強
-- [研修・人材育成系の国内AI企業一覧](topics/part14-japan-ai-companies/ai-training-hr-development-companies-japan.md): 新規執筆(生成AI研修・AI人材育成を提供する国内企業7社のカタログ)
-- [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part14-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 新規執筆(Part14第4章の初回ページ、Yoom・Anyflow・アステリア・JAPAN AI・エクサウィザーズを収録)
+- [研修・人材育成系の国内AI企業一覧](topics/part15-japan-ai-companies/ai-training-hr-development-companies-japan.md): 新規執筆(生成AI研修・AI人材育成を提供する国内企業7社のカタログ)
+- [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part15-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 新規執筆(Part14第4章の初回ページ、Yoom・Anyflow・アステリア・JAPAN AI・エクサウィザーズを収録)
 ## 2026-07-26
-- [人事・採用AI企業一覧](topics/part14-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 新規執筆(人事・採用AI企業一覧)
-- [経理・会計AI企業一覧](topics/part14-japan-ai-companies/accounting-ai-companies-japan.md): 新規執筆(経理・会計AI企業一覧)
-- [営業支援AI企業一覧](topics/part14-japan-ai-companies/sales-support-ai-companies-japan.md): 新規執筆(営業支援AI企業一覧)
-- [カスタマーサポートAI企業一覧](topics/part14-japan-ai-companies/customer-support-ai-companies-japan.md): 新規執筆(カスタマーサポートAI企業一覧)
-- [議事録・文字起こしAI企業一覧](topics/part14-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 新規執筆(議事録・文字起こしAI企業一覧)
-- [契約書・法務AI企業一覧](topics/part14-japan-ai-companies/legal-contract-ai-companies-japan.md): 新規執筆(契約書・法務AI企業一覧)
+- [人事・採用AI企業一覧](topics/part15-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 新規執筆(人事・採用AI企業一覧)
+- [経理・会計AI企業一覧](topics/part15-japan-ai-companies/accounting-ai-companies-japan.md): 新規執筆(経理・会計AI企業一覧)
+- [営業支援AI企業一覧](topics/part15-japan-ai-companies/sales-support-ai-companies-japan.md): 新規執筆(営業支援AI企業一覧)
+- [カスタマーサポートAI企業一覧](topics/part15-japan-ai-companies/customer-support-ai-companies-japan.md): 新規執筆(カスタマーサポートAI企業一覧)
+- [議事録・文字起こしAI企業一覧](topics/part15-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 新規執筆(議事録・文字起こしAI企業一覧)
+- [契約書・法務AI企業一覧](topics/part15-japan-ai-companies/legal-contract-ai-companies-japan.md): 新規執筆(契約書・法務AI企業一覧)
 ## 2026-07-25
 - [生成AI利用コストの管理・予算配分](topics/part11-business-practice/ai-cost-management-and-budgeting.md): 新規執筆
 - [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](topics/part08-specialized-ai-tools/meeting-minutes-ai-basics.md): 新規執筆
-- [国産基盤モデル・研究開発系AI企業一覧](topics/part14-japan-ai-companies/foundation-model-companies-japan.md): 新規執筆
+- [国産基盤モデル・研究開発系AI企業一覧](topics/part15-japan-ai-companies/foundation-model-companies-japan.md): 新規執筆
 - [リアルタイム音声API(ボイスエージェント構築)の基本](topics/part09-api-development/realtime-voice-api-basics.md): 新規執筆
-- [コンサル・SIer系のAI企業一覧](topics/part14-japan-ai-companies/consulting-sier-ai-companies.md): 新規執筆
+- [コンサル・SIer系のAI企業一覧](topics/part15-japan-ai-companies/consulting-sier-ai-companies.md): 新規執筆
 - [オープンソースAIモデルのライセンス比較(商用利用時の論点)](topics/part08-specialized-ai-tools/open-source-model-license-comparison.md): 新規執筆
 - [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 新規執筆
 

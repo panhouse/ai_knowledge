@@ -1,6 +1,6 @@
 ---
 title: コンサル・SIer系のAI企業一覧
-part: 14
+part: 15
 chapter: 第1章 コンサル・SIer系
 tags: [コンサルティング, SIer, 生成AI導入支援, AIガバナンス]
 created: 2026-07-25

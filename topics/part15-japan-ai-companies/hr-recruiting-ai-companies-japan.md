@@ -1,6 +1,6 @@
 ---
 title: 人事・採用AI企業一覧
-part: 14
+part: 15
 chapter: "第3章 業務ドメイン特化ツール系"
 tags: [人事, 採用, HRTech, タレントマネジメント, AI面接, 適性検査]
 created: 2026-07-26
