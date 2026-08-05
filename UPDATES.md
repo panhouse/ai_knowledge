@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-04
+- [タスク分解プロンプティング(複雑な依頼をステップに分ける技法)](topics/part05-prompt-engineering/task-decomposition-prompting.md): 自律型AIエージェント(ChatGPT WorkのPlan mode、Gemini Deep Research、Claude Agent SDKのサブエージェント)との関係の節を最新化・増強
 - [プロンプトテンプレート化(変数管理・再利用のコツ)](topics/part05-prompt-engineering/prompt-templating.md): ツール横断の対応付けを最新化(ChatGPTカスタム指示の文字数拡張、Claudeカスタムスキル、PromptLayer/LangSmith等のプロンプト管理ツールを追加)
 
 ## 2026-08-03
