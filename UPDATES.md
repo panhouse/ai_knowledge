@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-01
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](topics/part11-business-practice/ai-research-and-information-gathering.md): 各社の料金・回数上限を2026年8月時点に最新化し、Microsoft 365 Copilot「Researcher」を比較表に追加
 - [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): 2026年7月時点の普及状況(GitHubスター・組織数)とMCP側の統治団体AAIF・仕様更新の最新実績を反映して最新化
 - [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](topics/part07-data-analysis/graphrag-and-agentic-rag-basics.md): LightRAG・Neo4j公式パッケージ・Azure AI Searchのエージェント検索/Foundry IQ・Google Cloud Agent Search等を反映して最新化
 - [社内AI利用ガイドラインの作り方](topics/part04-risk-security/ai-internal-guideline-basics.md): 主要公的資料のバージョン更新有無を確認し、ChatGPT/Gemini/Claude/Copilotの管理者設定によるエンフォースメントの節を追加して最新化
