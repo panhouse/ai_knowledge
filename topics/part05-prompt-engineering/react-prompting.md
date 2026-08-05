@@ -116,7 +116,7 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 | Gemini(gemini.google.com / Gemini CLI) | 同テンプレートを、Google検索グラウンディングをオンにした状態で貼る | Gemini Spark(常駐型のエージェント)やGemini CLIは、組み込みツールとMCPサーバー連携を使ったThink→Act→Observeのループを内部で回し、複数ステップの作業を実行する。Gemini 3世代のモデル自体もGrounding・Code Execution・Function Callingを組み合わせた自律的なツール利用を前提に設計されている |
 | 開発者向け(API・LangChain等) | プロンプトでThought/Action/Observation形式を明示し、Action行をアプリ側のコードでパースして実行結果をObservationとして返す(従来のLangChain `create_react_agent`が代表例) | 各社のネイティブな[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md) APIを使った「エージェントループ」。LangChainでは`create_react_agent`(テキストをパースするReAct形式)は非推奨となり、モデルが構造化データ(JSON)で呼び出し要求を返すFunction Calling前提の`create_agent`(langchainパッケージ)への移行が案内されている。実務では構造化された呼び出し形式の方が信頼性が高く推奨される |
 
-つまり、ReActは「モデルに推論とツール利用を交互にやらせる」という**発想・パターン**の名前であり、[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md)は「その行動(Action)を実際にどう実行するか」という**技術的な実装手段**、[AIエージェント](../part12-ai-trends/ai-agent-basics.md)は「そのループを自律的に何ステップも繰り返すシステム全体」を指す言葉、という三層の関係で理解すると整理しやすい。ネイティブなFunction Callingとエージェント機能が標準装備になった今、ReAct自体は「新しいテクニック」というより、**エージェント機能の裏側で何が起きているかを理解し、必要な場面(検証・監査・自前のツール連携)で自分の手でも再現できるようにしておくための基礎知識**という位置づけに変わってきている。
+つまり、ReActは「モデルに推論とツール利用を交互にやらせる」という**発想・パターン**の名前であり、[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md)は「その行動(Action)を実際にどう実行するか」という**技術的な実装手段**、[AIエージェント](../part11-ai-agents/ai-agent-basics.md)は「そのループを自律的に何ステップも繰り返すシステム全体」を指す言葉、という三層の関係で理解すると整理しやすい。ネイティブなFunction Callingとエージェント機能が標準装備になった今、ReAct自体は「新しいテクニック」というより、**エージェント機能の裏側で何が起きているかを理解し、必要な場面(検証・監査・自前のツール連携)で自分の手でも再現できるようにしておくための基礎知識**という位置づけに変わってきている。
 
 ## 注意点・よくある誤解
 
@@ -135,7 +135,7 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 
 - [Chain-of-Thought(CoT)プロンプティング](./chain-of-thought-prompting.md) — 外部の行動を伴わない、頭の中だけの推論はこちら
 - [Tree of Thought(ToT)プロンプティング](./tree-of-thought-prompting.md) — 複数案を比較検討したい場合はこちら
-- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md) — ReAct的なループを自律的に繰り返すシステム全体の呼び方
+- [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md) — ReAct的なループを自律的に繰り返すシステム全体の呼び方
 - [Function Calling(Tool Calling)の基本](../part09-api-development/function-calling-basics.md) — ReActの「Action」を実際に実行する技術的な仕組み
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較](../part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md) — ChatGPT Work・Gemini Spark・Copilot Cowork・Claude Coworkなど、各社のエージェント機能名・対応プランの最新対応表
 - [ChatGPTのエージェント機能(ChatGPT Work)とスケジュールタスク(Tasks)](../part03-ai-chat-tools/chatgpt-agent-mode-feature.md) — ChatGPTでReAct的ループが実際にどう製品化されているかの詳細

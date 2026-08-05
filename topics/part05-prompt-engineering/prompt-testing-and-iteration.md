@@ -4,7 +4,7 @@ part: 5
 chapter: 第5章 評価と改善
 tags: [プロンプトエンジニアリング, プロンプトテスト, A/Bテスト, バージョン管理, 回帰テスト, promptfoo, LangSmith]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-05
 ---
 
 # プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)
@@ -111,17 +111,17 @@ updated: 2026-07-06
 
 Googleスプレッドシートであれば「ファイル→変更履歴」からも過去の状態を復元できるため、表による記録と組み合わせるとさらに安心できる([ChatGPT・Claude・Geminiのプロンプト管理 - GLASS BLOG](https://glass-inc.jp/media/ai-prompt-management-guide/))。
 
-### ツール横断の対応付け(2026年7月時点)
+### ツール横断の対応付け(2026年8月時点)
 
 | 用途 | ツール・機能名 | できること | 対象ユーザー |
 |---|---|---|---|
 | 手軽に2案を見比べたい | ChatGPT / Claude / Gemini のチャット + 上記スプレッドシートテンプレート | 2つの会話タブで同じ入力を試し、結果を手動で表に記録する | 非エンジニアの一般利用者 |
 | モデル横断で同じプロンプトの出力を比較したい | Google AI Studio の「Compare」モード | 1つのプロンプトに対し、別のプロンプト・別の保存済みプロンプト・正解例(ground truth)のいずれかと出力を並べて比較できる。複数モデルへ同じプロンプトを流し、速度と品質を横並びで見られる(画像・複数ターンの会話には非対応) | API利用者・プロンプト設計担当 |
-| API向けにテストケースを溜めて繰り返し評価したい | Anthropic Console の「Evaluate」タブ | テストケースをAIに自動生成させる/手動追加/CSVで一括インポートでき、プロンプトのバージョンごとに一括実行・出力の並列比較・5段階での人手評価ができる | API利用者・プロンプト設計担当 |
-| OpenAIモデルで評価を組みたい | OpenAI の「Datasets」(旧Evals) | 対話的にテストケース(データセット)を作り、繰り返し評価する軽量ツール。**旧「Evals」プラットフォームは2026年10月31日に読み取り専用化、11月30日に提供終了予定**で、OpenAI自身が本格運用には後述のpromptfooへの移行を案内している | API利用者・開発者 |
-| CI/CDに組み込んで自動でプロンプトの劣化を検知したい | promptfoo(OSS、2026年3月にOpenAIが買収。買収後もオープンソースのまま継続提供) | プロンプト×モデルの組み合わせをマトリクス表示し、出力・合否・コスト・レイテンシを一覧比較。GitHub Actions等のCI/CDに組み込み、変更が既存のテストケースを壊すと自動でビルドを失敗させられる。個人・小規模チームなら無料版で十分な機能が揃い、チーム共有機能付きのTeamプランは月額50ドル | 開発者・エンジニアリングチーム |
-| 複数プロンプトのバージョン管理と大規模データセットでの評価を一体で行いたい | LangSmith(LangChain) | Playground上でプロンプトのバージョン・モデルを切り替えて出力を並べて比較でき、気に入った版はコミットとして保存、Diff機能で版同士の差分を確認できる。個人向けDeveloperプランは無料(月5,000トレースまで)、Plusプランは1シート月39ドル | 開発者・エンジニアリングチーム |
-| ノーコードで作ったワークフローのプロンプトを検証したい | Dify のプレビュー・デバッグ機能、ステップ実行 | ワークフロー編集画面で変数を入力してその場でプロンプトを試し、ノード単位で「このステップのみ実行」して結果を確認できる。有料プランではアプリのバージョン復元機能も使える | Difyでアプリを作る担当者 |
+| API向けにテストケースを溜めて繰り返し評価したい(※移行期、下記の注意点参照) | Anthropic Console の「Evaluate」タブ(旧Workbench内) | テストケースをAIに自動生成させる/手動追加/CSVで一括インポートでき、プロンプトのバージョンごとに一括実行・出力の並列比較・5段階での人手評価ができる。**この機能を含む旧Workbenchは2026年8月17日に廃止予定**で、後継の刷新版Workbench(ステートレスで作業内容をAnthropic側に保存しない設計)には保存済みプロンプト・バージョン履歴・evals(この評価機能)は引き継がれない。残したいテストケース・評価結果があれば廃止日までに組織設定の画面からエクスポートしておく | API利用者・プロンプト設計担当 |
+| OpenAIモデルで評価を組みたい | OpenAI の「Datasets」(旧Evals) | 対話的にテストケース(データセット)を作り、繰り返し評価する軽量ツール。**旧「Evals」プラットフォームは2026年10月31日に読み取り専用化、11月30日に提供終了予定**で、OpenAI自身が本格運用には後述のpromptfooへの移行を案内している(旧Evals画面の「Export」メニューから「Download runnable Promptfoo config」を選ぶと、実行済みのテストケース・採点基準をpromptfoo設定ファイルにそのまま書き出せる) | API利用者・開発者 |
+| CI/CDに組み込んで自動でプロンプトの劣化を検知したい | promptfoo(OSS、2026年3月にOpenAIが買収完了。買収後もオープンソースのまま無料のCommunity版を含めて継続提供) | プロンプト×モデルの組み合わせをマトリクス表示し、出力・合否・コスト・レイテンシを一覧比較。GitHub Actions等のCI/CDに組み込み、変更が既存のテストケースを壊すと自動でビルドを失敗させられる。個人・小規模チームなら無料のCommunity版で十分な機能が揃い、チーム共有機能付きのTeamプランは月額50ドル | 開発者・エンジニアリングチーム |
+| 複数プロンプトのバージョン管理と大規模データセットでの評価を一体で行いたい | LangSmith(LangChain) | Playground上でプロンプトのバージョン・モデルを切り替えて出力を並べて比較でき、気に入った版はコミットとして保存、Diff機能で版同士の差分を確認できる。個人向けDeveloperプランは無料(月5,000トレース・保持期間14日)、Plusプランは1シート月39ドル(基本トレース10,000件を含み、超過分は1,000件あたり2.50ドル) | 開発者・エンジニアリングチーム |
+| ノーコードで作ったワークフローのプロンプトを検証したい | Dify のプレビュー・デバッグ機能、ステップ実行 | ワークフロー編集画面で変数を入力してその場でプロンプトを試し、ノード単位で「このステップのみ実行」して結果を確認できる。各ノードは直近の実行結果を自動保存するため、ワークフロー全体を再実行しなくてもステップ単位で素早く試行錯誤できる。有料プランではアプリのバージョン復元機能も使える | Difyでアプリを作る担当者 |
 
 ## 注意点・よくある誤解
 
@@ -131,6 +131,7 @@ Googleスプレッドシートであれば「ファイル→変更履歴」か�
 - **モデルは黙って新しくなることがある**: ChatGPT・Claude・Geminiのようなチャットツールはデフォルトモデルが定期的に更新される。プロンプトを変えていないのに出力の傾向が変わったと感じたら、まずモデルが変わっていないかを疑う
 - **点数法(ルーブリック採点)との役割の違いを混同しない**: ルーブリック採点は「1回の出力をどう採点するか」という物差しであり、本ページのテスト運用は「その物差しを複数ケース・複数バージョンに繰り返し当てて追跡する仕組み」である。物差し(採点基準)を先に固め、それをテストのたびに使い回すと安定する
 - **本格的なツールはいきなり導入しない**: promptfooやLangSmithは開発者向けの機能が中心で、非エンジニアがいきなり触るとハードルが高い。まずはスプレッドシート運用で慣れ、呼び出し頻度や重要度が上がってから専用ツールへの移行を検討するのが現実的な順序
+- **クラウド上のテスト環境は"ずっと残る"前提で設計しない**: Anthropic Consoleの旧Workbench(Evaluateタブ含む)は2026年8月17日に廃止され、後継の刷新版Workbenchは保存済みプロンプト・バージョン履歴・evals結果を引き継がない設計になった。OpenAIの旧Evalsも2026年11月30日で提供終了する。ベンダー標準のテスト・評価ツールは仕様変更や終了告知が出ることがあるため、重要なテストケースと判定条件は自社のスプレッドシートやリポジトリにも定期的にバックアップしておくと安全
 
 ## 最初の一歩
 
@@ -143,6 +144,16 @@ Googleスプレッドシートであれば「ファイル→変更履歴」か�
 - [プロンプトの基本構成要素](./prompt-basic-structure.md) — 検証対象となるプロンプトの型の基礎
 
 ## 更新履歴
+
+### 2026-08-05: ツール横断の対応付けと注意点を最新化
+- **内容**: 「ツール横断の対応付け」節を2026年8月時点の状況に更新。特にAnthropic Consoleの旧Workbench(Evaluateタブ含む)が2026年8月17日に廃止され、後継の刷新版Workbenchには保存済みプロンプト・バージョン履歴・evals結果が引き継がれないことを明記し、廃止前のエクスポートを促す注意点を追加。OpenAI Datasets(旧Evals)の項に、旧Evals画面からpromptfoo設定ファイルへ直接エクスポートできる公式移行導線があることを追記。promptfoo・LangSmithの料金・提供条件の文言を裏取りし直して確認済みである旨を明確化。Difyの項にv1.5.0で強化されたノード単位の実行結果自動保存(再実行なしでのステップ試行)を追記。「クラウド上のテスト環境は永続しない」という注意点を新設
+- **出典**: [How do I use the Workbench? - Claude Help Center](https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench)
+- **出典**: [Anthropic Revamps Workbench with New Build UI - TheWinCentral](https://thewincentral.com/anthropic-workbench-build-ui-update-claude-fable-5-fallback/)
+- **出典**: [Deprecation notice: Evals will be shut down on November 30th, 2026 - OpenAI Developer Community](https://community.openai.com/t/deprecation-notice-evals-will-be-shut-down-on-november-30th-2026/1385537)
+- **出典**: [Moving from OpenAI Evals to Promptfoo - OpenAI Cookbook](https://developers.openai.com/cookbook/examples/evaluation/moving-from-openai-evals-to-promptfoo)
+- **出典**: [OpenAI to Acquire AI Security Startup Promptfoo - SecurityWeek](https://www.securityweek.com/openai-to-acquire-ai-security-startup-promptfoo/)
+- **出典**: [LangSmith Pricing Explained (2026) - Inference.net](https://inference.net/content/langsmith-pricing/)
+- **出典**: [Dify 1.5.0: Real-Time Workflow Debugging That Actually Works - Dify Blog](https://dify.ai/blog/dify-1-5-0-real-time-workflow-debugging-that-actually-works)
 
 ### 2026-07-06: 初版執筆
 - **内容**: プロンプトの検証・反復改善ワークフロー(テストケース設計、A/Bでのバリアント比較、モデルアップグレード時の再検証、軽量バージョン管理)を整理。回帰テストの考え方とモデル・プロンプト変更を同時に行わない原則、コピペで使えるテストケース表・比較プロンプトのテンプレート、ChatGPT/Claude/Gemini(チャット)/Google AI Studio Compareモード/Anthropic Console Evaluateタブ/OpenAI Datasets(旧Evals、2026年11月終了予定)/promptfoo(2026年3月OpenAIが買収)/LangSmith/Difyの対応表を作成
