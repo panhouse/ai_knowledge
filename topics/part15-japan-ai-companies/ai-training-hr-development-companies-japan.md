@@ -15,7 +15,7 @@ updated: 2026-07-27
 G検定・E資格対策などを**企業・組織向けに提供する側**の企業を一覧化したもの。
 「どこに研修委託先の候補があるか」を調べる際のリファレンスとして使う。
 
-なお、[人材育成・研修(L&D)担当における生成AI活用事例](../part11-business-practice/learning-development-ai-use-cases.md)
+なお、[人材育成・研修(L&D)担当における生成AI活用事例](../part14-job-role-cases/learning-development-ai-use-cases.md)
 は、社内の人事・研修(L&D)担当者が**自分たちの業務**(研修設計・eラーニング教材作成・
 スキルギャップ分析など)で生成AIを**どう使うか**を扱う概念ページであり、本ページとは視点が異なる。
 本ページは、AI研修そのものを**商品・サービスとして販売する企業**を対象とする。
@@ -115,7 +115,7 @@ G検定・E資格対策などを**企業・組織向けに提供する側**の�
 
 ## 関連トピック
 
-- [人材育成・研修(L&D)担当における生成AI活用事例](../part11-business-practice/learning-development-ai-use-cases.md)
+- [人材育成・研修(L&D)担当における生成AI活用事例](../part14-job-role-cases/learning-development-ai-use-cases.md)
 
 ## 更新履歴
 

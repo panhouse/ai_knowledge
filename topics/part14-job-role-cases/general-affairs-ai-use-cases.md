@@ -1,7 +1,7 @@
 ---
 title: 総務職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第9章 総務・秘書・購買調達
 tags: [総務, ジェネラルアフェアーズ, 契約書管理, 備品管理, 社内FAQ, BCP, 防災マニュアル, 株主総会, 電子契約, 名刺管理, RAG]
 created: 2026-07-17
 updated: 2026-07-17
@@ -114,7 +114,7 @@ RAGボットは参照させる社内文書が古いと誤った回答を返す�
 
 ### 5. 社内報・社内アナウンスの作成
 
-社内報の記事や全社アナウンスは、取材メモや決定事項の箇条書きをAIに渡し、読みやすい構成・トーンに整えさせる使い方が定着しつつある。文章作成全般のコツは[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)に譲り、ここでは総務特有の「定型通知の量産」に絞ったプロンプト例を示す。
+社内報の記事や全社アナウンスは、取材メモや決定事項の箇条書きをAIに渡し、読みやすい構成・トーンに整えさせる使い方が定着しつつある。文章作成全般のコツは[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)に譲り、ここでは総務特有の「定型通知の量産」に絞ったプロンプト例を示す。
 
 ```
 あなたは総務担当者です。以下の決定事項を、全社員向けの社内アナウンス文に
@@ -194,7 +194,7 @@ RAGボットは参照させる社内文書が古いと誤った回答を返す�
 - [バックオフィス職における生成AI活用](./backoffice-ai-use-cases.md)
 - [法務職における生成AI活用事例](./legal-ai-use-cases.md)
 - [人事(HR)職における生成AI活用事例](./hr-ai-use-cases.md)
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)

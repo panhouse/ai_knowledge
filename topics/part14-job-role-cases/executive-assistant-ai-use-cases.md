@@ -1,7 +1,7 @@
 ---
 title: 秘書・エグゼクティブアシスタント職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第9章 総務・秘書・購買調達
 tags: [秘書, エグゼクティブアシスタント, EA, 日程調整, 会議準備, Copilot, Gemini, Reclaim.ai, Motion, 議事録, 出張手配]
 created: 2026-07-15
 updated: 2026-07-15
@@ -132,7 +132,7 @@ Microsoft 365 Copilotには、役員とそのサポートチームがリーダ�
 - 便箋に印刷してそのまま使える形式で、宛名・差出人欄は空欄にしておく
 ```
 
-儀礼文書は「型は合っているが、心がこもっていない」とAIっぽさが強く出やすい領域でもある(文章生成AI全般の傾向は[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)を参照)。下書きに、その役員らしい一言(相手との具体的なエピソードなど)を必ず人が加えてから発送する。
+儀礼文書は「型は合っているが、心がこもっていない」とAIっぽさが強く出やすい領域でもある(文章生成AI全般の傾向は[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)を参照)。下書きに、その役員らしい一言(相手との具体的なエピソードなど)を必ず人が加えてから発送する。
 
 ### シーン6: 出張・旅程の整理
 
@@ -155,7 +155,7 @@ Microsoft 365 Copilotには、役員とそのサポートチームがリーダ�
 
 ### シーン7: 議事録の整形とフォローアップメールの下書き
 
-会議の音声・文字起こしから議事録を整形し、決定事項・ToDo・期限を抽出する一般的なコツは[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)に譲るが、EA・秘書ならではの使い方は「議事録をそのまま社内配布せず、フォローアップメールに変換する」工程にある。
+会議の音声・文字起こしから議事録を整形し、決定事項・ToDo・期限を抽出する一般的なコツは[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)に譲るが、EA・秘書ならではの使い方は「議事録をそのまま社内配布せず、フォローアップメールに変換する」工程にある。
 
 ```
 以下は今日の役員会議の文字起こし(または走り書きメモ)です。
@@ -188,8 +188,8 @@ Microsoft TeamsのIntelligent Recap(会議の自動要約・チャプター分�
 ## 関連トピック
 
 - [バックオフィス職における生成AI活用](./backoffice-ai-use-cases.md)
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
-- [Human in the Loop(人間参加型)の業務設計](./human-in-the-loop-basics.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
+- [Human in the Loop(人間参加型)の業務設計](../part11-business-practice/human-in-the-loop-basics.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴

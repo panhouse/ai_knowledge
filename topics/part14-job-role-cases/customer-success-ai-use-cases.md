@@ -1,7 +1,7 @@
 ---
 title: カスタマーサクセス職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第4章 カスタマーサポート・カスタマーサクセス
 tags: [カスタマーサクセス, ヘルススコア, チャーン予測, QBR, オンボーディング, Gainsight, ChurnZero, HubSpot]
 created: 2026-07-14
 updated: 2026-07-14
@@ -148,8 +148,8 @@ CSツールにAI機能がない場合や、ツール導入前に汎用AIで簡�
 ## 関連トピック
 
 - [カスタマーサポート職における生成AI活用事例](customer-support-ai-use-cases.md)
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
-- [Human in the Loop(人間参加型)の業務設計](human-in-the-loop-basics.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
+- [Human in the Loop(人間参加型)の業務設計](../part11-business-practice/human-in-the-loop-basics.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴

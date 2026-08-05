@@ -1,7 +1,7 @@
 ---
 title: 購買・調達職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第9章 総務・秘書・購買調達
 tags: [購買, 調達, RFP, RFQ, スペンド分析, サプライヤーリスク, 価格交渉, 情報漏洩対策]
 created: 2026-07-13
 updated: 2026-07-13
@@ -222,7 +222,7 @@ ChatGPT・Gemini・ClaudeのいずれもCSV・Excelの読み込みに対応し�
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
 - [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
 - [バックオフィス職における生成AI活用](backoffice-ai-use-cases.md)
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 

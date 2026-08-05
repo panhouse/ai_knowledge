@@ -1,7 +1,7 @@
 ---
 title: "プロダクトマネージャー(PdM)職における生成AI活用事例"
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第5章 企画・プロダクト・データ分析
 tags: [プロダクトマネージャー, PdM, PRD, ユーザーストーリー, フィードバック分析, Productboard, Dovetail, Atlassian Intelligence, Jira, ロードマップ]
 created: 2026-07-15
 updated: 2026-07-15
@@ -32,10 +32,10 @@ PdMの業務が生成AIと相性がよい理由は、扱う情報の多くが「
 |---|---|---|---|
 | フィードバック収集・分析 | インタビュー逐語録・レビュー・サポートチケットのテーマ抽出、頻出要望の集計 | 汎用チャットAIまたはDovetail等の専用ツール | 件数が少なければ汎用AIで十分。継続的・大量に溜まるなら専用ツールで自動化 |
 | 要件定義・仕様策定 | PRDドラフト作成、ユーザーストーリー・受け入れ基準の作成 | 汎用チャットAI(過去のPRDをコンテキストに読み込ませる)、またはProductboardのAI機能 | 型の決まった文章の生成はどちらでも可。過去フィードバックとの紐づけまで自動化したいなら専用ツール |
-| 競合分析 | 競合機能の比較表作成、差分の整理 | 汎用チャットAI(Web検索・Deep Research機能併用) | 事実確認が必要な調査は[Deep Research系機能](./ai-research-and-information-gathering.md)の使い方に準じる |
+| 競合分析 | 競合機能の比較表作成、差分の整理 | 汎用チャットAI(Web検索・Deep Research機能併用) | 事実確認が必要な調査は[Deep Research系機能](../part11-business-practice/ai-research-and-information-gathering.md)の使い方に準じる |
 | 実験設計 | A/Bテストの仮説設計、成功指標の設定 | 汎用チャットAI | その場の壁打ちに向く。統計的な有意性の判断は人・データアナリストが担う |
 | 開発チームとの連携 | Jira/Linearチケットの下書き、エピックのユーザーストーリーへの分解 | Atlassian Intelligence(Jira組み込み)または汎用チャットAI | Jira上で完結させたいならAtlassian Intelligence、下書きを別途作ってから貼り付けるなら汎用AIでも可 |
-| ステークホルダー向け説明 | ロードマップの進捗説明、経営会議向けのナラティブ作成 | 汎用チャットAI | 読み手のレベルに応じた言い換えが得意。詳細は[文章作成・編集の実務活用](./ai-writing-and-editing.md) |
+| ステークホルダー向け説明 | ロードマップの進捗説明、経営会議向けのナラティブ作成 | 汎用チャットAI | 読み手のレベルに応じた言い換えが得意。詳細は[文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md) |
 
 ### 汎用チャットAI vs PdM専用ツールの判断基準
 
@@ -134,7 +134,7 @@ Web検索を使って直近の情報を調べ、機能比較表を作成して�
 - 料金・機能は変更されやすいため、閲覧日時点の情報である旨を明記する
 ```
 
-競合の機能情報は変更頻度が高く、AIの学習データが古い場合があるため、Web検索・Deep Research機能を使わせ、必ず出典を明記させる(考え方は[生成AIによる情報収集・リサーチの実務活用](./ai-research-and-information-gathering.md)を参照)。
+競合の機能情報は変更頻度が高く、AIの学習データが古い場合があるため、Web検索・Deep Research機能を使わせ、必ず出典を明記させる(考え方は[生成AIによる情報収集・リサーチの実務活用](../part11-business-practice/ai-research-and-information-gathering.md)を参照)。
 
 ### プロンプト例5: A/Bテスト仮説設計用プロンプト
 
@@ -203,9 +203,9 @@ A/Bテストの仮説設計のたたき台を作成してください。
 ## 関連トピック
 
 - [企画職における生成AI活用](./planning-ai-use-cases.md)
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
 - [AIが扱いやすいデータ形式](../part07-data-analysis/ai-friendly-data-formats.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](./ai-research-and-information-gathering.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 

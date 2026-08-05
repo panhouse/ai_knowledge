@@ -1,7 +1,7 @@
 ---
 title: 内部監査職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第7章 経理・財務・内部監査
 tags: [内部監査, リスクベース監査, J-SOX, 内部統制, 継続的監査, 異常検知, 独立性, 客観性, ハルシネーション, 情報漏洩]
 created: 2026-07-17
 updated: 2026-07-17
@@ -176,8 +176,8 @@ No | 申請日 | 金額 | 承認者 | 疑義の内容 | 確認が必要な理由
 
 - [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
-- [Human in the Loop(人間参加型)の業務設計](human-in-the-loop-basics.md)
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [Human in the Loop(人間参加型)の業務設計](../part11-business-practice/human-in-the-loop-basics.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 

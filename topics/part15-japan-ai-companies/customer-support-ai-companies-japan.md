@@ -16,7 +16,7 @@ updated: 2026-07-26
 一覧化するカタログ。Part 15 は「どの会社が何を提供しているか」を整理する企業ディレクトリであり、
 `templates/topic-page.md` のような概念解説ではなく、会社ごとの短いプロフィールを並べる形式で書く。
 
-似た名前のページに [カスタマーサポート職における生成AI活用事例](../part11-business-practice/customer-support-ai-use-cases.md)
+似た名前のページに [カスタマーサポート職における生成AI活用事例](../part14-job-role-cases/customer-support-ai-use-cases.md)
 があるが、そちらは Part 11(業務活用・実践)に属し、**カスタマーサポート担当者が生成AIをどう使うか**
 という業務シーン・プロンプト例・活用パターンを扱う教科書ページ。
 一方、本ページは**その用途向けにサービスを提供している会社(ベンダー)そのもの**を、
@@ -121,7 +121,7 @@ updated: 2026-07-26
 
 ## 関連トピック
 
-- [カスタマーサポート職における生成AI活用事例](../part11-business-practice/customer-support-ai-use-cases.md)
+- [カスタマーサポート職における生成AI活用事例](../part14-job-role-cases/customer-support-ai-use-cases.md)
 
 ## 更新履歴
 

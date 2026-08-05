@@ -1,7 +1,7 @@
 ---
 title: バックオフィス職における生成AI活用
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第1章 職種横断・総論
 tags: [人事, 総務, 経理, 法務, バックオフィス, 求人票, 契約書レビュー, 経費精算, 社内FAQボット]
 created: 2026-07-06
 updated: 2026-07-06
@@ -11,7 +11,7 @@ updated: 2026-07-06
 
 ## これは何か
 
-人事・総務・経理・法務といったバックオフィス(管理部門)の仕事は、「規程・過去の書式に沿って、正確に、繰り返し発生する定型文書・定型判断を処理する」業務が多く、生成AIとの相性が良い領域である。一方で、個人情報・契約情報・財務情報など機密性の高いデータを扱うことが多く、マーケティングや企画職以上に「どこまでAIに読み込ませてよいか」「AIの提案をどこまで信用してよいか」の線引きが重要になる。本ページは、人事・総務・経理・法務それぞれの主要業務にどうAIを差し込むかを、コピペで使えるプロンプト例と部門特有の注意点つきで整理する。文章作成・リサーチの一般論は[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)、情報漏洩対策の一般論は[生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)に委ね、本ページはバックオフィス業務への「実装」に絞る。
+人事・総務・経理・法務といったバックオフィス(管理部門)の仕事は、「規程・過去の書式に沿って、正確に、繰り返し発生する定型文書・定型判断を処理する」業務が多く、生成AIとの相性が良い領域である。一方で、個人情報・契約情報・財務情報など機密性の高いデータを扱うことが多く、マーケティングや企画職以上に「どこまでAIに読み込ませてよいか」「AIの提案をどこまで信用してよいか」の線引きが重要になる。本ページは、人事・総務・経理・法務それぞれの主要業務にどうAIを差し込むかを、コピペで使えるプロンプト例と部門特有の注意点つきで整理する。文章作成・リサーチの一般論は[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)、情報漏洩対策の一般論は[生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)に委ね、本ページはバックオフィス業務への「実装」に絞る。
 
 ## 仕組み・背景
 
@@ -212,8 +212,8 @@ AIの指摘は「確認すべき候補の洗い出し」であり、最終的な
 ## 関連トピック
 
 - [マーケティング職における生成AI活用](./marketing-ai-use-cases.md)
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
-- [生成AIに向く業務・向かない業務の切り分け](./ai-task-suitability.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](../part07-data-analysis/chatgpt-advanced-data-analysis.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)

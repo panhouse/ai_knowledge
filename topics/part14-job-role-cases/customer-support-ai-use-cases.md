@@ -1,7 +1,7 @@
 ---
 title: カスタマーサポート職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第4章 カスタマーサポート・カスタマーサクセス
 tags: [カスタマーサポート, コールセンター, RAG, チャットボット, エージェントアシスト, ハルシネーション, CRM]
 created: 2026-07-06
 updated: 2026-07-06
@@ -150,7 +150,7 @@ Fin AI Agentは「平均67%の会話を解決」と謳われる一方、実際�
 
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
 
 ## 更新履歴
 

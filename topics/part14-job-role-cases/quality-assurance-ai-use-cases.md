@@ -1,7 +1,7 @@
 ---
 title: 品質管理・QA職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第11章 研究開発・品質管理
 tags: [QA, ソフトウェアテスト, テストケース生成, バグトリアージ, 品質管理, 検査報告書, ISO9001, ハルシネーション, 情報漏洩]
 created: 2026-07-14
 updated: 2026-07-14
@@ -186,7 +186,7 @@ ISO 9001の「8.5 製造及びサービス提供」に対応する社内作業�
 
 - [製造業における生成AI活用事例](../part13-industry-cases/manufacturing-ai-use-cases.md)
 - [研究開発(R&D)職における生成AI活用事例](rd-ai-use-cases.md)
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 

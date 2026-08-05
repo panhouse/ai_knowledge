@@ -1,7 +1,7 @@
 ---
 title: 人事(HR)職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第6章 人事・採用・人材開発
 tags: [人事, HR, 採用, RAG, 職業安定法, 個人情報保護]
 created: 2026-07-06
 updated: 2026-07-06
@@ -149,8 +149,8 @@ Microsoft 365 Copilotには職務内容から質問と模範解答の観点を�
 
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 - [AI規制・ガバナンスの動向](../part04-risk-security/ai-regulation-and-governance-trends.md)
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
-- [生成AIによる文章作成・編集の実務活用](ai-writing-and-editing.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
 
 ## 更新履歴
 

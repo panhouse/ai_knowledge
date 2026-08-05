@@ -1,7 +1,7 @@
 ---
 title: "デザイナー・クリエイティブ職における生成AI活用事例"
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第13章 クリエイティブ・翻訳
 tags: [デザイナー, UI/UXデザイン, Figma AI, Adobe Firefly, ムードボード, 著作権, ブランド一貫性, デザインレビュー]
 created: 2026-07-17
 updated: 2026-07-17
@@ -13,7 +13,7 @@ updated: 2026-07-17
 
 UI/UXデザイナー、グラフィックデザイナー、ブランド・クリエイティブチームといった「デザインを職業とする人」の仕事は、単発の画像を1枚作ることではなく、「ラフなアイデアを複数の方向性に広げる」「クライアントやステークホルダーの合意を取りながら1つの案に収束させる」「合意した案を実装・入稿できる完成度まで仕上げる」という一連の制作プロセスを回すことにある。生成AIはこのプロセスのうち、特に**最初の発散(ムードボード・コンセプト案の量産)と、途中の反復(モックアップの試作、バリエーション出し、フィードバックの整理)を大幅に高速化**できる一方、「どこまでAIの出力を採用してよいか」「どこから先は人間のイラストレーター・カメラマン・アートディレクターの判断が必要か」という職業固有の見極めが必要になる。
 
-本ページは、[生成AIによる画像・ビジュアル作成の実務活用](./ai-image-and-visual-creation-for-business.md)(社内資料・広告・SNS用画像を作る、職種を問わない一般的な使い方)や[画像生成AIの基本](../part08-specialized-ai-tools/image-generation-ai-basics.md)(Midjourney・Stable Diffusion等ツール単体の使い方)とは異なり、**デザイナーという職種の制作フロー**——ムードボード作り、Figma等のデザインツールへのAI組み込み、クライアント向けプレゼン、フィードバック統合、ブランド一貫性の担保、著作権リスクの実務判断——に絞って扱う。ツール単体の操作方法や画像生成の基礎知識は上記2ページを参照してほしい。
+本ページは、[生成AIによる画像・ビジュアル作成の実務活用](../part11-business-practice/ai-image-and-visual-creation-for-business.md)(社内資料・広告・SNS用画像を作る、職種を問わない一般的な使い方)や[画像生成AIの基本](../part08-specialized-ai-tools/image-generation-ai-basics.md)(Midjourney・Stable Diffusion等ツール単体の使い方)とは異なり、**デザイナーという職種の制作フロー**——ムードボード作り、Figma等のデザインツールへのAI組み込み、クライアント向けプレゼン、フィードバック統合、ブランド一貫性の担保、著作権リスクの実務判断——に絞って扱う。ツール単体の操作方法や画像生成の基礎知識は上記2ページを参照してほしい。
 
 ## 仕組み・背景
 
@@ -37,7 +37,7 @@ Figmaが2026年に実施した調査「State of the Designer 2026」(NewtonX社�
 | 発散(方向性探し) | ムードボード・コンセプトビジュアルの量産 | Midjourney、ChatGPT/Gemini(画像生成)、Adobe Firefly | 幅広く試すことが目的なのでブランド資産との厳密な統合は不要。詳細は[画像生成AIの基本](../part08-specialized-ai-tools/image-generation-ai-basics.md) |
 | ワイヤーフレーム・モックアップの下書き | プロンプトからUI構成案を生成、既存デザインのバリエーション出し | Figma AI(First Draft / Design Agent) | Figmaのレイヤー構造・コンポーネントとして直接編集できる状態で出力されるため、他ツールで作った画像を後から取り込むより手戻りが少ない |
 | バナー・アイコン等のバリエーション量産(A/Bテスト用) | 同一デザインの配色・コピー違いパターンを複数生成 | Figma AI、Adobe Firefly(Generative Fill/Expand)、汎用チャットAI | 「同じテイストで◯パターン」という指示に強い。最終的な効果検証はマーケティング側の[A/Bテスト設計](./product-manager-ai-use-cases.md)の考え方に準じる |
-| デザイン内のコピー(マイクロコピー・CTA文言) | ボタン文言・見出し・エラーメッセージ等の複数案出し | Figmaの「Rewrite」機能、汎用チャットAI | トーン変更・翻訳・文字数調整に強い。文章そのものの作り方は[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)を参照 |
+| デザイン内のコピー(マイクロコピー・CTA文言) | ボタン文言・見出し・エラーメッセージ等の複数案出し | Figmaの「Rewrite」機能、汎用チャットAI | トーン変更・翻訳・文字数調整に強い。文章そのものの作り方は[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)を参照 |
 | クライアント・ステークホルダー向けプレゼン | デザイン案の意図を説明するナラティブ作成 | 汎用チャットAI | 「なぜこの方向性か」を言語化する作業。考え方は[PdM職のロードマップ説明](./product-manager-ai-use-cases.md)のナラティブ生成と共通 |
 | フィードバック・レビューコメントの整理 | 大量のコメント・修正依頼をテーマ別に要約 | FigJam AI(Sort stickies)、Figma Design Agent、汎用チャットAI | コメントスレッドや付箋を「テーマ」「アクションアイテム」に集約できる。件数の少ない意見と多数派の意見を混同しないよう出典を残す運用は[PdM職のフィードバック要約](./product-manager-ai-use-cases.md#実務での使い方)のプロンプト設計が流用できる |
 | 最終仕上げ・ブランドの核となるビジュアル | ロゴ、キービジュアル、実写素材が要る写真 | 人間のイラストレーター・カメラマン・アートディレクター | AIだけで完結させると差別化・権利面のリスクが残る(詳細は次項) |
@@ -189,10 +189,10 @@ Figmaの料金は、Professionalプランの「Full seat」で年払い月額16�
 
 ## 関連トピック
 
-- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](./ai-image-and-visual-creation-for-business.md)
+- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](../part11-business-practice/ai-image-and-visual-creation-for-business.md)
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](../part08-specialized-ai-tools/image-generation-ai-basics.md)
 - [生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](./product-manager-ai-use-cases.md)
 - [マーケティング職における生成AI活用](./marketing-ai-use-cases.md)
 

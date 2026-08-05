@@ -1,7 +1,7 @@
 ---
 title: 広報・PR職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第3章 マーケティング・広報
 tags: [広報, PR, プレスリリース, 危機管理広報, メディアリレーションズ, IR, クライシスコミュニケーション]
 created: 2026-07-13
 updated: 2026-07-13
@@ -162,7 +162,7 @@ updated: 2026-07-13
 - 経営層のメッセージを引用する場合の想定文言案を1つ(仮のプレースホルダーとして)
 ```
 
-スピーチ原稿・登壇資料についても同様に、まず構成案を作らせてから本文を書かせる2段階アプローチが手戻りを減らす(考え方は[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)と共通)。ただし登壇者本人の言葉遣い・エピソードを反映させる仕上げ工程は必ず人(広報担当者と登壇者本人)が行う。AIが作った初稿をそのまま読み上げても、聴衆の心が動くかどうかはAIには分からない、という指摘は実務でもよく言われる点である([AI総合研究所](https://www.ai-souken.com/article/writing-speeches-with-chatgpt))。
+スピーチ原稿・登壇資料についても同様に、まず構成案を作らせてから本文を書かせる2段階アプローチが手戻りを減らす(考え方は[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)と共通)。ただし登壇者本人の言葉遣い・エピソードを反映させる仕上げ工程は必ず人(広報担当者と登壇者本人)が行う。AIが作った初稿をそのまま読み上げても、聴衆の心が動くかどうかはAIには分からない、という指摘は実務でもよく言われる点である([AI総合研究所](https://www.ai-souken.com/article/writing-speeches-with-chatgpt))。
 
 ### プロンプト例6: IR資料・決算説明資料の想定Q&A
 
@@ -197,9 +197,9 @@ IR(投資家向け広報)領域では、決算短信・有価証券報告書を�
 ## 関連トピック
 
 - [マーケティング職における生成AI活用](./marketing-ai-use-cases.md)(広告・SNS運用・需要創出との違いはこのページの「使いどころ・使い分け」を参照)
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
-- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](./ai-presentation-and-document-creation.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](./ai-research-and-information-gathering.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
+- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](../part11-business-practice/ai-presentation-and-document-creation.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
 - [ハルシネーションの仕組みと対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 

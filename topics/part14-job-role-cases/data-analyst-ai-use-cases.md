@@ -1,7 +1,7 @@
 ---
 title: データアナリスト/BIアナリスト職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第5章 企画・プロダクト・データ分析
 tags: [データアナリスト, BI, text-to-SQL, ダッシュボード, Power BI, Looker, QuickSight, BigQuery, pandas]
 created: 2026-07-15
 updated: 2026-07-15

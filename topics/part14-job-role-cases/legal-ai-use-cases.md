@@ -1,7 +1,7 @@
 ---
 title: 法務職における生成AI活用事例
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第8章 法務・知財・コンプライアンス
 tags: [法務, 契約書レビュー, LegalTech, ハルシネーション, 情報漏洩対策]
 created: 2026-07-07
 updated: 2026-07-07
@@ -142,7 +142,7 @@ updated: 2026-07-07
 
 ## 関連トピック
 
-- [生成AIに向く業務・向かない業務の切り分け](ai-task-suitability.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 

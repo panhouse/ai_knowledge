@@ -1,7 +1,7 @@
 ---
 title: "情報セキュリティ担当者(SOC/CISO)における生成AI活用事例"
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第10章 情報システム・情報セキュリティ
 tags: [SOC, CISO, セキュリティ運用, AI SOC, Security Copilot, Charlotte AI, フィッシング対策, 脆弱性管理, インシデントレポート]
 created: 2026-07-17
 updated: 2026-07-17

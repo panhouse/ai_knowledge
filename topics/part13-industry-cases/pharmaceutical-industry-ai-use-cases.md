@@ -99,7 +99,7 @@ MR・MSL業務であれば次回の医師面談前の背景リサーチを、開
 ## 関連トピック
 
 - [医療・ヘルスケアにおける生成AI活用事例](healthcare-ai-use-cases.md)
-- [研究開発(R&D)職における生成AI活用事例](../part11-business-practice/rd-ai-use-cases.md)
+- [研究開発(R&D)職における生成AI活用事例](../part14-job-role-cases/rd-ai-use-cases.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴

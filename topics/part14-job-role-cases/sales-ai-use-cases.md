@@ -1,7 +1,7 @@
 ---
 title: 営業職における生成AI活用
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第2章 営業・セールス
 tags: [営業, SFA, CRM, 商談解析, ロールプレイ, 議事録, Sales AI]
 created: 2026-07-06
 updated: 2026-07-06
@@ -11,7 +11,7 @@ updated: 2026-07-06
 
 ## これは何か
 
-営業という仕事は、「商談前の下調べ」「提案書・見積もりの準備」「商談そのもの」「商談後のお礼・フォロー」「CRM/SFA(顧客関係管理・営業支援システム)への入力とパイプライン管理」という一連の業務フローの繰り返しでできている。この一日・一週間のフローのどこにAIを差し込むかが分かっていないと、「メールの下書きだけ」「議事録の要約だけ」という部分的な使い方にとどまり、営業活動全体の時短にはつながらない。Salesforceが2025年8〜9月に営業担当者4,050人を対象に行った調査では、営業組織の87%が何らかの形でAIを利用しており、AIエージェントを導入済みの担当者は54%、2027年までに導入予定の担当者を合わせると9割近くに達する。本ページは、汎用チャットAIによる文章作成のコツ([生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)で扱う一般論)ではなく、**営業という職種特有の業務フローに沿って、どのフェーズでどのAIをどう使うか**を整理する。
+営業という仕事は、「商談前の下調べ」「提案書・見積もりの準備」「商談そのもの」「商談後のお礼・フォロー」「CRM/SFA(顧客関係管理・営業支援システム)への入力とパイプライン管理」という一連の業務フローの繰り返しでできている。この一日・一週間のフローのどこにAIを差し込むかが分かっていないと、「メールの下書きだけ」「議事録の要約だけ」という部分的な使い方にとどまり、営業活動全体の時短にはつながらない。Salesforceが2025年8〜9月に営業担当者4,050人を対象に行った調査では、営業組織の87%が何らかの形でAIを利用しており、AIエージェントを導入済みの担当者は54%、2027年までに導入予定の担当者を合わせると9割近くに達する。本ページは、汎用チャットAIによる文章作成のコツ([生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)で扱う一般論)ではなく、**営業という職種特有の業務フローに沿って、どのフェーズでどのAIをどう使うか**を整理する。
 
 ## 仕組み・背景
 
@@ -29,8 +29,8 @@ updated: 2026-07-06
 
 | フェーズ | やること | 向いているAIの種類 | 具体例 |
 |---|---|---|---|
-| ① 商談準備 | 企業リサーチ、想定される経営課題の仮説出し、想定質問の洗い出し | 汎用チャットAI(Deep Research機能) | ChatGPT/Gemini/ClaudeのDeep Research([生成AIによる情報収集・リサーチの実務活用](./ai-research-and-information-gathering.md)参照)、Web検索連携チャット |
-| ② 提案書・見積もりのたたき台作成 | 課題整理→提案内容→効果→価格の骨子作成 | 汎用チャットAI | ChatGPT/Gemini/Claude、Copilot in Word。文章としての磨き込みは[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)の校正テンプレートに委ねる |
+| ① 商談準備 | 企業リサーチ、想定される経営課題の仮説出し、想定質問の洗い出し | 汎用チャットAI(Deep Research機能) | ChatGPT/Gemini/ClaudeのDeep Research([生成AIによる情報収集・リサーチの実務活用](../part11-business-practice/ai-research-and-information-gathering.md)参照)、Web検索連携チャット |
+| ② 提案書・見積もりのたたき台作成 | 課題整理→提案内容→効果→価格の骨子作成 | 汎用チャットAI | ChatGPT/Gemini/Claude、Copilot in Word。文章としての磨き込みは[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)の校正テンプレートに委ねる |
 | ③ 商談中 | 会話の自動文字起こし、トークスクリプト・製品情報のリアルタイム表示 | 商談解析ツール | amptalk、MiiTel、Gong、Zoom AI Companion等のリアルタイム文字起こし |
 | ④ 商談直後 | 議事録の要約、決定事項・懸念点・ネクストアクションの抽出 | 商談解析ツール、汎用チャットAI | amptalk/MiiTelの自動要約、または録音の文字起こしをChatGPT等に貼って要約 |
 | ⑤ フォロー | お礼メール・フォローメールの下書き、送信タイミングの提案 | 汎用チャットAI、SFA組み込みAI | Salesforce Agentforce/Einsteinのメール自動生成、HubSpot Breeze、ChatGPT/Gemini/Claude |
@@ -41,7 +41,7 @@ updated: 2026-07-06
 
 ### 使うべきでない場面
 
-- **値引き幅・契約条件の最終的な着地点の決定**: AIは選択肢や相場観の提示までにとどめ、最終判断は営業担当・上長が行う([生成AIに向く業務・向かない業務の切り分け](./ai-task-suitability.md)の「個人の人生や企業の命運に直結する最終判断」に該当)
+- **値引き幅・契約条件の最終的な着地点の決定**: AIは選択肢や相場観の提示までにとどめ、最終判断は営業担当・上長が行う([生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)の「個人の人生や企業の命運に直結する最終判断」に該当)
 - **重要顧客とのクレーム対応・関係修復が必要な場面**: 相手との関係史や力関係の機微をAIは把握できないため、AIには下書きまでを任せ、言葉選びは人が行う
 - **競合の非公開情報や、入手経路が不透明な情報を使った提案**: Deep Research系機能はあくまで公開Web情報が対象であり、それ以上の裏取りが必要な場面では使わない
 
@@ -49,7 +49,7 @@ updated: 2026-07-06
 
 ### コピペで使えるプロンプト1: 商談準備リサーチ(初回商談前)
 
-汎用チャットAIのDeep Research機能(使い方の詳細は[生成AIによる情報収集・リサーチの実務活用](./ai-research-and-information-gathering.md)を参照)に投げる、営業の初回商談向けのプロンプト例。
+汎用チャットAIのDeep Research機能(使い方の詳細は[生成AIによる情報収集・リサーチの実務活用](../part11-business-practice/ai-research-and-information-gathering.md)を参照)に投げる、営業の初回商談向けのプロンプト例。
 
 ```
 あなたはBtoB営業のリサーチ担当です。以下の条件で商談準備リサーチを行ってください。
@@ -73,7 +73,7 @@ updated: 2026-07-06
 
 ### コピペで使えるプロンプト2: 提案書の骨子作成
 
-いきなり完成した提案書を書かせるのではなく、まず骨子(構成案)だけを作らせ、確認してから肉付けさせる方が手戻りが少ない(2段階アプローチの考え方は[生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)も参照)。
+いきなり完成した提案書を書かせるのではなく、まず骨子(構成案)だけを作らせ、確認してから肉付けさせる方が手戻りが少ない(2段階アプローチの考え方は[生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)も参照)。
 
 ```
 以下の情報をもとに、提案書の骨子(見出しと各見出しの要点箇条書き)を作成してください。
@@ -161,9 +161,9 @@ updated: 2026-07-06
 
 ## 関連トピック
 
-- [生成AIによる文章作成・編集の実務活用](./ai-writing-and-editing.md)
-- [生成AIに向く業務・向かない業務の切り分け](./ai-task-suitability.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](./ai-research-and-information-gathering.md)
+- [生成AIによる文章作成・編集の実務活用](../part11-business-practice/ai-writing-and-editing.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 

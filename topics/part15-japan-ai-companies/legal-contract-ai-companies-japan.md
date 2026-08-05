@@ -14,7 +14,7 @@ updated: "2026-07-26"
 本ページは、契約書レビュー・契約管理(CLM: Contract Lifecycle Management)を中心に
 AIを活用した法務支援サービスを国内向けに提供している企業を一覧するカタログである。
 [Part 4「生成AIの規制・ガバナンス動向」](../part04-risk-security/ai-regulation-and-governance-trends.md)や
-[Part 11「法務職における生成AI活用事例」](../part11-business-practice/legal-ai-use-cases.md)が
+[Part 11「法務職における生成AI活用事例」](../part14-job-role-cases/legal-ai-use-cases.md)が
 「法務AIをどう使うか」という概念・活用手法を扱うのに対し、本ページは
 「実際にどの会社がどんな製品を提供しているか」という**提供企業そのもの**を整理する。
 選定・比較検討の一次リストとして使うことを想定し、優劣の評価は行わず事実ベースで記載する。
@@ -71,7 +71,7 @@ AIを活用した法務支援サービスを国内向けに提供している企
 
 ## 関連トピック
 
-- [法務職における生成AI活用事例](../part11-business-practice/legal-ai-use-cases.md)
+- [法務職における生成AI活用事例](../part14-job-role-cases/legal-ai-use-cases.md)
 
 ## 更新履歴
 

@@ -1,7 +1,7 @@
 ---
 title: "情報システム(IT)部門における生成AI活用事例"
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第10章 情報システム・情報セキュリティ
 tags: [情報システム部門, 情シス, ヘルプデスク, AIOps, シャドーAI, SaaS管理, ライセンス管理, 障害対応, ドキュメント生成]
 created: 2026-07-13
 updated: 2026-07-13
@@ -183,7 +183,7 @@ AIOpsツール(Datadog Bits AI、ServiceNow Now Assistなど)を導入済みの�
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 - [バックオフィス職における生成AI活用](backoffice-ai-use-cases.md)
 - [カスタマーサポート職における生成AI活用事例](customer-support-ai-use-cases.md)
-- [生成AI導入の社内展開・浸透のすすめ方](ai-adoption-rollout-basics.md)
+- [生成AI導入の社内展開・浸透のすすめ方](../part11-business-practice/ai-adoption-rollout-basics.md)
 
 ## 更新履歴
 

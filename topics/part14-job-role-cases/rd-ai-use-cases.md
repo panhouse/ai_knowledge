@@ -1,7 +1,7 @@
 ---
 title: "研究開発(R&D)職における生成AI活用事例"
-part: 11
-chapter: 第5章 職種別ユースケース
+part: 14
+chapter: 第11章 研究開発・品質管理
 tags: [研究開発, R&D, 文献調査, 特許, 実験計画, Elicit, Consensus, SciSpace, ハルシネーション, 情報漏洩]
 created: 2026-07-07
 updated: 2026-07-07
@@ -42,7 +42,7 @@ updated: 2026-07-07
 | Consensus | 査読付き論文2億件超 | 論文間の意見の一致度を示す「Consensus Meter」、数十本を読み込んで研究ギャップまで示す「Deep Search」 | 無料(Pro回答月15件・Deep Search月3件)/ Pro 10ドル前後(月、学生向けは9ドル) |
 | SciSpace | 学術論文全般、PDFのチャット機能 | 論文PDFをアップロードして図表・数式込みで質問できる「Chat with PDF」、150以上のツールを組み合わせるAIリサーチエージェント | 無料(Basic)/ Premium 20ドル(年払い12ドル)/ Lab(5名)100ドル(いずれも/月) |
 
-判断基準は「答えの根拠になる論文リストを人に見せる必要があるか」。社内報告や特許出願の先行技術調査のように**出典の実在性が問われる場面**では専門ツールを使い、逆に「自分の理解を整理したい」「アイデアを広げたい」だけの場面では汎用チャットAIで十分なことが多い。なお、汎用チャットAIのDeep Research機能(仕組み・使い分けの詳細は[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](ai-research-and-information-gathering.md)を参照)もWeb上の学術情報を横断調査できるが、対象が学術データベースに限定されないため、査読の有無や論文としての実在性の確認はより入念に行う必要がある。
+判断基準は「答えの根拠になる論文リストを人に見せる必要があるか」。社内報告や特許出願の先行技術調査のように**出典の実在性が問われる場面**では専門ツールを使い、逆に「自分の理解を整理したい」「アイデアを広げたい」だけの場面では汎用チャットAIで十分なことが多い。なお、汎用チャットAIのDeep Research機能(仕組み・使い分けの詳細は[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)を参照)もWeb上の学術情報を横断調査できるが、対象が学術データベースに限定されないため、査読の有無や論文としての実在性の確認はより入念に行う必要がある。
 
 ## 実務での使い方
 
@@ -152,7 +152,7 @@ Elicit・Consensus・SciSpaceのいずれも、テーマや質問文を入力す
 
 ## 関連トピック
 
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](ai-research-and-information-gathering.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](../part07-data-analysis/chatgpt-advanced-data-analysis.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
