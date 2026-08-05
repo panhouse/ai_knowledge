@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-03
+- [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 主要ベンチマークの節を最新化・増強
 - [NotebookLM(Gemini Notebook)の基本](topics/part08-specialized-ai-tools/notebooklm-basics.md): Gemini 3.5への切り替え・チャットからのソース自動収集・Office形式エクスポート・料金プランの節を最新化
 - [生成AI利用における情報漏洩対策](topics/part04-risk-security/information-leakage-prevention.md): AIエージェント権限暴走の新事例(OpenAI/Hugging Face)とClaude最新モデルのZDR除外を反映して最新化・増強
 - [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](topics/part07-data-analysis/rag-evaluation-basics.md): ツール動向の節を最新化・増強
