@@ -105,7 +105,7 @@ AIという学術分野の起点は、1956年に米ダートマス大学で開�
 
 - [生成AIの発展の歴史](ai-history-and-evolution.md)
 - [AIの分類と生成AIの位置づけ](ai-classification-and-generative-ai.md)
-- [AGI(汎用人工知能)とは何か](../part12-ai-trends/what-is-agi.md)
+- [AGI(汎用人工知能)とは何か](../part13-ai-trends/what-is-agi.md)
 
 ## 更新履歴
 
