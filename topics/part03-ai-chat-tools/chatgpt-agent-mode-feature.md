@@ -24,7 +24,7 @@ updated: 2026-07-27
 現在のChatGPT Workは、もともと2つの機能が統合されて生まれたものである。
 
 - **Operator**: 2025年1月に発表された、仮想ブラウザを操作してWebサイト上のタスク(予約・注文フォーム入力など)を代行する専用ツール
-- **Deep Research**: Web上の情報を自律的に調べ回り、出典付きの長文レポートにまとめる調査特化のモード(詳しくは[Deep Research機能](../part11-business-practice/ai-research-and-information-gathering.md)を参照)
+- **Deep Research**: Web上の情報を自律的に調べ回り、出典付きの長文レポートにまとめる調査特化のモード(詳しくは[Deep Research機能](../part12-business-practice/ai-research-and-information-gathering.md)を参照)
 
 2025年7月17日、OpenAIはこの2つと通常のChatGPTの対話能力を統合し、単一の「ChatGPT agent」として再構成した([Introducing ChatGPT agent | OpenAI](https://openai.com/index/introducing-chatgpt-agent/))。単体ツールとしてのOperatorは2025年8月31日で提供終了し、その機能はChatGPT Agentに一本化された。
 
@@ -61,7 +61,7 @@ Tasksは、ChatGPT Workのような仮想ブラウザ・コンピュータは使
 |---|---|---|---|
 | 通常のチャット(Chatモード) | その場で1回答える | 数秒 | 一般知識の相談、下書き、アイデア出し |
 | [Web検索機能](./chatgpt-web-search-feature.md) | 1〜数回検索し、その場で要約して答える | 数秒〜数十秒 | 鮮度が必要な単発の事実確認 |
-| deep research(調査モード) | 自律的に多数のサイトを読み回り、出典付きレポートを作る(**読み取りのみ**、操作は行わない) | 数分〜数十分 | 競合比較・市場調査など複数ソースの横断調査。詳細は[Deep Research機能](../part11-business-practice/ai-research-and-information-gathering.md) |
+| deep research(調査モード) | 自律的に多数のサイトを読み回り、出典付きレポートを作る(**読み取りのみ**、操作は行わない) | 数分〜数十分 | 競合比較・市場調査など複数ソースの横断調査。詳細は[Deep Research機能](../part12-business-practice/ai-research-and-information-gathering.md) |
 | **ChatGPT Work(旧ChatGPT Agent/エージェントモード)** | 仮想ブラウザ・コンピュータで実際にクリック・入力・購入・ファイル作成まで**操作を実行**し、完成した成果物(表・資料・簡易Webアプリ)として返す | 数分〜数時間 | 予約・注文・フォーム提出・複数サイトを横断した作業の代行、成果物の作成まで一括で頼みたいとき |
 | **Tasks(スケジュールタスク)** | 指定した日時・周期でプロンプトを自動再実行する(ブラウザ操作なし) | 実行のたびに数秒〜数分 | 定期リマインダー、週次・日次の定型要約、簡易な定期監視 |
 | Codexモード | コードの生成・修正・実行に特化 | 数分〜 | ソフトウェア開発(本ページの対象外) |
@@ -71,7 +71,7 @@ Tasksは、ChatGPT Workのような仮想ブラウザ・コンピュータは使
 1. **「調べるだけ」か「実際に操作・成果物作成までしてほしい」か**: 読み取りだけならdeep research、フォーム送信・注文・予約・ファイル作成など「後戻りしにくい操作」や「完成品が欲しい」場合はChatGPT Work
 2. **「今すぐ1回」か「決まった周期で繰り返す」か**: 今すぐ1回で完結する作業ならChatGPT Work、同じ依頼を定期的に繰り返したいならTasks(Tasksの実行内容が調査中心であればdeep research相当の処理が、操作を含む場合はWork相当の処理が、裏側で毎回走る)
 
-なお、「ChatGPT Work」はOpenAIというひとつの提供元の実装名であり、Google・Anthropic・Microsoftなど各社にもブラウザ操作型・業務自動化型のエージェントが存在する。ベンダーを横断した「AIエージェントとは何か」という概念・分類・導入の判断軸は[AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md)で扱っているので、社内でエージェント導入の方針を検討する際はそちらも参照してほしい。本ページはChatGPTというツールに閉じた「画面のどこで・どう使うか」の実務ガイドに徹する。
+なお、「ChatGPT Work」はOpenAIというひとつの提供元の実装名であり、Google・Anthropic・Microsoftなど各社にもブラウザ操作型・業務自動化型のエージェントが存在する。ベンダーを横断した「AIエージェントとは何か」という概念・分類・導入の判断軸は[AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)で扱っているので、社内でエージェント導入の方針を検討する際はそちらも参照してほしい。本ページはChatGPTというツールに閉じた「画面のどこで・どう使うか」の実務ガイドに徹する。
 
 ## 実務での使い方
 
@@ -127,7 +127,7 @@ Workモードで、〇〇(通販サイト名)で△△(商品名)を検索し、
 | 呼び方 | ChatGPT Work(旧ChatGPT Agent/Operator+Deep Research) | Gemini Spark(旧Project Mariner系機能を統合) | Computer Use(Claude・Claude Code経由)/Claude Cowork | Copilot Cowork / Copilot Studio |
 | スケジュール実行 | Tasks | Gemini内のスケジュール機能 | Cowork内のスケジュールタスク/Claude Code Routines(開発者向け) | Copilot Tasks |
 
-各社の詳しい分類・導入判断は[AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md)、機能名・対応プランの横並び比較は[主要AIチャットツールのエージェント機能・スケジュールタスク比較](./ai-chat-tools-agent-tasks-comparison.md)にまとめているので、そちらを参照してほしい。
+各社の詳しい分類・導入判断は[AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)、機能名・対応プランの横並び比較は[主要AIチャットツールのエージェント機能・スケジュールタスク比較](./ai-chat-tools-agent-tasks-comparison.md)にまとめているので、そちらを参照してほしい。
 
 ## 注意点・よくある誤解
 
@@ -145,8 +145,8 @@ Workモードで、〇〇(通販サイト名)で△△(商品名)を検索し、
 ## 関連トピック
 
 - [ChatGPTのWeb検索機能](./chatgpt-web-search-feature.md)
-- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
+- [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)
 - [ChatGPTのプラン比較](./chatgpt-plan-comparison.md)
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較](./ai-chat-tools-agent-tasks-comparison.md)
 
