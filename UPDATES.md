@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-07-31
+- [Embedding(埋め込み)とは何か](topics/part07-data-analysis/embedding-basics.md): 主要モデル比較表とVoyage AIの制約解説を最新化・増強
 - [GAS(Google Apps Script)からのAI API連携](topics/part09-api-development/gas-ai-api-integration.md): UrlFetchApp・トリガーの実行上限の具体的な数値、OpenAI/Geminiのモデル世代交代を反映して最新化・増強
 - [n8n・Make・Zapierの比較と使い分け](topics/part10-nocode-lowcode/automation-tools-comparison.md): MCP対応・AI機能の方向性・料金モデルの節を最新化・増強
 - [GPTsにおけるプロンプトインジェクション対策](topics/part06-custom-ai/gpts-prompt-injection-defense.md): OpenAIの自動レッドチーム「GPT-Red」とGPT-5.6の頑健性向上実績を反映して最新化・増強
