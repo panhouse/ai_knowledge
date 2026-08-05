@@ -4,7 +4,7 @@ part: 5
 chapter: 第4章 エージェント的手法
 tags: [プロンプトエンジニアリング, タスク分解, ベストプラクティス, ワークフロー]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-04
 ---
 
 # タスク分解プロンプティング(複雑な依頼をステップに分ける技法)
@@ -28,6 +28,15 @@ updated: 2026-07-06
 | タスク分解 | 依頼そのもの(工程・成果物) | **複数の依頼・複数ターン**にまたがる粗さ | 人間(または呼び出し側のプログラム)が工程を区切り、都度出力を確認しながら次を依頼する |
 
 CoTは「1回の応答の中でどう考えさせるか」というミクロな技法であるのに対し、タスク分解は「そもそも依頼を何回・どの単位に分けて出すか」というマクロな設計の話である。実務では両者は排他的ではなく組み合わせて使う。たとえば「①要約」という1つの工程の中でも、要約の精度を上げたければその工程用のプロンプトにCoT(「まず段落ごとの要点を洗い出してから要約して」)を足せばよい。
+
+### 自律型AIエージェントとタスク分解の関係(2026年8月時点)
+
+2025年後半以降、主要ツールは「依頼を工程に分ける」作業自体をAI側が自動でやってくれる機能を相次いで搭載している。たとえばOpenAIは2026年7月にChatGPT Agentを改称した「ChatGPT Work」に「Plan mode(プランモード)」を実装した。`/plan`と入力するかメニューからPlanを選ぶと、ChatGPTが依頼をヒアリングしたうえで段階的な計画(ステップ一覧)を提示し、ユーザーはその計画を確認・修正してから承認して実行させられる。GoogleのGemini Deep Researchも「計画→複数ソースでの検索→反復→出力」という手順を自動生成し、実行前に人間が計画をレビュー・調整できる「collaborative planning(協調的な計画立案)」機能を備える。開発者向けには、Anthropicの[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/subagents)が、オーケストレーター役のAIが依頼をサブタスクに分解して専門化した「サブエージェント」に振り分け並列実行させる「orchestrator-workers」パターンを標準機能として提供している(これはAnthropicが"Building Effective Agents"で紹介する5つのワークフローパターン——プロンプトチェイニング・ルーティング・並列化・orchestrator-workers・evaluator-optimizer——の1つで、プロンプトチェイニング自体も「固定の工程に素直に分解できるタスク」に向くパターンとして現在も同ガイドで解説されている)。
+
+つまり「タスクを工程に分ける」という発想は、チャット上で人間が手作業で書く技法から、エージェント機能が自動で提案し人間が承認する機能へと役割の一部が移りつつある。ただし、この技法自体が不要になったわけではない。
+
+- **エージェントが提示する計画のレビューには、結局この技法と同じ判断力が要る**: ChatGPT WorkのPlan modeが計画を出しても、それを承認するかどうかを判断するには「この工程分けは妥当か、抜けている工程はないか」を見る目が必要で、それは本ページで説明している「工程を先に書き出せるか」という判断基準そのものである
+- **日常のチャット利用では、依然として手動の分解が主流**: Plan modeやDeep Researchの自動計画機能は、長時間動く自律型タスクや調査タスクに向けた機能であり、日々の「資料を読んで要約して提案して」のような短めの依頼の大半は、本ページのパターン1・2のような手動の工程分けで対応するのが実務上一般的である
 
 ## 使いどころ・使い分け
 
@@ -105,6 +114,7 @@ CoTは「1回の応答の中でどう考えさせるか」というミクロな�
 | 1回のやり取りで工程を明示 | メッセージ内に「ステップ1/2/3」を書く | 該当なし(そもそも1メッセージという概念がない) |
 | 工程ごとに人間が確認しながら進める | 会話を続けて段階的に依頼する | 各ノードの実行結果をキャンバス上で確認 |
 | 繰り返し使う業務として自動化する | 定型文をテンプレート保存(カスタムGPT・Gem・Copilotのプロンプトライブラリ等) | Dify「LLM」ノード、n8n「AIノード」を工程数だけ連結 |
+| AIが自動生成した工程分けをレビューする(2026年時点の新しい形) | ChatGPT Workの「Plan mode」(`/plan`)、Gemini Deep Researchの計画レビュー機能で、実行前に計画を確認・修正 | 該当なし(開発者はAnthropicの[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/subagents)のサブエージェント・orchestrator-workersパターンで同種の分解を組める) |
 
 ## 注意点・よくある誤解
 
@@ -113,6 +123,7 @@ CoTは「1回の応答の中でどう考えさせるか」というミクロな�
 - **CoTと混同しない**: 「ステップバイステップで考えて」という指示はCoT(1回の応答内の思考の分解)であり、タスク分解(依頼そのものを複数回に分ける)とは別物。両者は併用できるが、「CoTを書いたから分解した」と思い込まないよう区別する
 - **分解の粒度が業務ロジックとずれていると効果が出ない**: 「要約」と「課題抽出」のように、求められる観点や必要な情報が明確に異なる単位で切ると効果が出やすい。中途半端な切り方(例: 「前半の要約」「後半の要約」のように内容的に不可分なものを機械的に割る)は、かえって文脈の分断で精度が落ちることがある
 - **長い資料は分解した上で「章ごと」に区切ることも検討する**: 資料が長大でモデルの入力上限やコンテキストウィンドウ(モデルが一度に読める情報量)に近い場合、工程を分けるだけでなく入力側も章・セクション単位に分割して渡すと、読み飛ばしのリスクをさらに減らせる
+- **自律型エージェントが自動で分解した計画も、実行前レビューを省略しない**: ChatGPT WorkのPlan modeのように、エージェント側が計画を自動生成して長時間(数時間単位)無人で実行するツールが増えているが、これは「分解の手間が減る」だけであり「分解結果の検証が不要になる」わけではない。承認前に工程の抜け・順序のおかしさを確認する習慣は、手動で分解する場合と同様に重要
 
 ## 最初の一歩
 
@@ -124,8 +135,20 @@ CoTは「1回の応答の中でどう考えさせるか」というミクロな�
 - [ReAct(Reasoning and Acting)プロンプティング](./react-prompting.md) — 次に何を調べるべきかその場で変わる探索的タスクはこちら
 - [Difyワークフローの基本](../part10-nocode-lowcode/dify-workflow-basics.md) — 繰り返し使う工程をノードとして自動化したい場合
 - [n8nの基本](../part10-nocode-lowcode/n8n-basics.md) — 他システムとの連携を挟みながら工程を自動化したい場合
+- [ChatGPTのエージェント機能(旧ChatGPT Agent→ChatGPT Work)とスケジュールタスク(Tasks)](../part03-ai-chat-tools/chatgpt-agent-mode-feature.md) — AIが自動で計画(工程分け)を提示し、承認してから長時間実行させる機能の詳細
+- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md) — 自律型AIエージェント全般の仕組みと分解・計画立案の位置づけ
 
 ## 更新履歴
+
+### 2026-08-04: 自律型AIエージェントとの関係を追記・最新化
+
+- **内容**: 「自律型AIエージェントとタスク分解の関係」の節を新設し、ChatGPT Work(旧ChatGPT Agent)のPlan mode、Gemini Deep Researchの協調的な計画立案、Claude Agent SDKのサブエージェント・orchestrator-workersパターンなど、AI側が工程分解を自動で提示・実行する2026年時点の機能を整理。手動でのタスク分解プロンプティングが不要になったわけではなく、自動生成された計画のレビュー判断にも同じ考え方が要ることを明記。ツール横断の対応付け表と注意点にも自動計画レビューの観点を追加し、関連トピックにChatGPTのエージェント機能ページ・AIエージェント基礎ページへのリンクを追加
+- **出典**: [Subagents in the SDK - Claude Agent SDK Docs (Anthropic)](https://code.claude.com/docs/en/agent-sdk/subagents)
+- **出典**: [Building Effective AI Agents - Anthropic](https://www.anthropic.com/engineering/building-effective-agents)
+- **出典**: [OpenAI introduces ChatGPT Work, a cloud-based AI agent that manages tasks across email, Slack and calendars - VentureBeat](https://venturebeat.com/technology/openai-introduces-chatgpt-work-a-cloud-based-ai-agent-that-manages-tasks-across-email-slack-and-calendars)
+- **出典**: [ChatGPT agent | OpenAI Help Center](https://help.openai.com/en/articles/11752874-chatgpt-agent)
+- **出典**: [Gemini Deep Research Agent | Gemini API - Google AI for Developers](https://ai.google.dev/gemini-api/docs/deep-research)
+- **出典**: [Next-generation Gemini Deep Research - Google Blog](https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: タスク分解プロンプティングの定義(困りごとの起点)、分解が必要な理由(コンテキストウィンドウ・注意力の限界、途中経過の検証可能性)、CoT・ReActとの粒度の違いを整理した比較表、1メッセージ内で明示する型・複数ターンで段階的に依頼する型・Dify/n8nでノードとして分解する型の3パターン、使いどころの判断基準、分解しすぎ・確認省略による誤り連鎖などの注意点を執筆
