@@ -150,7 +150,7 @@ Midjourneyでよく使うパラメータ:
 ## 関連トピック
 
 - [生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)
-- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](../part11-business-practice/ai-presentation-and-document-creation.md)
+- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](../part12-business-practice/ai-presentation-and-document-creation.md)
 
 ## 更新履歴
 
