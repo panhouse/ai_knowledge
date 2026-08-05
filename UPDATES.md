@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-01
+- [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](topics/part01-ai-basics/recognition-ai-applications.md): YOLO26・Whisper large-v3・時系列基盤モデル(Chronos-2等)を反映して最新化
 - [生成AI導入による組織構造・マネジメントへの影響](topics/part12-ai-trends/generative-ai-organizational-impact.md): 2026年の組織フラット化・人員削減の実データ/企業事例(Monday.com等)とCAIO新設事例、日本の管理職の使いこなし格差データを反映して最新化
 - [ノーコードでのAIエージェント構築(Dify・n8n・Makeでの実務例)](topics/part10-nocode-lowcode/nocode-ai-agent-building.md): Dify/n8n/Makeの料金比較表を新設し、n8n 2.0のセキュリティ既定値変更・Make credit制移行・Zapier Agents動向を反映して最新化
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](topics/part11-business-practice/ai-research-and-information-gathering.md): 各社の料金・回数上限を2026年8月時点に最新化し、Microsoft 365 Copilot「Researcher」を比較表に追加
