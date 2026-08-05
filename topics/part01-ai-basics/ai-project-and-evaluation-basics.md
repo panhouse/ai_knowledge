@@ -146,7 +146,7 @@ PoCとは、本格開発の前に**小規模・低コストでAIが「業務で�
 
 - [機械学習の基礎(教師あり学習・教師なし学習・強化学習)](machine-learning-basics.md)
 - [ディープラーニング(深層学習)の基礎](deep-learning-basics.md)
-- [生成AI導入のROI測定・効果測定の考え方](../part11-business-practice/ai-roi-measurement.md)
+- [生成AI導入のROI測定・効果測定の考え方](../part12-business-practice/ai-roi-measurement.md)
 - [RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)](../part07-data-analysis/rag-evaluation-basics.md)
 
 ## 更新履歴
