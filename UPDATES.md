@@ -59,6 +59,7 @@
 - [メタプロンプティング](topics/part05-prompt-engineering/meta-prompting.md): ツール横断の対応付けの節を最新化・増強
 
 ## 2026-08-02
+- [フレーム問題・シンボルグラウンディング問題とチューリングテスト](topics/part01-ai-basics/classic-ai-problems-and-turing-test.md): チューリングテストのPNAS正式掲載・学術的批判とシンボルグラウンディング問題の最新論文(認識論的寄生)を反映して最新化
 - [製造業における生成AI活用事例](topics/part13-industry-cases/manufacturing-ai-use-cases.md): 設計・保守・技能伝承の節を最新化し、サプライチェーン・調達の節を新設
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part12-ai-trends/multimodal-ai-trends.md): GPT-5.6/GPT-Live・Gemini Omni・Claude Opus 5系・xAIのモデル分割型構成を反映して最新化
 - [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](topics/part10-nocode-lowcode/dify-api-integration.md): 料金プラン(メッセージクレジット制)・Webhookトリガー・公式SDK・Make/n8n/Zapier経由の連携を最新化
