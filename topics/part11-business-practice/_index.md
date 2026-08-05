@@ -22,8 +22,10 @@ part: 11
 ### 第4章 情報収集・リサーチ
 - Deep Research、競合調査、要約
 
-### 第5章 職種別ユースケース
-- 営業/マーケ/バックオフィス/企画 など職種別の使い方
+### 第5章 職種別ユースケースの入口
+- 職種別の具体的な事例・業務単位の掘り下げは [Part 14: 職種別 生成AI活用事例](../part14-job-role-cases/_index.md) に移設した
+- このパートで職種の話を扱うのは「職種を問わない手法」に整理できる場合のみ。
+  特定職種の業務フローに踏み込む内容は Part 14 に書く
 
 ## 収録ページ
 
@@ -37,27 +39,3 @@ part: 11
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](ai-research-and-information-gathering.md)
 - [生成AI導入の社内展開・浸透のすすめ方](ai-adoption-rollout-basics.md)
 - [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](ai-image-and-visual-creation-for-business.md)
-- [バックオフィス職における生成AI活用](backoffice-ai-use-cases.md)
-- [カスタマーサポート職における生成AI活用事例](customer-support-ai-use-cases.md)
-- [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
-- [人事(HR)職における生成AI活用事例](hr-ai-use-cases.md)
-- [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
-- [広報・PR職における生成AI活用事例](pr-communications-ai-use-cases.md)
-- [企画職における生成AI活用](planning-ai-use-cases.md)
-- [営業職における生成AI活用](sales-ai-use-cases.md)
-- [法務職における生成AI活用事例](legal-ai-use-cases.md)
-- [研究開発(R&D)職における生成AI活用事例](rd-ai-use-cases.md)
-- [情報システム(IT)部門における生成AI活用事例](information-systems-ai-use-cases.md)
-- [購買・調達職における生成AI活用事例](procurement-ai-use-cases.md)
-- [カスタマーサクセス職における生成AI活用事例](customer-success-ai-use-cases.md)
-- [品質管理・QA職における生成AI活用事例](quality-assurance-ai-use-cases.md)
-- [プロダクトマネージャー(PdM)職における生成AI活用事例](product-manager-ai-use-cases.md)
-- [秘書・エグゼクティブアシスタント職における生成AI活用事例](executive-assistant-ai-use-cases.md)
-- [データアナリスト/BIアナリスト職における生成AI活用事例](data-analyst-ai-use-cases.md)
-- [人材育成・研修(L&D)担当における生成AI活用事例](learning-development-ai-use-cases.md)
-- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](production-management-scm-ai-use-cases.md)
-- [内部監査職における生成AI活用事例](internal-audit-ai-use-cases.md)
-- [総務職における生成AI活用事例](general-affairs-ai-use-cases.md)
-- [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](information-security-ai-use-cases.md)
-- [デザイナー・クリエイティブ職における生成AI活用事例](designer-creative-ai-use-cases.md)
-- [翻訳・通訳担当における生成AI活用事例](translation-interpretation-ai-use-cases.md)

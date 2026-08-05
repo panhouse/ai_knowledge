@@ -1,6 +1,6 @@
 ---
 title: (カテゴリ名)の国内AI企業一覧
-part: 14
+part: 15
 chapter: (章名)
 tags: []
 created: YYYY-MM-DD
