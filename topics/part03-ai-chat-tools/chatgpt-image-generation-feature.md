@@ -145,7 +145,7 @@ ChatGPTのチャット欄に「(自分の業務でよく使う資料の種類)�
 - [ChatGPTのプラン比較](chatgpt-plan-comparison.md)
 - [ChatGPTのCanvas機能](chatgpt-canvas-feature.md)
 - [生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)
-- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](../part11-business-practice/ai-presentation-and-document-creation.md)
+- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](../part12-business-practice/ai-presentation-and-document-creation.md)
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
 - [Google Geminiの基本](google-gemini-basics.md)
 - [OpenAI APIの基本](../part09-api-development/openai-api-basics.md)
