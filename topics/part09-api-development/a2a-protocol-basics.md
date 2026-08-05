@@ -105,7 +105,7 @@ A2A自体はMCPと同様にオープンな規格であり、規格の利用そ�
 
 - [MCP(Model Context Protocol)の基本](mcp-basics.md)
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)
-- [AIエージェントの基本](../part12-ai-trends/ai-agent-basics.md)
+- [AIエージェントの基本](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
 

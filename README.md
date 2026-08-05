@@ -2,7 +2,7 @@
 
 毎朝のルーティン(Claude CodeのRoutine機能)で、生成AIの基本知識を体系立てて
 書き溜めていくナレッジベースです。ニュースを集めるのではなく、知識体系
-(Part 1〜12は教科書、Part 13〜15はカタログ)のトピックを1つずつ書き上げ、常に最新に保ちます。
+(Part 1〜13は教科書、Part 14〜16はカタログ)のトピックを1つずつ書き上げ、常に最新に保ちます。
 
 ## 読み方
 
@@ -26,17 +26,18 @@ Webサイト版(全文検索つき): <https://panhouse.github.io/ai_knowledge/>
 | [Part 8](topics/part08-specialized-ai-tools/_index.md) | 特化型AIツール | 検索・リサーチ、コーディング支援、画像・動画・音声生成、ローカル・オープンモデル(OSSライセンス比較含む)、選び方、会議・議事録AI |
 | [Part 9](topics/part09-api-development/_index.md) | API・開発連携 | LLM API基礎、API活用実践(リアルタイム音声API含む)、業務ツール連携、MCP・エージェント連携 |
 | [Part 10](topics/part10-nocode-lowcode/_index.md) | ノーコード・ローコード開発 | Dify基礎、Difyワークフロー、自動化・連携ツール、AIエージェント構築 |
-| [Part 11](topics/part11-business-practice/_index.md) | 業務活用・実践 | 導入の設計(コスト管理・予算配分含む)、文章・コミュニケーション、資料作成、リサーチ |
-| [Part 12](topics/part12-ai-trends/_index.md) | AI動向・将来展望 | 技術トレンド、主要プレイヤーの動向、AGIと働き方、日本における動向 |
-| [Part 13](topics/part13-industry-cases/_index.md) | 業種別 生成AI活用事例 | 製造・小売・金融・医療など業種ごとの活用事例(+未分類の受け皿) |
-| [Part 14](topics/part14-job-role-cases/_index.md) | 職種別 生成AI活用事例 | 営業、マーケ・広報、CS、企画・PdM・データ分析、人事・L&D、経理・監査、法務、総務・秘書・購買、情シス・セキュリティ、**エンジニア・開発**、R&D・QA、生産管理、**デザイナー・クリエイティブ**、翻訳・通訳、**コンサル・リサーチャー**、**経営者・管理職** |
-| [Part 15](topics/part15-japan-ai-companies/_index.md) | 国内AI企業マップ | コンサル・SIer系、基盤モデル系、業務ドメイン特化ツール系、ノーコード・エージェント基盤系、研修・人材育成系(+未分類の受け皿) |
+| [Part 11](topics/part11-ai-agents/_index.md) | AIエージェント | Claude Code、Codex、Antigravity、Cowork などの委任型エージェント製品と、権限設計・コスト・レビュー体制 |
+| [Part 12](topics/part12-business-practice/_index.md) | 業務活用・実践 | 導入の設計(コスト管理・予算配分含む)、文章・コミュニケーション、資料作成、リサーチ |
+| [Part 13](topics/part13-ai-trends/_index.md) | AI動向・将来展望 | 技術トレンド、主要プレイヤーの動向、AGIと働き方、日本における動向 |
+| [Part 14](topics/part14-industry-cases/_index.md) | 業種別 生成AI活用事例 | 製造・小売・金融・医療など業種ごとの活用事例(+未分類の受け皿) |
+| [Part 15](topics/part15-job-role-cases/_index.md) | 職種別 生成AI活用事例 | 営業、マーケ・広報、CS、企画・PdM・データ分析、人事・L&D、経理・監査、法務、総務・秘書・購買、情シス・セキュリティ、**エンジニア・開発**、R&D・QA、生産管理、**デザイナー・クリエイティブ**、翻訳・通訳、**コンサル・リサーチャー**、**経営者・管理職** |
+| [Part 16](topics/part16-japan-ai-companies/_index.md) | 国内AI企業マップ | コンサル・SIer系、基盤モデル系、業務ドメイン特化ツール系、ノーコード・エージェント基盤系、研修・人材育成系(+未分類の受け皿) |
 
 ## 仕組み
 
 1. 毎朝9時(JST)にルーティンが知識体系の未執筆トピックから最大10件を選定
 2. Web検索(日英)で裏取り・最新情報を確認しながら、教材品質のガイドページを執筆
-3. 業種別の活用事例は Part 13、職種別の活用事例は Part 14、国内AI企業の一覧は Part 15 に整理
+3. 業種別の活用事例は Part 14、職種別の活用事例は Part 15、国内AI企業の一覧は Part 16 に整理
    (体系に収まらないテーマはそれぞれ末尾の「その他・未分類」へ一旦集約)
 4. 1トピック = 1ブランチ = 1PR で main 向けにPRを作成し、執筆・改訂内容を [UPDATES.md](UPDATES.md) に記録(mainへ直接コミットはせず、採否はPR画面で判断)
 5. main にマージされると GitHub Actions が MkDocs でサイトをビルドし、GitHub Pages に自動デプロイ
