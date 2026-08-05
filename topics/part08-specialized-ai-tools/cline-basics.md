@@ -4,14 +4,14 @@ part: 8
 chapter: 第2章 コーディング支援AI
 tags: [Cline, コーディング支援AI, AIエージェント, BYOK, オープンソース]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-31
 ---
 
 # Clineの基本(コーディング支援AI)
 
 ## これは何か
 
-Cline(クライン)は、VS CodeやJetBrains系IDEに追加する**オープンソース(無償公開・改変自由なソースコード)のAIコーディングエージェント拡張機能**である。GitHub Copilotのような「ベンダーが用意したAIモデルを使う」前提のツールとは異なり、Clineは自分でAnthropic・OpenAI・Google・ローカルLLM(自社PC上で動かすAIモデル)など好きなAIモデルのAPIキーを持ち込んで接続する「BYOK(Bring Your Own Key、自分のAPIキーを持ち込む)」方式が最大の特徴である。
+Cline(クライン)は、VS CodeやJetBrains系IDEに追加する**オープンソース(無償公開・改変自由なソースコード)のAIコーディングエージェント拡張機能**である。GitHub Copilotのような「ベンダーが用意したAIモデルを使う」前提のツールとは異なり、Clineは自分でAnthropic・OpenAI・Google・ローカルLLM(自社PC上で動かすAIモデル)など好きなAIモデルのAPIキーを持ち込んで接続する「BYOK(Bring Your Own Key、自分のAPIキーを持ち込む)」方式が最大の特徴である。2026年には、ターミナル単体で動く「Cline CLI」も本格展開され、VS Code拡張機能に閉じない使い方も広がっている。
 
 非エンジニアの決裁者にとっての困りごとは、「エンジニアが『Clineを使いたい』と言ってきたとき、Copilotと何が違うのか、会社としてAPIキーやコストの管理をどうすればいいのか判断できない」ことだ。本ページは、Clineが「ツール自体は無料だがAI利用料は自己負担」という特殊な料金構造を持つことと、その構造が向いている企業・向いていない企業の見分け方に絞って解説する。
 
@@ -19,7 +19,7 @@ Cline(クライン)は、VS CodeやJetBrains系IDEに追加する**オープン�
 
 ### 生まれた経緯
 
-Clineは2024年6月、Anthropicが開催したハッカソンの場で、開発者のSaoud Rizwan氏が個人で作ったツールが元になっている。当時リリースされたばかりのClaude 3.5 Sonnetのモデルカード(性能・特性の説明資料)に「自律的にコーディングできる」という記述を見て試作したのが最初で、拡張機能の名前は当初「Claude Dev」だった。その後Cline(クライン)へ改名されたが、VS Code拡張機能のID(`saoudrizwan.claude-dev`)には今も旧名が残っている。ライセンスはApache 2.0で、GitHub上で誰でもソースコードを閲覧・改変できる。2026年時点でGitHubスター数6万超、VS Code Marketplaceでのインストール数は500万を超える規模に成長した。
+Clineは2024年6月、Anthropicが開催したハッカソンの場で、開発者のSaoud Rizwan氏が個人で作ったツールが元になっている。当時リリースされたばかりのClaude 3.5 Sonnetのモデルカード(性能・特性の説明資料)に「自律的にコーディングできる」という記述を見て試作したのが最初で、拡張機能の名前は当初「Claude Dev」だった。その後Cline(クライン)へ改名されたが、VS Code拡張機能のID(`saoudrizwan.claude-dev`)には今も旧名が残っている。ライセンスはApache 2.0で、GitHub上で誰でもソースコードを閲覧・改変できる。2026年7月時点でGitHubスター数6万2000超、VS Code Marketplaceや後述のCLIを含むインストール数は500万を超える規模に成長した。
 
 ### エージェント的な動作の中身
 
@@ -31,6 +31,18 @@ ClineはCopilotのAgent ModeやCursorのComposerと同様に、以下のよう�
 - ブラウザを実際に操作(Puppeteerというブラウザ自動操作の仕組みを利用)してWebページの表示を確認し、見た目のズレなどを自分でスクリーンショットを見て修正する
 - MCP(Model Context Protocol、AIモデルと外部ツール・データを接続する共通規格)に対応し、検索・社内システム連携などのツールを追加できる
 - `.clinerules`というファイルにプロジェクト固有のコーディング規約・注意事項を書いておくと、Clineがそれに従って作業する
+
+対応するAIモデルも拡充が続いており、2026年7月時点ではClaude Opus/Sonnet系の最新版に加え、OpenAIのGPT-5系、GoogleのGemini 3.0系、Moonshot AIのKimi K2.5、MiniMaxのM2.5など、オープンウェイト系モデルも選択肢に入っている(Kimi K2.5・M2.5は期間限定で無償提供されたこともある)。「どのモデルを選ぶか」自体がコストと精度のトレードオフになる点はBYOKツール特有の判断ポイントである。
+
+### Cline CLIとエディタ横断対応(ACP)
+
+2026年2月、VS Code拡張機能というIDE前提の形から一歩進んだ「Cline CLI 2.0」が公開された。これはターミナル上で完結するAIコーディングエージェントで、以下のような特徴を持つ。
+
+- ターミナルの対話画面(TUI)でPlan/Actの計画・承認・実行をすべて完結できる
+- 複数タスクを並行実行する「並列エージェント」や、人手を介さないCI/CDパイプラインへの組み込み(ヘッドレス実行)に対応
+- ACP(Agent Client Protocol、AIコーディングエージェントとエディタの通信を標準化する規格。LSP(Language Server Protocol)のエージェント版に相当)に対応し、`--acp`オプションを付けて起動すると、JetBrains・Zed・Neovim・EmacsなどACP対応エディタからClineを呼び出せる
+
+つまりClineは「VS Code/JetBrains拡張機能」から「CLI + ACPで動く汎用エージェント基盤」へと立ち位置を広げつつある。ただし業務での主戦場は依然としてVS Code拡張機能であり、CLIは「CI/CDへの組み込み」「VS Code以外のエディタを使うエンジニア」向けの選択肢として押さえておけばよい。
 
 ### Plan/Actモード
 
@@ -64,7 +76,7 @@ Clineの料金構造はCopilot・Cursor・Windsurfとは根本的に異なり、
 | 項目 | 内容 |
 |---|---|
 | Individual(個人) | 0ドル。拡張機能は完全無料でオープンソース。サブスクリプションもクレジット制度もない |
-| Teams(チーム) | 1ユーザー20ドル/月。ただし最初の10シートは永続的に無料。チーム管理機能・利用状況の一元管理・JetBrains対応などが付く |
+| Teams(チーム) | 1ユーザー20ドル/月。ただし**最初の10シートは無期限で無料**なので、10人以下のチームは実質無償で使える。11人目以降から従量課金が発生する。チーム管理機能・利用状況の一元管理・JetBrains対応などが付く |
 | Enterprise(企業) | 個別見積もり。SSO/OIDC/SCIM(ID管理連携)、監査ログ、VPC(閉域網)内デプロイ、専用サポートなどガバナンス機能を提供 |
 | AIモデルの利用料 | 上記とは別に、選んだAIプロバイダー(Anthropic・OpenAI等)に対して使った分だけ実費が発生。Clineへの支払いではなく、各プロバイダーへの直接支払いになる |
 
@@ -91,12 +103,16 @@ Cline・Copilot・Cursor・Windsurfはいずれも「AIがファイルを自律�
 4. 選んだプロバイダーのAPIキーを貼り付け、使用するモデル名(例: Claude Sonnet系、GPT系など)を選択して保存する
 5. チャット入力欄下部にある「Plan」「Act」の切り替えボタンで、まずPlanモードで方針を確認してから、Actモードに切り替えて実行する
 
+なお、VS Code拡張機能ではなくターミナルで使いたい場合や、CI/CDパイプラインに組み込みたい場合は、npmなどで配布されている「Cline CLI」を導入する方法もある(詳細はCline公式ドキュメントを参照)。
+
 ### エンジニアがClineを使う典型的な場面
 
 - 社内で契約済みのAzure OpenAIやAWS Bedrockのアカウントに直接つないで、追加のツール利用料なしでエージェント機能を使う
 - 高精度が必要な複雑なタスクはClaude Opus系、日常的な軽いタスクは安価なモデルに切り替えるなど、タスクの重要度に応じてモデルとコストを使い分ける
 - 機密性の高いコードを扱うプロジェクトで、外部にコードを送らないローカルLLM(Ollama等)に切り替えて動かす
 - MCPで社内のドキュメント検索やIssue管理システムをClineに接続し、社内情報を踏まえたコード生成をさせる
+- Cline CLIをCI/CDパイプラインに組み込み、プルリクエスト作成時にテスト失敗の自動修正や簡易レビューをヘッドレス実行させる
+- 普段はJetBrains・Zed・NeovimなどVS Code以外のエディタで開発しているエンジニアが、ACP(Agent Client Protocol)対応経由でClineのエージェント機能だけを呼び出す
 
 ### 導入判断のポイント(非エンジニアの管理職向け)
 
@@ -112,6 +128,7 @@ Cline・Copilot・Cursor・Windsurfはいずれも「AIがファイルを自律�
 - **オートアプルーブは便利だが無防備にもなる**: ターミナルコマンドの自動承認を有効にすると、意図しないコマンド(ファイル削除、外部への送信など)が承認なしに実行される可能性がある。特にAPIキーや機密情報が置かれた環境では慎重に設定する
 - **Planモードを軽視しない**: Actモードで一気に実行させると、的外れな実装のやり直しでトークン(コスト)を余計に消費する。まずPlanモードで方針を合意してからActに切り替える運用がコスト面でも有利
 - **VS Code拡張機能という性質上、GitHub本体との統合はCopilotほど深くない**: Issueへの直接アサインやPRの自動作成といったGitHub連携の一体感は、GitHub Copilotの方が優位である
+- **Cline CLI・ACP経由の利用はまだ発展途上**: 2026年に登場したばかりの機能のため、VS Code拡張機能に比べると情報・実績が少ない。本番のCI/CDに組み込む際は、まず小さな用途で試してから範囲を広げるのが安全
 
 ## 最初の一歩
 
@@ -124,6 +141,10 @@ VS CodeにCline拡張機能をインストールし、少額のAPIキー(利用�
 - [Anthropic API(Claude API)の基本](../part09-api-development/anthropic-api-basics.md)
 
 ## 更新履歴
+
+### 2026-07-31: 「仕組み・背景」「実務での使い方」を最新化
+- **内容**: 2026年2月公開の「Cline CLI 2.0」(ターミナル完結のエージェント、並列実行・ヘッドレスCI/CD対応)と、ACP(Agent Client Protocol)によるJetBrains/Zed/Neovim/Emacsなどエディタ横断対応を追記。対応モデルにGPT-5・Gemini 3.0・Kimi K2.5・MiniMax M2.5などを追加。Teamsプラン「最初の10シート無期限無料」の実務的な意味合いを補足し、GitHubスター数・インストール数を更新
+- **出典**: [Announcing Cline CLI 2.0 with free Kimi K2.5 - Cline Blog](https://cline.bot/blog/announcing-cline-cli-2-0), [ACP: Editor Integrations - Cline Docs](https://docs.cline.bot/cli/acp-editor-integrations), [Cline CLI 2.0 with free Kimi K2.5 - Hacker News](https://news.ycombinator.com/item?id=46875188), [Cline Pricing 2026 - costbench](https://costbench.com/software/ai-coding-assistants/cline/), [Cursor vs Windsurf vs Cline vs Copilot (2026) - AppScale Blog](https://appscale.blog/en/blog/cursor-vs-windsurf-vs-cline-vs-copilot-ai-coding-agents-2026)
 
 ### 2026-07-06: 初版執筆
 - **内容**: OSSのVS Code/JetBrains拡張機能であるClineの成り立ち(旧名Claude Dev)、BYOK(自分のAPIキーを持ち込む)という特殊な料金構造、Plan/Actモードやコスト表示・チェックポイントなどのエージェント機能、GitHub Copilot/Cursor/Windsurfとの比較、導入手順と注意点をまとめた初版を執筆
