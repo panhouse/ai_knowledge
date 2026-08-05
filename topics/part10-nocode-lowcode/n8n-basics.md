@@ -133,7 +133,7 @@ n8n.ioでクラウド版の無料トライアルを開始し(またはDockerで�
 - [Zapierの基本](./zapier-basics.md)
 - [n8n・Make・Zapierの比較と使い分け](./automation-tools-comparison.md)
 - [ノーコードでのAIエージェント構築](./nocode-ai-agent-building.md)
-- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md)
+- [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
 
