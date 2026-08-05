@@ -124,7 +124,7 @@ genspark.aiに無料登録し、直近で調べたい競合や市場のテーマ
 
 - [Perplexityの基本](./perplexity-basics.md)
 - [NotebookLMの基本](./notebooklm-basics.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)
 
 ## 更新履歴
 
