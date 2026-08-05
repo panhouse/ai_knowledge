@@ -1,0 +1,79 @@
+# MkDocs の設定(nav 以外)。
+# nav は `scripts/build_docs.py` が各パートの `_index.md` の「収録ページ」から生成し、
+# このファイルと合成して `mkdocs.gen.yml` を書き出す(gitignore対象)。
+# 設定を変えたいときはこのファイルを編集する。
+
+site_name: ai_knowledge — 生成AI ナレッジベース
+site_description: 生成AIの基本知識を「教科書」として体系立てて書き溜めているナレッジベース(株式会社パンハウス)
+site_url: https://panhouse.github.io/ai_knowledge/
+repo_url: https://github.com/panhouse/ai_knowledge
+repo_name: panhouse/ai_knowledge
+edit_uri: edit/main/
+copyright: © 株式会社パンハウス
+
+docs_dir: .site_src
+site_dir: site
+
+# UPDATES.md の過去エントリには旧パート名へのリンクが残っているため、
+# リンク切れはビルドを止めずに警告のみとする
+validation:
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+theme:
+  name: material
+  language: ja
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: ダークモードに切り替え
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: ライトモードに切り替え
+
+plugins:
+  - search:
+      lang: ja
+
+markdown_extensions:
+  # MkDocs 既定の slugify は非ASCIIを捨てるため、日本語見出しへの
+  # `#見出し` リンクが全滅する。GitHub互換(Unicode保持)の slugify に差し替える
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/panhouse/ai_knowledge
