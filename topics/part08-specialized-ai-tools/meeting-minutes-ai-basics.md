@@ -168,7 +168,7 @@ updated: 2026-07-25
 
 - [特化型AIツールの選び方(用途別マップと比較)](specialized-ai-tools-selection-guide.md)
 - [生成AIによる文章作成・校正の実務活用](../part11-business-practice/ai-writing-and-editing.md)
-- [役員秘書・エグゼクティブアシスタント業務でのAI活用事例](../part11-business-practice/executive-assistant-ai-use-cases.md)
+- [役員秘書・エグゼクティブアシスタント業務でのAI活用事例](../part14-job-role-cases/executive-assistant-ai-use-cases.md)
 - [情報漏洩防止の基本](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
