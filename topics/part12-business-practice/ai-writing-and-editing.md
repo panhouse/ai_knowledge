@@ -4,7 +4,7 @@ part: 12
 chapter: 第2章 文章・コミュニケーション
 tags: [文章作成, 編集, 校正, 要約, プロンプト, Canvas]
 created: 2026-07-05
-updated: 2026-07-06
+updated: 2026-07-31
 ---
 
 # 生成AIによる文章作成・編集の実務活用
@@ -193,12 +193,12 @@ AIの初稿はたたき台と割り切り、次の順で仕上げるのが実務
 
 | ツール | 機能名 | 使い方の要点 |
 |---|---|---|
-| ChatGPT | Canvas(キャンバス) | チャット画面右側に文書を表示し、範囲選択してAIに部分修正を依頼できる。ただし2026年5月末のアップデートでGPT-5.5系モデルからは廃止され、同等の機能はチャット内に直接埋め込まれる「Writing Blocks(ライティングブロック)」に統合された。旧モデル(o3など、2026年8月末に順次終了予定)では引き続き従来のCanvas UIが使える場合がある。使う機種によってUIが異なる点に注意 |
-| Gemini | Google ドキュメントのGeminiサイドパネル/画面下部の「Geminiバー」、GeminiアプリのCanvas | ドキュメントを開いた状態で右側パネルからプロンプトで本文生成、選択範囲を「リファイン」して「言い換え」「よりフォーマルに」などのプリセットを適用。「@」でDrive内の他ファイルを参照して文体や内容を揃えられる。Geminiアプリ側にもCanvas機能があり、生成した文書をGoogle ドキュメントへ直接書き出せる |
-| Microsoft Copilot | Word内「Copilotで下書き(Draft with Copilot)」「書き直し(Rewrite)」 | プロンプト・アウトライン・参照ファイルから下書きを生成。選択範囲に対するRewriteでは3〜5案が提示され、気に入ったものに置き換えられる。2026年にはCopilot経由で使うAIモデルをAnthropicのモデルに切り替えられる選択肢も追加された |
-| Claude | Artifacts(アーティファクト) | 会話とは別パネルにMarkdown文書などを表示。文中をハイライトして「Edit with Claude」から部分修正を指示できる。Word/Excel/PowerPoint形式でのダウンロードにも対応。2026年2月からは無料プランでも利用可能に |
+| ChatGPT | Canvas(キャンバス)→Writing Blocks(ライティングブロック) | チャット画面右側に文書を表示し部分修正を依頼する従来のCanvasは、2026年5月末のアップデートでGPT-5.5系モデルから廃止され、チャットの応答内に直接編集エリアが現れる「Writing Blocks」に統合された。2026年7月には後継モデルのGPT-5.6系(Sol/Terra/Luna)が正式リリースされ、こちらもCanvasではなくWriting Blocks方式を採用している。旧モデル(o3など、2026年8月26日終了予定)では引き続き従来のCanvas UIが使える場合があり、使う機種によってUIが異なる点に注意 |
+| Gemini | Google ドキュメントのGeminiサイドパネル/画面下部の「Geminiバー」、GeminiアプリのCanvas | ドキュメントを開いた状態で右側パネルからプロンプトで本文生成、選択範囲を「リファイン」して「言い換え」「よりフォーマルに」などのプリセットを適用。「@」でDrive内の他ファイルを参照して文体や内容を揃えられる。2026年7月には、コメントへの返信案をGeminiが提案する「コメントワークフロー」、本文と並べて図解・インフォグラフィックを生成・編集できる機能が追加され、対応言語も11言語追加された。Geminiアプリ側にもCanvas機能があり、生成した文書をGoogle ドキュメントへ直接書き出せる |
+| Microsoft Copilot | Word内「Copilotで下書き(Draft with Copilot)」「書き直し(Rewrite)」 | プロンプト・アウトライン・参照ファイルから下書きを生成。選択範囲に対するRewriteでは3〜5案が提示され、気に入ったものに置き換えられる。2026年7月2日、Word・PowerPoint・CopilotのマルチAIエージェント機能「Cowork」にAnthropicのClaude Sonnet 5が追加され、Copilot Chatと合わせてOpenAIモデルとClaudeモデルを用途に応じて選択できるようになった(一般的な文章生成はSonnet系、構成立てや深い推敲が必要な文章はOpus系、という使い分けが目安) |
+| Claude | Artifacts(アーティファクト) | 会話とは別パネルにMarkdown文書などを表示。文中をハイライトして「Edit with Claude」から部分修正を指示できる。Word/Excel/PowerPoint形式でのダウンロードにも対応。2026年2月からは無料プランでも利用可能。2026年7月24日には最新モデル「Claude Opus 5」が発表され、Claude Maxのデフォルトモデルとなった(長文の構成立てや複雑な推敲を伴う文章作成に強い) |
 
-文体を学習させたい場合は、ChatGPTならカスタム指示欄に自分の文章の特徴を書き添え、Claudeなら「Styles(スタイル)」機能に過去の文章サンプルをアップロードして文体プロファイルを生成させる方法がある(Claudeでは2026年にStylesが「Skills」機能に統合される移行が進んでおり、名称・導線が変わる可能性がある)。
+文体を学習させたい場合は、ChatGPTならカスタム指示欄に自分の文章の特徴を書き添え、Claudeなら「Styles(スタイル)」機能で組み込みプリセット(Normal/Learning/Concise/Explanatory/Formalなど)を選ぶか、過去の文章サンプルをアップロードしてカスタムスタイルを作る方法がある。2026年半ば時点では、プラスメニューに「Skills」と「Use style」が並存する形でStylesの「Skills」機能への統合が進行中だが、既存のStyleは引き続き同じ機能のまま使えるため、当面は使い方を変える必要はない。
 
 ## 注意点・よくある誤解
 
@@ -221,6 +221,10 @@ AIの初稿はたたき台と割り切り、次の順で仕上げるのが実務
 - [ハルシネーションの仕組みと対策](../part04-risk-security/hallucination-and-countermeasures.md)
 
 ## 更新履歴
+
+### 2026-07-31: ツール横断の対応付けの節を最新化
+- **内容**: ChatGPTのCanvas後継「Writing Blocks」がGPT-5.6系(Sol/Terra/Luna)にも引き継がれたこと、o3系Canvasの終了予定日(8月26日)、Gemini in Google Docsの新機能(Geminiによるコメント返信案・図解生成・対応言語11言語追加)、Microsoft Copilot(Word/PowerPoint/Cowork)へのClaude Sonnet 5追加とモデル使い分けの目安、Claude Opus 5のリリースとClaude Maxデフォルト化、Claude StylesのSkillsへの統合状況を反映して最新化
+- **出典**: [Krasa.ai: OpenAI Drops Canvas From GPT-5.5](https://www.krasa.ai/news/openai-gpt-5-5-instant-writing-coding-blocks-canvas-removed-may-2026)、[AI Business Weekly: ChatGPT New Features July 2026 (GPT-5.6)](https://aibusinessweekly.net/p/chatgpt-new-features-2026)、[Google Workspace Updates: Streamline collaboration in Google Docs with Gemini-powered comment workflows](https://workspaceupdates.googleblog.com/2026/07/streamline-collaboration-in-google-docs-with-Gemini-powered-comment-workflows.html)、[Google Workspace Updates: Generate and edit visuals with Gemini in Google Docs](https://workspaceupdates.googleblog.com/2026/07/generate-and-edit-visuals-with-gemini-in-Google-Docs.html)、[Google Workspace Updates: Expanded language support for Gemini in Google Docs](https://workspaceupdates.googleblog.com/2026/07/expanded-language-support-for-gemini-in-Google-Docs.html)、[A Guide to Cloud & AI: What's New in Microsoft 365 Copilot: July 2026](https://www.aguidetocloud.com/blog/microsoft-365-copilot-july-2026-updates/)、[Claude by Anthropic: Claude is now available in Microsoft 365 Copilot](https://claude.com/blog/claude-now-available-in-microsoft-365-copilot)
 
 ### 2026-07-06: 重複ページの統合
 - **内容**: 同章の重複ページ `ai-writing-editing.md` を本ページに統合。タスク別の得意度・コツ一覧、返信メール・議事録整形・要約・翻訳・キャッチコピーのコピペ用プロンプト実例、2段階(構成案→肉付け)アプローチ、AI文章の画一化に関する研究知見、著作権・オリジナリティの注意点を取り込んだ
