@@ -4,14 +4,14 @@ part: 15
 chapter: 第2章 営業・セールス
 tags: [営業, SFA, CRM, 商談解析, ロールプレイ, 議事録, Sales AI]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-03
 ---
 
 # 営業職における生成AI活用
 
 ## これは何か
 
-営業という仕事は、「商談前の下調べ」「提案書・見積もりの準備」「商談そのもの」「商談後のお礼・フォロー」「CRM/SFA(顧客関係管理・営業支援システム)への入力とパイプライン管理」という一連の業務フローの繰り返しでできている。この一日・一週間のフローのどこにAIを差し込むかが分かっていないと、「メールの下書きだけ」「議事録の要約だけ」という部分的な使い方にとどまり、営業活動全体の時短にはつながらない。Salesforceが2025年8〜9月に営業担当者4,050人を対象に行った調査では、営業組織の87%が何らかの形でAIを利用しており、AIエージェントを導入済みの担当者は54%、2027年までに導入予定の担当者を合わせると9割近くに達する。本ページは、汎用チャットAIによる文章作成のコツ([生成AIによる文章作成・編集の実務活用](../part12-business-practice/ai-writing-and-editing.md)で扱う一般論)ではなく、**営業という職種特有の業務フローに沿って、どのフェーズでどのAIをどう使うか**を整理する。
+営業という仕事は、「商談前の下調べ」「提案書・見積もりの準備」「商談そのもの」「商談後のお礼・フォロー」「CRM/SFA(顧客関係管理・営業支援システム)への入力とパイプライン管理」という一連の業務フローの繰り返しでできている。この一日・一週間のフローのどこにAIを差し込むかが分かっていないと、「メールの下書きだけ」「議事録の要約だけ」という部分的な使い方にとどまり、営業活動全体の時短にはつながらない。Salesforceが2025年8〜9月に営業担当者4,050人を対象に行った調査では、営業組織の87%が何らかの形でAIを利用しており、AIエージェントを導入済みの担当者は54%、2027年までに導入予定の担当者を合わせると9割近くに達する。同レポートでは、AIエージェントが定着した際の期待効果として「見込み客リサーチの時間が34%削減」「メール下書きの時間が36%削減」という数値も示されており、本ページで扱う①商談準備・⑤フォローのフェーズは特に時短効果が見込まれる領域といえる。本ページは、汎用チャットAIによる文章作成のコツ([生成AIによる文章作成・編集の実務活用](../part12-business-practice/ai-writing-and-editing.md)で扱う一般論)ではなく、**営業という職種特有の業務フローに沿って、どのフェーズでどのAIをどう使うか**を整理する。
 
 ## 仕組み・背景
 
@@ -38,6 +38,8 @@ updated: 2026-07-06
 | ⑦ 育成・トークの改善 | 商談前のロールプレイ練習、過去商談のトーク分析によるフィードバック | 商談解析ツール、AIロープレツール | amptalk coach、アバトレ、生成AIによる「AIが営業役・利用者が顧客役」のリバースロープレ |
 
 判断の目安は、「その場面で参照すべき情報が自社の顧客・商談データそのものか」「一般的な文章生成・リサーチで足りるか」の2点。前者ならSFA組み込みAIや商談解析ツール、後者なら汎用チャットAIが向く。
+
+なお⑦のAIロールプレイ分野は機能追加が続いている領域で、amptalk coachは2026年3月に、設定したペルソナの性別・年齢に応じたアバター(12種類)を練習中に表示する機能を追加した。商談相手を具体的にイメージしながら練習できるようにする狙いで、こうした「顧客役の実在感」を高める機能追加は他ツールでも今後広がる可能性がある。
 
 ### 使うべきでない場面
 
@@ -134,7 +136,7 @@ updated: 2026-07-06
 
 「書かれていない情報を推測で補わない」という一文は、ハルシネーション(もっともらしい誤情報の生成、詳細は[ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md))を防ぐために重要。商談記録は「言った/言っていない」が後でトラブルの種になりやすい文書なので、AIが気を利かせて補完した内容を鵜呑みにしないこと。
 
-### ツール横断の対応付け(2026年7月時点)
+### ツール横断の対応付け(2026年8月時点)
 
 | ツール | AI機能名 | できること | 主な設定・起動場所 |
 |---|---|---|---|
@@ -144,7 +146,12 @@ updated: 2026-07-06
 | 国内の商談解析(Conversation Intelligence) | amptalk、MiiTel、ACES Meet、JamRoll 等 | Web会議・電話・対面商談の自動文字起こし・要約、CRM/SFA(Salesforce・HubSpot等)への自動入力、トーク分析 | 各ツールの録音連携設定、SFA連携設定 |
 | AIロールプレイ | amptalk coach、生成AIによるリバースロープレ(AIが営業役、利用者が顧客役)、アバトレ 等 | 商談シナリオ・顧客ペルソナを設定した反復練習、トーク内容へのフィードバック | 各ツールのトレーニングコース作成画面 |
 
-料金感の目安(要問い合わせのものが多いため、必ず最新の公式情報を確認すること): 国内の商談解析ツールはMiiTelが月額5,980円/ユーザーからと比較的安価な部類で、amptalkなど多機能な製品は要問い合わせが多い。SFA組み込みAI(Agentforce・Copilot for Sales等)は既存のSFA/CRM契約への追加ライセンスやクレジット課金となるケースが一般的で、汎用チャットAIの個人契約(月額2,000〜3,000円程度)とは別枠のコストとして予算化する必要がある。
+料金感の目安(要問い合わせのものが多いため、必ず最新の公式情報を確認すること):
+
+- **Salesforce Agentforce**: 既存のSales/Service/Field Cloudユーザー向けに無制限利用の「Agentforce Add-on」が月額$125/ユーザー、AIエージェント機能一式と年間250万Flex Credits(AIの処理量に応じた従量クレジット)が含まれる上位版「Agentforce 1 Editions」が月額$550/ユーザーから。従量課金のみで使う場合は会話1件$2、またはFlex Credits方式(10万クレジット=$500、1アクションあたり目安$0.10)から選べる。
+- **HubSpot Breeze**: 2026年4月14日付でCustomer AgentとProspecting Agentの2エージェントが成果報酬型(outcome-based)の課金に切り替わった。Customer Agentは「会話1件$1.00」から「解決した会話1件$0.50」へ、Prospecting Agentは「登録リード数への月額課金」から「架電・アプローチしたリード1件$1」へと変更されている。
+- **国内の商談解析ツール**: MiiTelが月額5,980円/ユーザーからと比較的安価な部類、ACES Meetは月額25,000円程度から、amptalkなど多機能な製品は要問い合わせが多い。
+- SFA組み込みAI(Agentforce・Copilot for Sales等)は既存のSFA/CRM契約への追加ライセンスやクレジット課金となるケースが一般的で、汎用チャットAIの個人契約(月額2,000〜3,000円程度)とは別枠のコストとして予算化する必要がある。
 
 ## 注意点・よくある誤解
 
@@ -168,6 +175,10 @@ updated: 2026-07-06
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 
 ## 更新履歴
+
+### 2026-08-03: 料金・機能面を最新化
+- **内容**: Salesforce Agentforceの具体的な価格(Add-on月額$125/ユーザー、Agentforce 1 Editions月額$550/ユーザー、Flex Credits等の課金体系)、HubSpot Breezeが2026年4月に成果報酬型課金(Customer Agent:解決済み会話1件$0.50、Prospecting Agent:アプローチ1件$1)へ移行した点、国内商談解析ツールのACES Meetの料金目安(月額25,000円程度〜)、amptalk coachの2026年3月のペルソナ別アバター表示機能を追記。Salesforce State of Sales Report 2026のAIエージェント導入率に加え、想定される時短効果(見込み客リサーチ34%減・メール下書き36%減)の数値も追加
+- **出典**: [Salesforce: Agentforce Pricing(公式)](https://www.salesforce.com/agentforce/pricing/)、[HubSpot: HubSpot's Customer Agent and Prospecting Agent: Now you pay when the task is complete(公式)](https://www.hubspot.com/company-news/hubspots-customer-agent-and-prospecting-agent-now-you-pay-when-the-task-is-complete)、[MarTech: HubSpot moves to outcome-based pricing for some Breeze AI agents](https://martech.org/hubspot-moves-to-outcome-based-pricing-for-some-breeze-ai-agents/)、[PR TIMES: AIロープレツール「amptalk coach」、設定したペルソナに応じた『アバター』表示に対応開始](https://prtimes.jp/main/html/rd/p/000000061.000084890.html)、[AI PICKSマガジン: 【2026年最新】ACES Meet完全ガイド](https://aipicks.jp/mag/aces-meet-guide-2026)、[cxtoday: Salesforce Report Shows AI Agents Are Reshaping Sales Teams and Customer Engagement](https://www.cxtoday.com/marketing-sales-technology/salesforce-state-of-sales-2026-ai-agents-sales-teams/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: 営業の業務フェーズ(準備→商談→フォロー→CRM管理→育成)ごとのAI活用マップ、汎用チャットAI/SFA組み込みAI/商談解析ツールの3分類、商談準備リサーチ・提案書骨子・フォローメール・議事録からのネクストアクション抽出のコピペ用プロンプト、Salesforce Agentforce/HubSpot Breeze/Microsoft Copilot for Sales/amptalk等のツール対応表を整理

@@ -48,6 +48,7 @@
 - [プロンプトテンプレート化(変数管理・再利用のコツ)](topics/part05-prompt-engineering/prompt-templating.md): ツール横断の対応付けを最新化(ChatGPTカスタム指示の文字数拡張、Claudeカスタムスキル、PromptLayer/LangSmith等のプロンプト管理ツールを追加)
 
 ## 2026-08-03
+- [営業職における生成AI活用](topics/part11-business-practice/sales-ai-use-cases.md): 料金・機能面を最新化・増強
 - [公共・自治体における生成AI活用事例](topics/part13-industry-cases/public-sector-ai-use-cases.md): 総務省の最新導入率データ・神戸市の事例・国のガイドライン施行日等を最新化・増強
 - [主要AIチャットツールのメモリ・プロジェクト機能比較(Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-memory-and-context-comparison.md): Gemini(欧州展開)・Claude(メモリ表示方式刷新・Reflect追加)・Microsoft Copilot(Notebooks GA・ライセンス緩和)の節を最新化・増強
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 主要ベンチマークの節を最新化・増強
