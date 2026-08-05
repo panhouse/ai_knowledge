@@ -4,7 +4,7 @@ part: 5
 chapter: 第4章 エージェント的手法
 tags: [プロンプトエンジニアリング, ReAct, 応用手法, AIエージェント, Tool Use]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-01
 ---
 
 # ReAct(Reasoning and Acting)プロンプティング
@@ -12,6 +12,8 @@ updated: 2026-07-06
 ## これは何か
 
 「競合3社の最新料金を調べて比較表を作って」のような、AIに検索やツール呼び出しを挟んだ複数ステップの調査を頼むと、[Chain-of-Thought(CoT)](chain-of-thought-prompting.md)だけで考えさせた場合、1回検索した結果を鵜呑みにしたまま話を進めてしまい、その検索結果が的外れ・古い・不十分であっても気づかずに誤った前提で回答を組み立ててしまうことがある。ReAct(Reasoning and Acting、「推論と行動」)プロンプティングとは、AIに「考える(Thought)→外部の行動を起こす(Action。検索やツール呼び出し)→その結果を確認する(Observation)」の3ステップを1サイクルとして繰り返させ、行動の結果を都度確認しながら次の一手を考え直させる手法である。人間が調べものをするときに「検索する→出てきた結果を見る→次に何を調べるべきか考える」を繰り返すのと同じ発想だと考えるとわかりやすい。
+
+2026年8月時点では、ChatGPT・Claude・Geminiのいずれも、このThought→Action→Observationのループを製品側の「エージェント機能」として内部で自動的に回すようになっている。そのため、ビジネスパーソンが日常的にこの形式を手でプロンプトに書く場面は減っているが、「AIエージェントが裏で何をしているか」を理解する共通言語として、また社内ツールと連携させる独自の仕組みを作る場面では、依然として押さえておく価値のある考え方である(詳しくは後述の「使いどころ・使い分け」)。
 
 ## 仕組み・背景
 
@@ -48,7 +50,7 @@ ReActが効くのは「モデルの知識だけでは答えられず、外部の
 - **モデルの知識だけで完結する単純な質問・計算**: ReActは不要。CoTで十分、あるいはCoTすら不要
 - **複数の妥当な進め方があり、比較検討そのものが成果物になる**: ReActよりToTが向く
 - **最新情報の検索や社内システムの照会を挟みながら、複数ステップで調査・作業を進めたい**: ReActが向く(競合価格調査、複数資料をまたぐ根拠確認、トラブルシューティングの原因調査など)
-- **すでにWeb検索・ツール機能を有効にしたAI(ChatGPTのAgent、Claude Code、Gemini CLIなど)を使っている**: 多くの場合、モデル側が内部で既にReAct的なループを自動で回しているため、ユーザーがThought/Action/Observation形式を明示的に書く必要性は下がる(次章で詳述)
+- **すでにエージェント機能(ChatGPT Work、Claude Cowork/Claude Code、Gemini Spark/Gemini CLIなど)やdeep research系の調査機能を使っている**: 多くの場合、モデル・製品側が内部で既にReAct的なループを自動で回しているため、ユーザーがThought/Action/Observation形式を明示的に書く必要性は下がる(次章で詳述)
 
 ## 実務での使い方
 
@@ -105,16 +107,16 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 
 ### 「もう内部で動いている」こととの関係: エージェント機能・Tool Useとの対応付け
 
-2026年7月時点では、ChatGPT・Claude・Geminiのエージェント系機能は、ユーザーがThought/Action/Observationと明示的に書かなくても、内部でこれと同種のループを自動で回している。手動でこの形式を書く価値があるのは、「推論過程を人間の目で検証したい」「エージェント機能を持たない軽量モデルやシンプルなチャット画面でも段階的に調べさせたい」場合に限られる。
+2026年8月時点では、ChatGPT・Claude・Geminiのエージェント系機能は、ユーザーがThought/Action/Observationと明示的に書かなくても、内部でこれと同種のループを自動で回している。手動でこの形式を書く価値があるのは、「推論過程を人間の目で検証したい」「エージェント機能を持たない軽量モデルやシンプルなチャット画面でも段階的に調べさせたい」「社内システム連携など自前の仕組みを作る」場合に限られる。各社のエージェントモード・スケジュールタスクの名称は改称が頻繁で本ページの範囲を超えるため、詳細な最新の対応表は[主要AIチャットツールのエージェント機能・スケジュールタスク比較](../part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md)に譲り、ここではReActループとの関係だけを整理する。
 
 | ツール・機能 | 明示的にThought/Action/Observation形式で書かせる方法 | 内部で自動的にReAct的ループが動く機能 |
 |---|---|---|
-| ChatGPT | 上のテンプレートを、Web検索や「エージェントで実行」をオンにした状態で貼る | ChatGPT Agent、Deep Research |
-| Claude(Claude.ai / API) | 同テンプレートを、拡張思考+Web検索/ツール使用をオンにした状態で貼る | Claude Codeなどのエージェント。Claude 4系では、ツール呼び出しの間に推論を挟む「インターリーブ思考(interleaved thinking)」機能があり、Opus 4.6/Sonnet 4.6のadaptive thinkingでは自動的に有効になる(他モデルはベータヘッダーで有効化) |
-| Gemini(gemini.google.com / Gemini CLI) | 同テンプレートを、Google検索グラウンディングをオンにした状態で貼る | Gemini CLIは、組み込みツールとMCPサーバー連携を使ったThink→Act→Observeのループを内部で回し、複数ステップの作業を実行する |
-| 開発者向け(API・LangChain等) | プロンプトでThought/Action/Observation形式を明示し、Action行をアプリ側のコードでパースして実行結果をObservationとして返す(LangChainの`create_react_agent`が代表例) | 各社のネイティブな[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md) APIを使った「エージェントループ」。現在はテキストをパースするReAct形式より、モデルが構造化データ(JSON)で呼び出し要求を返すFunction Calling形式(LangChainの`create_tool_calling_agent`など)の方が信頼性が高く、実務では推奨されることが多い |
+| ChatGPT | 上のテンプレートを、Web検索や「Work」モードをオンにした状態で貼る | **ChatGPT Work**(旧ChatGPT Agent/エージェントモード。仮想ブラウザ上でクリック・入力・ファイル作成を繰り返す)、deep research(調査特化)。詳細は[ChatGPTのエージェント機能とTasks](../part03-ai-chat-tools/chatgpt-agent-mode-feature.md) |
+| Claude(Claude.ai / API) | 同テンプレートを、思考(thinking)+Web検索/ツール使用をオンにした状態で貼る | Claude Cowork・Claude Codeなどのエージェント。現行のClaude Opus 5・Claude Sonnet 5では「adaptive thinking(効果レベルで深さを調整する思考)」が既定でオンになっており、ツール呼び出しの合間にも自動的に推論を挟む(旧世代で「interleaved thinking」と呼ばれていた機能はadaptive thinkingに統合された) |
+| Gemini(gemini.google.com / Gemini CLI) | 同テンプレートを、Google検索グラウンディングをオンにした状態で貼る | Gemini Spark(常駐型のエージェント)やGemini CLIは、組み込みツールとMCPサーバー連携を使ったThink→Act→Observeのループを内部で回し、複数ステップの作業を実行する。Gemini 3世代のモデル自体もGrounding・Code Execution・Function Callingを組み合わせた自律的なツール利用を前提に設計されている |
+| 開発者向け(API・LangChain等) | プロンプトでThought/Action/Observation形式を明示し、Action行をアプリ側のコードでパースして実行結果をObservationとして返す(従来のLangChain `create_react_agent`が代表例) | 各社のネイティブな[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md) APIを使った「エージェントループ」。LangChainでは`create_react_agent`(テキストをパースするReAct形式)は非推奨となり、モデルが構造化データ(JSON)で呼び出し要求を返すFunction Calling前提の`create_agent`(langchainパッケージ)への移行が案内されている。実務では構造化された呼び出し形式の方が信頼性が高く推奨される |
 
-つまり、ReActは「モデルに推論とツール利用を交互にやらせる」という**発想・パターン**の名前であり、[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md)は「その行動(Action)を実際にどう実行するか」という**技術的な実装手段**、[AIエージェント](../part11-ai-agents/ai-agent-basics.md)は「そのループを自律的に何ステップも繰り返すシステム全体」を指す言葉、という三層の関係で理解すると整理しやすい。
+つまり、ReActは「モデルに推論とツール利用を交互にやらせる」という**発想・パターン**の名前であり、[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md)は「その行動(Action)を実際にどう実行するか」という**技術的な実装手段**、[AIエージェント](../part11-ai-agents/ai-agent-basics.md)は「そのループを自律的に何ステップも繰り返すシステム全体」を指す言葉、という三層の関係で理解すると整理しやすい。ネイティブなFunction Callingとエージェント機能が標準装備になった今、ReAct自体は「新しいテクニック」というより、**エージェント機能の裏側で何が起きているかを理解し、必要な場面(検証・監査・自前のツール連携)で自分の手でも再現できるようにしておくための基礎知識**という位置づけに変わってきている。
 
 ## 注意点・よくある誤解
 
@@ -123,10 +125,11 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 - **サイクル数に比例してコスト・待ち時間が増える**: 1サイクルごとにモデルへの推論呼び出しが発生するため、サイクルが増えるほどAPI利用料・応答時間が線形に増える。重要な調査・込み入ったタスクに絞って使い、簡単な質問には使わない
 - **モデルが行動やObservationを捏造することがある**: 存在しないツール名を呼び出したように書いたり、実際には確認していない結果をObservationとして書いてしまうことがある。特に行動を自由なテキストで書かせている場合に起きやすいため、可能であれば[Function Calling](../part09-api-development/function-calling-basics.md)のような構造化された呼び出し形式と組み合わせ、実行できる行動をあらかじめ限定しておくと安全性が上がる
 - **CoT・ToTとの混同**: CoTは頭の中だけの推論、ToTは複数案の比較検討であり、いずれも外部の行動を伴わない。外部情報も何もいらない単純な質問にReAct形式を強制しても、手間が増えるだけで効果はない
+- **わざわざ手で書く前に、まず製品のエージェント機能を試す**: ChatGPT Work・Claude Cowork/Claude Code・Gemini Sparkなど、主要ツールのエージェント機能やdeep research系の調査機能は、この記事のテンプレートと同種のループをすでに内部で(多くの場合より洗練された形で)実行している。まずはそちらで足りるかを確認し、「推論過程を目視で検証したい」「対応プランがない」「社内ツールに独自につなぎ込みたい」といった理由がある場合に、手動のThought/Action/Observation形式や[Function Calling](../part09-api-development/function-calling-basics.md)による自前実装を検討するとよい
 
 ## 最初の一歩
 
-次に複数ステップの調査(競合比較、複数の資料・システムをまたいだ根拠確認など)をAIに頼むときは、ChatGPTやClaudeでWeb検索・ツール機能を必ずオンにしたうえで上のコピペ用テンプレートを試し、AIが実際に検索→結果確認→次の検索を繰り返す様子を1回観察してみるとよい。
+次に複数ステップの調査(競合比較、複数の資料・システムをまたいだ根拠確認など)をAIに頼むときは、ChatGPTやClaudeでWeb検索・ツール機能(またはエージェントモード)を必ずオンにしたうえで上のコピペ用テンプレートを試し、AIが実際に検索→結果確認→次の検索を繰り返す様子を1回観察してみるとよい。
 
 ## 関連トピック
 
@@ -134,8 +137,19 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 - [Tree of Thought(ToT)プロンプティング](./tree-of-thought-prompting.md) — 複数案を比較検討したい場合はこちら
 - [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md) — ReAct的なループを自律的に繰り返すシステム全体の呼び方
 - [Function Calling(Tool Calling)の基本](../part09-api-development/function-calling-basics.md) — ReActの「Action」を実際に実行する技術的な仕組み
+- [主要AIチャットツールのエージェント機能・スケジュールタスク比較](../part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md) — ChatGPT Work・Gemini Spark・Copilot Cowork・Claude Coworkなど、各社のエージェント機能名・対応プランの最新対応表
+- [ChatGPTのエージェント機能(ChatGPT Work)とスケジュールタスク(Tasks)](../part03-ai-chat-tools/chatgpt-agent-mode-feature.md) — ChatGPTでReAct的ループが実際にどう製品化されているかの詳細
 
 ## 更新履歴
+
+### 2026-08-01: エージェント機能の内製化を踏まえて最新化
+- **内容**: 冒頭に「2026年8月時点ではエージェント機能側にReActループが内製化されている」という位置づけを追記。Claudeのモデル世代をOpus 5/Sonnet 5(adaptive thinkingが既定でオン、旧interleaved thinkingは統合済み)に更新し、ChatGPT Agent→ChatGPT Work、Gemini Spark/Gemini 3世代への改称・最新化を反映。LangChainの`create_react_agent`が非推奨化され`create_agent`への移行が案内されている点を追記。ツール横断の対応表は詳細を[主要AIチャットツールのエージェント機能・スケジュールタスク比較](../part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md)に譲る形に整理。注意点に「製品のエージェント機能を先に試す」の項目を追加し、関連トピックに同ページと[ChatGPTのエージェント機能](../part03-ai-chat-tools/chatgpt-agent-mode-feature.md)へのリンクを追加
+- **出典**: [Models overview - Claude Platform Docs](https://platform.claude.com/docs/en/about-claude/models/overview)
+- **出典**: [Thinking - Claude Platform Docs](https://platform.claude.com/docs/en/build-with-claude/thinking)
+- **出典**: [ChatGPT is now a partner for your most ambitious work - OpenAI](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)
+- **出典**: [Gemini 3 Developer Guide - Google AI for Developers](https://ai.google.dev/gemini-api/docs/gemini-3)
+- **出典**: [create_react_agent | langgraph.prebuilt - LangChain Reference](https://reference.langchain.com/python/langgraph.prebuilt/chat_agent_executor/create_react_agent)
+- **出典**: [Migrating from langgraph.prebuilt.create_react_agent to langchain.agents.create_agent - LangChain Forum](https://forum.langchain.com/t/migrating-from-langgraph-prebuilt-create-react-agent-to-langchain-agents-create-agent-missing-feature/1985)
 
 ### 2026-07-06: 初版執筆
 - **内容**: ReActプロンプティングの定義(困りごとの起点)、Thought→Action→Observationループの仕組みと原論文(Yao et al., 2022)の評価結果(HotpotQA/Fever/ALFWorld/WebShop)、CoT・ToTとの違いを整理した比較表、Web検索・ツール機能をオンにして使う前提のコピペ用テンプレート2種、ChatGPT/Claude/Gemini/LangChainでの対応付け(Claude 4系のinterleaved thinking、Gemini CLIのThink→Act→Observeループを含む)、ツール未接続時の「調べたふり」リスクやループ非収束・コスト増などの注意点を執筆

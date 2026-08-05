@@ -70,6 +70,7 @@
 - [量子化(モデル軽量化)の基本](topics/part08-specialized-ai-tools/quantization-basics.md): 方式比較(AWQ/GPTQ/EXL2/MXFP4)とGGUFのIQ量子化の節を最新化
 
 ## 2026-08-01
+- [ReAct(Reasoning and Acting)プロンプティング](topics/part05-prompt-engineering/react-prompting.md): ChatGPT Work・Claude Opus 5/Sonnet 5のadaptive thinking・Gemini Sparkなど、エージェント機能への内製化を踏まえて最新化
 - [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](topics/part06-custom-ai/custom-ai-cross-tool-prompt-injection-defense.md): 各社の防御機能・設定名(Copilot Studio「extended threat protection」GA化・メーカー資格情報の管理、Claude ProjectsのMCPコネクタ組織承認、Googleの多層防御の実際の構成)を最新化
 - [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](topics/part01-ai-basics/recognition-ai-applications.md): YOLO26・Whisper large-v3・時系列基盤モデル(Chronos-2等)を反映して最新化
 - [生成AI導入による組織構造・マネジメントへの影響](topics/part12-ai-trends/generative-ai-organizational-impact.md): 2026年の組織フラット化・人員削減の実データ/企業事例(Monday.com等)とCAIO新設事例、日本の管理職の使いこなし格差データを反映して最新化
