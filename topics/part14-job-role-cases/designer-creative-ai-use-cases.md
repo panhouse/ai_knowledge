@@ -172,7 +172,7 @@ Figma上で完結させたい場合はFigJam AIの「Sort stickies」(付箋を�
 | フィードバック・コメントの要約 | 汎用チャットAIに議事録・コメントを貼り付けて要約 | **FigJam AI**の「Sort stickies」、Figma Design Agentのコメントスレッド要約 |
 | クライアント向け説明資料 | 汎用チャットAIでナラティブ化 | — |
 
-Figmaの料金は、Professionalプランの「Full seat」で年払い月額16ドルからで、AI機能は「クレジット制」(2026年時点でFullシートは月3,000クレジット、閲覧のみのシート等は月500クレジット/日次上限150)になっている。2026年3月18日からはこのクレジット上限の運用が厳格化されており、無制限に使い放題ではない点に注意する([Figma料金・クレジット制の解説記事](https://www.toolworthy.ai/tool/figma))。Adobe Fireflyの料金プラン・商用利用条件は[生成AIによる画像・ビジュアル作成の実務活用](./ai-image-and-visual-creation-for-business.md#ツール横断の対応表2026年7月時点)の対応表を参照してほしい。
+Figmaの料金は、Professionalプランの「Full seat」で年払い月額16ドルからで、AI機能は「クレジット制」(2026年時点でFullシートは月3,000クレジット、閲覧のみのシート等は月500クレジット/日次上限150)になっている。2026年3月18日からはこのクレジット上限の運用が厳格化されており、無制限に使い放題ではない点に注意する([Figma料金・クレジット制の解説記事](https://www.toolworthy.ai/tool/figma))。Adobe Fireflyの料金プラン・商用利用条件は[生成AIによる画像・ビジュアル作成の実務活用](../part11-business-practice/ai-image-and-visual-creation-for-business.md#ツール横断の対応表2026年7月時点)の対応表を参照してほしい。
 
 ## 注意点・よくある誤解
 

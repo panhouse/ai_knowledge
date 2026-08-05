@@ -10,6 +10,8 @@
 - **テーマごとに深掘りしたい** → 下の目次から各パートの `_index.md` へ
 - **運用ルールを確認・変更したい** → [CLAUDE.md](CLAUDE.md)
 
+Webサイト版(全文検索つき): <https://panhouse.github.io/ai_knowledge/>
+
 ## 知識体系(目次)
 
 | Part | テーマ | 主な内容 |
@@ -37,5 +39,23 @@
 3. 業種別の活用事例は Part 13、職種別の活用事例は Part 14、国内AI企業の一覧は Part 15 に整理
    (体系に収まらないテーマはそれぞれ末尾の「その他・未分類」へ一旦集約)
 4. 1トピック = 1ブランチ = 1PR で main 向けにPRを作成し、執筆・改訂内容を [UPDATES.md](UPDATES.md) に記録(mainへ直接コミットはせず、採否はPR画面で判断)
+5. main にマージされると GitHub Actions が MkDocs でサイトをビルドし、GitHub Pages に自動デプロイ
 
 詳細な運用ルールは [CLAUDE.md](CLAUDE.md) を参照。
+
+## サイト(GitHub Pages)のビルド
+
+`_index.md` という命名やページ間の `.md` 相対リンクをリポジトリ側で変えずにサイト化するため、
+ビルド時に `scripts/build_docs.py` が `.site_src/` を組み立てる(`_index.md` → `index.md` に
+リネームし、リンクを書き換える)。nav は各パートの `_index.md` の「収録ページ」の並び順から生成する。
+
+```bash
+pip install "mkdocs-material==9.*"
+python scripts/build_docs.py     # .site_src/ と mkdocs.gen.yml を生成
+mkdocs serve -f mkdocs.gen.yml   # http://127.0.0.1:8000 でプレビュー
+```
+
+- サイトの設定を変えたいとき → `mkdocs.base.yml`(nav以外の全設定)
+- `mkdocs.gen.yml` は自動生成なので直接編集しない
+- **新しいページは、そのパートの `_index.md` の「収録ページ」に追記しないと nav に載らない**
+  (未掲載のページはビルド時に警告を出し、nav 末尾の「(目次未掲載)」に入る)
