@@ -1,7 +1,7 @@
 ---
 title: "デザイナー・クリエイティブ職における生成AI活用事例"
 part: 14
-chapter: 第14章 デザイナー・クリエイティブ・翻訳
+chapter: 第14章 デザイナー・クリエイティブ
 tags: [デザイナー, UI/UXデザイン, Figma AI, Adobe Firefly, ムードボード, 著作権, ブランド一貫性, デザインレビュー]
 created: 2026-07-17
 updated: 2026-07-17
