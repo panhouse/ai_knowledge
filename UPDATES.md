@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+- [主要AIチャットツールのCanvas/Artifacts機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-canvas-artifacts-comparison.md): ChatGPT Canvas廃止(GPT-5.5でブロック統合)、Claude Artifactsの永続ストレージ・MCP・Live Artifacts、Gemini/Copilot Canvasの最新動向を反映し全面最新化
+
 - [トークンとは何か](topics/part02-llm-basics/what-are-tokens.md): モデルラインナップと料金の節を最新化
 
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Opus 5の登場を反映し、モデルラインナップ・料金・レート制限の節を最新化
