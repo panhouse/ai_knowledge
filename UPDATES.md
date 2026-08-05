@@ -17,6 +17,9 @@
 - 体系変更: [Part 14: 職種別 生成AI活用事例](topics/part15-job-role-cases/_index.md) を新設し、Part 11 第5章「職種別ユースケース」の**24ページを移設**(18章の分類の地図を新設、Part 11 は「職種を問わない手法」に責務を絞る。移設に伴う相対リンク・`part`/`chapter` frontmatter を全ページ追随。エンジニア・開発／コンサルタント・リサーチャー／経営者・管理職は未執筆枠として章のみ用意)
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
+## 2026-08-02
+- [量子化(モデル軽量化)の基本](topics/part08-specialized-ai-tools/quantization-basics.md): 方式比較(AWQ/GPTQ/EXL2/MXFP4)とGGUFのIQ量子化の節を最新化
+
 ## 2026-08-01
 - [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](topics/part06-custom-ai/custom-ai-cross-tool-prompt-injection-defense.md): 各社の防御機能・設定名(Copilot Studio「extended threat protection」GA化・メーカー資格情報の管理、Claude ProjectsのMCPコネクタ組織承認、Googleの多層防御の実際の構成)を最新化
 - [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](topics/part01-ai-basics/recognition-ai-applications.md): YOLO26・Whisper large-v3・時系列基盤モデル(Chronos-2等)を反映して最新化
