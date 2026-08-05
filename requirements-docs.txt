@@ -1,0 +1,3 @@
+# GitHub Pages(MkDocs)のビルド用。ローカルプレビューも同じ依存で行う:
+#   pip install -r requirements-docs.txt
+mkdocs-material==9.*
