@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-02
+- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](topics/part11-business-practice/ai-presentation-and-document-creation.md): ツール横断の対応表・料金を最新化(Claudeのファイル直接生成・Office連携アドイン、ChatGPT for PowerPointの一般提供、Gemini in Google Slidesの編集可能化を反映)
 - [Reranking(再ランク付け)の基本](topics/part07-data-analysis/reranking-basics.md): モデル・料金の節を最新化(Cohere Rerank v4系への移行、Jina Reranker v3、Difyのハイブリッド検索方式)
 - [主要AIチャットツールのWeb検索機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-web-search-comparison.md): Claudeの動的フィルタリング・Copilotの Deep citations とドメイン除外設定・Geminiの料金体系変更などを反映して最新化
 - [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](topics/part04-risk-security/ai-content-detection-and-watermarking-basics.md): C2PA普及状況・SynthIDの拡大(OpenAI画像/音声対応)・EU AI Act第50条(2026年8月2日施行の透明性義務)を反映して最新化
