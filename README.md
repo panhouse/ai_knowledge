@@ -50,7 +50,7 @@ Webサイト版(全文検索つき): <https://panhouse.github.io/ai_knowledge/>
 リネームし、リンクを書き換える)。nav は各パートの `_index.md` の「収録ページ」の並び順から生成する。
 
 ```bash
-pip install "mkdocs-material==9.*"
+pip install -r requirements-docs.txt
 python scripts/build_docs.py     # .site_src/ と mkdocs.gen.yml を生成
 mkdocs serve -f mkdocs.gen.yml   # http://127.0.0.1:8000 でプレビュー
 ```
