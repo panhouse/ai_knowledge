@@ -17,6 +17,9 @@
 - 体系変更: [Part 14: 職種別 生成AI活用事例](topics/part15-job-role-cases/_index.md) を新設し、Part 11 第5章「職種別ユースケース」の**24ページを移設**(18章の分類の地図を新設、Part 11 は「職種を問わない手法」に責務を絞る。移設に伴う相対リンク・`part`/`chapter` frontmatter を全ページ追随。エンジニア・開発／コンサルタント・リサーチャー／経営者・管理職は未執筆枠として章のみ用意)
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
+## 2026-08-04
+- [プロンプトテンプレート化(変数管理・再利用のコツ)](topics/part05-prompt-engineering/prompt-templating.md): ツール横断の対応付けを最新化(ChatGPTカスタム指示の文字数拡張、Claudeカスタムスキル、PromptLayer/LangSmith等のプロンプト管理ツールを追加)
+
 ## 2026-08-03
 - [公共・自治体における生成AI活用事例](topics/part13-industry-cases/public-sector-ai-use-cases.md): 総務省の最新導入率データ・神戸市の事例・国のガイドライン施行日等を最新化・増強
 - [主要AIチャットツールのメモリ・プロジェクト機能比較(Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-memory-and-context-comparison.md): Gemini(欧州展開)・Claude(メモリ表示方式刷新・Reflect追加)・Microsoft Copilot(Notebooks GA・ライセンス緩和)の節を最新化・増強
