@@ -1,7 +1,7 @@
 ---
 title: 生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例
 part: 14
-chapter: 第12章 生産管理・サプライチェーン
+chapter: 第13章 生産管理・サプライチェーン
 tags: [生産管理, SCM, サプライチェーン, 需要予測, 生産計画, Kinaxis, o9 Solutions, 職種別ユースケース]
 created: 2026-07-18
 updated: 2026-07-18

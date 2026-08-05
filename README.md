@@ -27,7 +27,7 @@
 | [Part 11](topics/part11-business-practice/_index.md) | 業務活用・実践 | 導入の設計(コスト管理・予算配分含む)、文章・コミュニケーション、資料作成、リサーチ |
 | [Part 12](topics/part12-ai-trends/_index.md) | AI動向・将来展望 | 技術トレンド、主要プレイヤーの動向、AGIと働き方、日本における動向 |
 | [Part 13](topics/part13-industry-cases/_index.md) | 業種別 生成AI活用事例 | 製造・小売・金融・医療など業種ごとの活用事例(+未分類の受け皿) |
-| [Part 14](topics/part14-job-role-cases/_index.md) | 職種別 生成AI活用事例 | 営業、マーケ・広報、CS、企画・PdM・データ分析、人事・L&D、経理・監査、法務、総務・秘書・購買、情シス・セキュリティ、R&D・QA、生産管理、クリエイティブ・翻訳 |
+| [Part 14](topics/part14-job-role-cases/_index.md) | 職種別 生成AI活用事例 | 営業、マーケ・広報、CS、企画・PdM・データ分析、人事・L&D、経理・監査、法務、総務・秘書・購買、情シス・セキュリティ、**エンジニア・開発**、R&D・QA、生産管理、**デザイナー**・クリエイティブ・翻訳、**コンサル・リサーチャー**、**経営者・管理職** |
 | [Part 15](topics/part15-japan-ai-companies/_index.md) | 国内AI企業マップ | コンサル・SIer系、基盤モデル系、業務ドメイン特化ツール系、ノーコード・エージェント基盤系、研修・人材育成系(+未分類の受け皿) |
 
 ## 仕組み

@@ -1,7 +1,7 @@
 ---
 title: "研究開発(R&D)職における生成AI活用事例"
 part: 14
-chapter: 第11章 研究開発・品質管理
+chapter: 第12章 研究開発・品質管理
 tags: [研究開発, R&D, 文献調査, 特許, 実験計画, Elicit, Consensus, SciSpace, ハルシネーション, 情報漏洩]
 created: 2026-07-07
 updated: 2026-07-07
