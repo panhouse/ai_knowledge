@@ -67,7 +67,7 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 | 重要な判断の裏取りで、複数モデルの見解の一致・不一致まで確認したい(Maxプラン限定) | Model Council |
 | ブラウザ内で複数タブを横断した調べもの・フォーム入力などを自動でやらせたい | Comet(Comet Assistant) |
 
-**Deep Researchについては、ChatGPT・Gemini・Claudeの同種機能との比較を[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)で詳しく整理しているので、そちらを参照。本ページではPerplexity単体の基本機能に絞る。**
+**Deep Researchについては、ChatGPT・Gemini・Claudeの同種機能との比較を[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)で詳しく整理しているので、そちらを参照。本ページではPerplexity単体の基本機能に絞る。**
 
 ### 向かない使い方
 
@@ -157,7 +157,7 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 
 ## 関連トピック
 
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)
 - [Google Geminiの基本](../part03-ai-chat-tools/google-gemini-basics.md)
 - [NotebookLMの基本](notebooklm-basics.md)
 
