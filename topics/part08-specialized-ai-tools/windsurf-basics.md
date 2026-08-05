@@ -4,7 +4,7 @@ part: 8
 chapter: 第2章 コーディング支援AI
 tags: [Windsurf, Devin Desktop, Cascade, コーディング支援AI, AIエディタ, Cognition]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-01
 ---
 
 # Windsurfの基本(コーディング支援AI)
@@ -13,7 +13,7 @@ updated: 2026-07-06
 
 Windsurf(ウィンドサーフ)は、AIによる自律的なコード編集を前提に作られた**スタンドアロンのコードエディタ**である。土台はMicrosoftのVS Code(オープンソースのコードエディタ)を分岐(フォーク)して作られており、GitHub Copilotのような「既存エディタへの後付け拡張機能」ではなく、エディタそのものがAI専用に設計されている点が特徴である。目玉機能は「Cascade(カスケード)」と呼ばれるエージェント機能で、指示を出すとコードベース全体を理解した上で複数ファイルを横断編集し、ターミナルコマンドの実行やエラー修正までを自律的に行う。
 
-まず押さえておくべき最重要事項がある。開発元Cognition(コグニション)社は2026年6月2日、Windsurfを自社の看板エージェント「Devin(デビン)」ブランドに統合し、**製品名を「Devin Desktop」に変更した**。旧Cascadeも後継の「Devin Local」に置き換えられ、旧Cascadeは2026年7月1日に提供終了(EOL)している。つまり本ページ執筆時点(2026年7月)では「Windsurf」という名称自体が過去のものになりつつある。社内でツール選定の相談を受ける立場としては、この名称変更を知らずに古い記事やスクリーンショットを参考にすると混乱するため、本ページでは旧称「Windsurf」で解説しつつ、随所で現在の呼称「Devin Desktop」を併記する。
+まず押さえておくべき最重要事項がある。開発元Cognition(コグニション)社は2026年6月2日、Windsurfを自社の看板エージェント「Devin(デビン)」ブランドに統合し、**製品名を「Devin Desktop」に変更した**。旧Cascadeも後継の「Devin Local」に置き換えられ、旧Cascadeは2026年7月1日に提供終了(EOL)している。本ページ執筆時点(2026年8月)でも改称は撤回・再変更されておらず、「Windsurf」という名称は完全に過去のものになっている。社内でツール選定の相談を受ける立場としては、この名称変更を知らずに古い記事やスクリーンショットを参考にすると混乱するため、本ページでは旧称「Windsurf」で解説しつつ、随所で現在の呼称「Devin Desktop」を併記する。なお開発元Cognitionは2026年5月に10億ドルを調達し評価額約260億ドルに達しており(年間経常収益は約4.92億ドルまで急拡大)、Devin Desktopは資金的に不安定なスタートアップの製品ではなく、Devinブランドを軸に急成長中の企業の主力IDEという位置づけである。
 
 ## 仕組み・背景
 
@@ -36,12 +36,13 @@ Windsurfを開発したCodeium社は2025年、複数の大手から争奪戦の�
 
 ### Cognition傘下での進化とDevin Desktopへの統合(2026年)
 
-Cognitionは買収後、自社のコーディング専用モデル「SWE-1」シリーズを投入し、高速版の「SWE-1.5」「SWE-1.6」をWindsurfに組み込んだ。あわせて、コードベースの構造を図として可視化する「Codemaps(コードマップ)」、大規模コードベースから関連コードを高速検索する「Fast Context」といった独自機能を追加した。
+Cognitionは買収後、自社のコーディング専用モデル「SWE-1」シリーズを投入し、高速版の「SWE-1.5」「SWE-1.6」をWindsurfに組み込んだ。あわせて、コードベースの構造を図として可視化する「Codemaps(コードマップ)」、大規模コードベースから関連コードを高速検索する「Fast Context」といった独自機能を追加した。2026年7月8日にはさらに新しい「SWE-1.7」を投入しており、GPT-5.5に近い性能をより低コストで実現するモデルとして、長時間タスク(デバッグ・機能実装・大規模移行作業など)向けに位置づけられている。
 
 そして2026年6月2日、Cognitionは自動更新を通じてWindsurfを「Devin Desktop」として再出荷した。既存ユーザーの設定・契約プラン・拡張機能・キーバインドはそのまま引き継がれている。主な変更点は以下の通り。
 
-- Cascadeの後継として、Rustで書き直された新しいローカルエージェント「Devin Local」を搭載
+- Cascadeの後継として、Rustで書き直された新しいローカルエージェント「Devin Local」を搭載(旧Cascade比で約30%トークン効率が向上し、複数のサブエージェントを並行して動かせる)
 - ローカルとクラウド上のエージェント作業を一覧管理する「Agent Command Center(カンバン形式の管理画面)」が標準搭載
+- 関連するセッション・PR・ファイルをひとまとめにして複数エージェント間でコンテキストを共有する「Spaces」機能を搭載。案件(機能ブランチ)ごとにSpaceを作れば、新しいセッションを開くたびにコードベースの前提を説明し直す手間が減る
 - Anthropic Claude Agent、OpenAI Codexなど他社エージェントも同じエディタ内で動かせる業界標準プロトコル「ACP(Agent Client Protocol)」に対応
 
 ## 使いどころ・使い分け
@@ -56,16 +57,16 @@ Cognitionは買収後、自社のコーディング専用モデル「SWE-1」シ
 | Cursorを既に契約していて乗り換えを迷っている | 機能・価格帯はほぼ同水準。決定的な差はコードベース理解のアプローチとエコシステム。無料枠で両方試して相性を見るのが早い |
 | ライセンス費用をかけずAIコーディングを試したい | まずはCline(無料・OSS・API従量課金のみ)やCopilotの無料プランを検討する余地もある |
 
-### 料金プラン(2026年7月時点)
+### 料金プラン(2026年8月時点)
 
 Windsurf(Devin Desktop)は2026年3月19日に、それまでの「クレジット消費制」を廃止し、**日次・週次のクォータ(利用上限)制**に移行した。Cascade(現Devin Local)にメッセージを送るたびにクォータが消費される。
 
 | プラン | 月額 | 主な内容 |
 |---|---|---|
 | Free | 0ドル | 軽めの日次・週次クォータ(目安として週2〜3日分程度の利用量)。Tab補完は無制限 |
-| Pro | 20ドル | 標準クォータ(日次・週次でリセット)。SWE-1.6、Claude Sonnet系、GPT-5系、Gemini系など主要モデルを選択可。Tab補完・インライン編集(Command)は無制限 |
-| Teams | 40ドル(1人あたり) | Proの内容に加え、一括請求・利用状況の管理者向け分析・優先サポート |
-| Max | 200ドル | 大容量クォータ。CursorのUltraプランやClaude Codeの上位プランと同格の重量級ユーザー向け |
+| Pro | 20ドル | 標準クォータ(日次・週次でリセット)。SWE-1.7、Claude Sonnet系、GPT-5系、Gemini系など主要モデルを選択可。Tab補完・インライン編集(Command)は無制限 |
+| Teams | 最低80ドル/組織(フルシート1人あたり40ドル追加) | サブスクリプション最低額が80ドルで、フルシートが2人分(80ドル)に満たない差額は従量課金クレジットとして充当される。Proの内容に加え、一括請求・利用状況の管理者向け分析・優先サポート |
+| Max | 200ドル | 大容量クォータ、優先的なモデルアクセス。CursorのUltraプランやClaude Codeの上位プランと同格の重量級ユーザー向け |
 | Enterprise | 個別見積り | SSO・RBAC(権限管理)、ハイブリッド/自社運用、SOC 2・HIPAA・FedRAMP High等の認証、監査ログなど組織向け機能一式 |
 
 料金・クォータの基準は改定が入りやすいため、契約前に必ず公式サイト(windsurf.com、または統合先のdevin.ai)の最新情報を確認すること。
@@ -74,7 +75,7 @@ Windsurf(Devin Desktop)は2026年3月19日に、それまでの「クレジッ�
 
 | ツール | 提供元 | 位置づけ | 特徴 |
 |---|---|---|---|
-| Windsurf(現Devin Desktop) | Cognition | AI専用スタンドアロンエディタ(VS Codeフォーク) | Cascade→Devin Localによる自律編集。自社モデル(SWE-1.6等)、Codemapsによるコードベース可視化。SOC 2/HIPAA/FedRAMP対応で規制業種にも強い |
+| Windsurf(現Devin Desktop) | Cognition | AI専用スタンドアロンエディタ(VS Codeフォーク) | Cascade→Devin Localによる自律編集。自社モデル(SWE-1.7等)、Codemaps・Spacesによるコードベース可視化とマルチエージェント連携。SOC 2/HIPAA/FedRAMP対応で規制業種にも強い |
 | Cursor | Anysphere | AI専用スタンドアロンエディタ(VS Codeフォーク) | 複数ファイル編集(Composer)・専用エージェントワークスペースの完成度が高い。個人開発者からの評価が高い |
 | GitHub Copilot | GitHub(Microsoft) | 既存IDEへの後付け拡張機能 | 40種以上のIDE・エディタに対応。GitHub本体(Issue・PR)との統合が深い |
 | Cline | OSSコミュニティ | VS Code拡張機能(オープンソース・無料) | ツール自体は無料でAPIキーを自分で用意するBYOM方式。コスト・カスタマイズ重視の開発者向け(詳細は別ページ参照) |
@@ -92,7 +93,7 @@ Windsurf/Devin DesktopとCursorはどちらも「AI専用に作られたエデ�
 
 ### 初期設定の場所
 
-- **モデル選択**: Cascadeパネル上部のモデル切り替えメニューから、SWE-1.6・Claude・GPT系・Gemini系などを都度選べる
+- **モデル選択**: Cascadeパネル上部のモデル切り替えメニューから、SWE-1.7・Claude・GPT系・Gemini系などを都度選べる
 - **プロジェクト固有のルール**: プロジェクトのルートフォルダに `.windsurfrules` ファイルを置くと、コーディング規約やスタックの前提知識をAIに常時渡せる(いわゆるカスタム指示)
 - **MCP(外部ツール連携)設定**: Cascadeパネル右上の「MCP」アイコン→「Configure」から設定ファイル(`~/.codeium/windsurf/mcp_config.json`、Windowsは`%USERPROFILE%\.codeium\windsurf\mcp_config.json`)を編集するか、内蔵マーケットプレイスから追加する
 
@@ -126,6 +127,10 @@ Windsurf/Devin DesktopとCursorはどちらも「AI専用に作られたエデ�
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 
 ## 更新履歴
+
+### 2026-08-01: 最新モデル・料金・新機能を反映して最新化
+- **内容**: Devin Desktopへの改称(2026年6月2日)自体に撤回・再変更はないことを確認した上で、新モデル「SWE-1.7」(2026年7月8日投入、GPT-5.5相当の性能を低コストで実現)への言及を追加。Teamsプランの料金詳細(月額最低80ドル+フルシート1人あたり40ドル)を修正・明確化。エージェント間でコンテキストを共有する新機能「Spaces」を仕組み・背景の節に追記。Cognitionの資金調達状況(2026年5月に10億ドル調達・評価額約260億ドル・ARR約4.92億ドル)を追加し、企業としての存続性・信頼性の判断材料を補強した
+- **出典**: [Windsurf is now Devin Desktop - Devin(Cognition公式blog)](https://devin.ai/blog/windsurf-is-now-devin-desktop/), [Introducing SWE 1.7: Frontier Intelligence at a Fraction of the Cost - Cognition](https://cognition.com/blog/swe-1-7), [Introducing Devin Desktop - Cognition](https://cognition.com/blog/introducing-devin-desktop), [Self-serve plans - Devin Docs](https://docs.devin.ai/admin/billing/self-serve), [Cognition raises $1B at $26B valuation for AI coding agent - TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/)
 
 ### 2026-07-06: 初版執筆
 - **内容**: AI専用エディタWindsurfの基本機能(Cascade)、OpenAI買収交渉決裂→Google DeepMindによる人材・ライセンス取得→Cognitionによる会社買収という経緯、2026年6月のDevin Desktopへの改称とCascade終了(2026年7月1日EOL)、2026年3月のクォータ制移行後の最新料金プラン、Cursor/GitHub Copilot/Clineとの比較を含む初版を執筆
