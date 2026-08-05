@@ -25,6 +25,7 @@
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): ツール横断の対応付けを最新化(Anthropic Console旧Workbench廃止予定・OpenAI Evals移行導線・promptfoo/LangSmith料金・Dify実行結果自動保存を反映)
 
 ## 2026-08-05
+- 修正: 60本の最新化PRのマージに伴い旧パート名のリンクが混入していた2ファイルを修正(`../part12-ai-trends/ai-agent-basics.md` → `../part11-ai-agents/ai-agent-basics.md`)
 - 修正: 企業マップ4ページの frontmatter で `created` / `updated` が引用符付き(`"2026-07-26"`)になっていたのを引用符なしに正規化。あわせて CLAUDE.md に日付書式のルールを明記(7日ルールの対象判定がこの値を読むため)
 - 体系変更: [Part 11: AIエージェント](topics/part11-ai-agents/_index.md) を新設(6章構成)。現 Part 11〜15 を **12〜16 に繰り下げ**(ディレクトリ名・`part` frontmatter・ページ間相対リンク181件・全体マップを追随)
 - [AIエージェントとは何か](topics/part11-ai-agents/ai-agent-basics.md): Part 13(AI動向)第1章から Part 11 第1章へ移設(参照19ファイルのリンクを追随)

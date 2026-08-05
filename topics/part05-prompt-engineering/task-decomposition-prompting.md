@@ -136,7 +136,7 @@ CoTは「1回の応答の中でどう考えさせるか」というミクロな�
 - [Difyワークフローの基本](../part10-nocode-lowcode/dify-workflow-basics.md) — 繰り返し使う工程をノードとして自動化したい場合
 - [n8nの基本](../part10-nocode-lowcode/n8n-basics.md) — 他システムとの連携を挟みながら工程を自動化したい場合
 - [ChatGPTのエージェント機能(旧ChatGPT Agent→ChatGPT Work)とスケジュールタスク(Tasks)](../part03-ai-chat-tools/chatgpt-agent-mode-feature.md) — AIが自動で計画(工程分け)を提示し、承認してから長時間実行させる機能の詳細
-- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md) — 自律型AIエージェント全般の仕組みと分解・計画立案の位置づけ
+- [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md) — 自律型AIエージェント全般の仕組みと分解・計画立案の位置づけ
 
 ## 更新履歴
 
