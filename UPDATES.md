@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-07-31
+- [Clineの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/cline-basics.md): Cline CLI 2.0・ACPによるエディタ横断対応・対応モデル拡充の節を最新化・増強
 - [生成AI時代の働き方とスキルの変化](topics/part12-ai-trends/ai-era-work-and-skills.md): AI Divideの実態(総務省情報通信白書・帝国データバンク調査)とプロンプトエンジニアリングに続く「コンテキストエンジニアリング」の台頭を反映して最新化
 - [Embedding(埋め込み)とは何か](topics/part07-data-analysis/embedding-basics.md): 主要モデル比較表とVoyage AIの制約解説を最新化・増強
 - [GAS(Google Apps Script)からのAI API連携](topics/part09-api-development/gas-ai-api-integration.md): UrlFetchApp・トリガーの実行上限の具体的な数値、OpenAI/Geminiのモデル世代交代を反映して最新化・増強
