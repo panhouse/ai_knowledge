@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-05
+- 修正: 企業マップ4ページの frontmatter で `created` / `updated` が引用符付き(`"2026-07-26"`)になっていたのを引用符なしに正規化。あわせて CLAUDE.md に日付書式のルールを明記(7日ルールの対象判定がこの値を読むため)
 - 体系変更: [Part 11: AIエージェント](topics/part11-ai-agents/_index.md) を新設(6章構成)。現 Part 11〜15 を **12〜16 に繰り下げ**(ディレクトリ名・`part` frontmatter・ページ間相対リンク181件・全体マップを追随)
 - [AIエージェントとは何か](topics/part11-ai-agents/ai-agent-basics.md): Part 13(AI動向)第1章から Part 11 第1章へ移設(参照19ファイルのリンクを追随)
 - [Claude Codeの基本](topics/part11-ai-agents/claude-code-basics.md): 新規執筆(委任型コーディングエージェントの位置づけ、動作する場所6種、サブエージェント/ルーティン/MCP、コピペ用 CLAUDE.md、常時許可してよい操作の権限表、プラン別料金、レビュー3点確認)

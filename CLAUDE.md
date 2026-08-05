@@ -262,6 +262,9 @@ routine/YYYY-MM-DD/partNN-<ページのslug>
 
 - ファイル名は英語ケバブケース(例: `chatgpt-model-comparison.md`、`function-calling.md`)
 - 全トピックページに YAML frontmatter を付ける: `title` / `part` / `chapter` / `tags` / `created` / `updated`
+  - `created` / `updated` は **引用符なしの `YYYY-MM-DD`** で書く(例: `updated: 2026-08-05`)。
+    最新化の対象判定(7日ルール)がこの値を読むため、`"2026-08-05"` のように引用符を付けない
+  - `part` は数値、`chapter` はそのパートの `_index.md` の章見出しと**完全一致**させる
 - 本文は日本語で書く。専門用語は原語のままでよい(初出で一言説明を付ける)
 - **出典URLを必ず残す**。本文に書いた事実(価格・仕様・制限値など)の根拠は、
   更新履歴の該当項目に `[媒体名](URL)` の形でリンクする
