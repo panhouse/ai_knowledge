@@ -4,7 +4,7 @@ part: 9
 chapter: 第4章 MCP・エージェント連携
 tags: [A2A, Agent2Agent, MCP, AIエージェント, マルチエージェント]
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-01
 ---
 
 # A2A(Agent2Agent)プロトコルの基本
@@ -47,8 +47,9 @@ A2Aでは、依頼した仕事を`Task(タスク)`という単位で管理する
 - 2026年3月: v1.0(安定版)をリリース。Signed Agent Cards、支払いに関する拡張仕様「AP2(Agent Payments Protocol)」などが追加
 - 2026年4月9日: 発足1周年時点で、対応組織150社超、GitHubスター22,000超、Python・JavaScript・Java・Go・.NETの5言語SDKが揃い、Microsoft Copilot Studio・Azure AI Foundry・Amazon Bedrock AgentCoreでの正式サポートを発表
 - 2026年4月22日: Google Cloud Next 2026にてv1.2を発表
+- 2026年7月23日時点: GitHubスターは25,000超まで増加(4月時点の22,000超からさらに拡大)。一方でLinux Foundationのプロジェクト分析(LFX Insights)では、コード貢献の51%超が依然として単一組織(Google)に集中しているとのデータもあり、「150社超が支援表明」という数字ほどには開発の担い手が分散していない実態も指摘されている
 
-なお、MCPは2025年12月にAnthropicからLinux Foundation傘下の別組織「Agentic AI Foundation(AAIF)」に寄贈されている。A2AとMCPは同じLinux Foundationの傘の下にはあるが、**別々のプロジェクトとして並走して開発が進んでいる**規格であり、統合された単一の規格ではない点に注意したい。
+なお、MCPは2025年12月9日にAnthropicからLinux Foundation傘下の別組織「Agentic AI Foundation(AAIF)」に寄贈されている(共同設立はAnthropic・OpenAI・Block)。AAIFは2026年2月時点で146会員、4月以降は170会員超(JPMorgan Chase・American Express・Autodeskなど大手企業も参加)に拡大しており、A2A側の「Agent2Agentプロジェクト」と並んで多ベンダー・ガバナンス体制を強化している。さらに2026年7月28日にはMCP自体の仕様も新版(2026-07-28版)にアップデートされ、公式ブログによれば対応SDK(TypeScript・Python)の累計ダウンロード数は合計10億件を突破、月間ダウンロードもTier1 SDK合計で5億件規模に達したと発表されている。A2AとMCPは同じLinux Foundationの傘の下にはあるが、**別々のプロジェクトとして並走して開発が進んでいる**規格であり、統合された単一の規格ではない点、また普及の勢いには依然として差がある点に注意したい。
 
 ## 使いどころ・使い分け
 
@@ -61,7 +62,7 @@ MCPとA2Aは役割が異なるため、どちらか一方を選ぶというよ�
 | 主な情報単位 | Tools(操作)・Resources(データ)・Prompts(定型指示) | Agent Card(能力の公開)・Task(依頼した仕事の単位) |
 | 想定する相手の性質 | 受け身の道具・データソース | 自律的に判断し、追加確認や成果物の返送までこなす別のエージェント |
 | 決める人 | Agentic AI Foundation(旧Anthropic主導、2025年12月移管) | Linux Foundation傘下のAgent2Agentプロジェクト(旧Google主導、2025年6月移管) |
-| 2026年7月時点の普及度 | 業界標準として定着しつつある(登録サーバー数万件規模) | 大手ベンダーの対応は進むが、MCPほど広くは普及していない発展途上の規格 |
+| 2026年7月時点の普及度 | 業界標準として定着(SDK累計ダウンロード10億件突破、月間5億件規模、登録サーバー1万件超) | 対応組織150社超・GitHubスター25,000超と裾野は拡大中だが、「支援表明」と「本番導入の厚み」には差があるとの指摘もあり、MCPほど広くは普及していない発展途上の規格 |
 
 判断基準はシンプルで、「相手が受け身の道具・データか、それとも自律的に動く別のエージェントか」で選ぶ。実際の構築では、1つのエージェントの中でMCPを使って自社ツールに接続しつつ、そのエージェント自体をA2A経由で他部門・他社のエージェントから呼び出せるようにする、という**二層構成**が2026年時点でのエンタープライズ設計の定番になりつつある。
 
@@ -72,9 +73,10 @@ MCPとA2Aは役割が異なるため、どちらか一方を選ぶというよ�
 ### 2026年7月時点の対応状況
 
 - **クラウド・プラットフォーム**: Microsoft Copilot Studio・Azure AI Foundry、Amazon Bedrock AgentCoreがA2Aを正式サポート(2026年4月時点でGA)。Google CloudのAgent Engine・Agentspace等もA2Aに対応
-- **対応を表明・参加する企業**: Google、Microsoft、AWS、Salesforce、SAP、ServiceNow、Cisco、Workday、IBMなど150社超(2026年4月時点)
-- **開発言語SDK**: Python、JavaScript、Java、Go、.NETの5言語で公式SDKが提供されている
+- **対応を表明・参加する企業**: Google、Microsoft、AWS、Salesforce、SAP、ServiceNow、Cisco、Workday、IBMなど150社超(2026年4月時点、7月時点でも公式に更新された組織数の発表は確認できず横ばい)
+- **開発言語SDK**: Python、JavaScript、Java、Go、.NETの5言語で公式SDKが提供されている。GitHubスターは2026年7月23日時点で25,000超
 - **業種別の活用例として紹介されているもの**: サプライチェーン(発注エージェント同士のやり取り)、金融・保険(審査・見積もりの自動化)、IT運用(複数の運用エージェントの連携)など
+- **決済領域への広がり**: A2Aの拡張仕様であるAP2(Agent Payments Protocol)は、2026年5月26日にFIDO Allianceへ寄贈され、MastercardのVerifiable Intentと合わせて業界横断の標準化が進んでいる。PayPal×Google Cloud、Mastercard Agent Payなど決済分野での実導入事例も公表されている
 
 ### エージェント連携を検討する際の確認ポイント(非エンジニア向け)
 
@@ -92,8 +94,9 @@ A2A自体はMCPと同様にオープンな規格であり、規格の利用そ�
 ## 注意点・よくある誤解
 
 - **「MCPとA2Aはどちらか1つを選ぶもの」という誤解**: 両者は担っている層が違う(道具への接続 vs エージェント同士の接続)ため、実務では併用が前提になる。どちらかで置き換えられるものではない
-- **普及度はMCPほど高くない**: 2026年7月時点で対応ベンダー数・GitHubスター数は伸びているものの、MCPに比べると導入事例・対応ツールの層はまだ薄い。「A2Aさえ入れれば他社のどんなエージェントとも即連携できる」というのは楽観的すぎる期待で、実際には接続したい相手側もA2Aに対応している必要がある
-- **実装・運用コストへの懐疑的な見方もある**: MCPが提供する機能(長時間タスクの管理、状態を持ったやり取りなど)とA2Aが目指す機能に重なりがあるとの指摘があり、「MCPに加えてA2A用の通信層まで二重に管理するコストに見合うか」を疑問視する声も出ている。導入前に自社のユースケースで本当に組織横断の対等なエージェント連携が必要かを見極めることが重要
+- **普及度はMCPほど高くない**: 2026年7月時点でMCPはSDK累計ダウンロード10億件超、対するA2Aは対応組織150社超・GitHubスター25,000超と、桁が2〜3桁違う規模差がある。「A2Aさえ入れれば他社のどんなエージェントとも即連携できる」というのは楽観的すぎる期待で、実際には接続したい相手側もA2Aに対応している必要がある
+- **「支援表明」と「本番導入」を混同しない**: A2Aの「対応組織150社超」は製品資料やプレスリリースでの支援表明ベースの数字であり、実際に本番環境で稼働しているエージェント間連携の件数を直接示すものではないと指摘する識者もいる。デモの多くは「3つのエージェントで、関数呼び出し1回分の仕事をしている」だけという批判もあり、自社のユースケースが本当にA2Aの対等なエージェント間連携を必要とする規模・複雑さかを見極めることが重要
+- **実装・運用コストへの懐疑的な見方もある**: MCPが提供する機能(長時間タスクの管理、状態を持ったやり取りなど)とA2Aが目指す機能に重なりがあるとの指摘があり、「MCPに加えてA2A用の通信層まで二重に管理するコストに見合うか」を疑問視する声も出ている
 - **ガバナンス移管とAnthropic側のMCPの移管を混同しない**: A2AはGoogle主導からLinux Foundation傘下の「Agent2Agentプロジェクト」(2025年6月移管)、MCPはAnthropic主導からLinux Foundation傘下の別組織「Agentic AI Foundation」(2025年12月移管)へと、それぞれ別の経緯・別の組織に移管されている。「同じ組織が両方を管理している」わけではない
 - **Agent Card=安全性の保証ではない**: 署名付きAgent Card(Signed Agent Cards)は「本物の提供元が発行したカードか」を検証する仕組みであり、そのエージェント自体の振る舞いが安全であることまでは保証しない。連携するエージェントに与える権限(取引の実行範囲、参照できるデータの範囲など)は別途、自社の運用ルールとして設計する必要がある
 
@@ -105,9 +108,13 @@ A2A自体はMCPと同様にオープンな規格であり、規格の利用そ�
 
 - [MCP(Model Context Protocol)の基本](mcp-basics.md)
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)
-- [AIエージェントの基本](../part12-ai-trends/ai-agent-basics.md)
+- [AIエージェントの基本](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
+
+### 2026-08-01: 2026年7月時点の普及状況とMCPとの規模比較を最新化
+- **内容**: GitHubスターを22,000超→25,000超(2026年7月23日時点)に更新し、コード貢献が単一組織に集中している(LFX Insights)というガバナンス上の留意点を追加。MCP側の統治団体AAIF(Agentic AI Foundation)の会員数拡大(2026年2月時点146会員→4月以降170会員超)と、2026年7月28日のMCP仕様更新・SDK累計ダウンロード10億件突破という最新実績を反映し、比較表・注意点の普及度記述をより具体的な数字ベースに更新。A2Aの拡張仕様AP2がFIDO Allianceに寄贈された(2026年5月)ことを追記し、「支援表明」と「本番導入の厚み」は別物という批判的な視点を注意点に追加
+- **出典**: [Model Context Protocol Blog: The 2026-07-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/), [Linux Foundation: A2A Protocol Surpasses 150 Organizations](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year), [LFX Insights: Agent2Agent (A2A) Protocol](https://insights.linuxfoundation.org/project/agent2agent-a2a-protocol), [Linux Foundation: Agentic AI Foundation Welcomes 97 New Members](https://www.linuxfoundation.org/press/agentic-ai-foundation-welcomes-97-new-members), [Techzine: Agentic AI Foundation, the home of MCP, grows to 146 members](https://www.techzine.eu/news/applications/139057/agentic-ai-foundation-the-home-of-mcp-grows-to-146-members/), [Rost Glukhov: Google A2A Protocol in 2026: Adoption, Hype, and Reality](https://www.glukhov.org/ai-systems/comparisons/a2a-protocol-2026-adoption/), [Google Cloud Blog: Announcing Agent Payments Protocol (AP2)](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol)
 
 ### 2026-07-07: 初版執筆
 - **内容**: A2A(Agent2Agent Protocol)の定義、Googleによる2025年4月の発表からLinux Foundationへの移管(2025年6月)、Agent Cardとタスクのライフサイクル(submitted〜completed等)という仕組みの概要、MCPとの役割分担(縦方向のツール接続 vs 横方向のエージェント間連携)を軸にした比較表、2026年4月時点の対応ベンダー・GitHubスター数などの普及状況、A2Aの普及がMCPほど進んでいない現状と実装コストへの懐疑的な見方を整理
