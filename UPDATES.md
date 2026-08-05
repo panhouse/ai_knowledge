@@ -17,6 +17,9 @@
 - 体系変更: [Part 14: 職種別 生成AI活用事例](topics/part15-job-role-cases/_index.md) を新設し、Part 11 第5章「職種別ユースケース」の**24ページを移設**(18章の分類の地図を新設、Part 11 は「職種を問わない手法」に責務を絞る。移設に伴う相対リンク・`part`/`chapter` frontmatter を全ページ追随。エンジニア・開発／コンサルタント・リサーチャー／経営者・管理職は未執筆枠として章のみ用意)
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
+## 2026-08-01
+- [Windsurfの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/windsurf-basics.md): 新モデルSWE-1.7・新機能Spaces・Teams料金の詳細・Cognitionの資金調達状況を反映して最新化
+
 ## 2026-07-31
 - [小売・流通・ECにおける生成AI活用事例](topics/part13-industry-cases/retail-ai-use-cases.md): 需要予測(トライアルAI発注最適化)・問い合わせ対応(松屋フーズ・セブン&アイ)の節を最新化・増強
 - [Clineの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/cline-basics.md): Cline CLI 2.0・ACPによるエディタ横断対応・対応モデル拡充の節を最新化・増強
