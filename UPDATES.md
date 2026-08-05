@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+- [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): エージェント機能(Dify Agent)とMCPサーバー機能の新機能、Cloud版プラン詳細を最新化・増強
+
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): ツール横断の対応付けを最新化(Anthropic Console旧Workbench廃止予定・OpenAI Evals移行導線・promptfoo/LangSmith料金・Dify実行結果自動保存を反映)
 
 ## 2026-08-05
