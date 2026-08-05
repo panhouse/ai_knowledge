@@ -4,20 +4,24 @@ part: 10
 chapter: 第2章 Difyワークフロー
 tags: [Dify, API連携, Webhook, 外部システム連携, GAS, チャットボット埋め込み]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-02
 ---
 
 # DifyのAPI連携(作ったアプリを外部システムから呼び出す)
 
 ## これは何か
 
-Dify上でチャットボット・エージェント・ワークフローを作って「公開する」を押すと、そのアプリには自動的にAPIエンドポイント(外部プログラムがアクセスするための接続先URL)とAPIキー(呼び出し元を認証するための鍵となる文字列)が発行される。これにより、Difyの画面を開かなくても、自社サイトのチャットウィジェット・Slack・GAS(Google Apps Script)・社内システムなど、Dify以外のあらゆる場所からそのアプリを部品として呼び出せるようになる。「Dify内で完結する業務」から「Difyで作った処理を他システムに組み込む」への橋渡しをするのがAPI連携である。
+Dify上でチャットボット・エージェント・ワークフローを作って「公開する」を押すと、そのアプリには自動的にAPIエンドポイント(外部プログラムがアクセスするための接続先URL)とAPIキー(呼び出し元を認証するための鍵となる文字列)が発行される。これにより、Difyの画面を開かなくても、自社サイトのチャットウィジェット・Slack・GAS(Google Apps Script)・Make・n8nなどの自動化ツール・社内システムなど、Dify以外のあらゆる場所からそのアプリを部品として呼び出せるようになる。「Dify内で完結する業務」から「Difyで作った処理を他システムに組み込む」への橋渡しをするのがAPI連携である。
+
+2025年後半以降のDify(v1.10系)では、外部システムがDifyのAPIを「呼びに行く」従来の方式に加えて、外部システムからのHTTPリクエストを受け取ってワークフローを起動する「Webhookトリガー」がワークフローのノードとして標準搭載された。呼び出す/呼ばれるの両方向を押さえておくと、他システムとの連携パターンの選択肢が広がる。
 
 ## 仕組み・背景
 
 ### APIキー発行の画面
 
-APIキーはアプリ単位で発行する。Difyの「スタジオ」でアプリを開き、右上の「公開する」ボタンの隣にある「APIアクセス(Access API)」タブ(旧UIでは「アクセスAPI」表記)を開くと、その中に「APIキー」ボタンがあり、「新しいシークレットキーを作成」で発行できる。発行されたキーは`app-`から始まる文字列で、以後すべてのAPIリクエストのAuthorizationヘッダーに`Bearer {APIキー}`の形式で付与する。
+APIキーはアプリ単位で発行する。Difyの「スタジオ」でアプリを開くと、画面左側のメニュー(または右上の「公開する」ボタン付近のタブ、UIバージョンにより位置が異なる)に「APIアクセス(API Access)」という項目があり、これを開くと「APIキー」セクションがある。「新しいシークレットキーを作成」をクリックすると発行できる。発行されたキーは`app-`から始まる文字列で、以後すべてのAPIリクエストのAuthorizationヘッダーに`Bearer {APIキー}`の形式で付与する。APIキーはアプリ単位の紐付けであり、あるアプリ用に発行したキーは別のアプリでは使えない点に注意する。
+
+同じ「APIアクセス」画面には、エンドポイント一覧・パラメータ説明・言語別サンプルコードを含むAPIリファレンスが表示されるので、実装時はそこを一次情報として参照する。
 
 ### エンドポイントの種類(アプリタイプで変わる)
 
@@ -43,6 +47,22 @@ Difyはアプリのタイプによって呼び出すエンドポイントが異�
 
 `blocking`モードのレスポンスにはJSONで`answer`(回答文)や`conversation_id`などが返る。ワークフロー実行(`/v1/workflows/run`)では`outputs`にワークフローの終了ノードで定義した出力が入る。
 
+### 公式SDK(クライアントライブラリ)
+
+curlで直接叩く以外に、開発元langgeniusが公式に配布しているSDKもある。認証ヘッダーの組み立てやストリーミング(SSE)受信の実装を自分で書かずに済むため、アプリ開発に組み込む場合はSDKの利用を検討するとよい。
+
+| 言語 | パッケージ | 導入コマンド |
+|---|---|---|
+| Node.js | `dify-client` | `npm install dify-client` |
+| Python | `dify-client`(PyPI)/ `dify_client` | `pip install dify-client` |
+| Go・Ruby | コミュニティ/公式リポジトリで別途配布 | 各リポジトリのREADME参照 |
+
+いずれもDify本体または`langgenius`名義のGitHubリポジトリで管理されている。バージョンによって対応APIの網羅度が異なるため、導入前にREADMEで対応エンドポイントを確認する。
+
+### Webhookトリガー(外部システム→Difyを起動する)
+
+「APIで呼び出す」の逆方向として、ワークフローのキャンバスに「Webhookトリガー」ノードを置くと、ノードごとに固有のHTTP URLが発行される。外部システムがそのURLにリクエストを送るとワークフローが起動し、リクエストのクエリパラメータ・ヘッダー・ボディの内容がそのままワークフロー内の変数として使える。スプレッドシートの拡張機能・外部SaaSのWebhook通知・社内システムのイベント発火など、「Dify側から定期的に見に行く」のではなく「何かが起きた瞬間にDifyを動かしたい」場合に、HTTPリクエストノードを使う回りくどい構成をとらずに済む。
+
 ## 使いどころ・使い分け
 
 ### Dify画面内で完結させる vs API連携する
@@ -54,15 +74,19 @@ Difyはアプリのタイプによって呼び出すエンドポイントが異�
 | 自社サイトのデザインに完全に合わせたUIにしたい、ログイン中のユーザー情報と連動させたい | API連携(`chat-messages`をバックエンド経由で呼び出し、フロントは自社実装) |
 | SlackやTeamsなどのチャットツールから呼び出したい | API連携(Slackの Bot・ワークフロー機能からDifyのAPIをHTTPで叩く) |
 | GASでスプレッドシートやGmailと組み合わせ、定期実行・トリガー実行したい | API連携(後述のGAS連携例を参照) |
+| 外部SaaS側のイベント(フォーム送信・レコード追加など)が起きた瞬間にDifyを動かしたい | Webhookトリガー(Difyがリクエストを受け取る側になる、上記参照) |
 | 社内の別システム(基幹システム・CRM等)からバッチ的に呼び出したい | API連携(`workflows/run`が本命) |
 
-### DifyのAPI連携 と n8n/Difyワークフロー内連携との違い
+### DifyのAPI連携 と n8n/Make/Zapier/Difyワークフロー内連携との違い
 
 似た言葉が並ぶため混同しやすいが、「誰が主導権を持つか」で整理すると分かりやすい。
 
 - **DifyのAPI連携(本ページの内容)**: 外部システム側が主導権を持ち、必要なタイミングでDifyのアプリを「関数」のように呼び出す。呼び出し元は自社サイト・Slack・GAS・社内システムなど何でもよい
 - **Difyワークフロー内の「HTTPリクエスト」ノード**([Difyワークフローの主要ノードと組み立て方](./dify-workflow-nodes.md)参照): Dify側が主導権を持ち、ワークフローの処理の途中で外部のAPIを呼びに行く。方向が逆(Difyから外へ)である点に注意
-- **n8n経由の連携**([n8nの基本](./n8n-basics.md)参照): n8nのHTTP RequestノードからDifyのAPIを呼ぶ、あるいは逆にDifyのHTTPリクエストノードからn8nのWebhookを呼ぶ、双方向の組み合わせが可能。多数のSaaSをまたぐ複雑な条件分岐や、Difyの標準ツールにない連携が必要な場合はn8nを間に挟む構成が有効
+- **Webhookトリガー(本ページの仕組み・背景を参照)**: 外部システムがDifyに向けてリクエストを送り、Difyのワークフローを起動する。「呼び出す」ではなく「呼ばれる」側になる点がAPI連携と対称的
+- **n8n経由の連携**([n8nの基本](./n8n-basics.md)参照): n8nのHTTP RequestノードからDifyのAPIを呼ぶ、あるいは逆にDifyのHTTPリクエストノード・Webhookトリガーからn8nのWebhookを呼ぶ、双方向の組み合わせが可能。多数のSaaSをまたぐ複雑な条件分岐や、Difyの標準ツールにない連携が必要な場合はn8nを間に挟む構成が有効
+- **Make経由の連携**([Makeの基本](./make-basics.md)参照): MakeにはDify専用の公式アプリ(モジュール)があり、「ワークフローを実行する」「任意のAPIコールを行う」といったモジュールをシナリオの中にドラッグ&ドロップで組み込める。汎用のHTTPモジュールで自前実装するより設定が速い
+- **Zapier経由の連携**: DifyにZapier専用の公式アプリは(2026年8月時点で)なく、ZapierのWebhook(汎用HTTP)アクションからDifyのAPIを呼ぶか、DifyのMCP(Model Context Protocol、AIがツールを呼び出すための標準規格。詳細は[MCP(Model Context Protocol)の基本](../part09-api-development/mcp-basics.md)参照)対応プラグイン経由でZapier MCPのツール群をDifyのエージェントから利用する構成になる
 
 ## 実務での使い方
 
@@ -70,8 +94,8 @@ Difyはアプリのタイプによって呼び出すエンドポイントが異�
 
 1. Difyの「スタジオ」で対象のアプリを開く
 2. アプリが未公開の場合は、まず画面右上の「公開する」をクリックして最新版を公開する
-3. 画面右上の「公開する」ボタンの右にある「APIアクセス」タブ(またはその中のメニュー)を開く
-4. 「APIキー」ボタンをクリックし、「新しいシークレットキーを作成」で発行する。発行直後にだけ全文が表示されるため、その場でパスワード管理ツール等に控える
+3. 画面左のメニュー(またはアプリ画面上部)にある「APIアクセス」を開く
+4. 「APIキー」セクションの「新しいシークレットキーを作成」をクリックして発行する。発行直後にだけ全文が表示されるため、その場でパスワード管理ツール等に控える
 5. 同じ画面にAPIリファレンス(エンドポイント一覧・パラメータ説明・言語別のサンプルコード)も表示されるので、実装時に参照する
 
 ### 手順2: チャットメッセージを送信する(curl例、コピペ可)
@@ -99,7 +123,7 @@ curl -X POST 'https://api.dify.ai/v1/chat-messages' \
 }
 ```
 
-2回目以降の発言では、レスポンスに含まれた`conversation_id`を次のリクエストにそのまま渡すことで、会話の文脈を保った状態でやり取りを続けられる。ワークフローを呼ぶ場合は`https://api.dify.ai/v1/workflows/run`に対して`inputs`(ワークフローの開始ノードで定義した入力変数)と`response_mode`、`user`を送る点は共通だが、`query`や`conversation_id`は使わない。
+2回目以降の発言では、レスポンスに含まれた`conversation_id`を次のリクエストにそのまま渡すことで、会話の文脈を保った状態でやり取りを続けられる。ワークフローを呼ぶ場合は`https://api.dify.ai/v1/workflows/run`に対して`inputs`(ワークフローの開始ノードで定義した入力変数)と`response_mode`、`user`を送る点は共通だが、`query`や`conversation_id`は使わない(自己ホスト版を使っている場合はホスト名を`https://api.dify.ai`から自社のドメインに読み替える)。
 
 ### 手順3: GASと組み合わせて定期実行する
 
@@ -132,6 +156,11 @@ function callDifyWorkflow(inquiryText) {
 
 これに時間主導型トリガー(GASの「トリガー」画面から「時間主導型」を選択して設定)を組み合わせれば、「1時間おきにスプレッドシートの未処理行をDifyのワークフローに渡し、回答案を自動生成する」といった定期バッチ処理が、追加のサーバーなしで組める。GAS側の`OPENAI_API_KEY`と同じ要領で、スクリプトプロパティに`DIFY_API_KEY`を登録してから使う。
 
+### 手順4: Make・n8nから呼び出す(自動化ツール経由)
+
+- **Make**: シナリオ編集画面で「モジュールを追加」→「Dify」を検索すると公式アプリが見つかる。「Execute a workflow」(ワークフローを実行)モジュールを使えば、APIキーの接続設定(Connection)を1回作るだけで、以降はGUI上でアプリ選択・`inputs`のマッピングができ、curlやコードを書かずに済む。より自由度が必要な場合は同アプリの「Make an API call」(汎用APIコール)モジュールで任意のエンドポイントを叩ける
+- **n8n**: 標準の「HTTP Request」ノードを使い、Method=POST・URL=`https://api.dify.ai/v1/chat-messages`(または`workflows/run`)・HeaderにAuthorizationを設定すればよい。[n8nの基本](./n8n-basics.md)で解説した認証情報(Credentials)の仕組みにAPIキーを登録しておくと、複数のワークフローで使い回せる
+
 ### 主要な使い方の対応付け
 
 | やりたいこと | 使うエンドポイント/機能 |
@@ -140,13 +169,17 @@ function callDifyWorkflow(inquiryText) {
 | 自社サイトに完全カスタムのチャットUIを作りたい | `POST /v1/chat-messages`をバックエンド経由で呼ぶ |
 | Slackから質問できるようにしたい | Slack Bot側からDifyの`chat-messages`をHTTPで呼び出す(またはDify Marketplaceの既製Slack連携プラグインを利用) |
 | GASで定期バッチ処理したい | `POST /v1/workflows/run`を`UrlFetchApp`から呼ぶ(上記コード例) |
+| Make・n8nからノーコードで呼び出したい | Makeの公式Difyアプリ、またはn8nのHTTP Requestノード |
+| 外部SaaS側のイベントでDifyを起動したい | ワークフローの「Webhookトリガー」ノードで発行されるURLに向けて外部システムからPOSTする |
 | 実行に時間がかかる重いワークフローを呼びたい | `workflows/run`実行後、レスポンスの`workflow_run_id`で`GET /v1/workflows/run/<workflow_run_id>`をポーリング |
 
 ## 注意点・よくある誤解
 
 - **APIキーの漏洩リスク**: APIキーはアプリ全体への実行権限を持つため、フロントエンドのJavaScriptに直接書き込むと誰でも閲覧・盗用できてしまう。必ずバックエンド(サーバー側やGASのようなサーバーレス実行環境)で保持し、フロントエンドからは自社の別APIを経由して呼び出す構成にする。GAS連携では[GAS(Google Apps Script)からのAI API連携](../part09-api-development/gas-ai-api-integration.md)で解説した`PropertiesService`(スクリプトプロパティ)への保存が有効
 - **キーが流出した場合はAPIアクセス画面から即座に無効化する**: 「APIキー」一覧から該当のキーを削除し、新しいキーを発行して呼び出し元をすべて更新する。定期的なキーのローテーション(発行し直し)も検討する
-- **料金プランによる呼び出し回数・レート制限**: Sandbox(無料)プランはAPIレート制限が厳しく設定されており、業務利用では[Difyとは何か](./dify-basics.md)で触れたProfessional以上のプランへの移行が前提になることが多い。またナレッジベースを検索するAPI呼び出しには別枠のレート制限(ワークスペース単位で1分あたりの操作数上限)があり、プランが上がるほど上限が緩和される。API呼び出しが集中する用途(GASでの一括処理など)では、事前に想定呼び出し回数がプランの上限に収まるか確認しておく
+- **料金プランはメッセージクレジット制**: Dify Cloudの料金は2026年8月時点でSandbox(無料)/Professional(月59ドル、年払いなら590ドル)/Team(月159ドル、年払いなら1,590ドル)/Enterprise(個別見積り)の4段階。課金の基本単位は「メッセージクレジット」(チャットの1回答・エージェントの1ステップ・ワークフロー内のモデル呼び出し1回などを1クレジットとしてカウントする消費枠)で、Sandboxは登録時に200クレジットのみ・Professionalは月5,000クレジット・Teamは月10,000クレジットが上限になる。クレジットを使い切ると追加購入または上位プランへの移行が必要になるため、GASでの一括処理などクレジット消費が急に増える用途では事前に想定回数を見積もっておく
+- **APIの純粋なレート制限(呼び出し回数/月)はSandboxのみ**: Sandboxプランは月5,000回のAPI呼び出し上限があるが、Professional以上ではこのAPI呼び出し自体の回数上限は撤廃される(クレジット消費の上限が実質的な歯止めになる)。自己ホスト(OSS)版では、こうしたプラットフォーム側の制限自体が存在しない
+- **ナレッジベース検索には別枠のレート制限がある**: RAG(ナレッジベースを検索して回答に活用する仕組み)を伴うアプリをAPI経由で呼ぶ場合、ワークスペース単位で「1分あたりの検索・登録操作数」の上限が別途あり、Sandboxは10回/分、Professionalは100回/分、Teamは1,000回/分が目安(2026年8月時点)。上限を超えると一時的にナレッジベース関連の操作が制限される
 - **429エラー(レート制限超過)への備え**: 短時間に大量のリクエストを送ると一時的にリクエストが拒否されることがある。GASなどでループ処理をする場合は、1件ごとに数百ミリ秒程度の間隔を空ける、エラー時にリトライする、といった作りにしておくと安定する
 - **`user`パラメータは適当な固定値にしない**: エンドユーザーを識別するための項目のため、全リクエストで同じ値を使うと会話やレート制御の単位が意図せず混ざることがある。実際の利用者やバッチの処理単位ごとに区別できる値を設定する
 - **ワークフローAPIには会話の概念がない**: `workflows/run`は呼び出しごとに独立した処理で、`chat-messages`のような`conversation_id`による文脈維持はできない。対話を継続させたい場合はチャットフロー+`chat-messages`を選ぶ
@@ -162,8 +195,14 @@ Difyで作成済みの(または簡単な要約・分類用に新規作成した
 - [GAS(Google Apps Script)からのAI API連携](../part09-api-development/gas-ai-api-integration.md)
 - [MCP(Model Context Protocol)の基本](../part09-api-development/mcp-basics.md)
 - [n8nの基本](./n8n-basics.md)
+- [Makeの基本](./make-basics.md)
 
 ## 更新履歴
+
+### 2026-08-02: 料金体系・SDK・Webhookトリガー・自動化ツール連携の節を最新化
+- **内容**: 料金プランを「メッセージクレジット」制の最新体系(Sandbox/Professional 月59ドル/Team 月159ドル/Enterprise)に更新し、Professional以上ではAPI呼び出し回数のレート制限自体が撤廃されクレジット消費が実質的な上限になる点、ナレッジベース検索の別枠レート制限(Sandbox 10回/分・Professional 100回/分・Team 1,000回/分)を反映。ワークフローノードとして標準搭載された「Webhookトリガー」(外部システムからDifyを起動する仕組み)、公式SDK(Node.js/Python)、MakeのDify公式アプリとn8nのHTTP Requestノードによる連携手順、ZapierはDify公式アプリがなくWebhook/MCP経由になる点を追記。APIキー発行画面の位置に関する記述を実態に合わせて修正
+- **出典**: [Dify Pricing Teardown 2026 (DEV Community)](https://dev.to/beton/dify-pricing-teardown-2026-42g5)、[Dify Pricing 2026 (comparedge.com)](https://comparedge.com/tools/dify-ai/pricing)、[Dify Pricing 2026 (CheckThat.ai)](https://checkthat.ai/brands/dify/pricing)、[Dify Cloud Pricing: Plans, Free Tier, and When to Self-Host](https://www.architjn.com/blog/dify-cloud-pricing-plans-free-tier-when-to-self-host)、[Dify Docs: Knowledge Request Rate Limit](https://docs.dify.ai/en/use-dify/knowledge/knowledge-request-rate-limit)、[Dify Docs: Webhook Trigger](https://docs.dify.ai/en/cloud/use-dify/nodes/trigger/webhook-trigger)、[Dify Blog: Introducing Trigger](https://dify.ai/blog/introducing-trigger)、[Dify Blog: Which Trigger Should I Use?](https://dify.ai/blog/which-trigger-should-i-use-a-beginner-s-guide-to-starting-dify-workflows)、[Make: Dify Integration](https://www.make.com/en/integrations/dify)、[Dify Blog: MCP Plugin Hands-On Guide (Zapier連携)](https://dify.ai/blog/dify-mcp-plugin-hands-on-guide-integrating-zapier-for-effortless-agent-tool-calls)、[GitHub: langgenius/dify-python-sdk](https://github.com/langgenius/dify-python-sdk)、[npm: dify-client (langgenius/dify nodejs-client)](https://github.com/langgenius/dify/tree/main/sdks/nodejs-client)
+- **注記**: Dify公式サイト(dify.ai/pricing)はスクレイピング防止の設定によりツールから直接取得できなかったため、複数の独立した第三者ソース(dev.to・comparedge.com・CheckThat.ai・architjn.com)の記載が一致することを確認した上で採用している。掲載・記事化前に公式ページで金額・上限値の最終確認を推奨
 
 ### 2026-07-06: 初版執筆
 - **内容**: Difyの各アプリタイプ(チャットボット/テキスト生成/ワークフロー)で自動発行されるAPIエンドポイント・APIキーの仕組み、APIキー発行の画面操作手順、`chat-messages`/`completion-messages`/`workflows/run`の使い分けとリクエスト/レスポンスの基本構造、curlによる呼び出し例、GAS連携ページと組み合わせた定期バッチ処理の実装例、埋め込みウィジェット・n8n経由連携との違い、APIキー管理とレート制限の注意点を整理
