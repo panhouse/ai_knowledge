@@ -4,7 +4,7 @@ part: 5
 chapter: 第1章 基本原則
 tags: [プロンプトエンジニアリング, テンプレート, 変数管理, 再利用性, プロンプト管理]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-04
 ---
 
 # プロンプトテンプレート化(変数管理・再利用のコツ)
@@ -45,7 +45,7 @@ updated: 2026-07-06
 | 使う範囲 | 向いている保存先 |
 |---|---|
 | 自分だけが繰り返し使う | ChatGPT/Claude/Geminiの各チャット画面に都度貼り付け、または後述の「保存済み情報」「カスタム指示」欄に組み込む |
-| 自分専用だが呼び出しを自動化したい | ChatGPTの[プロジェクト](../part03-ai-chat-tools/chatgpt-projects-feature.md)の指示欄、[Claude Projectsのカスタム指示](../part03-ai-chat-tools/claude-basics.md) |
+| 自分専用だが呼び出しを自動化したい | ChatGPTの[プロジェクト](../part03-ai-chat-tools/chatgpt-projects-feature.md)の指示欄、[Claude Projectsのカスタム指示](../part03-ai-chat-tools/claude-basics.md)。Claudeは2026年7月からProject単位の指示に加えて「カスタムスキル」でも骨格を保存でき、会話内容に応じてClaude側が自動的に呼び出してくれる |
 | 社内の複数人で使い回す | Notion・Googleスプレッドシート・社内Wikiに「プロンプト集」としてまとめる |
 | 変数入力フォームを用意してノーコードで運用したい | [Dify](../part10-nocode-lowcode/dify-basics.md)や[GPTs](../part06-custom-ai/gpts-creation-basics.md)などのプラットフォーム側に組み込む |
 
@@ -109,18 +109,19 @@ updated: 2026-07-06
 {{レビュー対象テキストを貼り付け}}
 ```
 
-### ツール横断の対応付け(2026年7月時点)
+### ツール横断の対応付け(2026年8月時点)
 
 | ツール | テンプレート的に使える機能 | 設定場所・使い方 |
 |---|---|---|
-| ChatGPT | ネイティブの「プロンプト保存」機能は現時点でも存在しない。実務では[カスタム指示](../part03-ai-chat-tools/chatgpt-custom-instructions.md)や[プロジェクト](../part03-ai-chat-tools/chatgpt-projects-feature.md)の指示欄に骨格を固定し、変数部分だけ都度メッセージ欄に書き足す運用が現実的 | アカウントメニュー→設定→パーソナライズ→カスタム指示/各プロジェクトの「Instructions」欄 |
+| ChatGPT | ネイティブの「プロンプト保存」機能(テンプレートを検索・呼び出すライブラリ)は現時点でも存在しない。実務では[カスタム指示](../part03-ai-chat-tools/chatgpt-custom-instructions.md)や[プロジェクト](../part03-ai-chat-tools/chatgpt-projects-feature.md)の指示欄に骨格を固定し、変数部分だけ都度メッセージ欄に書き足す運用が現実的。2026年7月15日にカスタム指示の文字数上限がPlus/Pro/Business/Enterprise/Education等の有料プランで1,500字→5,000字に約3倍拡張された(Free/Goプランは1,500字のまま)ため、骨格をより詳しく書き込めるようになった | 設定→パーソナライズ→カスタム指示(「ChatGPTに何を知っておいてほしいか」「どう答えてほしいか」の2欄)/各プロジェクトの「Instructions」欄 |
 | ChatGPT(GPTs) | [GPTs](../part06-custom-ai/gpts-creation-basics.md)のInstructions欄に骨格を固定し、「会話のきっかけ」に変数の入力例を提示する形でテンプレートを配布できる | GPT Builder→Configureタブ→「指示」「会話のきっかけ」 |
-| Claude | Projectsの「プロジェクトの指示(Project instructions)」欄にテンプレートの骨格を登録。参照ファイルもナレッジとして追加可能 | claude.ai/projects→対象プロジェクト→設定→「手順」欄 |
-| Gemini | 「保存された情報(Saved info)」に「自分について」「回答してほしい形式」など全チャット共通の前提を登録。用途特化の骨格は「Gem」として個別に作成 | プロフィールアイコン→設定→「保存済み情報」、またはgemini.google.com→「Gem」メニュー→「新しいGemを作成」 |
-| Dify | プロンプトエディター内で `{{変数名}}` の形式でユーザー入力・システム変数・前段ノードの出力を挿入できる。エディターで `/` または `{` を入力すると変数の挿入メニューが開く | Difyアプリ編集画面→LLMノード→プロンプト欄→`/`または`{`で変数挿入、「コンテキスト」欄に他ノードの出力を割り当て |
+| Claude | Projectsの「プロジェクトの指示(Project instructions)」欄にテンプレートの骨格を登録(参照ファイルもナレッジとして追加可能)。さらに一段進んだ仕組みとして「カスタムスキル」がPro/Max/Teamプランで利用可能になり、骨格・出力例・簡単なスクリプトまでを1つのパッケージ(SKILL.md)として保存し、「いつ使うか」の説明文を付けておけばClaudeが会話内容に応じて自動的に呼び出す。画面操作を録画してClaudeにスキル化させる「スキルを教える」機能もPro/Max/Teamで使える(Free・Enterpriseは録画機能非対応) | claude.ai/projects→対象プロジェクト→設定→「手順」欄/claude.ai→「+」メニューまたは設定→「スキル」→「スキルを作成」 |
+| Gemini | 「保存された情報(Saved info)」に「自分について」「回答してほしい形式」など全チャット共通の前提を登録。用途特化の骨格は「Gem」として個別に作成し、Google Drive上のファイルをGemの参照ナレッジとして紐づけられる | プロフィールアイコン→設定→「保存済み情報」、またはgemini.google.com→「Gem」メニュー→「新しいGemを作成」 |
+| Dify | プロンプトエディター内で `{{変数名}}` の形式でユーザー入力・システム変数・前段ノードの出力を挿入できる。エディターで `/` または `{` を入力すると変数の挿入メニューが開き、より複雑な条件分岐・繰り返しが必要な場合はJinja2記法にも切り替えられる | Difyアプリ編集画面→LLMノード→プロンプト欄→`/`または`{`で変数挿入、「コンテキスト」欄に他ノードの出力を割り当て |
+| PromptLayer・LangSmith等のプロンプト管理ツール | エンジニアリング寄りの用途で、変数の型チェック・バージョン管理(コミット履歴)・A/Bテストまで含めてテンプレートを管理できる。LangSmith Prompt Hubはf-string(`{変数}`)とMustache(`{{変数}}`、ネストしたオブジェクトも展開可)の2形式に対応 | 各サービスのWebダッシュボード上でプロンプトを作成・コミット。API/SDK経由でアプリに組み込む |
 | 社内プロンプト集(汎用) | Notionのデータベース、Googleスプレッドシートに「用途/骨格/変数の説明/最終更新日」の列を作り、部署内で共有 | 各ツールの共有権限で編集者・閲覧者を分ける |
 
-Difyの`{{変数名}}`はエディターが実際に値を自動展開してくれる「本物の変数」だが、ChatGPT・Claude・Geminiのチャット画面に貼るテンプレートの`{{}}`や`[]`はあくまで「人間への目印」であり、AIが自動で埋めてくれるわけではない点に注意する(コピペ後、自分で書き換える必要がある)。
+Difyの`{{変数名}}`やLangSmithのプロンプト変数はツール側が実際に値を自動展開してくれる「本物の変数」だが、ChatGPT・Claude・Geminiのチャット画面に貼るテンプレートの`{{}}`や`[]`はあくまで「人間への目印」であり、AIが自動で埋めてくれるわけではない点に注意する(コピペ後、自分で書き換える必要がある)。Claudeのカスタムスキルはこの中間に位置し、骨格の呼び出し自体はClaudeが自動判定するが、変数に当たる案件情報は依然、依頼文の中で自分から伝える必要がある。
 
 ## 注意点・よくある誤解
 
@@ -143,6 +144,10 @@ Difyの`{{変数名}}`はエディターが実際に値を自動展開してく�
 - [Difyとは何か](../part10-nocode-lowcode/dify-basics.md)
 
 ## 更新履歴
+
+### 2026-08-04: ツール横断の対応付けを最新化(ChatGPTカスタム指示の文字数拡張・Claudeカスタムスキルを追加)
+- **内容**: ChatGPTのカスタム指示の文字数上限が2026年7月15日にPlus/Pro/Business/Enterprise/Education等の有料プランで1,500字→5,000字に拡張された点を追記。Claudeの新機能「カスタムスキル」(Pro/Max/Team、SKILL.mdでの骨格保存とClaudeによる自動呼び出し、画面録画からのスキル化)を保存先の選択肢として追加。PromptLayer・LangSmith Prompt Hub等のエンジニアリング向けプロンプト管理ツールの行を新設し、Difyの変数エディターがJinja2記法にも対応することを明記
+- **出典**: [FindSkill.ai: ChatGPT Custom Instructions Tripled to 5,000 Characters](https://findskill.ai/blog/chatgpt-custom-instructions-5000-characters/)、[OpenAI Help Center: ChatGPT Custom Instructions](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions)、[Claude Help Center: How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)、[Claude Help Center: Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)、[PromptLayer Blog: The 7 best prompt management tools in 2026](https://blog.promptlayer.com/the-7-best-prompt-management-tools-in-2026-tested-and-compared/)、[Dify Docs: LLM node](https://docs.dify.ai/en/cloud/use-dify/nodes/llm)
 
 ### 2026-07-06: 初版執筆
 - **内容**: プロンプトテンプレート化の目的(属人化防止・品質均一化・時短)、変数(プレースホルダー)の書き方、議事録要約・メール返信・文章レビューのコピペ用テンプレート3種、ChatGPT/Claude/Gemini/Difyの機能対応表、機密情報の共有範囲やテンプレート陳腐化への注意点を整理
