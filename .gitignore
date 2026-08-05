@@ -1,1 +1,7 @@
 .claude/
+
+# GitHub Pages (MkDocs) のビルド生成物
+.site_src/
+site/
+mkdocs.gen.yml
+.venv-docs/
