@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-02
+- [点数法(ルーブリック採点)プロンプティング](topics/part05-prompt-engineering/rubric-scoring-prompting.md): 生成と採点を分離する仕組み(Claude Outcomes・OpenAI Graders API)の節を追加して最新化
 - [量子化(モデル軽量化)の基本](topics/part08-specialized-ai-tools/quantization-basics.md): 方式比較(AWQ/GPTQ/EXL2/MXFP4)とGGUFのIQ量子化の節を最新化
 
 ## 2026-08-01
