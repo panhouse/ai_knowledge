@@ -4,7 +4,7 @@ part: 6
 chapter: 第2章 主要ツールでの作り方
 tags: [GPTs, ChatGPT, カスタムGPT, GPT Builder]
 created: 2026-07-04
-updated: 2026-07-19
+updated: 2026-08-05
 ---
 
 # GPTsの作り方と公開設定
@@ -30,11 +30,12 @@ GPTを作る画面(GPT Builder)には2つのモードがある。
 | 社内資料を読ませて細かく調整したい | Configureモードで直接設定 |
 | 社内限定で複数人に使わせたい | Business/Enterpriseワークスペースの共有機能 |
 | 一般公開してGPTストアに掲載したい | 公開範囲を「誰でも」に設定し、ビルダープロフィールを公開設定にする |
+| ひとりで長時間かかる作業(資料作成・調査など)をAIに丸ごと任せて完成品を受け取りたい | GPTsではなく「ChatGPT Work」(旧エージェントモードの後継、後述)を使う |
 | 組織全体でSlack・Salesforce等の外部ツールと連携し、スケジュール実行や常時稼働のエージェントを組みたい | GPTsではなく「Workspace Agents」(Business/Enterprise/Edu/Teachers向け、後述)を検討する |
 
 ## 実務での使い方
 
-### 作成手順(2026年7月時点の目安)
+### 作成手順(2026年8月時点の目安)
 
 1. ChatGPT(Web版)にログインし、左サイドバーの「GPTを探す」をクリック
 2. GPTストア画面右上の「＋作成する」をクリックするとGPT Builderが開く
@@ -48,10 +49,10 @@ GPTを作る画面(GPT Builder)には2つのモードがある。
 | 指示(Instructions) | 振る舞い・応答スタイル・避けるべきことを定義するシステムプロンプト相当。全会話に適用される |
 | 会話のきっかけ | ユーザーが最初に送る質問例(最大4つ) |
 | ナレッジ | PDF・Excel等の参照ファイルをアップロード。**上限は最大20ファイル、1ファイルあたり512MBまで**(テキスト・文書系ファイルは1ファイルあたり約200万トークンが上限) |
-| Capabilities | Web検索、画像生成、コードインタープリター&データ分析、**Canvas**(下書き・構造化された長文コンテンツをGPT利用者が編集できる機能)のオン/オフ。Canvasは新規作成GPTではデフォルトON、既存GPTはOFFなので必要なら手動で有効化する。**Canvasが有効な場合、GPT-5.5以降の一部推論モデルは非対応のため、対応する実行モデルを選ぶ必要がある** |
-| Actions | OpenAPIスキーマを使って外部APIを呼び出させる機能。認証設定も含む |
+| Capabilities | Web検索、画像生成、コードインタープリター&データ分析、**Canvas**(下書き・構造化された長文コンテンツをGPT利用者が編集できる機能)、**Apps**(旧称Connectors。Google Drive・Gmail・SharePointなどOpenAIが承認した外部サービスとの連携)のオン/オフ。Canvasは新規作成GPTではデフォルトON、既存GPTはOFFなので必要なら手動で有効化する |
+| Actions | OpenAPIスキーマを使って独自の外部APIを呼び出させる機能。認証設定も含む。**AppsとActionsは同時には有効化できず、どちらか一方を選ぶ仕様**になっている(定型的な社外SaaS連携ならApps、自社独自APIを叩かせたいならActions、という使い分けが目安) |
 
-一部ユーザー向けに、このGPTを動かす基盤モデルを明示的に選べる新しい設定項目のロールアウトが始まっている(Capabilitiesの組み合わせによって選べるモデルが変わる)。表示されない場合は未展開のアカウントと考えてよい。
+2026年7月にGPT-5.6ファミリー(Sol/Terra/Luna)が投入されて以降、GPT Builderでもこの基盤モデルを選べる設定項目のロールアウトが進んでいる(Capabilitiesの組み合わせによって選べるモデルが変わり、表示されない場合は未展開のアカウント)。なお、Pro相当の深い推論(GPT-5.6 Sol等をPro modeで動かす場合)ではCanvas・Apps・画像生成が無効になる制約があるため、**Canvasを使わせたいGPTでは通常モードの実行モデルを選ぶ**。
 
 ### コピペで使える指示欄のテンプレート例
 
@@ -84,15 +85,24 @@ Business/Enterpriseのワークスペースでは、上記に加えて「共有�
 
 GPTストアに一般公開する場合は、事前に設定の「ビルダープロフィール」で本名または独自ドメインのどちらかを公開設定にする必要がある(「自分のみ」「リンクを知っている人のみ」の場合は不要)。
 
+なお、GPTストアの収益分配プログラム(利用状況に応じてビルダーに支払いが発生する仕組み)は、2026年8月時点でも米国拠点のビルダーを中心とした招待制の限定パイロットにとどまり、新規募集は行われていない。「公開すれば誰でも収益化できる」わけではない点に注意する。
+
 ### 他ツールでの類似機能
 
 | 概念 | ChatGPT | Gemini | Microsoft 365 Copilot |
 |---|---|---|---|
 | カスタムAI作成機能 | GPTs(GPT Builder) | Gem | エージェントビルダー(より高度な構築はCopilot Studio) |
 
-### Workspace Agentsとの関係(2026年4月〜)
+### GPTs・ChatGPT Work・Workspace Agentsの関係(2026年8月時点)
 
-OpenAIは2026年4月22日、Business/Enterprise/Edu/Teachers向けに「Workspace Agents」を発表した。Codexを基盤に、Slack・Salesforce・Google Drive・Microsoft製品などの外部ツールに接続し、スケジュール実行や複数ステップの業務を継続的にこなす、より高度なチーム向けエージェント機能である。OpenAIはGPTsの廃止を公式に発表していないため、既存のGPTsは今後も使い続けられるが、チーム向けの新機能投資はWorkspace Agents側に振られている状況にある。個人プラン(Free/Go/Plus/Pro)のGPTs作成・利用自体には影響がなく、「1つの決まったプロンプト+ナレッジで動く軽量なアシスタント」を作りたいだけならGPTsで十分。組織全体で外部システム連携や常時稼働の自動化まで踏み込みたい場合は、Workspace Agentsの対象プランかどうかを確認する。
+GPTsの周辺には、性質の異なる2つの「自動化・エージェント機能」が2026年に追加されている。混同しやすいので整理する。
+
+- **ChatGPT Work(2026年7月9日〜)**: 個人・チーム問わず使える新しい実行モード。旧来の「エージェントモード」の後継で、GPT-5.6を基盤に、依頼した作業をバックグラウンドで数分〜数時間かけて自律的に進め、スプレッドシートやスライド、レポート、簡易アプリといった「完成品」を返す。GPTsのような「固定の指示+ナレッジを毎回呼び出す軽量アシスタント」ではなく、都度のタスクをその場で自律的にこなす実行モードである点が異なる
+- **Workspace Agents(2026年4月22日〜)**: Business/Enterprise/Edu/Teachers向けに発表された、Codexを基盤とするチーム向けエージェント機能。OpenAI自身が「GPTsの進化形(evolution of GPTs)」と位置付けており、Slack・Salesforce・Google Drive・Microsoft製品などの外部ツールに接続し、スケジュール実行や複数ステップの業務を継続的にこなせる。発表時点では研究プレビュー(research preview)扱いで開始された
+
+OpenAIの公式ヘルプセンターは「GPTs will remain available while teams test workspace agents(チームがWorkspace Agentsを試している間もGPTsは引き続き利用可能)」「Soon, we'll make it easy to convert GPTs into workspace agents(近くGPTsをWorkspace Agentsへ変換しやすくする)」としており、GPTsの即時廃止を公式に明言してはいない。一方で海外メディアの複数の報道は、Business/Enterprise/Edu/Teachersのワークスペースにおけるカスタムアクション(またはGPTs自体)の提供終了時期を2026年8月26日ごろと伝えている。本稿執筆時点(2026年8月5日)ではOpenAI公式ヘルプセンターにこの具体的な終了日を明記した記載は確認できていないため、**法人ワークスペースの管理者は「報道されている」段階の情報として扱い、自組織のワークスペース管理画面のお知らせや移行ツールの提供状況を直接確認すること**を推奨する。
+
+個人プラン(Free/Go/Plus/Pro)のGPTs作成・利用自体には現時点で影響がなく、「1つの決まったプロンプト+ナレッジで動く軽量なアシスタント」を作りたいだけならGPTsで十分。ひとりで完結する重めの作業を丸ごと任せたいならChatGPT Work、組織全体で外部システム連携や常時稼働の自動化まで踏み込みたい場合はWorkspace Agentsの対象プランかどうかを確認する。
 
 ## 注意点・よくある誤解
 
@@ -100,8 +110,11 @@ OpenAIは2026年4月22日、Business/Enterprise/Edu/Teachers向けに「Workspac
 - **「Team」プランはもう存在しない**: 2025年8月に「Business」へ名称統合されているため、古い記事や社内資料の「Teamプラン」表記は現在のBusinessを指す。
 - **ナレッジファイルは完全な機密性を保証しない**: アップロードしたファイルの内容が、Actionsの設定次第で意図せず引用・開示される可能性があるため、機密情報を含むファイルの扱いは慎重に。
 - **GPTストア公開にはビルダープロフィールの公開設定が必須**: これを忘れると「誰でも」を選んでも公開に進めないことがある。
-- **Canvasを有効にすると使えるモデルが制限される**: GPT-5.5以降の一部推論モデルはCanvas非対応のため、Canvasを使わせたいGPTでは対応モデルが選ばれているか確認する。
-- **チーム全体の自動化を考えているなら、GPTsだけで完結させようとしない**: 外部ツール連携やスケジュール実行が必要な用途は、Workspace Agents(対象プランの場合)の方が向いていることがある。
+- **GPTストアで公開しても自動的に稼げるわけではない**: 収益分配プログラムは招待制の限定パイロットにとどまり、一般公開はされていない。
+- **AppsとActionsは併用できない**: 外部連携をどちらで実装するか、GPTを作る前に決めておく。
+- **Pro相当の深い推論モデルを選ぶとCanvas・Apps・画像生成が無効になる**: Canvasを使わせたいGPTでは、実行モデルが通常モード(非Pro)になっているか確認する。
+- **法人ワークスペース(Business/Enterprise/Edu/Teachers)は「GPTsがいつまで使えるか」を自組織で要確認**: 2026年8月26日ごろに提供終了との報道があるが、本稿執筆時点でOpenAI公式が明記した終了日は確認できていない。ワークスペース管理者は自組織の管理画面のお知らせを直接確認すること。
+- **チーム全体の自動化を考えているなら、GPTsだけで完結させようとしない**: 外部ツール連携やスケジュール実行が必要な用途は、Workspace Agents(対象プランの場合)の方が向いていることがある。個人で完結する重い作業の丸投げにはChatGPT Workが向いていることもある。
 
 ## 最初の一歩
 
@@ -110,9 +123,14 @@ OpenAIは2026年4月22日、Business/Enterprise/Edu/Teachers向けに「Workspac
 ## 関連トピック
 
 - [GPTsのナレッジファイルとアクション連携](./gpts-knowledge-and-actions.md)
+- [GPTs・Gem・Copilot Agent・Claude Projectsの比較と使い分け](./custom-ai-tools-comparison.md)
 - [ChatGPTのプラン比較](../part03-ai-chat-tools/chatgpt-plan-comparison.md)
 
 ## 更新履歴
+
+### 2026-08-05: ChatGPT Work・Apps/Actionsの仕様変更・GPTストア収益化の実態を反映して最新化
+- **内容**: 2026年7月9日にローンチした新しい実行モード「ChatGPT Work」(旧エージェントモードの後継、GPT-5.6基盤)を追記し、GPTs・ChatGPT Work・Workspace Agentsの関係を整理し直した。GPT Builderの新設「Apps」(旧Connectors)とActionsが同時併用できない仕様、Pro相当の推論モデルではCanvas・Apps・画像生成が無効になる制約を追記。GPTストアの収益分配プログラムが招待制の限定パイロットにとどまる実態を明記。海外メディアが報じるBusiness/Enterprise/Edu/Teachers向けGPTsの提供終了時期(2026年8月26日ごろ)を、OpenAI公式ヘルプセンターでは終了日が未確認である旨を明記した上で注意喚起として追加
+- **出典**: [OpenAI Help Center: Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-and-editing-gpts)、[OpenAI: Introducing workspace agents in ChatGPT](https://openai.com/index/introducing-workspace-agents-in-chatgpt/)、[OpenAI Help Center: Apps in ChatGPT](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt)、[VentureBeat: OpenAI unveils Workspace Agents, a successor to custom GPTs for enterprises](https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more)、[FormWise: OpenAI Is Deprecating Custom GPTs. Here's the Migration Path.](https://formwise.ai/blog/openai-deprecating-custom-gpts-migration-path)、[digitalapplied.com: ChatGPT Work: OpenAI's Agent That Ships Finished Work](https://www.digitalapplied.com/blog/chatgpt-work-openai-agent-launch-2026)
 
 ### 2026-07-19: プラン要件を訂正し、Canvas・ナレッジ上限・Workspace Agentsの動きを追記
 - **内容**: GPTs作成に必要なプランを「Plus/Pro/Business/Enterprise」に訂正(Goは利用のみ可・作成不可、Teamは2025年8月にBusinessへ名称統合済み)。GPT BuilderのCapabilitiesに新設された「Canvas」トグルとモデル互換性の注意、ナレッジファイルの上限(最大20件・1件512MB・約200万トークン)、一部ユーザー向けにロールアウト中のモデル選択項目を追記。2026年4月発表の「Workspace Agents」(Business/Enterprise/Edu/Teachers向けの新しいチーム自動化機能)とGPTsの関係を新設の節で整理し、関連トピックに「ChatGPTのプラン比較」を追加
