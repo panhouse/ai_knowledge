@@ -114,7 +114,7 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 | Gemini(gemini.google.com / Gemini CLI) | 同テンプレートを、Google検索グラウンディングをオンにした状態で貼る | Gemini CLIは、組み込みツールとMCPサーバー連携を使ったThink→Act→Observeのループを内部で回し、複数ステップの作業を実行する |
 | 開発者向け(API・LangChain等) | プロンプトでThought/Action/Observation形式を明示し、Action行をアプリ側のコードでパースして実行結果をObservationとして返す(LangChainの`create_react_agent`が代表例) | 各社のネイティブな[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md) APIを使った「エージェントループ」。現在はテキストをパースするReAct形式より、モデルが構造化データ(JSON)で呼び出し要求を返すFunction Calling形式(LangChainの`create_tool_calling_agent`など)の方が信頼性が高く、実務では推奨されることが多い |
 
-つまり、ReActは「モデルに推論とツール利用を交互にやらせる」という**発想・パターン**の名前であり、[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md)は「その行動(Action)を実際にどう実行するか」という**技術的な実装手段**、[AIエージェント](../part12-ai-trends/ai-agent-basics.md)は「そのループを自律的に何ステップも繰り返すシステム全体」を指す言葉、という三層の関係で理解すると整理しやすい。
+つまり、ReActは「モデルに推論とツール利用を交互にやらせる」という**発想・パターン**の名前であり、[Function Calling(Tool Calling)](../part09-api-development/function-calling-basics.md)は「その行動(Action)を実際にどう実行するか」という**技術的な実装手段**、[AIエージェント](../part11-ai-agents/ai-agent-basics.md)は「そのループを自律的に何ステップも繰り返すシステム全体」を指す言葉、という三層の関係で理解すると整理しやすい。
 
 ## 注意点・よくある誤解
 
@@ -132,7 +132,7 @@ Observationに「該当情報なし」と記録し、次のThoughtで別の検�
 
 - [Chain-of-Thought(CoT)プロンプティング](./chain-of-thought-prompting.md) — 外部の行動を伴わない、頭の中だけの推論はこちら
 - [Tree of Thought(ToT)プロンプティング](./tree-of-thought-prompting.md) — 複数案を比較検討したい場合はこちら
-- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md) — ReAct的なループを自律的に繰り返すシステム全体の呼び方
+- [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md) — ReAct的なループを自律的に繰り返すシステム全体の呼び方
 - [Function Calling(Tool Calling)の基本](../part09-api-development/function-calling-basics.md) — ReActの「Action」を実際に実行する技術的な仕組み
 
 ## 更新履歴
