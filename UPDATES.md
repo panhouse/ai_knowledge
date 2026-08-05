@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+- [主要AIチャットツールのデータ分析機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-data-analysis-comparison.md): Claudeのコード実行とファイル作成(Freeプラン開放)、Gemini in Sheetsのシート構築機能、ChatGPT Business改称・料金改定、Copilot in ExcelのPython統合を反映して最新化
+
 - [主要AIチャットツールのCanvas/Artifacts機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-canvas-artifacts-comparison.md): ChatGPT Canvas廃止(GPT-5.5でブロック統合)、Claude Artifactsの永続ストレージ・MCP・Live Artifacts、Gemini/Copilot Canvasの最新動向を反映し全面最新化
 
 - [トークンとは何か](topics/part02-llm-basics/what-are-tokens.md): モデルラインナップと料金の節を最新化
