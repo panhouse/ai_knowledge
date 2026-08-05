@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+- [トークンとは何か](topics/part02-llm-basics/what-are-tokens.md): モデルラインナップと料金の節を最新化
+
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Opus 5の登場を反映し、モデルラインナップ・料金・レート制限の節を最新化
 
 - [LLMの仕組み:確率的単語予測と学習プロセス](topics/part02-llm-basics/llm-mechanism-basics.md): モデル例の節をClaude Fable 5/Opus 5体制・Gemini 3.5 Pro延期の実態に最新化し、RLVRの解説を追加
