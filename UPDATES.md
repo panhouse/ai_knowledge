@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-04
+- [自己整合性(Self-Consistency)プロンプティング](topics/part05-prompt-engineering/self-consistency-prompting.md): 2026年の実証研究(効果の薄れ・派生手法CoT-PoT/DeepConf等)を反映して最新化・増強
 - [バックオフィス職における生成AI活用](topics/part11-business-practice/backoffice-ai-use-cases.md): LINEヤフー人事総務AI活用・経費精算AIエージェント(freee/TOKIUM)・契約書レビューAI(LegalOn/OLGA)・AI事業者ガイドライン第1.2版・採用AIの職業安定法留意点を反映して最新化
 - [人事(HR)職における生成AI活用事例](topics/part11-business-practice/hr-ai-use-cases.md): タレントマネジメント系AI機能・離職予測AI・個人情報保護法改正を最新化・増強
 - [教育における生成AI活用事例](topics/part13-industry-cases/education-ai-use-cases.md): Khanmigoの2026年リニューアル、atama+の学習塾向け生成AI質問対応、文科省ガイドラインVer.2.1改訂検討など各事例を最新化・増強
