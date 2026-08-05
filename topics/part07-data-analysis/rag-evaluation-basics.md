@@ -4,7 +4,7 @@ part: 7
 chapter: 第4章 RAGの精度改善と基盤
 tags: [RAG, 評価, RAGAS, LLM-as-a-judge, ゴールデンセット, Context Precision, Faithfulness, LangSmith]
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-03
 ---
 
 # RAGの評価方法(RAGAS・LLM-as-a-Judgeなど)
@@ -26,14 +26,16 @@ RAGの評価が普通のアンケートやテストの採点より厄介なの�
 
 ### 評価の4つの観点
 
-RAGの評価ライブラリの事実上の標準になっているRAGAS(Retrieval Augmented Generation Assessment、RAGパイプラインを正解データなしでも評価できるように設計されたオープンソースの評価フレームワーク)は、検索と生成を切り分けて次の4つの指標で評価する考え方を広めた。他のツール(TruLens、Azure AI Foundryなど)も呼び方は違うが、ほぼ同じ4観点で整理されている。
+RAGの評価ライブラリの事実上の標準になっているRAGAS(Retrieval Augmented Generation Assessment、RAGパイプラインを正解データなしでも評価できるように設計されたオープンソースの評価フレームワーク)は、検索と生成を切り分けて次の4つの指標で評価する考え方を広めた。他のツール(TruLens、Microsoft Foundryなど)も呼び方は違うが、ほぼ同じ4観点で整理されている。
 
 | 観点 | 何を測るか | 主にどこの失敗を検出するか | 別名(他ツールでの呼び方) |
 |---|---|---|---|
-| **Context Precision(文脈の精度)** | 検索結果として渡したチャンクのうち、実際に質問と関係あるものがどれだけの割合を占めるか | 無関係なチャンクを多く拾いすぎていないか | Retrieval Relevance(LangSmith)、Retrieval(Azure AI Foundry) |
-| **Context Recall(文脈の再現率)** | 正解に必要な情報が、検索結果の中にちゃんと含まれているか | 肝心のチャンクを検索で取りこぼしていないか(検索の失敗) | Context Relevance(TruLens「RAGトライアド」の1つ) |
-| **Faithfulness(忠実性)** | 生成された回答の内容が、検索結果(渡したチャンク)の記述だけで裏付けられるか | 資料にない内容を勝手に付け足すハルシネーション | Groundedness(グラウンデッド性。TruLens・Azure AI Foundry・Microsoft系でよく使われる呼称) |
-| **Answer Relevancy(回答の的確さ)** | 生成された回答が、ユーザーの質問に正面から答えているか(脱線・的外れになっていないか) | 資料は正しく読めているが、質問の意図とズレた回答をしている | Answer Relevance(TruLens)、Relevance(Azure AI Foundry) |
+| **Context Precision(文脈の精度)** | 検索結果として渡したチャンクのうち、実際に質問と関係あるものがどれだけの割合を占めるか | 無関係なチャンクを多く拾いすぎていないか | Retrieval Relevance(LangSmith)、Retrieval(Microsoft Foundry) |
+| **Context Recall(文脈の再現率)** | 正解に必要な情報が、検索結果の中にちゃんと含まれているか | 肝心のチャンクを検索で取りこぼしていないか(検索の失敗) | Context Relevance(TruLens「RAGトライアド」の1つ)、Contextual Recall(DeepEval) |
+| **Faithfulness(忠実性)** | 生成された回答の内容が、検索結果(渡したチャンク)の記述だけで裏付けられるか | 資料にない内容を勝手に付け足すハルシネーション | Groundedness(グラウンデッド性。TruLens・Microsoft Foundry系でよく使われる呼称) |
+| **Answer Relevancy(回答の的確さ)** | 生成された回答が、ユーザーの質問に正面から答えているか(脱線・的外れになっていないか) | 資料は正しく読めているが、質問の意図とズレた回答をしている | Answer Relevance(TruLens)、Relevance(Microsoft Foundry) |
+
+なお「Microsoft Foundry」は旧称「Azure AI Foundry」(さらにその前は「Azure AI Studio」)が2025年11月に改称されたもの。呼称は変わったが評価指標(Groundedness・Relevance・Retrieval等)の中身は同じ考え方を引き継いでいる。
 
 このほか、あらかじめ用意した「模範解答」と生成結果を比較する **Answer Correctness(回答の正確性)** という指標もある。これは正解データ(ゴールデンセット)がある場合にのみ使える指標で、上記4つが「正解データなしでも計算できる」ことを売りにしているのとは性質が異なる。
 
@@ -55,7 +57,7 @@ RAGASの内部でも一部の指標はLLM-as-a-judge的な仕組みで計算さ�
 | **手動評価(スポットチェック)** | 導入初期、質問数が少ない(数十件程度)、まず現状把握したいだけ | 質問数・設定変更の頻度が増えると目視チェックが追いつかない |
 | **RAGAS等の評価ライブラリ** | 検索・生成の失敗を指標別に切り分けて継続的に測りたい、CI/CD(コードを変更するたびに自動テストする仕組み)に組み込みたい、エンジニアがいる | 環境構築とコード実装が必要で、非エンジニアだけでは導入しにくい。評価用LLMの呼び出し回数が多く地味にコストがかかる |
 | **LLM-as-a-judge(自作プロンプト)** | ライブラリを入れずに素早く始めたい、1回のプロンプトで複数観点をまとめて採点したい、評価理由も自然言語で欲しい | 採点者となるAIモデル・プロンプト・温度設定(出力のランダム性の度合い)によって点数がぶれることがある。同じ入力でも実行のたびに評価が変わりうる |
-| **LangSmith・Langfuseなどの観測プラットフォーム** | 本番トラフィックを継続的に監視し、問題のある回答を自動でサンプリングして評価にかけたい | 別途契約・導入コストがかかり、小規模な検証だけなら過剰装備になりやすい |
+| **LangSmith・Langfuse・Arize Phoenixなどの観測プラットフォーム** | 本番トラフィックを継続的に監視し、問題のある回答を自動でサンプリングして評価にかけたい、どのチャンクが検索されどこで崩れたかまで追跡したい | LangSmithは有償(小規模なら無料枠内、トラフィック量に応じて課金が増える)、Arize Phoenixは自前ホストの手間がかかるなど、いずれも別途導入コストがあり、小規模な検証だけなら過剰装備になりやすい |
 
 使い分けの基本方針は「いきなり自動評価基盤を作らない」こと。RAGの評価は「ゴールデンセットで手動チェック→問題箇所をLLM-as-a-judgeプロンプトで補助的に自動採点→件数や変更頻度が増えたらRAGAS等のライブラリやLangSmithのような専用基盤に本格導入」という順で育てるのが実務では現実的。最初から精緻な自動評価基盤を作ろうとして頓挫するより、少数のゴールデンセットで手を動かし始める方が早く効果が出る。
 
@@ -110,18 +112,19 @@ RAGASの内部でも一部の指標はLLM-as-a-judge的な仕組みで計算さ�
 
 | ツール | 位置づけ | 特徴 |
 |---|---|---|
-| **RAGAS**(`pip install ragas`。OSS) | Context Precision・Context Recall・Faithfulness・Answer Relevancyなど、指標ごとに専用ロジックを持つPythonライブラリ | 正解データなしでも計算できる指標を中心に設計されており、検索と生成を分けて数値化しやすい。指標を計算するたびにLLMへの問い合わせが複数回走るため、実行コストと時間がかかる点は考慮する |
-| **TruLens**(OSS) | 「RAGトライアド」と呼ばれるContext Relevance・Groundedness・Answer Relevanceの3指標を中心にした評価・観測ツール | 本番運用の継続監視(オブザーバビリティ)寄りの位置づけ |
-| **DeepEval**(OSS) | RAG・エージェント・マルチターン対話など50種類以上の評価指標を持つ汎用LLM評価フレームワーク。pytest(Pythonのテストツール)と親和性が高い | CI/CDに評価を組み込み、コード変更のたびに自動テストとして走らせたい場合に向く |
-| **LangSmith**(LangChain社。有償/無料枠あり) | 本番トラフィックのログ収集(トレーシング)と評価をセットで提供するプラットフォーム | 正確性(Correctness)・関連性(Relevance)・忠実性(Groundedness)・検索関連性(Retrieval Relevance)といった評価者をあらかじめ用意しており、コードを書かずに評価を回しやすい |
-| **Azure AI Foundry**(Microsoft) | Retrieval・Groundedness・Relevanceなど「組み込み評価者(Built-in Evaluators)」を用意 | Azure上でRAGを構築している場合、評価まで同じプラットフォーム内で完結できる |
+| **RAGAS**(`pip install ragas`。最新版0.4系。OSS、Apache 2.0) | Context Precision・Context Recall・Faithfulness・Answer Relevancyなど、指標ごとに専用ロジックを持つPythonライブラリ | 正解データなしでも計算できる指標を中心に設計されており、検索と生成を分けて数値化しやすい。指標を計算するたびにLLMへの問い合わせが複数回走るため、実行コストと時間がかかる点は考慮する。開発元の組織名がexplodinggradientsからVibrantLabsに変わっている(GitHub上のリポジトリ名・パッケージ名・インストールコマンドは変更なし) |
+| **TruLens**(OSS。Snowflakeが開発を継続) | 「RAGトライアド」と呼ばれるContext Relevance・Groundedness・Answer Relevanceの3指標を中心にした評価・観測ツール | 本番運用の継続監視(オブザーバビリティ)寄りの位置づけ。Snowflakeの生成AI基盤(Cortex)との連携やMLflowとの統合が強化されている |
+| **DeepEval**(Confident AI社。OSS) | RAG・エージェント・マルチターン対話など50種類以上の評価指標を持つ汎用LLM評価フレームワーク。pytest(Pythonのテストツール)と親和性が高い | CI/CDに評価を組み込み、コード変更のたびに自動テストとして走らせたい場合に向く。定型指標(Faithfulness・Answer Relevancy等)に加え、独自の採点基準を自然文で書けるG-Eval(ルーブリック採点をコード化したカスタム指標)を組み合わせるのが定石 |
+| **Arize Phoenix**(OSS) | OpenTelemetry(分散システムの標準的な観測データ規格)ベースのトレーシング(処理の流れの記録)と評価をセットにした観測プラットフォーム | RAGASやDeepEvalが「採点」中心なのに対し、Phoenixは「どのチャンクが検索され、AIがどう処理し、どこで崩れたか」を可視化するデバッグ・原因調査寄りの位置づけ。ローカルやKubernetes上に自前でホストできる |
+| **LangSmith**(LangChain社。有償/無料枠あり) | 本番トラフィックのログ収集(トレーシング)と評価をセットで提供するプラットフォーム | 正確性(Correctness)・関連性(Relevance)・忠実性(Groundedness)・検索関連性(Retrieval Relevance)といった評価者をあらかじめ用意。人間が採点結果を訂正すると、その訂正が few-shot 事例として評価プロンプトに自動的に反映されていく「自己改善」の仕組み(Align Evals)を持つのが特徴 |
+| **Microsoft Foundry**(旧Azure AI Foundry。Microsoft) | Retrieval・Groundedness・Relevanceなど「組み込み評価者(Built-in Evaluators)」を用意 | Azure上でRAGを構築している場合、評価まで同じプラットフォーム内で完結できる。2025年11月にAzure AI Foundryから改称された |
 
-一方、Dify(ノーコードでAIアプリを組み立てられるプラットフォーム)のようなノーコードツールは、ナレッジベースの「検索テスト」タブで個別の質問に対する検索結果を1件ずつ目視確認する機能はあるが、RAGASのような複数指標をまとめて自動採点する仕組みは標準搭載していない(2026年7月時点)。ノーコードでRAGを構築している場合、自動評価まで求めるなら「検索テストでのスポットチェック+本ページのLLM-as-a-judgeプロンプトを手動で回す」までが現実的な範囲で、指標の自動集計まで求めるならLangSmithのような外部の評価基盤と連携するか、エンジニアが別途RAGAS等を組む判断になる。
+一方、Dify(ノーコードでAIアプリを組み立てられるプラットフォーム)のようなノーコードツールは、ナレッジベースの「検索テスト」タブで個別の質問に対する検索結果を1件ずつ目視確認する機能はあるが、RAGASのような複数指標をまとめて自動採点する仕組みは標準搭載していない(2026年8月時点)。ノーコードでRAGを構築している場合、自動評価まで求めるなら「検索テストでのスポットチェック+本ページのLLM-as-a-judgeプロンプトを手動で回す」までが現実的な範囲で、指標の自動集計まで求めるならLangSmithのような外部の評価基盤と連携するか、エンジニアが別途RAGAS等を組む判断になる。
 
 ## 注意点・よくある誤解
 
 - **LLM-as-a-judgeは「一発で正確」ではない**: 採点モデル・プロンプトの書き方・実行のたびのランダム性によって点数がぶれることがある。重要な意思決定(リリース可否の判断など)には、同じ入力を複数回採点して結果の安定性を確認するか、最終的に人間の目視確認を挟む
-- **生成に使ったAIと評価に使うAIを同じにしない**: 同一モデルに自分の回答を採点させると、甘い評価になりやすい(自己評価バイアス)。可能であれば別のモデル、または別ベンダーのモデルで採点する
+- **生成に使ったAIと評価に使うAIを同じにしない**: 同一モデル(または同じモデルファミリー)に自分の回答を採点させると、甘い評価になりやすい(自己評価バイアス・ファミリーバイアス)。可能であれば別ベンダーのモデルで採点する。また、回答が長く流暢なだけで高得点を付けてしまう「長さバイアス」もあるため、点数と一緒に理由も出力させて目視で妥当性を確認する
 - **「検索◯×」と「生成◯×」を分けずに記録すると原因が分からなくなる**: まとめて◯×だけ付けると、チャンキング側を直すべきかプロンプト側を直すべきか判断できず、改善が的外れになる
 - **正解データなし指標(Faithfulness等)と正解データあり指標(Answer Correctness)を混同しない**: 前者は「資料に忠実か」、後者は「模範解答と合っているか」を測っており、性質が異なる。ゴールデンセットに正解を用意した場合は両方を使い分けると原因の切り分けがより正確になる
 - **評価の仕組みを作って満足しない**: ゴールデンセットは一度作って終わりではなく、実際に「回答が違った」と報告のあった質問を追加し続けることで、評価の精度が実態に近づいていく
@@ -139,6 +142,10 @@ RAGASの内部でも一部の指標はLLM-as-a-judge的な仕組みで計算さ�
 - [DifyでのRAG実装(ナレッジベースの作成とワークフロー連携)](../part10-nocode-lowcode/dify-rag-implementation.md)
 
 ## 更新履歴
+
+### 2026-08-03: ツール動向の節を最新化
+- **内容**: RAGASの開発元組織がexplodinggradientsからVibrantLabsに変わったこと(パッケージ名・インストールコマンドは変更なし、最新版0.4.3)、TruLensがSnowflakeの下で開発継続中でMLflow連携が強化されていること、DeepEvalの運営元Confident AI社とG-Eval(カスタム採点指標)の位置づけ、観測プラットフォームとしてArize Phoenix(OpenTelemetryベースのトレーシング重視ツール)を新規に追加、LangSmithの「自己改善する評価者(Align Evals、人間の訂正をfew-shot事例として自動反映)」、Azure AI Foundryが2025年11月にMicrosoft Foundryへ改称された点を反映、LLM-as-a-judgeの注意点にファミリーバイアス・長さバイアスを追記
+- **出典**: [GitHub: vibrantlabsai/ragas](https://github.com/vibrantlabsai/ragas)、[PyPI: ragas 0.4.3](https://pypi.org/project/ragas/)、[TruLens公式サイト](https://www.trulens.org/)、[TruLens Release History](https://www.trulens.org/contributing/release_history/)、[Snowflake Blog: TruLens ❤️ Snowflake OSS](https://www.snowflake.com/en/blog/trulens-open-source-ai/)、[Confident AI: DeepEval](https://www.confident-ai.com/frameworks/deepeval)、[DeepEval Docs: Introduction to LLM Evaluation Metrics](https://deepeval.com/docs/metrics-introduction)、[Arize AI: What is Arize Phoenix?](https://arize.com/docs/phoenix)、[LangChain Docs: How to improve your evaluator with few-shot examples](https://docs.langchain.com/langsmith/create-few-shot-evaluators)、[LangChain Docs: Run evals with openevals package](https://docs.langchain.com/langsmith/openevals)、[Microsoft Learn: Foundry Gets New Name (Directions on Microsoft)](https://www.directionsonmicrosoft.com/reports/foundry-gets-new-name-anthropic-models/)、[Microsoft Learn: RAG Evaluators - Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/concepts/evaluation-evaluators/rag-evaluators)、[FutureAGI Blog: LLM-as-Judge Best Practices in 2026](https://futureagi.com/blog/llm-as-judge-best-practices-2026)
 
 ### 2026-07-07: 初版執筆
 - **内容**: RAGの評価が「検索の失敗」と「生成の失敗」という2段階の問題であり自由文回答のため単純な◯×判定ができないという難しさの整理、Context Precision/Context Recall/Faithfulness/Answer Relevancyの4観点とTruLens・Azure AI Foundryなど他ツールでの呼称対応表、手動評価(ゴールデンセット)と自動評価(RAGAS等のライブラリ/LLM-as-a-judge)の使い分け、ゴールデンセットのテンプレート列構成、LLM-as-a-judgeにそのまま投げられる採点プロンプト例、RAGAS/TruLens/DeepEval/LangSmith/Azure AI Foundryの主要評価ツール比較表、Difyなどノーコードツールでは自動採点の仕組みが標準搭載されていない点、自己評価バイアス・評価のブレなどの注意点を整理
