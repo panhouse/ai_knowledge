@@ -4,7 +4,7 @@ part: 5
 chapter: 第4章 エージェント的手法
 tags: [プロンプトエンジニアリング, メタプロンプティング, プロンプト改善, システムプロンプト, カスタム指示]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-03
 ---
 
 # メタプロンプティング
@@ -120,18 +120,18 @@ updated: 2026-07-06
 改善版のプロンプト全文と、変更点の説明をお願いします。
 ```
 
-### ツール横断の対応付け(2026年7月時点)
+### ツール横断の対応付け(2026年8月時点)
 
 主要ツールには、上記のようなメタプロンプティングを自分でプロンプトとして書かなくても、ボタン1つで呼び出せる専用機能が用意されている場合がある。
 
 | ツール | 機能名 | 何をしてくれるか | 場所 |
 |---|---|---|---|
-| OpenAI Playground(API利用者向け) | Generate(生成)/ Prompt generation | タスクの説明から、内部の「meta-prompt(プロンプト作成のベストプラクティスを組み込んだプロンプト)」を使って、システムプロンプト・関数定義・出力スキーマの下書きを自動生成。既存プロンプトの改善にも使える | System instructions(システムメッセージ)の入力欄右上にある星(スパークル)アイコン |
-| Anthropic Console(API利用者向け) | Prompt generator(生成) / Prompt improver(改善) | Prompt generatorはタスクの説明から新規プロンプトを生成。Prompt improverは既存プロンプトを渡すと、指示の明確化、例示のXML形式への統一と例示へのCoT(思考の連鎖)付与、Assistant側の出力の型を固定する「prefill」の追加などを自動で行う。Anthropicの検証では多ラベル分類タスクで精度が約30%向上、要約タスクの文字数制約の遵守率が100%になった例を報告 | developer console(console.anthropic.com)のプロンプト編集画面 |
-| Google Vertex AI Studio(API/エンタープライズ利用者向け) | Vertex AI Prompt Optimizer | 既存の1つのプロンプトやシステム指示のテンプレートを、Google自社モデル(Gemini等)向けに合わせてリアルタイムに最適化する「ゼロショット最適化」を提供。追加のセットアップなしで低遅延に使える | Vertex AI Studioのプロンプト編集画面(「プロンプトを最適化」等の導線) |
-| ChatGPT(一般ユーザー向け・GPTs作成時) | GPT Builderの「Create」タブ | 「〇〇をしてくれるアシスタントを作りたい」と会話するだけで、ChatGPTが会話内容から指示文(Instructions)を組み立ててくれる。作成後は「Configure」タブで人間が手直しできる | GPT作成画面(「GPTを作成」)の「Create」タブ |
+| OpenAI Prompts Playground(旧Chat Playground。API利用者向け) | Generate(生成)/ Prompt generation | タスクの説明から、内部の「meta-prompt(プロンプト作成のベストプラクティスを組み込んだプロンプト)」を使って、システムプロンプト・関数定義・出力スキーマの下書きを自動生成。既存プロンプトの改善にも使える。2026年4月には、この仕組みの土台となるMeta-Promptが刷新され、より実務寄りのベストプラクティスを反映するようになった | System instructions(システムメッセージ)の入力欄右上にある星(スパークル)アイコン。旧称「Chat Playground」は「Prompts Playground」に改称済み |
+| Anthropic Console(API利用者向け) | Prompt generator(生成) / Prompt improver(改善) / Examples(例示管理) | Prompt generatorはタスクの説明から新規プロンプトを生成。Prompt improverは既存プロンプトを渡すと、指示の明確化、例示のXML形式への統一と例示へのCoT(思考の連鎖)付与、Assistant側の出力の型を固定する「prefill」の追加などを自動で行う。2026年7月には、入出力のペアを構造化された形式で追加・編集できる「例示管理(Examples)」機能がWorkbenchに追加され、few-shotの例をプロンプト本文に手打ちしなくても管理できるようになった。Anthropicの検証では多ラベル分類タスクで精度が約30%向上、要約タスクの文字数制約の遵守率が100%になった例を報告 | developer console(console.anthropic.com)のWorkbench(プロンプト編集画面) |
+| Google Vertex AI Studio(API/エンタープライズ利用者向け) | Vertex AI Prompt Optimizer | 既存の1つのプロンプトやシステム指示のテンプレートを、Google自社モデル(Gemini等)向けに合わせてリアルタイムに最適化する「ゼロショット最適化」と、正解データ(ground truth)を使って精度を追い込む「データ駆動型最適化」の2方式を提供。2026年8月時点で一般提供(GA)済み | Vertex AI Studioのプロンプト編集画面(「プロンプトを最適化」等の導線) |
+| ChatGPT(一般ユーザー向け・GPTs作成時) | GPT Builderの「Create」タブ | 「〇〇をしてくれるアシスタントを作りたい」と会話するだけで、ChatGPTが会話内容から指示文(Instructions)を組み立ててくれる。作成後は「Configure」タブで人間が手直しできる | 「GPTを探す」→右上の「作成」から表示されるGPT Builder画面の「Create」タブ |
 | Gemini(一般ユーザー向け・Gem作成時) | 指示ボックスの「魔法の杖」アイコン(Gemini Appsのヒント機能) | 「メールをうまく書くのを手伝ってほしい」のような一文を入力して杖アイコンを押すと、Geminiがその一文を構造化された詳細な指示文に書き換えて提示する | Gem作成・編集画面の指示欄にある魔法の杖アイコン |
-| Claude(一般ユーザー向け) | 専用ボタンなし。チャットで直接依頼する | Claude.aiには2026年7月時点でChatGPT/Geminiのような専用の生成ボタンはないため、上記コピペ例のようなメタプロンプトを通常のチャットで依頼する運用になる | 通常のチャット画面 |
+| Claude(一般ユーザー向け) | 専用ボタンなし。チャットで直接依頼する | Claude.aiには2026年8月時点でChatGPT/Geminiのような専用の生成ボタンはないため、上記コピペ例のようなメタプロンプトを通常のチャットで依頼する運用になる(API開発者向けのConsoleには前述のPrompt generator/improverがある) | 通常のチャット画面 |
 
 API(開発者)向けのGenerate/Prompt improver系機能と、一般ユーザー向けのGPT Builder/魔法の杖は、裏側で同じ発想(タスクの説明や既存プロンプトを読み取り、良いプロンプトの型に当てはめ直す)を使っている。API機能が使えない一般ユーザーでも、上記コピペ例のプロンプトをChatGPT・Claude・Geminiのどれに貼っても同様の効果が得られる。
 
@@ -155,6 +155,15 @@ API(開発者)向けのGenerate/Prompt improver系機能と、一般ユーザー
 - [Tree of Thought(ToT)プロンプティング](./tree-of-thought-prompting.md)
 
 ## 更新履歴
+
+### 2026-08-03: 「ツール横断の対応付け」を最新化
+- **内容**: 各社の専用機能の2026年8月時点の状況を確認して更新。OpenAIはChat PlaygroundがPrompts Playgroundに改称され、Generate機能の土台となるMeta-Promptが2026年4月に刷新されたことを追記。Anthropic Consoleは2026年7月に追加された「例示管理(Examples)」機能(Workbenchで入出力ペアを構造化管理)を追記。Vertex AI Prompt Optimizerが2026年8月時点で一般提供(GA)済みであることと、データ駆動型最適化(正解データを使う方式)がゼロショット最適化と並ぶ2方式目として提供されていることを追記。ChatGPT GPT Builderへの導線表記を実際の画面遷移(「GPTを探す」→「作成」)に合わせて修正。Claudeの現状(専用ボタン未提供)は2026年8月時点でも変わらないことを確認
+- **出典**: [Improve your prompts in the developer console - Claude by Anthropic](https://claude.com/blog/prompt-improver)
+- **出典**: [Prompt generation - OpenAI API Platform Docs](https://developers.openai.com/api/docs/guides/prompt-generation)
+- **出典**: [The Chat Playground is now the Prompts Playground - OpenAI Developer Community](https://community.openai.com/t/the-chat-playground-is-now-the-prompts-playground/1142740)
+- **出典**: [Data-driven prompt optimizer - Google Cloud Vertex AI Docs](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/data-driven-optimizer)
+- **出典**: [Optimize prompts for text generation with Vertex AI - Google Cloud Docs](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/samples/generativeaionvertexai-prompt-optimizer)
+- **出典**: [カスタム Gem 作成のヒント - Gemini アプリ ヘルプ](https://support.google.com/gemini/answer/15235603?hl=ja)
 
 ### 2026-07-06: 初版執筆
 - **内容**: メタプロンプティングの定義(実務的な「プロンプト生成・改善」と学術的な「タスク非依存の思考の枠組み」の2つの意味を整理)、使いどころの判断基準、コピペで使える生成・改善・出力フィードバック型の3プロンプト例、OpenAI Playground/Anthropic Console/Vertex AI Prompt Optimizer/ChatGPT GPT Builder/Gemini Gemの「魔法の杖」の対応表、オーバーエンジニアリングやタスク定義の曖昧さに関する注意点を執筆
