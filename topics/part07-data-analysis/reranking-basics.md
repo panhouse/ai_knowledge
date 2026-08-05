@@ -2,9 +2,9 @@
 title: "Reranking(再ランク付け)の基本"
 part: 7
 chapter: 第4章 RAGの精度改善と基盤
-tags: [RAG, Reranking, リランキング, クロスエンコーダー, Cohere Rerank, 検索精度改善, ハイブリッド検索]
+tags: [RAG, Reranking, リランキング, クロスエンコーダー, Cohere Rerank, Rerank v4, Jina Reranker v3, 検索精度改善, ハイブリッド検索]
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-08-02
 ---
 
 # Reranking(再ランク付け)の基本
@@ -61,22 +61,22 @@ cross-encoder は精度が高い代わりに、候補1件ごとに質問との�
 
 ## 実務での使い方
 
-### 主要なリランキングモデル・サービスの比較(2026年7月時点)
+### 主要なリランキングモデル・サービスの比較(2026年8月時点)
 
-料金・性能は変更されやすいため、導入前に必ず各社公式サイトで最終確認すること。
+料金・性能は変更されやすいため、導入前に必ず各社公式サイトで最終確認すること。特にCohereは2026年7月1日にRerank v3.5を非推奨化し、8月1日以降 `rerank-v3.5` 宛のリクエストは自動的に後継の `rerank-v4.0-fast` に転送される(返却スコアの分布が変わるため、スコア閾値をハードコードしている場合は再調整が必要)。
 
 | モデル・サービス | 提供元 | 提供形態 | 料金の目安 | 多言語対応 | 特徴 |
 |---|---|---|---|---|---|
-| **Rerank v3.5 / v4 Pro** | Cohere | API | $2.00 / 1,000検索(1検索=クエリ1件+文書最大100件、500トークン超の文書は分割課金) | 100以上の言語(日本語含む) | リランキング専業サービスの代表格。DifyなどノーコードツールでもRerankモデルプロバイダーとして標準サポートされる |
-| **Reranker v2(base-multilingual)** | Jina AI | API | 入出力ともに$0.02 / 100万トークン、新規APIキーに1,000万トークンの無料枠 | 多言語対応 | 料金がトークン従量制で低コスト。関数呼び出し・コード検索など agentic なユースケース向けの拡張版もある |
-| **rerank-2.5 / rerank-2.5-lite** | Voyage AI(MongoDB傘下) | API | トークン従量課金(クエリ×文書数+文書トークン数で計算)、新規アカウントは2億トークンまで無料 | 対応 | liteモデルは同等精度で高速。MongoDB Atlasとの連携に強み |
-| **BGE reranker v2-m3** | BAAI(オープンソース) | OSS(自社サーバーで運用) | 無料(サーバー費用は別途) | 100以上の言語 | Embeddingモデルの[BGE-M3](embedding-basics.md)と対になるリランカー。データを外部に送れない場合の有力な選択肢 |
-| **japanese-reranker シリーズ(hotchpotch)** | 個人開発者(hotchpotch、Hugging Face公開) | OSS(自社サーバーで運用) | 無料(サーバー費用は別途) | 日本語特化 | tiny/xsmall/small/base/largeなど複数サイズを用意。小型モデルはCPUやApple Siliconでも実用速度で動作し、日本語RAGでのコスト・精度バランスに優れる |
+| **Rerank v4.0 Fast / v4.0 Pro** | Cohere | API | Fast: $2.00 / 1,000検索、Pro: $2.50 / 1,000検索(1検索=クエリ1件+文書最大100件) | 100以上の言語(日本語含む) | 2025年12月にRerank 4世代へ刷新(旧v3.5は2026年8月に自動でFastへ移行済み)。リランキング専業サービスの代表格で、DifyなどノーコードツールでもRerankモデルプロバイダーとして標準サポートされる |
+| **Reranker v3 / v3.5(旧v2 base-multilingual)** | Jina AI | API | 入出力ともに$0.02 / 100万トークン、新規APIキーに1,000万トークンの無料枠 | 多言語対応 | v3は0.6BパラメータでBEIRベンチマークがSOTA級。候補文書をまとめて1つの文脈窓に入れて相互作用を見る「listwise(リストワイズ)」方式を採用し、精度と速度を両立。後継のv3.5も公開済み |
+| **rerank-2.5 / rerank-2.5-lite** | Voyage AI(MongoDB傘下) | API | rerank-2.5: $0.05 / 100万トークン、rerank-2.5-lite: $0.02 / 100万トークン、新規アカウントは2億トークンまで無料 | 対応 | liteモデルは同等精度で高速。MongoDB Atlasとの連携に強み |
+| **BGE reranker v2-m3 / v2-gemma**| BAAI(オープンソース) | OSS(自社サーバーで運用) | 無料(サーバー費用は別途) | 100以上の言語 | Embeddingモデルの[BGE-M3](embedding-basics.md)と対になる標準リランカー。より高精度を求める場合はLLMベースの`bge-reranker-v2-gemma`系も選べる(その分推論コストは上がる)。データを外部に送れない場合の有力な選択肢 |
+| **japanese-reranker シリーズ(hotchpotch)** | 個人開発者(hotchpotch、Hugging Face公開) | OSS(自社サーバーで運用) | 無料(サーバー費用は別途) | 日本語特化 | tiny/xsmall/small/baseなど複数サイズを用意し、ModernBERTベースの[ruri-v3](https://huggingface.co/collections/hotchpotch/query-crafter-japanese)を土台に再学習。小型モデルはCPUやApple Siliconでも実用速度で動作し、日本語RAGでのコスト・精度バランスに優れる |
 | **Dify内蔵のRerankモデル連携** | Dify(ノーコードプラットフォーム) | 上記モデルをプロバイダー登録して利用 | 登録したモデルの料金に準じる | 登録したモデルに準じる | リランキングモデル自体は提供しておらず、Cohere・Jina AIなどをモデルプロバイダーとして登録して呼び出す仕組み |
 
 選び方の目安。
 
-- **「まず試したい・実績重視」→ Cohere Rerank**(対応ツールが多く導入事例が豊富)
+- **「まず試したい・実績重視」→ Cohere Rerank**(対応ツールが多く導入事例が豊富。新規導入なら最初からv4.0系を選ぶ)
 - **「コストを抑えたい・API従量課金の単価を下げたい」→ Jina Reranker や Voyage rerank-2.5-lite**(無料枠が大きく、トークン単価も低い)
 - **「データを外部に送れない・自社サーバー内で完結させたい」→ BGE reranker や hotchpotchの日本語リランカー**(OSSなので自社インフラで運用できる)
 - **「日本語の資料が中心で、精度とコストのバランスを取りたい」→ hotchpotchの日本語リランカー**(小型モデルでも実用的な速度と精度が報告されている)
@@ -85,10 +85,10 @@ cross-encoder は精度が高い代わりに、候補1件ごとに質問との�
 
 1. Difyの管理画面で「設定」→「モデルプロバイダー」を開き、Cohere や Jina AI などリランキングモデルを提供するプロバイダーのAPIキーを登録する
 2. 「ナレッジ」→対象のナレッジベースを開き、「設定」タブの「検索設定」を開く
-3. 「検索方法」を「ハイブリッド検索」に切り替える(ベクトル検索のみの設定ではRerankモデルの項目自体が意味を持たない)
-4. 「Rerankモデル」をオンにし、手順1で登録したモデル(例: Cohere rerank-v3.5)を選択する
-5. Top-K(リランキング後に採用する上位件数)とスコア閾値(この値を下回る候補は採用しない)を設定する。Top-Kを絞りすぎると必要な情報まで落ちる、緩すぎるとノイズが残るため、後述の検索テストで調整する
-6. 画面右側の「検索テスト」タブで実際の質問文を入力し、Rerankモデルのオン・オフを切り替えて、狙った文書が上位に出るようになったかを見比べる
+3. 「検索方法」を「ハイブリッド検索」に切り替える(ベクトル検索のみの設定ではRerankモデルの項目自体が意味を持たない)。Difyのハイブリッド検索には並べ替え方式が2種類あり、「重み設定(weight_rerank)」はベクトル検索とキーワード検索のスコアを重み付けで合成するだけで追加のモデル呼び出しは発生しない無料の方式、「Rerankモデル(rerank_model)」は本ページで扱う外部のcross-encoderモデルを呼び出す方式で、精度は高いがAPI費用とレイテンシが乗る
+4. 精度を優先する場合は「Rerankモデル」をオンにし、手順1で登録したモデル(例: Cohere rerank-v4.0-fast)を選択する
+5. Top-K(リランキング後に採用する上位件数。Rerankモデル選択時はモデルの最大入力件数に応じて自動調整される)とスコア閾値(この値を下回る候補は採用しない)を設定する。Top-Kを絞りすぎると必要な情報まで落ちる、緩すぎるとノイズが残るため、後述の検索テストで調整する
+6. 画面右側の「検索テスト」タブで実際の質問文を入力し、Rerankモデルのオン・オフ(または重み設定との切り替え)を試して、狙った文書が上位に出るようになったかを見比べる
 
 ### コピペで使える実例:Cohere Rerank APIの最小呼び出しイメージ
 
@@ -100,7 +100,7 @@ candidates = vector_db.query(vector=query_vector, top_k=30)
 
 # 2段目でリランキングモデルにかけ、質問との関連度で並べ替え直す
 reranked = cohere_client.rerank(
-    model="rerank-v3.5",
+    model="rerank-v4.0-fast",  # 旧rerank-v3.5は2026年8月以降このモデルへ自動転送される
     query="有休の繰り越しってできますか?",
     documents=[c.text for c in candidates],
     top_n=5,  # 最終的にAIへ渡す件数
@@ -111,8 +111,13 @@ reranked = cohere_client.rerank(
 
 Cohere は「1検索(クエリ1件+文書最大100件)あたり」の従量課金、Jina AI・Voyage AI は「処理したトークン数」に応じた従量課金と、課金の単位が異なる。想定する1日あたりの質問数、1回の検索で何件の候補をリランキングにかけるか(Top-Kの設定値)を掛け合わせて概算しておくと、無料枠を超えた際のコスト急増を防げる。
 
+### Difyのハイブリッド検索まわりの動き
+
+DifyのGitHub上では、既存の「重み設定(weight_rerank)」「Rerankモデル(rerank_model)」に加えて、BM25とベクトル検索のランキング順位だけで統合するRRF(Reciprocal Rank Fusion、スコアの正規化が不要でElasticsearchやLangChainでも広く使われる方式)を3つ目の並べ替え戦略として追加する提案が議論されている。2026年8月時点では未実装の機能要望であり、実際にDifyへ導入する際は自社の環境のバージョンで利用できる方式を公式ドキュメントで確認すること。
+
 ## 注意点・よくある誤解
 
+- **モデルの世代交代でスコアの水準が変わることがある**: Cohereは2026年7月にRerank v3.5を非推奨化し、2026年8月1日以降は`rerank-v3.5`宛のリクエストが自動で後継の`rerank-v4.0-fast`に転送される仕様になった。新旧モデルでは返却される関連度スコアの分布が異なるため、「スコアが0.5以上の候補だけ採用する」といった閾値をハードコードしている場合は、モデル移行のタイミングで挙動が変わっていないか必ず確認・再調整する
 - **「有効にすれば必ず精度が上がる」わけではない**: 文書数が少なく表記が統一されている場合は効果が薄い。まず[RAGの精度を上げる方法](rag-accuracy-improvement.md)の診断テーブルで症状を確認し、当てはまる場合に導入する
 - **レイテンシ(応答までの待ち時間)が増える**: 検索のたびに追加のモデル呼び出しが発生するため、候補件数(Top-K)が多いほど数百ミリ秒〜1秒程度、応答が遅くなることがある。社内向けチャットボットでは許容範囲でも、リアルタイム性が重要な用途では事前に体感速度を検証する
 - **コストは候補件数(Top-K)と質問数に比例して積み上がる**: 1段目で集める候補を無闇に増やすと、2段目のリランキングにかかる料金も比例して増える。1段目の候補件数は「精度に必要な最小限」に絞るのが基本
@@ -132,6 +137,11 @@ Cohere は「1検索(クエリ1件+文書最大100件)あたり」の従量課�
 - [DifyでのRAG実装](../part10-nocode-lowcode/dify-rag-implementation.md)
 
 ## 更新履歴
+
+### 2026-08-02: モデル・料金・Difyの検索方式まわりを最新化
+- **内容**: Cohereが2026年7月にRerank v3.5を非推奨化し、8月1日以降は`rerank-v4.0-fast`へ自動転送される点を反映してモデル比較表・コピペ実例を`rerank-v4.0-fast`/`rerank-v4.0-pro`(料金: Fast $2.00/1,000検索、Pro $2.50/1,000検索)に更新。Jina AIの新型`reranker v3`(0.6B、listwise方式、BEIRでSOTA級)と後継の`v3.5`の存在を追記。BGE rerankerの高精度版(`v2-gemma`系)、hotchpotchの日本語リランカーがModernBERT/ruri-v3ベースである点を追記。Difyのハイブリッド検索が「重み設定(weight_rerank)」と「Rerankモデル(rerank_model)」の2方式であること、RRF(Reciprocal Rank Fusion)が3つ目の方式として議論中(未実装)であることを追記。スコア閾値の再調整に関する注意点を追加
+- **出典**: [Cohere Rerank 3.5 (Deprecated) — Oracle Cloud Infrastructure Docs](https://docs.oracle.com/en-us/iaas/Content/generative-ai/cohere-rerank-3-5.htm)、[cohere-rerank-3.5 | Pinecone Docs](https://docs.pinecone.io/models/cohere-rerank-3.5)、[Rerank 4: Cohere's Most Powerful Reranker Yet | Cohere](https://cohere.com/blog/rerank-4)、[Rerank v3.5 - API Pricing & Providers | OpenRouter](https://openrouter.ai/cohere/rerank-v3.5)、[Rerank 4 Pro - API Pricing & Providers | OpenRouter](https://openrouter.ai/cohere/rerank-4-pro)、[Rerank 4 Fast pricing & specs — Cohere | CloudPrice](https://cloudprice.net/models/cohere-rerank-4-fast)、[Cohere AI pricing in 2026: A complete guide to real costs | eesel AI](https://www.eesel.ai/blog/cohere-ai-pricing)、[Jina Reranker v3: 0.6B Listwise Reranker for SOTA Multilingual Retrieval | Jina AI](https://jina.ai/news/jina-reranker-v3-0-6b-listwise-reranker-for-sota-multilingual-retrieval/)、[jinaai/jina-reranker-v3 | Hugging Face](https://huggingface.co/jinaai/jina-reranker-v3)、[jina-reranker-v3.5: An Efficient Listwise Reranker with Hybrid Attention and Self-Distillation (arXiv)](https://arxiv.org/html/2607.18152)、[rerank-2.5 - API Pricing & Providers | OpenRouter](https://openrouter.ai/voyageai/rerank-2.5)、[Rerank 2.5 Lite pricing — Voyage AI | Future AGI](https://futureagi.com/llm-cost-calculator/voyage-ai/rerank-2-5-lite/)、[BAAI/bge-reranker-v2-gemma | Hugging Face](https://huggingface.co/BAAI/bge-reranker-v2-gemma)、[hotchpotch/query-crafter-japanese collection | Hugging Face](https://huggingface.co/collections/hotchpotch/query-crafter-japanese)、[hotchpotch/japanese-reranker-xsmall-v2 | Hugging Face](https://huggingface.co/hotchpotch/japanese-reranker-xsmall-v2)、[[Feature] Add RRF as a rerank strategy for hybrid search · langgenius/dify Discussion #34643](https://github.com/langgenius/dify/discussions/34643)、[知識検索 - Dify Docs](https://docs.dify.ai/ja/cloud/use-dify/nodes/knowledge-retrieval)
+- **注記**: Cohereの正式ドキュメント(docs.cohere.com、cohere.com/pricing)は今回のリサーチ環境からは直接アクセスできず、Oracle Cloud・Pinecone・OpenRouter・CloudPriceなど複数の第三者ドキュメント・料金アグリゲータの記載を突き合わせて裏取りした。掲載・記事化前に可能であればcohere.com公式で最終確認を推奨
 
 ### 2026-07-06: 初版執筆
 - **内容**: リランキングの定義と2段階検索(retrieve-then-rerank)の設計思想、bi-encoder(ベクトル検索)とcross-encoder(リランキング)の違いと速度・精度のトレードオフ、導入すべきかどうかの判断基準、Cohere Rerank/Jina Reranker/Voyage AI/BGE reranker/hotchpotchの日本語リランカーの比較表、Difyでの設定手順(モデルプロバイダー登録→検索設定→Rerankモデル有効化)、料金試算の考え方、レイテンシ・コストに関する注意点を整理
