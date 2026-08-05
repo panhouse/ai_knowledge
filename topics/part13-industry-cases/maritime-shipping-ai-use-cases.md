@@ -81,7 +81,7 @@ updated: 2026-07-18
 
 - [物流・運輸における生成AI活用事例](logistics-transportation-ai-use-cases.md)
 - [製造業における生成AI活用事例](manufacturing-ai-use-cases.md)
-- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](../part11-business-practice/production-management-scm-ai-use-cases.md)
+- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](../part14-job-role-cases/production-management-scm-ai-use-cases.md)
 
 ## 更新履歴
 
