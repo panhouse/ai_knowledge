@@ -55,7 +55,7 @@ Vision入力とは、ChatGPT・Gemini・Claude・Copilotといったチャット
 
 | 場面 | 向いている方法 |
 |---|---|
-| 月数千枚規模の定型請求書を機械的に処理したい | 専用AI-OCR([経理・財務職における生成AI活用事例](../part14-job-role-cases/finance-accounting-ai-use-cases.md)参照)を軸に、例外処理だけVision入力で補う |
+| 月数千枚規模の定型請求書を機械的に処理したい | 専用AI-OCR([経理・財務職における生成AI活用事例](../part15-job-role-cases/finance-accounting-ai-use-cases.md)参照)を軸に、例外処理だけVision入力で補う |
 | 出張精算で数枚の領収書をその場でサッと処理したい | チャットAIのVision入力で十分(この後のプロンプト例を参照) |
 | 手書きの会議メモ・ホワイトボードの写真をテキスト化したい | Vision入力が得意(ただし崩し字は誤読前提で人が確認) |
 | 契約書・免許証など1文字の誤りが重大な結果を招く書類 | Vision入力で下書きを作り、原本と人が必ず突き合わせる(桁数の多い数字は特に要注意) |
@@ -126,7 +126,7 @@ Vision入力とは、ChatGPT・Gemini・Claude・Copilotといったチャット
 - **手書きは活字より格段に精度が落ちる**: 特に崩し字・走り書きの日本語手書きは誤読が多い。重要な手書きメモは、AIに一次変換させた後、必ず人が原本と読み合わせる
 - **解像度・撮影環境が精度を大きく左右する**: 暗い場所での撮影、斜めからの撮影、感熱紙レシートの退色は誤読の主因になる。正面から明るい場所で撮る、可能ならスキャナーを使う、といった一手間で精度は大きく改善する
 - **個人情報・機密情報が写り込んだ画像の扱いに注意**: 領収書には氏名・カード番号の一部、社内資料の写真には機密情報が写り込むことがある。無料プランなど学習利用に同意した設定でアップロードすると、AIの学習データに使われる可能性がある。各ツールのデータ保護設定は[Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](../part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md)を参照して確認する
-- **経理・財務の現場適用は専用ページを参照**: 領収書処理の具体的な業務フロー・仕訳への落とし込み・数値検証の勘所は[経理・財務職における生成AI活用事例](../part14-job-role-cases/finance-accounting-ai-use-cases.md)に詳しい
+- **経理・財務の現場適用は専用ページを参照**: 領収書処理の具体的な業務フロー・仕訳への落とし込み・数値検証の勘所は[経理・財務職における生成AI活用事例](../part15-job-role-cases/finance-accounting-ai-use-cases.md)に詳しい
 
 ## 最初の一歩
 
@@ -137,7 +137,7 @@ Vision入力とは、ChatGPT・Gemini・Claude・Copilotといったチャット
 - [AIが扱いやすいデータ形式](./ai-friendly-data-formats.md)
 - [RAG(検索拡張生成)の基本](./rag-basics.md)
 - [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](../part01-ai-basics/recognition-ai-applications.md)
-- [経理・財務職における生成AI活用事例](../part14-job-role-cases/finance-accounting-ai-use-cases.md)
+- [経理・財務職における生成AI活用事例](../part15-job-role-cases/finance-accounting-ai-use-cases.md)
 
 ## 更新履歴
 
