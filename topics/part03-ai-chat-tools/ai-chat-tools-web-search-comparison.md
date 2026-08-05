@@ -4,7 +4,7 @@ part: 3
 chapter: 第4章 生成・分析の主要機能
 tags: [Web検索, ChatGPT search, グラウンディング, 出典, ChatGPT, Gemini, Claude, Copilot, ツール比較]
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-02
 ---
 
 # 主要AIチャットツールのWeb検索機能比較(ChatGPT・Gemini・Claude・Copilot)
@@ -26,18 +26,20 @@ ChatGPT・Gemini・Claude・Microsoft Copilotはいずれも「リアルタイ�
 
 検索を実行するタイミングも、いずれも基本は「質問内容から鮮度が必要そうだとAI自身が自動判定して検索を挟む」方式で、ユーザーが毎回明示的に指示する必要はない。ただし手動で強制オン/オフする手段の有無・場所はツールごとに異なる(次章で詳述)。
 
+**2026年に入り、Claudeの検索エンジン内部の処理が強化された点は特筆に値する。** Anthropicは2026年2月、Web検索ツールに「動的フィルタリング(dynamic filtering)」という仕組みを追加した(API向けのツールバージョン`web_search_20260209`以降)。これはClaudeが検索結果のHTMLを一度コードで処理し、ナビゲーションや広告など無関係な部分を除いてから本文の生成に使う仕組みで、複数企業・複数条件を横断するような検索を多用する質問ほど、無駄なノイズが減り応答が速く・安く済むようになる。claude.aiのチャット画面やClaude Codeでも同じ検索基盤を使っているため、この改善は間接的にビジネス利用者にも及ぶ。
+
 ## 使いどころ・使い分け
 
-### 4ツールの横並び比較表(2026年7月時点)
+### 4ツールの横並び比較表(2026年8月時点)
 
 | | ChatGPT | Google Gemini | Claude | Microsoft Copilot |
 |---|---|---|---|---|
-| 機能名 | Web検索(ChatGPT search) | グラウンディング(Grounding with Google Search) | Web search | Web検索(Bing統合・Web content) |
-| 手動切り替え | 入力欄の「+」→「Web検索」で強制オン | 通常チャットは自動判定が基本。Deep Researchでは検索対象の選択が可能 | 入力欄左下のスライダー(ツール)アイコン→「Web search」トグル | 無料版はほぼ常時検索前提。Microsoft 365 Copilotはチャット右上「…」→「Web content」トグル |
-| 無料プランでの利用 | 全プランで利用可(未登録ユーザーも可) | 利用可(2026年5月以降、回数制限ではなく5時間ごとに更新される「使用量(compute)」ベースの制限に移行) | 利用可(2025年に無料プランへも展開済み) | 個人向け無料版はほぼ無制限に利用可 |
-| 有料プランでの上限拡大 | 追加料金なし(全プラン共通の利用枠内) | AI Plus/Pro/Ultraで無料の2倍・4倍・20倍に上限が拡大(Deep Researchなど検索を多用する機能ほど消費が大きい) | 具体的な検索回数の固定値は非公開。全体のメッセージ利用上限を消費する形で、Pro/Max(5x)/Max(20x)ほど上限が大きい | Microsoft 365 CopilotはAIクレジット制で利用上限を管理(検索専用の数字は非公開) |
-| 出典の示し方 | 本文中の番号付き引用+回答下の「ソース」ボタンでパネル表示 | 回答下の「Sources」ボタンでサイドパネル表示。Deep Researchレポートは本文中に数字引用+末尾に文献リスト | 本文中の番号付きインライン引用(クリックで出典URLへ) | リンク付き引用+2024年11月から実際にBingへ送った検索クエリ自体も引用セクションに表示(透明性の強化) |
-| 企業向け管理設定 | Enterprise/Eduでワークスペース単位・ロール単位のON/OFF | Web Grounding for Enterprise(規制業界向けの別サービス。データ非ログ・VPC対応) | Team/Enterpriseは管理者がAdmin設定で有効化するまでメンバーに表示されない | IT管理者がテナント側でWeb検索(パブリックWebアクセス)自体を無効化可能 |
+| 機能名 | Web検索(ChatGPT search) | グラウンディング(Grounding with Google Search) | Web search(拡張版は動的フィルタリング対応) | Web検索(Bing統合・Web content) |
+| 手動切り替え | 入力欄の「+」→「Web検索」で強制オン | 通常チャットは自動判定が基本。Deep Researchでは検索対象の選択が可能 | 入力欄左下のスライダー(ツール)アイコン→「Web search」トグル | 無料版はほぼ常時検索前提。Microsoft 365 Copilotのチャットは右上「…」→「Web content」トグル、またはチャット設定→パーソナライズ→詳細設定の「Web検索」トグルでも切り替え可能 |
+| 無料プランでの利用 | 全プランで利用可(未登録ユーザーも可) | 利用可(2026年5月以降、回数制限ではなく5時間ごと・週単位で更新される「使用量(compute)」ベースの制限に移行) | 利用可(2025年に無料プランへも展開済み) | 個人向け無料版はほぼ無制限に利用可 |
+| 有料プランでの上限拡大 | 追加料金なし(全プラン共通の利用枠内) | Google AI Plus($4.99)・AI Pro($19.99)・AI Ultra(2026年5月のGoogle I/Oで5倍/$99.99・20倍/$199.99の2階層に分割)の順で上限が拡大(Deep Researchなど検索を多用する機能ほど消費が大きい) | 具体的な検索回数の固定値は非公開。全体のメッセージ利用上限を消費する形で、Pro/Max(5x)/Max(20x)ほど上限が大きい。API経由の利用は1,000検索あたり10ドル+トークン費用 | Microsoft 365 CopilotはAIクレジット制で利用上限を管理(検索専用の数字は非公開) |
+| 出典の示し方 | 本文中の番号付き引用+回答下の「ソース」ボタンでパネル表示 | 回答下の「Sources」ボタンでサイドパネル表示。Deep Researchレポートは本文中に数字引用+末尾に文献リスト | 本文中の番号付きインライン引用(クリックで出典URLへ、引用元テキストの該当箇所を最大150文字まで保持) | リンク付き引用+実際にBingへ送った検索クエリ自体も引用セクションに表示(透明性の強化)。2026年6月からはWord/PowerPointファイルの引用元も、文書全体ではなく該当箇所に直接リンクする「Deep citations」に対応 |
+| 企業向け管理設定 | Enterprise/Eduでワークスペース単位・ロール単位のON/OFF | Web Grounding for Enterprise(規制業界向けの別サービス。データ非ログ・VPC対応) | Team/Enterpriseは管理者がAdmin設定で有効化するまでメンバーに表示されない | IT管理者がテナント側でWeb検索(パブリックWebアクセス)自体を無効化可能。2026年7月からは特定ドメイン最大1,000件を検索対象から個別に除外する設定にも対応 |
 
 ### 判断基準
 
@@ -64,14 +66,14 @@ ChatGPT・Gemini・Claude・Copilotの4ツールは、いずれも「チャッ�
 - **ChatGPT**: 入力欄の「+」アイコン→「Web検索」を選択(または半角「/」→「Web検索」)。次の質問には必ずWeb検索が使われる
 - **Gemini**: 通常チャットでの明示的な手動トグルは限定的で、基本は自動判定に任せる設計。Deep Researchモードでは、レポート生成前に表示される「Sources」の確認画面で検索対象の調整ができる
 - **Claude**: 入力欄左下のスライダー(ツール選択)アイコンをクリックし、「Web search」をトグルでON/OFF。プロフィールアイコン→「設定」→「機能プレビュー」にも同じトグルがある。会話ごとにON/OFFを切り替えられるので、時事性が不要な相談ではOFFにして利用量を節約できる
-- **Microsoft Copilot**: 無料版(copilot.microsoft.com)はWeb検索がほぼ常時前提で、明確なON/OFF切り替えUIは確認できていない。Microsoft 365 Copilotのチャットでは、右上の「…」メニューから「Web content」をトグルしてON/OFFする
+- **Microsoft Copilot**: 無料版(copilot.microsoft.com)はWeb検索がほぼ常時前提で、明確なON/OFF切り替えUIは確認できていない。Microsoft 365 Copilotのワークチャットでは、右上の「…」メニューから「Web content」をトグルしてON/OFFする。同じ設定は「…(設定など)」→「チャット設定」→「パーソナライズ」→末尾の「詳細設定」を開いた「Web検索」トグルからも変更できる。組織のIT管理者がWeb検索自体を無効化している場合は、このトグル自体が表示されない
 
 ### コピペで使えるプロンプト例(検索を誘導し、範囲を絞る)
 
 どのツールでも、「調べて」「最新情報を」といった表現に加えて期間・ソースを具体的に指定すると、自動判定の検索がより的確に発動しやすく、回答の精度も上がる。
 
 ```
-2026年7月時点の情報のみを対象に、Web検索を使って調べてください。
+2026年8月時点の情報のみを対象に、Web検索を使って調べてください。
 
 【調べたいこと】
 法人向け勤怠管理SaaSの主要3社(A社、B社、C社)の最新の料金プランと、
@@ -90,11 +92,12 @@ ChatGPT・Gemini・Claude・Copilotの4ツールは、いずれも「チャッ�
 
 ### 料金の考え方
 
-Web検索そのものに個別の追加料金がかかるツールは基本的にない。ただし、有料プラン(ChatGPT Plus/Pro、Google AI Pro/Ultra、Claude Pro/Max、Microsoft 365 Copilot)にすると、Web検索を含む全体の利用回数上限(メッセージ数・compute量・AIクレジットなど、ツールごとに単位が異なる)が拡大され、検索を多用するDeep Research系機能の利用可能回数も増える、という構造は4ツールに共通する。無料プランで「検索したのに回答が返ってこない」「検索回数が急に使えなくなった」という場合は、Web検索専用の制限ではなく全体の利用上限に達している可能性を疑うとよい。
+Web検索そのものに個別の追加料金がかかるツールは基本的にない(Claudeは開発者向けAPI経由の場合のみ1,000検索あたり10ドルの従量課金があるが、claude.aiのチャット利用には関係しない)。有料プラン(ChatGPT Plus/Pro、Google AI Plus/Pro/Ultra、Claude Pro/Max、Microsoft 365 Copilot)にすると、Web検索を含む全体の利用回数上限(メッセージ数・compute量・AIクレジットなど、ツールごとに単位が異なる)が拡大され、検索を多用するDeep Research系機能の利用可能回数も増える、という構造は4ツールに共通する。特にGoogleは2026年5月から、日次の固定回数ではなく「5時間ごと・週単位で更新される計算量(compute)の消費量」でGeminiの利用上限を管理する方式に切り替えており、長い会話や動画生成など重い処理をするほど消費が早い。無料プランで「検索したのに回答が返ってこない」「検索回数が急に使えなくなった」という場合は、Web検索専用の制限ではなく全体の利用上限に達している可能性を疑うとよい。
 
 ## 注意点・よくある誤解
 
 - **出典が付いていても正しさの保証にはならない**: 前述のTow Centerの調査が示すように、AIの検索結果の引用は現時点でも誤りが多い。番号付きの引用リンクが表示されていても、それだけで安心せず、重要な数値・固有名詞は必ずリンクを開いて元の記事と一致するか確認する。仕組みの詳細は[ハルシネーションの仕組みと対策](../part04-risk-security/hallucination-and-countermeasures.md)を参照
+- **「検索の質が上がった」は「引用の正しさが上がった」と同義ではない**: Claudeの動的フィルタリングやCopilotのDeep citationsのような2026年の改善は、いずれも「無関係なノイズを減らす」「引用元をより細かい単位で示す」という効率・透明性の向上であり、引用そのものの正確性を検証・保証する仕組みではない。前述の引用検証の運用は変えないこと
 - **「検索エンジンが違う」ことに実務上の意味がある**: 自社サイトの情報をAIの回答に反映させたい場合、Bing系(ChatGPT・Copilot)、Google系(Gemini)、Brave系(Claude)のどのクローラーにもインデックスされているかで結果が変わりうる。特定のツールにだけ自社情報が出てこない場合は、そのツールの検索基盤に自社サイトが正しくインデックスされているかを確認する
 - **Deep Research系機能と混同しない**: 本ページで扱う「Web検索」はいずれも1〜数回の検索で即答する軽量機能であり、[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)で扱う各社のDeep Research系機能は、数分〜数十分かけて数十〜数百件のページを自律的に調べる別モード。単純な事実確認にDeep Researchを使うと待ち時間が無駄になり、逆に本格調査をWeb検索だけで済ませると調査不足になる
 - **利用上限の単位がツールごとに違うため単純比較しにくい**: Geminiの「compute(計算量)ベース」、Claudeの「メッセージ数ベース」、Microsoft 365 Copilotの「AIクレジット制」は、いずれも検索専用の回数として公開されていない。契約プランを比較検討する際は、各社のヘルプページで最新の説明を必ず確認する
@@ -115,6 +118,11 @@ Web検索そのものに個別の追加料金がかかるツールは基本的�
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
 
 ## 更新履歴
+
+### 2026-08-02: 2026年8月時点の最新情報に更新
+- **内容**: 「仕組み・背景」にAnthropicが2026年2月に追加したWeb検索の「動的フィルタリング(dynamic filtering)」を追記。比較表・実務手順を更新し、Microsoft 365 Copilotの詳細な手動切り替え手順(パーソナライズ→詳細設定)、2026年6月の「Deep citations」(引用元の該当箇所への直リンク)、2026年7月の検索対象ドメイン除外設定(最大1,000件)を追加。GeminiはGoogle I/O 2026でのAI Ultra階層分割(5倍/$99.99・20倍/$199.99)とAI Plus($4.99)を含む料金体系に更新。Claude Web検索APIの従量課金(1,000検索あたり10ドル)を料金セクションに追記。「注意点」に、検索機能の効率・透明性向上と引用の正確性は別問題である旨を追記
+- **出典**: [Web search tool | Claude Platform Docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)、[Claude web search now available globally on all plans | Anthropic](https://www.anthropic.com/news/web-search)、[Introducing Claude Sonnet 5 | Anthropic](https://www.anthropic.com/news/claude-sonnet-5)、[Google is easing Gemini usage limits / Gemini app now has compute-based usage limits as AI Ultra now starts at $100 | 9to5Google](https://9to5google.com/2026/05/19/google-ai-ultra-100/)、[Google readies 'AI Ultra Lite' plan and explicit 'usage limits' for Gemini | 9to5Google](https://9to5google.com/2026/05/05/google-ai-ultra-lite-gemini-usage-limits/)、[What's New in Microsoft 365 Copilot | July 2026 | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)、[What's New in Microsoft 365 Copilot | June 2026 | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%e2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)、[Understanding web search in Microsoft 365 Copilot Chat and Agents | Microsoft Support](https://support.microsoft.com/en-us/topic/understanding-web-search-in-microsoft-365-copilot-chat-and-agents-94c45d32-1a77-4f82-8e05-58dfb9afac48)
+- **注記**: claude.com・support.claude.com・support.google.com・techcommunity.microsoft.comの一部ページは本セッションから直接アクセスできず(403エラー)、検索エンジンのスニペットおよびAnthropicのAPIドキュメント(直接アクセス可)、9to5Googleなど複数の技術系メディアの記事の突き合わせに基づく記述を含む。ChatGPT・Claude・Copilotの無料プランにおける具体的な検索回数上限は、依然として公式の明確な数値公開が確認できなかったため、前版同様に数値を明記せず仕組みの説明にとどめた
 
 ### 2026-07-07: 初版執筆
 - **内容**: ChatGPT・Gemini・Claude・Microsoft Copilotの4ツールのWeb検索機能を、裏側の検索エンジン(Bing/Google検索/Brave Search/Bing)、手動切り替えの場所、無料/有料プランでの利用制限、出典の示し方、企業向け管理設定で横並び比較。Columbia Journalism Review(Tow Center)の引用精度調査、Perplexity等の検索特化型AIとの使い分け判断軸、検索を誘導する期間・ソース指定のプロンプト例を執筆
