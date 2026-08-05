@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+- [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
+
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して最新化
 
 - [GPTsの作り方と公開設定](topics/part06-custom-ai/gpts-creation-basics.md): ChatGPT Work・Apps/Actionsの仕様変更・GPTストア収益化の実態を反映して最新化
