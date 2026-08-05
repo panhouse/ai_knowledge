@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-03
+- [公共・自治体における生成AI活用事例](topics/part13-industry-cases/public-sector-ai-use-cases.md): 総務省の最新導入率データ・神戸市の事例・国のガイドライン施行日等を最新化・増強
 - [主要AIチャットツールのメモリ・プロジェクト機能比較(Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-memory-and-context-comparison.md): Gemini(欧州展開)・Claude(メモリ表示方式刷新・Reflect追加)・Microsoft Copilot(Notebooks GA・ライセンス緩和)の節を最新化・増強
 - [生成AIは人間をどこまで超えたか:主要ベンチマークで見る到達点と限界(2026年時点)](topics/part12-ai-trends/ai-benchmark-performance-research.md): 主要ベンチマークの節を最新化・増強
 - [NotebookLM(Gemini Notebook)の基本](topics/part08-specialized-ai-tools/notebooklm-basics.md): Gemini 3.5への切り替え・チャットからのソース自動収集・Office形式エクスポート・料金プランの節を最新化
