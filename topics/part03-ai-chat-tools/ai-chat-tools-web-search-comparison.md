@@ -96,7 +96,7 @@ Web検索そのものに個別の追加料金がかかるツールは基本的�
 
 - **出典が付いていても正しさの保証にはならない**: 前述のTow Centerの調査が示すように、AIの検索結果の引用は現時点でも誤りが多い。番号付きの引用リンクが表示されていても、それだけで安心せず、重要な数値・固有名詞は必ずリンクを開いて元の記事と一致するか確認する。仕組みの詳細は[ハルシネーションの仕組みと対策](../part04-risk-security/hallucination-and-countermeasures.md)を参照
 - **「検索エンジンが違う」ことに実務上の意味がある**: 自社サイトの情報をAIの回答に反映させたい場合、Bing系(ChatGPT・Copilot)、Google系(Gemini)、Brave系(Claude)のどのクローラーにもインデックスされているかで結果が変わりうる。特定のツールにだけ自社情報が出てこない場合は、そのツールの検索基盤に自社サイトが正しくインデックスされているかを確認する
-- **Deep Research系機能と混同しない**: 本ページで扱う「Web検索」はいずれも1〜数回の検索で即答する軽量機能であり、[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)で扱う各社のDeep Research系機能は、数分〜数十分かけて数十〜数百件のページを自律的に調べる別モード。単純な事実確認にDeep Researchを使うと待ち時間が無駄になり、逆に本格調査をWeb検索だけで済ませると調査不足になる
+- **Deep Research系機能と混同しない**: 本ページで扱う「Web検索」はいずれも1〜数回の検索で即答する軽量機能であり、[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)で扱う各社のDeep Research系機能は、数分〜数十分かけて数十〜数百件のページを自律的に調べる別モード。単純な事実確認にDeep Researchを使うと待ち時間が無駄になり、逆に本格調査をWeb検索だけで済ませると調査不足になる
 - **利用上限の単位がツールごとに違うため単純比較しにくい**: Geminiの「compute(計算量)ベース」、Claudeの「メッセージ数ベース」、Microsoft 365 Copilotの「AIクレジット制」は、いずれも検索専用の回数として公開されていない。契約プランを比較検討する際は、各社のヘルプページで最新の説明を必ず確認する
 - **社外秘情報は検索できない**: 4ツールとも公開Web(またはMicrosoft Graph経由の自社アクセス権データ)しか読めない。非公開の契約書・議事録などを根拠にしたい場合は、社内RAGツールやファイルアップロードでの要約を使う
 
@@ -108,7 +108,7 @@ Web検索そのものに個別の追加料金がかかるツールは基本的�
 
 - [ChatGPTのWeb検索機能](chatgpt-web-search-feature.md)
 - [Perplexityの基本](../part08-specialized-ai-tools/perplexity-basics.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)
 - [ハルシネーションの仕組みと対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [Google Geminiの基本](google-gemini-basics.md)
 - [Claude(Anthropic)の基本](claude-basics.md)

@@ -99,7 +99,7 @@ Agentic RAGは、「検索(Retrieval)→生成(Generation)」を1回きりのパ
 - [RAG(検索拡張生成)の基本](rag-basics.md)
 - [RAGの精度を上げる方法](rag-accuracy-improvement.md)
 - [ベクトルデータベースの基本(Embeddingとの関係)](vector-database-basics.md)
-- [AIエージェントとは何か](../part12-ai-trends/ai-agent-basics.md)
+- [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
 
