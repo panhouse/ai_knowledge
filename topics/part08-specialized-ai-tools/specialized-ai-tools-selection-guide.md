@@ -150,8 +150,8 @@ Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア
 - [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](./audio-music-generation-ai-basics.md)
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](./local-llm-basics.md)
 - [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](./meeting-minutes-ai-basics.md)
-- [生成AIに向く業務・向かない業務の切り分け](../part11-business-practice/ai-task-suitability.md)
-- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part11-business-practice/ai-research-and-information-gathering.md)
+- [生成AIに向く業務・向かない業務の切り分け](../part12-business-practice/ai-task-suitability.md)
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴

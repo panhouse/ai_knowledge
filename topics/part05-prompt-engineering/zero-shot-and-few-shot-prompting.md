@@ -4,7 +4,7 @@ part: 5
 chapter: 第2章 例示と誘導
 tags: [プロンプトエンジニアリング, Zero-shot, Few-shot, 入門手法]
 created: 2026-07-05
-updated: 2026-07-06
+updated: 2026-07-31
 ---
 
 # Zero-shot・Few-shotプロンプティング
@@ -136,9 +136,9 @@ Few-shotは特別な機能ではなく、プロンプトの中に例を書き込
 
 | ツール/モデル | 例示の書き方の目安 |
 |---|---|
-| Claude | `<example>`〜`</example>`タグ(複数なら`<examples>`で囲む)で囲むと、指示や参照データと区別しやすく公式に推奨されている |
-| ChatGPT(GPT系) | Markdownの見出しや「入力: / 出力:」のような箇条書き形式、あるいは`###`区切りで並べるのが一般的 |
-| Gemini | 「例:」ラベル+箇条書き、またはJSON形式で入出力ペアを列挙する形が案内されている |
+| Claude | `<example>`〜`</example>`タグ(複数なら`<examples>`で囲む)で囲むと、指示や参照データと区別しやすく公式に推奨されている。2026年の公式ガイドでは「まず1個(One-shot)から始め、狙った出力にならない場合だけ例を増やす」という順番が案内されている |
+| ChatGPT(GPT系) | Markdownの見出しや「入力: / 出力:」のような箇条書き形式、あるいは`###`区切りで並べるのが一般的。GPT-5系は指示追従性が高く、公式ガイドも「まずZero-shotで試し、それでも形式が揃わない場合にFew-shotを足す」順を推奨している |
+| Gemini | 「例:」ラベル+箇条書き、またはJSON形式で入出力ペアを列挙する形が案内されている。GoogleのAPI公式ドキュメントでも「タスクが複雑・特定のフォーマット・独自のトーンを求める場合は具体例を用意する」と案内されており、他の2ツールに比べて例示を足すと安定しやすい傾向が報告されている |
 | いずれのツールも共通 | 例が多い/長い場合は、システムプロンプトやカスタム指示・Gem・プロジェクトの「指示」欄に固定登録しておくと、毎回貼り付ける手間が省ける(詳細は[プロンプトの基本構成要素](prompt-basic-structure.md)のツール対応表を参照) |
 
 料金面では、Few-shotは例示の分だけ入力トークンが増える(=API利用の場合は課金対象が増える)ため、チャット画面での利用では体感しにくいが、API経由で大量件数を処理する業務(例: 問い合わせメールの自動分類バッチ)では、例の数と長さがコストに直結する点を意識する。
@@ -150,7 +150,8 @@ Few-shotは特別な機能ではなく、プロンプトの中に例を書き込
 - **例の順序も結果に影響する**: 同じ例でも並べる順番を変えると出力が変わることがある。重要な例・代表的な例は最後に置く、あるいはランダム性を排除して固定順にするなど、意図的に並べる
 - **フォーマットのクセまで学習される**: 例文の改行位置や句読点の使い方が不揃いだと、そのブレもパターンとして学習されてしまう。例は体裁を統一する
 - **Zero-shotで指示が通らない場合、いきなりFew-shotに飛びつく前に指示文自体を見直す**: 曖昧な形容詞を具体的な条件に置き換えるだけで解決することも多い([プロンプトの基本構成要素](prompt-basic-structure.md)を参照)
-- **推論(Thinking)モデルにFew-shot例を重ねると逆効果になることがある**: OpenAIは公式ガイドで、o1系をはじめとする推論モデルに過剰なFew-shot例を加えると性能が下がる場合があると案内している(Few-shot追加でZero-shotより精度が落ちた検証例も報告されている)。ChatGPTのThinking系・Claudeの拡張思考・GeminiのThinking系を使うときは、まず例なしで試し、それでも形式が揃わない場合だけ最小限の例を1〜2個足す順番が安全
+- **推論(Thinking)モデルにFew-shot例を重ねると逆効果になることがある**: OpenAIは公式ガイドで、o1系をはじめとする推論モデルに過剰なFew-shot例を加えると性能が下がる場合があると案内している(Few-shot追加でZero-shotより精度が落ちた検証例も報告されている)。2026年時点でも、GPT-5のThinking系・Claudeの拡張思考・GeminiのThinking系のような「モデル内部で自動的に考える手順を組み立てるタイプ」に対しては、細かすぎるFew-shot例や「ステップバイステップで考えて」といった指示がかえってノイズになり、出力の形式指定と問題設定だけに絞った方がよいという指摘が定着している。まず例なしで試し、それでも形式が揃わない場合だけ最小限の例を1〜2個足す順番が安全
+- **例のラベルは多少不正確でも、入力パターンの「見せ方」自体に効果があるという研究がある**: 文脈内学習(in-context learning)の研究では、例に付けたラベル(分類の正解)が多少ずれていても、入力文の傾向や出力フォーマットを見せること自体がZero-shotより効果を持つという報告がある。とはいえこれは「わざと間違った例を使ってよい」という意味ではなく、実務では引き続き正しくカテゴリを網羅した例を用意するのが基本。ただし「完璧に正しい例が揃わないと効果が出ない」わけでもない、という程度に理解しておくとよい
 - **機密情報を含む例をプロンプトに貼らない**: 実際の顧客データや社内秘の実例を例示に使う場合、SaaS版チャットツールの学習利用設定や、API利用時のログ保持ポリシーを確認してから使う
 
 ## 最初の一歩
@@ -163,6 +164,10 @@ Few-shotは特別な機能ではなく、プロンプトの中に例を書き込
 - [Chain-of-Thought(CoT)プロンプティング](chain-of-thought-prompting.md) — 計算・多段階の論理判断でミスが出る場合はこちら
 
 ## 更新履歴
+
+### 2026-07-31: ツール横断の対応・注意点を最新化
+- **内容**: 「主要ツールでの設定・書き方の対応」を2026年時点の各社公式ガイドに合わせて更新。Claudeは「まず1例から始め、足りなければ増やす」、GPT-5系は「まずZero-shotで試す」、Geminiは「複雑・独自フォーマットなタスクでは例示ありの方が安定しやすい」という、ツールごとに異なる傾向を明記した。また「注意点」に、推論(Thinking)モデルに対するFew-shot/CoT指示が2026年時点でも逆効果になりやすいという定説の補足と、文脈内学習の研究知見(例のラベルが多少不正確でも入力パターンの見せ方自体に効果があるという報告)を追加した
+- **出典**: [Claude by Anthropic - Prompt engineering best practices for 2026](https://claude.com/blog/best-practices-for-prompt-engineering)、[OpenAI Cookbook - GPT-5 Prompting Guide](https://github.com/openai/openai-cookbook/blob/main/examples/gpt-5/gpt-5_prompting_guide.ipynb)、[Google AI for Developers - Prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies)、[Prompting Reasoning Models in 2026: GPT-5.5, Claude, Gemini, and DeepSeek | SurePrompts](https://sureprompts.com/blog/ai-reasoning-models-prompting-complete-guide-2026)
 
 ### 2026-07-06: 重複ページの統合
 - **内容**: Zero-shot/Few-shot/CoTを扱う重複6ページを本ページ(Zero-shot・Few-shot)とCoTページの2本に統合。CoTへの段階的な使い分け導線とFew-shot CoT併用への言及、推論モデルでFew-shot例が逆効果になりうる注意点を追記した。統合元: prompting-techniques-basics.md / zero-few-shot-and-cot-prompting.md / zero-shot-few-shot-cot-prompting.md / zero-shot-few-shot-cot.md
