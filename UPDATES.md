@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-01
+- [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](topics/part07-data-analysis/graphrag-and-agentic-rag-basics.md): LightRAG・Neo4j公式パッケージ・Azure AI Searchのエージェント検索/Foundry IQ・Google Cloud Agent Search等を反映して最新化
 - [社内AI利用ガイドラインの作り方](topics/part04-risk-security/ai-internal-guideline-basics.md): 主要公的資料のバージョン更新有無を確認し、ChatGPT/Gemini/Claude/Copilotの管理者設定によるエンフォースメントの節を追加して最新化
 - [Windsurfの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/windsurf-basics.md): 新モデルSWE-1.7・新機能Spaces・Teams料金の詳細・Cognitionの資金調達状況を反映して最新化
 
