@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-07-31
+- [n8n・Make・Zapierの比較と使い分け](topics/part10-nocode-lowcode/automation-tools-comparison.md): MCP対応・AI機能の方向性・料金モデルの節を最新化・増強
 - [GPTsにおけるプロンプトインジェクション対策](topics/part06-custom-ai/gpts-prompt-injection-defense.md): OpenAIの自動レッドチーム「GPT-Red」とGPT-5.6の頑健性向上実績を反映して最新化・増強
 - [生成AIによる文章作成・編集の実務活用](topics/part11-business-practice/ai-writing-and-editing.md): ツール横断の対応付け(ChatGPT Writing Blocks・Gemini in Docs新機能・Copilot Claude Sonnet 5統合・Claude Opus 5)の節を最新化・増強
 - [ディープラーニング(深層学習)の基礎](topics/part01-ai-basics/deep-learning-basics.md): スケーリング則の曲がり角(推論時計算へのシフト)・Transformer後継アーキテクチャ・NVIDIA業績とGPU地政学リスクの節を最新化
