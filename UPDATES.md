@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-03
+- [Makeの基本](topics/part10-nocode-lowcode/make-basics.md): Make AI Agent(New)のオープンベータ公開とクレジット消費ルールの節を最新化・増強
 - [メタプロンプティング](topics/part05-prompt-engineering/meta-prompting.md): ツール横断の対応付けの節を最新化・増強
 
 ## 2026-08-02
