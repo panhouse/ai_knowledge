@@ -18,6 +18,7 @@
 - 体系変更: 旧 Part 14「国内AI企業マップ」を **Part 15**(`topics/part16-japan-ai-companies/`)に繰り下げ(既存10ページの `part` frontmatter と本文の参照、CLAUDE.md / README.md の全体マップ、過去の更新ログ内リンクパスを追随)
 
 ## 2026-08-04
+- [金融・保険における生成AI活用事例](topics/part13-industry-cases/finance-insurance-ai-use-cases.md): 各社の最新動向(MUFG×Sakana AI実案件フェーズ、みずほ・SMBCのコールセンターAI、SOMPOのGemini Enterprise全社導入、Allianz Nemoの拡張)を反映し、第一生命グループの生成AI-OCR・不正請求検知の事例を追加
 - [生成AI導入の社内展開・浸透のすすめ方](topics/part11-business-practice/ai-adoption-rollout-basics.md): 利用率統計・IBM/MIT NANDA調査・ガイドライン整備の節を最新化・増強
 - [物流・運輸における生成AI活用事例](topics/part13-industry-cases/logistics-transportation-ai-use-cases.md): 日本通運「DCX」AI出荷予測の機能強化とNIPPON EXPRESSホールディングス「NX-Tech HUB」×Cloud Shiftの多言語SOP自動作成事例を反映して最新化・増強
 - [自己整合性(Self-Consistency)プロンプティング](topics/part05-prompt-engineering/self-consistency-prompting.md): 2026年の実証研究(効果の薄れ・派生手法CoT-PoT/DeepConf等)を反映して最新化・増強
