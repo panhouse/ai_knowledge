@@ -83,6 +83,7 @@ Part 1〜10 が「AIに指示を出して答えをもらう」前提の教科書
 
 ### 第1章 エージェントの基礎
 - [AIエージェントとは何か](ai-agent-basics.md)
+- [マルチエージェント・オーケストレーションの基本](multi-agent-orchestration-basics.md)
 
 ### 第2章 コーディングエージェント
 - [Claude Codeの基本](claude-code-basics.md)
