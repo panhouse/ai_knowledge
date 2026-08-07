@@ -72,3 +72,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [契約書・法務AI企業一覧](legal-contract-ai-companies-japan.md)
 - [国産基盤モデル・研究開発系AI企業一覧](foundation-model-companies-japan.md)
 - [コンサル・SIer系のAI企業一覧](consulting-sier-ai-companies.md)
+- [物流・SCM AI企業一覧](logistics-scm-ai-companies-japan.md)
