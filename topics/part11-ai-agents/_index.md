@@ -91,6 +91,7 @@ Part 1〜10 が「AIに指示を出して答えをもらう」前提の教科書
 
 ### 第3章 業務エージェント(非コーディング)
 - [Claude Coworkの基本](claude-cowork-basics.md)
+- [Manusの基本(汎用自律型業務エージェント)](manus-basics.md)
 
 ### 第4章 エージェントの選び方・比較
 - [主要AIエージェントの比較と選び方](ai-agent-tools-comparison.md)
