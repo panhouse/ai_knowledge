@@ -88,6 +88,7 @@ Part 1〜10 が「AIに指示を出して答えをもらう」前提の教科書
 - [Claude Codeの基本](claude-code-basics.md)
 - [OpenAI Codexの基本](openai-codex-basics.md)
 - [Google Antigravityの基本](google-antigravity-basics.md)
+- [非エンジニアのための「バイブコーディング」実践ガイド](vibe-coding-for-non-engineers.md)
 
 ### 第3章 業務エージェント(非コーディング)
 - [Claude Coworkの基本](claude-cowork-basics.md)
