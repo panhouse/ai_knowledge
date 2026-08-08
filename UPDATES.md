@@ -8,11 +8,14 @@
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
 - [メディア・広告・エンタメにおける生成AI活用事例](topics/part14-industry-cases/media-entertainment-ai-use-cases.md): 著作権・肖像権を巡る訴訟の本格化(Disney/Universal/Warner Bros.×Midjourney、国内新聞3社×Perplexity、Sora 2のオプトイン転換)と国内新事例(電通沖縄のCM制作実証実験、mimidub)を反映して最新化
-<<<<<<< HEAD
-=======
 - [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): freee Agent Hub・freee-mcp・マネーフォワード AI Coworkの最新動向、電帳法完全義務化(2026年1月)、インボイス登録番号の自動照合を反映して最新化・増強
 - [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](topics/part12-business-practice/ai-image-and-visual-creation-for-business.md): ツール横断対応表(GPT Image 2・Gemini新プラン体系・Canva AI 2.0・Adobe Fireflyの料金階層・Claude Design)と注意点(EU AI法第50条の透明性義務)を最新化・増強
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): LLMO/GEOの位置づけ・ペルソナ運用のコツ・マーケティング特化AIツールの動向を最新化
+- [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): Zendesk/Fin(旧Intercom)/Salesforce Agentforceの料金体系(アウトカム課金化)・買収動向とハルシネーション対策の節を最新化・増強
+- [士業・専門サービスにおける生成AI活用事例](topics/part14-industry-cases/professional-services-ai-use-cases.md): Harvey・LegalOn・EY新日本・PwC・McKinsey Lilliの各事例と業界団体のAIガイドライン動向を最新化・増強
+- [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): Deep Research系機能のツール横断比較・新規事業事例を反映して最新化
+- [宿泊・観光業における生成AI活用事例](topics/part14-industry-cases/hospitality-tourism-ai-use-cases.md): AIエージェント時代の予約導線シフト・パスポートOCR無人チェックイン解禁・星野リゾートのフレボル等を反映して最新化・増強
+
 ## 2026-08-07
 - [物流・SCM AI企業一覧](topics/part16-japan-ai-companies/logistics-scm-ai-companies-japan.md): 新規執筆(Hacobu・オプティマインド・GROUND・日本通運の4社を収録)
 - [AIエージェント導入PoCの評価指標・進め方の基本](topics/part11-ai-agents/ai-agent-poc-evaluation-basics.md): 新規執筆(フェーズ別KPI、信頼性/定着率/ROIの3本柱、PoC地獄を避けるゲート設計)
@@ -31,7 +34,6 @@
 - [経営者・管理職における生成AI活用事例](topics/part15-job-role-cases/executive-management-ai-use-cases.md): 新規執筆(Part15第17章の未執筆枠。壁打ち・レッドチーム、機密情報漏洩・訴訟リスクを整理)
 - [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 新規執筆(Part15第11章の未執筆枠。SDLC工程別の活用マップ、DORA 2025・Veracode/Snykのセキュリティ統計を整理)
 - [コンサルタント・リサーチャー職における生成AI活用事例](topics/part15-job-role-cases/consultant-researcher-ai-use-cases.md): 新規執筆(Part15第16章の未執筆枠。Deep Research・イシューツリー・NDA/クライアント機密情報のリスクを整理)
->>>>>>> origin/main
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
 
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して最新化
@@ -51,15 +53,6 @@
 - [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): エージェント機能(Dify Agent)とMCPサーバー機能の新機能、Cloud版プラン詳細を最新化・増強
 
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): ツール横断の対応付けを最新化(Anthropic Console旧Workbench廃止予定・OpenAI Evals移行導線・promptfoo/LangSmith料金・Dify実行結果自動保存を反映)
-- [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): Deep Research系機能のツール横断比較・新規事業事例を反映して最新化
-
-- [宿泊・観光業における生成AI活用事例](topics/part14-industry-cases/hospitality-tourism-ai-use-cases.md): AIエージェント時代の予約導線シフト・パスポートOCR無人チェックイン解禁・星野リゾートのフレボル等を反映して最新化・増強
-
-## 2026-08-08
-- [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): Zendesk/Fin(旧Intercom)/Salesforce Agentforceの料金体系(アウトカム課金化)・買収動向とハルシネーション対策の節を最新化・増強
-
-## 2026-08-08
-- [士業・専門サービスにおける生成AI活用事例](topics/part14-industry-cases/professional-services-ai-use-cases.md): Harvey・LegalOn・EY新日本・PwC・McKinsey Lilliの各事例と業界団体のAIガイドライン動向を最新化・増強
 
 ## 2026-08-05
 - 修正: 60本の最新化PRのマージに伴い旧パート名のリンクが混入していた2ファイルを修正(`../part12-ai-trends/ai-agent-basics.md` → `../part11-ai-agents/ai-agent-basics.md`)
