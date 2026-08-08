@@ -4,6 +4,31 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-08
+<<<<<<< HEAD
+=======
+- [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): freee Agent Hub・freee-mcp・マネーフォワード AI Coworkの最新動向、電帳法完全義務化(2026年1月)、インボイス登録番号の自動照合を反映して最新化・増強
+- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](topics/part12-business-practice/ai-image-and-visual-creation-for-business.md): ツール横断対応表(GPT Image 2・Gemini新プラン体系・Canva AI 2.0・Adobe Fireflyの料金階層・Claude Design)と注意点(EU AI法第50条の透明性義務)を最新化・増強
+- [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): LLMO/GEOの位置づけ・ペルソナ運用のコツ・マーケティング特化AIツールの動向を最新化
+## 2026-08-07
+- [物流・SCM AI企業一覧](topics/part16-japan-ai-companies/logistics-scm-ai-companies-japan.md): 新規執筆(Hacobu・オプティマインド・GROUND・日本通運の4社を収録)
+- [AIエージェント導入PoCの評価指標・進め方の基本](topics/part11-ai-agents/ai-agent-poc-evaluation-basics.md): 新規執筆(フェーズ別KPI、信頼性/定着率/ROIの3本柱、PoC地獄を避けるゲート設計)
+- [非エンジニアのための「バイブコーディング」実践ガイド](topics/part11-ai-agents/vibe-coding-for-non-engineers.md): 新規執筆(向くツールの整理、レビューチェックリスト、シャドーIT対策)
+- [Google Julesの基本(非同期コーディングエージェント)](topics/part11-ai-agents/google-jules-basics.md): 新規執筆(GitHub連携・非同期実行フロー・Antigravityとの使い分け)
+- [マーケティング・広告AI企業一覧](topics/part16-japan-ai-companies/marketing-advertising-ai-companies-japan.md): 新規執筆(デジタルレシピ・サイバーエージェント・WACUL・Shirofune・Faber Companyの5社を収録)
+- [不動産・建設AI企業一覧](topics/part16-japan-ai-companies/realestate-construction-ai-companies-japan.md): 新規執筆(ANDPAD・フォトラクション・スパイダープラス・GA technologies・いえらぶGROUP・estieの6社を収録)
+- [Manusの基本(汎用自律型業務エージェント)](topics/part11-ai-agents/manus-basics.md): 新規執筆(サンドボックス環境・Meta買収騒動の経緯・Claude Coworkとの比較)
+- [Devinの基本(Cognition社の自律コーディングエージェント)](topics/part11-ai-agents/devin-basics.md): 新規執筆(Slack連携・Devin Review・ACU従量課金)
+- [マルチエージェント・オーケストレーションの基本](topics/part11-ai-agents/multi-agent-orchestration-basics.md): 新規執筆(オーケストレーター・ワーカー型、トークンコスト、向く作業/向かない作業の切り分け)
+- [AIエージェントの自律度レベルと権限設計の基本](topics/part11-ai-agents/ai-agent-autonomy-levels-and-permission-design.md): 新規執筆(自律度L0〜L4分類、HITL/HOTL、権限設計の3ステップ)
+- [Computer Use(画面操作エージェント)の仕組みと実務の基本](topics/part09-api-development/computer-use-basics.md): 新規執筆(エージェントループ・対応アクション・Function Calling/MCPとの使い分け)
+- [Gemini Spark(Google)の基本](topics/part03-ai-chat-tools/gemini-spark-basics.md): 新規執筆(Google版の委任型エージェント。Antigravity基盤・承認モデル・Claude Cowork/ChatGPT Workとの比較)
+## 2026-08-06
+- [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](topics/part11-ai-agents/ai-agent-governance-basics.md): 新規執筆(Part11第5章の未執筆枠。各製品の権限モデル・監査ログ・コスト管理・間接プロンプトインジェクション対策を整理)
+- [経営者・管理職における生成AI活用事例](topics/part15-job-role-cases/executive-management-ai-use-cases.md): 新規執筆(Part15第17章の未執筆枠。壁打ち・レッドチーム、機密情報漏洩・訴訟リスクを整理)
+- [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 新規執筆(Part15第11章の未執筆枠。SDLC工程別の活用マップ、DORA 2025・Veracode/Snykのセキュリティ統計を整理)
+- [コンサルタント・リサーチャー職における生成AI活用事例](topics/part15-job-role-cases/consultant-researcher-ai-use-cases.md): 新規執筆(Part15第16章の未執筆枠。Deep Research・イシューツリー・NDA/クライアント機密情報のリスクを整理)
+>>>>>>> origin/main
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
 
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して最新化
@@ -23,6 +48,9 @@
 - [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): エージェント機能(Dify Agent)とMCPサーバー機能の新機能、Cloud版プラン詳細を最新化・増強
 
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): ツール横断の対応付けを最新化(Anthropic Console旧Workbench廃止予定・OpenAI Evals移行導線・promptfoo/LangSmith料金・Dify実行結果自動保存を反映)
+- [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): Deep Research系機能のツール横断比較・新規事業事例を反映して最新化
+
+- [宿泊・観光業における生成AI活用事例](topics/part14-industry-cases/hospitality-tourism-ai-use-cases.md): AIエージェント時代の予約導線シフト・パスポートOCR無人チェックイン解禁・星野リゾートのフレボル等を反映して最新化・増強
 
 ## 2026-08-08
 - [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): Zendesk/Fin(旧Intercom)/Salesforce Agentforceの料金体系(アウトカム課金化)・買収動向とハルシネーション対策の節を最新化・増強
