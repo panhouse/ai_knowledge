@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-07
+- [Computer Use(画面操作エージェント)の仕組みと実務の基本](topics/part09-api-development/computer-use-basics.md): 新規執筆(エージェントループ・対応アクション・Function Calling/MCPとの使い分け)
 - [Gemini Spark(Google)の基本](topics/part03-ai-chat-tools/gemini-spark-basics.md): 新規執筆(Google版の委任型エージェント。Antigravity基盤・承認モデル・Claude Cowork/ChatGPT Workとの比較)
 ## 2026-08-06
 - [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](topics/part11-ai-agents/ai-agent-governance-basics.md): 新規執筆(Part11第5章の未執筆枠。各製品の権限モデル・監査ログ・コスト管理・間接プロンプトインジェクション対策を整理)
