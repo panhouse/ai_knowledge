@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-07
+- [非エンジニアのための「バイブコーディング」実践ガイド](topics/part11-ai-agents/vibe-coding-for-non-engineers.md): 新規執筆(向くツールの整理、レビューチェックリスト、シャドーIT対策)
 - [Google Julesの基本(非同期コーディングエージェント)](topics/part11-ai-agents/google-jules-basics.md): 新規執筆(GitHub連携・非同期実行フロー・Antigravityとの使い分け)
 - [マーケティング・広告AI企業一覧](topics/part16-japan-ai-companies/marketing-advertising-ai-companies-japan.md): 新規執筆(デジタルレシピ・サイバーエージェント・WACUL・Shirofune・Faber Companyの5社を収録)
 - [不動産・建設AI企業一覧](topics/part16-japan-ai-companies/realestate-construction-ai-companies-japan.md): 新規執筆(ANDPAD・フォトラクション・スパイダープラス・GA technologies・いえらぶGROUP・estieの6社を収録)
