@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-08
+- [メディア・広告・エンタメにおける生成AI活用事例](topics/part14-industry-cases/media-entertainment-ai-use-cases.md): 著作権・肖像権を巡る訴訟の本格化(Disney/Universal/Warner Bros.×Midjourney、国内新聞3社×Perplexity、Sora 2のオプトイン転換)と国内新事例(電通沖縄のCM制作実証実験、mimidub)を反映して最新化
+
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
 
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して最新化
