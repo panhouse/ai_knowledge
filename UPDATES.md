@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-08
+- [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
 - [メディア・広告・エンタメにおける生成AI活用事例](topics/part14-industry-cases/media-entertainment-ai-use-cases.md): 著作権・肖像権を巡る訴訟の本格化(Disney/Universal/Warner Bros.×Midjourney、国内新聞3社×Perplexity、Sora 2のオプトイン転換)と国内新事例(電通沖縄のCM制作実証実験、mimidub)を反映して最新化
 <<<<<<< HEAD
 =======

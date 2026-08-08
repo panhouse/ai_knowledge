@@ -4,7 +4,7 @@ part: 3
 chapter: 第2章 初期設定とデータ保護
 tags: [Gemini, Claude, Copilot, 初期設定, データ利用, オプトアウト, プライバシー, カスタム指示]
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-08
 ---
 
 # Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較
@@ -15,10 +15,10 @@ ChatGPT以外のAIチャットツール(Gemini・Claude・Microsoft Copilot)に�
 
 ## 仕組み・背景
 
-4ツールに共通するのは、「①学習利用のオプトアウト」「②カスタム指示(自分専用の前提)」「③会話から自動で溜まる記憶」という3層構造がある点である(3層構造そのものは[ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)で詳述)。本ページで扱う①と②について、2026年7月時点の実装は次のように整理できる。
+4ツールに共通するのは、「①学習利用のオプトアウト」「②カスタム指示(自分専用の前提)」「③会話から自動で溜まる記憶」という3層構造がある点である(3層構造そのものは[ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)で詳述)。本ページで扱う①と②について、2026年8月時点の実装は次のように整理できる。
 
-- **Gemini**: 学習利用への同意は「Gemini Appsアクティビティ」というオン/オフの履歴保存設定に統合されている。オンのままだと、一部の会話が匿名化されたうえで人間のレビュアーに読まれ、モデル改善(学習)に使われる可能性がある。オフにすると以後の会話は人間レビュー・学習の対象から外れる。「アクティビティを保存しない」ことと「学習に使わない」ことが1つのトグルにまとまっている点がChatGPT・Claudeと異なる
-- **Claude**: 「Help improve Claude」という個別トグルがプライバシー設定内にある。2025年8月の規約変更で、それまで学習利用がなかった個人向け(Free/Pro/Max)にも「学習に使うかどうかをユーザーが選ぶ」仕組みが導入され、既定はオン(要オプトアウト)になった
+- **Gemini**: 学習利用への同意は、2025年9月に「Gemini Appsアクティビティ」から名称変更された「アクティビティを保存(Keep Activity)」というオン/オフの履歴保存設定に統合されている。オンのままだと、チャット履歴に加えてアップロードしたファイル・写真の一部が匿名化されたうえで人間のレビュアーに読まれ、モデル改善(学習)に使われる可能性がある。オフにすると以後の会話・アップロードは人間レビュー・学習の対象から外れる。「アクティビティを保存しない」ことと「学習に使わない」ことが1つのトグルにまとまっている点がChatGPT・Claudeと異なる
+- **Claude**: 「Help improve Claude」という個別トグルがプライバシー設定内にある。2025年8月に予告され同年10月8日に適用が始まった規約変更で、それまで学習利用がなかった個人向け(Free/Pro/Max)にも「学習に使うかどうかをユーザーが選ぶ(強制選択式)」仕組みが導入され、既定はオン(要オプトアウト)になった
 - **Microsoft Copilot(個人向け)**: 「モデルのトレーニング」という独立したプライバシー項目があり、既定でオン。カスタム指示・記憶(メモリ)のオン/オフとは別のスイッチとして管理されている
 - **共通する非対称構造**: いずれのツールも「個人向けプランは既定で学習利用オン(要オプトアウト)」「法人・エンタープライズ向けプランは契約上、既定で学習利用オフ(オプトアウト操作が不要、またはトグル自体が表示されない)」という構図になっている
 
@@ -30,31 +30,32 @@ ChatGPT以外のAIチャットツール(Gemini・Claude・Microsoft Copilot)に�
 | 会社のGoogle Workspace / Claude for Work(Team・Enterprise) / Microsoft 365ライセンスで使っている | 契約上すでに学習非利用が既定になっていることが多いが、個人アカウントを併用していないかを確認する |
 | Gemini・Claudeのカスタム指示を初めて使う | 「自分について」「どう応答してほしいか」を書く。ChatGPTと違い1入力欄にまとめるツールが多い |
 | EU・EEA・英国・スイス在住でGeminiを使っている | Geminiの「パーソナルコンテキスト(保存した情報・Instructions for Gemini)」機能自体が提供されていない地域があるため、代わりに毎回プロンプト冒頭に前提を書く運用になる |
-| 機密性の高い相談を一度きりでしたい | Gemini・Claude・Copilotのいずれも、ChatGPTの「一時チャット」に相当する非保存モードの有無・名称をその都度確認する(名称・提供状況が変わりやすい) |
+| 機密性の高い相談を一度きりでしたい | Geminiは「一時チャット(Temporary Chat)」、Claudeは右上のゴースト(幽霊)アイコンから入る「Incognito」、Copilotは右上ドロップダウンの「Temporary chat」を使う。いずれも履歴・記憶・学習には使われないが、不正利用対策のため一定期間(目安72時間〜30日)はバックエンドに一時保持される点は共通 |
 
 判断に迷ったら、「学習利用オプトアウト」と「カスタム指示・記憶」は別スイッチであることを前提に、両方を個別に確認する。片方だけ設定して安心しないことが実務上のポイントになる。
 
 ## 実務での使い方
 
-### 1. 4ツール比較表(2026年7月時点)
+### 1. 4ツール比較表(2026年8月時点)
 
 | ツール | 学習利用のデフォルト(個人向け) | 学習利用のデフォルト(法人向け) | オプトアウトの設定場所 | カスタム指示の設定場所 |
 |---|---|---|---|---|
 | **ChatGPT** | オン(Free/Go/Plus/Pro) | オフ(Business/Enterprise/Edu) | 設定→データコントロール→「すべての人のためにモデルを改善する」 | 設定→パーソナライズ→カスタム指示 |
-| **Gemini** | オン(EEA/英国/スイス以外の無料・Google AI Pro/Ultra) | オフ(Google Workspace with Gemini。契約上除外、操作不要) | myactivity.google.com(またはGeminiアプリの「設定とヘルプ」→アクティビティ)→「Gemini Appsアクティビティ」をオフ | 「設定とヘルプ」→Personal Intelligence→「Geminiへの指示」 |
-| **Claude** | オン(Free/Pro/Max、2025年8月〜) | オフ(Team/Enterprise/API/Claude for Government) | 設定→プライバシー→「Help improve Claude」をオフ | 設定→プロフィール→「Claudeへの指示」 |
+| **Gemini** | オン(EEA/英国/スイス以外の無料・Google AI Pro/Ultra) | オフ(Google Workspace with Gemini。契約上除外、操作不要) | myactivity.google.com(またはGeminiアプリの「設定とヘルプ」→アクティビティ)→「アクティビティを保存(Keep Activity)」をオフ | 「設定とヘルプ」→Personal Intelligence→「Geminiへの指示」 |
+| **Claude** | オン(Free/Pro/Max、2025年10月8日〜) | オフ(Team/Enterprise/API/Claude for Government) | 設定→プライバシー→「Help improve Claude」をオフ | 設定→プロフィール→「Claudeへの指示」 |
 | **Microsoft Copilot(個人向け)** | オン | オフ(Microsoft 365 Copilot/Copilot Chat。Enterprise Data Protectionで契約上除外) | プロフィールアイコン→プロフィール名→プライバシー→「モデルのトレーニング」(モバイル: アカウント→プライバシー→「会話アクティビティのトレーニング」) | プロフィールアイコン→プロフィール名→「メモリ」→「パーソナライズと記憶」内のカスタム指示 |
 
 法人向けの「Microsoft 365 Copilot」「Google Workspace with Gemini」「Claude for Work」の細かな契約条件・料金は、それぞれ[Microsoft Copilotの基本](microsoft-copilot-basics.md)、[Google Geminiの基本](google-gemini-basics.md)、[Claude(Anthropic)の基本](claude-basics.md)を参照。
 
 ### 2. Geminiの設定手順
 
-**学習利用のオプトアウト(Gemini Appsアクティビティ)**
+**学習利用のオプトアウト(アクティビティを保存/Keep Activity)**
 
 1. ブラウザで myactivity.google.com/product/gemini を開く、またはGeminiアプリ右上のプロフィールアイコン→「設定とヘルプ」→「アクティビティ」を開く
-2. 「Gemini Appsアクティビティ」の項目にある保存トグルをオフにする
-3. オフにすると、以後の会話は人間レビュー・モデル学習の対象から外れる。ただし過去にさかのぼって除外されるわけではなく、サービス提供・不具合対応のため一時的に(目安72時間程度)は保持される
-4. Google Workspace with Gemini(法人向け)ライセンスの場合、この設定を触らなくても契約上、組織外への学習利用・人間レビューは行われない
+2. ページ上部にカードで表示される「アクティビティを保存(Keep Activity)」のトグルをオフにする(2025年9月まで「Gemini Appsアクティビティ」という名称だったが、機能はほぼ同じまま改称された)
+3. オフにする際は「オフにする」(今後のアクティビティのみ対象外にする)と「オフにしてアクティビティを削除」(過去の履歴も削除する)の2択が表示されることがある
+4. オンのままだと、チャット履歴に加えて、Geminiにアップロードしたファイル・写真・画面共有の一部もサンプルとしてGoogleサービスの改善(学習)に使われ得る。オフにすると以後の会話・アップロードは人間レビュー・学習の対象から外れる。ただし過去にさかのぼって除外されるわけではなく、サービス提供・不具合対応のため一時的に(目安72時間程度)は保持され、この間は「72時間以上経過した会話は再開できない」という制約が働く
+5. Google Workspace with Gemini(法人向け)ライセンスの場合、この設定を触らなくても契約上、組織外への学習利用・人間レビューは行われない
 
 **カスタム指示(Geminiへの指示)**
 
@@ -77,8 +78,14 @@ ChatGPT以外のAIチャットツール(Gemini・Claude・Microsoft Copilot)に�
 
 1. 左下のプロフィールアイコン→「設定」→「プライバシー」を開く
 2. 「Help improve Claude」というトグルをオフにする
-3. オフにすると以後の新しい会話・コーディングセッションはモデルの追加学習に使われなくなり、通常のデータ保持期間も5年から30日に短縮される
+3. オフにすると以後の新しい会話・コーディングセッションはモデルの追加学習に使われなくなり、通常のデータ保持期間も5年から30日に短縮される。2025年8月に予告され同年10月8日から適用された規約変更により、個人向け(Free/Pro/Max)は既定でオン(強制選択式で未回答のユーザーも学習利用ありの5年保持に設定)になっているため、未設定のアカウントは必ず確認する
 4. Team・Enterprise・API経由の利用・Claude for Governmentは、個人が何もしなくても既定で学習利用の対象外
+
+**一度きりの相談に使うIncognito(一時チャット)**
+
+1. 新規チャット画面右上のゴースト(幽霊)アイコン、またはショートカット Ctrl+Shift+I(Macは Cmd+Shift+I)でIncognitoモードに入る
+2. Incognitoは無料プランを含む全プランで利用でき、チャット履歴・メモリ(記憶)に残らず、モデルの学習にも使われない
+3. ただし「アカウントから見えない」だけで「Anthropicから見えない」わけではない点に注意。不正利用検知・安全性審査のため、Incognitoの会話も既定で30日程度は一時的に保持される
 
 **カスタム指示(プロフィール設定)**
 
@@ -109,6 +116,7 @@ ChatGPT以外のAIチャットツール(Gemini・Claude・Microsoft Copilot)に�
 2. モバイルアプリ: メニュー→プロフィールアイコン→「アカウント」→「プライバシー」→「会話アクティビティのトレーニング」「音声会話のトレーニング」をそれぞれオフにする
 3. オプトアウトしても、広告・不正利用対策・セキュリティ・コンプライアンス目的での利用までは除外されない点に注意。会話履歴自体は既定で18か月保持される(個別削除・全削除も可能)
 4. Microsoft 365 Copilot・Microsoft 365 Copilot Chat(法人向け)は、Enterprise Data Protection(企業向けデータ保護)により、プロンプト・応答・参照した社内データがモデルの追加学習に使われない契約になっている(詳細は[Microsoft Copilotの基本](microsoft-copilot-basics.md)を参照)
+5. 一度きりの相談には、チャット画面右上のドロップダウンから選べる「Temporary chat」を使う。会話履歴・メモリには残らず、学習にも使われないが、組織側で保持ポリシーが設定されている法人向け利用の場合はコンプライアンス目的でバックエンドに記録が残る場合がある
 
 **カスタム指示・パーソナライズ**
 
@@ -121,13 +129,14 @@ ChatGPT以外のAIチャットツール(Gemini・Claude・Microsoft Copilot)に�
 - **「学習利用オフ」と「会話履歴を残さない」は別物**: Gemini・Claude・Copilotいずれも、学習利用をオフにしても、不正利用監視・法令対応・サービス提供のための保持は別枠で行われる(Copilotは既定18か月、Geminiは一時的に約72時間、Claudeはオプトアウト後30日)
 - **Claudeの学習利用オプトアウトには2026年7月7日から「安全レビューの例外」がある**: Anthropicが2026年6月8日に公表し同年7月7日発効の改定プライバシーポリシーにより、オプトアウトしていても「安全性レビューにフラグが立った会話」は学習・分類スコア算出に利用され得る。何が「フラグ」の対象になるかは公開されておらず、ユーザーへの個別通知もない。オプトアウト設定を過信せず、機密情報を書き込まないという前提は変わらない
 - **Geminiの「アクティビティをオフ」は地域によって既定値が異なる**: EEA(欧州経済領域)・英国・スイスの個人アカウントは既定が異なる扱いになっており、パーソナルコンテキスト機能自体が提供されていない。海外拠点のメンバーがいる場合、同じ手順が通用しない可能性がある
+- **Geminiの学習利用オプトアウトは「テキストだけ」ではなくなった**: 2025年9月の「アクティビティを保存(Keep Activity)」への改称に合わせて、学習に使われうる対象がチャット本文だけでなく、アップロードしたファイル・写真・画面共有の一部にも広がっている。以前に確認したときの理解のまま止まっている担当者には、この対象範囲の変更を周知する必要がある
 - **「Copilot」という名前だけで判断しない**: Microsoft社内には無料の個人向けCopilot、Microsoft 365 Copilot(法人向け)、GitHub Copilot(開発者向け)という別物の製品が同名で存在し、学習利用の既定値もそれぞれ異なる(GitHub Copilot Free/Pro/Pro+は2026年4月24日からコード関連の対話データがデフォルトで学習対象になった)。混同すると誤った説明を社内にしてしまうので、[Microsoft Copilotの基本](microsoft-copilot-basics.md)で製品の切り分けを確認してから設定を案内する
 - **法人向けプランでも個人アカウントの併用には無力**: 会社がGoogle Workspace with Gemini・Claude for Work・Microsoft 365 Copilotを契約していても、従業員が個人アカウントでGemini/Claude/Copilotを使っていれば、その分は個人向けプランの既定(学習利用オン)のまま使われる。社内ルールで個人アカウント利用を制限し、法人契約に一本化することが前提になる
-- **画面名称・設定場所は変更されやすい**: 本ページの手順・文言は2026年7月時点の構成に基づく。各社ヘルプセンターへの直接アクセスが環境の制約で一部できなかったため、複数の第三者情報のクロスチェックと検索結果の要約に基づいている。契約・運用前に必ず実際の設定画面で最新の表記を確認すること
+- **画面名称・設定場所は変更されやすい**: 本ページの手順・文言は2026年8月時点の構成に基づく。実際、Geminiは2025年9月に設定名が変わったばかりであり、各社ヘルプセンターへの直接アクセスが環境の制約で一部できなかったため、複数の第三者情報のクロスチェックと検索結果の要約に基づいている。契約・運用前に必ず実際の設定画面で最新の表記を確認すること
 
 ## 最初の一歩
 
-今使っているGemini・Claude・Copilotのうち1つを開き、上記の手順で学習利用のオプトアウト設定(Gemini Appsアクティビティ/Help improve Claude/モデルのトレーニング)が実際にオフになっているかを確認する。
+今使っているGemini・Claude・Copilotのうち1つを開き、上記の手順で学習利用のオプトアウト設定(アクティビティを保存/Help improve Claude/モデルのトレーニング)が実際にオフになっているかを確認する。
 
 ## 関連トピック
 
@@ -136,6 +145,10 @@ ChatGPT以外のAIチャットツール(Gemini・Claude・Microsoft Copilot)に�
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-08-08: Geminiの設定名変更・Claudeの一時チャット・オプトアウト適用日を最新化
+- **内容**: Geminiの学習利用オプトアウト設定が2025年9月に「Gemini Appsアクティビティ」から「アクティビティを保存(Keep Activity)」に改称され、対象がアップロードしたファイル・写真にも拡大したことを反映。Claudeの個人向けオプトアウト既定オン化の適用日を「2025年8月予告・同年10月8日適用」に精緻化し、一度きりの相談に使えるGeminiの「一時チャット」・Claudeの「Incognito」・Copilotの「Temporary chat」の名称と挙動を追記した
+- **出典**: [Google Blog: Gemini app personalizes responses based on past chats, plus new privacy controls](https://blog.google/products/gemini/temporary-chats-privacy-controls/)、[jetstream.blog: Gemini アプリ アクティビティ「アクティビティを保存」変更展開](https://jetstream.blog/2025/09/08/gemini-app-activity-renamed-to-keep-activity-rollout/)、[Anthropic: Updates to Consumer Terms and Privacy Policy](https://www.anthropic.com/news/updates-to-our-consumer-terms)、[Cape: Claude AI Privacy Policy: Takeaways for Everyday Users](https://www.cape.co/blog/claude-ai-privacy-policy)、[vibecodingacademy.ai: Claude Incognito Mode: Privacy Features and Limits](https://www.vibecodingacademy.ai/blog/claude-incognito-mode)、[office365itpros.com: Copilot's Temporary Chat](https://office365itpros.com/2025/11/14/temporary-chat-copilot/)、[Microsoft Support: Privacy FAQ for Microsoft Copilot](https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot)
 
 ### 2026-07-07: 初版執筆
 - **内容**: Gemini・Claude・Microsoft Copilot(個人向け)の学習利用オプトアウトとカスタム指示の設定場所・既定値を整理し、ChatGPTを含む4ツール横断の比較表、コピペ用のカスタム指示例、Anthropicの2026年7月7日発効の安全レビュー例外条項などの最新動向をまとめた
