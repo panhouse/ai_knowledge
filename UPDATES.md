@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-07
+- [Gemini Spark(Google)の基本](topics/part03-ai-chat-tools/gemini-spark-basics.md): 新規執筆(Google版の委任型エージェント。Antigravity基盤・承認モデル・Claude Cowork/ChatGPT Workとの比較)
 ## 2026-08-06
 - [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](topics/part11-ai-agents/ai-agent-governance-basics.md): 新規執筆(Part11第5章の未執筆枠。各製品の権限モデル・監査ログ・コスト管理・間接プロンプトインジェクション対策を整理)
 - [経営者・管理職における生成AI活用事例](topics/part15-job-role-cases/executive-management-ai-use-cases.md): 新規執筆(Part15第17章の未執筆枠。壁打ち・レッドチーム、機密情報漏洩・訴訟リスクを整理)
