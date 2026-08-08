@@ -56,6 +56,9 @@
 ## 2026-08-08
 - [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): Zendesk/Fin(旧Intercom)/Salesforce Agentforceの料金体系(アウトカム課金化)・買収動向とハルシネーション対策の節を最新化・増強
 
+## 2026-08-08
+- [士業・専門サービスにおける生成AI活用事例](topics/part14-industry-cases/professional-services-ai-use-cases.md): Harvey・LegalOn・EY新日本・PwC・McKinsey Lilliの各事例と業界団体のAIガイドライン動向を最新化・増強
+
 ## 2026-08-05
 - 修正: 60本の最新化PRのマージに伴い旧パート名のリンクが混入していた2ファイルを修正(`../part12-ai-trends/ai-agent-basics.md` → `../part11-ai-agents/ai-agent-basics.md`)
 - 修正: 企業マップ4ページの frontmatter で `created` / `updated` が引用符付き(`"2026-07-26"`)になっていたのを引用符なしに正規化。あわせて CLAUDE.md に日付書式のルールを明記(7日ルールの対象判定がこの値を読むため)
