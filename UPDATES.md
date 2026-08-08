@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-08
+- [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): LLMO/GEOの位置づけ・ペルソナ運用のコツ・マーケティング特化AIツールの動向を最新化
 ## 2026-08-07
 - [物流・SCM AI企業一覧](topics/part16-japan-ai-companies/logistics-scm-ai-companies-japan.md): 新規執筆(Hacobu・オプティマインド・GROUND・日本通運の4社を収録)
 - [AIエージェント導入PoCの評価指標・進め方の基本](topics/part11-ai-agents/ai-agent-poc-evaluation-basics.md): 新規執筆(フェーズ別KPI、信頼性/定着率/ROIの3本柱、PoC地獄を避けるゲート設計)
