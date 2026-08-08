@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-07
+- [AIエージェント導入PoCの評価指標・進め方の基本](topics/part11-ai-agents/ai-agent-poc-evaluation-basics.md): 新規執筆(フェーズ別KPI、信頼性/定着率/ROIの3本柱、PoC地獄を避けるゲート設計)
 - [非エンジニアのための「バイブコーディング」実践ガイド](topics/part11-ai-agents/vibe-coding-for-non-engineers.md): 新規執筆(向くツールの整理、レビューチェックリスト、シャドーIT対策)
 - [Google Julesの基本(非同期コーディングエージェント)](topics/part11-ai-agents/google-jules-basics.md): 新規執筆(GitHub連携・非同期実行フロー・Antigravityとの使い分け)
 - [マーケティング・広告AI企業一覧](topics/part16-japan-ai-companies/marketing-advertising-ai-companies-japan.md): 新規執筆(デジタルレシピ・サイバーエージェント・WACUL・Shirofune・Faber Companyの5社を収録)
