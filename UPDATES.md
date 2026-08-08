@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-06
+- [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 新規執筆(Part15第11章の未執筆枠。SDLC工程別の活用マップ、DORA 2025・Veracode/Snykのセキュリティ統計を整理)
 - [コンサルタント・リサーチャー職における生成AI活用事例](topics/part15-job-role-cases/consultant-researcher-ai-use-cases.md): 新規執筆(Part15第16章の未執筆枠。Deep Research・イシューツリー・NDA/クライアント機密情報のリスクを整理)
 
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
