@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-07
+- [不動産・建設AI企業一覧](topics/part16-japan-ai-companies/realestate-construction-ai-companies-japan.md): 新規執筆(ANDPAD・フォトラクション・スパイダープラス・GA technologies・いえらぶGROUP・estieの6社を収録)
 - [Manusの基本(汎用自律型業務エージェント)](topics/part11-ai-agents/manus-basics.md): 新規執筆(サンドボックス環境・Meta買収騒動の経緯・Claude Coworkとの比較)
 - [Devinの基本(Cognition社の自律コーディングエージェント)](topics/part11-ai-agents/devin-basics.md): 新規執筆(Slack連携・Devin Review・ACU従量課金)
 - [マルチエージェント・オーケストレーションの基本](topics/part11-ai-agents/multi-agent-orchestration-basics.md): 新規執筆(オーケストレーター・ワーカー型、トークンコスト、向く作業/向かない作業の切り分け)
