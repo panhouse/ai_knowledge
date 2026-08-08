@@ -4,8 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
-- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](topics/part12-business-practice/ai-image-and-visual-creation-for-business.md): ツール横断対応表(GPT Image 2・Gemini新プラン体系・Canva AI 2.0・Adobe Fireflyの料金階層・Claude Design)と注意点(EU AI法第50条の透明性義務)を最新化・増強
 ## 2026-08-08
+- [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): freee Agent Hub・freee-mcp・マネーフォワード AI Coworkの最新動向、電帳法完全義務化(2026年1月)、インボイス登録番号の自動照合を反映して最新化・増強
+- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](topics/part12-business-practice/ai-image-and-visual-creation-for-business.md): ツール横断対応表(GPT Image 2・Gemini新プラン体系・Canva AI 2.0・Adobe Fireflyの料金階層・Claude Design)と注意点(EU AI法第50条の透明性義務)を最新化・増強
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): LLMO/GEOの位置づけ・ペルソナ運用のコツ・マーケティング特化AIツールの動向を最新化
 ## 2026-08-07
 - [物流・SCM AI企業一覧](topics/part16-japan-ai-companies/logistics-scm-ai-companies-japan.md): 新規執筆(Hacobu・オプティマインド・GROUND・日本通運の4社を収録)
