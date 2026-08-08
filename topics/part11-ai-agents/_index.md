@@ -83,15 +83,22 @@ Part 1〜10 が「AIに指示を出して答えをもらう」前提の教科書
 
 ### 第1章 エージェントの基礎
 - [AIエージェントとは何か](ai-agent-basics.md)
+- [マルチエージェント・オーケストレーションの基本](multi-agent-orchestration-basics.md)
+- [AIエージェントの自律度レベルと権限設計の基本](ai-agent-autonomy-levels-and-permission-design.md)
 
 ### 第2章 コーディングエージェント
 - [Claude Codeの基本](claude-code-basics.md)
 - [OpenAI Codexの基本](openai-codex-basics.md)
 - [Google Antigravityの基本](google-antigravity-basics.md)
 - [Google Julesの基本(非同期コーディングエージェント)](google-jules-basics.md)
+- [Devinの基本(Cognition社の自律コーディングエージェント)](devin-basics.md)
 
 ### 第3章 業務エージェント(非コーディング)
 - [Claude Coworkの基本](claude-cowork-basics.md)
+- [Manusの基本(汎用自律型業務エージェント)](manus-basics.md)
 
 ### 第4章 エージェントの選び方・比較
 - [主要AIエージェントの比較と選び方](ai-agent-tools-comparison.md)
+
+### 第5章 運用・ガバナンス
+- [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](ai-agent-governance-basics.md)
