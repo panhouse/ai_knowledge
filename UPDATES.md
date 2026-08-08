@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-08
+
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
 
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して最新化
@@ -23,6 +25,8 @@
 - [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): エージェント機能(Dify Agent)とMCPサーバー機能の新機能、Cloud版プラン詳細を最新化・増強
 
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): ツール横断の対応付けを最新化(Anthropic Console旧Workbench廃止予定・OpenAI Evals移行導線・promptfoo/LangSmith料金・Dify実行結果自動保存を反映)
+
+- [宿泊・観光業における生成AI活用事例](topics/part14-industry-cases/hospitality-tourism-ai-use-cases.md): AIエージェント時代の予約導線シフト・パスポートOCR無人チェックイン解禁・星野リゾートのフレボル等を反映して最新化・増強
 
 ## 2026-08-05
 - 修正: 60本の最新化PRのマージに伴い旧パート名のリンクが混入していた2ファイルを修正(`../part12-ai-trends/ai-agent-basics.md` → `../part11-ai-agents/ai-agent-basics.md`)
