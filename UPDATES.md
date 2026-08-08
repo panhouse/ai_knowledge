@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+- [生成AIによる画像・ビジュアル作成の実務活用(資料・広告・SNS用画像)](topics/part12-business-practice/ai-image-and-visual-creation-for-business.md): ツール横断対応表(GPT Image 2・Gemini新プラン体系・Canva AI 2.0・Adobe Fireflyの料金階層・Claude Design)と注意点(EU AI法第50条の透明性義務)を最新化・増強
+
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
 
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part12-ai-trends/ai-industry-major-players-trends.md): 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して最新化
