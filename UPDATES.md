@@ -28,7 +28,6 @@
 - [経営者・管理職における生成AI活用事例](topics/part15-job-role-cases/executive-management-ai-use-cases.md): 新規執筆(Part15第17章の未執筆枠。壁打ち・レッドチーム、機密情報漏洩・訴訟リスクを整理)
 - [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 新規執筆(Part15第11章の未執筆枠。SDLC工程別の活用マップ、DORA 2025・Veracode/Snykのセキュリティ統計を整理)
 - [コンサルタント・リサーチャー職における生成AI活用事例](topics/part15-job-role-cases/consultant-researcher-ai-use-cases.md): 新規執筆(Part15第16章の未執筆枠。Deep Research・イシューツリー・NDA/クライアント機密情報のリスクを整理)
-
 >>>>>>> origin/main
 - [AIの分類と生成AIの位置づけ](topics/part01-ai-basics/ai-classification-and-generative-ai.md): エージェントAIの位置づけを日本政府「AI事業者ガイドライン(第1.2版)」の公式定義に更新し、テキスト生成の代表例をGPT-5.6系列に最新化
 
@@ -50,6 +49,8 @@
 
 - [プロンプトの検証・反復改善の進め方(テストケース設計とバージョン管理)](topics/part05-prompt-engineering/prompt-testing-and-iteration.md): ツール横断の対応付けを最新化(Anthropic Console旧Workbench廃止予定・OpenAI Evals移行導線・promptfoo/LangSmith料金・Dify実行結果自動保存を反映)
 - [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): Deep Research系機能のツール横断比較・新規事業事例を反映して最新化
+
+- [宿泊・観光業における生成AI活用事例](topics/part14-industry-cases/hospitality-tourism-ai-use-cases.md): AIエージェント時代の予約導線シフト・パスポートOCR無人チェックイン解禁・星野リゾートのフレボル等を反映して最新化・増強
 
 ## 2026-08-05
 - 修正: 60本の最新化PRのマージに伴い旧パート名のリンクが混入していた2ファイルを修正(`../part12-ai-trends/ai-agent-basics.md` → `../part11-ai-agents/ai-agent-basics.md`)
