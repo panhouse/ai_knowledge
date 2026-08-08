@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-08
+- [メディア・広告・エンタメにおける生成AI活用事例](topics/part14-industry-cases/media-entertainment-ai-use-cases.md): 著作権・肖像権を巡る訴訟の本格化(Disney/Universal/Warner Bros.×Midjourney、国内新聞3社×Perplexity、Sora 2のオプトイン転換)と国内新事例(電通沖縄のCM制作実証実験、mimidub)を反映して最新化
 <<<<<<< HEAD
 =======
 - [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): freee Agent Hub・freee-mcp・マネーフォワード AI Coworkの最新動向、電帳法完全義務化(2026年1月)、インボイス登録番号の自動照合を反映して最新化・増強
