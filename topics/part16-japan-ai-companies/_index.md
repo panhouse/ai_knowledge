@@ -73,3 +73,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [国産基盤モデル・研究開発系AI企業一覧](foundation-model-companies-japan.md)
 - [コンサル・SIer系のAI企業一覧](consulting-sier-ai-companies.md)
 - [マーケティング・広告AI企業一覧](marketing-advertising-ai-companies-japan.md)
+- [不動産・建設AI企業一覧](realestate-construction-ai-companies-japan.md)
