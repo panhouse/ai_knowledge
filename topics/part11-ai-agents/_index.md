@@ -90,6 +90,7 @@ Part 1〜10 が「AIに指示を出して答えをもらう」前提の教科書
 - [Claude Codeの基本](claude-code-basics.md)
 - [OpenAI Codexの基本](openai-codex-basics.md)
 - [Google Antigravityの基本](google-antigravity-basics.md)
+- [Google Julesの基本(非同期コーディングエージェント)](google-jules-basics.md)
 - [Devinの基本(Cognition社の自律コーディングエージェント)](devin-basics.md)
 
 ### 第3章 業務エージェント(非コーディング)
