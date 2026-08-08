@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-07
+- [マルチエージェント・オーケストレーションの基本](topics/part11-ai-agents/multi-agent-orchestration-basics.md): 新規執筆(オーケストレーター・ワーカー型、トークンコスト、向く作業/向かない作業の切り分け)
 - [AIエージェントの自律度レベルと権限設計の基本](topics/part11-ai-agents/ai-agent-autonomy-levels-and-permission-design.md): 新規執筆(自律度L0〜L4分類、HITL/HOTL、権限設計の3ステップ)
 - [Computer Use(画面操作エージェント)の仕組みと実務の基本](topics/part09-api-development/computer-use-basics.md): 新規執筆(エージェントループ・対応アクション・Function Calling/MCPとの使い分け)
 - [Gemini Spark(Google)の基本](topics/part03-ai-chat-tools/gemini-spark-basics.md): 新規執筆(Google版の委任型エージェント。Antigravity基盤・承認モデル・Claude Cowork/ChatGPT Workとの比較)
