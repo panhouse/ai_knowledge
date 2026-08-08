@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-07
+- [Manusの基本(汎用自律型業務エージェント)](topics/part11-ai-agents/manus-basics.md): 新規執筆(サンドボックス環境・Meta買収騒動の経緯・Claude Coworkとの比較)
 - [Devinの基本(Cognition社の自律コーディングエージェント)](topics/part11-ai-agents/devin-basics.md): 新規執筆(Slack連携・Devin Review・ACU従量課金)
 - [マルチエージェント・オーケストレーションの基本](topics/part11-ai-agents/multi-agent-orchestration-basics.md): 新規執筆(オーケストレーター・ワーカー型、トークンコスト、向く作業/向かない作業の切り分け)
 - [AIエージェントの自律度レベルと権限設計の基本](topics/part11-ai-agents/ai-agent-autonomy-levels-and-permission-design.md): 新規執筆(自律度L0〜L4分類、HITL/HOTL、権限設計の3ステップ)
