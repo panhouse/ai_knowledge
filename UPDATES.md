@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-09
+- [生成AIに向く業務・向かない業務の切り分け](topics/part12-business-practice/ai-task-suitability.md): METR Time Horizon 1.1の50%/80%信頼水準の差、スタンフォードAI Index 2026、MIT NANDA GenAI Divide調査、Gartnerのエージェント型AI中止予測を反映して最新化
+
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
