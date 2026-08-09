@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-09
+- [法務職における生成AI活用事例](topics/part15-job-role-cases/legal-ai-use-cases.md): 法務特化AIツール(LegalOn Cloud/OLGA/Harvey)の2026年最新動向、弁護士法72条ガイドライン見直し、ハルシネーション訴訟統計を最新化
+
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
