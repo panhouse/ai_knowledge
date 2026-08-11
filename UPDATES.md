@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-11
+- [保育・幼児教育における生成AI活用事例](topics/part14-industry-cases/childcare-early-education-ai-use-cases.md): こどもストーリーの1EdTech Japan賞受賞、ルクミー「すくすくレポート」、hinaryの全国私立保育連盟提携、こども家庭庁「保育ICTラボ事業」を反映して最新化・増強
+
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
