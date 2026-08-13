@@ -88,3 +88,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [半導体・電機業界における生成AI活用事例](semiconductor-electronics-ai-use-cases.md)
 - [鉄道業界における生成AI活用事例](railway-industry-ai-use-cases.md)
 - [食品製造業における生成AI活用事例](food-manufacturing-ai-use-cases.md)
+- [廃棄物処理・リサイクル業界における生成AI活用事例](waste-management-recycling-ai-use-cases.md)
