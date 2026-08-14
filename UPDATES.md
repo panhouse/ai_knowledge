@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-12
+- [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): Figma Design Agentのベータ運用・Adobe Firefly Image 5/料金体系変更・Framer AI/Uizard・EU AI法第50条の開示義務を反映して最新化・増強
 - [内部監査職における生成AI活用事例](topics/part15-job-role-cases/internal-audit-ai-use-cases.md): 国内企業(コインチェック・Visional)の内部監査AI活用事例とIIA基準10.3・金融庁AIディスカッションペーパーを反映して最新化・増強
 - [総務職における生成AI活用事例](topics/part15-job-role-cases/general-affairs-ai-use-cases.md): 株主総会想定問答(東急・GMO・AvaTwin Chatbot)、GMOサインのMCPサーバー連携、Sansan最新実績を反映して最新化・増強
 - [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part15-job-role-cases/information-security-ai-use-cases.md): エージェント型SOC(Agentic SOC)の最新動向と国内新事例(NRIセキュア)を反映して最新化・増強
