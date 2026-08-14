@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-13
+- [警備業界における生成AI活用事例](topics/part14-industry-cases/security-services-industry-ai-use-cases.md): 新規執筆(識別系AI・警備ロボット・生成AIによるシフト作成/報告書作成の事例整理)
 - [商社・卸売業における生成AI活用事例](topics/part14-industry-cases/trading-wholesale-ai-use-cases.md): 新規執筆(トレーディング・事業投資・貿易事務のB2B事例)
 - [廃棄物処理・リサイクル業界における生成AI活用事例](topics/part14-industry-cases/waste-management-recycling-ai-use-cases.md): 新規執筆(選別AI・収集ルート最適化・マニフェスト作成・ごみ分別チャットボット)
 - [ペット関連産業(ペットケア・動物病院)における生成AI活用事例](topics/part14-industry-cases/pet-care-industry-ai-use-cases.md): 新規執筆(動物病院の画像診断支援AI・カルテ自動作成・飼い主対応チャットボット・ペット保険査定AI・EC商品説明生成)
