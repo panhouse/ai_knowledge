@@ -4,7 +4,7 @@ part: 7
 chapter: 第1章 AIが扱いやすいデータ形式
 tags: [データ分析, CSV, Excel, RAG, チャンク化]
 created: 2026-07-04
-updated: 2026-07-21
+updated: 2026-08-09
 ---
 
 # AIが扱いやすいデータ形式
@@ -15,14 +15,14 @@ updated: 2026-07-21
 
 ## 仕組み・背景
 
-ChatGPTのAdvanced Data Analysis(旧Code Interpreter。ファイルをアップロードすると自動的に有効になる)、Claudeの分析ツール(コード実行機能。Free〜Enterpriseの全プランで既定有効)、GeminiのGemini Appsは、いずれもCSV・TSV・JSON・プレーンテキスト・PDF・Excelなど幅広い形式を読み込めるが、得意・不得意がはっきりしている。
+ChatGPTのAdvanced Data Analysis(旧Code Interpreter。ファイルをアップロードすると自動的に有効になる)、Claudeの分析ツール(コード実行機能。Free〜Enterpriseの全プランで既定有効)、GeminiのGemini Apps、Microsoft Copilot(Excel上のPython in Excel/Copilot in Excelなど)は、いずれもCSV・TSV・JSON・プレーンテキスト・PDF・Excelなど幅広い形式を読み込めるが、得意・不得意がはっきりしている。
 
 - **得意な形式**: 1行目にヘッダーを置いた単純な二次元表(CSV・TSVなど)。構造がシンプルなほど誤読が少ない。
 - **苦手な形式**: セル結合や複雑な数式、多段階見出しを含むExcel、画像だけで構成されたスキャンPDF。
 
 苦手な形式が問題を起こす理由は明快で、セル結合は見た目上複数列にまたがっているように見えても、実データは先頭セルにしか入っていない扱いになる。このためAIがフィルタ・並べ替え・集計を行うと、エラーメッセージが出ないまま誤った結果を返すことがある。多段階見出しの表も同様に、AIが階層構造を正しく認識できず集計を誤りやすい。スキャンPDFは文字情報を持たない画像の集合であるため、AIは中身をそのまま読み取れない。
 
-なお2026年1月にPro以上のプランへ展開された「Claude for Excel」(Excelアドイン)は、ワークブックを直接開いて数式の依存関係を保ったまま解析でき、セル単位で根拠を示せる。ただしこれは「アドインが生きたワークブックを直接操作する」場合の話で、本ページが前提とする「ファイルをチャットに添付して分析させる」使い方(ChatGPT/Gemini/Claudeへのアップロード分析)では、依然として事前の整形が結果の正確性を左右する。
+なお2026年1月にPro以上のプランへ先行展開されていた「Claude for Excel」は、2026年5月7日にWord・PowerPointとともに正式提供(GA)となり、Outlook向けはベータ公開された(Anthropicは4製品を横断する「Claude for Microsoft 365」として位置づけ、同じ会話スレッドのままExcelの集計→Wordのメモ作成→PowerPointのスライド化までを1つの文脈で行える)。対象はPro/Maxなど有料プラン契約者で、ワークブックを直接開いて数式の依存関係を保ったまま解析でき、セル単位で根拠を示せる。同様にMicrosoftも「Copilot in Excel with Python」(Python in Excel機能とM365 Copilotライセンスが必要)で、生きたワークブックに対して自然言語からPython分析コードを生成・実行させる経路を提供している。ただしこれらは「アドインが生きたワークブックを直接操作する」場合の話で、本ページが前提とする「ファイルをチャットに添付して分析させる」使い方(ChatGPT/Gemini/Claude/Copilotへのアップロード分析)では、依然として事前の整形が結果の正確性を左右する。
 
 ## 使いどころ・使い分け
 
@@ -31,7 +31,8 @@ ChatGPTのAdvanced Data Analysis(旧Code Interpreter。ファイルをアップ�
 | 単純な二次元表(1行目ヘッダー、セル結合なし) | そのままCSV/Excelでアップロードして問題ない |
 | セル結合・多段階見出し・数式だらけのExcel | 全選択→セル結合解除、数式は値貼り付けに変換してから渡す |
 | スキャンした紙資料・古いFAXのPDF | OCR処理(Adobe AcrobatやGoogleドライブの「Googleドキュメントに変換」機能等)でテキスト化してから渡す |
-| 財務モデルなど多タブ・数式依存の激しいExcelを日常的に扱う | チャット添付ではなく「Claude for Excel」のようなアドイン型ツールを検討する(数式依存関係を保ったまま解析できるが、通常チャットよりクォータ消費が速い) |
+| 財務モデルなど多タブ・数式依存の激しいExcelを日常的に扱う | チャット添付ではなく「Claude for Excel」「Copilot in Excel with Python」のようなアドイン型ツールを検討する(数式依存関係を保ったまま解析できるが、通常チャットよりクォータ消費が速い) |
+| 社給PCがMicrosoft 365環境で、Excelファイルを外部チャットにアップロードしにくい | 社内ポリシー次第だがCopilot in Excelなど「ファイルを閉じた環境の外に出さない」アドイン型を優先する |
 | 長文の社内マニュアル・規程集をRAGで検索させたい | 見出し構造を保ったMarkdown化、Q&A形式への再構成を検討する |
 
 ## 実務での使い方
@@ -45,15 +46,16 @@ ChatGPTのAdvanced Data Analysis(旧Code Interpreter。ファイルをアップ�
 - Excelはセル結合を解除し(Ctrl+Aで全選択→セル結合解除)、数式は値貼り付けに変換してシンプルな二次元表にする
 - 複雑な分析を一度に頼まず、「まず地域別に集計」「次に前年比を計算」のように段階的に指示すると誤読・誤集計が減る
 
-### 主要ツールのファイルアップロード上限(2026年7月時点)
+### 主要ツールのファイルアップロード上限(2026年8月時点)
 
 同じデータでもツールによって上限が異なるため、大きめのファイルを渡す前に確認しておく。
 
 | ツール | 1ファイルの上限 | 添付数の上限 | 備考 |
 |---|---|---|---|
-| ChatGPT(Advanced Data Analysis) | 原則512MB。表計算ファイルは実務上50MB程度が目安 | 1メッセージあたり10ファイル程度 | テキスト系ファイルは1ファイル200万トークンが上限だが、表計算ファイルはこの上限の対象外。Plus/Proは3時間ごとに80ファイルまでの投稿枠、無料枠は1日数ファイル程度に制限される |
-| Claude(Claude.ai) | 30MB(開発者向けFiles API経由なら500MB) | 1会話あたり20ファイルまで | XLSXの解析には分析(コード実行)ツールが使われ、現在は全プランで既定有効。PDFはフルビジュアル解析が100ページまでで、それ以降はテキストのみ処理される |
+| ChatGPT(Advanced Data Analysis) | 原則512MB。表計算ファイル(CSV/XLSX)は行数次第だが実務上50MB程度が目安 | Plus/Proは3時間ごとに80ファイルまでの投稿枠(無料枠はさらに少ない) | テキスト系ファイルは1ファイル約200万トークンが上限だが、表計算ファイルはこの上限の対象外。ユーザー1人あたり25GB・組織あたり100GBのストレージ上限があり、チャット・Projects・カスタムGPTの知識ファイルで共有される |
+| Claude(Claude.ai) | チャット・Projectsとも1ファイル30MB(開発者向けFiles API経由なら500MB、組織あたり100GBまで保存可) | 有料プランは1会話20ファイル程度、無料プランはこれより少ない(公式には「コンテキストウィンドウに収まる範囲」が実質上限とされ、明確な上限数は撤廃傾向) | XLSXの解析には分析(コード実行)ツールが使われ、全プランで既定有効。PDFはフルビジュアル解析が100ページまでで、それ以降はテキストのみ処理される |
 | Gemini(Gemini Apps) | 100MB(動画のみ2GB) | 1プロンプトあたり10ファイルまで | 無料枠は一定時間あたりのアップロード回数に上限があり、Google AI Pro/Ultraで緩和される |
+| Microsoft Copilot | 個人向けCopilot(Copilot Pro等)は1ファイル50MB・1会話20ファイルが目安。M365 Copilot Chat(法人向け)はテナント管理者のポリシーに左右され、1〜10MB程度に絞られている組織もあれば、ライセンス上限に合わせた512MBまで拡張された組織もある | 法人向けは1日あたりのアップロード回数に管理者側の制限がかかる場合がある | 法人利用では「そもそも何MBまで上げられるか」がテナント設定次第で大きくぶれる点に注意。IT部門への確認が実務上必須 |
 
 ### フォーマットの使い分け(Markdown / JSON / プレーンテキスト)
 
@@ -65,16 +67,19 @@ ChatGPTのAdvanced Data Analysis(旧Code Interpreter。ファイルをアップ�
 
 - **Q&A形式にすると検索精度が上がる**: 質問文と回答文をペアにして1チャンクにすると、利用者の質問文の言い回しに近い表現がヒットしやすくなり、検索ヒット率が大きく改善する事例が報告されている。
 - **目次・免責事項・ナビゲーション文言はノイズになる**: これらは検索精度を下げる要因になるため、チャンク化する前に取り除くとよい。
-- **チャンクサイズの目安**: 再帰的分割(recursive splitting)で400〜512トークン程度に、10〜20%のオーバーラップ(前後のチャンクと内容を一部重複させる)を付けるのが汎用ベースラインとされ、Recall(検索結果に正解を含められた割合)82〜90%程度が目安になる。オーバーラップが少なすぎると文脈の境界情報を失いやすく、多すぎるとノイズが増える。
-- **見出し単位での分割**: Markdown化した文書であれば、見出し(#, ##)を境界に章・節単位でチャンクを切ると、文脈のまとまりを保ちやすい。
+- **チャンクサイズの目安**: 再帰的分割(recursive splitting)で400〜512トークン程度が汎用ベースラインとされる(ベンチマークでも最も高い精度を出しやすい手法として挙げられる)。オーバーラップ(前後のチャンクと内容を一部重複させる)は10〜20%が定番の目安だが、2026年1月の検証ではSPLADEのような疎ベクトル(スパース)検索方式ではオーバーラップの効果がほとんど見られないという報告もあり、自社の検索方式(密ベクトルか疎ベクトルか)に応じて要否を確認するとよい。
+- **見出し単位での分割・階層化**: Markdown化した文書であれば、見出し(#, ##)を境界に章・節単位でチャンクを切ると文脈のまとまりを保ちやすい。さらに「検索用の小さいチャンク」と「LLMに渡す際に使う周辺を含めた大きいチャンク」を分けるhierarchical chunking(階層的チャンク化)は、精度と文脈量のトレードオフを解決する手法として2025〜2026年に実務での採用が広がっている。
+- **contextual retrieval(文脈付与)**: Anthropicが提唱する手法で、各チャンクを埋め込む前に「この章は何についてのものか」という要約文をLLMに生成させて先頭に付与する。検索の取りこぼしを平均49%、リランキング(再順位付け)と組み合わせると67%削減できたと報告されており、埋め込みモデルを高性能なものに変える以上の効果があるとされる。
 - **構造化メタデータの付与(2026年のベースライン)**: 各チャンクに`document_id`・`section`・`document_type`・`version`・`effective_date`などのメタデータを付与しておくと、ベクトル検索の前段で「最新版のみ参照」「特定カテゴリだけに絞る」といったフィルタが可能になり、誤回答を減らせる。チャンク分割の設計と並んで、2026年時点で検索精度を左右する重要な要素とされている。
+- **そもそもRAGが不要な規模もある**: ナレッジベース全体がおおむね20万トークン(目安500ページ)程度に収まるなら、チャンク化・検索の仕組みを組まずに文書全体をプロンプトキャッシュ機能と併用してそのまま渡した方がシンプルで精度も安定するという考え方もある。
 
 ## 注意点・よくある誤解
 
 - **エラーが出ないから正しいとは限らない**: セル結合や多段階見出しを含む表は、エラーメッセージなしに誤った集計結果を返すことがある。分析結果は必ず一部を手元の数値と突き合わせて検算する。
 - **スキャンPDFはAIにとって「白紙」に等しい**: 見た目に文字があっても、画像化されたPDFはテキスト情報を持たない場合がある。OCR処理が必須。
 - **CSVが常に最適とは限らない**: トークン効率はCSVが良いが、複雑な階層構造を持つデータの理解精度はMarkdown形式の方が高いという報告もある。用途に応じて使い分ける。
-- **「アドインが賢くなったから前処理は不要」ではない**: Claude for Excelのような専用アドインは数式依存関係を保ったまま解析できるが、通常のチャットにファイルを添付して分析させる場合は引き続きセル結合解除・数式の値貼り付けが有効。またアドイン型ツールは1回のやり取りでワークブックの読み込み・推論・複数回のツール呼び出しを行うため、通常のチャットよりも利用枠(クォータ)を早く消費する点も踏まえて使い分ける。
+- **「アドインが賢くなったから前処理は不要」ではない**: Claude for ExcelやCopilot in Excel with Pythonのような専用アドインは数式依存関係を保ったまま解析できるが、通常のチャットにファイルを添付して分析させる場合は引き続きセル結合解除・数式の値貼り付けが有効。またアドイン型ツールは1回のやり取りでワークブックの読み込み・推論・複数回のツール呼び出しを行うため、通常のチャットよりも利用枠(クォータ)を早く消費する点も踏まえて使い分ける。
+- **法人向けCopilotの上限は「製品の仕様」ではなく「テナントの設定」次第**: 同じMicrosoft Copilotでも、契約プランや管理者のポリシーによってアップロード可能なファイルサイズが数MBから数百MBまで大きく変わる。個人のChatGPT・Claude・Geminiの感覚で「アップロードできるはず」と決め打ちせず、社内のIT部門に現在の上限を確認するのが確実。
 
 ## 最初の一歩
 
@@ -88,6 +93,10 @@ ChatGPTのAdvanced Data Analysis(旧Code Interpreter。ファイルをアップ�
 - [Embedding(埋め込み)とは何か](./embedding-basics.md)
 
 ## 更新履歴
+
+### 2026-08-09: Microsoft Copilotを比較表に追加し、Claude for ExcelのGA・RAGチャンク化の最新手法を反映
+- **内容**: ファイルアップロード上限の比較表にMicrosoft Copilot(個人向け/M365 Copilot Chat)の行を追加し、テナント設定による上限のばらつきに関する注意点を追記した。「Claude for Excel」が2026年5月7日にWord・PowerPointとともに正式提供(GA)され、Outlookはベータ公開されたこと、Microsoft側の対抗機能「Copilot in Excel with Python」を仕組み・使い分けの節に追記した。RAGのチャンク化については、hierarchical chunking(階層的チャンク化)とAnthropicのcontextual retrieval(文脈付与、取りこぼしを最大67%削減)という2025〜2026年に普及した手法、および疎ベクトル検索ではオーバーラップの効果が薄いという2026年1月の検証結果を追加した
+- **出典**: [OpenAI Help Center: File Uploads FAQ](https://help.openai.com/en/articles/8555545-file-uploads-faq)、[Fastio: Claude File Upload Limit](https://fast.io/resources/claude-file-upload-limit/)、[Google: Gemini Appsでのファイルのアップロードと分析](https://support.google.com/gemini/answer/14903178)、[Microsoft Learn: Controls to manage file uploads in Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-file-upload-control)、[Microsoft Community Hub: Introducing Copilot support for Python in Excel](https://techcommunity.microsoft.com/blog/excelblog/introducing-copilot-support-for-python-in-excel-advanced-data-analysis-using-nat/3928120)、[pasqualepillitteri.it: Claude Microsoft 365 GA (May 2026)](https://pasqualepillitteri.it/en/news/2143/claude-microsoft-365-outlook-beta)、[Firecrawl: Best Chunking Strategies for RAG 2026](https://www.firecrawl.dev/blog/best-chunking-strategies-rag)、[Denser.ai: RAG Chunking Strategies 2026](https://denser.ai/blog/rag-chunking-strategies/)
 
 ### 2026-07-21: 主要ツールのファイル上限とRAGメタデータのベストプラクティスを最新化
 - **内容**: ChatGPT/Claude/Geminiの2026年7月時点のファイルサイズ・添付数の上限を表で整理し、2026年1月にPro以上へ展開された「Claude for Excel」アドインの位置づけを追記。RAGのチャンクサイズ目安を400〜512トークンに更新し、構造化メタデータ(document_id・section等)による検索フィルタという2026年のベースラインを追加した
