@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-10
+- [人材紹介・人材サービス業における生成AI活用事例](topics/part14-industry-cases/staffing-recruiting-industry-ai-use-cases.md): ビズリーチAI・パーソルキャリア・LinkedIn Hiring Assistant・Indeedの各事例を最新化・増強
 - [自動車業界における生成AI活用事例](topics/part14-industry-cases/automotive-industry-ai-use-cases.md): Mastertech.aiのAutoVitals買収、GM Gemini展開拡大と自社開発アシスタント投入発表、BMW/Rivianの車載AI動向、ホンダ「AIカーライフアドバイザー」の詳細を反映して最新化
 - [購買・調達職における生成AI活用事例](topics/part15-job-role-cases/procurement-ai-use-cases.md): SAP Ariba・Leaner・自動交渉AI(Walmart/Maersk/Vodafone)の最新動向を反映して最新化
 - [研究開発(R&D)職における生成AI活用事例](topics/part15-job-role-cases/rd-ai-use-cases.md): 学術論文の捏造引用に関する統計を追加・最新化
