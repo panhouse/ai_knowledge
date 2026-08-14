@@ -76,3 +76,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [マーケティング・広告AI企業一覧](marketing-advertising-ai-companies-japan.md)
 - [不動産・建設AI企業一覧](realestate-construction-ai-companies-japan.md)
 - [医療・ヘルスケアAI企業一覧](healthcare-ai-companies-japan.md)
+- [教育・EdTech AI企業一覧](edtech-ai-companies-japan.md)
