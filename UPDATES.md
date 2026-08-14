@@ -6,6 +6,13 @@
 
 ## 2026-08-09
 - [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): Flashラインナップの世代交代(Gemini 3.6 Flash/3.5 Flash-Lite)・レート制限のティア表・グラウンディング課金の詳細を反映して最新化
+- [「強いAI・弱いAI」とAI効果、特化型/汎用型AIの基本](topics/part01-ai-basics/strong-weak-ai-and-ai-effect-basics.md): AGI到達時期予測(Hassabis/Anthropic)・推論モデルの理解論争・AIウォッシング事例を最新化
+- [AIが扱いやすいデータ形式](topics/part07-data-analysis/ai-friendly-data-formats.md): ファイルアップロード上限比較にMicrosoft Copilotを追加し、Claude for ExcelのGAとRAGチャンク化の最新手法(階層的チャンク化・contextual retrieval)を反映して最新化
+- [農業における生成AI活用事例](topics/part14-industry-cases/agriculture-ai-use-cases.md): JA向け生成AI基盤「報徳Hub」「日農AI金次郎」の全国展開やAGRIST・補助金制度名変更等を反映して最新化
+- [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): Kimi K3の一般提供・9月のモデル一斉非推奨予告・請求管理の窓口変更・Cursor買収の進展を反映して最新化
+- [プロンプトの基本構成要素](topics/part05-prompt-engineering/prompt-basic-structure.md): ツール横断の対応表を最新化(Claudeのプロフィール指示・Gemini Saved Info・Microsoft 365 Copilotのカスタム指示を追加)
+- [法務職における生成AI活用事例](topics/part15-job-role-cases/legal-ai-use-cases.md): 法務特化AIツール(LegalOn Cloud/OLGA/Harvey)の2026年最新動向、弁護士法72条ガイドライン見直し、ハルシネーション訴訟統計を最新化
+- [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](topics/part03-ai-chat-tools/ai-chat-tools-voice-comparison.md): GPT-Realtime-Translate・Gemini 3.5 Live Translate・ClaudeのOpus/Sonnet音声モード対応・Copilot CarPlay対応を反映して最新化
 
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
