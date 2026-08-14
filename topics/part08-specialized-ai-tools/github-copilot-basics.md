@@ -4,7 +4,7 @@ part: 8
 chapter: 第2章 コーディング支援AI
 tags: [GitHub Copilot, コーディング支援AI, AIエディタ, 開発生産性]
 created: 2026-07-06
-updated: 2026-07-20
+updated: 2026-08-09
 ---
 
 # GitHub Copilotの基本(コーディング支援AI)
@@ -27,13 +27,17 @@ GitHub Copilot(ギットハブ・コパイロット)は、Microsoft傘下のGitH
 
 ### 使えるAIモデル
 
-Copilotは自社専用モデルに縛られず、Anthropic Claude、OpenAI GPT系、Google Geminiなど複数のモデルから用途に応じて選べる「モデル選択」の仕組みを持つ。速度重視・精度重視・コスト重視で使い分けられる点は、単一モデルしか使えないツールとの差別化ポイントになっている。2026年7月には、自社ホスト以外の「オープンウェイトモデル(重みが公開されており自由に検証・改変できるモデル)」として Moonshot AI の「Kimi K2.7 Code」がモデル選択肢に初めて加わった。低コストな選択肢として使えるが、Business/Enterpriseでは管理者が設定でオプトインするまで既定で無効になっており、セキュリティ・コンプライアンス上のレビューを経てから有効化することが推奨されている。
+Copilotは自社専用モデルに縛られず、Anthropic Claude、OpenAI GPT系、Google Geminiなど複数のモデルから用途に応じて選べる「モデル選択」の仕組みを持つ。速度重視・精度重視・コスト重視で使い分けられる点は、単一モデルしか使えないツールとの差別化ポイントになっている。2026年7月には、自社ホスト以外の「オープンウェイトモデル(重みが公開されており自由に検証・改変できるモデル)」として Moonshot AI の「Kimi K2.7 Code」がモデル選択肢に初めて加わり、2026年8月6日には後継の「Kimi K3」がGeneral Availability(一般提供)となった。GitHub自身が「エージェント的コーディングでフロンティア級の能力を、低コストで提供する」と位置づけており、入力100万トークンあたり3ドル・出力100万トークンあたり15ドル・キャッシュ入力100万トークンあたり0.30ドルという料金で、Pro/Pro+/Max/Business/Enterpriseの各プランに順次展開されている。なお公開初日の8月6日には、GitHub Actions(CI/CD基盤)側の障害の影響でKimi K3の展開が一時停止される一幕があったが、同日中に復旧し展開が再開されている。オープンウェイトモデルは低コストな選択肢として使える一方、Business/Enterpriseでは管理者が設定でオプトインするまで既定で無効という扱いは変わっていない(2026年7月29日発表の「新しいGA(一般提供)モデルは既定で有効化する」というモデル管理ポリシーの見直しでも、オープンウェイトモデルとデータ保持が必要なモデルは対象外とされ、引き続き手動オプトインが必要)。セキュリティ・コンプライアンス上のレビューを経てから有効化することが推奨される。
+
+なお、GitHubは2026年9月1日付で、Copilot Chat・インライン編集・Ask/Agentモード・コード補完など全ての利用箇所を対象に、一部モデルを順次非推奨化する予定を2026年7月31日に予告している。個人向けの年間契約者(Pro/Pro+/Max)にはClaude Sonnet系モデルの選択肢を維持する例外措置があるが、対象となる具体的なモデル名は今後も変わりうるため、非推奨化の影響を受けるかどうかは利用直前に公式のモデル一覧ページ(GitHub Docsの「Supported AI models in Copilot」)で確認することを勧める。
 
 ### 料金の仕組み(2026年6月に大きく変更)
 
 Copilotは2026年6月1日から、それまでの「プレミアムリクエスト(高性能モデルを使うたびに1回分を消費する権利)」制度を廃止し、**AI Credits(AIクレジット)による従量課金**に全面移行した。1クレジット=0.01米ドルで、利用したモデルと消費したトークン数(入力・出力・キャッシュ分すべて含む)に応じてクレジットが差し引かれる仕組みである。コード補完とNext Edit Suggestions(次の編集箇所の提案)はどのプランでもクレジットを消費しない。各プランには毎月一定額のクレジットが含まれており、使い切ると追加購入(従量課金)になる。組織向けプランでは、複数ユーザー分のクレジットをプールして融通できる。
 
-なお、既存のBusiness/Enterprise契約者には移行の激変緩和として、2026年6月〜8月の3か月間は通常より多いクレジット(Businessは月3,000クレジット、Enterpriseは月7,000クレジット相当)が付与される販促措置が取られている。2026年9月以降は本記事の表にある通常付与量(Business 1,900クレジット、Enterprise 3,900クレジット)に戻るため、予算計画を立てる際はこの点を織り込んでおく必要がある。Agentモードでの大規模な自律編集やOpusなどプレミアムモデルの多用はクレジット消費が大きく、実際に「請求額が想定の数十倍に跳ね上がった」という利用者報告も出ている。管理者は組織設定でユーザーごとの利用上限(スペンドリミット)を必ず設定しておくことが望ましい。
+なお、既存のBusiness/Enterprise契約者には移行の激変緩和として、2026年6月1日〜9月1日の3か月間は通常より多いクレジット(Businessは月3,000クレジット、Enterpriseは月7,000クレジット相当)が付与される販促措置が取られている。この販促クレジットは2026年9月1日に期限を迎え、以降は本記事の表にある通常付与量(Business 1,900クレジット、Enterprise 3,900クレジット)に戻ることが公式に確定しているため、9月以降の実利用量を早めに見積もり、予算計画に織り込んでおく必要がある。Agentモードでの大規模な自律編集やOpusなどプレミアムモデルの多用はクレジット消費が大きく、実際に「請求額が想定の数十倍に跳ね上がった」という利用者報告も出ている。管理者は組織設定でユーザーごとの利用上限(スペンドリミット)を必ず設定しておくことが望ましい。
+
+利用状況の可視化についても変更があった。移行当初に使われていた「Copilot Billing Preview」という専用アプリは2026年8月3日に廃止され、以降はGitHub本体の「Billing settings(請求設定)」画面に統合された「AI usage」ページで、AIクレジットの消費量をグループ化・フィルタ・エクスポートできるようになっている。組織・Enterprise契約では、ユーザー単位の予算(user-level budgets)やコストセンター別の集計も同じ画面で確認できる。
 
 ## 使いどころ・使い分け
 
@@ -47,7 +51,7 @@ Copilotは2026年6月1日から、それまでの「プレミアムリクエス�
 | 特定モデル(Claude Codeなど)への強いこだわりがある | Copilot経由でも呼び出せるが、専用ツールの方が最適化されている場合がある |
 | セキュリティ・監査要件が厳しい(金融・官公庁等) | Business/Enterpriseの管理機能やIP補償を確認してから判断 |
 
-### 料金プラン(個人向け、2026年7月時点)
+### 料金プラン(個人向け、2026年8月時点)
 
 | プラン | 月額(1人あたり) | コード補完 | チャット・Agent | 含まれるAI Credits | 特徴 |
 |---|---|---|---|---|---|
@@ -56,7 +60,7 @@ Copilotは2026年6月1日から、それまでの「プレミアムリクエス�
 | Pro+ | 39ドル | 無制限 | 無制限(付属クレジット消費) | 70ドル分 | Opusなどプレミアムモデルにアクセス可。監査ログあり。Proの4倍超の利用枠 |
 | Max | 100ドル | 無制限 | 無制限(付属クレジット消費) | 200ドル分 | 新モデル・新機能への優先アクセス。Pro+の2.9倍超の利用枠 |
 
-### 料金プラン(組織向け、2026年7月時点)
+### 料金プラン(組織向け、2026年8月時点)
 
 | プラン | 月額(1人あたり) | 含まれるAI Credits | 特徴 |
 |---|---|---|---|
@@ -74,7 +78,7 @@ Visual Studio Code、Visual Studio、JetBrains系IDE(IntelliJ IDEA等)、Neovim�
 | ツール | 提供元 | 位置づけ | 特徴 |
 |---|---|---|---|
 | GitHub Copilot | GitHub(Microsoft) | 既存IDEへの後付け拡張機能 | GitHub本体(Issue・PR)との統合が深い。複数モデル・複数エージェントを横断管理できる。企業導入実績・ガバナンス機能が豊富 |
-| Cursor | Anysphere | AI専用に作られた独立エディタ(VS Codeから派生) | エディタ全体がAI前提で設計されており、複数ファイル編集(Composer)の完成度が高い。個人開発者評価が高い。2026年6月にSpaceXが買収を発表(全株式取得・約600億ドル規模、2026年第3四半期に完了予定)しており、今後の製品方針変更に注意 |
+| Cursor | Anysphere | AI専用に作られた独立エディタ(VS Codeから派生) | エディタ全体がAI前提で設計されており、複数ファイル編集(Composer)の完成度が高い。個人開発者評価が高い。2026年6月にSpaceXが買収を発表(全株式取得・約600億ドル規模)した案件は2026年8月中の成立が見込まれる段階まで進んでおり、Cursorブランドは今後数か月かけて段階的に廃止され、開発中の汎用エージェント製品は「Grok」ブランドに統合される可能性が報じられている。既存の主力製品の名称は当面維持される見込みだが、社名・組織体制の変更が続く点は選定時に注視が必要 |
 | Devin Desktop(旧Windsurf) | Cognition | AI専用の独立エディタ | 2026年6月にCognitionの「Devin」ブランドへ統合され、旧来の自社エージェント「Cascade」は同年7月にRust製の新エージェント「Devin Local」へ置き換え。外部エージェント(Codex、Claude Agent等)を同一エディタ内で動かせる共通規格「ACP(Agent Client Protocol)」を採用 |
 | Cline | オープンソースコミュニティ | VS Code拡張機能(OSS) | 無料・オープンソースで、好きなAIモデルを自分で接続できる(BYOM = Bring Your Own Model)。コスト重視・カスタマイズ重視の開発者に支持される |
 
@@ -104,6 +108,8 @@ Visual Studio Code、Visual Studio、JetBrains系IDE(IntelliJ IDEA等)、Neovim�
 - **無料プランでも侮れないが、業務利用ならProから検討**: Freeプランは月2,000件の補完・50件のチャットという制限があり、日常的な開発業務にはやや心許ない。個人の業務利用ならProが最低ライン
 - **生成コードのレビューを省略しない**: Agent機能が「自律的に動く」ことと「レビュー不要」であることはイコールではない。特にセキュリティに関わる部分(認証・権限・外部通信)は人間のレビューを必須にする
 - **Cursor等の専用エディタとは共存できる**: 「会社としてCopilotを契約している=他のツールを使ってはいけない」ではない。エンジニアが個人の裁量でCursorやClineを併用しているケースは多く、ライセンス費用の重複よりも生産性を優先する判断がされることもある。管理職としては「なぜそのツールを使っているか」を一度エンジニアに聞いてみると実態がつかみやすい
+- **モデルは通知なく非推奨化・入れ替わる**: GitHubは2026年9月1日付で、Copilot Chat・補完・Agentモードなど全経路を対象に一部モデルの提供を順次終了する予告を出している(個人の年間契約者にはClaude Sonnet系の選択肢を残す例外はあるが、対象モデルは変わりうる)。社内で「このモデルを使う」と手順書に固定的に書いてしまうと、モデル終了のたびに手順書が陳腐化するので、「Auto(自動選択)」に任せるか、モデル一覧ページを定期的に確認する運用にしておくとよい
+- **請求の見え方が変わった**: 2026年6月の従量課金移行時に使われていた専用アプリ「Copilot Billing Preview」は2026年8月3日に廃止された。現在はGitHub本体の請求設定(Billing settings)内の「AI usage」ページが利用状況確認の窓口になっているため、古い記事にある「Billing Previewアプリで確認」という案内は通用しない
 
 ## 最初の一歩
 
@@ -115,6 +121,10 @@ Visual Studio Code、Visual Studio、JetBrains系IDE(IntelliJ IDEA等)、Neovim�
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 
 ## 更新履歴
+
+### 2026-08-09: モデル・料金管理・競合動向を最新化
+- **内容**: オープンウェイトモデル「Kimi K3」の一般提供開始(価格・GitHub Actions障害による一時停止と復旧)、2026年9月1日予告の複数モデル一斉非推奨化(個人年間契約者向けClaude Sonnet系の例外措置)、Business/Enterprise向け「新GAモデルは既定で有効化」ポリシーの導入(オープンウェイトモデルは対象外で引き続きオプトイン)、Business/Enterprise販促クレジット(3,000/7,000クレジット)の2026年9月1日での期限確定、請求管理の窓口が専用アプリ「Copilot Billing Preview」廃止後は本体のBilling settings内「AI usage」ページに一本化されたこと、SpaceXによるCursor買収が2026年8月中の成立見込みまで進み今後のブランド統合(Grokブランドへの統合報道)が具体化してきたことを反映して本文を更新
+- **出典**: [Kimi K3 is now available in GitHub Copilot - GitHub Changelog](https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot/), [Upcoming August 2026 model deprecations in GitHub Copilot - GitHub Changelog](https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot/), [Default model enablement for Copilot Business and Enterprise - GitHub Changelog](https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/), [Retiring the Copilot Billing Preview app - GitHub Changelog](https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/), [Updates to GitHub Copilot billing and plans - GitHub Changelog](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/), [GitHub Actions Outage Breaks Workflows, Pages and Copilot - Windows Forum](https://windowsforum.com/windows-news.4/github-actions-outage-breaks-workflows-pages-and-copilot.441916/), [SpaceX Reportedly Nears $60B Cursor Acquisition — AI Startup Outlines Rebranding Plans - Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/spacex-reportedly-nears-60b-cursor-220153276.html)
 
 ### 2026-07-20: モデル・料金・競合動向を最新化
 - **内容**: オープンウェイトモデル「Kimi K2.7 Code」のモデル選択肢への追加、Copilotデスクトップアプリの全プラン無料化とBYOK対応、Business/Enterprise向け販促クレジット(2026年6〜8月)と超過課金リスクの注意点、CursorのSpaceXによる買収発表・WindsurfのDevin Desktopへのブランド統合という競合動向を反映して本文を更新
