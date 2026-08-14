@@ -2,9 +2,9 @@
 title: 主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)
 part: 3
 chapter: 第4章 生成・分析の主要機能
-tags: [音声対話, Advanced Voice Mode, Gemini Live, Copilot Voice, ロールプレイ, ツール横断比較]
+tags: [音声対話, Advanced Voice Mode, Gemini Live, Copilot Voice, リアルタイム翻訳, ロールプレイ, ツール横断比較]
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-09
 ---
 
 # 主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)
@@ -19,23 +19,27 @@ ChatGPT・Gemini・Claude・Microsoft Copilotは、いずれもテキストで�
 
 2024年にOpenAIが投入した「Advanced Voice Mode」は、音声を直接理解・生成できるマルチモーダル(複数の種類の情報を扱える)モデルにより、テキスト変換を経由せず音声のまま処理する方式を初めて広めた。これにより息づかいや感情表現の再現、話している途中で相手が割り込んできたときの自然な反応(interrupt対応)が可能になった。GeminiのGemini LiveやClaudeの音声モードも同様に音声ネイティブな処理へ進んでおり、各社とも旧来の3段階方式(ChatGPTでは「Standard Voice Mode」として残っている)から音声ネイティブ方式への切り替えを進めている段階にある。
 
+2026年に入り、各社の力点は「自然な会話」から「その場でのリアルタイム翻訳・通訳」と「音声で複雑なタスクをこなす頭脳の強化」に移っている。OpenAIは2026年5月7日、開発者向けAPIに音声専用モデル群「GPT-Realtime-2」(GPT-5級の推論力を持つ音声エージェント向けモデル)・「GPT-Realtime-Translate」(70以上の言語の音声を13言語へ、話者のペースを保ったまま同時通訳する翻訳特化モデル)・「GPT-Realtime-Whisper」(リアルタイム音声書き起こし)を発表した([OpenAI公式](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/))。GoogleもGemini本体とは別に音声翻訳特化モデル「Gemini 3.5 Live Translate」を2026年6月9日に発表し、抑揚・間・話速を保ったままほぼ同時通訳するレベルまで引き上げた([Google公式ブログ](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/))。AnthropicもClaudeの音声モードについて、応答速度優先の軽量モデル(Haiku)専用だった構成を見直し、2026年7月23日によりReasoning(推論)力の高いOpus・Sonnetを選べる形に拡張した([TechCrunch](https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/))。「自然に話せるか」だけでなく「通訳としてどこまで使えるか」「音声のまま複雑な相談・作業をこなせるか」が各社の差別化ポイントになりつつある。
+
 ## 使いどころ・使い分け
 
-### 機能名・対応状況の比較表(2026年7月時点)
+### 機能名・対応状況の比較表(2026年8月時点)
 
 | ツール | 機能名 | 無料プランでの利用 | 有料プランでの拡張 | 画面・カメラ共有 | 対応言語の目安 | 起動場所 |
 |---|---|---|---|---|---|---|
-| ChatGPT | Advanced Voice Mode(旧来方式は Standard Voice Mode) | あり(1日あたり数十分程度の試用枠、モデルはGPT-4o mini相当に制限) | Plus:1日数時間程度利用可、Vision-in-Voice(カメラ越しの映像を見ながら会話)も追加/Pro:実質無制限(乱用防止のガードレールあり) | Vision-in-Voiceでカメラ映像を見せながら会話可(Plus以上) | 数十言語、発音矯正・アクセント切り替えに対応 | モバイルアプリ・Web版のチャット入力欄の音声アイコン |
-| Gemini | Gemini Live | あり(基本的な音声会話・カメラ/画面共有まで無料開放) | Google AI Plus/Pro/Ultraで利用量の上限(5時間ごとにリセットされる計算量ベースの上限)が拡大 | カメラ共有・画面共有に標準対応(2025年5月に全Android/iOSへ無料展開) | 40言語以上での会話に対応(関連するLive Translate機能は70言語以上) | Geminiアプリの「Live」アイコン、gemini.google.comのマイクアイコン |
-| Claude | 音声モード(Voice conversations、ベータ) | あり(基本的な音声会話が可能) | Pro/Max/Team/Enterpriseで利用量が拡大 | なし(画面・カメラ共有機能はない。ただしGoogle Workspace連携でカレンダー・メール・Driveの内容を参照しながら会話可能) | 18言語(2026年6月に多言語対応がベータを終了、日本語含む。当初2025年5月の提供開始時は英語のみ) | モバイルアプリ(iOS/Android)・Web版チャット画面の音波アイコン |
-| Microsoft Copilot | Copilot Voice(個人向け)/ Microsoft 365 Copilotの音声機能(dictation・read aloud・voice chat) | Copilot Voiceは無料 | Microsoft 365 Copilotライセンスがあると、社内のメール・ファイル・会議データを踏まえた音声チャットが可能(Microsoft Graphによるグラウンディング) | なし(Windows上で「Hey Copilot」ウェイクワードによるハンズフリー起動に対応) | 多言語対応(ウェイクワード自体は英語発話のみ認識、会話本体は日本語等でも可) | Copilotアプリ・Windows・Microsoft Edge/ Word・Outlook等のCopilotボタン内 |
+| ChatGPT | Advanced Voice Mode(旧来方式は Standard Voice Mode) | あり(日次/月次の短い試用枠、モデルはGPT-4o mini相当に制限。正確な分数は非公開で変動する) | Go(月額8ドル、2026年1月16日に全世界展開):FreeよりAVMの利用枠が拡大/Plus(月額20ドル):1日数時間程度利用可、Vision-in-Voice(カメラ越しの映像を見ながら会話)・リアルタイム音声翻訳も追加/Pro(月額200ドル):実質無制限(乱用防止のガードレールあり) | Vision-in-Voiceでカメラ映像を見せながら会話可(Plus以上) | 数十言語、発音矯正・アクセント切り替えに対応。リアルタイム音声翻訳機能も搭載 | モバイルアプリ・Web版のチャット入力欄の音声アイコン |
+| Gemini | Gemini Live(翻訳特化の「Gemini 3.5 Live Translate」は2026年6月9日発表) | あり(基本的な音声会話・カメラ/画面共有まで無料開放。Google Translateアプリでのリアルタイム音声翻訳も無料) | Google AI Plus/Pro/Ultraで利用量の上限(5時間ごとにリセットされる計算量ベースの上限)が拡大。Google Meetでのライブ翻訳は2026年6月からGoogle Workspace法人顧客の一部にプレビュー提供開始(2026年後半に拡大予定) | カメラ共有・画面共有に標準対応(2025年5月に全Android/iOSへ無料展開) | 40言語以上での会話に対応(Live Translateは70以上の言語を検出し、抑揚・話速を保ったままほぼ同時通訳) | Geminiアプリの「Live」アイコン、gemini.google.comのマイクアイコン |
+| Claude | 音声モード(Voice conversations、ベータ) | あり(基本的な音声会話が可能。ただしモデルはHaiku固定、連携アプリは1つまで) | Pro/Max/Team/Enterpriseでは2026年7月23日の更新により、応答速度優先のHaikuに加えてOpus・Sonnetも選択可能に(直近のテキストチャットで使ったモデルの高速版が既定)。利用量そのものも拡大 | なし(画面・カメラ共有機能はない。連携(Connectors)がGoogle Workspaceに加えGmail・Google Calendar・Slack・Canva・Notionなどへ拡大し、それらの内容を参照しながら会話可能) | 18言語(2026年6月に多言語対応がベータを終了、日本語含む。当初2025年5月の提供開始時は英語のみ) | モバイルアプリ(iOS/Android)・Web版チャット画面の音波アイコン |
+| Microsoft Copilot | Copilot Voice(個人向け)/ Microsoft 365 Copilotの音声機能(dictation・read aloud・voice chat・Record) | Copilot Voiceは無料 | Microsoft 365 Copilotライセンスがあると、社内のメール・ファイル・会議データを踏まえた音声チャットが可能(Microsoft Graphによるグラウンディング)。Read AloudはCopilotとのQ&Aができるインタラクティブ形式に進化(2026年2〜3月、当初は米語版のみ)。モバイルアプリには音声メモを録音してOneDriveに保存する「Record」機能が2026年8月下旬から追加予定 | なし(Windows上で「Hey Copilot」ウェイクワードによるハンズフリー起動に対応。2026年5月からはApple CarPlayにも対応し、車載ディスプレイ・音声でハンズフリー利用が可能に) | 多言語対応(ウェイクワード自体は英語発話のみ認識、会話本体は日本語等でも可) | Copilotアプリ・Windows・Microsoft Edge/ Word・Outlook等のCopilotボタン内、Apple CarPlay画面 |
 
 ### 使い分けの判断基準
 
 - **語学学習・発音矯正がメイン** → ChatGPTのAdvanced Voice Mode。発音のフィードバック、アクセント切り替え、ロールプレイへの追従が滑らかという評判が多い
 - **画面や周囲の映像を見せながら質問したい**(観光地の看板を訳してほしい、資料を見ながら相談したい) → Geminiのカメラ・画面共有付きGemini Live。無料でも使える点も大きい
-- **自分のGoogleカレンダー・メールの内容を踏まえて話したい** → Claudeの音声モード(Google Workspace連携が前提)
+- **その場でのリアルタイム通訳・多言語での接客/商談がしたい** → Gemini(Google Translateアプリ経由のLive Translateは無料で70言語以上に対応)、またはChatGPT Plus以上のリアルタイム音声翻訳。開発者としてアプリに組み込みたい場合はOpenAIのGPT-Realtime-TranslateやGeminiのLive Translate APIを検討する
+- **音声のまま込み入った相談・複数アプリをまたぐ作業をこなしたい**(パワポの構成を相談しながらメールも参照させる、など) → Claudeの音声モード(Pro以上でOpus・Sonnetを選択でき、Gmail・カレンダー・Slack・Canva・Notionなどの連携も使える)
 - **社内のOffice文書・メール・会議録を踏まえて音声で相談したい** → Microsoft 365 Copilotの音声機能(要:対象ライセンス)
+- **運転中にハンズフリーで業務を確認したい** → Microsoft CopilotのApple CarPlay対応、またはCopilot Voiceのハンズフリー起動
 - **単純にハンズフリーで雑談・簡単な質問をしたいだけ** → 今契約しているツールの音声機能で十分。わざわざ別ツールに乗り換える必要はない
 
 ## 実務での使い方
@@ -44,8 +48,8 @@ ChatGPT・Gemini・Claude・Microsoft Copilotは、いずれもテキストで�
 
 - **ChatGPT**: モバイルアプリでチャット入力欄右下の音声アイコンをタップ→音声選択画面が出たら「開始する」をタップ。会話中に**青いオーブ**が表示されればAdvanced Voice Mode、**黒(グレー)のオーブ**なら旧来のStandard Voice Modeなので、意図せず古い方式で話していないか確認する。Web版でも同じ音声アイコンから起動できる。カメラを見せながら話すVision-in-Voiceは、音声画面のカメラアイコンから起動する(Plus以上)
 - **Gemini**: スマホでGeminiアプリを開き、下部の「Live」アイコンをタップ(Androidは電源ボタン長押しでGeminiを呼び出し、画面下部の「Liveと画面を共有」ボタンからも起動可)。PC版はgemini.google.comを開いてマイクアイコンをクリック。起動後に表示されるカメラ・画面共有アイコンをタップすると、映像を見せながらの会話に切り替わる
-- **Claude**: モバイルアプリ(iOS/Android)のチャット画面右下にある音波マークのアイコンをタップして音声モードに入る。Web版にも同様のアイコンが追加されている。カレンダーやメールの内容を踏まえて話したい場合は、事前に設定の「連携(Connectors)」からGoogle Workspaceとの連携を有効にしておく
-- **Microsoft Copilot**: Windowsでは、Copilotアプリの設定で「Hey Copilotを聞き取る」をオンにすると、「ヘイ、コパイロット」の呼びかけで起動できる(ウェイクワード自体は英語発話として認識されるため、日本語話者は英語のカタカナ読みよりも英語らしい発音を試すと認識されやすいという報告がある)。スマホ・Web版はcopilot.microsoft.comやCopilotアプリのマイクアイコンから起動。Microsoft 365 CopilotのVoice Chat・Read Aloud・DictationはWord/Outlook等のCopilotボタン内のマイクアイコンから使う
+- **Claude**: モバイルアプリ(iOS/Android)のチャット画面右下にある音波マークのアイコンをタップして音声モードに入る。Web版にも同様のアイコンが追加されている。2026年7月の更新以降は、音声モードに入る前に使っていたテキストチャットのモデル(Opus/Sonnet/Haiku)の高速版が自動で引き継がれる仕様になった。じっくり考えさせたい相談ではテキストチャット側でOpusかSonnetに切り替えてから音声モードに入るとよい(無料プランはHaiku固定)。カレンダー・メール・Slack・Canva・Notionなどの内容を踏まえて話したい場合は、事前に設定の「連携(Connectors)」から該当サービスを有効にしておく(無料プランは連携アプリ1つまで)
+- **Microsoft Copilot**: Windowsでは、Copilotアプリの設定で「Hey Copilotを聞き取る」をオンにすると、「ヘイ、コパイロット」の呼びかけで起動できる(ウェイクワード自体は英語発話として認識されるため、日本語話者は英語のカタカナ読みよりも英語らしい発音を試すと認識されやすいという報告がある)。スマホ・Web版はcopilot.microsoft.comやCopilotアプリのマイクアイコンから起動。車を運転しながら使いたい場合は、2026年5月以降Apple CarPlay対応の車種であればCarPlay画面からCopilotを起動し、音声で会話を開始・継続できる。Microsoft 365 CopilotのVoice Chat・Read Aloud・DictationはWord/Outlook等のCopilotボタン内のマイクアイコンから使う
 
 ### コピペで使える活用シナリオ例
 
@@ -70,6 +74,15 @@ ChatGPT・Gemini・Claude・Microsoft Copilotは、いずれもテキストで�
 最大3つだけ、簡潔に日本語でフィードバックしてください。
 ```
 
+**海外出張・商談前の即席通訳として使う場合**(GeminiのLive Translate、またはChatGPT Plus以上のリアルタイム音声翻訳向け)
+
+```
+これから英語話者との商談に同席してもらいます。私が日本語で話したら英語に、
+相手が英語で話したら日本語に、それぞれ話し終わるたびに素早く訳してください。
+訳文だけを読み上げ、あなた自身の意見や補足は挟まないでください。
+専門用語(SaaS、KPI、オンボーディングなど)はカタカナ語のニュアンスを保ってください。
+```
+
 ### 料金・利用時間の考え方
 
 いずれのツールも「基本会話は無料プランでも試せるが、利用時間・利用量に厳しい上限がある」という構造は共通している。プラン全体の料金・機能の詳細は各ツールの個別ページを参照([ChatGPTのモデル一覧と使い分け](chatgpt-model-lineup.md)、[Google Geminiの基本](google-gemini-basics.md)、[Claude(Anthropic)の基本](claude-basics.md)、[Microsoft Copilotの基本](microsoft-copilot-basics.md))。音声対話だけを目的にわざわざ上位プランへ課金する前に、まず無料プランでどこまで使えるかを試すのが無駄がない。
@@ -79,6 +92,8 @@ ChatGPT・Gemini・Claude・Microsoft Copilotは、いずれもテキストで�
 - **「音声モードがある」=「どのプランでも同じ体験」ではない**: 無料プランは利用時間が短い、または軽量モデルにダウングレードされる場合が多い。「昨日はスムーズだったのに今日は変な回答をする」と感じたら、上限到達で簡易版に切り替わっている可能性を確認する
 - **旧来方式との混同に注意**: ChatGPTのStandard Voice Mode(黒いオーブ)はAdvanced Voice Mode(青いオーブ)より応答が硬く不自然になりやすい。意図せず古い方式のままになっていないか、会話開始時に画面表示を確認する
 - **Claude Codeの「/voice」とClaude.aiアプリの音声モードは別機能**: 前者はターミナルで動く開発者向けのAIコーディングエージェント「Claude Code」内の音声操作コマンド、後者は一般利用者向けのチャットアプリの会話機能。名前が似ているため混同しやすい
+- **Microsoft Copilot Studioの「リアルタイム音声エージェント」と、個人向けCopilot Voiceも別機能**: 前者は主にDynamics 365 Contact Center等で企業が顧客対応用の音声ボットを構築するための開発者・管理者向け機能、後者はCopilotアプリ・Windows・CarPlayで個人が使うアシスタント機能。どちらも「音声」を扱うため社内で話が混同されやすい
+- **Claudeの無料プランは音声モードでもモデルが選べない**: 2026年7月の更新でPro以上はOpus・Sonnet・Haikuを選べるようになったが、無料プランはHaiku固定・連携アプリ1つまでという制限が残る。「複雑な相談を音声でしたら要領を得ない回答だった」という場合、モデルがHaikuのままになっていないか(有料プランなら明示的にOpus/Sonnetへ切り替えているか)を確認する
 - **ウェイクワードは周囲の会話でも誤作動しうる**: Microsoft Copilotの「Hey Copilot」のように常時リスニングするウェイクワード機能は、会議中や来客時に意図せず起動してしまうリスクがある。使わないときはオフにしておく
 - **音声データの扱いはツールごとに規約が異なる**: 音声はいったんテキストに近い形で処理・記録され、無料プランを中心にモデル改善のための学習データとして利用される場合がある。機密情報を音声で話す前に、各ツールのデータ利用・オプトアウト設定を確認する([ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)を参照)
 - **公共の場での利用はのぞき見・盗み聞きのリスクがある**: 電車やオフィスの共有スペースでの音声入力は、周囲に会話内容(質問の中身や社内情報)が漏れる可能性がある。機密性の高い相談は個室や自宅など人のいない場所で行う
@@ -97,6 +112,10 @@ ChatGPT・Gemini・Claude・Microsoft Copilotは、いずれもテキストで�
 - [ChatGPTの初期設定とデータ利用のオプトアウト](chatgpt-initial-setup-and-opt-out.md)
 
 ## 更新履歴
+
+### 2026-08-09: 各社の翻訳強化・モデル拡張を反映して最新化
+- **内容**: OpenAIのGPT-Realtime-2/GPT-Realtime-Translate/GPT-Realtime-Whisper(2026年5月発表)、GoogleのGemini 3.5 Live Translate(2026年6月発表、70言語以上のほぼ同時通訳)、Claudeの音声モードへのOpus/Sonnetモデル追加と連携アプリ拡大(2026年7月更新、無料はHaiku固定のまま)、Microsoft CopilotのApple CarPlay対応・Read Aloudのインタラクティブ化・モバイルRecord機能を反映。比較表・判断基準・起動手順・コピペ例(通訳シナリオ追加)・注意点を更新
+- **出典**: [OpenAI: Advancing voice intelligence with new models in the API](https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/)、[TechCrunch: Anthropic updates Claude voice mode with more capable models](https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/)、[Google: Google AI announcements from June 2026](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/)、[SiliconANGLE: Google's Gemini 3.5 Live Translate enables realistic translation](https://siliconangle.com/2026/06/09/googles-gemini-3-5-live-translate-enables-realistic-real-time-translation-speed-natural-conversations/)、[Microsoft: What's New in Microsoft 365 Copilot | May 2026](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--may-2026/4522010)、[Microsoft Support: Use Microsoft 365 Copilot in Apple CarPlay](https://support.microsoft.com/en-us/Microsoft-365-Copilot/voice-apple-carplay)、[Super Simple 365: What's new in Microsoft 365 and Copilot? March 2026](https://supersimple365.com/whats-new-in-microsoft-365-and-copilot-march-2026/)、[felloai: ChatGPT Pricing Guide (August 2026)](https://felloai.com/chatgpt-pricing-guide-free-go-plus-pro-alternatives-october-2025/)
 
 ### 2026-07-07: 初版執筆
 - **内容**: ChatGPT(Advanced Voice Mode)・Gemini(Gemini Live)・Claude(音声モード)・Microsoft Copilot(Copilot Voice/Microsoft 365 Copilotの音声機能)をツール横断で比較。音声ネイティブ処理への進化の背景、対応言語・無料利用可否・画面/カメラ共有機能の比較表、起動手順、ロールプレイ・語学学習用のコピペ指示文例、音声データの扱いとウェイクワード誤作動などの注意点を整理
