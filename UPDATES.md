@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-11
+- [航空業界における生成AI活用事例](topics/part14-industry-cases/airline-industry-ai-use-cases.md): ANA neoAI Chat・JALカードX-Ghost本格導入・デルタAI価格設定の規制動向(2026年8月米上院公聴会)・AVIATARのLATAM導入を追記し最新化
 - [カスタマーサクセス職における生成AI活用事例](topics/part15-job-role-cases/customer-success-ai-use-cases.md): Gainsightのエージェント基盤化(Staircase AI買収・MCP対応)、ChurnZero/HubSpot/Totangoの料金・新機能、Sansan最新調査を反映して最新化
 - [品質管理・QA職における生成AI活用事例](topics/part15-job-role-cases/quality-assurance-ai-use-cases.md): エージェンティックQAの動向・料金表(GitHub Copilot AI Credits化、Xray Sembi IQ、mablプラン再編)・パナソニックコネクト/日立の国内新事例を反映して最新化
 ## 2026-08-10
