@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-13
+- [廃棄物処理・リサイクル業界における生成AI活用事例](topics/part14-industry-cases/waste-management-recycling-ai-use-cases.md): 新規執筆(選別AI・収集ルート最適化・マニフェスト作成・ごみ分別チャットボット)
 - [ペット関連産業(ペットケア・動物病院)における生成AI活用事例](topics/part14-industry-cases/pet-care-industry-ai-use-cases.md): 新規執筆(動物病院の画像診断支援AI・カルテ自動作成・飼い主対応チャットボット・ペット保険査定AI・EC商品説明生成)
 ## 2026-08-12
 - [鉄道業界における生成AI活用事例](topics/part14-industry-cases/railway-industry-ai-use-cases.md): 予知保全・画像認識・多言語対応・需要予測・海外事例の節を最新化・増強
