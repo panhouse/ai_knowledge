@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-09
+- [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](topics/part03-ai-chat-tools/ai-chat-tools-voice-comparison.md): GPT-Realtime-Translate・Gemini 3.5 Live Translate・ClaudeのOpus/Sonnet音声モード対応・Copilot CarPlay対応を反映して最新化
+
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
