@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-14
+- [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): 2026-07-28仕様の正式版確定・Enterprise Managed Authorization・AAIF加盟拡大を反映して最新化
 - [AIエージェントとは何か](topics/part11-ai-agents/ai-agent-basics.md): MCP仕様更新(2026年7月28日付・ステートレス化)とMeta Muse Codeの新規参入を反映して最新化・増強
 - [推論モデル(Reasoning Model)とは何か](topics/part02-llm-basics/reasoning-model-basics.md): ChatGPTの思考スライダー統一・Claude Opus 5/Fable 5・Gemini 3.7 Flashなど直近3週間の世代交代を反映して最新化・増強
 - [RAG(検索拡張生成)の基本](topics/part07-data-analysis/rag-basics.md): 発展形RAGの節を関連ページへの誘導に整理し、「コンテキストエンジニアリング」の呼称を反映して最新化
