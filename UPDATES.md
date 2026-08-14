@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-09
+- [法務職における生成AI活用事例](topics/part15-job-role-cases/legal-ai-use-cases.md): 法務特化AIツール(LegalOn Cloud/OLGA/Harvey)の2026年最新動向、弁護士法72条ガイドライン見直し、ハルシネーション訴訟統計を最新化
 - [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](topics/part03-ai-chat-tools/ai-chat-tools-voice-comparison.md): GPT-Realtime-Translate・Gemini 3.5 Live Translate・ClaudeのOpus/Sonnet音声モード対応・Copilot CarPlay対応を反映して最新化
 
 ## 2026-08-08
