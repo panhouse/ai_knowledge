@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-10
+- [研究開発(R&D)職における生成AI活用事例](topics/part15-job-role-cases/rd-ai-use-cases.md): 学術論文の捏造引用に関する統計を追加・最新化
 - [エネルギー・電力・インフラにおける生成AI活用事例](topics/part14-industry-cases/energy-infrastructure-ai-use-cases.md): 東北電力×Helpfeelの新事例追加、TEPCO EPコンタクトセンター続報、データセンター電力消費のIEA最新数値・GX戦略地域の動向を反映して最新化
 - [アパレル・ファッション業界における生成AI活用事例](topics/part14-industry-cases/apparel-fashion-ai-use-cases.md): Google Doppl終了・検索統合、Stitch Fix Vision機能拡張、Zalando通期実績、H&Mデジタルツイン運用開始、NY州の新規制動向を反映して最新化
 - [情報システム(IT)部門における生成AI活用事例](topics/part15-job-role-cases/information-systems-ai-use-cases.md): IPA10大脅威2026・AIOps最新動向・Copilot/Claude/Geminiの管理者機能を反映して最新化
