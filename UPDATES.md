@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-14
+- [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): 主要モデルの系譜・価格・ベンチマーク動向を最新化・増強
 - [Cursorの基本(AIコードエディタ)](topics/part08-specialized-ai-tools/cursor-basics.md): モデル世代交代(Claude Sonnet 5/Opus 5/Fable 5、Grok 4.6)・Cursor Router・iOSアプリ・買収動向の節を最新化・増強
 - [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part04-risk-security/ai-regulation-and-governance-trends.md): EUデジタル・オムニバスの正式発効・透明性義務の適用開始・米国コロラド州法を巡る訴訟合戦を反映して最新化・増強
 - [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): 2026-07-28仕様の正式版確定・Enterprise Managed Authorization・AAIF加盟拡大を反映して最新化
