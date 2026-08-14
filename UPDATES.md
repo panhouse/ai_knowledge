@@ -6,6 +6,50 @@
 
 ## 2026-08-13
 - [ペット関連産業(ペットケア・動物病院)における生成AI活用事例](topics/part14-industry-cases/pet-care-industry-ai-use-cases.md): 新規執筆(動物病院の画像診断支援AI・カルテ自動作成・飼い主対応チャットボット・ペット保険査定AI・EC商品説明生成)
+## 2026-08-12
+- [鉄道業界における生成AI活用事例](topics/part14-industry-cases/railway-industry-ai-use-cases.md): 予知保全・画像認識・多言語対応・需要予測・海外事例の節を最新化・増強
+- [ゲーム業界における生成AI活用事例](topics/part14-industry-cases/game-industry-ai-use-cases.md): 企業スタンスの分裂(任天堂・カプコンの不使用方針とソニーの全スタジオ活用宣言)・Steam開示ルール改定・NPC対話/QA最新事例を反映して最新化・増強
+- [出版・印刷業における生成AI活用事例](topics/part14-industry-cases/publishing-printing-ai-use-cases.md): KADOKAWA・DTP自動化・やさしい日本語アクセシビリティを追加し、翻訳・校正・オーディオブック事例を最新化・増強
+- [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): Figma Design Agentのベータ運用・Adobe Firefly Image 5/料金体系変更・Framer AI/Uizard・EU AI法第50条の開示義務を反映して最新化・増強
+- [内部監査職における生成AI活用事例](topics/part15-job-role-cases/internal-audit-ai-use-cases.md): 国内企業(コインチェック・Visional)の内部監査AI活用事例とIIA基準10.3・金融庁AIディスカッションペーパーを反映して最新化・増強
+- [総務職における生成AI活用事例](topics/part15-job-role-cases/general-affairs-ai-use-cases.md): 株主総会想定問答(東急・GMO・AvaTwin Chatbot)、GMOサインのMCPサーバー連携、Sansan最新実績を反映して最新化・増強
+- [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part15-job-role-cases/information-security-ai-use-cases.md): エージェント型SOC(Agentic SOC)の最新動向と国内新事例(NRIセキュア)を反映して最新化・増強
+- [半導体・電機業界における生成AI活用事例](topics/part14-industry-cases/semiconductor-electronics-ai-use-cases.md): EDAエージェント型ツール(AgentEngineer™・ChipStack AI Super Agent)の進化とサプライチェーン・国内新事例(Advanced Vision Solutions等)を反映して最新化・増強
+- [翻訳・通訳担当における生成AI活用事例](topics/part15-job-role-cases/translation-interpretation-ai-use-cases.md): DeepL料金体系・リアルタイム通訳(Timekettle X1等)・字幕吹き替え(mimidub追加)を最新化・増強
+- [化学・素材業界における生成AI活用事例](topics/part14-industry-cases/chemical-materials-industry-ai-use-cases.md): 材料開発の最新事例(三菱マテリアル・自律実験)とプラント運転支援AI(予知保全・故障診断エージェント)の節を最新化・増強
+## 2026-08-11
+- [スポーツ業界における生成AI活用事例](topics/part14-industry-cases/sports-industry-ai-use-cases.md): MLB「Scout Insights」・国内NPB+・NBA Inside the Game・Wimbledon・WSC Sports・Niiva Talk・ダイナミックプライシング・MLBロボット審判/W杯2026のSAOTを2026年8月時点の最新情報に更新・増強
+- [食品製造業における生成AI活用事例](topics/part14-industry-cases/food-manufacturing-ai-use-cases.md): 2026年4月のアレルゲン表示改正(カシューナッツ義務化等)・味の素「未来献立」終了・ChatSense/日清食品の最新実績等を反映して最新化・増強
+- [美容業界(理美容・エステ・ネイル)における生成AI活用事例](topics/part14-industry-cases/beauty-industry-ai-use-cases.md): Perfect Corp「AI Hair & Beard API」・ECILA・花王Kirei肌AI・AIカルテ(音声認識)・来客予測AIなど2026年8月時点の新事例を反映して最新化
+- [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part15-job-role-cases/product-manager-ai-use-cases.md): ツール料金(Notion AI・Atlassian Intelligence/Rovo等)とPdMのAI活用統計を最新化、ChatPRD・Aha!を追加
+- [秘書・エグゼクティブアシスタント職における生成AI活用事例](topics/part15-job-role-cases/executive-assistant-ai-use-cases.md): AI日程調整アシスタントの料金(Reclaim.ai/Motion)とMicrosoft 365 Copilotのエージェントモード・GmailのAI受信トレイ展開を反映して最新化
+- [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part15-job-role-cases/data-analyst-ai-use-cases.md): Power BI Copilot(Fabric F2緩和)・Amazon Quick Suite(旧Amazon Q in QuickSight)・Tableau+・ThoughtSpot Spotterの料金/機能と、新ツールClaude for Excelを反映し最新化
+- [保育・幼児教育における生成AI活用事例](topics/part14-industry-cases/childcare-early-education-ai-use-cases.md): こどもストーリーの1EdTech Japan賞受賞、ルクミー「すくすくレポート」、hinaryの全国私立保育連盟提携、こども家庭庁「保育ICTラボ事業」を反映して最新化・増強
+- [航空業界における生成AI活用事例](topics/part14-industry-cases/airline-industry-ai-use-cases.md): ANA neoAI Chat・JALカードX-Ghost本格導入・デルタAI価格設定の規制動向(2026年8月米上院公聴会)・AVIATARのLATAM導入を追記し最新化
+- [カスタマーサクセス職における生成AI活用事例](topics/part15-job-role-cases/customer-success-ai-use-cases.md): Gainsightのエージェント基盤化(Staircase AI買収・MCP対応)、ChurnZero/HubSpot/Totangoの料金・新機能、Sansan最新調査を反映して最新化
+- [品質管理・QA職における生成AI活用事例](topics/part15-job-role-cases/quality-assurance-ai-use-cases.md): エージェンティックQAの動向・料金表(GitHub Copilot AI Credits化、Xray Sembi IQ、mablプラン再編)・パナソニックコネクト/日立の国内新事例を反映して最新化
+## 2026-08-10
+- [介護業界における生成AI活用事例](topics/part14-industry-cases/eldercare-ai-use-cases.md): Google「ケア記録アシスト」・オムロン「With.Ai」・あおぞらケアG×ケアchat「AI介護事務」など大手プラットフォーマーの参入事例と、むすぼなAI・SOINの最新統計、導入補助金情報を反映して最新化・増強
+- [人材紹介・人材サービス業における生成AI活用事例](topics/part14-industry-cases/staffing-recruiting-industry-ai-use-cases.md): ビズリーチAI・パーソルキャリア・LinkedIn Hiring Assistant・Indeedの各事例を最新化・増強
+- [自動車業界における生成AI活用事例](topics/part14-industry-cases/automotive-industry-ai-use-cases.md): Mastertech.aiのAutoVitals買収、GM Gemini展開拡大と自社開発アシスタント投入発表、BMW/Rivianの車載AI動向、ホンダ「AIカーライフアドバイザー」の詳細を反映して最新化
+- [購買・調達職における生成AI活用事例](topics/part15-job-role-cases/procurement-ai-use-cases.md): SAP Ariba・Leaner・自動交渉AI(Walmart/Maersk/Vodafone)の最新動向を反映して最新化
+- [研究開発(R&D)職における生成AI活用事例](topics/part15-job-role-cases/rd-ai-use-cases.md): 学術論文の捏造引用に関する統計を追加・最新化
+- [エネルギー・電力・インフラにおける生成AI活用事例](topics/part14-industry-cases/energy-infrastructure-ai-use-cases.md): 東北電力×Helpfeelの新事例追加、TEPCO EPコンタクトセンター続報、データセンター電力消費のIEA最新数値・GX戦略地域の動向を反映して最新化
+- [アパレル・ファッション業界における生成AI活用事例](topics/part14-industry-cases/apparel-fashion-ai-use-cases.md): Google Doppl終了・検索統合、Stitch Fix Vision機能拡張、Zalando通期実績、H&Mデジタルツイン運用開始、NY州の新規制動向を反映して最新化
+- [情報システム(IT)部門における生成AI活用事例](topics/part15-job-role-cases/information-systems-ai-use-cases.md): IPA10大脅威2026・AIOps最新動向・Copilot/Claude/Geminiの管理者機能を反映して最新化
+- [広報・PR職における生成AI活用事例](topics/part15-job-role-cases/pr-communications-ai-use-cases.md): 導入率統計(日本広報学会の最新調査で77.0%)・危機管理広報の実証事例(PR総研)・Muck Rack「AI Visibility Badges」等を反映して最新化
+- [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): インバウンド最新統計・新サービス(ジャストプランニング「AI来客予測」)・補助金情報を反映して最新化
+## 2026-08-09
+- [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](topics/part02-llm-basics/context-window-basics.md): Claude Opus 5・GPT-5.6のChatGPT既定化・Grok 4.5などモデル別比較表を2026年8月時点に最新化、Chroma社のcontext rot検証を反映
+- [生成AIに向く業務・向かない業務の切り分け](topics/part12-business-practice/ai-task-suitability.md): METR Time Horizon 1.1の50%/80%信頼水準の差、スタンフォードAI Index 2026、MIT NANDA GenAI Divide調査、Gartnerのエージェント型AI中止予測を反映して最新化
+- [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): Flashラインナップの世代交代(Gemini 3.6 Flash/3.5 Flash-Lite)・レート制限のティア表・グラウンディング課金の詳細を反映して最新化
+- [「強いAI・弱いAI」とAI効果、特化型/汎用型AIの基本](topics/part01-ai-basics/strong-weak-ai-and-ai-effect-basics.md): AGI到達時期予測(Hassabis/Anthropic)・推論モデルの理解論争・AIウォッシング事例を最新化
+- [AIが扱いやすいデータ形式](topics/part07-data-analysis/ai-friendly-data-formats.md): ファイルアップロード上限比較にMicrosoft Copilotを追加し、Claude for ExcelのGAとRAGチャンク化の最新手法(階層的チャンク化・contextual retrieval)を反映して最新化
+- [農業における生成AI活用事例](topics/part14-industry-cases/agriculture-ai-use-cases.md): JA向け生成AI基盤「報徳Hub」「日農AI金次郎」の全国展開やAGRIST・補助金制度名変更等を反映して最新化
+- [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): Kimi K3の一般提供・9月のモデル一斉非推奨予告・請求管理の窓口変更・Cursor買収の進展を反映して最新化
+- [プロンプトの基本構成要素](topics/part05-prompt-engineering/prompt-basic-structure.md): ツール横断の対応表を最新化(Claudeのプロフィール指示・Gemini Saved Info・Microsoft 365 Copilotのカスタム指示を追加)
+- [法務職における生成AI活用事例](topics/part15-job-role-cases/legal-ai-use-cases.md): 法務特化AIツール(LegalOn Cloud/OLGA/Harvey)の2026年最新動向、弁護士法72条ガイドライン見直し、ハルシネーション訴訟統計を最新化
+- [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](topics/part03-ai-chat-tools/ai-chat-tools-voice-comparison.md): GPT-Realtime-Translate・Gemini 3.5 Live Translate・ClaudeのOpus/Sonnet音声モード対応・Copilot CarPlay対応を反映して最新化
 
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強

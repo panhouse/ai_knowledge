@@ -4,7 +4,7 @@ part: 14
 chapter: "第12章 その他・未分類"
 tags: [自動車業界, 生成AI活用事例, ディーラー, 車載AIアシスタント, アフターサービス, マーケティング]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-08-10
 ---
 
 # 自動車業界における生成AI活用事例
@@ -65,20 +65,29 @@ Google・Amazonといった既存の生成AI基盤に接続する形で提供し
 - **企業**: 本田技研工業(ホンダセールスオペレーションジャパン)
 - **課題**: ディーラーの営業時間外は顧客からの問い合わせに即応できず、
   試乗予約や車種相談の機会を逃していた
-- **導入したAI・仕組み**: モバイルアプリ「My Honda」にAIエージェントを組み込み、
-  24時間365日、顧客データに基づいた車種・オプションの提案から試乗予約の受付までを
-  対話形式で完結できるようにした。2026年6月に発表
+- **導入したAI・仕組み**: モバイルアプリ「My Honda」にAIエージェント基盤
+  Salesforce「Agentforce」を組み込んだ「AIカーライフアドバイザー」を搭載。
+  24時間365日、顧客データに基づいた最適な乗り換えタイミングの提案や
+  車種・オプションの相談、トラブル時の一次切り分け、パーソナライズした
+  コンテンツ提案から試乗予約の受付までを対話形式で完結できるようにした。
+  ホンダセールスオペレーションジャパンが2026年6月の「Agentforce World Tour
+  Tokyo 2026」で発表
 - **効果・示唆**: 営業時間に縛られず顧客対応を継続できるようになり、
-  問い合わせから試乗予約までの導線を短縮した。ホンダファイナンスでも
-  以前からチャットボットによる問い合わせ対応を導入しており、
-  ホンダグループ全体で顧客接点のAI化が段階的に進んでいる
+  問い合わせから試乗予約までの導線を短縮した。あわせて販売店スタッフ向けにも
+  AIによる接客支援を導入しており、「顧客向けAI」と「販売店スタッフ支援AI」を
+  両輪で進めている点が特徴。ホンダファイナンスでも以前からチャットボットによる
+  問い合わせ対応を導入しており、ホンダグループ全体で顧客接点のAI化が
+  段階的に進んでいる
 - **自社への応用ヒント**: 「AIチャットボットで質問に答える」だけでなく、
   「試乗予約という具体的な行動(コンバージョン)まで一気通貫でつなげる」設計に
   すると、問い合わせ対応の効率化だけでなく営業機会の創出にも直結しやすい
 
 ### 3. アフターサービス・整備: Mastertech.aiのAI整備支援プラットフォーム
 
-- **企業**: Mastertech.ai(米国コロラド州、ASE認定整備士出身者らが2023年設立)
+- **企業**: Mastertech.ai(米国コロラド州、ASE認定整備士出身者らが2023年設立)。
+  2026年7月10日、独立系整備工場向けにデジタル車両点検(DVI)・ワークフロー管理
+  プラットフォームを提供するAutoVitals社に買収されたと発表された。
+  創業者のLinda Gray氏はAutoVitalsに参画し製品戦略を継続担当する
 - **課題**: 整備士が車種・年式ごとの整備手順やTSB(技術サービスブレティン、
   メーカーが「この症状にはこの対処」と現場向けに出す注意喚起文書)を探すには、
   OBD-II診断機でエラーコードを読み取ったあと、紙・PDFのサービスマニュアルや
@@ -93,7 +102,12 @@ Google・Amazonといった既存の生成AI基盤に接続する形で提供し
   最大90%程度との報告もある
 - **自社への応用ヒント**: 整備現場のAI活用は「異常を検知する」ことより
   「過去の紙・PDFの知見を自然言語で検索できるようにする」ことに価値がある。
-  自社に眠っている整備マニュアル・修理記録が電子化されているかをまず確認するとよい
+  自社に眠っている整備マニュアル・修理記録が電子化されているかをまず確認するとよい。
+  なお今回のAutoVitals買収のように、整備業界では単機能の診断AIスタートアップが
+  デジタル車両点検・工場管理システムを持つ大手プラットフォームに統合される動きが
+  出始めている。ツール選定時は「単体の診断AI」より「既存の工場管理システムに
+  診断AIがどこまで組み込まれているか」で評価すると、将来の統合・乗り換えリスクを
+  見極めやすい
 
 ### 4. 車載AIアシスタント: Mercedes-Benz「MBUX」× ChatGPT
 
@@ -109,12 +123,23 @@ Google・Amazonといった既存の生成AI基盤に接続する形で提供し
 - **効果・示唆**: 「ナビ操作の音声認識」から「知識質問に答えられる対話エージェント」への
   質的な転換を、自社でLLMを開発せずクラウド大手のAI基盤を組み込む形で実現した点が特徴
 - **自社への応用ヒント**: 自動車メーカー各社は車載AIを自前開発ではなく、
-  OpenAI(Microsoft経由)・Google・Amazonの生成AI基盤を組み込む方式で提供している
-  (BMWインテリジェント・パーソナル・アシスタントはAmazon Alexa+を採用し2026年後半に
-  BMW iX3から展開、GMは2026年からGoogle Geminiを採用、新興EVメーカーRivianも
-  「Hey Rivian」で音声アシスタントを展開しGoogle Geminiとの連携をテストしている)。
+  OpenAI(Microsoft経由)・Google・Amazonの生成AI基盤を組み込む方式で提供している。
+  BMWインテリジェント・パーソナル・アシスタントは2026年1月のCES 2026で
+  Amazon Alexa+搭載の新型「iX3」を発表済みで、2026年後半にドイツ・米国の
+  BMW OS 9搭載車(iX3含む)から展開予定。GMは2026年前半にシボレー・キャデラック・
+  ビュイック・GMCの2022年以降モデル約400万台にGoogle Geminiの展開を完了し、
+  同年半ばには日本・オーストラリア・ニュージーランド・欧州のキャデラック/コルベットにも
+  対象を拡大した。さらにGMは2026年内に、Geminiを置き換えるのではなく
+  **並走**させる形で、車両固有の機能(バッテリー管理や車両診断など)を担当する
+  自社開発の車載AIアシスタントを投入すると発表しており、「外部基盤への接続」と
+  「自社開発」を併用するハイブリッド路線に踏み出した点は要注目である。
+  新興EVメーカーRivianは2026年5月に自社開発の多モーダルAI基盤
+  「Rivian Unified Intelligence」上で動く「Hey Rivian」を全R1オーナー向けに
+  OTA配信した(現行のGoogle Calendar連携が最初のサードパーティ連携)一方、
+  将来的にAmazon Alexa+からGoogle Geminiへ音声基盤を切り替えるとの観測報道もある。
   自社に生成AIの研究開発体制がない場合でも、既存の生成AI基盤への接続という形で
-  顧客接点を高度化できることを示す事例群である
+  顧客接点を高度化できることを示す事例群である一方、GMのように「外部基盤+自社開発」を
+  使い分ける動きも出てきており、車載AI戦略は自前開発か外部接続かの二択ではなくなりつつある
 
 ## 実務での使い方
 
@@ -193,6 +218,32 @@ Google・Amazonといった既存の生成AI基盤に接続する形で提供し
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 
 ## 更新履歴
+
+### 2026-08-10: 車載AIアシスタント・整備支援AI・ホンダの事例を最新化
+
+- **内容**: (1) Mastertech.aiが2026年7月10日にAutoVitals社へ買収されたことを反映し、
+  整備特化AIスタートアップが工場管理プラットフォームに統合される業界動向として
+  「自社への応用ヒント」に追記。(2) GMが2026年前半にGoogle Gemini搭載を
+  約400万台に展開・同年半ばに日本を含む海外市場のキャデラック/コルベットへ拡大した
+  最新状況と、GMがGeminiと並走する自社開発の車載AIアシスタントを2026年内に
+  投入すると発表した点を追加。(3) BMWのAlexa+搭載iX3がCES 2026で発表済みである
+  ことを明記。(4) RivianはRivian Unified Intelligence基盤で「Hey Rivian」を
+  2026年5月に全R1オーナーへ展開済みであることと、Google Geminiへの移行観測報道を追記。
+  (5) ホンダ「My Honda」のAIエージェントがSalesforce「Agentforce」基盤の
+  「AIカーライフアドバイザー」であることを明記し、販売店スタッフ支援AIも
+  併走している点を追加
+- **出典**:
+  [AutoVitals Acquires Mastertech.ai(AutoVitals公式ブログ)](https://www.autovitals.com/blog/2026/07/10/autovitals-acquires-mastertechai/)、
+  [AutoVitals Acquires Mastertech.ai to Accelerate AI-Powered Service Intelligence for Independent Repair Shops(Yahoo Finance)](https://finance.yahoo.com/technology/ai/articles/autovitals-acquires-mastertech-ai-accelerate-130000009.html)、
+  [GM Announces Google Gemini AI For Cadillac And Corvette(GM Authority)](https://gmauthority.com/blog/2026/07/gm-announces-google-gemini-ai-for-cadillac-and-corvette/)、
+  [GM to Build It's Own AI in-Dash Assistant(Auto Connected Car News)](https://www.autoconnectedcar.com/2026/08/gm-to-build-its-own-ai-in-dash-assistant/)、
+  [Gemini replacing Google Assistant on Android Automotive for 4 million GM cars(9to5Google)](https://9to5google.com/2026/04/28/gemini-google-assistant-gm-cars/)、
+  [BMW『iX3』新型に搭載、「Amazon Alexa+」を組み込んだAI対応BMWインテリジェントパーソナルアシスタント公開…CES 2026(レスポンス)](https://response.jp/article/2026/01/13/405931.html)、
+  [Rivian rolls out 'Hey Rivian' AI assistant with full vehicle control(Electrek)](https://electrek.co/2026/05/12/rivian-hey-rivian-ai-assistant-vehicle-control/)、
+  [Rivian's New AI Voice Assistant Is Rolling Out. Here's What It Can Do(InsideEVs)](https://insideevs.com/news/795539/rivian-assistant-launch-r1-r2-2026/)、
+  [Rivian Is Already Testing Google Gemini Integration With Message Handling Capabilities(autoevolution)](https://www.autoevolution.com/news/rivian-is-already-testing-google-gemini-integration-with-message-handling-capabilities-258857.html)、
+  [ホンダ、AIエージェントで顧客体験を刷新 - 「My Honda」で24時間対応へ(マイナビニュース)](https://news.mynavi.jp/techplus/article/20260611-4563347/)、
+  [ホンダ、スマホアプリ「My Honda」の「AIカーライフアドバイザー」導入などセールスフォースのAI活用による「新しい顧客体験」を紹介(Car Watch)](https://car.watch.impress.co.jp/docs/news/2115805.html)
 
 ### 2026-07-14: 初版執筆
 - **内容**: Part14(業種別 生成AI活用事例)に自動車業界の章(その他・未分類に暫定配置)を
