@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-14
+- [AIエージェントとは何か](topics/part11-ai-agents/ai-agent-basics.md): MCP仕様更新(2026年7月28日付・ステートレス化)とMeta Muse Codeの新規参入を反映して最新化・増強
+
 ## 2026-08-08
 - [主要AIチャットツールの画像生成機能比較(ChatGPT・Gemini・Claude・Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-image-generation-comparison.md): Claude Designの追加・料金体系の改定・電子透かしの広がりを反映して最新化・増強
 - [Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](topics/part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md): Geminiの設定名変更(Keep Activity)・Claude/Copilotの一時チャット機能などを最新化・増強
