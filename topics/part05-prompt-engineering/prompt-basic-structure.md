@@ -4,7 +4,7 @@ part: 5
 chapter: 第1章 基本原則
 tags: [プロンプトエンジニアリング, RACE, CO-STAR, PTCF, カスタム指示]
 created: 2026-07-04
-updated: 2026-07-21
+updated: 2026-08-09
 ---
 
 # プロンプトの基本構成要素
@@ -32,7 +32,9 @@ updated: 2026-07-21
 - **CO-STAR(Context, Objective, Style, Tone, Audience, Response)**: 背景・目的・文体・トーン・想定読者・出力形式の6要素。シンガポール政府機関(GovTech)のプロンプトエンジニアリング大会で優勝した手法として知られ、2026年時点でも複雑な文章生成タスク向けの定番フレームワークとして頻繁に引用される。「文体」と「想定読者」を分けているのが特徴で、「わかりやすく書いて」のような曖昧な指示を具体化しやすい。
 - **PTCF(Persona, Task, Context, Format)**: 役割・タスク・背景・出力形式の4要素。Googleが公式のGemini/Workspaceプロンプトガイドで推奨しているフレームワークで、考え方はRACEやRTFとほぼ同じだが「Context」に予算・締切・想定読者などの制約条件をまとめて入れる点が特徴。
 
-OpenAI・Anthropic・Googleの各社も公式ドキュメントで共通して次のコツを挙げている(2026年7月時点でも変わらず有効)。
+これらに加えてRISEN・CRAFT・CARE・TAGなど類似の頭字語フレームワークがプロンプト系メディアで次々に提唱されているが、2026年8月時点でもRTF・RACE・CO-STAR・PTCFの位置づけ(シンプル版・業務文書向け・全要素網羅版・Google公式)が実務での標準的な参照先であることに変わりはない。新しい頭字語が増えても中身は本節冒頭に挙げた7要素の並べ替えに過ぎないため、丸暗記よりも「今回どの要素が足りていないか」で考える方が実務的である。
+
+OpenAI・Anthropic・Googleの各社も公式ドキュメントで共通して次のコツを挙げている(2026年8月時点でも変わらず有効)。
 
 - **明確・直接的に書く**: 「文脈を知らない新入社員に指示する」つもりで、曖昧な形容詞(「かなり」「いい感じに」)を避け、具体的な語数・条件で指定する。Anthropicは「最小限の前提知識しかない同僚にそのプロンプトを見せて、迷わず実行できるか」を判定基準として挙げている。
 - **区切り記号で構造化する**: `"""`やMarkdown見出し、`<context>`のようなXMLタグで「指示」と「参照データ」を分離すると、AIが取り違えにくくなる。最新モデルは構造がなくても文意を汲み取る精度が上がっているが、指示・背景・複数の参照データが混在する複雑なプロンプトでは引き続き有効な手法とされる。
@@ -120,16 +122,19 @@ OpenAI・Anthropic・Googleの各社も公式ドキュメントで共通して�
 [例: "数式そのものと、各引数が何を指しているかの一言解説をセットで出力してください"]
 ```
 
-### ツール横断の対応付け(2026年7月時点)
+### ツール横断の対応付け(2026年8月時点)
 
-プロンプトの「役割・背景・制約」を毎回書くのが面倒な場合は、各ツールの「固定の指示」機能に登録しておくと、以後のやり取りに自動的に反映される。
+プロンプトの「役割・背景・制約」を毎回書くのが面倒な場合は、各ツールの「固定の指示」機能に登録しておくと、以後のやり取りに自動的に反映される。ChatGPT・Claude・Geminiはいずれも「アカウント全体に効く指示」と「特定の用途だけに効く指示」の2階層構造を持つ点が共通している。
 
 | ツール | 機能名 | 設定場所 | 備考 |
 |---|---|---|---|
-| ChatGPT | カスタム指示(パーソナライズ機能の一部) | 設定→パーソナライズ→カスタム指示欄(要「カスタマイズを有効にする」トグルON) | 「自分について」「回答方法」の2項目。文字数上限はFree/Goプランが各1,500字、Plus/Pro/Business/Enterprise/Educationプランは各5,000字に拡大。「パーソナリティ」プリセットやMemory(記憶)機能とも併用される |
+| ChatGPT(全体) | カスタム指示(パーソナライズ機能の一部) | プロフィールアイコン→設定→パーソナライズ→カスタム指示欄(要「カスタマイズを有効にする」トグルON。モバイルは「ChatGPTをカスタマイズ」から) | 「自分について」「回答方法」の2項目。文字数上限はFree/Goプランが各1,500字、Plus/Pro/Business/Enterprise/Educationプランは2026年7月15日のアップデートで各5,000字(従来の3倍)に拡大。「パーソナリティ」プリセットやMemory(記憶)機能と3層で重なる |
 | ChatGPT(プロジェクト単位) | プロジェクトの「指示」 | 特定プロジェクト内でのみ有効な指示を個別設定 | カスタム指示より優先度が高い |
-| Claude | プロジェクトの指示(Project instructions) | 「Projects」→プロジェクトを作成→「Set project instructions」から入力・保存 | プロフィール設定(全体に効く個人設定)が先に適用され、その上にプロジェクト指示が重なる。参照ファイルは「プロジェクトの知識」欄にアップロード可能。Projects機能は有料プラン限定 |
-| Gemini | Gem(カスタムGem) | 左メニュー「Gem」→「新しいGemを作成」→指示ボックスに入力 | 2025年に無料プランにも開放され、2026年時点では無料アカウントでも作成・利用可能。Gmail・ドキュメント等と連携可能 |
+| Claude(全体) | プロフィールの指示(Instructions for Claude) | 左下のアカウントアイコン→設定→General→Profile欄の「Instructions for Claude」 | アカウント全体に効く。好みの文体・頻出用語などを記述。加えて「Styles」機能で回答トーン(Normal/Learning/Concise/Explanatory/Formalなど)を会話ごとに切り替え可能 |
+| Claude(プロジェクト単位) | プロジェクトの指示(Project instructions) | 「Projects」→「+ New Project」でプロジェクト作成→プロジェクト内の指示欄に入力・保存 | プロフィールの指示が先に適用され、その上にプロジェクト指示が重なる。参照ファイルは「プロジェクトの知識」欄にアップロード可能。無料プランでもProjectsは利用可(上限あり)、企業向けは権限管理も可能 |
+| Gemini(Gem) | Gem(カスタムGem) | 左メニュー「Gem」(旧「Explore Gems」)→「New Gem」→名前・指示・(任意で)Knowledgeファイルを設定→保存 | 特定用途に特化したAIを作る機能。ChatGPTのカスタムGPTsに相当。無料アカウントでも作成・利用可能 |
+| Gemini(全体) | Saved Info(保存された情報) | メニュー→設定と機能→Personal Intelligence(2026年1月に旧「パーソナルコンテキスト」から改称)→Memory・Saved Infoのトグルを確認 | アカウント全体の好み・プロフィール情報を記憶させる機能。Memoryのトグルと「アクティビティの保存」の両方がONである必要がある |
+| Microsoft 365 Copilot | カスタム指示(Custom instructions) | Copilotアプリ右上「その他のオプション」→チャットの設定→左メニュー「パーソナライズ」→「カスタム指示」タイル→「指示を編集」 | 組織アカウント(Microsoft 365 Copilotライセンス)向け。回答の形式・トーン・詳細度などの好みを保存でき、トグルでON/OFF可能。GitHub Copilotは別機能で、リポジトリ内の`.github/copilot-instructions.md`に指示を置く方式 |
 
 ## 注意点・よくある誤解
 
@@ -138,6 +143,7 @@ OpenAI・Anthropic・Googleの各社も公式ドキュメントで共通して�
 - **禁止形より肯定形で指示する**: 「マークダウンを使うな」より「滑らかな文章の段落で構成してください」のように、してほしいことを肯定形で書く方が効きやすいとされる。
 - **指示の「理由」を添えると守られやすい**: 「三点リーダーを使うな」だけでなく「音声で読み上げるため三点リーダーは避けて」のように理由を添えると、AIが意図を汎化して守りやすくなる。
 - **カスタム指示・Project instructionsは文字数上限がある**: ChatGPTのカスタム指示は最大でも各項目5,000字(無料プランは1,500字)。長大な社内マニュアルをそのまま貼り付けようとせず、要点だけに絞るか、Claudeの「プロジェクトの知識」やGeminiのファイル添付など、ファイルを直接読み込ませる機能と使い分ける。
+- **業務ツールの「カスタム指示」は組織アカウント前提のものがある**: Microsoft 365 Copilotのカスタム指示は組織のCopilotライセンスに紐づく設定で、個人用のCopilot(旧Bing Chat相当)とは設定場所・挙動が異なる。GitHub Copilotの指示ファイル(`.github/copilot-instructions.md`)ともまったく別物なので、「Copilotのカスタム指示」と聞いたらどの製品の話かをまず確認する。
 
 ## 最初の一歩
 
@@ -149,6 +155,10 @@ OpenAI・Anthropic・Googleの各社も公式ドキュメントで共通して�
 - (今後、Chain of Thoughtなど入門〜応用手法のページを追加予定)
 
 ## 更新履歴
+
+### 2026-08-09: ツール横断の対応表にMicrosoft 365 Copilotを追加し、Claude・Geminiの設定場所を最新化
+- **内容**: Claudeの「プロフィールの指示(Instructions for Claude)」の設定場所とStyles機能、Geminiの「Saved Info」がPersonal Intelligence(2026年1月に旧パーソナルコンテキストから改称)配下に移った点、Microsoft 365 Copilotのカスタム指示(パーソナライズ→カスタム指示タイル)の設定手順を追加。RISEN・CRAFTなど類似フレームワークが増えてもRTF/RACE/CO-STAR/PTCFの位置づけは2026年8月時点でも変わっていない旨を明記
+- **出典**: [OpenAI Help Center: ChatGPT Custom Instructions](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions)、[Claude Help Center: Understanding Claude's personalization features](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)、[Claude Help Center: How can I create and manage projects](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)、[Google Gemini Apps Help: Use Gems in Gemini Apps](https://support.google.com/gemini/answer/15146780)、[Microsoft Support: Customize how Microsoft 365 Copilot responds to you](https://support.microsoft.com/en-us/microsoft-365-copilot/customize-how-microsoft-365-copilot-responds-to-you)
 
 ### 2026-07-21: 2026年時点の最新情報に更新
 - **内容**: Googleが公式に推奨するPTCF(Persona, Task, Context, Format)フレームワークを追加。推論モードを搭載した最新モデルでは「ステップバイステップで考えて」という指示が不要・逆効果になりうる点を追記。ChatGPTカスタム指示の設定場所・文字数上限(プラン別)、Claude Projectsの手順、Gemini Gemが無料プランに開放された点など、ツール横断の対応表を最新化
