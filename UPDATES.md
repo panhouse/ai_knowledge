@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-10
+- [自動車業界における生成AI活用事例](topics/part14-industry-cases/automotive-industry-ai-use-cases.md): Mastertech.aiのAutoVitals買収、GM Gemini展開拡大と自社開発アシスタント投入発表、BMW/Rivianの車載AI動向、ホンダ「AIカーライフアドバイザー」の詳細を反映して最新化
 - [購買・調達職における生成AI活用事例](topics/part15-job-role-cases/procurement-ai-use-cases.md): SAP Ariba・Leaner・自動交渉AI(Walmart/Maersk/Vodafone)の最新動向を反映して最新化
 - [研究開発(R&D)職における生成AI活用事例](topics/part15-job-role-cases/rd-ai-use-cases.md): 学術論文の捏造引用に関する統計を追加・最新化
 - [エネルギー・電力・インフラにおける生成AI活用事例](topics/part14-industry-cases/energy-infrastructure-ai-use-cases.md): 東北電力×Helpfeelの新事例追加、TEPCO EPコンタクトセンター続報、データセンター電力消費のIEA最新数値・GX戦略地域の動向を反映して最新化
