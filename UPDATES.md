@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-13
+- [ペット関連産業(ペットケア・動物病院)における生成AI活用事例](topics/part14-industry-cases/pet-care-industry-ai-use-cases.md): 新規執筆(動物病院の画像診断支援AI・カルテ自動作成・飼い主対応チャットボット・ペット保険査定AI・EC商品説明生成)
 ## 2026-08-12
 - [鉄道業界における生成AI活用事例](topics/part14-industry-cases/railway-industry-ai-use-cases.md): 予知保全・画像認識・多言語対応・需要予測・海外事例の節を最新化・増強
 - [ゲーム業界における生成AI活用事例](topics/part14-industry-cases/game-industry-ai-use-cases.md): 企業スタンスの分裂(任天堂・カプコンの不使用方針とソニーの全スタジオ活用宣言)・Steam開示ルール改定・NPC対話/QA最新事例を反映して最新化・増強
