@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-11
+- [品質管理・QA職における生成AI活用事例](topics/part15-job-role-cases/quality-assurance-ai-use-cases.md): エージェンティックQAの動向・料金表(GitHub Copilot AI Credits化、Xray Sembi IQ、mablプラン再編)・パナソニックコネクト/日立の国内新事例を反映して最新化
 ## 2026-08-10
 - [介護業界における生成AI活用事例](topics/part14-industry-cases/eldercare-ai-use-cases.md): Google「ケア記録アシスト」・オムロン「With.Ai」・あおぞらケアG×ケアchat「AI介護事務」など大手プラットフォーマーの参入事例と、むすぼなAI・SOINの最新統計、導入補助金情報を反映して最新化・増強
 - [人材紹介・人材サービス業における生成AI活用事例](topics/part14-industry-cases/staffing-recruiting-industry-ai-use-cases.md): ビズリーチAI・パーソルキャリア・LinkedIn Hiring Assistant・Indeedの各事例を最新化・増強
