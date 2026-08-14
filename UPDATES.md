@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-14
+- [RAG(検索拡張生成)の基本](topics/part07-data-analysis/rag-basics.md): 発展形RAGの節を関連ページへの誘導に整理し、「コンテキストエンジニアリング」の呼称を反映して最新化
 ## 2026-08-13
 - [店舗・販売スタッフ職における生成AI活用事例](topics/part15-job-role-cases/retail-store-staff-ai-use-cases.md): 新規執筆(シフト作成・発注・POP作成・接客ロールプレイ・クレーム対応振り返り・新人教育の活用事例)
 - [医療・ヘルスケアAI企業一覧](topics/part16-japan-ai-companies/healthcare-ai-companies-japan.md): 新規執筆(AI問診・画像診断支援・治療アプリ等を提供する国内6社を収録)
