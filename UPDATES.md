@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-09
+- [GitHub Copilotの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/github-copilot-basics.md): Kimi K3の一般提供・9月のモデル一斉非推奨予告・請求管理の窓口変更・Cursor買収の進展を反映して最新化
 - [プロンプトの基本構成要素](topics/part05-prompt-engineering/prompt-basic-structure.md): ツール横断の対応表を最新化(Claudeのプロフィール指示・Gemini Saved Info・Microsoft 365 Copilotのカスタム指示を追加)
 - [法務職における生成AI活用事例](topics/part15-job-role-cases/legal-ai-use-cases.md): 法務特化AIツール(LegalOn Cloud/OLGA/Harvey)の2026年最新動向、弁護士法72条ガイドライン見直し、ハルシネーション訴訟統計を最新化
 - [主要AIチャットツールの音声対話機能比較(Advanced Voice Mode・Gemini Live等)](topics/part03-ai-chat-tools/ai-chat-tools-voice-comparison.md): GPT-Realtime-Translate・Gemini 3.5 Live Translate・ClaudeのOpus/Sonnet音声モード対応・Copilot CarPlay対応を反映して最新化
