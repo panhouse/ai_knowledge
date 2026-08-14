@@ -4,7 +4,7 @@ part: 15
 chapter: 第10章 情報システム・情報セキュリティ
 tags: [SOC, CISO, セキュリティ運用, AI SOC, Security Copilot, Charlotte AI, フィッシング対策, 脆弱性管理, インシデントレポート]
 created: 2026-07-17
-updated: 2026-07-17
+updated: 2026-08-12
 ---
 
 # 情報セキュリティ担当者(SOC/CISO)における生成AI活用事例
@@ -19,9 +19,11 @@ SOC(Security Operation Center、セキュリティ監視・分析を専門に行
 
 1. **「大量のログ・アラートを読み、要約し、当たりをつける」作業が定型化しやすい**: アラートの内容、関連するログ、過去の類似インシデントを突き合わせて「これは緊急か、様子見か」を判定する一次トリアージは、大量のテキストを読んで要点を抜き出すというLLM(大規模言語モデル)が得意な作業そのものである。Gartnerは2026年末までに75%のSOCがAIアナリスト(AIエージェントによる自動トリアージ・調査の仕組み)を導入すると予測している([UnderDefense](https://underdefense.com/blog/ai-soc-analyst/))。
 2. **攻撃側も生成AIを使うため、防御側も同じ土俵で戦う必要が生まれている**: 生成AIで作成したフィッシングメールは自然な文章になり、人手を加えたものはクリック率が56%に達したという報告もある([日経クロステック](https://xtech.nikkei.com/atcl/nxt/column/18/00676/100700207/)、[rocket-boys](https://rocket-boys.co.jp/security-measures-lab/11818/))。もはや「日本語の不自然さ」で見破れる時代ではなく、防御側もLLMを使ったフィッシング判定(例: NTTセキュリティの「ChatSpamDetector」はLLMにメール本文を解析させ、判定理由まで提示する)で対抗する構図になっている([NTTセキュリティ・ジャパン](https://jp.security.ntt/insights_resources/tech_blog/chatspamdetector-ai/))。
-3. **脆弱性(CVE)の発見・報告ペースが人力の処理能力を超えている**: 2026年のCVE(共通脆弱性識別子)公開件数は年間6万6千件規模に達する見通しで、脆弱性の公開から悪用コードが出回るまでの期間は2020年の745日から2026年には12時間未満まで短縮したとの分析もある([Bitsight](https://www.bitsight.com/blog/end-of-the-exploit-window-frontier-ai-cve-prioritization))。全件を人手で精査して優先順位を付けるのはもはや不可能で、生成AIによる自動タグ付け・優先順位付けの支援が実務レベルで使われ始めている(TenableはCVEが「ランサムウェアに悪用されている」「実際に悪用が確認されている」などをAIで自動タグ付けする機能を提供)。
+3. **脆弱性(CVE)の発見・報告ペースが人力の処理能力を超えている**: 2026年のCVE(共通脆弱性識別子)公開件数は年間6万6千件規模に達する見通しで、脆弱性の公開から悪用コードが出回るまでの期間は2020年の745日から2026年には12時間未満まで短縮したとの分析もある([Bitsight](https://www.bitsight.com/blog/end-of-the-exploit-window-frontier-ai-cve-prioritization))。全件を人手で精査して優先順位を付けるのはもはや不可能で、生成AIによる自動タグ付け・優先順位付けの支援が実務レベルで定着し始めている。Tenableは1.7兆件超のセキュリティ知見を学習した機械学習モデルでCVEの悪用可能性を予測し、2026年4月時点で1,924件のCVEを「実際に悪用が確認された」とタグ付け済みとしている([Tenable](https://www.tenable.com/blog/vulnerability-prioritization-attacker-mapping-severity-exploitation-risk))。
 
-このような背景から、SIEM(Security Information and Event Management、ログを集約・相関分析するセキュリティ監視基盤)やEDR(Endpoint Detection and Response、端末上の不審な挙動を検知・対応する仕組み)にAIコパイロット(操作を助言・代行するAIアシスタント機能)を組み込む「AI SOC」「エージェント型SOC」が主要ベンダーの共通戦略になっている。Microsoft Security Copilot、Google SecOps(旧Chronicle)のGemini、CrowdStrike Charlotte AIが代表例で、国内でもNTTドコモビジネスが2026年5月に「AI SOC」サービスの提供を開始し、アラート対処の約95%を自動化できるとしている([NTTドコモビジネス](https://www.ntt.com/about-us/press-releases/news/article/2026/0520.html))。ただし、いずれのベンダーも「封じ込め(端末隔離・アカウントロックなど)の実行は人間の最終承認を前提とする」という設計を崩していない点は共通しており、完全無人運用は2026年時点でもまだ推奨されていない。
+このような背景から、SIEM(Security Information and Event Management、ログを集約・相関分析するセキュリティ監視基盤)やEDR(Endpoint Detection and Response、端末上の不審な挙動を検知・対応する仕組み)にAIコパイロット(操作を助言・代行するAIアシスタント機能)を組み込む「AI SOC」「エージェント型SOC」が主要ベンダーの共通戦略になっている。Microsoft Security Copilot、Google SecOps(旧Chronicle)のGemini、CrowdStrike Charlotte AIが代表例で、国内でもNTTドコモビジネスが2026年5月に「AI SOC」サービスの提供を開始し、アラート対処の約95%を自動化できるとしている([NTTドコモビジネス](https://www.ntt.com/about-us/press-releases/news/article/2026/0520.html))。さらに2026年8月には、NRIセキュアテクノロジーズが独自開発のAI統制基盤「AgenticBlue」を自社SOCサービス「NeoSOC」に導入し、アラートのトリアージから一次調査・分析・重要度判定・報告作成までを自動化する運用を開始している([クラウド Watch](https://cloud.watch.impress.co.jp/docs/news/2131076.html))。
+
+Elastic Security Labsは2026年を、単発のAIコパイロットから複数のAIエージェントが人間と協調しながらトリアージ・調査・対応計画を回す「エージェント型SOC(Agentic SOC)」へ本格移行する年と位置づけている([Elastic Security Labs](https://www.elastic.co/jp/security-labs/why-2026-is-the-year-to-upgrade-to-an-agentic-ai-soc))。Gartnerは2028年までにL1(一次対応)業務の50%をAIが自動化すると予測する一方、CISOの83%が「エージェント型SOCにおけるAIのハルシネーションによる脅威の見逃し・誤検知」を懸念しているとも報告しており([Conifers.ai](https://www.conifers.ai/blog/ai-soc-takeaways-from-gartners-2026-security-summit))、自動化の進展と統制強化(権限設計・監査ログ・人間による最終承認)は常に並走させる必要がある。いずれのベンダーも「封じ込め(端末隔離・アカウントロックなど)の実行は人間の最終承認を前提とする」という設計を崩していない点は共通しており、完全無人運用は2026年時点でもまだ推奨されていない。
 
 ## 使いどころ・使い分け
 
@@ -169,14 +171,14 @@ CVEの実際の悪用状況(Exploited in the Wild、KEV: Known Exploited Vulnera
 
 作成した訓練メールは、配信前に必ず内容を最終レビューする(実在の取引先名を誤って使っていないか、あまりに巧妙すぎて訓練の意図を超えて実害が出ないかなど)。
 
-### ツール横断の対応付け(セキュリティ専用AIコパイロット、2026年7月時点)
+### ツール横断の対応付け(セキュリティ専用AIコパイロット、2026年8月時点)
 
-| 製品 | 提供元 | 主な機能 | 料金の目安(2026年7月時点) |
+| 製品 | 提供元 | 主な機能 | 料金の目安(2026年8月時点) |
 |---|---|---|---|
-| Microsoft Security Copilot | Microsoft | チャット形式の調査支援、Promptbook(定型の調査手順のテンプレート)、Entra/Intune/Purview/Defenderと連携したエージェント機能 | SCU(Security Compute Unit、処理能力の課金単位)方式。プロビジョニング容量は1SCU/時あたり4ドル、超過分は1SCUあたり6ドル(1SCUを常時稼働させると月額約2,920ドル相当)。Microsoft 365 E5/E7契約者は、ライセンス1,000人あたり月400 SCU(上限月1万SCU)が追加費用なしで付与される |
-| Google Gemini in Security Operations(旧Chronicle) | Google Cloud | 自然言語での調査アシスタント、ケース要約、Triage and Investigation Agent(アラートの真偽・調査計画・所見をまとめて提示するエージェント) | Google SecOpsの契約体系に統合される形態が中心(個別見積り) |
-| Charlotte AI(Detection Triage / Agentic SOAR) | CrowdStrike | アラートの自動評価・トリアージ(公表値で週40時間超の工数削減、判定精度98%超)、ノーコードでカスタムエージェントを構築できるAgentWorks | CrowdStrike Falcon プラットフォームの契約に紐づく(個別見積り) |
-| AI SOC(国内MSSPサービス) | NTTドコモビジネス等 | アラート対処の自動化(NTTドコモビジネスは約95%の自動化を公表)、国内MSSP(Managed Security Service Provider、セキュリティ運用を代行する事業者)によるハイブリッド運用 | サービス契約による個別見積り |
+| Microsoft Security Copilot | Microsoft | チャット形式の調査支援、Promptbook(定型の調査手順のテンプレート)、Entra/Intune/Purview/Defenderと連携したエージェント機能 | SCU(Security Compute Unit、処理能力の課金単位)方式。プロビジョニング容量は1SCU/時あたり4ドル、超過(オンデマンド)分は1SCUあたり6ドル。Microsoft 365 E5契約者は、ライセンス1,000人あたり月400 SCU(上限月1万SCU)が追加費用なしで付与され、2026年5月提供開始のMicrosoft 365 E7(99ドル/ユーザー/月)にも同じ枠が含まれる。割当分を超える利用は今後段階的にスロットリング(利用制限)される予定で、超過分はオンデマンド課金に回る設計になっている |
+| Google Gemini in Security Operations(旧Chronicle) | Google Cloud | 自然言語での調査アシスタント、ケース要約、Triage and Investigation Agent(アラートの真偽・調査計画・所見をまとめて提示するエージェント。2026年4〜6月は無料トライアル提供、2026年内の一般提供(GA)へ向けて機能拡張中) | Security Tokens(処理量に応じたトークン課金)によるAgentic SOC機能の従量課金が中心。契約全体は個別見積り |
+| Charlotte AI(Detection Triage / Agentic SOAR) | CrowdStrike | アラートの自動評価・トリアージ(公表値で週40時間超の工数削減、判定精度98%超)。2026年3月に発表したAgentWorks(Anthropic・OpenAI・AWS・NVIDIA・Salesforce・Accenture等と連携するノーコードのカスタムエージェント構築基盤)と、エージェント間の連携・統制を担うCharlotte Agentic SOARにより、7種の専用エージェントからなる「Agentic Security Workforce」を編成 | CrowdStrike Falcon プラットフォームの契約に紐づく(個別見積り) |
+| AI SOC(国内MSSPサービス) | NTTドコモビジネス、NRIセキュア 等 | アラート対処の自動化(NTTドコモビジネスは約95%の自動化を公表)。NRIセキュアは自社開発のAI統制基盤「AgenticBlue」を自社SOC「NeoSOC」に導入し(2026年8月)、トリアージ〜一次調査〜報告作成までを自動化しつつ、複数AIの相互検証と判断過程の可視化で信頼性を確保する設計を採用 | サービス契約による個別見積り |
 | 汎用チャットAI(ChatGPT/Gemini/Claude 法人プラン) | OpenAI/Google/Anthropic | ログ・メール文面の要約、レポート・研修教材のドラフト作成(本ページのシーン1〜5) | 各社の法人プラン料金(詳細は[プラン・モデルの選び方](../part03-ai-chat-tools/_index.md)関連ページを参照) |
 
 ## 注意点・よくある誤解
@@ -186,7 +188,8 @@ CVEの実際の悪用状況(Exploited in the Wild、KEV: Known Exploited Vulnera
 - **機密性の高いログ・インシデント情報を汎用AIに入力する際は契約形態に注意する**: 攻撃の痕跡ログや顧客影響のある情報を無料版・個人アカウントの生成AIに入力すると、意図せず外部に情報が渡るリスクがある。法人契約プラン(学習利用がデフォルトで無効になっているもの)を使う([生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)を参照)
 - **専用AIセキュリティコパイロットは「導入したら終わり」ではない**: SIEM/EDRとの連携設定、社内データでのチューニング、誤検知率のモニタリングといった運用が伴わなければ効果が薄い。またSCU方式の従量課金は使い方次第でコストが跳ね上がるため、まず自社の想定アラート量で試算してから本格導入を判断する
 - **標的型メール訓練の文面生成は「実害」に注意する**: AIが作った訓練メールが巧妙すぎたり、実在の取引先名・ドメインを誤って使ってしまったりすると、訓練の域を超えて実害や不要な混乱を招く。配信前の内容レビューは省略しない
-- **AIエージェントによる自動対応の権限設計は、他の業務エージェント以上に慎重に**: セキュリティ業務のAIエージェントは、誤作動時の被害(誤って正当な業務端末を隔離してしまう等)が大きい。権限範囲の設計は[プロンプトインジェクションとは何か](../part04-risk-security/prompt-injection-basics.md)で扱う「エージェント型AIの権限設計」の考え方と合わせて検討する
+- **AIエージェントによる自動対応の権限設計は、他の業務エージェント以上に慎重に**: セキュリティ業務のAIエージェントは、誤作動時の被害(誤って正当な業務端末を隔離してしまう等)が大きい。権限範囲の設計は[プロンプトインジェクションとは何か](../part04-risk-security/prompt-injection-basics.md)で扱う「エージェント型AIの権限設計」の考え方と合わせて検討する。具体的には、社内で稼働するAIエージェントの一覧(インベントリ)を作り「どこにアクセスでき、何を実行できるか」を可視化する、最小権限をデフォルトにする、封じ込め等の影響が大きい操作には承認プロセス(ガードレール)を挟む、の3点が最低限のラインになる
+- **「エージェント型SOC(Agentic SOC)」への期待と統制不足のギャップに注意する**: 自動化が進むほど「人間が確認しないまま処理が進む」リスクも比例して大きくなる。CISOの83%が、エージェント型SOCにおけるAIのハルシネーションによる脅威の見逃し・誤検知を懸念しているという調査もあり、自動化率の高さを鵜呑みにせず、誤判定率のモニタリング体制とセットで導入判断をする
 
 ## 最初の一歩
 
@@ -202,6 +205,10 @@ CVEの実際の悪用状況(Exploited in the Wild、KEV: Known Exploited Vulnera
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
 
 ## 更新履歴
+
+### 2026-08-12: 「仕組み・背景」「ツール横断の対応付け」「注意点」を最新化・増強
+- **内容**: 「エージェント型SOC(Agentic SOC)」への転換点としての2026年の位置づけ(Elastic Security Labs)、Gartnerの2028年までのL1業務50%自動化予測とCISOの83%がハルシネーションによる見逃し・誤検知を懸念しているという調査を追加。ツール横断表を、Microsoft Security Copilotのライセンス条件(Microsoft 365 E7への同枠適用・超過利用のスロットリング予定)、Google Gemini in SecOpsのTriage and Investigation Agent(2026年GAに向けた拡張)、CrowdStrike Charlotte AIのAgentWorksエコシステムとAgentic Security Workforce、国内新事例(NRIセキュアの「AgenticBlue」×「NeoSOC」、2026年8月運用開始)を反映して更新。TenableのCVE悪用タグ付けの実数値(2026年4月時点で1,924件)を追加。注意点にAIエージェントの権限設計3原則(インベントリ・最小権限・ガードレール)を追加
+- **出典**: [Elastic Security Labs: 2026年がエージェント型AI SOCへのアップグレードの年である理由](https://www.elastic.co/jp/security-labs/why-2026-is-the-year-to-upgrade-to-an-agentic-ai-soc)、[Threat Road: The SOC Analyst Role Is Changing](https://threatroad.substack.com/p/the-soc-analyst-role-is-changing)、[Conifers.ai: AI SOC Takeaways From Gartner's 2026 Security Summit](https://www.conifers.ai/blog/ai-soc-takeaways-from-gartners-2026-security-summit)、[Tenable: Vulnerability prioritization, attacker mapping](https://www.tenable.com/blog/vulnerability-prioritization-attacker-mapping-severity-exploitation-risk)、[クラウド Watch: NRIセキュア、SOCサービス「NeoSOC」に独自開発のAI統制基盤「AgenticBlue」を導入](https://cloud.watch.impress.co.jp/docs/news/2131076.html)、[NRIセキュア: Agentic SOCでアナリストは「オーケストレーター」へ](https://www.nri-secure.co.jp/blog/agenticblue)、[Microsoft: Security Copilotの価格](https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot/)、[Redress Compliance: Security Copilot Pricing: The SCU Dial](https://redresscompliance.com/microsoft-security-copilot-pricing-guide)、[Google Cloud Community: Google SecOps Alert Triage and Investigation Agent, Now in Public Preview](https://security.googlecloudcommunity.com/news-announcements-9/be-one-step-ahead-with-the-google-secops-alert-triage-and-investigation-agent-now-in-public-preview-6244)、[CrowdStrike: CrowdStrike Launches the Charlotte AI AgentWorks Ecosystem for Building Secure Agents](https://www.crowdstrike.com/en-us/press-releases/crowdstrike-launches-charlotte-ai-agentworks-ecosystem-for-building-secure-agents/)、[CrowdStrike: CrowdStrike Launches Agentic Security Workforce to Transform the SOC](https://www.crowdstrike.com/en-us/blog/crowdstrike-delivers-seven-agents-to-build-agentic-security-workforce/)
 
 ### 2026-07-17: 初版執筆
 - **内容**: SOC/CISOによる生成AI活用として、アラート一次トリアージ・ログ要約、フィッシング解析と利用者向け注意喚起文作成、インシデントレポート・ポストモーテムのドラフト作成、脆弱性(CVE)対応の優先順位付け支援、セキュリティ意識向上研修・標的型メール訓練コンテンツ作成の5シーンを整理。各シーンのコピペ用プロンプト例、汎用チャットAIと専用AIセキュリティコパイロットの使い分け、Microsoft Security Copilot(SCU課金モデル)・Google Gemini in Security Operations・CrowdStrike Charlotte AI・国内AI SOCサービスの横断比較表を執筆
