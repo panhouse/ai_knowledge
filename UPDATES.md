@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-09
+- [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): Flashラインナップの世代交代(Gemini 3.6 Flash/3.5 Flash-Lite)・レート制限のティア表・グラウンディング課金の詳細を反映して最新化
 - [「強いAI・弱いAI」とAI効果、特化型/汎用型AIの基本](topics/part01-ai-basics/strong-weak-ai-and-ai-effect-basics.md): AGI到達時期予測(Hassabis/Anthropic)・推論モデルの理解論争・AIウォッシング事例を最新化
 - [AIが扱いやすいデータ形式](topics/part07-data-analysis/ai-friendly-data-formats.md): ファイルアップロード上限比較にMicrosoft Copilotを追加し、Claude for ExcelのGAとRAGチャンク化の最新手法(階層的チャンク化・contextual retrieval)を反映して最新化
 - [農業における生成AI活用事例](topics/part14-industry-cases/agriculture-ai-use-cases.md): JA向け生成AI基盤「報徳Hub」「日農AI金次郎」の全国展開やAGRIST・補助金制度名変更等を反映して最新化
