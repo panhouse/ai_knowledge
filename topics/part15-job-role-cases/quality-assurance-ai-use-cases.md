@@ -2,9 +2,9 @@
 title: 品質管理・QA職における生成AI活用事例
 part: 15
 chapter: 第12章 研究開発・品質管理
-tags: [QA, ソフトウェアテスト, テストケース生成, バグトリアージ, 品質管理, 検査報告書, ISO9001, ハルシネーション, 情報漏洩]
+tags: [QA, ソフトウェアテスト, テストケース生成, バグトリアージ, 品質管理, 検査報告書, ISO9001, ハルシネーション, 情報漏洩, エージェンティックQA]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-08-11
 ---
 
 # 品質管理・QA職における生成AI活用事例
@@ -21,6 +21,8 @@ QA領域での生成AI活用には、性質の異なる2つの技術が関わっ
 - **生成AI(LLM)によるテキスト生成・要約**: 本ページで扱うのはこちら。要求仕様書・過去のバグ報告・検査データ・作業手順書といった**テキスト・構造化データ**を読み込ませ、テストケースの下書き、バグ報告の要約、検査報告書やマニュアルの文章化を行わせる使い方である。LLM(大規模言語モデル)は学習データ上の頻出パターンから「それらしい」テストケースや文章を組み立てる仕組みのため、要求仕様に書かれていない業務知識(実際の障害発生条件、現場特有の判断基準など)までは補えない。
 
 ソフトウェアQAでは、GitHub CopilotやClaude Codeのようなコーディング支援AIがテストコード(Playwright・Cypress・pytestなど)の生成に、Xray(Jira向けテスト管理ツール)のAI Test Case Generationのような専用機能が要求仕様からのテストケース起票に使われている。製造業QAでは、ChatGPTやCopilotのような汎用AIに過去の検査データやメモを読み込ませて報告書の文章部分を生成させる使い方が中心で、手書き帳票が残る現場ではAI-OCR(手書き・印字文字を読み取るAI)と組み合わせて使われることが多い。
+
+2026年に入り、QAツール業界では「AIが下書きを作る」段階から一歩進んだ**エージェンティックQA(Agentic QA、自律型テストエージェント)**という言葉が広がっている。これは、AIが単発の指示に応えて文章・コードを生成する(レベル1: AI-Assisted)だけでなく、テストデータ生成やUI変更時のロケータ自動修復(セルフヒーリング)を自律的にこなす(レベル2: AI-Augmented)、さらには要件やリスクの変化を読み取ってテスト計画の立案から実行・是正まで一連の作業を人の指示を都度挟まずに回す(レベル3: Agentic)という段階分けで語られる整理である。mabl の「Agentic Tester」やXrayの自動スクリプト生成機能はレベル2〜3寄りの機能にあたるが、**自律度が上がるほど「AIが何を判断し、どこまで実行してよいか」の権限設計とログ監査が重要になる**点は本ページの他の使い方と変わらない(考え方は[AIエージェントの自律度レベルと権限設計の基本](../part11-ai-agents/ai-agent-autonomy-levels-and-permission-design.md)を参照)。
 
 ## 使いどころ・使い分け
 
@@ -61,7 +63,7 @@ ECサイトのクーポン適用機能。ユーザーはカート画面でクー
 
 ### 2. テスト自動化スクリプトの生成
 
-GitHub CopilotやClaude CodeなどのAIコーディング支援は、VS Code上でテストコードの生成に使える。VS CodeでCopilot Chatを開き、対象のソースファイルをコンテキストに含めた状態で `/tests` コマンド、またはチャットに直接指示すると、Playwright・Cypress・pytest・JUnitなど既存のテストフレームワークに沿った形式でテストコードの下書きが生成される。
+GitHub CopilotやClaude CodeなどのAIコーディング支援は、VS Code上でテストコードの生成に使える。VS CodeでCopilot Chatを開き、対象のソースファイルをコンテキストに含めた状態で `/tests` コマンド、またはチャットに直接指示すると、Playwright・Cypress・pytest・JUnitなど既存のテストフレームワークに沿った形式でテストコードの下書きが生成される。GitHub Copilotのエージェントモード(Agent Mode)を使うと、テストの生成だけでなく実行・失敗時の修正まで複数ステップを自律的に繰り返させることもできるが、生成されたテストが「本当に検証すべき仕様」を捉えているかは依然として人によるレビューが前提になる。
 
 ```
 このコンポーネント(CouponInput.tsx)に対するPlaywrightのE2Eテストを作成してください。
@@ -110,7 +112,9 @@ GitHub CopilotやClaude CodeなどのAIコーディング支援は、VS Code上�
 
 ### 5. 検査報告書のドラフト作成(製造業QA)
 
-過去の検査データやメモから、報告書の文章部分をAIに下書きさせる。数値そのものは検査データの原本から一字一句コピーし、AIには文章化・体裁の整形のみを任せるのが安全な運用になる。ある金属加工メーカーでは、過去の検査データをChatGPTに読み込ませて報告書のドラフトを生成させたところ、30分かかっていた作成作業が5分に短縮し記載漏れがゼロになったと報告されている。手書き帳票が残る現場では、AI-OCR(手書き・印字文字を読み取るAI、2026年時点で印字文字は99%前後・手書き文字は90〜95%程度の認識精度が目安)でデータ化してから生成AIに読み込ませる二段構えが実務的である。
+過去の検査データやメモから、報告書の文章部分をAIに下書きさせる。数値そのものは検査データの原本から一字一句コピーし、AIには文章化・体裁の整形のみを任せるのが安全な運用になる。ある金属加工メーカーでは、過去の検査データをChatGPTに読み込ませて報告書のドラフトを生成させたところ、30分かかっていた作成作業が5分に短縮し記載漏れがゼロになったと報告されている。手書き帳票が残る現場では、AI-OCR(手書き・印字文字を読み取るAI、2026年時点で印字文字は99%台・手書き文字は丁寧に書かれていれば90%超が目安、ツールによっては99%超をうたうものもある)でデータ化してから生成AIに読み込ませる二段構えが実務的である。
+
+より大規模な事例としては、パナソニック コネクトが2026年2月に発表した「Manufacturing AIエージェント」がある。図面・部品図・技術仕様書といったPDF形式の非構造化データからAIが材質・仕上げなどの項目を自動照合する仕組みで、従来目視で50〜340分かかっていた図面照合作業を10分に短縮し、作業時間を最大97%削減したと公表している。検査報告書のドラフト作成も、これと同様に「非構造化データからの情報抽出→定型フォーマットへの整形」という構造で捉えると、自社のどの工程に応用できるかが検討しやすい。
 
 ```
 以下は本日の受入検査データ(箇条書きメモ)です。社内の検査報告書フォーマットに
@@ -143,6 +147,8 @@ GitHub CopilotやClaude CodeなどのAIコーディング支援は、VS Code上�
 4. 再発防止策のたたき台(実施前提でなく「検討案」として)
 ```
 
+日立製作所は2026年6月、大みか事業所での実証をもとにした品質保証支援AIエージェント「品質ナレッジシステム」(HMAX Industryの一部として提供)を発表した。熟練者の暗黙知(過去のトラブル対応記録・マニュアルの判断基準)を形式知化してAIに組み込み、自然言語の質問やメール文面から類似の過去事例を検索できるようにした結果、トラブル対応事例の検索時間を約9割削減、対応レポートの作成時間を120分から15分に、不具合の原因分析時間を16時間から3時間に短縮したと報告している。ポイントは、AIが「原因を断定する」のではなく「過去の類似事例を高速に検索し、判断材料を揃える」役割に徹している点で、上記プロンプト例の「要現物確認」「検討案」といった書き方の考え方と一致する。
+
 ### 7. ISO・品質マニュアル等の文書作成
 
 ```
@@ -156,18 +162,18 @@ ISO 9001の「8.5 製造及びサービス提供」に対応する社内作業�
 ※ 規格解釈が必要な箇所は断定せず「品質保証部門・審査機関への確認事項」として注記する
 ```
 
-### ツール横断の対応付けと料金の目安(2026年7月時点)
+### ツール横断の対応付けと料金の目安(2026年8月時点)
 
 | 用途 | 主なツール | 特徴・料金の目安 |
 |---|---|---|
-| テストケース生成(Jira/Xray) | Xray「AI Test Case Generation」 | Jira画面内でチケットから手動・BDD形式のテストケースを生成。Standard以上のプランで利用可、データは学習に非利用 |
-| テスト自動化スクリプト生成 | GitHub Copilot(VS Code) | Pro 10ドル/月、Business 19ドル/席/月、Enterprise 39ドル/席/月(2026年7月時点、コード補完は無料枠あり) |
-| ノーコードのAIテスト自動化・自己修復 | mabl | 価格は個別見積り制。第三者情報ではStarter相当が月499ドル前後、Growth/Professionalは月1,200〜3,000ドル程度とされる |
-| ビジュアル回帰テスト(画面の見た目のAI比較) | Applitools | チェックポイント(スクリーンショット1枚)課金制。無料枠は月100チェックポイント、中堅企業向けで月500〜1,500ドル程度が目安 |
+| テストケース生成(Jira/Xray) | Xray「AI Test Case Generation」/「AI Test Model Generation」 | Sembi IQというAI基盤を採用し、要求仕様から手動・BDD形式のテストケースをStandard/Advanced/Enterpriseの全プランで生成可能(データは学習に非利用)。要件から視覚的なテストモデルを自動生成する「AI Test Model Generation」はEnterprise限定。Xray自体の料金はJiraの全ユーザー数に連動する課金で、Cloud版は月額換算で1ユーザーあたり6ドル台が目安、10ユーザーまでの最小プランで年額100ドル程度から |
+| テスト自動化スクリプト生成 | GitHub Copilot(VS Code) | 2026年6月1日にトークン量に応じた「AI Credits」の従量課金へ移行(個人向けPro 10ドル/月・Pro+ 39ドル/月・Max 100ドル/月にそれぞれ月15/70/200ドル相当のクレジット付与、コード補完自体は無料)。チーム向けはBusiness 19ドル/席/月・Enterprise 39ドル/席/月で、2026年9月1日までは移行特典として付与クレジットが上乗せされる |
+| ノーコードのAIテスト自動化・自己修復・自律実行 | mabl | プラン名はStarter/Growth/Enterpriseに整理され、Growth以上でUI変化への自己修復に加え「Agentic Tester」(目的ベースでテストを自律実行する機能)が使える。価格は個別見積りだが、第三者情報ではStarterが月450〜600ドル程度、Growthが月1,200〜3,000ドル程度、Enterpriseは要見積り |
+| ビジュアル回帰テスト(画面の見た目のAI比較) | Applitools | チェックポイント(スクリーンショット1枚)課金制。無料枠は月100チェックポイントで変わらず、有料は小規模チームで月1,000ドル前後〜大規模で月1万ドル超まで幅がある(公開の料金表はなく個別見積り) |
 | 汎用AIによるバグ報告要約・報告書ドラフト | ChatGPT / Claude / Gemini | 汎用プランで対応可。法人向け(Business/Enterprise、学習への非利用が標準)の利用を推奨 |
-| 手書き検査帳票のデータ化 | AI-OCR各種サービス | 印字文字は99%前後、手書き文字は90〜95%程度の認識精度が目安。重要な数値は人による二重確認が前提 |
+| 手書き検査帳票のデータ化 | AI-OCR各種サービス | 印字文字は99%台、手書き文字は丁寧な記入であれば90%超が目安(製品によっては99%超をうたうものもあるが実測にはばらつきがある)。重要な数値は人による二重確認が前提 |
 
-判断基準は「その業務がテスト管理・実行基盤への組み込みを必要とするか」。CI/CDパイプラインに組み込んで自動実行まで求める場合は専用ツール(Xray・mabl・Applitools)、単発のドラフト作成・要約・壁打ちには汎用AIチャットで十分なことが多い。
+判断基準は「その業務がテスト管理・実行基盤への組み込みを必要とするか」。CI/CDパイプラインに組み込んで自動実行まで求める場合は専用ツール(Xray・mabl・Applitools)、単発のドラフト作成・要約・壁打ちには汎用AIチャットで十分なことが多い。mabl・Xrayのように「AIに実行まで任せる」機能(Agentic Tester、自動スクリプト生成)を使う場合は、通常のツール選定基準に加えて「AIがどこまで自律的に判断・実行してよいか」を事前に取り決めておく。
 
 ## 注意点・よくある誤解
 
@@ -177,6 +183,7 @@ ISO 9001の「8.5 製造及びサービス提供」に対応する社内作業�
 - **検査報告書・不良原因分析の数値は絶対にAIに創作させない**: AIは文章の体裁を整えるのは得意だが、記載のない数値を「それらしく」補完してしまうことがある。報告書の数値部分は必ず検査データの原本から転記し、AIには文章化・要約のみを任せる運用にする。
 - **AIによる異常検知(画像認識)と生成AIによる文書作成を混同しない**: 「AIを導入すれば検査業務が自動化される」と期待されがちだが、外観検査AI(画像認識モデル)と本ページで扱う生成AI(文書作成支援)は別の技術であり、それぞれ得意分野が異なる。両者を組み合わせて初めて「検査(画像認識)→報告書作成(生成AI)」という一連の業務が効率化できる。
 - **AIが下書きした品質マニュアル・作業標準書は規格適合性を保証しない**: ISO 9001などの規格要求事項への適合性は品質保証部門・審査機関が最終判断するものであり、AIの出力はあくまで構成のたたき台として扱う。
+- **「AIエージェントに任せる範囲」が広がるほど権限設計が重要になる**: mablの「Agentic Tester」やXrayの自動スクリプト生成、Copilotのエージェントモードのように、2026年時点のQAツールは「下書きを作る」段階から「テストの実行・修正まで自律的に回す」段階へ機能が広がりつつある。テスト実行がステージング環境の書き換えを伴う場合など、失敗時の影響が大きい操作をAIに自律実行させる前には、どこまで自動化しどこで人の承認を挟むかを取り決めておく(詳細は[AIエージェントの自律度レベルと権限設計の基本](../part11-ai-agents/ai-agent-autonomy-levels-and-permission-design.md)を参照)。
 
 ## 最初の一歩
 
@@ -189,8 +196,13 @@ ISO 9001の「8.5 製造及びサービス提供」に対応する社内作業�
 - [生成AIに向く業務・向かない業務の切り分け](../part12-business-practice/ai-task-suitability.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
+- [AIエージェントの自律度レベルと権限設計の基本](../part11-ai-agents/ai-agent-autonomy-levels-and-permission-design.md)
 
 ## 更新履歴
+
+### 2026-08-11: エージェンティックQAの動向・料金表・国内新事例を反映して最新化
+- **内容**: (1)「エージェンティックQA(自律型テストエージェント)」という2026年の潮流を仕組み・背景と注意点に追加し、mablの「Agentic Tester」・Xrayの自動スクリプト生成・GitHub Copilotのエージェントモードを自律度の観点で整理、AIエージェントの自律度レベルと権限設計ページへ相互リンクを追加。(2)ツール横断の料金表を2026年8月時点に更新: GitHub Copilotが2026年6月からトークン従量課金の「AI Credits」制に移行した点(個人Pro/Pro+/Max、チームBusiness 19ドル/Enterprise 39ドル/席/月)、XrayのAI機能がSembi IQ基盤に刷新されEnterprise限定の「AI Test Model Generation」が追加された点、mablのプラン名がStarter/Growth/Enterpriseに整理された点を反映。(3)検査報告書・不良原因分析の節に、パナソニック コネクトの図面照合AIエージェント(作業時間最大97%削減)、日立製作所の品質ナレッジシステム(トラブル対応検索時間約9割削減、レポート作成120分→15分、原因分析16時間→3時間)という2026年の国内新事例を追加
+- **出典**: [Updates to GitHub Copilot billing and plans - GitHub Changelog](https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/)、[GitHub Copilot is moving to usage-based billing - The GitHub Blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)、[GitHub Copilot Pricing 2026 | Automation Atlas](https://automationatlas.io/answers/github-copilot-pricing-explained-2026/)、[Xray Launches AI-Powered, Human-Guided Test Capabilities with Sembi IQ](https://www.getxray.app/blog/ai-powered-test-case-test-model-generation-in-xray)、[AI Test Model Generation in Xray Enterprise - Xray Blog](https://www.getxray.app/blog/introducing-ai-test-model-generation-xray-enterprise)、[Xray Pricing 2026: What It Actually Costs | BesTest](https://getbestest.com/xray-pricing/)、[Mabl Pricing 2026: Plans, Cost & Comparison | Bug0](https://bug0.com/knowledge-base/mabl-pricing)、[Mabl Pricing, Decoded | Autonoma AI](https://getautonoma.com/blog/mabl-pricing)、[Applitools Pricing: Cost Per Snapshot at Scale | Autonoma AI](https://getautonoma.com/blog/applitools-pricing)、[QA trends for 2026: AI, agents, and the future of testing - Tricentis](https://www.tricentis.com/blog/qa-trends-ai-agentic-testing)、[What Is Agentic QA? | Katalon](https://katalon.com/resources-center/blog/what-is-agentic-qa-the-complete-guide-for-2026)、[図面の照合業務を最大97%削減 パナソニック コネクト - ASCII](https://ascii.jp/elem/000/004/375/4375661/?rss=)、[パナソニック コネクト、図面/製品仕様の照合業務をAIで効率化 | IT Leaders](https://it.impress.co.jp/articles/-/29019)、[生成AIを活用した品質保証支援を実証、日立大みか事業所 - MONOist](https://monoist.itmedia.co.jp/mn/articles/2507/07/news022.html)、[日立製作所、製造業向けAIエージェント「品質ナレッジシステム」開発 | レスポンス](https://response.jp/article/2026/06/10/412486.html)、[日立、熟練ノウハウを形式知化し品質保証業務を効率化するAIエージェントをHMAX Industryとして提供開始 | PR TIMES](https://prtimes.jp/main/html/rd/p/000000068.000141666.html)、[【2026年版】手書きAI-OCRの精度を99%超に引き上げる実践ガイド | OptiMax](https://www.optimax.co.jp/ai-information/ai-ocr-handwriting/)
 
 ### 2026-07-14: 初版執筆
 - **内容**: ソフトウェアQA(テストケース生成、テスト自動化スクリプト生成、バグ報告の要約・トリアージ、探索的テストのチャーター設計)と製造業QA(検査報告書ドラフト作成、不良原因分析の文書化、ISO品質マニュアル作成)の双方について、コピペ用プロンプト例、GitHub Copilot/Xray AI Test Case Generation/mabl/Applitoolsなどのツール横断の対応付けと料金、食べログQAチームのテスト工数52%削減事例、AI-OCRの認識精度、生成AIとAI画像認識(外観検査)の違いを整理
