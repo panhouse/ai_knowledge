@@ -89,3 +89,7 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [鉄道業界における生成AI活用事例](railway-industry-ai-use-cases.md)
 - [食品製造業における生成AI活用事例](food-manufacturing-ai-use-cases.md)
 - [BPO・コールセンター運営業界における生成AI活用事例](bpo-call-center-industry-ai-use-cases.md)
+- [警備業界における生成AI活用事例](security-services-industry-ai-use-cases.md)
+- [商社・卸売業における生成AI活用事例](trading-wholesale-ai-use-cases.md)
+- [廃棄物処理・リサイクル業界における生成AI活用事例](waste-management-recycling-ai-use-cases.md)
+- [ペット関連産業(ペットケア・動物病院)における生成AI活用事例](pet-care-industry-ai-use-cases.md)
