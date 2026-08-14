@@ -4,7 +4,7 @@ part: 15
 chapter: 第10章 情報システム・情報セキュリティ
 tags: [情報システム部門, 情シス, ヘルプデスク, AIOps, シャドーAI, SaaS管理, ライセンス管理, 障害対応, ドキュメント生成]
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-08-10
 ---
 
 # 情報システム(IT)部門における生成AI活用事例
@@ -21,9 +21,9 @@ updated: 2026-07-13
 2. **社内マニュアル・過去の障害記録という「参照すべき資料」が既に存在する**: 情シスには手順書・FAQ・過去のインシデント記録が蓄積されており、これをAIに検索させて回答させる仕組み(RAG、AIが回答前に社内文書を検索し、その内容を根拠に答える仕組み。詳細は[RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md))と相性がよい。
 3. **情シス自身が「AI利用の主管部署」という立場を新たに担っている**: 生成AIの社内導入が進むほど、「どのAIツールを許可するか」「誰が何をどう使っているか」「使いすぎている部署はどこか」を把握・統制する役割が情シスに集中する。これは技術的な運用業務であると同時に、社内ガバナンスの実務そのものでもある。
 
-社内ヘルプデスクの現場では、生成AIチャットボットの回答精度が運用開始直後の約50%から、FAQの継続的な追加・改善を通じて約80%まで向上した事例が報告されている([RICOH Chatbot Service](https://promo.digital.ricoh.com/chatbot/column/detail238/))。また障害対応の領域では、AIOps(AI for IT Operations、ログ・アラートに機械学習やAIを適用してIT運用を効率化する仕組み)プラットフォームに生成AIが組み込まれ、障害発生時のログから障害報告書(ポストモーテム)のドラフトを自動作成したり、チャット形式で過去の類似インシデントの対処法を提案したりする機能が実用段階に入っている([renue](https://renue.co.jp/posts/aiops-it-operations-automation-predictive-incident-response))。AIOps市場は2026年時点で193.3億ドル規模、年平均成長率21.1%で拡大が続いている([Selector](https://www.selector.ai/ja/learning-center/aiops-4-components-and-4-key-capabilities/))。
+社内ヘルプデスクの現場では、生成AIチャットボットの回答精度が運用開始直後の約50%から、FAQの継続的な追加・改善を通じて約80%まで向上した事例が報告されている([RICOH Chatbot Service](https://promo.digital.ricoh.com/chatbot/column/detail238/))。また障害対応の領域では、AIOps(AI for IT Operations、ログ・アラートに機械学習やAIを適用してIT運用を効率化する仕組み)プラットフォームに生成AIが組み込まれ、障害発生時のログから障害報告書(ポストモーテム)のドラフトを自動作成したり、チャット形式で過去の類似インシデントの対処法を提案したりする機能が実用段階に入っている([renue](https://renue.co.jp/posts/aiops-it-operations-automation-predictive-incident-response))。AIOps市場は2026年時点で193.3億ドル規模、年平均成長率21.1%で拡大が続いており([Selector](https://www.selector.ai/ja/learning-center/aiops-4-components-and-4-key-capabilities/))、Datadogは2026年6月の年次カンファレンス「DASH 2026」で、インフラを24時間365日監視し問題の検知・調査・復旧支援までガードレール付きで自動化する「Bits AI」の強化や、異常な操作を検知して防御する「AI Guard」など100を超える新機能・機能強化を発表しており、AIOpsは「ログを人が読んで判断する」から「AIが一次対応まで担い人が確認する」段階に移りつつある([BUSINESS NETWORK](https://businessnetwork.jp/article/35089/))。
 
-一方で、生成AIの社内利用が広がるほど、情報システム部門の許可を得ずに従業員が無断でAIツールを使う「シャドーAI」の問題が大きくなる。この現象自体の実態・ガバナンス設計の考え方は[シャドーAI(無許可利用)対策](../part04-risk-security/shadow-ai-basics.md)に譲り、本ページでは情シスが実際にどのツール・手順で可視化と統制を実行するかという「実装」に絞って扱う。
+一方で、生成AIの社内利用が広がるほど、情報システム部門の許可を得ずに従業員が無断でAIツールを使う「シャドーAI」の問題が大きくなる。IPA(情報処理推進機構)が2026年1月に発表した「情報セキュリティ10大脅威2026」では、組織編で「AIの利用をめぐるサイバーリスク」が初めて選出され、ランサムウェア・サプライチェーン攻撃に次ぐ第3位に位置付けられた。この中には、従業員が機密情報を外部の生成AIに入力してしまう情報漏洩リスクが含まれており、シャドーAI対策は「あれば望ましい」ではなく経営レベルで対応すべき課題として扱われるようになっている([JBCC](https://www.jbcc.co.jp/blog/column/ipa-security-2026-ai.html))。この現象自体の実態・ガバナンス設計の考え方は[シャドーAI(無許可利用)対策](../part04-risk-security/shadow-ai-basics.md)に譲り、本ページでは情シスが実際にどのツール・手順で可視化と統制を実行するかという「実装」に絞って扱う。
 
 ## 使いどころ・使い分け
 
@@ -114,6 +114,8 @@ AIOpsツール(Datadog Bits AI、ServiceNow Now Assistなど)を導入済みの�
 (例: ChatGPT Business、Microsoft Copilot)
 ```
 
+なお2026年に入り、棚卸しの対象は「人がどのAIチャットツールを使っているか」だけでは足りなくなりつつある。業務システムに組み込まれたAIエージェントが人間と同等かそれ以上のアクセス権限を持つケースが増えており、JumpCloudの調査では組織の66%がAIエージェントに人間以上のシステムアクセス権を付与している一方、そのうちIDアクセス管理(IAM)の正式な統制対象に組み込めているのは37%にとどまるという結果が出ている。これを受けてJumpCloudは2026年、社内に存在するAIエージェントを検出・登録し統制対象台帳(インベントリ)として管理する「Agentic IAM」を投入するなど、「シャドーAI」の棚卸し対象が人のアカウントからAIエージェントの権限にまで広がり始めている([JumpCloud](https://jumpcloud.com/press/jumpcloud-launches-agentic-iam-to-govern-the-ai-lifecycle))。
+
 ### シーン4: 手順書・システム仕様書の下書き作成
 
 既存の設定情報・運用メモをAIに渡し、社内向け手順書の体裁に整形させる。ゼロから作らせるのではなく、実際の設定画面のスクリーンショットや操作メモを土台にする方が誤りが少ない。
@@ -152,13 +154,15 @@ AIOpsツール(Datadog Bits AI、ServiceNow Now Assistなど)を導入済みの�
    (最終判断はしないこと。あくまで「検討候補」として提示する)
 ```
 
-### ツール横断の対応付け(管理者向け機能の比較、2026年7月時点)
+上記のような手作業の集計に加え、Microsoft Copilotは2026年8月から、ユーザー単位・日単位の利用状況を匿名化データとして書き出せる「利用状況エクスポート」機能を全世界向けに提供開始した。さらに管理者ダッシュボードの「導入」タブでは、利用頻度・継続性をもとに従業員を「パワーユーザー」「習慣的ユーザー」「初級ユーザー」「非利用者」に自動分類して表示するため、稼働率の低い部署・個人を上記プロンプトのような手集計なしで特定しやすくなっている([Windows Blog for Japan](https://blogs.windows.com/japan/2026/05/28/whats-new-in-microsoft-365-copilot-april-2026-4510935/))。
 
-| 観点 | ChatGPT(Business/Enterprise) | Gemini(Google Workspace) | Microsoft Copilot | Claude(Team/Enterprise) |
+### ツール横断の対応付け(管理者向け機能の比較、2026年8月時点)
+
+| 観点 | ChatGPT(Business/Enterprise) | Gemini(Google Workspace / Gemini Enterprise) | Microsoft Copilot | Claude(Team/Enterprise) |
 |---|---|---|---|---|
-| SSO/ID連携 | SAML SSO・SCIM対応 | Google Workspace管理コンソールで一元管理 | Entra ID(旧Azure AD)連携・条件付きアクセス | Team/Enterpriseはワークスペース単位で管理 |
-| 利用状況モニタリング | 管理コンソールでDAU/WAU/MAU等をリアルタイム分析 | Workspace管理コンソールの利用状況レポート | Microsoft 365管理センターの利用状況ダッシュボード | 管理者ダッシュボードでの利用状況確認 |
-| 料金の目安(2026年7月時点) | Business: 年払い1ユーザー月20ドル(月払い25ドル)。Enterpriseは個別見積り(年額1ユーザー10〜15万円程度が目安) | Google Workspaceのプランに含まれる形態が中心 | Microsoft 365 Copilotは既存M365ライセンスに追加課金 | Team/Enterpriseは個別見積りが中心 |
+| SSO/ID連携 | SAML SSO・SCIM対応 | Google Workspace管理コンソールで一元管理。Gemini Enterprise関連の設定項目が2026年4月にGCP側からWorkspace管理コンソールへ統合され見つけやすくなった | Entra ID(旧Azure AD)連携・条件付きアクセス | Team/Enterpriseはワークスペース単位で管理。Enterpriseは2026年7月からユーザーグループ単位でモデルの利用可否・思考の深さ(effort)を制御可能 |
+| 利用状況モニタリング | 管理コンソールでDAU/WAU/MAU等をリアルタイム分析 | Workspace管理コンソールの利用状況レポート。長時間稼働するエージェントの進捗・結果を確認する「エージェント管理インボックス」も追加 | Microsoft 365管理センターの利用状況ダッシュボード。2026年8月からユーザー・日単位の利用状況エクスポート機能を全世界提供、利用者を4段階(パワーユーザー等)に自動分類する「導入」タブも追加 | 管理者ダッシュボードでの利用状況確認 |
+| 料金の目安(2026年8月時点) | Business: 年払い1ユーザー月20ドル(月払い25ドル、2026年4月値下げ後の水準)。Enterpriseは個別見積り(年額1ユーザー10〜15万円程度が目安)。2026年8月19日以降、追加シート分の請求タイミングが「次回請求時にまとめて」から「追加時に日割りで即時課金」に変更(総額は変わらない) | Google Workspaceのプランに含まれる形態が中心 | Microsoft 365 Copilotは既存M365ライセンスに追加課金 | Team: Standardシート年払い月20ドル・Premiumシート同100ドルを混在可能。Enterpriseは席料が個別見積りで、実際の利用量はAPIレートで別建て課金 |
 
 社内向けAIツール全体のSSO統一・アカウントライフサイクル管理の考え方は[生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)、社内ガイドラインという文書側の整備は[社内AI利用ガイドラインの作り方](../part04-risk-security/ai-internal-guideline-basics.md)を参照。
 
@@ -186,6 +190,10 @@ AIOpsツール(Datadog Bits AI、ServiceNow Now Assistなど)を導入済みの�
 - [生成AI導入の社内展開・浸透のすすめ方](../part12-business-practice/ai-adoption-rollout-basics.md)
 
 ## 更新履歴
+
+### 2026-08-10: シャドーAI・AIOps・管理者機能を最新情報に更新
+- **内容**: IPA「情報セキュリティ10大脅威2026」でAI関連リスクが組織編3位に初選出された事実を「仕組み・背景」に追加してシャドーAI対策の重要性の裏付けを補強。AIOps市場動向にDatadog「DASH 2026」での100超の新機能発表(Bits AI強化・AI Guard等)を追加。シーン3(シャドーAI棚卸し)に、統制対象が人のアカウントからAIエージェントの権限そのものへ広がっている動き(JumpCloud Agentic IAM、AIエージェントへのアクセス権限に関する調査結果)を追記。シーン5(ライセンス管理)にMicrosoft Copilotの新しい利用状況エクスポート機能・利用者自動分類(導入タブ)を追記。ツール横断比較表を2026年8月時点に更新し、Claude Team/Enterpriseのシート体系、Claude Enterpriseのモデル・effort制御、Gemini Enterpriseの管理コンソール統合、ChatGPT Businessの請求タイミング変更(2026年8月19日〜)を反映
+- **出典**: [IPA: 情報セキュリティ10大脅威2026](https://www.ipa.go.jp/security/10threats/10threats2026.html)、[JBCC: IPA「情報セキュリティ10大脅威2026」初選出「AIの利用をめぐるサイバーリスク」](https://www.jbcc.co.jp/blog/column/ipa-security-2026-ai.html)、[BUSINESS NETWORK: Datadogが100超の新機能・機能強化発表 AIエージェント防御も](https://businessnetwork.jp/article/35089/)、[JumpCloud: JumpCloud Launches Agentic IAM to Govern the AI Lifecycle](https://jumpcloud.com/press/jumpcloud-launches-agentic-iam-to-govern-the-ai-lifecycle)、[Windows Blog for Japan: Microsoft 365 Copilot の新機能 2026年4月](https://blogs.windows.com/japan/2026/05/28/whats-new-in-microsoft-365-copilot-april-2026-4510935/)、[tech-camp.in: ChatGPTの有料プランを徹底比較【2026年8月最新】](https://tech-camp.in/ai-navi/chatgpt-paid/)、[G-gen Tech Blog: Gemini Enterpriseアプリの新機能を紹介(Google Cloud Next '26速報)](https://blog.g-gen.co.jp/entry/next-26-whats-new-in-gemini-enterprise-app)、[こまろぐ: Google Workspaceの管理コンソールが進化(Gemini Enterprise設定統合)](https://yoshikazu-komatsu.com/google-workspace-news-20260417-2/)、[Uravation: 【2026年最新】Claude法人プラン完全比較(Team/Enterprise)](https://uravation.com/media/claude-business-plan-comparison-2026/)
 
 ### 2026-07-13: 初版執筆
 - **内容**: 情報システム(IT)部門自身による生成AI活用として、社内ヘルプデスクのRAG型FAQボット化、障害対応時のログ解析・インシデント要約(AIOps)、シャドーAIの可視化・OAuth棚卸しの実務手順、手順書・システム仕様書の下書き生成、複数AIツールのライセンス・コスト可視化の5シーンを整理。各シーンのコピペ用プロンプト例、業務領域別の活用マップ、従来型チャットボットとRAG型ヘルプデスクの比較表、ChatGPT/Gemini/Copilot/Claudeの管理者向け機能(SSO・利用状況モニタリング・料金)の横断比較表を執筆
