@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-10
+- [アパレル・ファッション業界における生成AI活用事例](topics/part14-industry-cases/apparel-fashion-ai-use-cases.md): Google Doppl終了・検索統合、Stitch Fix Vision機能拡張、Zalando通期実績、H&Mデジタルツイン運用開始、NY州の新規制動向を反映して最新化
 - [情報システム(IT)部門における生成AI活用事例](topics/part15-job-role-cases/information-systems-ai-use-cases.md): IPA10大脅威2026・AIOps最新動向・Copilot/Claude/Geminiの管理者機能を反映して最新化
 - [広報・PR職における生成AI活用事例](topics/part15-job-role-cases/pr-communications-ai-use-cases.md): 導入率統計(日本広報学会の最新調査で77.0%)・危機管理広報の実証事例(PR総研)・Muck Rack「AI Visibility Badges」等を反映して最新化
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): インバウンド最新統計・新サービス(ジャストプランニング「AI来客予測」)・補助金情報を反映して最新化
