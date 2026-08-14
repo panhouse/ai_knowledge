@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-13
+- [医療・ヘルスケアAI企業一覧](topics/part16-japan-ai-companies/healthcare-ai-companies-japan.md): 新規執筆(AI問診・画像診断支援・治療アプリ等を提供する国内6社を収録)
 - [教育・EdTech AI企業一覧](topics/part16-japan-ai-companies/edtech-ai-companies-japan.md): 新規執筆(すららネット・atama plus・COMPASS・モノグサ・リクルートの5社を収録)
 - [BPO・コールセンター運営業界における生成AI活用事例](topics/part14-industry-cases/bpo-call-center-industry-ai-use-cases.md): 新規執筆(受託事業者視点でのオペレーター支援・音声認識・自動応答・QA自動化・シフト最適化の活用整理)
 - [警備業界における生成AI活用事例](topics/part14-industry-cases/security-services-industry-ai-use-cases.md): 新規執筆(識別系AI・警備ロボット・生成AIによるシフト作成/報告書作成の事例整理)
