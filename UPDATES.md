@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-10
+- [広報・PR職における生成AI活用事例](topics/part15-job-role-cases/pr-communications-ai-use-cases.md): 導入率統計(日本広報学会の最新調査で77.0%)・危機管理広報の実証事例(PR総研)・Muck Rack「AI Visibility Badges」等を反映して最新化
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): インバウンド最新統計・新サービス(ジャストプランニング「AI来客予測」)・補助金情報を反映して最新化
 ## 2026-08-09
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](topics/part02-llm-basics/context-window-basics.md): Claude Opus 5・GPT-5.6のChatGPT既定化・Grok 4.5などモデル別比較表を2026年8月時点に最新化、Chroma社のcontext rot検証を反映
