@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-12
+- [化学・素材業界における生成AI活用事例](topics/part14-industry-cases/chemical-materials-industry-ai-use-cases.md): 材料開発の最新事例(三菱マテリアル・自律実験)とプラント運転支援AI(予知保全・故障診断エージェント)の節を最新化・増強
 ## 2026-08-11
 - [スポーツ業界における生成AI活用事例](topics/part14-industry-cases/sports-industry-ai-use-cases.md): MLB「Scout Insights」・国内NPB+・NBA Inside the Game・Wimbledon・WSC Sports・Niiva Talk・ダイナミックプライシング・MLBロボット審判/W杯2026のSAOTを2026年8月時点の最新情報に更新・増強
 - [食品製造業における生成AI活用事例](topics/part14-industry-cases/food-manufacturing-ai-use-cases.md): 2026年4月のアレルゲン表示改正(カシューナッツ義務化等)・味の素「未来献立」終了・ChatSense/日清食品の最新実績等を反映して最新化・増強
