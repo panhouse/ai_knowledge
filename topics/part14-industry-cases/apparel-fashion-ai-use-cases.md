@@ -4,7 +4,7 @@ part: 14
 chapter: "第12章 その他・未分類"
 tags: [アパレル, ファッション, 生成AI活用事例, バーチャル試着, トレンド予測, AIモデル, フィット]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-08-10
 ---
 
 # アパレル・ファッション業界における生成AI活用事例
@@ -67,10 +67,13 @@ updated: 2026-07-14
   実在モデルの動きや外見を再現できる3D「デジタルツイン」を作成。
   その3Dスキャンに生成AIで背景・シチュエーションを合成することで、
   撮影をやり直さずに大量のバリエーション画像・動画を作れる仕組みを構築した
-- **効果**: 2024年第4四半期のエディトリアルコンテンツの70%を生成AIで制作し、
-  制作期間を6〜8週間から3〜4日に短縮。画像制作コストは約90%削減したと
-  報告されている。SNSでバズったトレンドに対しても、24時間以内に
-  実商品を使ったキャンペーン画像を仕上げられる体制になった
+- **効果**: 導入初期の2024年第4四半期時点でエディトリアルコンテンツの70%を
+  生成AIで制作し、制作期間を6〜8週間から3〜4日に短縮、画像制作コストは
+  約90%削減したと報告されていたが、2026年3月に発表されたFY2025通期決算では
+  コンテンツ全体の生成AI比率が約90%まで拡大し、コンテンツ制作量は前年比70%増、
+  キャンペーン制作期間も「数週間」から「数日」単位に短縮したと公表された。
+  2026年はさらに、体形・サイズにあわせて商品をマッチングする
+  「パーソナルマッチメイキング」領域への展開を優先事項としている
 - **自社への応用ヒント**: 「AIで画像を作る」ことを目的化するのではなく、
   「実写を1回きちんと撮り、そのデータを3D化・AI合成で使い回す」という
   ハイブリッド設計にすることで、ブランドの世界観を保ったままスピードと
@@ -111,10 +114,16 @@ updated: 2026-07-14
   アイテムはその場で購入、または次回の「Fix(定期便)」に含めるよう
   リクエストできる。あわせて対話型の「AI Style Assistant」が、
   顧客のStyleFile(好み・体形データ)をもとに会話しながら好みを
-  言語化する手助けをする
+  言語化する手助けをする。2026年6月には機能を拡張し、顧客が
+  自分から好きなタイミングでセルフィーをアップロードして
+  「See it on me(自分が着た姿を見る)」形式の画像をオンデマンド生成できる
+  ようにした。生成された画像はすべて顧客ごとの「Visionギャラリー」に
+  蓄積され、スタイル探索の履歴として再利用できる
 - **効果**: 好みを「言葉で説明する」負担を、AI生成画像で「見て選ぶ」体験に
   置き換えたことで、提案から購買までの意思決定を後押しする設計になっている
-  (自社開発の生成AI基盤に複数の主要AIモデルを組み込んで構築)
+  (自社開発の生成AI基盤に複数の主要AIモデルを組み込んで構築)。
+  Visionを利用した顧客は、90日間で都度購入(Freestyle)の支出が
+  2倍以上(100%超)に伸びたと同社は公表している
 - **自社への応用ヒント**: 「顧客に好みを聞く」インターフェースを、
   テキストのアンケートではなく「本人に似せた画像で試着結果を見せる」
   体験に変えると、判断のハードルが大きく下がる。パーソナルスタイリングに
@@ -143,8 +152,8 @@ Lalaland.ai・Vue.aiのようなアパレル特化ツールで試す場合、実
 
 | やりたいこと | 代表的なツール | 特徴 |
 |---|---|---|
-| 消費者が自分の写真で試着シミュレーション | Google「Doppl」 | 無料の一般消費者向けアプリ。セルフィーからGemini 2.5 Flash Imageで全身像を生成し試着 |
-| EC事業者が商品を着せたAIモデル画像を量産 | Lalaland.ai(2025年にBrowzwearが買収し統合)、Vue.ai | 体型・肌色などを指定してモデル画像を生成。Nordstromなど大手小売も試験導入 |
+| 消費者が自分の写真で試着シミュレーション | Google「Doppl」→Google検索・ショッピングの「試着する」機能 | 単体アプリ「Doppl」は2026年4月30日に終了し、同じセルフィー試着技術(Gemini 2.5 Flash Image)はGoogle検索・ショッピングの商品ページに「Try It On」機能として統合された。Zalando・ZARA・L'AGENCEなどが試着キャンペーンで連携 |
+| EC事業者が商品を着せたAIモデル画像を量産 | Lalaland.ai(2025年7月にBrowzwearが買収し、3Dアパレル基盤の企業向け機能として統合済み)、Vue.ai | 体型・肌色などを指定してモデル画像を生成。Nordstromなど大手小売も試験導入。買収後は自社サービスとしての単独提供ではなく、Browzwearのエンタープライズ向けデモ主導の提供形態に変わっている |
 | 汎用の画像生成AIで着用イメージのたたき台を作る | Gemini、ChatGPT(画像生成)、Adobe Firefly | [画像生成AIの基本](../part08-specialized-ai-tools/image-generation-ai-basics.md)を参照。専用ツールほどの再現性はないが手軽に試せる |
 | 自社の体型データを蓄積してフィット精度を上げる | ZOZOMETRY(スマホ採寸の外販)等 | 事業者向けAPI/SaaSとして導入し、自社ECに計測機能を組み込む形が中心 |
 
@@ -158,12 +167,21 @@ Lalaland.ai・Vue.aiのようなアパレル特化ツールで試す場合、実
   自社で導入する際は、AI生成であることの明示方法(表記のサイズ・位置)を
   事前に決めておく必要がある
 - **人間モデルの権利・報酬の問題も並行して起きている**: H&Mは2025年、
-  実在モデルの身体・顔をスキャンして「デジタルツイン」を作る計画を発表したが、
-  モデル業界の労働組合からスケジュールの喪失・同意・報酬に関する懸念が
-  示された。米ニューヨーク州の「Fashion Workers Act」など、
-  デジタルレプリカ利用への同意・対価を義務付ける規制も整備が進んでおり、
-  自社モデルやインフルエンサーの肖像をAIで再利用する場合は契約条件を
-  事前に明確にしておく必要がある
+  実在モデルの身体・顔をスキャンして「デジタルツイン」を作る計画を発表し、
+  2026年には実在モデル30名分のデジタルツインを本人の同意のもとで作成、
+  実際の広告・SNSキャンペーンに投入する運用が始まった。モデルは自身の
+  AI複製の権利を保持し、従来の画像ライセンスと同様の形で対価を受け取る
+  設計になっているが、フォトグラファー・スタイリスト・ヘアメイクなど
+  周辺職種の仕事が失われるとの批判は依然根強い。米ニューヨーク州では
+  「Fashion Workers Act」がモデルのデジタルレプリカ作成・利用に際して
+  用途・期間・報酬を明記した書面同意を義務付けており、事業者側は
+  2026年6月19日までに労働局への登録が必要になった(違反時の民事制裁金
+  500〜700ドル)。さらに2026年6月9日には、広告にAI生成の「合成パフォーマー
+  (synthetic performer)」を起用する場合の表示義務を定めた
+  「AI Transparency in Advertising and Synthetic Performer Disclosure Law」
+  が全米に先駆けて施行され、違反時の制裁金は初回1,000ドル・再犯5,000ドルと
+  定められた。自社モデルやインフルエンサーの肖像をAIで再利用する場合は、
+  契約条件の明確化に加え、進出先の規制動向も継続的に確認する必要がある
 - **バーチャル試着・フィット予測はまだ万能ではない**: 生地の伸縮性・
   透け感・重さといった触ってわかる情報は画像だけでは伝わりにくく、
   「見た目は合っていたのにサイズが違った」という返品は完全には
@@ -191,6 +209,19 @@ Lalaland.ai・Vue.aiのようなアパレル特化ツールで試す場合、実
 - [生成AIに向く業務・向かない業務の切り分け](../part12-business-practice/ai-task-suitability.md)
 
 ## 更新履歴
+
+### 2026-08-10: 各社の最新動向・規制動向を反映して最新化
+- **内容**: Google「Doppl」が2026年4月30日に単体アプリとして終了し、
+  試着技術がGoogle検索・ショッピングの「試着する」機能に統合された点を反映。
+  Stitch Fix Visionの2026年6月の機能拡張(「See it on me」セルフィー
+  オンデマンド生成、Freestyle支出100%超の伸び)を追記。ZalandoのFY2025
+  通期決算(生成AIコンテンツ比率が四半期の70%から通期約90%へ拡大)を反映。
+  H&Mのデジタルツイン計画が実在モデル30名で本人同意・報酬つきの運用として
+  実際に開始されたことを追記。米ニューヨーク州の「AI Transparency in
+  Advertising and Synthetic Performer Disclosure Law」(2026年6月9日施行)と
+  「Fashion Workers Act」の事業者登録期限(2026年6月19日)を新たな規制動向
+  として追加。Lalaland.aiの買収(2025年7月)後の提供形態の変化も反映
+- **出典**: [Google Doppl app shutdown, tech moves into Search(Happycapy Guide)](https://happycapyguide.com/blog/google-doppl-shutdown-ai-virtual-try-on-search-retail-2026) / [Google Virtual Try-On Is Now in Search: What Every Retailer Must Know in 2026](https://adrianarivas.tech/2026/04/18/google-virtual-try-on-retail-2026/) / [Stitch Fix Expands Vision AI Platform to Give Clients More Control Over Personalized Style Discovery(Stitch Fix IR)](https://investors.stitchfix.com/news-events/press-releases/news-details/2026/Stitch-Fix-Expands-Vision-AI-Platform-to-Give-Clients-More-Control-Over-Personalized-Style-Discovery/default.aspx) / [Stitch Fix Vision platform adds 'see it on me' feature(Digital Commerce 360)](https://www.digitalcommerce360.com/2026/06/26/stitch-fix-vision-ai-tool-see-it-on-me/) / [Zalando delivers strong 2025 results, expects further acceleration in 2026 through scaling AI innovations(Zalando Corporate)](https://corporate.zalando.com/en/investor-relations/zalando-full-year-2025-results) / [Zalando's One-Year AI Leap: Content From Near Zero to 90 Percent(AGORÀ Intelligence)](https://agora-intelligence.com/en/blog/saga-zalando-ai-content-90-percent-2026) / [30 Models Are Getting Digital 'Twins' Thanks To H&M, But The Backlash Is Beginning(The Modems)](https://themodems.com/fashion/30-models-getting-digital-twins-thanks-to-hm/) / [Clothing Giant H&M Will Use Models' AI-Made Digital Twins, Consent Included(Inc.)](https://www.inc.com/kit-eaton/clothing-giant-hm-will-use-models-ai-made-digital-twins-consent-included/91166352) / [Governor Hochul Announces First-in-the-nation Law Requiring Disclosure When Advertisements Include AI-generated Synthetic Performers(NY Governor)](https://www.governor.ny.gov/news/governor-hochul-announces-first-nation-law-requiring-disclosure-when-advertisements-include-ai) / [Seeing Double: New York Fashion Workers Act Creates New Consent Requirements(Benesch Law)](https://www.beneschlaw.com/insight/seeing-double-new-york-fashion-workers-act-creates-new-consent-requirements-for-use-of-generative-ai-tools-to-create-models-digital-replicas/) / [Browzwear Acquires AI-generated Model Maker Lalaland.ai(WWD)](https://wwd.com/fashion-news/fashion-scoops/ai-models-browzwear-lalaland-ai-1238016101/)
 
 ### 2026-07-14: 初版執筆
 - **内容**: Part14(業種別 生成AI活用事例)にアパレル・ファッション業界の章を新規執筆。
