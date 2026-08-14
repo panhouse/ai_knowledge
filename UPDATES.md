@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-11
+- [美容業界(理美容・エステ・ネイル)における生成AI活用事例](topics/part14-industry-cases/beauty-industry-ai-use-cases.md): Perfect Corp「AI Hair & Beard API」・ECILA・花王Kirei肌AI・AIカルテ(音声認識)・来客予測AIなど2026年8月時点の新事例を反映して最新化
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part15-job-role-cases/product-manager-ai-use-cases.md): ツール料金(Notion AI・Atlassian Intelligence/Rovo等)とPdMのAI活用統計を最新化、ChatPRD・Aha!を追加
 - [秘書・エグゼクティブアシスタント職における生成AI活用事例](topics/part15-job-role-cases/executive-assistant-ai-use-cases.md): AI日程調整アシスタントの料金(Reclaim.ai/Motion)とMicrosoft 365 Copilotのエージェントモード・GmailのAI受信トレイ展開を反映して最新化
 - [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part15-job-role-cases/data-analyst-ai-use-cases.md): Power BI Copilot(Fabric F2緩和)・Amazon Quick Suite(旧Amazon Q in QuickSight)・Tableau+・ThoughtSpot Spotterの料金/機能と、新ツールClaude for Excelを反映し最新化
