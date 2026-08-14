@@ -4,7 +4,7 @@ part: 2
 chapter: 第1章 LLMの仕組み
 tags: [コンテキストウィンドウ, トークン, LLM, 長文処理, Lost in the Middle]
 created: 2026-07-06
-updated: 2026-07-22
+updated: 2026-08-09
 ---
 
 # コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)
@@ -39,6 +39,8 @@ API(開発者がプログラムから直接AIを呼び出す方式)では、入�
 
 見落とされがちなのが、「上限に収まっているから大丈夫」とは限らない点。長い文章・長い会話の**真ん中あたりに埋もれた情報は、AIが見落としやすい**ことが複数の研究で確認されており、"Lost in the Middle"(真ん中で迷子になる)と呼ばれる。文章の最初と最後に近い情報ほど正しく参照され、中盤の情報ほど参照ミスが増えるU字型の傾向で、2023年に複数モデルで確認された後、2026年時点でも構造的な弱点として残っている(Transformer[LLMの内部構造の方式]という仕組み自体に起因するとされ、モデルの世代が新しくなっても完全には解消されていない)。Anthropicは公式ドキュメントでこれを**「コンテキスト腐敗(context rot)」**と呼び、「コンテキストウィンドウが大きいほど良い、ではない。トークン数が増えるほど精度・記憶の正確さは低下する」と明言している。むしろコンテキストウィンドウが100万トークン級に大きくなるほど、「技術的には収まるが実際には読み落とされる」範囲が広がるという指摘もある。
 
+データベース企業Chromaが2025年7月に公開した検証(GPT-4.1・Claude 4・Gemini 2.5・Qwen3など18モデルを対象)は、この現象をさらに具体的に裏付けた。「20万トークンの窓でも、5万トークン程度の入力からすでに精度低下が始まる」「100万トークンの窓があっても、実際に100万トークン全体にわたって一貫して推論できるわけではない」「答えと紛らわしい情報が周囲に多いほど劣化が速い」、そして意外なことに「整然と構造化された入力の方が、あえてシャッフルした入力より精度が落ちやすい」という結果まで報告されている。この検証チームが導く2026年時点の実務上の結論は、「関連しそうな箇所を5万〜20万トークン程度にまで検索で絞り込んでから、その範囲内で長文推論させる」というハイブリッド構成であり、これは次項「使いどころ・使い分け」で述べるRAGと長文一括投入の使い分けの根拠にもなっている。
+
 料金への影響は[トークンとは何か](what-are-tokens.md)で詳しく扱っているが、要点だけ言えば「コンテキストウィンドウを大きく使うほどトークン消費が増え、料金も上がる」。さらに長い会話を続けるほど、次の発言のたびに過去の会話履歴をまるごと読み込み直すため、雪だるま式にコストが積み上がっていく。
 
 ## 使いどころ・使い分け
@@ -57,33 +59,37 @@ API(開発者がプログラムから直接AIを呼び出す方式)では、入�
 
 ## 実務での使い方
 
-### 主要モデルのコンテキストウィンドウ比較(2026年7月時点)
+### 主要モデルのコンテキストウィンドウ比較(2026年8月時点)
 
 いずれもAPI利用時の入力コンテキストウィンドウの上限(以下は目安。実際の利用可能量はプラン・利用経路によって変わる点は次項参照)。
 
 | 提供元 | モデル | コンテキストウィンドウ(入力) | 出力上限 |
 |---|---|---|---|
-| OpenAI | GPT-5.6(Sol/Terra/Luna。2026年7月9日に一般提供開始) | 約105万トークン(入力92.2万+出力12.8万の合計。ChatGPT画面の既定モデルは引き続きGPT-5.5 Instant) | 12.8万トークン |
-| Anthropic | Claude Fable 5(最上位モデル)/ Opus 4.8 / Sonnet 5 | 100万トークン(いずれもAPIで既定有効) | 12.8万トークン(Message Batches APIではベータ機能で最大30万まで拡張可) |
+| OpenAI | GPT-5.6 Sol / Terra / Luna(2026年7月9日に一般提供開始) | 約105万トークン(入力92.2万+出力12.8万の合計) | 12.8万トークン |
+| Anthropic | Claude Fable 5(最上位モデル) | 100万トークン | 12.8万トークン |
+| Anthropic | Claude Opus 5(2026年7月24日リリース。Opus 4.8の後継で価格は据え置き) | 100万トークン | 12.8万トークン |
+| Anthropic | Claude Sonnet 5 | 100万トークン | 12.8万トークン |
 | Anthropic | Claude Haiku 4.5(軽量・高速モデル) | 20万トークン | - |
-| Google | Gemini 3.1 Pro(現行Pro) / Gemini 3.6 Flash(2026年7月21日に一般提供開始) | 100万トークン | 6.4万トークン |
-| xAI | Grok 4.3(現行フラッグシップ) | 100万トークン | 出力上限なし(実運用は数十万トークン程度で打ち切られることが多い) |
-| xAI | Grok 4.20 | 200万トークン | - |
+| Google | Gemini 3.1 Pro(現行Pro)/ Gemini 3 Flash / 3.1 Flash-Lite | 100万トークン | 6.4万トークン |
+| xAI | Grok 4.20(現行モデルで最大の窓) | 200万トークン | - |
+| xAI | Grok 4.3 | 100万トークン | - |
+| xAI | Grok 4.5(2026年7月8日、コーディング・エージェント特化の最新フラッグシップ) | 50万トークン(あえて縮小) | - |
 | Meta | Llama 4 Scout(オープンウェイト) | 理論値1,000万トークン | - |
 
 補足:
-- Google Gemini 3.5 Pro(次世代Pro、2倍の200万トークン級と噂される)は2026年7月22日時点でまだ正式リリースされておらず、限定プレビュー段階。正式仕様は未確定のため、契約前に必ず公式発表を確認すること
-- xAIのGrok 4 Fast(200万トークン級の旧世代)は2026年5月15日に非推奨化され、2026年8月15日に提供終了予定。現行の主力は200万トークンのGrok 4.20と、より新しい推論性能を持つ100万トークンのGrok 4.3の2系統に分かれている
-- Meta Llama 4 Scoutの1,000万トークンは公表上の理論値であり、独立した検証では実際に情報を正確に取り出せる範囲(実効的な精度)はそれより大幅に狭いと報告されている。「上限が大きい=常に信頼できる」と早合点しないこと
+- Anthropicは2026年7月24日にClaude Opus 5を投入し、Opus 4.8の実質的な後継とした(価格は$5/$25per百万トークンで4.8から据え置き)。Claude Maxでは既定モデル、Claude Proでは最上位モデルという位置づけで、Opus 4.8自体は本稿時点でまだ提供終了になっていない
+- Google Gemini 3.5 Pro(次世代Pro、2Mトークン級と噂される)は、2026年5月のGoogle I/Oで発表されたものの2026年8月9日時点でまだ一般提供されていない。Googleは7月21日時点で「パートナー企業とテスト中」と説明しており、当初目標の6月からリリースが大きくずれ込んでいる。正式仕様は未確定のため、契約前に必ず公式発表を確認すること
+- xAIのGrok 4.1 Fast(200万トークン級の旧世代)は2026年8月15日に提供終了予定。現行ラインナップはGrok 4.20(200万)・Grok 4.3(100万)・Grok 4.5(50万、コーディング・エージェント用途で速度とコストを優先し窓をあえて縮小)の3系統に分かれ、「新しい・上位のモデルほど窓が大きい」とは限らない点に注意
+- Meta Llama 4 Scoutの1,000万トークンは公表上の理論値であり、独立した検証では実際に情報を正確に取り出せる範囲(実効的な精度)はそれより大幅に狭いと報告されている。「上限が大きい=常に信頼できる」と早合点しないこと。なお「Meta が2026年4月に600Bパラメータ・500万トークン窓の『Llama 5』を発表した」とするブログ記事が一部で出回っているが、Meta公式ブログ・Hugging Faceのmeta-llama公式アカウントのいずれにも該当する発表・モデルカードが見当たらず、本稿執筆時点(2026年8月9日)では真偽を確認できていない。裏取りできない数値としてこのページには採用しない
 - xAIのGrok系・MetaのLlama系はAPIや自社ホスティングでの利用が主で、一般的な業務利用ではOpenAI・Anthropic・Googleの3社が中心になる
 
 ### 「モデルの上限」と「実際に使える上限」は別物
 
 上の表はAPIで使う場合の最大値であり、**ChatGPT・Claude.ai・Geminiアプリなど一般ユーザー向けの画面では、契約プランによってこれより小さい上限に制限されていることが多い**。たとえば、
 
-- OpenAIのGPT-5.6は、API利用時は約105万トークンだが、ChatGPT Businessプランのヘルプページでは、Luna/Terraで12.8万トークン、Sol(旗艦モデル)で27.2万トークンという上限が明記されている。旧世代のGPT-5.5もAPI経由では引き続き使え、ChatGPTのCodexなど一部アプリでは40万トークンに制限されている
-- Anthropicの有料Claude.aiプランでは、Claude Sonnet 5は全プランで100万トークンが使えるが、Claude Opus 4.8は既定50万トークンで、Proプランでは使用クレジットを有効化することで100万トークンまで拡張できる。最上位のClaude Fable 5はMax/Team/Enterpriseプランで利用可能で、既定で100万トークン
-- Googleの一般ユーザー向けGeminiアプリでは、Flashモデルは20万トークン程度、Pro(3.1 Pro)は上位プラン(Google AI Pro/Ultra)向けに100万トークンが展開されている。2026年7月21日に一般提供が始まったGemini 3.6 Flashは、より低価格帯のプランにも100万トークンの窓が広がりつつある
+- OpenAIのChatGPTは2026年8月6日、無料版・Go版の既定モデルをGPT-5.5 InstantからGPT-5.6 Lunaに切り替えた(コンテキストウィンドウ12.8万トークン、テキストチャットは無制限)。Plus/Proユーザー向けにはGPT-5.6 Solが提供され、回答にかける思考の深さをスライダーで選べるようになっている。ChatGPT Businessプランのヘルプページでは、Luna/Terraで12.8万トークン、Sol(旗艦モデル)で27.2万トークンという上限が明記されている
+- Anthropicの有料Claude.aiプランでは、Claude Sonnet 5は全プランで100万トークンが使える。新しいClaude Opus 5(Opus 4.8の後継)はClaude Proでは既定20万トークンに制限されており、アカウント設定で「使用クレジット」をオン(実際に課金しなくてもオンにするだけでよい)にすると100万トークンまで拡張できる。最上位のClaude Fable 5はMax/Team/Enterpriseプランで利用可能で、既定で100万トークン
+- Googleの一般ユーザー向けGeminiアプリでは、無料版が約3.2万トークン、Google AI Plus(月額)が12.8万トークン、Google AI Pro/Ultra(上位プラン)がGemini 3.1 Proで100万トークンという段階になっている
 
 同じモデル名でも「どの画面・どの契約プランから使っているか」でコンテキストウィンドウが変わるため、長文が読み込めない場合はまずこの点を確認する。
 
@@ -125,6 +131,7 @@ API(開発者がプログラムから直接AIを呼び出す方式)では、入�
 - **「アプリで使える上限」と「モデルの最大上限」を混同しない**: 同じモデルでも、APIと一般ユーザー向けアプリ、さらに契約プランによって実際に使える上限は異なる。長文が拒否された場合、モデルの限界ではなく契約プラン側の制限であることも多い
 - **長い会話は「忘れられている」のではなく「押し出されている」ことが多い**: 一般ユーザー向けチャット画面の多くは、上限に近づくと古い発言を自動で削除・要約する。これは不具合ではなく仕組み上の挙動であり、重要な情報は会話の途中で一度メモとして書き出しておくと安全
 - **画像・音声・添付ファイルもコンテキストウィンドウを消費する**: テキストだけでなく、画像1枚・音声ファイルもトークンに変換されて枠を消費する。大量の画像を含む資料は、テキストだけの場合より早く上限に近づく
+- **「整った資料だから安心」とは限らない**: Chromaの検証(2025年7月)では、見出し・箇条書きが整然と構造化された入力の方が、あえてシャッフルした入力より精度が落ちやすいという結果が出ている。読みやすく整形すること自体は、Lost in the Middle対策として万能ではない
 
 ## 最初の一歩
 
@@ -139,6 +146,10 @@ API(開発者がプログラムから直接AIを呼び出す方式)では、入�
 - [NotebookLMの基本](../part08-specialized-ai-tools/notebooklm-basics.md)
 
 ## 更新履歴
+
+### 2026-08-09: 主要モデルのコンテキストウィンドウ比較とLost in the Middle研究を最新化
+- **内容**: モデル別比較表を2026年8月時点に更新。AnthropicはClaude Opus 5(2026年7月24日リリース、Opus 4.8後継、価格据え置きの$5/$25)を追加し、Claude ProプランでのOpus系列の実際の上限(既定20万トークン→使用クレジット有効化で100万トークンに拡張)を反映。OpenAIはChatGPT無料/Go版の既定モデルが2026年8月6日にGPT-5.6 Lunaへ切り替わったこと、Plus/Pro向けにGPT-5.6 Solの思考深度スライダーが導入されたことを追記。xAIはGrok 4.1 Fastの提供終了予定(2026年8月15日)とGrok 4.20(200万)/Grok 4.3(100万)/Grok 4.5(50万、コーディング・エージェント特化であえて窓を縮小)の現行3系統を整理。Googleは次世代Gemini 3.5 Proが2026年8月9日時点でも一般提供されておらず「パートナー企業とテスト中」の段階であることを更新。一部サイトで流通する「Meta Llama 5(600Bパラメータ・500万トークン窓、2026年4月発表)」の情報は、Meta公式・Hugging Face公式アカウントで裏付けが取れなかったため採用せず、その旨を明記。あわせて、Chroma Research社の検証(2025年7月、GPT-4.1・Claude 4・Gemini 2.5・Qwen3など18モデル対象)を引用し、Lost in the Middle/コンテキスト腐敗の節に「意味的に紛らわしい情報が多いほど劣化が速い」「整然と構造化された入力の方がシャッフルより精度が落ちやすい」「実務は関連箇所を5万〜20万トークンに絞ってから長文推論するハイブリッド構成が基本」という知見を追加
+- **出典**: [OpenAI: GPT-5.6](https://openai.com/index/gpt-5-6/)、[OpenAI Help Center: ChatGPT Business - Models & Limits](https://help.openai.com/en/articles/12003714-chatgpt-business-models-limits)、[digitalapplied: ChatGPT Goes GPT-5.6 — Free Tier Gets Unlimited Luna](https://www.digitalapplied.com/blog/chatgpt-gpt-5-6-luna-free-default-unlimited-chats)、[Anthropic: Introducing Claude Opus 5](https://www.anthropic.com/news/claude-opus-5)、[Claude Platform Docs: What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)、[Wade Tregaskis: Claude Opus 5 is limited to a 0.2M token context window by default](https://wadetregaskis.com/claude-opus-5-is-limited-to-a-0-2m-token-context-window-by-default/)、[techjacksolutions: Grok 4.5](https://techjacksolutions.com/ai-tools/grok/what-is-grok-4-5/)、[datanorth.ai: xAI releases Grok 4.5](https://datanorth.ai/news/xai-releases-grok-4-5-coding-focused-model)、[docs.x.ai: Grok 4.3](https://docs.x.ai/developers/models/grok-4.3)、[TechTimes: Gemini 3.5 Pro targets July 17 after full rebuild, every spec remains unconfirmed](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm)、[Hugging Face: meta-llama organization](https://huggingface.co/meta-llama)、[Chroma: Context Rot: How Increasing Input Tokens Impacts LLM Performance](https://www.trychroma.com/research/context-rot)、[GitHub: chroma-core/context-rot](https://github.com/chroma-core/context-rot)
 
 ### 2026-07-22: 主要モデルのコンテキストウィンドウ比較を最新化
 - **内容**: 主要モデルのコンテキストウィンドウ比較表を更新。OpenAIはGPT-5.6(Sol/Terra/Luna、2026年7月9日GA、API上は約105万トークン)を追加しつつ、ChatGPT画面の既定モデルは引き続きGPT-5.5 Instantであることを明記。AnthropicはClaude Fable 5(最上位、100万トークン)とHaiku 4.5(20万トークン)を追加し、Claude.aiプランごとの実際の上限(Sonnet 5は全プランで100万、Opus 4.8は既定50万でクレジット有効化により100万に拡張、Fable 5はMax/Team/Enterpriseで既定100万)を更新。Googleは2026年7月21日にGAしたGemini 3.6 Flash(100万トークン)を追加し、未リリースのGemini 3.5 Pro(200万トークン級と噂されるが7月22日時点で正式発表なし)を補足として言及。xAIはGrok 4 Fastが非推奨化(2026年5月15日)・提供終了予定(2026年8月15日)であることを反映し、現行のGrok 4.20(200万トークン)とGrok 4.3(100万トークン)の2系統に更新

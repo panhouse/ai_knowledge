@@ -2,9 +2,9 @@
 title: 秘書・エグゼクティブアシスタント職における生成AI活用事例
 part: 15
 chapter: 第9章 総務・秘書・購買調達
-tags: [秘書, エグゼクティブアシスタント, EA, 日程調整, 会議準備, Copilot, Gemini, Reclaim.ai, Motion, 議事録, 出張手配]
+tags: [秘書, エグゼクティブアシスタント, EA, 日程調整, 会議準備, Copilot, Gemini, Reclaim.ai, Motion, 議事録, 出張手配, AIエージェント]
 created: 2026-07-15
-updated: 2026-07-15
+updated: 2026-08-11
 ---
 
 # 秘書・エグゼクティブアシスタント職における生成AI活用事例
@@ -20,9 +20,9 @@ EA・秘書業務に関わる生成AIツールは、大きく2種類に分けて
 1. **汎用チャットAI(ChatGPT・Claude・Gemini・Copilot Chat)**: カレンダーやメールに直接アクセスせず、渡した文章・情報をもとに下書き(メール文面、ブリーフィング資料、議事録の整形など)を生成する。情報を渡すのは人間であり、AIは「文章を作る・整える」役割に徹する。
 2. **カレンダー連動型のAI日程調整アシスタント**: Microsoft 365 CopilotのOutlook統合機能、Googleの「日程調整のお手伝い(Help me schedule)」、Reclaim.aiやMotionのような専業スケジューリングAIがこれにあたる。実際のカレンダーの空き時間を読み取り、複数人の都合を突き合わせ、会議枠の提案・確保までをAIエージェント(自律的に複数の処理を連鎖させる仕組み)として行う点が汎用チャットAIとの違いである。
 
-後者のカレンダー連動型ツールは「AIがどこまで自動で確定してよいか」の設計思想がツールによって異なる。Reclaim.aiやMotionは提案内容をプレビューし人が承認してから確定する運用が基本だが、Outlook統合のCopilotは「Copilotで予定を作成する」の操作で候補時間の提示から招待送信までを一気通貫で行える。EA・秘書としては、どの段階で自分の確認を挟むかをツールの設定で明示的にコントロールできるかを、導入前に必ず確認する必要がある。
+後者のカレンダー連動型ツールは「AIがどこまで自動で確定してよいか」の設計思想がツールによって異なる。Reclaim.aiやMotionは提案内容をプレビューし人が承認してから確定する運用が基本だが、Outlook統合のCopilotは「Schedule with Copilot」の操作で候補時間の提示から会議室予約・招待送信までを一気通貫で行える(2026年3月に一般提供開始)。さらに2026年4月以降は、Microsoft 365 Copilotの「エージェントモード」がMicrosoft 365 Frontierプログラムの先行ユーザー向けに展開され始めており、指示を出さなくても受信トレイの仕分け・返信下書きの作成・会議の再調整・会議室の再予約・集中時間の確保までAIが自律的に行う範囲が広がりつつある(全ユーザーへの一般提供は2026年内が目標)。EA・秘書としては、どの段階で自分の確認を挟むかをツールの設定で明示的にコントロールできるかを、導入前に必ず確認する必要がある。
 
-なお、この領域は栄枯盛衰が激しい。専業スケジューリングAIのClockwiseは2026年3月19日に事業終了を発表し、わずか1週間後の3月27日にサービスを停止、ユーザーデータも削除された。背景にはSalesforceによるチーム引き抜き(アクハイア)があり、単体プロダクトとしては終了した([Hacker News](https://news.ycombinator.com/item?id=47402579)、[usecarly.com](https://www.usecarly.com/blog/clockwise-shut-down/))。競合のReclaim.aiは同時期に元Clockwiseユーザー向けの移行導線を公開している([Reclaim.ai](https://reclaim.ai/blog/clockwise-shutdown-news))。スケジュール管理という機微な情報を預けるツールを選ぶ際は、機能や価格だけでなく「事業継続性」も判断材料に入れる必要がある。
+なお、この領域は栄枯盛衰が激しい。専業スケジューリングAIのClockwiseは2026年3月19日に事業終了を発表し、わずか1週間後の3月27日にサービスを停止、ユーザーデータも削除された。背景にはSalesforceによるチーム引き抜き(アクハイア)があり、単体プロダクトとしては終了した([Hacker News](https://news.ycombinator.com/item?id=47402579)、[usecarly.com](https://www.usecarly.com/blog/clockwise-shut-down/))。競合のReclaim.aiは同時期に元Clockwiseユーザー向けに「移行後12か月間、Clockwiseで支払っていた金額のままReclaimプランを使える」価格据え置きキャンペーンを打ち出したが、この優遇措置は2026年6月30日で終了しており、2026年8月時点で新たに乗り換える場合はReclaimの通常料金が適用される([Reclaim.ai Help Center](https://help.reclaim.ai/en/articles/11123801-switching-from-clockwise-to-reclaim-ai))。スケジュール管理という機微な情報を預けるツールを選ぶ際は、機能や価格だけでなく「事業継続性」も判断材料に入れる必要がある。
 
 ## 使いどころ・使い分け
 
@@ -33,13 +33,13 @@ EA・秘書業務に関わる生成AIツールは、大きく2種類に分けて
 | 日程調整メールの文面作成 | 向く(定型文だが相手への配慮が要る) | 汎用チャットAI |
 | 複数人の空き時間調整・会議枠の自動提案 | 向く(候補出しまで) | カレンダー連動型AI(Copilotのスケジューリング、Gemini「日程調整のお手伝い」、Reclaim.ai、Motion) |
 | 会議前ブリーフィング(出席者情報・過去のやり取りの要約) | 向く(材料が揃っていれば) | 汎用チャットAI、Copilotのエージェント機能、NotebookLM |
-| 受信トレイのトリアージ・優先度サマリー | 向く(一次選別まで) | Outlook Copilotの受信トレイ優先度付け、Gmail(Gemini)のAI受信トレイ |
+| 受信トレイのトリアージ・優先度サマリー | 向く(一次選別まで) | Outlook Copilotの受信トレイ優先度付け・エージェントモード、Gmail(Gemini)のAI受信トレイ |
 | お礼状・季節の挨拶状・お悔やみ状などの儀礼文書 | 向く(たたき台まで、最終語調は人が調整) | 汎用チャットAI |
 | 出張・旅程の整理 | 向く(確認メールの転記・整形) | 汎用チャットAI(カレンダー・Docs連携も可) |
 | 議事録の整形・フォローアップメールの下書き | 向く | 汎用チャットAI、Teams/Google MeetのAI要約機能 |
 | 役員本人になりすました最終送信・意思決定の代行 | 不向き(AIに主導させない) | ― |
 
-判断の軸は他の職種と共通で、「候補・下書きを作る」段階はAIに任せやすく、「本人の名前で確定・送信する」「本人の意思や関係性を代弁する」段階は必ずEA・秘書自身が最終確認する。EAという仕事の価値の核は「その役員の好み・関係性・暗黙の判断基準を踏まえた最終調整」にあり、ここをAIに委ねると信頼関係そのものを損なう。
+判断の軸は他の職種と共通で、「候補・下書きを作る」段階はAIに任せやすく、「本人の名前で確定・送信する」「本人の意思や関係性を代弁する」段階は必ずEA・秘書自身が最終確認する。EAという仕事の価値の核は「その役員の好み・関係性・暗黙の判断基準を踏まえた最終調整」にあり、ここをAIに委ねると信頼関係そのものを損なう。この原則は、2026年に入って各社が「指示なしで動くエージェントモード」を相次いで投入していることでむしろ重要度が増している。
 
 ## 実務での使い方
 
@@ -68,17 +68,17 @@ EA・秘書業務に関わる生成AIツールは、大きく2種類に分けて
 - 件名と本文を分けて、そのままメールに貼り付けられる形式で出力する
 ```
 
-### シーン2: AI日程調整アシスタントの比較(2026年7月時点)
+### シーン2: AI日程調整アシスタントの比較(2026年8月時点)
 
 | ツール | 提供元・位置づけ | 主な機能 | 料金の目安 |
 |---|---|---|---|
-| Microsoft 365 Copilot(Outlookのスケジューリング機能) | Microsoft 365 Copilotライセンスの一機能 | チャットで「Copilotで予定を作成」と依頼すると、出席者の空き状況を確認し会議室予約・議題案作成・招待送信までを一括実行。出席者全員の都合が合わない場合は候補範囲を自動で広げて理由を提示 | Microsoft 365 Copilotライセンス(法人向け、既存のMicrosoft 365契約に追加) |
-| Google Gemini「日程調整のお手伝い(Help me schedule)」 | Gmail・Google Calendarに統合されたGemini機能 | 日程調整メールを開くと自動でボタンが表示され、自分のカレンダーの空き時間と相手のメール文面(希望時間帯・所要時間)を読み取って候補を提示。2026年2月末以降は複数人の日程調整にも対応 | Google Workspace の対象プラン(個人の無料Gmailでは利用不可) |
-| Reclaim.ai | 専業のAIカレンダー最適化ツール | チャット型AIアシスタントが優先度(P1〜P4)に応じて予定を自動配置し、集中作業時間(Focus Time)や会議前後のバッファを自動確保。変更は人が承認してから適用 | Free(無料)/ Plus 8ドル/月・Business 12ドル/月・Enterprise(要問い合わせ)(いずれも1ユーザー、年払いで割引) |
-| Motion | 専業のAIカレンダー・タスク管理ツール | タスクの締切・優先度をもとに1日のスケジュールを自動で組み直す「自律スケジューリング」が中心機能。チームの予定を横断的に把握するBusiness AIプランもあり | Pro AI 19ドル/月(年払いで12.73ドル/月)、Business AI 29ドル/月(年払いで19.43ドル/月) |
-| (参考)Clockwise | 2026年3月にSalesforceに買収され、同年3月27日にサービス終了 | ― | ― |
+| Microsoft 365 Copilot(Outlookのスケジューリング機能・エージェントモード) | Microsoft 365 Copilotライセンスの一機能 | 「Schedule with Copilot」(2026年3月に一般提供開始)で、出席者の空き状況確認・会議室予約・議題案作成・招待送信までを一括実行。2026年4月以降はMicrosoft 365 Frontierプログラムで「エージェントモード」の先行提供が始まり、明示的な指示なしでも受信トレイの一次仕分け・返信下書き・日程再調整・会議室の再予約・集中時間の確保を自律的に行う機能が拡大中(全ユーザーへの一般提供は2026年内が目標) | Microsoft 365 Copilotライセンス($30/ユーザー/月が目安、既存のMicrosoft 365契約への追加) |
+| Google Gemini「日程調整のお手伝い(Help me schedule)」 | Gmail・Google Calendarに統合されたGemini機能 | 日程調整メールを開くと自動でボタンが表示され、自分のカレンダーの空き時間と相手のメール文面(希望時間帯・所要時間)を読み取って候補を提示。2026年2月末以降は複数人(グループ)の日程調整にも対応し、社内の空き状況を踏まえた候補を外部宛先に提示、いずれかが選ぶと自動で招待状を送信する | Google Workspace の対象プラン(個人の無料Gmailでは利用不可) |
+| Reclaim.ai | 専業のAIカレンダー最適化ツール | チャット型のAI Assistant(自然文でスケジュール変更を指示できる)と、優先度に応じて予定を自動配置する「AIエージェント」機能が中心。集中作業時間(Focus Time)や会議前後のバッファを自動確保し、変更は人が承認してから適用 | Lite(無料)/ Starter 10ドル/月・Business 15ドル/月・Enterprise 22ドル/月(いずれも1ユーザー・年払い。月払いはStarter 12ドル・Business 18ドル、Enterpriseは年払いのみで最低100シートから) |
+| Motion | 専業のAIカレンダー・タスク管理ツール | タスクの締切・優先度をもとに1日のスケジュールを自動で組み直す「自律スケジューリング」が中心機能。2026年からは受信トレイの整理・返信・会議準備まで任せる「AI Employees」機能を追加し、専業スケジューラーから業務代行寄りへ機能を拡張中 | Pro AI 19ドル/月(年払い、月払いは29ドル)、Business AI 29ドル/月(年払い、月払いは49ドル)、AI Employees(単体プラン)49ドル/月(年払いのみ、月1万クレジット) |
+| (参考)Clockwise | 2026年3月にSalesforceに買収され、同年3月27日にサービス終了。Reclaim.aiの移行者向け価格据え置き優遇も2026年6月30日で終了済み | ― | ― |
 
-使い分けの目安は「誰の予定を扱うか」。役員本人1人の予定を細かく最適化したいならReclaim.aiやMotionのような専業ツール、社内の複数部門を横断した会議調整が中心ならMicrosoft 365 CopilotやGoogle Workspaceの標準機能で十分なことが多い。いずれのツールも、カレンダーへの書き込み権限を渡すことになるため、導入前に情報システム部門と権限範囲を確認する。
+使い分けの目安は「誰の予定を扱うか」。役員本人1人の予定を細かく最適化したいならReclaim.aiやMotionのような専業ツール、社内の複数部門を横断した会議調整が中心ならMicrosoft 365 CopilotやGoogle Workspaceの標準機能で十分なことが多い。Motionの「AI Employees」のように受信トレイ対応まで任せる機能も登場しているが、2026年8月時点ではまだ登場から日が浅い機能であり、いきなり役員本人の重要なやり取りに使うのではなく、まずは低リスクな定型連絡から試すのが無難である。いずれのツールも、カレンダーへの書き込み権限やメールへのアクセス権限を渡すことになるため、導入前に情報システム部門と権限範囲を確認する。
 
 ### シーン3: 会議前ブリーフィングの作成
 
@@ -110,7 +110,7 @@ Microsoft 365 Copilotには、役員とそのサポートチームがリーダ�
 
 ### シーン4: 受信トレイのトリアージ・優先度サマリー
 
-役員本人に代わって受信トレイを一次選別する作業は、AIの「優先度付け」「要約」機能と相性が良い。Outlook(Microsoft 365 Copilot)には「受信トレイの優先度を設定(Prioritize my inbox)」機能があり、送信者・役職・件名の内容などからメールを高/通常/低の3段階で自動分類し、重要メールには理由付きの要約を表示する。優先度の判断基準(特定の取引先を常に高くする、等)は設定画面から学習させられる([Microsoft Support](https://support.microsoft.com/en-us/topic/prioritize-my-inbox-65e37040-2c90-4ee3-86d9-e95d5ba0e3cb))。Gmail側もGeminiを使った「AI受信トレイ」機能を2026年から順次展開しており、頻繁にやり取りする相手を自動でVIP(重要人物)と判定し、その日の朝に「今日確認すべきこと」をまとめたブリーフィングを表示する([Google Blog](https://blog.google/products-and-platforms/products/gmail/gmail-is-entering-the-gemini-era/))。いずれも、AIの「重要」判定はあくまで一次選別であり、最終的にどのメールを役員に見せるか・どの順で処理するかはEA・秘書自身の経験による判断を残す。
+役員本人に代わって受信トレイを一次選別する作業は、AIの「優先度付け」「要約」機能と相性が良い。Outlook(Microsoft 365 Copilot)には「受信トレイの優先度を設定(Prioritize my inbox)」機能があり、送信者・役職・件名の内容などからメールを高/通常/低の3段階で自動分類し、重要メールには理由付きの要約を表示する。優先度の判断基準(特定の取引先を常に高くする、等)は設定画面から学習させられる([Microsoft Support](https://support.microsoft.com/en-us/topic/prioritize-my-inbox-65e37040-2c90-4ee3-86d9-e95d5ba0e3cb))。さらに2026年4月以降、Microsoft 365 Frontierプログラムの先行ユーザー向けに「エージェントモード」の提供が始まっており、指示を出さなくても受信トレイの仕分け・返信下書きの作成・振り分けルールの作成・会議の日程調整・会議室の再予約・集中時間の確保までAIが自律的に行えるようになってきている(全ユーザーへの一般提供は2026年内が目標、[Microsoft Support](https://support.microsoft.com/en-us/office/use-microsoft-365-copilot-in-outlook-to-manage-your-inbox-frontier-8fdf0f5c-d7b4-445b-9e02-3db9566de762))。Gmail側もGeminiを使った「AI受信トレイ」機能を米国のGoogle AI Plus・Pro加入者向けに展開しており(Google AI Ultra加入者には先行提供済み)、頻繁にやり取りする相手を自動でVIP(重要人物)と判定してその日確認すべきことをまとめて表示するほか、メールを開いた時点で文脈に沿った返信下書きをあらかじめ用意する機能も追加されている([Forbes JAPAN](https://forbesjapan.com/articles/detail/98034))。いずれも、AIの「重要」判定はあくまで一次選別であり、最終的にどのメールを役員に見せるか・どの順で処理するかはEA・秘書自身の経験による判断を残す。特に指示なしで動く「エージェントモード」ほど、どこまでを自動実行させてよいかの権限設定を意図的に絞る判断が重要になる。
 
 ### シーン5: お礼状・儀礼文書のドラフト作成
 
@@ -175,10 +175,10 @@ Microsoft TeamsのIntelligent Recap(会議の自動要約・チャプター分�
 
 ## 注意点・よくある誤解
 
-- **AIに本人になりすまして最終送信・確定をさせない**: 日程調整AIやメール下書き機能の中には、招待状の送信や返信の自動送付まで一気通貫で行えるものがある。EA・秘書の仕事の本質は「本人の代わりに、本人の意図と関係性を踏まえて最終調整すること」であり、AIの提案をそのまま自動送信する設定は、言葉選びの機微や相手との力関係を踏まえられないまま確定してしまうリスクがある。スケジューリングAIは「候補提示までを自動化し、送信前に必ず人が確認する」設定を基本にする。
+- **AIに本人になりすまして最終送信・確定をさせない**: 日程調整AIやメール下書き機能の中には、招待状の送信や返信の自動送付まで一気通貫で行えるものがある。2026年以降はMicrosoft 365 Copilotの「エージェントモード」のように、指示なしで受信トレイの仕分けや会議の再調整まで自律的に行う機能も広がっており、自動化の範囲が知らないうちに拡大しやすい。EA・秘書の仕事の本質は「本人の代わりに、本人の意図と関係性を踏まえて最終調整すること」であり、AIの提案をそのまま自動送信する設定は、言葉選びの機微や相手との力関係を踏まえられないまま確定してしまうリスクがある。スケジューリングAIやエージェントモードは「候補提示・下書きまでを自動化し、送信・確定前に必ず人が確認する」設定を基本にし、機能ごとに自律実行の範囲を確認する。
 - **役員の予定・機密情報を無料プラン・個人アカウントのAIに読み込ませない**: 役員のスケジュールには、M&Aや人事など外部に知られてはならない情報が含まれることが多い。カレンダー連動型AIツールを導入する際は、学習利用が既定でオフになっている法人契約(Microsoft 365 Copilot、Google Workspaceの対象プランなど)を使い、個人の無料アカウントや無料プランのチャットAIに機密性の高い日程・関係者情報を貼り付けない(詳細は[生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md))。
 - **儀礼・関係性が絡む文面は「たたき台」までと割り切る**: お礼状、お悔やみ状、経営層同士の紹介メールなど、相手との関係史や暗黙の力関係が絡む文面は、AIには読み取れない機微が多い。AIには型と一次ドラフトまでを任せ、最終的な言葉選びは必ずEA・秘書が行う。
-- **専業スケジューリングAIは事業継続性のリスクがある**: Clockwiseが2026年3月にサービス終了に至ったように、専業のAIカレンダーツールは買収・撤退のリスクが相対的に高い。乗り換えの手間やデータのエクスポート可否も踏まえ、可能であれば普段使いのメール・カレンダー基盤(Microsoft 365、Google Workspace)に統合された機能を優先し、専業ツールは「試してみてダメなら戻せる」範囲で使う判断も有効。
+- **専業スケジューリングAIは事業継続性のリスクがある**: Clockwiseが2026年3月にサービス終了に至ったように、専業のAIカレンダーツールは買収・撤退のリスクが相対的に高い。Reclaim.aiが用意していたClockwise移行者向けの価格据え置き優遇(利用料金を12か月間据え置き)も2026年6月30日で終了しており、優遇がなくなった後の通常料金(2026年8月時点でStarter 10ドル/月〜)で継続利用できるかも比較材料に入れる。乗り換えの手間やデータのエクスポート可否も踏まえ、可能であれば普段使いのメール・カレンダー基盤(Microsoft 365、Google Workspace)に統合された機能を優先し、専業ツールは「試してみてダメなら戻せる」範囲で使う判断も有効。
 - **AIの「優先度」判定を鵜呑みにしない**: 受信トレイの自動優先度付けは送信者や過去のやり取り頻度をもとにした統計的な判定であり、初めて連絡してきた重要な相手(新しい取引先の役員など)を見落とすことがある。AIが「低優先度」と分類したメールも、定期的に人の目で全件確認する運用を残す。
 
 ## 最初の一歩
@@ -193,6 +193,10 @@ Microsoft TeamsのIntelligent Recap(会議の自動要約・チャプター分�
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-08-11: AI日程調整アシスタント比較とMicrosoft 365 Copilotのエージェントモードを最新化
+- **内容**: Reclaim.ai(Free→Lite無料/Starter 10ドル・Business 15ドル・Enterprise 22ドル/月、いずれも年払い)とMotion(Pro AI・Business AIの年払い/月払いを併記し、新設の「AI Employees」49ドル/月ティアを追加)の料金を更新。Microsoft 365 Copilotの「Schedule with Copilot」が2026年3月に一般提供開始したこと、および2026年4月以降Microsoft 365 Frontierプログラムで先行提供が始まった「エージェントモード」(指示なしの受信トレイ仕分け・返信下書き・日程再調整・会議室再予約、全ユーザー展開は2026年内が目標)を仕組み・背景/シーン2/シーン4/注意点に反映。GmailのAI受信トレイが米国のGoogle AI Plus・Pro加入者へ展開され、文脈に沿った返信下書き機能が追加されたことを追記。Reclaim.aiのClockwise移行者向け価格据え置き優遇が2026年6月30日で終了した点を仕組み・背景と注意点に追記
+- **出典**: [Reclaim.ai Pricing](https://reclaim.ai/pricing)、[alfred_: Reclaim.ai Pricing in 2026](https://get-alfred.ai/blog/reclaim-pricing)、[Reclaim.ai Help Center: Switching from Clockwise to Reclaim.ai](https://help.reclaim.ai/en/articles/11123801-switching-from-clockwise-to-reclaim-ai)、[alfred_: Motion Pricing 2026](https://get-alfred.ai/blog/motion-pricing)、[Saner.AI: Honest Motion Reviews (2026)](https://www.saner.ai/blogs/motion-reviews)、[Windows Forum: Agentic Copilot in Outlook (Spring 2026)](https://windowsforum.com/threads/agentic-copilot-in-outlook-spring-2026-triage-drafts-and-calendar-automation.421226/)、[Microsoft Support: Use Microsoft 365 Copilot in Outlook to manage your inbox (Frontier)](https://support.microsoft.com/en-us/office/use-microsoft-365-copilot-in-outlook-to-manage-your-inbox-frontier-8fdf0f5c-d7b4-445b-9e02-3db9566de762)、[M365 Admin: Scheduling with Copilot in classic Outlook for Windows](https://m365admin.handsontek.net/microsoft-365-copilot-scheduling-copilot-classic-outlook-windows/)、[Velosio: Microsoft 365 Copilot Pricing Calculator (2026)](https://www.velosio.com/blog/m365-copilot-pricing-calculator/)、[Google Workspace Updates: Use Help me schedule in Gmail with multiple guests](https://workspaceupdates.googleblog.com/2026/03/use-help-me-schedule-in-gmail-to-easily-set-up-a-meeting-time-with-multiple-guests.html)、[Forbes JAPAN: グーグル、Gmailの受信トレイを変える](https://forbesjapan.com/articles/detail/98034)
 
 ### 2026-07-15: 初版執筆
 - **内容**: 秘書・エグゼクティブアシスタント(EA)職に特有の生成AI活用シーン(日程調整メール、AI日程調整アシスタントの比較、会議前ブリーフィング、受信トレイのトリアージ、お礼状などの儀礼文書、出張旅程の整理、議事録・フォローアップメール)を整理。Microsoft 365 Copilotのスケジューリング機能・受信トレイ優先度設定・エグゼクティブブリーフィングエージェント、Google Geminiの「日程調整のお手伝い」・AI受信トレイ、Reclaim.ai・Motionの料金比較、Clockwiseの2026年3月のサービス終了(Salesforceによる買収)を反映
