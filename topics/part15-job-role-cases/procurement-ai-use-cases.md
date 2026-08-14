@@ -4,7 +4,7 @@ part: 15
 chapter: 第9章 総務・秘書・購買調達
 tags: [購買, 調達, RFP, RFQ, スペンド分析, サプライヤーリスク, 価格交渉, 情報漏洩対策]
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-08-10
 ---
 
 # 購買・調達職における生成AI活用事例
@@ -21,7 +21,7 @@ updated: 2026-07-13
 2. **スペンド分析・カテゴリ分類(AI-OCR+機械学習)**: 請求書・発注データを読み取り、勘定科目やカテゴリに自動分類する技術。分類精度はフィードバックループ(過去の修正履歴の学習)によって継続的に向上する仕組みが一般的になっている。
 3. **サプライヤーリスクの継続モニタリング**: 財務データ・規制情報・ESG(環境・社会・ガバナンス)情報・地政学リスクなどをAIが常時スキャンし、異常があれば早期に警告する仕組み。調達関連の生成AIユースケースの中では「サプライヤーリスク評価・モニタリング」が本番導入率58%と最も進んでいる領域とされる([aimultiple](https://aimultiple.com/ai-procurement))。
 
-2026年に入り、SAP AribaはAIエージェント「Joule Bid Analysis Agent」を一般提供開始し、価格・総所有コスト(TCO)・納期条件・コンプライアンス要件などRFXで指定した評価軸に沿って複数サプライヤーの入札内容を自動比較する機能を実装した([SAVIC Technologies](https://www.savictech.com/insights/next-gen-sap-ariba-ai-source-to-pay-joule-agents-2026/))。日本国内でも、intra-mart Procurement Cloudが「部品Xを1,000個、納期2か月で調達したい」といった自然文の入力からRFQドラフトを自動生成し、見積回答を自動で比較表化する機能を提供している([intra-mart Procurement Cloud](https://procurement.intra-mart.jp/column/procurement/procurement-with-generative-ai))ほか、Leaner(リーナー)の「AI見積査定」は見積書のPDFからのデータ入力、複数サプライヤー見積の横並び比較、過去データとの照合、価格の妥当性チェックまでの作業の約8〜9割を自動化するとしている([Leaner](https://leaner.jp/ax))。いずれも「AIが候補・比較表・下書きを作り、人が最終判断する」という役割分担が現状の主流であり、次の段階として、AIエージェントが購買実務の複数ステップ(見積依頼→比較→交渉→発注)を自律的に連鎖させる「エージェント型調達」への移行が2026年の焦点になっている([Supply Chain Management Review](https://www.scmr.com/article/doing-more-with-less-practical-ai-moves-for-procurement-teams-in-2026))。
+2026年に入り、SAP AribaはAIエージェント「Joule Bid Analysis Agent」を一般提供開始し、単価だけでなく総所有コスト(TCO、送料や支払条件まで含めた実質コスト)・納期・リスク指標・サプライヤーのESG(環境・社会・ガバナンス)スコアといった複数の評価軸で入札内容を自動比較し、人手のレビューでは見落としやすいトレードオフを要約する機能を持つ([ERP Today](https://erp.today/sap-embeds-ai-and-joule-into-sap-ariba-to-transform-enterprise-procurement/)、[SAVIC Technologies](https://www.savictech.com/insights/next-gen-sap-ariba-ai-source-to-pay-joule-agents-2026/))。SAPは2026年6月、この他にもチャット・メール・Microsoft Teams経由で購買申請を受け付ける「Intake Management」エージェントや、自然文から契約書の下書きを作る「Ariba Contracts」のAI機能を一般提供開始しており、年内に計11種のJouleエージェントをAriba/Fieldglassに展開する計画としている([SAP Insider](https://sapinsider.org/blogs/sap-delivers-joule-agents-across-ariba-and-fieldglass-in-june-2026/))。日本国内でも、intra-mart Procurement Cloudが「部品Xを1,000個、納期2か月で調達したい」といった自然文の入力からRFQドラフトを自動生成し、見積回答を自動で比較表化する機能を提供している([intra-mart Procurement Cloud](https://procurement.intra-mart.jp/column/procurement/procurement-with-generative-ai))ほか、Leaner(リーナー)の「AI見積査定」は見積書のPDFからのデータ入力、複数サプライヤー見積の横並び比較、過去データとの照合、価格の妥当性チェックまでの作業の約8〜9割を自動化するとしている([Leaner](https://leaner.jp/ax))。Leanerは2026年3月には、下請法(2026年1月に改称・改正された取引適正化法)対応・カーボンニュートラル・BCP(事業継続計画)対応の負荷を減らすため、サプライヤーとの情報連携・コミュニケーションを自動化する新プラットフォーム「リーナーコネクト」をSUBARUなど大手製造業と共に提供開始した([Leaner](https://leaner.jp/news/20260325))。いずれも「AIが候補・比較表・下書きを作り、人が最終判断する」という役割分担が現状の主流であり、次の段階として、AIエージェントが購買実務の複数ステップ(見積依頼→比較→交渉→発注)を自律的に連鎖させる「エージェント型調達」への移行が2026年の焦点になっている([Supply Chain Management Review](https://www.scmr.com/article/doing-more-with-less-practical-ai-moves-for-procurement-teams-in-2026))。海外では一歩進んで、WalmartやMaersk、Vodafoneが実際に拘束力のある発注をAI交渉エージェントに任せ、人手では対応しきれない量のサプライヤー取引を処理する段階に入ったと報じられている([PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/procurement-teams-use-ai-to-reach-deals-humans-cant/))ほか、Forresterは2026年中にB2B売り手企業の20%がAIエージェント主導の見積交渉に対応を迫られると予測しており、調達側だけでなく販売側もAI対AIの交渉に備える必要が出てきている([Forrester](https://investor.forrester.com/news-releases/news-release-details/forresters-2026-b2b-marketing-sales-and-product-predictions-b2b))。
 
 ## 使いどころ・使い分け
 
@@ -141,7 +141,7 @@ updated: 2026-07-13
 
 ### 5. 価格交渉の準備(シミュレーション・想定問答)
 
-生成AIは「交渉相手になりきらせて想定問答を作らせる」使い方が効果的。実際の自動交渉AIの事例として、Walmartはサプライヤーとの価格交渉にPactum AI社のチャットボットを導入し、対象となった発注先(消費者向けではない業務用資材・サービス)との交渉で平均1.5〜3%程度のコスト削減と、支払条件で平均35日の延長を引き出したと報告されている。交渉対象となったサプライヤーの約7割がチャットボットとの交渉を「人間より好ましい」と回答した点も注目される(交渉は数週間ではなく数日で完了、対象は消費者向け商品ではない運用資材・サービス調達)([Bloomberg](https://www.bloomberg.com/news/articles/2023-04-26/walmart-uses-pactum-ai-tools-to-handle-vendor-negotiations)、[PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2023/walmart-finds-75-percent-vendors-prefer-negotiating-with-chatbot/partial/))。日本企業の多くはまだ自動交渉AIの本格導入段階ではなく、交渉前の準備(想定問答づくり)にチャットAIを使う段階が中心。
+生成AIは「交渉相手になりきらせて想定問答を作らせる」使い方が効果的。実際の自動交渉AIの事例として、Walmartはサプライヤーとの価格交渉にPactum AI社のチャットボットを導入し、対象となった発注先(消費者向けではない業務用資材・サービス)との交渉で平均1.5〜3%程度のコスト削減と、支払条件で平均35日の延長を引き出したと報告されている。交渉対象となったサプライヤーの約7割がチャットボットとの交渉を「人間より好ましい」と回答した点も注目される(交渉は数週間ではなく数日で完了、対象は消費者向け商品ではない運用資材・サービス調達)([Bloomberg](https://www.bloomberg.com/news/articles/2023-04-26/walmart-uses-pactum-ai-tools-to-handle-vendor-negotiations)、[PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2023/walmart-finds-75-percent-vendors-prefer-negotiating-with-chatbot/partial/))。2026年には、Walmartに加えてMaersk・VodafoneもAI交渉エージェントを本番運用し、拘束力のある発注を人手では対応しきれない件数まで処理する段階に入ったと報じられており、大手小売・物流・通信業ではパイロットから本番稼働への移行が進んでいる([PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/procurement-teams-use-ai-to-reach-deals-humans-cant/))。日本企業の多くはまだ自動交渉AIの本格導入段階ではなく、交渉前の準備(想定問答づくり)にチャットAIを使う段階が中心。
 
 ```
 あなたは調達・購買部門のバイヤーです。以下の条件でサプライヤーとの
@@ -193,14 +193,14 @@ ChatGPT・Gemini・ClaudeのいずれもCSV・Excelの読み込みに対応し�
 
 納期調整の依頼・支払条件変更の打診など、関係性に影響する可能性がある内容は、AIが作った下書きをそのまま送らず、担当者が文面のトーンを最終確認してから送付する。
 
-### 主要調達プラットフォームのAI機能(2026年7月時点)
+### 主要調達プラットフォームのAI機能(2026年8月時点)
 
 | ツール | 位置づけ | 特徴 |
 |---|---|---|
-| SAP Ariba(Joule Bid Analysis Agent) | 海外大手の調達・購買基盤 | 2026年第1四半期に一般提供開始。RFXで指定した評価軸(価格・TCO・納期・コンプライアンス等)に沿って複数サプライヤーの入札を自動比較するAIエージェント |
+| SAP Ariba(Joule Bid Analysis Agent 等) | 海外大手の調達・購買基盤 | Joule Bid Analysis Agentは価格・TCO・納期・リスク指標・ESGスコア等で入札を自動比較。2026年6月には、チャット等から購買申請を受け付ける「Intake Management」エージェント、契約書のAIドラフト作成機能もAriba/Fieldglassに一般提供開始され、年内に計11種のJouleエージェントへ拡大予定 |
 | Coupa | 海外大手の統合的な支出管理(Spend Management)プラットフォーム | 調達・財務・サプライヤーネットワークを横断するAI機能を拡充中、大企業・中堅企業向け |
 | intra-mart Procurement Cloud | 国内のクラウド型調達・購買管理システム | 自然文からのRFQドラフト自動生成、見積回答の自動比較表化、BSM(ビジネス・スペンド・マネジメント)による支出可視化 |
-| Leaner(リーナー見積・リーナー購買) | 国内の調達・購買部門向けクラウドサービス | 「AI見積査定」が見積書PDFのデータ化・複数社比較・過去データ照合・価格妥当性チェックの作業の約8〜9割を自動化すると謳う。ITreview Grid Award購買管理システム部門でリーダー評価を4期連続で獲得 |
+| Leaner(リーナー見積・リーナー購買・リーナーコネクト) | 国内の調達・購買部門向けクラウドサービス | 「AI見積査定」が見積書PDFのデータ化・複数社比較・過去データ照合・価格妥当性チェックの作業の約8〜9割を自動化すると謳う。2026年3月には、下請法(2026年1月改称の取引適正化法)対応・カーボンニュートラル・BCP対応を目的にサプライヤーとの情報連携を自動化する「リーナーコネクト」を提供開始 |
 | ChatGPT / Claude / Gemini / Copilot(汎用AI) | ドラフト作成・比較・要約の汎用エージェント | 専用ツールほどの自動化・監査ログはないが、RFQドラフト・見積比較・交渉準備・レポート下書きなど幅広い用途に安価に使える。機密情報の入力ルールを事前に確認する必要がある |
 
 専用調達プラットフォームは「見積比較の自動化・監査ログ・サプライヤーマスタとの連携」を重視する場合に、汎用AIは「ドラフト作成・交渉準備・レポート下書きなど裾野の広い業務」に向く。中小規模の購買部門では汎用AIだけで多くの用途をカバーし、取引量が多い企業では専用プラットフォームのAI機能と併用するのが実務的な線引きになる。
@@ -227,6 +227,10 @@ ChatGPT・Gemini・ClaudeのいずれもCSV・Excelの読み込みに対応し�
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 
 ## 更新履歴
+
+### 2026-08-10: SAP Ariba・Leaner・自動交渉AIの動向を最新化
+- **内容**: 「仕組み・背景」「価格交渉の準備」「主要調達プラットフォームのAI機能」を更新。SAP AribaのJoule Bid Analysis Agentの評価軸(TCO・リスク指標・ESGスコア等)を具体化し、2026年6月に一般提供開始した「Intake Management」「Ariba Contracts」のJouleエージェント(年内計11種へ拡大予定)を追記。Leanerが2026年3月に提供開始したサプライヤー連携自動化プラットフォーム「リーナーコネクト」(下請法改称の取引適正化法対応等)を追記。自動交渉AIについて、Walmartに加えMaersk・Vodafoneが2026年に本番運用へ移行した点、Forresterの「2026年にB2B売り手企業の20%がAIエージェント主導の見積交渉に対応」という予測を追加
+- **出典**: [ERP Today: SAP Embeds AI and Joule Into SAP Ariba](https://erp.today/sap-embeds-ai-and-joule-into-sap-ariba-to-transform-enterprise-procurement/)、[SAP Insider: SAP Delivers Joule Agents Across Ariba and Fieldglass in June 2026](https://sapinsider.org/blogs/sap-delivers-joule-agents-across-ariba-and-fieldglass-in-june-2026/)、[Leaner: 自律稼働する調達プラットフォーム「リーナーコネクト」提供開始](https://leaner.jp/news/20260325)、[PYMNTS: Procurement Teams Use AI to Reach Deals Humans Can't](https://www.pymnts.com/news/artificial-intelligence/2026/procurement-teams-use-ai-to-reach-deals-humans-cant/)、[Forrester: 2026 B2B Marketing, Sales, And Product Predictions](https://investor.forrester.com/news-releases/news-release-details/forresters-2026-b2b-marketing-sales-and-product-predictions-b2b)
 
 ### 2026-07-13: 初版執筆
 - **内容**: 購買・調達職における生成AI活用事例として、RFP/RFQドラフト作成、複数サプライヤー見積の比較・構造化、サプライヤーリスク評価・与信情報の要約(反社チェックは人による確認が必須)、発注契約書の一次レビュー、価格交渉準備(Walmart×Pactum AIの自動交渉事例含む)、支出分析レポート作成、定型連絡文面の自動化についてコピペ用プロンプト例を整理。SAP Ariba/Coupa/intra-mart Procurement Cloud/Leanerなど主要調達プラットフォームのAI機能比較と、法務レビューとの役割分担・情報漏洩対策の注意点をまとめた
