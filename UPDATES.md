@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-12
+- [翻訳・通訳担当における生成AI活用事例](topics/part15-job-role-cases/translation-interpretation-ai-use-cases.md): DeepL料金体系・リアルタイム通訳(Timekettle X1等)・字幕吹き替え(mimidub追加)を最新化・増強
 - [化学・素材業界における生成AI活用事例](topics/part14-industry-cases/chemical-materials-industry-ai-use-cases.md): 材料開発の最新事例(三菱マテリアル・自律実験)とプラント運転支援AI(予知保全・故障診断エージェント)の節を最新化・増強
 ## 2026-08-11
 - [スポーツ業界における生成AI活用事例](topics/part14-industry-cases/sports-industry-ai-use-cases.md): MLB「Scout Insights」・国内NPB+・NBA Inside the Game・Wimbledon・WSC Sports・Niiva Talk・ダイナミックプライシング・MLBロボット審判/W杯2026のSAOTを2026年8月時点の最新情報に更新・増強
