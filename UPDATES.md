@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-10
+- [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): インバウンド最新統計・新サービス(ジャストプランニング「AI来客予測」)・補助金情報を反映して最新化
 ## 2026-08-09
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](topics/part02-llm-basics/context-window-basics.md): Claude Opus 5・GPT-5.6のChatGPT既定化・Grok 4.5などモデル別比較表を2026年8月時点に最新化、Chroma社のcontext rot検証を反映
 - [生成AIに向く業務・向かない業務の切り分け](topics/part12-business-practice/ai-task-suitability.md): METR Time Horizon 1.1の50%/80%信頼水準の差、スタンフォードAI Index 2026、MIT NANDA GenAI Divide調査、Gartnerのエージェント型AI中止予測を反映して最新化
