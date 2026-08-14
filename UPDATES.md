@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-12
+- [半導体・電機業界における生成AI活用事例](topics/part14-industry-cases/semiconductor-electronics-ai-use-cases.md): EDAエージェント型ツール(AgentEngineer™・ChipStack AI Super Agent)の進化とサプライチェーン・国内新事例(Advanced Vision Solutions等)を反映して最新化・増強
 - [翻訳・通訳担当における生成AI活用事例](topics/part15-job-role-cases/translation-interpretation-ai-use-cases.md): DeepL料金体系・リアルタイム通訳(Timekettle X1等)・字幕吹き替え(mimidub追加)を最新化・増強
 - [化学・素材業界における生成AI活用事例](topics/part14-industry-cases/chemical-materials-industry-ai-use-cases.md): 材料開発の最新事例(三菱マテリアル・自律実験)とプラント運転支援AI(予知保全・故障診断エージェント)の節を最新化・増強
 ## 2026-08-11
