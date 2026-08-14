@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-14
+- [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part04-risk-security/ai-regulation-and-governance-trends.md): EUデジタル・オムニバスの正式発効・透明性義務の適用開始・米国コロラド州法を巡る訴訟合戦を反映して最新化・増強
 - [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): 2026-07-28仕様の正式版確定・Enterprise Managed Authorization・AAIF加盟拡大を反映して最新化
 - [AIエージェントとは何か](topics/part11-ai-agents/ai-agent-basics.md): MCP仕様更新(2026年7月28日付・ステートレス化)とMeta Muse Codeの新規参入を反映して最新化・増強
 - [推論モデル(Reasoning Model)とは何か](topics/part02-llm-basics/reasoning-model-basics.md): ChatGPTの思考スライダー統一・Claude Opus 5/Fable 5・Gemini 3.7 Flashなど直近3週間の世代交代を反映して最新化・増強
