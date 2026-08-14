@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-11
+- [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part15-job-role-cases/data-analyst-ai-use-cases.md): Power BI Copilot(Fabric F2緩和)・Amazon Quick Suite(旧Amazon Q in QuickSight)・Tableau+・ThoughtSpot Spotterの料金/機能と、新ツールClaude for Excelを反映し最新化
 - [保育・幼児教育における生成AI活用事例](topics/part14-industry-cases/childcare-early-education-ai-use-cases.md): こどもストーリーの1EdTech Japan賞受賞、ルクミー「すくすくレポート」、hinaryの全国私立保育連盟提携、こども家庭庁「保育ICTラボ事業」を反映して最新化・増強
 - [航空業界における生成AI活用事例](topics/part14-industry-cases/airline-industry-ai-use-cases.md): ANA neoAI Chat・JALカードX-Ghost本格導入・デルタAI価格設定の規制動向(2026年8月米上院公聴会)・AVIATARのLATAM導入を追記し最新化
 - [カスタマーサクセス職における生成AI活用事例](topics/part15-job-role-cases/customer-success-ai-use-cases.md): Gainsightのエージェント基盤化(Staircase AI買収・MCP対応)、ChurnZero/HubSpot/Totangoの料金・新機能、Sansan最新調査を反映して最新化
