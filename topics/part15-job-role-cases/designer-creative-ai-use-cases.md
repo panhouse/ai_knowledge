@@ -4,7 +4,7 @@ part: 15
 chapter: 第14章 デザイナー・クリエイティブ
 tags: [デザイナー, UI/UXデザイン, Figma AI, Adobe Firefly, ムードボード, 著作権, ブランド一貫性, デザインレビュー]
 created: 2026-07-17
-updated: 2026-07-17
+updated: 2026-08-12
 ---
 
 # デザイナー・クリエイティブ職における生成AI活用事例
@@ -22,11 +22,13 @@ UI/UXデザイナー、グラフィックデザイナー、ブランド・クリ
 1. **汎用生成AI(ChatGPT・Gemini・Midjourney等)による発散フェーズの支援**: プロジェクトの初期、まだ方向性が定まっていない段階で、ムードボード(参考イメージを集めた方向性確認用の画像群)やコンセプトビジュアルを大量に・素早く試すのに使う。ブランド資産との統合は前提にせず、「幅を広げる」ことが目的
 2. **デザインツール(Figma・Adobe Creative Cloud等)にネイティブ統合されたAI機能による制作フェーズの支援**: 実際に触っているキャンバス・レイヤーの中でAIを呼び出し、ワイヤーフレームの下書き生成、テキストの言い換え、コメント・フィードバックの要約、既存アセットを参照した部分編集(Generative Fill等)を行う。デザインファイルそのものの構造・レイヤー・ブランドキットを踏まえて動く点が汎用AIと異なる
 
-Figmaは2026年5月に、対話しながら反復・修正を続ける「Figma Design Agent」を発表し、これまでの「First Draft」(プロンプトからワイヤーフレーム・基本デザインを生成する機能)の発展形として、探索から仕上げまでをより幅広くカバーする方向に進んでいる。あわせてFigJam AIの「Sort stickies」機能や、Design Agentの「コメントスレッドをテーマ・アクションアイテムに要約する」機能など、**フィードバックを整理する用途**にもAIが組み込まれてきている([Figma: AI Design Review](https://www.figma.com/solutions/design-review/)、[Figma Learn: Use First Draft with Figma AI](https://help.figma.com/hc/en-us/articles/23955143044247-Use-First-Draft-with-Figma-AI))。
+Figmaは2026年5月20日に、対話しながら反復・修正を続ける「Figma Design Agent」をベータ公開し、これまでの「First Draft」(プロンプトからワイヤーフレーム・基本デザインを生成する機能)の発展形として、探索から仕上げまでをより幅広くカバーする方向に進んでいる。デザインナビゲーションの「エージェント」タブや各フレームに表示されるエージェントアイコン(✦)から自然言語で指示すると、キャンバス上のレイヤーを直接編集してくれる。プロンプト内で`@`を使ってコンポーネント・variables・スタイルを明示的に指定すると、既存のデザインシステムに沿った出力になりやすい([Figma: AI Design Review](https://www.figma.com/solutions/design-review/)、[Figma Learn: Use First Draft with Figma AI](https://help.figma.com/hc/en-us/articles/23955143044247-Use-First-Draft-with-Figma-AI)、[NOT DESIGN SCHOOL: Figma Design Agentの使い方](https://notdesignschool.jp/story/figma-ai-agent))。2026年8月時点ではベータ期間中のためAIクレジットを消費せずに試せるが、正式リリース後はクレジット消費に切り替わる見込みで、無料で使える期間には限りがある点に注意する。あわせてFigJam AIの「Sort stickies」機能や、Design Agentの「コメントスレッドをテーマ・アクションアイテムに要約する」機能など、**フィードバックを整理する用途**にもAIが組み込まれてきている。Figma AIのデザインレビュー機能は「レビュー→AIによる修正→再共有」を1つのワークスペース内で完結させられる設計になっており、プロトタイプやUI案を素早く複数提示したいデザインリードや、フィードバック反映のスピードを上げたいマネージャー層で使われ始めている。
 
-Adobe側でもPhotoshopのGenerative Fill(生成塗りつぶし)がFirefly Image 4モデルにより高精度化し、Gemini 3(Nano Banana Pro)やFLUX.2 proといった他社モデルも選べるマルチモデル対応が進んでいるが、一方で「1枚の画像単位の操作が中心で、似た画像群にまとめて同じ編集を適用する仕組みはまだ弱い」「生成後にプロンプトを遡って調整し直すことはできない(ラスタライズされた結果として確定する)」という制約も残る([PhotoshopNews: What's New in Photoshop 2026](https://www.photoshopnews.com/2026/04/04/whats-new-photoshop-2026-ai-assistant-generative-updates))。
+Adobe側では、2025年10月に「Firefly Image 5」(ネイティブ4MP出力、レイヤー編集対応、自分のポートフォリオを学習させたカスタムモデルの作成に対応)を投入し、2026年1月には専用のFill & Expandモデルを追加してPhotoshopのGenerative Fill(生成塗りつぶし)の出力解像度を高めた。2026年3月時点でFireflyアプリは自社モデルに加えGemini 3(Nano Banana Pro)・GPT Image・FLUX.2 pro・Ideogram 3.0・Runway Gen-4.5など25以上のモデルを選べるマルチモデル対応のプラットフォームに拡張されている。Nano Banana Proはロゴ・ブランドカラー・フォントサンプル・過去のキャンペーン画像など最大14枚の参照画像を渡すことでブランドの世界観を再現しやすい点が特徴で、ブランド一貫性が求められるビジュアル作成でFireflyと組み合わせて使われる場面が増えている。一方で「1枚の画像単位の操作が中心で、似た画像群にまとめて同じ編集を適用する仕組みはまだ弱い」「生成後にプロンプトを遡って調整し直すことはできない(ラスタライズされた結果として確定する)」という制約は残る([TechCrunch: Adobe Firefly Image 5 brings support for layers](https://techcrunch.com/2025/10/28/adobe-firefly-image-5-brings-support-for-layers-will-let-creators-make-custom-models/)、[PhotoshopNews: What's New in Photoshop 2026](https://www.photoshopnews.com/2026/04/04/whats-new-photoshop-2026-ai-assistant-generative-updates)、[Google Blog: Nano Banana Pro](https://blog.google/innovation-and-ai/products/nano-banana-pro/))。
 
-Figmaが2026年に実施した調査「State of the Designer 2026」(NewtonX社との共同調査、906名のデジタルデザイナー対象)によれば、デザイナーの72%が生成AIツールを業務で使用しており、前年からAI利用量が増えたと回答した割合は98%、4人に3人が「毎日」AIを使っていると回答している。一方で「AIで最初のインターフェース下書きを作る」という使い方をしているのは22%にとどまり、最も多い用途は「顧客リサーチ」(38%)だった([Figma: State of the Designer 2026](https://www.figma.com/blog/state-of-the-designer-2026/))。この数字が示す通り、**AIは「最終成果物をゼロから作る」よりも「調査・下書き・反復・整理」という周辺工程で先に定着している**、というのが2026年7月時点の実態に近い。
+Figma・Adobe以外の選択肢として、テキストプロンプトから公開可能な完成度のWebサイトを直接生成する「Framer AI」や、手描きスケッチ・スクリーンショットから複数画面のモックアップを生成する「Uizard」(Autodesigner 2.0エンジン)も実務で使われている。Framer AIはコンポーネント・タイポグラフィ・配色ルールを踏まえたレイアウトを一括生成し、公開まで一気通貫で進めたいプロジェクトに向く。Uizardはデザインの専門知識がない担当者でもクリック可能なプロトタイプを素早く作れる手軽さが特徴で、企画・営業側がラフな画面イメージを素早く可視化したい場面に向く。いずれもFigmaほどデザインシステムとの厳密な統合はできないため、正式なプロダクト開発に進む前段の「素早く見せる」用途が中心になる([Banani: Best AI for UI Design in 2026](https://www.banani.co/blog/ai-for-ui-design-and-wireframes))。
+
+Figmaが2026年に実施した調査「State of the Designer 2026」(NewtonX社との共同調査、906名のデジタルデザイナー対象)によれば、デザイナーの72%が生成AIツールを業務で使用しており、前年からAI利用量が増えたと回答した割合は98%、4人に3人が「毎日」AIを使っていると回答している。一方で「AIで最初のインターフェース下書きを作る」という使い方をしているのは22%にとどまり、最も多い用途は「顧客リサーチ」(38%)だった([Figma: State of the Designer 2026](https://www.figma.com/blog/state-of-the-designer-2026/))。この数字が示す通り、**AIは「最終成果物をゼロから作る」よりも「調査・下書き・反復・整理」という周辺工程で先に定着している**、というのが2026年8月時点の実態に近い。
 
 ## 使いどころ・使い分け
 
@@ -36,6 +38,7 @@ Figmaが2026年に実施した調査「State of the Designer 2026」(NewtonX社�
 |---|---|---|---|
 | 発散(方向性探し) | ムードボード・コンセプトビジュアルの量産 | Midjourney、ChatGPT/Gemini(画像生成)、Adobe Firefly | 幅広く試すことが目的なのでブランド資産との厳密な統合は不要。詳細は[画像生成AIの基本](../part08-specialized-ai-tools/image-generation-ai-basics.md) |
 | ワイヤーフレーム・モックアップの下書き | プロンプトからUI構成案を生成、既存デザインのバリエーション出し | Figma AI(First Draft / Design Agent) | Figmaのレイヤー構造・コンポーネントとして直接編集できる状態で出力されるため、他ツールで作った画像を後から取り込むより手戻りが少ない |
+| 企画段階のラフな画面イメージの可視化・公開可能なWebサイトの一括生成 | 非デザイナーが素早くプロトタイプを見せる、テキストから公開用サイトを生成する | Uizard(スケッチ・スクショからの下書き)、Framer AI(公開品質のWebサイト生成) | デザインシステムとの厳密な統合は弱いが、企画・営業側が「触れる画面イメージ」を数分で作れる。正式なプロダクト開発の下書きにはFigma AIへの移行を前提にする |
 | バナー・アイコン等のバリエーション量産(A/Bテスト用) | 同一デザインの配色・コピー違いパターンを複数生成 | Figma AI、Adobe Firefly(Generative Fill/Expand)、汎用チャットAI | 「同じテイストで◯パターン」という指示に強い。最終的な効果検証はマーケティング側の[A/Bテスト設計](./product-manager-ai-use-cases.md)の考え方に準じる |
 | デザイン内のコピー(マイクロコピー・CTA文言) | ボタン文言・見出し・エラーメッセージ等の複数案出し | Figmaの「Rewrite」機能、汎用チャットAI | トーン変更・翻訳・文字数調整に強い。文章そのものの作り方は[生成AIによる文章作成・編集の実務活用](../part12-business-practice/ai-writing-and-editing.md)を参照 |
 | クライアント・ステークホルダー向けプレゼン | デザイン案の意図を説明するナラティブ作成 | 汎用チャットAI | 「なぜこの方向性か」を言語化する作業。考え方は[PdM職のロードマップ説明](./product-manager-ai-use-cases.md)のナラティブ生成と共通 |
@@ -161,25 +164,31 @@ B2B向け在庫管理SaaSの、商品一覧画面のワイヤーフレームを�
 
 Figma上で完結させたい場合はFigJam AIの「Sort stickies」(付箋を選択して要約させる機能)やFigma Design Agentのコメント要約機能でも近い処理ができる。汎用チャットAIを使う利点は、Figma外の議事録やSlackの指摘も一緒に統合できる点にある。
 
-### ツール横断の対応付け(2026年7月時点)
+### ツール横断の対応付け(2026年8月時点)
 
 | デザイナーの業務 | 汎用チャットAI/画像生成AI | デザインツール組み込みAI |
 |---|---|---|
 | ムードボード・コンセプト探索 | ChatGPT・Gemini(画像生成)、Midjourney | Adobe Firefly(ムードボード生成・レイアウト案の機能を持つ) |
-| ワイヤーフレーム・画面デザインの下書き | — | **Figma AI**の「First Draft」「Design Agent」(2026年5月発表、対話しながら反復・仕上げまで対応) |
+| ワイヤーフレーム・画面デザインの下書き | — | **Figma AI**の「First Draft」「Design Agent」(2026年5月ベータ公開、対話しながら反復・仕上げまで対応) |
+| テキストプロンプトから公開品質のWebサイト生成 | — | **Framer AI**(コンポーネント・配色ルールを踏まえて一括生成)、**Uizard**(スケッチ・スクショからの多画面モックアップ) |
 | テキストの言い換え・翻訳・トーン変更 | 汎用チャットAI | **Figma**の「Rewrite」機能(選択したテキストレイヤーに対して直接実行) |
-| 画像内の部分編集・背景拡張 | — | **Adobe Photoshop**のGenerative Fill/Expand(Firefly Image 4モデル、Gemini 3・FLUX.2 proなど他社モデルも選択可) |
+| 画像内の部分編集・背景拡張 | — | **Adobe Photoshop**のGenerative Fill/Expand(Firefly Image 5モデル、Fill & Expand専用モデル。Gemini 3・GPT Image・FLUX.2 pro・Ideogram 3.0など他社モデルも選択可) |
+| ブランド一貫性を保った参照ビジュアル生成 | Gemini 3 Pro Image「Nano Banana Pro」(ロゴ・ブランドカラー・フォント・過去キャンペーン画像を最大14枚まで参照可能) | Adobe Fireflyのカスタムモデル(自社ポートフォリオを学習させて再現) |
 | フィードバック・コメントの要約 | 汎用チャットAIに議事録・コメントを貼り付けて要約 | **FigJam AI**の「Sort stickies」、Figma Design Agentのコメントスレッド要約 |
 | クライアント向け説明資料 | 汎用チャットAIでナラティブ化 | — |
 
-Figmaの料金は、Professionalプランの「Full seat」で年払い月額16ドルからで、AI機能は「クレジット制」(2026年時点でFullシートは月3,000クレジット、閲覧のみのシート等は月500クレジット/日次上限150)になっている。2026年3月18日からはこのクレジット上限の運用が厳格化されており、無制限に使い放題ではない点に注意する([Figma料金・クレジット制の解説記事](https://www.toolworthy.ai/tool/figma))。Adobe Fireflyの料金プラン・商用利用条件は[生成AIによる画像・ビジュアル作成の実務活用](../part12-business-practice/ai-image-and-visual-creation-for-business.md#ツール横断の対応表2026年7月時点)の対応表を参照してほしい。
+Figmaの料金は、Professionalプランの「Full seat」で年払い月額16ドル(月払いは$20)からで、AI機能は「クレジット制」(Fullシートは月3,000クレジット、Organizationは月4,250クレジット、閲覧のみのDev/Collabシート等は月500クレジット)になっている。2026年3月18日からはこのクレジット上限の運用が全プランで厳格化され、2026年第2四半期からはクレジットが不足した場合の追加購入(従量課金1クレジット0.03ドル、または月120ドルで5,000クレジットのアドオン)もできるようになった。無制限に使い放題ではなく、バリエーション出しやワイヤーフレーム再生成を繰り返すとすぐに上限へ近づく点に注意する([Figma料金・クレジット制の解説記事](https://www.toolworthy.ai/tool/figma))。
+
+Adobe Fireflyは2026年2月に料金体系が変わり、Standard(月9.99ドル/日本円約1,580円、月2,000クレジット)・Pro(月19.99ドル/約3,180円、月4,000クレジット)・Premium(月199.99ドル/約31,680円、月50,000クレジット)のいずれのプランでも、Generative Fillやテキストから画像・ベクター生成などの「標準生成」は無制限に使え、クレジットは動画・音声・他社モデル(パートナーモデル)を使った「プレミアム生成」にのみ消費される仕組みに変わった。バリエーション量産が中心のデザイナー業務では、Standardプランでも生成回数を気にせず試せるようになった点は大きい。より広範なツール横断の料金対応表は[生成AIによる画像・ビジュアル作成の実務活用](../part12-business-practice/ai-image-and-visual-creation-for-business.md#ツール横断の対応表2026年7月時点)を参照してほしい。
 
 ## 注意点・よくある誤解
 
 - **「AIで作った」ことをクライアントに開示しないと契約違反になり得る**: 受託制作で「人間のデザイナー・カメラマンが制作する」ことが契約上の前提になっている案件で、無断でAI生成物を納品するとトラブルの原因になる。AIを使う工程がある場合は、事前にクライアントへ開示・合意を得ておく。プロンプト・使用ツール・生成日時などを記録しておくと、後から権利関係を確認する際に役立つ。
-- **著作権・商標・肖像権は画像生成AI全般に共通のリスクとして別ページで詳しく扱っている**: AI生成物が既存の著作物に似てしまうリスク、実在の人物・著名なロゴに似た表現の商標権・パブリシティ権の問題は、デザイナーの仕事でも同様に発生する。用途別のリスクの目安・公開前チェックリストは[生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)を参照する。
-- **ブランドの核となるビジュアルはAI単体で完結させない**: AIは「幅広く試す」「バリエーションを量産する」ことには強いが、同一のキャラクター・世界観を長期間・大量のアセットにわたって寸分違わず再現することは苦手。ロゴやキービジュアルなど、ブランドの差別化の核になる部分は、AIで方向性を探ったうえで人間のイラストレーター・アートディレクターが最終的に仕上げる分業が安全である。
-- **Figma AIなどのクレジット制はコストが見えにくい**: デザインツール組み込みのAI機能は「クレジット」単位で消費され、シートの種類によって上限が異なる。バリエーション出しやワイヤーフレーム生成を何度もやり直すとクレジットを消費しやすいため、チームで使う際は消費ペースを定期的に確認する。
+- **著作権・商標・肖像権は画像生成AI全般に共通のリスクとして別ページで詳しく扱っている**: AI生成物が既存の著作物に似てしまうリスク、実在の人物・著名なロゴに似た表現の商標権・パブリシティ権の問題は、デザイナーの仕事でも同様に発生する。国内でも2025年11月に、無断でAI生成画像を書籍の表紙デザインに使用したとして著作権法違反の容疑で書類送検された事例が報じられており、「AI生成だから安全」という思い込みは通用しない。用途別のリスクの目安・公開前チェックリストは[生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)を参照する。
+- **Adobe Fireflyの著作権補償(IP indemnification)は無条件ではない**: Fireflyはライセンス済みのAdobe Stock・オープンライセンス素材・パブリックドメイン素材のみで学習しているため、対象プランでは生成物が既存著作物を侵害した場合の補償を受けられる。ただし補償の対象は主にEnterprise向けの契約(サイトライセンス等)で、Adobeの利用ガイドラインに違反した生成(実在の作家名・著名キャラクター名を狙ったプロンプト等)や、API・サードパーティ経由での利用は補償の対象外になる。「補償があるから何でも安全」ではなく、契約範囲と利用ガイドラインを確認したうえで、広告出稿など影響の大きい用途にはFireflyのような補償付きツールを優先する、という使い分けが実務的である。
+- **AI生成物の開示ルールは地域差が大きくなっている**: 欧州ではAI法(EU AI Act)第50条の透明性義務が2026年8月2日から適用開始となり、AIが生成・加工した画像・音声・動画に機械可読な形でAI生成である印を付けることが罰則付きの法的義務になった。日本国内では2026年3月時点の「AI事業者ガイドライン(第1.2版)」でAI生成の開示は「望ましい取り組み」として推奨されているに留まり法的義務ではないが、広告として使う場合は景品表示法のステルスマーケティング規制(AIで作ったことを隠して広告と分からない体裁で発信する行為)に触れないよう、AI活用の有無にかかわらず広告表示のルールを守る必要がある。EU向けの制作物を扱う場合は日本向けより一段厳しい開示義務があることを前提に進める。
+- **ブランドの核となるビジュアルはAI単体で完結させない**: AIは「幅広く試す」「バリエーションを量産する」ことには強いが、同一のキャラクター・世界観を長期間・大量のアセットにわたって寸分違わず再現することは苦手。Nano Banana Proのような参照画像ベースの生成やAdobe Fireflyのカスタムモデルはブランド一貫性の再現度を高めるが、完全な一致は保証できない。ロゴやキービジュアルなど、ブランドの差別化の核になる部分は、AIで方向性を探ったうえで人間のイラストレーター・アートディレクターが最終的に仕上げる分業が安全である。
+- **Figma AIなどのクレジット制はコストが見えにくい**: デザインツール組み込みのAI機能は「クレジット」単位で消費され、シートの種類によって上限が異なる。Figma Design Agentは2026年8月時点ではベータ期間中でクレジット不要だが、正式リリース後は消費対象になる見込みなので、無料期間を前提にした運用に慣れきらないよう注意する。バリエーション出しやワイヤーフレーム生成を何度もやり直すとクレジットを消費しやすいため、チームで使う際は消費ペースを定期的に確認する。
 - **フィードバック整理AIは「声の大きさ」に引っ張られやすい**: コメント・付箋の要約は、似た言い回しの意見をまとめて「多数派の意見」であるかのように見せてしまうことがある。発言者数・出典を明示させ、実際のコメントに戻って確認する運用にする(考え方は[PdM職のフィードバック要約](./product-manager-ai-use-cases.md#注意点よくある誤解)と共通)。
 - **AIによる下書きは既存のデザインシステム・コンポーネントを無視して作られることがある**: Figma AIでワイヤーフレームを生成させても、社内のデザインシステム(共通コンポーネント・色/余白のトークン)通りにならない場合がある。生成後は既存コンポーネントへの置き換え、アクセシビリティ(コントラスト比・タップ領域)の確認を人が行う。
 
@@ -197,6 +206,10 @@ Figmaの料金は、Professionalプランの「Full seat」で年払い月額16�
 - [マーケティング職における生成AI活用](./marketing-ai-use-cases.md)
 
 ## 更新履歴
+
+### 2026-08-12: 仕組み・背景/実務での使い方/注意点の節を最新化
+- **内容**: Figma Design Agentのベータ運用(2026年5月20日ベータ公開、@メンションでの精度向上、正式リリース後のクレジット消費への切り替え)、Adobe Firefly Image 5(2025年10月・レイヤー編集・カスタムモデル学習)とFill & Expandモデル(2026年1月)、Fireflyアプリの25以上のマルチモデル対応、Nano Banana Proの参照画像によるブランド一貫性維持を追記。Framer AI・Uizardを「使いどころ」表とツール横断の対応付けに追加。Figma AIクレジットの従量課金アドオン(2026年Q2〜)、Adobe Fireflyの2026年2月の料金体系変更(標準生成が全プラン無制限化)を反映して料金情報を更新。注意点にAdobe FireflyのIP補償の適用範囲、EU AI法第50条の透明性義務(2026年8月2日適用開始)と日本のAI事業者ガイドライン(第1.2版)の開示ルールの地域差、国内での無断AI生成画像使用による書類送検事例を追加
+- **出典**: [Figma: State of the Designer 2026](https://www.figma.com/blog/state-of-the-designer-2026/)、[NOT DESIGN SCHOOL: Figma Design Agentの使い方解説](https://notdesignschool.jp/story/figma-ai-agent)、[Figma Pricing 2026 | Toolworthy](https://www.toolworthy.ai/tool/figma)、[TechCrunch: Adobe Firefly Image 5 brings support for layers](https://techcrunch.com/2025/10/28/adobe-firefly-image-5-brings-support-for-layers-will-let-creators-make-custom-models/)、[Google Blog: Nano Banana Pro](https://blog.google/innovation-and-ai/products/nano-banana-pro/)、[Adobe Blog: Create with unlimited generations in Adobe Firefly](https://blog.adobe.com/en/publish/2026/02/02/create-unlimited-generations-adobe-firefly-all-in-one-creative-ai-studio)、[LicenseOrg: Adobe Firefly Indemnification Explained](https://www.licenseorg.com/blog/adobe-firefly-indemnification-explained)、[Banani: Best AI for UI Design in 2026](https://www.banani.co/blog/ai-for-ui-design-and-wireframes)、[JETRO: 欧州委、AI生成コンテンツの表示・ラベル付けに関する行動規範を公表](https://www.jetro.go.jp/biznews/2026/06/940e2fb2a91a0a73.html)
 
 ### 2026-07-17: 初版執筆
 - **内容**: UI/UXデザイナー・グラフィックデザイナー・ブランドクリエイティブチームの制作フロー(発散・下書き反復・フィードバック整理・クライアント説明・仕上げ)を軸に、汎用生成AIとFigma AI/Adobe Fireflyなどデザインツール組み込みAIの使い分け、「AI生成で十分な場面 vs 人間のイラストレーター・カメラマンが必要な場面」の判断表、ムードボード・ワイヤーフレーム下書き・バナーバリエーション・マイクロコピー・クライアント向けナラティブ・フィードバック整理の6種のプロンプト例、クライアント案件でのAI活用開示・著作権リスクの実務判断を整理した

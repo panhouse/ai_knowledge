@@ -4,7 +4,7 @@ part: 11
 chapter: 第1章 エージェントの基礎
 tags: [AIエージェント, エージェンティックAI, 自律実行]
 created: 2026-07-05
-updated: 2026-07-22
+updated: 2026-08-14
 ---
 
 # AIエージェントとは何か
@@ -25,7 +25,7 @@ AIエージェントの内部では、次のような「エージェントルー
 4. ツールの実行結果を確認し、計画を見直す(失敗していれば別の手段を試す)
 5. ゴールを達成した、あるいは人間の確認が必要と判断したら停止する
 
-この「ツールをどう呼び出すか」を大規模言語モデル(LLM)自身に判断させる仕組みが「Function Calling(ツール呼び出し)」であり、さらに「そのツールがどこにあり、どう呼べばよいか」を各サービス間で共通化する規格として、Anthropicが2024年11月に公開した MCP(Model Context Protocol、モデル・コンテキスト・プロトコル)が事実上の業界標準として広がっている。2026年7月時点ではOpenAI・Google・Microsoft・AWSなど主要プラットフォームがMCPに対応しており、AIエージェントが社内システムやSaaSに接続する際の「共通の差込口」のような役割を果たしている(参照: [Anthropic「Introducing the Model Context Protocol」](https://www.anthropic.com/news/model-context-protocol))。
+この「ツールをどう呼び出すか」を大規模言語モデル(LLM)自身に判断させる仕組みが「Function Calling(ツール呼び出し)」であり、さらに「そのツールがどこにあり、どう呼べばよいか」を各サービス間で共通化する規格として、Anthropicが2024年11月に公開した MCP(Model Context Protocol、モデル・コンテキスト・プロトコル)が事実上の業界標準として広がっている。2026年7月28日には仕様が刷新され、常時接続のセッション管理を前提とした従来方式から、1回ごとのリクエストをどのサーバーが受けても処理できる「ステートレス(状態を持たない)」な作り直しが行われたほか、ツール実行の途中でユーザーに追加確認を挟める仕組みや認可まわりの強化が加わった。TypeScript・Python向けSDKだけで累計10億ダウンロードを超えるなど採用が急速に進んでおり、OpenAI・Google・Microsoft・AWSなど主要プラットフォームがMCPに対応することで、AIエージェントが社内システムやSaaSに接続する際の「共通の差込口」のような役割を果たしている(参照: [Anthropic「Introducing the Model Context Protocol」](https://www.anthropic.com/news/model-context-protocol)、[Model Context Protocol Blog「The 2026-07-28 Specification」](https://blog.modelcontextprotocol.io/posts/2026-07-28/))。
 
 また、ブラウザやPC画面をマウス・キーボード操作で直接動かす能力を指して「Computer Use(コンピュータ操作)」と呼ぶ。API連携が用意されていないWebサイトや業務システムでも、人間と同じように画面を操作して代行できる点が特徴で、Anthropic・OpenAI・Googleがそれぞれ自社モデルにこの機能を組み込んでいる。
 
@@ -43,12 +43,12 @@ AIエージェントの内部では、次のような「エージェントルー
 
 ## 使いどころ・使い分け
 
-**代表的なAIエージェントの分類(2026年7月時点)**
+**代表的なAIエージェントの分類(2026年8月時点)**
 
 | 分類 | 主な役割 | 代表的なサービス・機能 |
 |---|---|---|
-| コーディングエージェント | 要件から実装・テスト・デバッグまでを自律的に実行 | Anthropic Claude Code、GitHub Copilot(CLI・Agent Mode)、Devin(Cognition)、Cursor |
-| ブラウザ操作エージェント | Webサイトを実際に操作(検索・入力・購入など)して情報収集や作業を代行 | OpenAI ChatGPT(ブラウザ操作機能を内蔵。単体アプリだった「ChatGPT Atlas」は2026年8月9日に終了予定で機能はChatGPT本体に統合)、Google Gemini Spark(旧Project Mariner系機能を統合)、Perplexity Comet(エージェント機能を内蔵したChromiumベースのブラウザ) |
+| コーディングエージェント | 要件から実装・テスト・デバッグまでを自律的に実行 | Anthropic Claude Code、GitHub Copilot(CLI・Agent Mode)、Devin(Cognition)、Cursor、Meta Muse Code(2026年8月5日にベータ投入。自社モデルMuse Spark 1.2を搭載し、大規模リポジトリ向けに複数のサブエージェントを並列実行するターミナル型ツール) |
+| ブラウザ操作エージェント | Webサイトを実際に操作(検索・入力・購入など)して情報収集や作業を代行 | OpenAI ChatGPT(ブラウザ操作機能を内蔵。単体アプリだった「ChatGPT Atlas」は2026年8月9日に終了し機能はChatGPT本体に統合済み)、Google Gemini Spark(旧Project Mariner系機能を統合)、Perplexity Comet(エージェント機能を内蔵したChromiumベースのブラウザ) |
 | 業務自動化エージェント | 業務システム(CRM・ITSM・HRなど)に組み込まれ、定型業務を代行・オーケストレーション | Salesforce Agentforce、ServiceNow AI Agent Orchestrator、Microsoft Copilot Studio上のエージェント、Microsoft「Autopilots」(Teams・Outlook・SharePoint等に横断で常駐する固有IDを持つ自律エージェント。第1弾は「Scout」) |
 | 汎用アシスタントエージェント | 特定領域に限らず、調査・資料作成・タスク遂行を横断的に代行 | OpenAI ChatGPT Work(2026年7月投入。GPT-5.6を搭載し、資料・表計算・簡易Webアプリ作成などの業務を数時間単位で任せられる)、Anthropic Claude Cowork(非エンジニア向けにファイル操作・連携アプリ操作を行うデスクトップ/Web/モバイル版エージェント)、Google Gemini Spark、Microsoft 365 Copilot(Word/Excel/PowerPoint連携)、Manus(サンドボックス化された仮想マシン上でブラウザ・ターミナル・ファイルを操作する汎用自律エージェント) |
 
@@ -72,14 +72,15 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 
 ## 実務での使い方
 
-### 主要ツールでの対応付け(2026年7月時点)
+### 主要ツールでの対応付け(2026年8月時点)
 
 | 提供元 | 主なエージェント機能 | 呼び方・入り口 |
 |---|---|---|
-| OpenAI | ChatGPT Work(2026年7月9日発表。GPT-5.6搭載で、文書・表計算・プレゼン資料・簡易Webアプリ作成などを数時間単位で任せられる後継エージェント)、開発者向けOpenAI Agents SDK。ブラウザ単体アプリ「ChatGPT Atlas」は2026年8月9日で終了し、ブラウザ操作はChatGPT本体に統合 | ChatGPTの入力欄でモードを「Chat」から「Work」に切り替えて依頼。開発者はAgents SDK(Python/JavaScript)で組み込む |
+| OpenAI | ChatGPT Work(2026年7月9日発表。GPT-5.6搭載で、文書・表計算・プレゼン資料・簡易Webアプリ作成などを数時間単位で任せられる後継エージェント)、開発者向けOpenAI Agents SDK。ブラウザ単体アプリ「ChatGPT Atlas」は2026年8月9日に終了し、ブラウザ操作はChatGPT本体に統合済み | ChatGPTの入力欄でモードを「Chat」から「Work」に切り替えて依頼。開発者はAgents SDK(Python/JavaScript)で組み込む |
 | Anthropic | Claude Code(コーディングエージェント)、Claude Cowork(非エンジニア向け。ファイル操作やSlack・Google Driveなど連携アプリの操作をデスクトップ/Web/モバイルで代行)、Claude Agent SDK、Computer Use(画面操作) | ターミナルで`claude`コマンドを実行、またはClaudeデスクトップアプリで「Cowork」を選択。開発者はAgent SDK(Python/TypeScript)でカスタムエージェントを構築 |
 | Google | Gemini Spark(24時間稼働の個人向けエージェント。旧Project Mariner系のブラウザ操作機能を統合) | Geminiアプリで「Spark」を選択。企業向けはGemini Enterprise内で機能フラグとして順次公開中で、SharePoint・OneDrive・ServiceNowなどの既存コネクタ経由で業務システムに接続する |
 | Microsoft | Copilot Agents / Copilot Studio、Word・Excel・PowerPoint内の自律実行機能、Work IQ API(2026年6月に一般提供開始。Copilotの文脈・実行機能をアプリ間で呼び出せる基盤API)、常駐型の「Autopilots」(第1弾「Scout」がTeams・Outlook・SharePoint等を横断) | 各Office製品のCopilotボタンから、または「Copilot Studio」でエージェントを新規作成。開発者はWork IQ APIをCopilotクレジット従量課金で呼び出す |
+| Meta | Muse Code(2026年8月5日にベータ投入したターミナル型コーディングエージェント。自社モデルMuse Spark 1.2を搭載) | ターミナルから専用コマンドでインストールして実行。入力100万トークンあたり1.25ドル・出力100万トークンあたり4.25ドルの従量課金に加え、プロンプトを学習データに提供する代わりに割安になる「contributor」プランがある |
 | Salesforce | Agentforce | 「Agentforce Studio」でエージェントを設定し、CRM業務(リード対応・問い合わせ対応など)に組み込む |
 | ServiceNow | AI Agent Orchestrator / AI Agent Studio | Now Platform内の「AI Agent Studio」で、既存エージェントの利用またはカスタムエージェントの作成を行う |
 
@@ -128,7 +129,7 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 - **セキュリティインシデントはすでに「よくあること」になっている**: Cloud Security Alliance(CSA)とToken Securityが2026年4月に公表した調査では、社内でAIエージェントを運用する組織の65%が、この1年間にAIエージェントに起因するセキュリティインシデントを少なくとも1件経験しており、その内訳は機密データの漏えい(61%)、業務停止(43%)、意図しない操作の実行(41%)が上位を占める。「まだ起きていないリスク」ではなく「すでに多くの組織で起きている前提」で権限設計・監視体制を組むべき段階に来ている。
 - **ガバナンス整備が追いついていない**: Gartnerの調査では、自律型AIエージェントに対して成熟したガバナンス体制を持つ組織は21%にとどまるとされ、これが導入失敗の主因の一つとされている。FINRA(米国金融取引業規制機構)の2026年報告書も、エージェントの「自律性(人間の検証なしに行動する)」「スコープクリープ(想定より広い権限で動いてしまう)」「監査可能性の低さ(多段階の推論過程を後から追いにくい)」を主要リスクとして挙げており、重要な行動の前に人間の承認を必須にする「human-in-the-loop」、権限を業務に必要な最小限に絞る「スコープ設計」、行動ログを残す「監査証跡」の3点をセットで検討したい。
 - **「エージェント」は誇張されやすいマーケティング用語でもある**: Gartnerは、実質的な自律性を持たないRPA(定型作業の自動化)やチャットボットを「エージェント」と呼び替えて売る現象を「agent washing」と名付けており、「エージェント」を名乗る製品のうち本当に自律的といえるものはごく一部にとどまると指摘している。製品検討時は、実際に何ステップまで人手なしで完結できるのか、どの操作の前に人間の確認が入るのか(=次の一手を誰が決めるのか)を必ず確認すること。
-- **製品の統廃合が早いことを前提に選定する**: OperatorはChatGPT Agentに、Project MarinerはGemini(Spark/ブラウザ自動操作機能)に、それぞれ1年前後で統合・終了している。単体ブラウザアプリとして投入された「ChatGPT Atlas」も2026年8月9日で終了し、機能はChatGPT本体に統合される予定で、後継の「ChatGPT Work」も発表からすぐに看板機能が入れ替わっている。特定製品への過度な作り込みは避け、標準的なインターフェース(ブラウザ操作・ファイル操作・API連携・MCP)を軸に業務フローを設計する方が安全。
+- **製品の統廃合が早いことを前提に選定する**: OperatorはChatGPT Agentに、Project MarinerはGemini(Spark/ブラウザ自動操作機能)に、それぞれ1年前後で統合・終了している。単体ブラウザアプリとして投入された「ChatGPT Atlas」も予告どおり2026年8月9日に終了し、機能はChatGPT本体に統合された。後継の「ChatGPT Work」も発表からすぐに看板機能が入れ替わっており、さらにMetaが2026年8月にMuse Codeでコーディングエージェント市場へ新規参入するなど、プレイヤーの顔ぶれ自体が数か月単位で変わり続けている。特定製品への過度な作り込みは避け、標準的なインターフェース(ブラウザ操作・ファイル操作・API連携・MCP)を軸に業務フローを設計する方が安全。
 - **ハルシネーションは自律実行でも消えない**: 誤った前提のまま計画を立てて実行に進むと、その誤りが「実行結果」として現実の操作(送信・更新・購入など)に反映されてしまう。生成された情報を鵜呑みにせず、要所で人間が確認する設計が必要。
 
 ## 最初の一歩
@@ -143,6 +144,10 @@ Gartnerは、自律型AIエージェントの導入パイロットのうち88%�
 - [Difyとは何か](../part10-nocode-lowcode/dify-basics.md)
 
 ## 更新履歴
+
+### 2026-08-14: MCP仕様更新・新規参入プレイヤーを反映して最新化
+- **内容**: MCP(Model Context Protocol)の2026年7月28日付仕様改定(セッション管理を廃したステートレス化、実行途中の追加確認、SDK累計10億ダウンロード超の採用実績)を仕組み・背景に追加。MetaがコーディングエージェントMuse Code(自社モデルMuse Spark 1.2搭載)でこの市場に新規参入したことを分類表・ツール対応表・注意点に反映。予告どおり2026年8月9日に完了した「ChatGPT Atlas」終了の記述を現在完了形に更新
+- **出典**: [Model Context Protocol Blog: The 2026-07-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/)、[CNBC: Meta debuts Muse Code to take on Anthropic and OpenAI](https://www.cnbc.com/2026/08/05/meta-debuts-muse-code-to-take-on-anthropic-and-openai-.html)、[OpenAI Help Center: Evolving Atlas into ChatGPT for browser-based agentic work](https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work)
 
 ### 2026-07-22: 主要プレイヤーの新製品と、セキュリティインシデントの実態を反映して最新化
 - **内容**: OpenAIの新エージェント「ChatGPT Work」(GPT-5.6搭載)投入と「ChatGPT Atlas」終了(2026年8月9日)、AnthropicのCoworkのWeb/モバイル展開、MicrosoftのWork IQ API一般提供と常駐型「Autopilots」、Googleのエンタープライズ向けコネクタ強化を分類表・ツール対応表に反映。エージェント導入率に関するGartnerの最新予測(2026年末までにエンタープライズアプリの40%がエージェント搭載)、CSA/Token Securityによるセキュリティインシデント実態調査(65%の組織が経験済み)、Claude Codeによる実際のインフラ削除事故、1Passwordの認証情報保護連携を追加し、注意点・実務での使い方を増強
