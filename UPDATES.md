@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-15
+- [人材育成・研修(L&D)担当における生成AI活用事例](topics/part15-job-role-cases/learning-development-ai-use-cases.md): AIロープレのマルチモーダル解析化・国内新規参入とLMSのスキルギャップ分析AIの節を最新化・増強
+
 ## 2026-08-14
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): モデル選択がスライダー型に変わったこと(GPT-5.6 Sol統合・GPT-5.6 Luna既定化)を反映して最新化・増強
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): 主要モデルの系譜・価格・ベンチマーク動向を最新化・増強
