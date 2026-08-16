@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-16
+- [林業・水産業における生成AI活用事例](topics/part14-industry-cases/forestry-fisheries-ai-use-cases.md): 新規執筆(森林資源解析・獣害対策・木材検収と、漁場予測・養殖給餌・赤潮検知・生成AIによる漁業日誌/研修資料作成支援の事例整理)
+
 ## 2026-08-14
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): モデル選択がスライダー型に変わったこと(GPT-5.6 Sol統合・GPT-5.6 Luna既定化)を反映して最新化・増強
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): 主要モデルの系譜・価格・ベンチマーク動向を最新化・増強
