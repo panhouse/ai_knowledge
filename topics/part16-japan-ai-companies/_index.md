@@ -77,3 +77,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [不動産・建設AI企業一覧](realestate-construction-ai-companies-japan.md)
 - [医療・ヘルスケアAI企業一覧](healthcare-ai-companies-japan.md)
 - [教育・EdTech AI企業一覧](edtech-ai-companies-japan.md)
+- [小売・EC特化AI企業一覧(国内)](retail-ec-ai-companies-japan.md)
