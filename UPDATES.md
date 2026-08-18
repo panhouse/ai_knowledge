@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-17
+- [造船業における生成AI活用事例](topics/part14-industry-cases/shipbuilding-industry-ai-use-cases.md): 新規執筆(設計エージェント・技能伝承AI・多言語マニュアル生成の事例整理)
 - [小売・EC特化AI企業一覧(国内)](topics/part16-japan-ai-companies/retail-ec-ai-companies-japan.md): 新規執筆(シルバーエッグ・テクノロジー、Sprocket、プレイド、SUPER STUDIO、楽天、ソニーネットワークコミュニケーションズの6社を収録)
 - [データ分析・BI AI企業一覧(国内)](topics/part16-japan-ai-companies/data-analytics-bi-ai-companies-japan.md): 新規執筆(ウイングアーク1st・エクサウィザーズ・Sansan・HEROZ・FRONTEO・Nintの6社を収録)
 - [画像・動画生成AI企業一覧(国内)](topics/part16-japan-ai-companies/image-video-generation-ai-companies-japan.md): 新規執筆(AI Picasso・データグリッド・Aww・サイバーエージェント極予測AI・NectAIの5社を収録)
