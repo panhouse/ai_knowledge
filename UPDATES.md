@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-15
+- [製薬業界における生成AI活用事例](topics/part14-industry-cases/pharmaceutical-industry-ai-use-cases.md): 創薬提携・規制動向・ファーマコビジランスの節を最新化・増強
 - [NPO・非営利団体における生成AI活用事例](topics/part14-industry-cases/npo-nonprofit-ai-use-cases.md): 非営利団体向け割引プログラム(Claude for Nonprofits・OpenAI for Nonprofits等)と災害支援(令和8年熊本地震)の事例を最新化・増強
 - [海運・港湾業界における生成AI活用事例](topics/part14-industry-cases/maritime-shipping-ai-use-cases.md): 日本3社(商船三井・日本郵船・川崎汽船)の実運用事例、自動運航船(MEGURI2040)、船級協会AI(DNV RuleAgent)の節を追加して最新化・増強
 
