@@ -78,3 +78,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [医療・ヘルスケアAI企業一覧](healthcare-ai-companies-japan.md)
 - [教育・EdTech AI企業一覧](edtech-ai-companies-japan.md)
 - [翻訳・多言語化AI企業一覧](translation-ai-companies-japan.md)
+- [AI専業コンサルティングファーム一覧](ai-specialized-consulting-firms-japan.md)
