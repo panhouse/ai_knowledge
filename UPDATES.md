@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-18
+- [製造・建設現場の作業員・現場監督における生成AI活用事例](topics/part15-job-role-cases/frontline-worker-supervisor-ai-use-cases.md): 新規執筆(KY活動・多言語作業指示・音声入力日報・設備点検・ヒヤリハット報告の活用事例)
 - [ブラウザ操作型AIエージェントの基本(Perplexity Comet・OpenAI Atlas等)](topics/part11-ai-agents/browser-agent-basics.md): 新規執筆(Comet・Atlas終了・Edge・Chrome・Dia・Opera Neonの比較とプロンプトインジェクションのリスク)
 ## 2026-08-17
 - [鉄鋼・金属加工業における生成AI活用事例](topics/part14-industry-cases/steel-metal-processing-ai-use-cases.md): 新規執筆(技能伝承チャットボット・コーディング支援AI・マテリアルズインフォマティクスの事例整理)
