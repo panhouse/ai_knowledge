@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-15
+- [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): Midjourney V8.2・Nano Bananaファミリー再編・Imagen終了・Firefly Image Model 5・SD4の節を最新化・増強
 - [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): モデルラインナップ(Gemini 3.6/3.7 Flash)・Gemini Sparkの提供拡大・Gemini 3.5 Pro/Gemini 4の状況を最新化・増強
 - [Claude(Anthropic)の基本](topics/part03-ai-chat-tools/claude-basics.md): Claude Opus 5の登場・Sonnet 5価格恒久化・Cowork/Artifacts/Projectsの機能拡張を反映して最新化
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part15-job-role-cases/production-management-scm-ai-use-cases.md): AIエージェント化(Kinaxis/o9/SAP IBP/Blue Yonder)の動向を反映して最新化・増強
