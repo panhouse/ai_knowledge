@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-16
+- [林業・水産業における生成AI活用事例](topics/part14-industry-cases/forestry-fisheries-ai-use-cases.md): 新規執筆(森林資源解析・獣害対策・木材検収と、漁場予測・養殖給餌・赤潮検知・生成AIによる漁業日誌/研修資料作成支援の事例整理)
 - [フィットネス・スポーツクラブ業界における生成AI活用事例](topics/part14-industry-cases/fitness-industry-ai-use-cases.md): 新規執筆(パーソナルトレーニングメニュー生成・退会予測・フォーム分析・会員向けチャットボット等の活用事例)
 - [冠婚葬祭業(結婚式・葬儀)における生成AI活用事例](topics/part14-industry-cases/wedding-funeral-industry-ai-use-cases.md): 新規執筆(結婚式のプランニング提案・招待状デザイン生成・プロフィールムービー自動編集、葬儀の生前相談チャットボット・遺影加工・AI故人対話の事例整理)
 - [ChatGPTのプラン比較](topics/part03-ai-chat-tools/chatgpt-plan-comparison.md): Free・Goのテキストチャット無制限化(GPT-5.6 Luna)、ChatGPT Workの全プラン展開、Enterprise価格帯の精緻化を反映して最新化・増強
