@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-18
+- [飲食店経営支援AI企業一覧](topics/part16-japan-ai-companies/restaurant-management-ai-companies-japan.md): 新規執筆(ジャストプランニング・EBILAB・ダイニー・トレタ・TableCheck・AI Shift・シフオプの7社を収録)
 - [保険(インシュアテック)AI企業一覧](topics/part16-japan-ai-companies/insurance-insurtech-ai-companies-japan.md): 新規執筆(justInCase Technologies・hokan・Tractable・Shift Technology・損保ジャパン・第一生命の6社を収録)
 - [教員・保育士における生成AI活用事例](topics/part15-job-role-cases/teacher-childcare-worker-ai-use-cases.md): 新規執筆(授業準備・採点・所見・保育日誌・連絡帳の活用事例)
 - [ドライバー・配送スタッフにおける生成AI活用事例](topics/part15-job-role-cases/driver-delivery-staff-ai-use-cases.md): 新規執筆(音声入力日報・多言語対応・ギグワーカーのAIマッチング・2024年問題の活用事例)
