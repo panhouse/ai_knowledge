@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-16
+- [AI専業コンサルティングファーム一覧](topics/part16-japan-ai-companies/ai-specialized-consulting-firms-japan.md): 新規執筆(大手コンサル・SIerとは異なる国内AI専業ファーム7社を整理)
 ## 2026-08-15
 - [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part07-data-analysis/chatgpt-advanced-data-analysis.md): インタラクティブチャート・GPT-5.6の8月更新・ChatGPT Go価格の節を最新化・増強
 - [システムプロンプトの役割と書き方](topics/part05-prompt-engineering/system-prompt-basics.md): XMLタグ構造化・few-shot例示のコツ、Gemini Gemの無料開放、Assistants API廃止直前情報を反映して最新化・増強
