@@ -4,7 +4,7 @@ part: 5
 chapter: 第1章 基本原則
 tags: [システムプロンプト, カスタム指示, System Prompt, API, カスタムAI]
 created: 2026-07-06
-updated: 2026-07-21
+updated: 2026-08-15
 ---
 
 # システムプロンプトの役割と書き方
@@ -35,14 +35,14 @@ updated: 2026-07-21
 
 [プロンプトの基本構成要素](prompt-basic-structure.md)で扱った「役割・タスク・出力形式」といった要素そのものは同じだが、システムプロンプトはこれらを**都度書くのではなく、事前に固定化して裏側に置く**という点が異なる。いわば、通常プロンプトが「その場で渡す指示書」、システムプロンプトが「あらかじめ配っておく行動規範・マニュアル」に相当する。
 
-### 開発者向けAPIでの実装(2026年7月時点)
+### 開発者向けAPIでの実装(2026年8月時点)
 
 API(開発者がプログラムからAIモデルを呼び出す際の窓口)では、システムプロンプトは各社で少しずつ異なる名前・仕組みで実装されている。
 
 | 提供元 | API | 実装方法 | 補足 |
 |---|---|---|---|
 | OpenAI | Chat Completions API | `messages`配列内の`role: "developer"`(o1以降の全モデルの標準ロール。`system`は旧世代モデル向けの後方互換として残るのみで非推奨) | 2025年に`system`から`developer`への呼称移行が完了しており、2026年7月時点で新規に実装するならGPT-4o等の旧世代を除き`developer`を使うのが基本 |
-| OpenAI | Responses API(推奨の新方式) | トップレベルの`instructions`パラメータ、または`role: "developer"`のメッセージ | `input`配列とは別枠。優先度は`input`内の指示より高いが、`previous_response_id`で会話を継続する場合、前ターンの`instructions`は自動的に持ち越されないため、安定した指示は毎回再送する必要がある。なお同社の旧「Assistants API」(会話・ファイル管理を丸ごと担っていたAPI)は2026年8月26日に廃止予定で、Responses APIへの移行が案内されている |
+| OpenAI | Responses API(推奨の新方式) | トップレベルの`instructions`パラメータ、または`role: "developer"`のメッセージ | `input`配列とは別枠。優先度は`input`内の指示より高いが、`previous_response_id`で会話を継続する場合、前ターンの`instructions`は自動的に持ち越されないため、安定した指示は毎回再送する必要がある。なお同社の旧「Assistants API」(会話・ファイル管理を丸ごと担っていたAPI)は2026年8月26日に廃止予定(本稿執筆時点で残り2週間を切っている)で、`/v1/assistants`・`/v1/threads`等のエンドポイントは廃止後リクエストが失敗するようになる。Responses APIへの移行が必須である |
 | Anthropic(Claude) | Messages API | トップレベルの`system`パラメータ(文字列または配列) | `messages`配列の中の1要素ではなく、独立したフィールド。そのため「systemメッセージを会話の先頭に置く」という発想自体がなく、常に別枠で渡す。プロンプトキャッシュ(同じ入力を再利用してコスト・速度を最適化する仕組み)のキャッシュポイントもここに置ける |
 | Google(Gemini) | Gemini API | `systemInstruction`パラメータ(`role`と`parts`を持つオブジェクト) | モデルインスタンス生成時、またはリクエストごとに指定。Gemini全モデルで利用可能 |
 
@@ -62,14 +62,14 @@ API(開発者がプログラムからAIモデルを呼び出す際の窓口)で�
 
 ## 実務での使い方
 
-### ツール横断の対応表(2026年7月時点、設定場所まで)
+### ツール横断の対応表(2026年8月時点、設定場所まで)
 
 | ツール | 機能名 | 設定場所 |
 |---|---|---|
 | ChatGPT(個人の全チャット共通) | カスタム指示 | 左下のアカウントアイコン→「パーソナライズ」→「カスタム指示」。「自分について」「回答方法」の2欄に各1,500文字まで登録可。別欄の「基本のスタイル」(Professional・Friendly等のプリセット+温かみ・熱量のスライダー)は口調だけを変える機能で、カスタム指示とは別枠 |
 | ChatGPT(プロジェクト単位) | プロジェクトの指示 | 対象プロジェクトを開く→プロジェクト名の右にある設定アイコン(歯車、または「…」の3点メニュー)→「Instructions(指示)」。そのプロジェクト内の会話にのみ適用され、グローバルなカスタム指示より優先される |
 | Claude | プロジェクトの指示(Project instructions) | 左サイドバーの「Projects」からプロジェクトを作成・選択→「Set project instructions」(既存プロジェクトでは設定アイコンから開く)→保存。ナレッジ(参照資料、1ファイル30MBまで)の追加も同じプロジェクト画面から行う |
-| Gemini(役割特化のカスタムボット) | Gem(カスタムGem)の指示 | gemini.google.com→左メニュー「Gemを表示」→「Gemマネージャー」→「+新しいGem」→指示欄に役割・ルールを入力。ナレッジ(アップロードファイル・Google Drive)の紐付けも同画面 |
+| Gemini(役割特化のカスタムボット) | Gem(カスタムGem)の指示 | gemini.google.com→左メニュー「Gemを表示」→「Gemを作成」(旧称「Gemマネージャー」の「+新しいGem」)→名前と指示欄に役割・ルールを入力→右側のプレビューで動作確認→保存。ナレッジ(アップロードファイル・Google Drive)や既定で起動するツール(Deep Research・Canvas等)の紐付けも同画面。2026年のアップデートでGemの作成・利用は無料プランを含む全ユーザーに開放されている |
 | Gemini(アプリ全体の恒常設定) | 「Geminiへのカスタム指示」(パーソナル インテリジェンス) | メニューアイコン→「設定とヘルプ」→「パーソナル インテリジェンス」→「Geminiへのカスタム指示」。**個人のGoogleアカウント限定**の機能で、職場・学校・管理対象アカウントでは利用できない点に注意 |
 | Microsoft Copilot(無料版・全チャット共通) | カスタム指示 | チャット画面右上の「…」→「設定」→「個人用設定」→カスタム指示のトグルをオン→「指示の編集」 |
 | Microsoft 365 Copilot(業務用エージェント) | エージェント ビルダーの「指示」 | Microsoft 365 Copilotアプリ左ペイン「エージェント」→「+新しいエージェント」→「構成」タブの「指示」欄。より本格的な配布・外部連携が必要ならCopilot Studio(copilotstudio.microsoft.com)の同名の欄を使う |
@@ -84,8 +84,9 @@ Gemini・Copilotはそれぞれ「役割特化の専用ボットを作る仕組�
 2. **トーン・文体を明文化する**: 「です・ます調」「絵文字は使わない」など、毎回言わなくても守ってほしい文体ルールを書く
 3. **出力形式を固定する**: 「回答は必ず結論→理由→次のアクションの順」のように、構造をテンプレート化する
 4. **禁止事項・対応範囲を明記する**: 「料金に関する質問には答えず、営業担当への連絡を案内する」のように、やってほしくないことも具体的に書く
-5. **見出し(Markdown)で構造化する**: 項目が増えるほど、`##`見出しで意味のまとまりを分けた方がAIが指示を読み取りやすい
-6. **粒度は「ちょうどよい高さ」にする**: 細かすぎる手順を逐一書くと例外に対応できず脆くなり、逆に抽象的すぎると具体的な行動に落とし込めない。まず要点だけで運用し、実際のやり取りで外れた挙動が出た箇所だけ加筆していく
+5. **見出し(Markdown)や`<タグ>`(XML)で構造化する**: 項目が増えるほど、`##`見出しで意味のまとまりを分けるか、`<role>`「役割」・`<context>`「文脈」・`<constraints>`「制約」・`<output_format>`「出力形式」のようなXMLタグで区切った方がAIが指示を読み取りやすい。Anthropicの公式プロンプトエンジニアリングガイドも、指示・文脈・例示・入力を別々のタグで囲むと解釈のブレが減ると明言している。Markdown見出しは人間にも読みやすく汎用性が高い一方、XMLタグは「指示」「例示」「入力データ」のように性質の異なる情報を厳密に分離したい場合に効果を発揮する。どちらか一方に決めうちせず、プロンプトが長く要素が混在するほどタグ分けを厚くするとよい
+6. **例示(few-shot)を入れる**: 期待する出力の型・トーンを言葉で説明するより、3〜5個程度の具体例を`<example>`タグ等で示す方が安定する。例は「実際のユースケースに近いこと」「境界的なケースを含め多様であること」を意識すると、AIが変な共通点を学習してしまう事故を防げる
+7. **粒度は「ちょうどよい高さ」にする**: 細かすぎる手順を逐一書くと例外に対応できず脆くなり、逆に抽象的すぎると具体的な行動に落とし込めない。まず要点だけで運用し、実際のやり取りで外れた挙動が出た箇所だけ加筆していく
 
 ### コピペで使えるシステムプロンプトの雛形
 
@@ -137,6 +138,10 @@ ChatGPTのカスタム指示・Claude Projectsの指示・Gemの指示・APIの`
 - [GPTsの作り方と公開設定](../part06-custom-ai/gpts-creation-basics.md)
 
 ## 更新履歴
+
+### 2026-08-15: 書き方のコツにXMLタグ構造化・few-shot例示を追加、Gemini GemとAssistants API廃止の記述を更新
+- **内容**: Anthropic公式のプロンプトエンジニアリングガイドを確認し、「良いシステムプロンプトを書くコツ」にMarkdown見出しと並ぶ構造化手法として`<role>`・`<context>`・`<constraints>`等のXMLタグ、および3〜5個の具体例(few-shot)を追加する項目を新設した。Gemini Gemは2026年のアップデートで作成・利用が無料プランにも開放されたこと、作成画面が「Gemを表示」→「Gemを作成」に簡略化されたことを反映。OpenAI Assistants APIの廃止(2026年8月26日予定)が本稿執筆時点で目前に迫っている旨を明記した。その他のツール横断対応表(ChatGPT・Claude Projects・Copilotエージェントビルダー)は現行の画面遷移と一致することをWeb検索で再確認済み
+- **出典**: [Claude Docs: Prompting best practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)、[Claude Docs: Use XML tags to structure your prompts](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags)、[Google Gemini アプリ ヘルプ: Gem を使用する](https://support.google.com/gemini/answer/15146780?hl=ja)、[Google Gemini アプリ ヘルプ: カスタム Gem 作成のヒント](https://support.google.com/gemini/answer/15235603?hl=ja)、[OpenAI Developer Community: Assistants API beta deprecation — August 26, 2026 sunset](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666)、[OpenAI API: Deprecations](https://developers.openai.com/api/docs/deprecations)
 
 ### 2026-07-21: ツール横断の対応表とAPI実装の記述を最新化
 - **内容**: ChatGPT・Claude・Gemini・Microsoft Copilotの設定場所を、各ツールの詳細ページ(2026-07-06執筆)と最新のWeb検索で再確認し、正確な画面遷移に更新。特にGeminiは「Gem(役割特化ボット)」と「Geminiへのカスタム指示(パーソナル インテリジェンス、個人アカウント限定)」、Copilotは「無料版のカスタム指示」と「M365 Copilotのエージェントビルダー」がそれぞれ別機能であることを明記。OpenAI APIは`system`ロールから`developer`ロールへの移行が完了している点、Assistants APIが2026年8月26日に廃止予定である点を追記し、関連トピックにツール別の詳細ページへのリンクを追加した
