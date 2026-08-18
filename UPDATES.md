@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-16
+- [Human in the Loop(人間参加型)の業務設計](topics/part12-business-practice/human-in-the-loop-basics.md): EU AI Act延期の正式発効・AIエージェント評価環境の脱出事例・n8n機能更新を反映して最新化・増強
 - [セキュリティ(サイバーセキュリティ)AI企業一覧](topics/part16-japan-ai-companies/security-ai-companies-japan.md): 新規執筆(脅威検知・脆弱性診断・SOC運用にAIを活用する国内6社を収録)
 - [製造業向け画像検査・予知保全AI企業一覧](topics/part16-japan-ai-companies/manufacturing-inspection-ai-companies-japan.md): 新規執筆(外観検査・予知保全を提供する国内7社を収録)
 - [翻訳・多言語化AI企業一覧](topics/part16-japan-ai-companies/translation-ai-companies-japan.md): 新規執筆(ロゼッタ・みらい翻訳・Mantra・Wovn Technologies・Yaraku・ソースネクストの6社を収録)
