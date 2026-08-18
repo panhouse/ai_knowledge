@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-16
+- [フィットネス・スポーツクラブ業界における生成AI活用事例](topics/part14-industry-cases/fitness-industry-ai-use-cases.md): 新規執筆(パーソナルトレーニングメニュー生成・退会予測・フォーム分析・会員向けチャットボット等の活用事例)
 - [冠婚葬祭業(結婚式・葬儀)における生成AI活用事例](topics/part14-industry-cases/wedding-funeral-industry-ai-use-cases.md): 新規執筆(結婚式のプランニング提案・招待状デザイン生成・プロフィールムービー自動編集、葬儀の生前相談チャットボット・遺影加工・AI故人対話の事例整理)
 - [ChatGPTのプラン比較](topics/part03-ai-chat-tools/chatgpt-plan-comparison.md): Free・Goのテキストチャット無制限化(GPT-5.6 Luna)、ChatGPT Workの全プラン展開、Enterprise価格帯の精緻化を反映して最新化・増強
 - [Human in the Loop(人間参加型)の業務設計](topics/part12-business-practice/human-in-the-loop-basics.md): EU AI Act延期の正式発効・AIエージェント評価環境の脱出事例・n8n機能更新を反映して最新化・増強
