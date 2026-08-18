@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-17
+- [データ分析・BI AI企業一覧(国内)](topics/part16-japan-ai-companies/data-analytics-bi-ai-companies-japan.md): 新規執筆(ウイングアーク1st・エクサウィザーズ・Sansan・HEROZ・FRONTEO・Nintの6社を収録)
 - [画像・動画生成AI企業一覧(国内)](topics/part16-japan-ai-companies/image-video-generation-ai-companies-japan.md): 新規執筆(AI Picasso・データグリッド・Aww・サイバーエージェント極予測AI・NectAIの5社を収録)
 ## 2026-08-16
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): API料金の再改定(値上げ)・R2の状況・イタリア/日本の規制動向の節を最新化・増強
