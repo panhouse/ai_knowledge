@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-17
+- [画像・動画生成AI企業一覧(国内)](topics/part16-japan-ai-companies/image-video-generation-ai-companies-japan.md): 新規執筆(AI Picasso・データグリッド・Aww・サイバーエージェント極予測AI・NectAIの5社を収録)
 ## 2026-08-16
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): API料金の再改定(値上げ)・R2の状況・イタリア/日本の規制動向の節を最新化・増強
 - [林業・水産業における生成AI活用事例](topics/part14-industry-cases/forestry-fisheries-ai-use-cases.md): 新規執筆(森林資源解析・獣害対策・木材検収と、漁場予測・養殖給餌・赤潮検知・生成AIによる漁業日誌/研修資料作成支援の事例整理)
