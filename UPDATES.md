@@ -6,6 +6,13 @@
 
 ## 2026-08-15
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): Midjourney V8.2・Nano Bananaファミリー再編・Imagen終了・Firefly Image Model 5・SD4の節を最新化・増強
+- [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): モデルラインナップ(Gemini 3.6/3.7 Flash)・Gemini Sparkの提供拡大・Gemini 3.5 Pro/Gemini 4の状況を最新化・増強
+- [Claude(Anthropic)の基本](topics/part03-ai-chat-tools/claude-basics.md): Claude Opus 5の登場・Sonnet 5価格恒久化・Cowork/Artifacts/Projectsの機能拡張を反映して最新化
+- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part15-job-role-cases/production-management-scm-ai-use-cases.md): AIエージェント化(Kinaxis/o9/SAP IBP/Blue Yonder)の動向を反映して最新化・増強
+- [人材育成・研修(L&D)担当における生成AI活用事例](topics/part15-job-role-cases/learning-development-ai-use-cases.md): AIロープレのマルチモーダル解析化・国内新規参入とLMSのスキルギャップ分析AIの節を最新化・増強
+- [製薬業界における生成AI活用事例](topics/part14-industry-cases/pharmaceutical-industry-ai-use-cases.md): 創薬提携・規制動向・ファーマコビジランスの節を最新化・増強
+- [NPO・非営利団体における生成AI活用事例](topics/part14-industry-cases/npo-nonprofit-ai-use-cases.md): 非営利団体向け割引プログラム(Claude for Nonprofits・OpenAI for Nonprofits等)と災害支援(令和8年熊本地震)の事例を最新化・増強
+- [海運・港湾業界における生成AI活用事例](topics/part14-industry-cases/maritime-shipping-ai-use-cases.md): 日本3社(商船三井・日本郵船・川崎汽船)の実運用事例、自動運航船(MEGURI2040)、船級協会AI(DNV RuleAgent)の節を追加して最新化・増強
 
 ## 2026-08-14
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): モデル選択がスライダー型に変わったこと(GPT-5.6 Sol統合・GPT-5.6 Luna既定化)を反映して最新化・増強
