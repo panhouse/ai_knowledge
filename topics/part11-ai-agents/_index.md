@@ -103,3 +103,6 @@ Part 1〜10 が「AIに指示を出して答えをもらう」前提の教科書
 - [AIエージェント導入PoCの評価指標・進め方の基本](ai-agent-poc-evaluation-basics.md)
 ### 第5章 運用・ガバナンス
 - [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](ai-agent-governance-basics.md)
+
+### 第6章 その他・未分類
+- [ブラウザ操作型AIエージェントの基本(Perplexity Comet・OpenAI Atlas等)](browser-agent-basics.md)
