@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-15
+- [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): モデルラインナップ(Gemini 3.6/3.7 Flash)・Gemini Sparkの提供拡大・Gemini 3.5 Pro/Gemini 4の状況を最新化・増強
 - [Claude(Anthropic)の基本](topics/part03-ai-chat-tools/claude-basics.md): Claude Opus 5の登場・Sonnet 5価格恒久化・Cowork/Artifacts/Projectsの機能拡張を反映して最新化
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part15-job-role-cases/production-management-scm-ai-use-cases.md): AIエージェント化(Kinaxis/o9/SAP IBP/Blue Yonder)の動向を反映して最新化・増強
 - [人材育成・研修(L&D)担当における生成AI活用事例](topics/part15-job-role-cases/learning-development-ai-use-cases.md): AIロープレのマルチモーダル解析化・国内新規参入とLMSのスキルギャップ分析AIの節を最新化・増強
