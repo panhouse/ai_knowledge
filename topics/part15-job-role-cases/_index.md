@@ -171,3 +171,5 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 ### 第18章 その他の職種
 - [店舗・販売スタッフ職における生成AI活用事例](retail-store-staff-ai-use-cases.md)
 - [教員・保育士における生成AI活用事例](teacher-childcare-worker-ai-use-cases.md)
+- [ドライバー・配送スタッフにおける生成AI活用事例](driver-delivery-staff-ai-use-cases.md)
+- [製造・建設現場の作業員・現場監督における生成AI活用事例](frontline-worker-supervisor-ai-use-cases.md)
