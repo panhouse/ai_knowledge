@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-15
+- [ChatGPTのデータ分析機能(Advanced Data Analysis)の使い方](topics/part07-data-analysis/chatgpt-advanced-data-analysis.md): インタラクティブチャート・GPT-5.6の8月更新・ChatGPT Go価格の節を最新化・増強
 - [システムプロンプトの役割と書き方](topics/part05-prompt-engineering/system-prompt-basics.md): XMLタグ構造化・few-shot例示のコツ、Gemini Gemの無料開放、Assistants API廃止直前情報を反映して最新化・増強
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): Midjourney V8.2・Nano Bananaファミリー再編・Imagen終了・Firefly Image Model 5・SD4の節を最新化・増強
 - [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): モデルラインナップ(Gemini 3.6/3.7 Flash)・Gemini Sparkの提供拡大・Gemini 3.5 Pro/Gemini 4の状況を最新化・増強
