@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-19
+- [IT・情報通信における生成AI活用事例](topics/part14-industry-cases/it-telecom-ai-use-cases.md): NTTデータ「AIネイティブ開発」(人月型契約の見直し)とDeutsche Telekom・Bharti Airtelなど海外キャリアの自律型ネットワーク運用事例を追加し最新化
+
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 新規執筆(タクシー配車AI・AIオンデマンドバス・自動運転レベル4実証の活用事例)
