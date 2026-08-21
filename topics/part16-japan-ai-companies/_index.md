@@ -86,3 +86,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [製造業向け画像検査・予知保全AI企業一覧](manufacturing-inspection-ai-companies-japan.md)
 - [翻訳・多言語化AI企業一覧](translation-ai-companies-japan.md)
 - [AI専業コンサルティングファーム一覧](ai-specialized-consulting-firms-japan.md)
+- [農業テック(アグリテック)AI企業一覧(国内)](agritech-ai-companies-japan.md)
