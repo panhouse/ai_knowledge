@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-22
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part08-specialized-ai-tools/local-llm-basics.md): Ollama/LM Studioの最新版・Meta「Muse Glimmer」の登場・ハードウェア選定目安の節を最新化・増強
+
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 新規執筆(タクシー配車AI・AIオンデマンドバス・自動運転レベル4実証の活用事例)
