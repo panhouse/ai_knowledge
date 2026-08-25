@@ -156,6 +156,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第13章 生産管理・サプライチェーン
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](production-management-scm-ai-use-cases.md)
+- [倉庫管理・在庫管理担当者における生成AI活用事例](warehouse-inventory-manager-ai-use-cases.md)
 
 ### 第14章 デザイナー・クリエイティブ
 - [デザイナー・クリエイティブ職における生成AI活用事例](designer-creative-ai-use-cases.md)

@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-25
+- [倉庫管理・在庫管理担当者における生成AI活用事例](topics/part15-job-role-cases/warehouse-inventory-manager-ai-use-cases.md): 新規執筆(需要予測・発注点算出、棚卸差異分析、欠品/過剰在庫アラートの要約、多言語作業手順書生成の活用事例)
+
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 新規執筆(タクシー配車AI・AIオンデマンドバス・自動運転レベル4実証の活用事例)
