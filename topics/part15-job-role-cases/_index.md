@@ -169,6 +169,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [コンサルタント・リサーチャー職における生成AI活用事例](consultant-researcher-ai-use-cases.md)
 
 ### 第18章 その他の職種
+- [銀行員(窓口・融資担当)における生成AI活用事例](bank-teller-loan-officer-ai-use-cases.md)
 - [店舗・販売スタッフ職における生成AI活用事例](retail-store-staff-ai-use-cases.md)
 - [教員・保育士における生成AI活用事例](teacher-childcare-worker-ai-use-cases.md)
 - [ドライバー・配送スタッフにおける生成AI活用事例](driver-delivery-staff-ai-use-cases.md)
