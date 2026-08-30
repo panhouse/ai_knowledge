@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-30
+- [スマートファクトリー・産業用IoT AI企業一覧](topics/part16-japan-ai-companies/smart-factory-industrial-iot-ai-companies-japan.md): 新規執筆(日立製作所・ファナック・三菱電機・i Smart Technologies・NTTドコモビジネス・オプティムの6社を収録)
+
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 新規執筆(タクシー配車AI・AIオンデマンドバス・自動運転レベル4実証の活用事例)
