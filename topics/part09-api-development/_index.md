@@ -37,3 +37,4 @@ part: 9
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](business-system-api-integration-basics.md)
 - [Google Gemini APIの基本](google-gemini-api-basics.md)
 - [リアルタイム音声API(ボイスエージェント構築)の基本](realtime-voice-api-basics.md)
+- [Azure OpenAI Service・Amazon Bedrock経由でのLLM API利用の基本(直接契約との違い)](enterprise-cloud-llm-api-basics.md)
