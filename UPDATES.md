@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-31
+- [生成AIと個人情報保護法の実務 ― 顧客情報を入力してよいか、匿名加工・仮名加工の考え方](topics/part04-risk-security/personal-data-protection-risks-in-generative-ai.md): 新規執筆(個人情報保護法の観点から顧客情報の入力可否・匿名加工/仮名加工の使い分けを整理)
+
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 新規執筆(タクシー配車AI・AIオンデマンドバス・自動運転レベル4実証の活用事例)
