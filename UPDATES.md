@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-01
+- [産業用ロボット・FA(ファクトリーオートメーション)メーカーにおける生成AI活用事例](topics/part14-industry-cases/industrial-robotics-fa-ai-use-cases.md): 新規執筆(ファナック×Google/AWS・安川電機×Google DeepMind・三菱電機Maisart等、自然言語操作・ティーチング高速化・予知保全の活用事例)
+
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 新規執筆(タクシー配車AI・AIオンデマンドバス・自動運転レベル4実証の活用事例)
