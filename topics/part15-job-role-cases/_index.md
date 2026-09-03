@@ -134,6 +134,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 ### 第7章 経理・財務・内部監査
 - [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
 - [内部監査職における生成AI活用事例](internal-audit-ai-use-cases.md)
+- [税理士における生成AI活用事例](tax-accountant-ai-use-cases.md)
 
 ### 第8章 法務・知財・コンプライアンス
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
