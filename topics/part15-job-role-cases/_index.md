@@ -153,6 +153,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 ### 第12章 研究開発・品質管理
 - [研究開発(R&D)職における生成AI活用事例](rd-ai-use-cases.md)
 - [品質管理・QA職における生成AI活用事例](quality-assurance-ai-use-cases.md)
+- [大学教員・研究者における生成AI活用事例](university-faculty-researcher-ai-use-cases.md)
 
 ### 第13章 生産管理・サプライチェーン
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](production-management-scm-ai-use-cases.md)
