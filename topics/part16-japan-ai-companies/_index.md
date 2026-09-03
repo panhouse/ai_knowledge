@@ -79,6 +79,7 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [教育・EdTech AI企業一覧](edtech-ai-companies-japan.md)
 - [飲食店経営支援AI企業一覧](restaurant-management-ai-companies-japan.md)
 - [保険(インシュアテック)AI企業一覧](insurance-insurtech-ai-companies-japan.md)
+- [AML・取引不正検知(フィンテック犯罪対策)AI企業一覧](aml-fraud-detection-ai-companies-japan.md)
 - [小売・EC特化AI企業一覧(国内)](retail-ec-ai-companies-japan.md)
 - [データ分析・BI AI企業一覧(国内)](data-analytics-bi-ai-companies-japan.md)
 - [画像・動画生成AI企業一覧(国内)](image-video-generation-ai-companies-japan.md)
