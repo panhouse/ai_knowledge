@@ -6,6 +6,18 @@
 
 ## 2026-08-20
 - [Function Calling(Tool Calling)の基本](topics/part09-api-development/function-calling-basics.md): 組み込みツールとの違い・Assistants API廃止直前情報・Anthropicの大規模エージェント向け拡張を反映して最新化・増強
+- [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): OpenAI系(GPT-5.1・GPT-5.2)の出力Markdown既定動作の変化を反映して最新化・増強
+## 2026-08-19
+- [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): 個人・法人Copilotアプリ統合、Cowork(GA)、GPT-5.6化を反映して最新化
+- [知財・特許担当者における生成AI活用事例](topics/part15-job-role-cases/ip-patent-ai-use-cases.md): 新規執筆(発明発掘・先行技術調査/FTO・クレーム/明細書ドラフト・拒絶理由通知対応・商標調査・IPランドスケープの活用事例)
+- [Grok(xAI)の基本](topics/part03-ai-chat-tools/grok-basics.md): モデル世代交代(Grok 4.6)・Cursor買収完了・利用上限の週次共有枠化を反映して最新化
+- [Perplexityの基本](topics/part08-specialized-ai-tools/perplexity-basics.md): モデル・Perplexity Computer・Comet Plus・料金・セキュリティ(PleaseFix/PerplexedComet)を最新化
+- [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): Opus 5の登場とCowork統合を反映して最新化
+- [IT・情報通信における生成AI活用事例](topics/part14-industry-cases/it-telecom-ai-use-cases.md): NTTデータ「AIネイティブ開発」(人月型契約の見直し)とDeutsche Telekom・Bharti Airtelなど海外キャリアの自律型ネットワーク運用事例を追加し最新化
+- [税理士・社労士向けAI SaaS企業一覧](topics/part16-japan-ai-companies/tax-labor-consultant-ai-companies-japan.md): 新規執筆(TKC・freee・ミロク情報サービス・日本デジタル研究所・OBC・エムケイシステムの6社を収録)
+- [プロンプトインジェクションとは何か(仕組みと対策)](topics/part04-risk-security/prompt-injection-basics.md): 新型攻撃ADI(Agent Data Injection)・裁判所での隠しプロンプト事例・Claude Chrome拡張機能の脆弱性再発・ChatGPT Atlas終了後の状況を反映して最新化
+- [ストリーミング応答(Streaming)の基本](topics/part09-api-development/streaming-api-basics.md): 新規執筆(SSEベースの逐次応答の仕組み、OpenAI/Anthropic/Geminiの実装比較、JSONモード・Function Calling・Batch APIとの使い分け)
+- [生成AIの発展の歴史](topics/part01-ai-basics/ai-history-and-evolution.md): 中国発オープンウェイトモデルの追い上げ(Kimi K3・DeepSeek V4)を反映して最新化
 
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
