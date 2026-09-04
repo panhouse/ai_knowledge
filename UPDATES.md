@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-24
+- [創薬AI企業一覧(国内)](topics/part16-japan-ai-companies/drug-discovery-ai-companies-japan.md): 新規執筆(Preferred Networks・Elix・MOLCURE・エクサウィザーズ・FRONTEOの5社を収録)
 - [保険営業(生命保険・損害保険)における生成AI活用事例](topics/part15-job-role-cases/insurance-agent-ai-use-cases.md): 新規執筆(ヒアリング・提案書・告知書確認・既契約者フォロー・保険金請求・募集文書コンプライアンスの活用事例)
 ## 2026-08-23
 - [レンタル・リース業界における生成AI活用事例](topics/part14-industry-cases/rental-leasing-industry-ai-use-cases.md): 新規執筆(需要予測AI・AIチャットボット・見積書処理AI・危険運転検知AI・スタイリングAIの活用事例)
