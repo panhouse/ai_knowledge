@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-27
+- [獣医師における生成AI活用事例](topics/part15-job-role-cases/veterinarian-ai-use-cases.md): 新規執筆(投与量計算・鑑別診断の壁打ち・文献検索・飼い主説明準備など臨床現場での使い分け)
 - [決済・フィンテックAI企業一覧](topics/part16-japan-ai-companies/payment-fintech-ai-companies-japan.md): 新規執筆(GMOペイメントゲートウェイ・セカンドサイトアナリティカ・UPSIDER・Paidy・Smartpay・メルペイ・Finatextの7社を収録)
 - [データアノテーション・ラベリングAI企業一覧](topics/part16-japan-ai-companies/data-labeling-annotation-ai-companies-japan.md): 新規執筆(FastLabel・ブライセン・データ・タング・Nextremer・ヒューマンサイエンス・LTSグループの6社を収録)
 - [証券・資産運用業界における生成AI活用事例](topics/part14-industry-cases/asset-management-securities-industry-ai-use-cases.md): 新規執筆(リサーチ支援・運用提案書ドラフト・ロボアドバイザーの生成AI化・営業コンプライアンス監視・バックオフィス事務の活用事例)
