@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-04
+- [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): GPT-6 Astra発表・ロールアウト開始とo3終了を反映して最新化・増強
 - [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): モデルラインナップ(Gemini 3.8 Flash/3.8 Flash Cyber)・Gemini 3.5 Pro/Gemini 4の状況・Gemini Notebookの利用上限を2026年9月時点に最新化
 - [Claude(Anthropic)の基本](topics/part03-ai-chat-tools/claude-basics.md): モデルラインナップ(Fable 5.1/Mythos 5.1)とCoworkの内蔵ブラウザ機能を最新化・増強
 - [ChatGPTのプラン比較](topics/part03-ai-chat-tools/chatgpt-plan-comparison.md): Business座席のStandard/Premium分化を最新化・増強
