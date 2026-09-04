@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-27
+- [大学・高等教育機関における生成AI活用事例](topics/part14-industry-cases/higher-education-industry-ai-use-cases.md): 新規執筆(研究支援・学生支援チャットボット・学術的誠実性・入試でのAI取り扱い・AIリテラシー教育必修化の事例整理)
 ## 2026-08-26
 - [医療機器製造業における生成AI活用事例](topics/part14-industry-cases/medical-device-manufacturing-ai-use-cases.md): 新規執筆(薬事申請・ISO13485/QMS文書管理・添付文書多言語化・PMS・外観検査の活用事例)
 - [臨床開発・治験担当者(CRA・CRC)における生成AI活用事例](topics/part15-job-role-cases/clinical-trial-cra-crc-ai-use-cases.md): 新規執筆(CRA・CRCの業務フェーズ別活用マップ、CSR自動作成AI・RBM・DCTの事例)
