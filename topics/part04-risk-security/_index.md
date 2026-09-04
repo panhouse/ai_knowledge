@@ -25,6 +25,7 @@ part: 4
 - [生成AI利用における情報漏洩対策](information-leakage-prevention.md)
 - [プロンプトインジェクションとは何か(仕組みと対策)](prompt-injection-basics.md)
 - [ジェイルブレイク(脱獄)とは何か・対策](jailbreak-basics.md)
+- [AIレッドチーミングの基本(実施体制・頻度・外部ベンダー活用)](ai-red-teaming-basics.md)
 - [ガードレール(生成AIの入出力安全対策)の基本](ai-guardrails-basics.md)
 - [ハルシネーションとは何か・対策](hallucination-and-countermeasures.md)
 - [生成AIの著作権リスクと実務での注意点](copyright-risks-in-generative-ai.md)
@@ -32,3 +33,4 @@ part: 4
 - [シャドーAI(無許可利用)対策](shadow-ai-basics.md)
 - [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](ai-content-detection-and-watermarking-basics.md)
 - [社内AI利用ガイドラインの作り方](ai-internal-guideline-basics.md)
+- [生成AIと個人情報保護法の実務 ― 顧客情報を入力してよいか、匿名加工・仮名加工の考え方](personal-data-protection-risks-in-generative-ai.md)
