@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-02
+- [中古車販売・オークション業界における生成AI活用事例](topics/part14-industry-cases/used-car-sales-auction-industry-ai-use-cases.md): 新規執筆(AI画像査定・相場分析・仕入れ価格予測・輸出書類処理の活用事例)
 - [不動産管理(プロパティマネジメント)担当者における生成AI活用事例](topics/part15-job-role-cases/property-management-ai-use-cases.md): 新規執筆(入居者対応・滞納督促・空室対策・修繕見積比較・重説チェックの活用事例)
 - [電力需給最適化・エネルギーAI企業一覧(国内)](topics/part16-japan-ai-companies/energy-grid-demand-optimization-ai-companies-japan.md): 新規執筆(TRENDE・Looop・デジタルグリッド・アイ・グリッド・ソリューションズ・Shizen Connect・エナリス・Yanekaraの7社を収録)
 - [スーパーマーケット業界における生成AI活用事例](topics/part14-industry-cases/supermarket-industry-ai-use-cases.md): 新規執筆(生鮮食品の需要予測・自動発注、ダイナミックプライシング、セルフレジ不正検知、チラシ自動生成の活用事例)
