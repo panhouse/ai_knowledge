@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-26
+- [気象・防災AI企業一覧](topics/part16-japan-ai-companies/weather-disaster-prevention-ai-companies-japan.md): 新規執筆(Spectee・ウェザーニューズ・JX通信社・建設技術研究所・応用地質・日本工営・日本気象株式会社の7社を収録)
 - [人事評価・タレントマネジメントAI企業一覧](topics/part16-japan-ai-companies/talent-management-ai-companies-japan.md): 新規執筆(カオナビ・タレントパレット・あしたのチーム・Wevox・モチベーションクラウド・KAKEAIの6社を収録)
 - [カーボンニュートラル・ESG(GHG算定・報告)AI企業一覧](topics/part16-japan-ai-companies/carbon-esg-reporting-ai-companies-japan.md): 新規執筆(アスエネ・ゼロボード・e-dash・booost technologies・サステナブル・ラボ・シェルパ・アンド・カンパニー・ウイングアーク1stの7社を収録)
 - [上下水道(水道インフラ)業界における生成AI活用事例](topics/part14-industry-cases/water-utility-industry-ai-use-cases.md): 新規執筆(漏水検知・管路劣化予測・浄水場運転支援・スマートメーター・顧客対応・広域化における活用事例)
