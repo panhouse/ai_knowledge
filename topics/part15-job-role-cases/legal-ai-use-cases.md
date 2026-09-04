@@ -142,6 +142,7 @@ updated: 2026-08-09
 
 ## 関連トピック
 
+- [知財・特許担当者における生成AI活用事例](ip-patent-ai-use-cases.md)
 - [生成AIに向く業務・向かない業務の切り分け](../part12-business-practice/ai-task-suitability.md)
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
