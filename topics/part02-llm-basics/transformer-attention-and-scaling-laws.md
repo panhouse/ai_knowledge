@@ -4,7 +4,7 @@ part: 2
 chapter: 第1章 LLMの仕組み
 tags: [Transformer, Attention, スケーリング則, Scaling Laws, LLM基礎, MoE, Mamba/SSM]
 created: 2026-07-06
-updated: 2026-07-24
+updated: 2026-08-22
 ---
 
 # Transformer・Attention機構とスケーリング則の基本
@@ -48,12 +48,12 @@ Transformerで大規模化の道が開けたあと、OpenAIの研究チームが
 
 **新しい第4の軸:テスト時計算(推論時スケーリング)**: 2024年以降、事前学習(モデルを作る段階)の規模を増やすだけでなく、**回答を生成する瞬間(推論時)に、より多くの「考える時間・計算量」を使わせることでも性能が予測可能に向上する**ことが分かってきた。これがOpenAI「o1」以降の[推論モデル(Reasoning Model)](reasoning-model-basics.md)の理論的な裏付けである。2025〜2026年にかけては、事前学習側の計算量を増やしても得られる改善が小さくなってきた(次項参照)ことを受け、多くの開発ラボが「事前学習をある程度で切り上げ、その分の計算資源をテスト時計算や、正解データで応答の質を仕上げる事後学習(post-training)に振り向ける」判断をするようになっている([arXiv 2604.01411「Test-Time Scaling Makes Overtraining Compute-Optimal」](https://arxiv.org/abs/2604.01411))。
 
-### Attentionの効率化:MoEとMamba/SSMハイブリッドの実用化
+### Attentionの効率化:MoE・Mamba/SSMハイブリッド構成の主流化
 
-Attention機構は「文中の全単語ペア」の関連度を計算するため、文章が長くなるほど計算量が急激に(文の長さのおよそ2乗で)増えるという弱点がある。2025〜2026年にかけて、この弱点を補うアーキテクチャの工夫が実用モデルに広がっている。
+Attention機構は「文中の全単語ペア」の関連度を計算するため、文章が長くなるほど計算量が急激に(文の長さのおよそ2乗で)増えるという弱点がある。この弱点を補うアーキテクチャの工夫は、2025年頃までは一部の先進的なモデルの実験的な試みだったが、2026年8月時点では新規のフロンティアモデル(最先端の大規模モデル)の標準設計になったと言ってよい状況になっている。
 
-- **MoE(Mixture of Experts、専門家混合)**: モデル内部に多数の「専門家」ネットワークを用意しておき、1つの単語を処理するたびにその一部だけを選んで計算に使う方式。モデル全体としては巨大な知識を持ちながら、実際に動く計算コスト(と料金)は一部の専門家分で済む。Googleは技術レポートでGemini 2.5がスパースMoE構成であることを公表しており([arXiv 2507.06261「Gemini 2.5」](https://arxiv.org/abs/2507.06261))、2026年時点では公開モデル・主要クローズドモデルの多くがMoE化している。ただしAnthropic(Claude)はアーキテクチャの詳細を公表しておらず、MoEかどうかは非公開である点には注意。
-- **Mamba/SSM(State Space Model、状態空間モデル)**: 全単語ペアを毎回計算するAttentionとは異なり、文章を読み進めながら「それまでの内容の要約(状態)」を逐次更新していく方式。計算量が文の長さに比例(線形)にしか増えないため、長文処理で有利。単体でAttentionを完全に置き換える構成はまだ少数派だが、AttentionとMambaを組み合わせた「ハイブリッド構成」が2026年に入り本番投入され始めている。AI21の「Jamba」([AI21公式ブログ](https://www.ai21.com/blog/announcing-jamba/))、NVIDIAの「Nemotron 3」([VentureBeat](https://venturebeat.com/technology/nvidia-debuts-nemotron-3-with-hybrid-moe-and-mamba-transformer-to-drive))などが代表例で、全体の層の大半をMamba(線形)層にし、一部だけAttention層として残す構成に業界内で収束しつつあるとの分析もある。
+- **MoE(Mixture of Experts、専門家混合)**: モデル内部に多数の「専門家」ネットワークを用意しておき、1つの単語を処理するたびにその一部だけを選んで計算に使う方式。モデル全体としては巨大な知識を持ちながら、実際に動く計算コスト(と料金)は一部の専門家分で済む。Googleは技術レポートでGemini 2.5がスパースMoE構成であることを公表しており([arXiv 2507.06261「Gemini 2.5」](https://arxiv.org/abs/2507.06261))、後継のGemini 3世代もこの路線を継続している。2026年8月にはAlibabaが総パラメータ2.4兆・アクティブ(実際に計算に使う分)950億というMoEモデル「Qwen3.8-Max」を投入するなど([MarkTechPost「Alibaba Qwen Releases Qwen3.8-Max」](https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/))、公開モデル・主要クローズドモデルの多くがMoE化しており、「兆パラメータ級の看板の裏で、実際に動く部分は数百億〜1千億程度」という設計が当たり前になっている。ただしAnthropic(Claude)はアーキテクチャの詳細を公表しておらず、MoEかどうかは非公開である点には注意。
+- **Mamba/SSM(State Space Model、状態空間モデル)**: 全単語ペアを毎回計算するAttentionとは異なり、文章を読み進めながら「それまでの内容の要約(状態)」を逐次更新していく方式。計算量が文の長さに比例(線形)にしか増えないため、長文処理で有利。理論面では2026年3月発表の改良版「Mamba-3」が、より少ない内部状態でAttentionベースの強力なモデルと同等の精度を、およそ半分の計算コストで達成できることを示した([Princeton PLI「Mamba-3」](https://pli.princeton.edu/blog/2026/mamba-3-improved-sequence-modeling-using-state-space-principles)、[arXiv 2603.15569](https://arxiv.org/abs/2603.15569))。単体でAttentionを完全に置き換える構成はまだ少数派だが、AttentionとMamba/SSM系(「Gated DeltaNet」など同系統の線形Attention手法を含む)を組み合わせた「ハイブリッド構成」は、2026年に入り実験段階から本番投入の主流へと移った。AI21は自社ブログで「Attentionだけでは十分でなかった」としてこの流れを総括し、自社のJamba系ハイブリッドモデルを総パラメータ3,980億・アクティブ940億規模まで拡張したと報告している([AI21公式ブログ「Attention was never enough」](https://www.ai21.com/blog/rise-of-hybrid-llms/))。NVIDIAの「Nemotron 3」([VentureBeat](https://venturebeat.com/technology/nvidia-debuts-nemotron-3-with-hybrid-moe-and-mamba-transformer-to-drive))、そして前述のAlibaba「Qwen3.8-Max」も、Gated DeltaNet層・MoE層・通常のAttention層を組み合わせたハイブリッド構成を採用しており、兆パラメータ級の最大規模モデルにもこの設計が広がっている。
 
 実務上は、これらのアーキテクチャの詳細を自分で選ぶ場面はほとんどない。「同程度の性能でも料金が安い」「長文の処理が速い」といったモデルの特徴の裏側に、こうした構成の工夫があると理解しておけば十分である。
 
@@ -89,7 +89,7 @@ Attention機構は「文中の全単語ペア」の関連度を計算するた�
 ## 注意点・よくある誤解
 
 - **「スケーリング則=永遠に大きくすれば良くなる保証」ではない**: スケーリング則が示すのは「計算量を増やすと、ある種の指標(次のトークンを当てる精度など)が滑らかに改善する傾向がある」という統計的な関係であり、無限に続く保証や、あらゆる能力が同じペースで伸びる保証ではない。学習データが巨大化するほど同じ内容の重複が増え、1トークンあたりに得られる新しい情報量が減っていく「サブスケーリング(Sub-Scaling)」という収穫逓減が確認されており([arXiv 2507.10613「Sub-Scaling Laws」](https://arxiv.org/abs/2507.10613))、これが「事前学習スケーリングの限界(スケーリングの壁)」論争の技術的な根拠の一つになっている。一方でAnthropicのダリオ・アモデイCEOは2026年3月のMorgan Stanley主催カンファレンスで「(スケーリングは)壁にぶつかっていない」「2026年は劇的な加速(radical acceleration)の年になる」と明言しており([36Kr「Scaling Knows No Bounds」](https://eu.36kr.com/en/p/3709346127933831))、業界内でも見解が分かれている点は理解しておく([Cameron R. Wolfe「Scaling Laws for LLMs」](https://cameronrwolfe.substack.com/p/llm-scaling-laws))。
-- **学習データの枯渇(データウォール)も制約要因**: 調査機関Epoch AIの試算では、インターネット上の高品質な人間が書いたテキストは2026〜2032年の間に実質的に枯渇するとされ、この「データウォール(Data Wall)」の到来が現在進行形の制約になっている([AIbase「The AI Industry Faces 'Data Wall' Challenge」](https://www.aibase.com/news/10757))。対応策として、AIが生成した合成データの活用や、テキスト以外のデータ(画像・音声・動画)を取り込むマルチモーダル化が進んでいるが、合成データを検証なしに大量投入するとモデルの多様性が失われ精度が劣化する「モデル崩壊(Model Collapse)」のリスクがあり、合成データの品質管理も新たな課題になっている。
+- **学習データの枯渇(データウォール)も制約要因**: 調査機関Epoch AIの試算では、インターネット上の高品質な人間が書いたテキストは2026〜2032年の間に実質的に枯渇するとされ、この「データウォール(Data Wall)」の到来が現在進行形の制約になっている([AIbase「The AI Industry Faces 'Data Wall' Challenge」](https://www.aibase.com/news/10757))。対応策として、AIが生成した合成データの活用や、テキスト以外のデータ(画像・音声・動画)を取り込むマルチモーダル化が進んでいるが、合成データを検証なしに大量投入するとモデルの多様性が失われ精度が劣化する「モデル崩壊(Model Collapse)」のリスクがあり、合成データの品質管理も新たな課題になっている。事前学習側の伸びが鈍化しているにもかかわらず、業界全体のデータセンター投資計画は2026〜2030年で5〜7兆ドル規模と見積もられており([Dell'Oro Group「Data Center Infrastructure in 2026」](https://www.delloro.com/2026-predictions-data-center-infrastructure/))、投資が続いていること自体はスケーリング則が有効である証拠にはならない(推論需要の急拡大や、MoE・ハイブリッド構成による効率化のためのインフラ投資も含まれる)、という点も見落とさないようにしたい。
 - **「パラメータ数が多い=賢い」という単純化は誤解**: Chinchilla則が示した通り、同じ計算量でも「モデルサイズ」と「データ量」の配分次第で性能は変わる。加えて、クローズドモデル(ChatGPT・Claude・Geminiなど)のパラメータ数は公式に公開されていないことが多く、ネット上で語られる数字の多くは非公式な推測に過ぎない。
 - **Attention機構自体は「注目度を計算する」だけで、事実の正しさを保証しない**: どの語に注目するかを的確に計算できても、[次トークン予測の仕組み](llm-mechanism-basics.md)が示す通り、モデルは統計的にそれらしい続きを生成しているだけであり、ハルシネーション(事実と異なる自信満々な生成)を防ぐ機構ではない。
 
@@ -104,6 +104,10 @@ Attention機構は「文中の全単語ペア」の関連度を計算するた�
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](model-types-and-selection-basics.md)
 
 ## 更新履歴
+
+### 2026-08-22: MoE・Mamba/SSMハイブリッド構成の「主流化」を最新の実例で更新、データセンター投資規模を補足
+- **内容**: 「仕組み・背景」のAttention効率化の節を、実用化の段階から2026年8月時点の主流設計へと記述を引き上げ。Gemini 3世代でのMoE継続、2026年8月のAlibaba「Qwen3.8-Max」(総2.4兆・アクティブ950億のMoE+Gated DeltaNet+Attentionハイブリッド)を新たな実例として追加。理論面ではMamba-3(ICLR 2026)による計算コスト半減の成果、AI21のハイブリッドモデル拡張(総3,980億・アクティブ940億)を追加。「注意点」にデータセンター投資規模の最新見通し(2026〜2030年で5〜7兆ドル)を補足し、投資継続がスケーリング則の正しさの証明にはならない点を明記
+- **出典**: [MarkTechPost「Alibaba Qwen Releases Qwen3.8-Max」](https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/)、[Princeton PLI「Mamba-3: Improved Sequence Modeling using State Space Principles」](https://pli.princeton.edu/blog/2026/mamba-3-improved-sequence-modeling-using-state-space-principles)、[arXiv 2603.15569「Mamba-3」](https://arxiv.org/abs/2603.15569)、[AI21公式ブログ「Attention was never enough: Tracing the rise of hybrid LLMs」](https://www.ai21.com/blog/rise-of-hybrid-llms/)、[Dell'Oro Group「Data Center Infrastructure in 2026」](https://www.delloro.com/2026-predictions-data-center-infrastructure/)
 
 ### 2026-07-24: MoE・Mamba/SSMハイブリッドの実用化動向を追加、スケーリングの壁論争を2026年最新情報に更新
 - **内容**: 「仕組み・背景」にAttention機構の効率化(MoE、Mamba/SSMハイブリッド構成)の実用化動向を新設。「スケーリング則」節のテスト時計算の説明をpost-trainingへの資源シフトの観点で補強。「注意点」のスケーリングの壁論争を、サブスケーリング論文・データウォール予測・Dario Amodei氏の2026年3月の発言で裏取りして更新
