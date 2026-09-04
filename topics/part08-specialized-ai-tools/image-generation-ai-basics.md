@@ -4,7 +4,7 @@ part: 8
 chapter: 第3章 画像・動画・音声の生成AI
 tags: [画像生成AI, Midjourney, Stable Diffusion, DALL-E3, GPT Image, Nano Banana, Adobe Firefly, プロンプト]
 created: 2026-07-06
-updated: 2026-08-15
+updated: 2026-09-04
 ---
 
 # 画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)
@@ -13,9 +13,9 @@ updated: 2026-08-15
 
 バナー画像・資料の挿絵・SNS投稿画像を作るたびに、デザイナーに依頼したりストックフォトを探し回ったりしていると、ちょっとした画像1枚でも時間とコストがかかる。画像生成AI(テキストの指示から新しい画像を作り出す生成AI)を使えば、文章で指示するだけで数十秒〜数分でオリジナル画像の候補が何パターンも手に入る。
 
-ただしツールごとに得意なテイスト・料金体系・商用利用のしやすさが大きく異なり、「とりあえずMidjourney」「とりあえずChatGPT」では業務用途に合わないことがある。本ページは、2026年8月時点で実務で使われている主要な画像生成AI(Midjourney、Stable Diffusion、ChatGPT〈GPT Image、旧DALL-E 3〉、Google Gemini〈Nano Banana〉、Adobe Firefly)を横並びで整理し、業務での選び方とコピペで使えるプロンプト例をまとめる。著作権・法務面の詳しい注意点は[生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)に譲り、本ページはツールの選び方と実務での使い方に絞る。
+ただしツールごとに得意なテイスト・料金体系・商用利用のしやすさが大きく異なり、「とりあえずMidjourney」「とりあえずChatGPT」では業務用途に合わないことがある。本ページは、2026年9月時点で実務で使われている主要な画像生成AI(Midjourney、Stable Diffusion、ChatGPT〈GPT Image、旧DALL-E 3〉、Google Gemini〈Nano Banana〉、Adobe Firefly)を横並びで整理し、業務での選び方とコピペで使えるプロンプト例をまとめる。著作権・法務面の詳しい注意点は[生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)に譲り、本ページはツールの選び方と実務での使い方に絞る。
 
-なお2026年に入り、Ideogram(V4、文字入り画像に強い。サブスクは月額$8〜$48、API従量課金は1枚$0.03〜$0.10)、xAIの「Grok Imagine」(2026年8月7日に画像生成モデルを「Imagine Image 2.0」へ刷新し、精度の高い指示追従・文字描画・部分編集を強化)など新しい選択肢も存在感を増している。Black Forest Labsの「Flux」シリーズは2026年7月23日発表の「FLUX 3」で画像専業から画像・動画・音声を一体で扱うマルチモーダルモデルへ転換しており(8月5日にAPI経由でGA、解像度は当面1080p)、純粋な軽量オープンウェイト画像モデルとしての性格は薄れつつある。これら新興ツールは法人契約・サポート体制の情報整備が本ページで扱う主要5ツールほど成熟していないため、本ページでは参考情報にとどめ、主要5ツールを軸に解説する。
+なお2026年に入り、Ideogram(V4、文字入り画像に強い。サブスクはFree〜Pro月額$42程度、API従量課金は1枚$0.03〜$0.10)、xAIの「Grok Imagine」(2026年8月7日に画像生成モデルを「Imagine Image 2.0」へ刷新し、精度の高い指示追従・文字描画・部分編集を強化)など新しい選択肢も存在感を増している。Black Forest Labsの「Flux」シリーズは2026年7月23日発表の「FLUX 3」で画像専業から画像・動画・音声を一体で扱うマルチモーダルモデルへ転換しており(8月5日にAPI経由でGA、解像度は当面1080p)、純粋な軽量オープンウェイト画像モデルとしての性格は薄れつつある。これら新興ツールは法人契約・サポート体制の情報整備が本ページで扱う主要5ツールほど成熟していないため、本ページでは参考情報にとどめ、主要5ツールを軸に解説する。
 
 ## 仕組み・背景
 
@@ -24,19 +24,19 @@ updated: 2026-08-15
 - **拡散モデル(diffusion model)**: ランダムなノイズ画像から出発し、テキストの指示に沿って少しずつノイズを取り除いていくことで画像を作り上げる方式。Midjourney、Stable Diffusion、Adobe Fireflyの基盤モデルはこの方式で、写実的な質感や独特の画風を出しやすい
 - **自己回帰(autoregressive)型のマルチモーダルモデル**: 文章を生成するのと同じ仕組み(次の要素を予測して並べていく)で、画像も「トークン」の並びとして生成する方式。ChatGPTの画像生成(GPT Image)やGoogle Geminiの「Nano Banana」系モデルはこちらに近く、対話の流れの中で「さっきの画像の背景だけ変えて」のような指示追従・部分編集に強く、画像内の文字も比較的正確に描ける
 
-2023年頃まではDALL-E 3(拡散モデル、ChatGPTからAPI経由で呼び出される別モデルという位置づけ)が主流だったが、OpenAIは2025年にChatGPTへ画像生成を直接統合した新モデル(GPT Image)に切り替えており、DALL-E 3はAPIとして2026年5月12日にサポートが終了している。「DALL-E 3を使う」という表現は、2026年8月時点では実質的に「ChatGPTの画像生成(GPT Image)を使う」と読み替えてよい。
+2023年頃まではDALL-E 3(拡散モデル、ChatGPTからAPI経由で呼び出される別モデルという位置づけ)が主流だったが、OpenAIは2025年にChatGPTへ画像生成を直接統合した新モデル(GPT Image)に切り替えており、DALL-E 3はAPIとして2026年5月12日にサポートが終了している。「DALL-E 3を使う」という表現は、2026年9月時点では実質的に「ChatGPTの画像生成(GPT Image)を使う」と読み替えてよい。
 
 OpenAIは2026年4月21日に「ChatGPT Images 2.0」として新モデルGPT Image 2を発表し、4月22日以降ChatGPT・Codexの各ユーザーに展開、5月からAPIでも利用可能になっている。GPT Image 2は生成前に内容を検討してから描く「推論(reasoning)」的なプロセスを挟むのが特徴で、日本語・英語・中国語・韓国語・アラビア語など十数言語にわたり文字の描画精度が大きく向上した(文字単位でおよそ99%程度の精度と説明されている)ほか、最大4K相当の解像度・複数ターンにわたる部分編集にも対応する。旧世代のGPT Image 1は2026年10月23日にAPIとしての提供終了が予告されている。
 
-Googleも「Nano Banana」というブランド名でGeminiの画像生成モデルを頻繁に更新しており、2026年8月時点では「Gemini 3」系モデル群の総称として整理されている。最上位の「Nano Banana Pro」(Gemini 3 Pro Image)は高度な推論を挟んで1K・2K・4K解像度、複数ターン・複数参照画像にまたがる編集に対応する旗艦モデル、リアルタイム・大量処理向けの「Nano Banana 2」(Gemini 3.1 Flash Image)と、さらに低コストな「Nano Banana 2 Lite」(Gemini 3.1 Flash-Lite Image、生成約4秒・1枚あたり約$0.034)がその下に位置づけられる。あわせてGoogleは旧世代の「Imagen」系API(Imagen 4/Ultra/Fast)を2026年8月17日にGemini APIから終了し、画像生成の窓口をNano Banana系モデルに一本化する予定で、API連携で画像生成を組んでいる場合は移行が必須になる。Midjourneyも2026年4月30日にV8.1をリリースし、6月10日にはV7に代わってV8.1がデフォルトモデルとなった後、7月24日には美的表現・パーソナライズ精度を高めたV8.2がデフォルトに切り替わっている(標準生成はV8.1で従来の4〜5倍速く、アップスケールなしで2K相当の画像を生成できる。V8.2はさらに作風の作り込みを強化した一方、Omni ReferenceやDraft Modeなど一部機能は2026年8月時点でまだ非対応)。ツール名とモデル名の対応は流動的である点を前提に、契約・比較のたびに現行モデル名を確認する必要がある。
+Googleも「Nano Banana」というブランド名でGeminiの画像生成モデルを頻繁に更新しており、2026年8月時点では「Gemini 3」系モデル群の総称として整理されている。最上位の「Nano Banana Pro」(Gemini 3 Pro Image)は高度な推論を挟んで1K・2K・4K解像度、複数ターン・複数参照画像にまたがる編集に対応する旗艦モデル、リアルタイム・大量処理向けの「Nano Banana 2」(Gemini 3.1 Flash Image)と、さらに低コストな「Nano Banana 2 Lite」(Gemini 3.1 Flash-Lite Image、生成約4秒・1枚あたり約$0.034)がその下に位置づけられる。あわせてGoogleは旧世代の「Imagen」系API(Imagen 4/Ultra/Fast)を2026年8月17日にGemini APIから終了し、画像生成の窓口をNano Banana系モデルに一本化した。API連携で画像生成を組んでいた場合は移行が必須になっている。OpenAIも2025年12月投入のgpt-image-1.5に続けて2026年4月にgpt-image-2を投入する一方、ChatGPT自体のプラン体系を再編し、2026年1月には無料とPlusの間を埋める「Go」($8/月)、4月には最上位の「Pro」に$100/月の中間ティアを新設している(image生成はGo以上の有料プランで利用可能)。Midjourneyも2026年4月30日にV8.1をリリースし、6月10日にはV7に代わってV8.1がデフォルトモデルとなった後、7月24日には美的表現・パーソナライズ精度を高めたV8.2がデフォルトに切り替わっている(標準生成はV8.1で従来の4〜5倍速く、アップスケールなしで2K相当の画像を生成できる。V8.2はさらに作風の作り込みを強化した一方、Omni ReferenceやDraft Modeなど一部機能は2026年8月時点でまだ非対応)。ツール名とモデル名の対応は流動的である点を前提に、契約・比較のたびに現行モデル名を確認する必要がある。
 
 ## 使いどころ・使い分け
 
 | ツール | 提供元・利用方法 | 強み | 弱み・注意点 | 向いている業務用途 |
 |---|---|---|---|---|
 | Midjourney(V8.2) | midjourney.com(Web版)/Discord | 芸術性・質感の美しさに定評があり、独特の作風を出しやすい。パラメータで細かく画風を制御できる。V8.2(2026年7月24日デフォルト化)で作風の作り込み・パーソナライズ精度がさらに向上 | チャット的な対話編集や正確な文字入れは他ツールより弱い。無料プランがなくサブスク必須。Omni ReferenceやDraft Modeなど一部機能はV8.2で未対応 | コンセプトアート、SNSで映える画像、資料の世界観づくりのビジュアル |
-| Stable Diffusion(SD4系、オープンウェイト) | ローカルPC(ComfyUI等)/Stability AI API/DreamStudio | ローカル実行なら無料、追加学習(ファインチューニング)や大量生成の自動化が可能。企業データを外部に出さずに運用できる。2026年4月投入のSD4(U-Netから拡散トランスフォーマーへ刷新)は上位のSD4 Ultraで4096×4096ネイティブ・専用の文字描画モジュールも備える | 環境構築にある程度の技術知識が必要。商用利用は年間売上等の条件で有償ライセンスが必要になる場合がある | 同じキャラクター・ブランド画像の量産、社内システムへの組み込み、社外に出せない要件がある生成 |
-| ChatGPT(GPT Image 2、旧DALL-E 3) | ChatGPT内でプロンプトを入力するだけ | 対話しながら「ここだけ直して」と部分修正できる。2026年4月のGPT Image 2投入で、日本語を含む多言語の文字描画精度が大きく向上。ChatGPTの他機能(文章作成・資料作成)とシームレスに使える | 1枚あたりの画風の作り込みはMidjourneyに劣る場合がある。無料枠は少ない | 資料の挿絵、文章作成の延長で作る簡易バナー、文字入りバナー・アイキャッチ画像 |
+| Stable Diffusion(オープンウェイト) | ローカルPC(ComfyUI等)/Stability AI API/DreamStudio | ローカル実行なら無料、追加学習(ファインチューニング)や大量生成の自動化が可能。企業データを外部に出さずに運用できる | 環境構築にある程度の技術知識が必要。商用利用は年間売上等の条件で有償ライセンスが必要になる場合がある。※Web上には「Stable Diffusion 4(SD4)」という後継モデルの情報が多数出回っているが、2026年9月4日時点でStability AI公式のニュースページ・TechCrunch等の主要テック媒体でこれを裏付ける一次情報は確認できず、公式に確認できる最新の主要画像モデルはSD 3.5(2024年10月)にとどまる。契約・検証前に必ずstability.ai公式で現行モデル名を確認すること | 同じキャラクター・ブランド画像の量産、社内システムへの組み込み、社外に出せない要件がある生成 |
+| ChatGPT(GPT Image 2、旧DALL-E 3) | ChatGPT内でプロンプトを入力するだけ | 対話しながら「ここだけ直して」と部分修正できる。2026年4月のGPT Image 2投入で、日本語を含む多言語の文字描画精度が大きく向上。ChatGPTの他機能(文章作成・資料作成)とシームレスに使える | 1枚あたりの画風の作り込みはMidjourneyに劣る場合がある。無料枠は少なく、本格的に使うにはGo($8/月)以上の有料プランが必要 | 資料の挿絵、文章作成の延長で作る簡易バナー、文字入りバナー・アイキャッチ画像 |
 | Google Gemini(Nano Banana系モデル) | Geminiアプリ/API | 生成速度が速くコストが低い。複数の画像を合成したり、同一人物・キャラクターの一貫性を保った編集がしやすい | 画風の個性はMidjourneyほど強くない | SNS投稿画像・バナーの量産、既存の写真・ロゴを使った合成・加工 |
 | Adobe Firefly | firefly.adobe.com/Photoshop等のCreative Cloud統合 | 学習データがAdobe Stockのライセンス済み素材・パブリックドメイン中心で、商用利用時の権利侵害リスクを比較的抑えやすい。企業向けには著作権侵害の補償(indemnification)も提供 | 画風の幅・生成の自由度は他ツールに比べて控えめな評価もある | 広告のメインビジュアル、パッケージなど権利リスクを避けたい商用利用、Photoshopでの仕上げ作業前提の素材 |
 | (参考)Canva Magic Media等の簡易ツール | Canva等のデザインツール内 | デザインテンプレートと一体化しており、非デザイナーでもレイアウトまで含めて仕上げやすい | 画像生成そのものの精度・柔軟性は専業ツールに劣る | 社内向けの簡易バナー、テンプレートに沿ったSNS画像を素早く仕上げたい場合 |
@@ -109,7 +109,7 @@ Midjourneyでよく使うパラメータ:
 | 部分的な修正・編集 | Vary Region(範囲指定して再生成) | 続けて会話で「〇〇を変えて」と指示 | 会話または画像アップロードで指示 | Generative Fill(範囲指定して生成) |
 | 商用利用の可否 | 有料プラン加入者は可(規約の範囲内) | Plus以上で可(規約の範囲内) | 有料プランで可(規約の範囲内) | 標準で商用利用可、企業向けには著作権侵害の補償あり |
 
-### 料金プラン(2026年8月時点の目安)
+### 料金プラン(2026年9月時点の目安)
 
 | ツール | プラン | 料金 | 内容の目安 |
 |---|---|---|---|
@@ -118,8 +118,10 @@ Midjourneyでよく使うパラメータ:
 | Midjourney | Pro | 月額$60(年払い相当$48) | Fast GPU時間30時間/月、Stealthモード(非公開生成)利用可 |
 | Midjourney | Mega | 月額$120(年払い相当$96) | Fast GPU時間60時間/月、同時生成数が最大。超過分は追加Fast GPU時間$4/時間(全プラン共通) |
 | ChatGPT | Free | ¥0 | 画像生成は1日あたり数枚程度に制限 |
-| ChatGPT | Plus | 月額$20 | 3時間あたり目安50枚程度まで生成可能(現行のGPT Image 2ベース) |
-| ChatGPT API(GPT Image 2) | 従量課金(トークン単価:画像入力$8/画像出力$30/テキスト入力$5、いずれも100万トークンあたり) | 1024×1024で1枚あたり約$0.006〜$0.211(画質・解像度設定による) | 自社システムへの組み込み向け。旧GPT Image 1は2026年10月23日にAPI提供終了予定 |
+| ChatGPT | Go | 月額$8(2026年1月16日に世界展開) | 既定モデルはGPT-5.6 Luna。画像生成を含む主要機能を利用できる入門有償プランだが、広告が表示される場合がある |
+| ChatGPT | Plus | 月額$20 | GPT-5.6の主力モデルで画像生成。3時間あたり目安40〜50枚、1日あたり目安200枚程度が上限の目安(現行のGPT Image 2ベース) |
+| ChatGPT | Pro | 月額$100または$200(2026年4月9日に$100帯を新設) | $100はPlus比5倍、$200はPlus比20倍の利用上限。画像生成を含め優先処理・最大枚数を求める業務利用向け |
+| ChatGPT API(GPT Image 2) | 従量課金(トークン単価:画像入力$8/画像出力$30/テキスト入力$5、いずれも100万トークンあたり) | 1024×1024で1枚あたり約$0.006〜$0.211(画質・解像度設定による) | 自社システムへの組み込み向け。旧GPT Image 1は2026年10月23日にAPI提供終了予定。よりコスト・速度重視なら2025年12月投入の廉価版gpt-image-1.5(gpt-image-1比で入出力とも約2割安・生成速度約4倍)も選択肢 |
 | Google Gemini | Free | ¥0 | Nano Banana系モデルを回数制限付きで利用可 |
 | Google Gemini | AI Plus | 月額$4.99(2026年6月8日に$7.99から改定) | 画像生成を含む各種機能の利用上限がFreeより拡大するエントリー有償プラン |
 | Google Gemini | AI Pro | 月額$19.99 | Gemini上位モデル・画像生成(Nano Banana Pro/2)の利用上限が拡大 |
@@ -128,11 +130,12 @@ Midjourneyでよく使うパラメータ:
 | Nano Banana 2 Lite API(Gemini 3.1 Flash-Lite Image) | 従量課金 | 1枚(1K解像度)あたり約$0.034 | 高速・低コストな量産向けAPI。なお旧世代のImagen系API(Imagen 4/Ultra/Fast)は2026年8月17日にGemini APIから終了予定で、Nano Banana系への移行が必要 |
 | Adobe Firefly | Standard | 月額$9.99 | 生成クレジット2,000/月(標準解像度の生成・PhotoshopのGenerative Fillはプレミアムクレジットを消費せず、高解像度出力・動画・音声翻訳・外部パートナーモデル利用時のみ消費) |
 | Adobe Firefly | Pro | 月額$19.99 | 生成クレジット4,000/月 |
+| Adobe Firefly | Pro Plus(2026年8月新設) | 月額$49.99 | 生成クレジット10,000/月。Adobe Photoshop(Web/モバイル)・Adobe Express Premiumも含む |
 | Adobe Firefly | Premium | 月額$199.99 | 生成クレジット50,000/月 |
 | Adobe Firefly API(企業向け) | 従量課金・要契約 | 1枚あたり約$0.02〜$0.10、月額最低契約額は目安$1,000程度 | プログラムからの組み込み向け。自己申込みではなく営業窓口経由の契約が必要。基盤はFirefly Image Model 5(2026年3月GA、ネイティブ約4MP=2240×1792、要素単位の自然文編集に対応) |
-| Stable Diffusion | ローカル実行 | 無料 | 商用利用は年間売上USD100万ドル(目安1.5億円)超で有償のEnterpriseライセンスが必要。2026年4月投入のSD4は拡散トランスフォーマー方式に刷新、上位のSD4 Ultraは4096×4096ネイティブ・専用の文字描画モジュールを搭載 |
+| Stable Diffusion | ローカル実行 | 無料 | 商用利用は年間売上USD100万ドル(目安1.5億円)超で有償のEnterpriseライセンスが必要。2026年9月4日時点でStability AI公式に確認できる最新の主要画像モデルはSD 3.5(2024年10月)で、ネット上に出回る「SD4」情報は一次情報源で未確認 |
 | Stability AI API | 従量課金 | 1枚あたり約$0.003〜$0.08(モデル・解像度による) | 自社システムへの組み込み向け |
-| (参考)Ideogram(V4) | サブスク/API | サブスク月額$8〜$48、API従量課金1枚$0.03(Turbo)〜$0.10(Quality) | 看板・ロゴなど文字入り画像の精度を重視する用途向け |
+| (参考)Ideogram(V4) | サブスク/API | サブスク:Free ¥0/Plus 月額$15/Pro 月額$42(年払い)/Team $20(ユーザーあたり月額)。API従量課金1枚$0.03(Turbo)〜$0.10(Quality) | 看板・ロゴなど文字入り画像の精度を重視する用途向け |
 
 料金・利用上限・モデル名は改定頻度が非常に高いため、契約前には必ず各社公式サイトの最新情報を確認すること。
 
@@ -141,7 +144,8 @@ Midjourneyでよく使うパラメータ:
 - **画像内の文字精度はツールによって差が大きい**: 2026年4月投入のGPT Image 2は日本語を含む多言語の文字描画精度が大幅に向上した(文字単位で99%程度と説明されている)。Ideogram(V4)やxAIのGrok Imagine「Image 2.0」(2026年8月投入)も文字描画・指示追従の精度を売りにしている。一方Midjourney・Stable Diffusionは、SD4で専用の文字描画モジュールが加わったとはいえ、依然として看板・ロゴ的な文字表現が崩れやすい。文字を正確に入れたい場合はGPT Image 2やIdeogramなど文字描画に強いツールを選ぶか、重要な文字情報は画像生成後に画像編集ソフト・スライドソフト側で別途配置する方が安全
 - **手指・小物・背景の不整合(アーティファクト)は完全には無くなっていない**: 一目で見落としやすい破綻(手の指の数、透明なグラスの中の物体など)が残ることがあるため、対外公開前には人の目で必ず確認する
 - **著作権・商標・肖像権の問題は別ページで整理している**: 実在の作家・作品・キャラクター・著名人に似せた生成は侵害リスクが高い。用途別のリスクの目安や公開前チェックリストは[生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)を参照
-- **モデル名・ツール名の変遷が速い**: DALL-E 3は2026年5月にAPIサポートが終了しGPT Imageに置き換わり、そのGPT Imageも2026年4月にGPT Image 2へ更新された。MidjourneyもV7からV8.1(2026年6月にデフォルト化)、さらにV8.2(2026年7月24日にデフォルト化)へと更新され、GoogleはNano Bananaブランドを「Nano Banana Pro(Gemini 3 Pro Image)」「Nano Banana 2(Gemini 3.1 Flash Image)」「Nano Banana 2 Lite」に整理しつつ、旧世代のImagen系APIは2026年8月17日に終了予定である。いずれも数か月単位でモデルが更新されるうえ、Black Forest LabsのFluxのように「画像専業ツール」だった位置づけ自体が変わる(FLUX 3で動画・音声を含むマルチモーダルモデルへ転換)こともある。社内マニュアルやプロンプト集に古いモデル名を書いたままにしないよう、半年に一度は見直す
+- **モデル名・ツール名の変遷が速い**: DALL-E 3は2026年5月にAPIサポートが終了しGPT Imageに置き換わり、そのGPT Imageも2026年4月にGPT Image 2へ更新された。MidjourneyもV7からV8.1(2026年6月にデフォルト化)、さらにV8.2(2026年7月24日にデフォルト化)へと更新され、GoogleはNano Bananaブランドを「Nano Banana Pro(Gemini 3 Pro Image)」「Nano Banana 2(Gemini 3.1 Flash Image)」「Nano Banana 2 Lite」に整理しつつ、旧世代のImagen系APIは2026年8月17日に終了した。いずれも数か月単位でモデルが更新されるうえ、Black Forest LabsのFluxのように「画像専業ツール」だった位置づけ自体が変わる(FLUX 3で動画・音声を含むマルチモーダルモデルへ転換)こともある。社内マニュアルやプロンプト集に古いモデル名を書いたままにしないよう、半年に一度は見直す
+- **画像生成AI関連のWeb記事には、一次情報源(公式サイト・大手メディア)への裏付けがない「まとめ記事」が多い**: 例えば「Stable Diffusion 4(SD4)」という後継モデルの情報は複数のブログ記事で詳細に語られているが、2026年9月4日時点でStability AI公式のニュースページやTechCrunch等の主要テック媒体の報道では確認できず、実在が疑わしい。料金・モデル名・スペックを社内資料やプロンプト集に転記する前に、必ず提供元の公式サイトか複数の独立した主要メディアで裏取りする
 - **無料プラン・低価格プランは商用利用不可の場合がある**: 例えばStable Diffusionのコミュニティライセンスは、年間売上がUSD100万ドル(目安1.5億円)を超える企業には別途有償のEnterpriseライセンスが必要になる。契約前に利用規約の商用利用条件を確認する
 - **ブランド・ロゴの一貫性を保つのは苦手**: 同じキャラクター・ロゴを毎回まったく同一に再現するのは、一貫性維持を強化した最新モデルでも完全ではない。ブランド素材として繰り返し使う画像は、1枚を人の手で仕上げてテンプレート化する方が安定する
 - **Web用途と印刷用途で必要な解像度が違う**: 生成AIの標準出力はWeb表示を想定した解像度が中心のため、大判ポスターなど印刷用途にはアップスケール(高解像度化)処理が別途必要になることが多い
@@ -156,6 +160,10 @@ Midjourneyでよく使うパラメータ:
 - [生成AIによるプレゼン資料・ドキュメント作成の実務活用](../part12-business-practice/ai-presentation-and-document-creation.md)
 
 ## 更新履歴
+
+### 2026-09-04: ChatGPTのプラン再編・Adobe Firefly新ティア・Ideogram新料金を反映し、「Stable Diffusion 4」情報の未確認である旨を明記
+- **内容**: ChatGPTの個人向けプランがFree/Plus($20)の2段階から、Go($8、2026年1月16日に世界展開、既定モデルはGPT-5.6 Luna、広告表示の可能性あり)・Plus($20、GPT-5.6主力モデル、3時間あたり目安40〜50枚・1日目安200枚)・Pro($100/$200、2026年4月9日に$100帯を新設、Plus比5〜20倍の利用上限)の4段階に再編されたことを反映し、料金プラン表・使いどころ表・仕組み節を書き換えた。Adobe Fireflyに新ティア「Pro Plus」(月額$49.99、生成クレジット10,000/月)が2026年8月に追加されたこと、IdeogramのサブスクがFree/Plus $15/Pro $42(年払い)/Team $20(ユーザーあたり)に変わったことも反映。あわせて、前回(2026-08-15)の更新で本文に取り込んでいた「Stable Diffusion 4(SD4)」の情報を再検証した結果、Stability AI公式のニュースページやTechCrunch等の主要テック媒体の報道ではこれを裏付ける一次情報が確認できず(公式に確認できる最新の主要画像モデルは2024年10月のSD 3.5にとどまる)、実在が疑わしいコンテンツファーム記事に基づく記述だった可能性が高いと判断。比較表・料金表・注意点の記載を「SD4は未確認情報」と明記する形に訂正し、注意点セクションに一次情報源での裏取りを促す新項目を追加した。Midjourney(V8.2)・Google Gemini(Nano Banana Pro/2/2 Lite)は2026年9月4日時点で前回更新時からモデル・価格の変更なしを確認
+- **出典**: [ChatGPT Pricing Guide: Free, Go, Plus, Pro (August 2026) | felloai](https://felloai.com/chatgpt-pricing-guide-free-go-plus-pro-alternatives-october-2025/)、[ChatGPT Pricing 2026: Free vs Go vs Plus vs Pro | CometAPI](https://www.cometapi.com/chatgpt-pricing-2026-free-vs-go-vs-plus-vs-pro/)、[ChatGPT pricing in 2026: every plan | CloudZero](https://www.cloudzero.com/blog/how-much-does-chatgpt-cost/)、[GPT Image 1.5 vs 2: Which One to Use | Apiframe](https://apiframe.ai/guides/gpt-image-versions-explained)、[GPT-Image-1.5 Model | OpenAI API docs](https://developers.openai.com/api/docs/models/gpt-image-1.5)、[Adobe Firefly Pro Plus 50% promo | Adobe公式](https://www.adobe.com/ca/plans-fragments/modals/individual/modals-content-rich/firefly-pro-plus/50-percent-promo.html)、[Adobe Firefly Pricing 2026: Free + $9.99, $19.99, $49.99/mo | aiproductivity.ai](https://aiproductivity.ai/pricing/adobe-firefly/)、[Ideogram Available Plans | Ideogram公式ドキュメント](https://docs.ideogram.ai/plans-and-pricing/available-plans)、[Ideogram Pricing 2026 | checkthat.ai](https://checkthat.ai/brands/ideogram/pricing)、[Stability AI releases a new audio model (Stable Audio 3.0) | TechCrunch](https://techcrunch.com/2026/05/20/stability-ai-release-a-new-audio-model-that-can-create-six-minute-songs/)、[News & Updates — Stability AI公式](https://stability.ai/news-updates)、[Stable Diffusion 4: Is It Real? No — What Exists Instead | Local AI Master](https://localaimaster.com/blog/stable-diffusion-4)、[Midjourney Changelog 8/20/26 | 公式アップデート](https://updates.midjourney.com/changelog-8-20-26/)、[Nano Banana Pro (Gemini 3 Pro Image) API | Together AI](https://www.together.ai/models/nano-banana-pro)、[Gemini Pricing 2026 | felloai](https://felloai.com/gemini-pricing/)、[Grok Imagine Image 2.0 shipped | omniart.studio](https://omniart.studio/blog/models-insights/grok-imagine-image-2-what-shipped)
 
 ### 2026-08-15: Midjourney V8.2・Nano Bananaファミリーの再編・Imagen終了・Adobe Firefly Image Model 5・Stable Diffusion 4を反映して最新化
 - **内容**: MidjourneyがV8.1(2026年6月デフォルト化)からV8.2(7月24日デフォルト化、作風の作り込み・パーソナライズ精度を強化)へ切り替わったこと、Googleが「Nano Banana」ブランドを「Nano Banana Pro(Gemini 3 Pro Image、$0.134/1K・2K〜$0.24/4K)」「Nano Banana 2(Gemini 3.1 Flash Image)」「Nano Banana 2 Lite」に整理し、旧世代のImagen系API(Imagen 4/Ultra/Fast)を2026年8月17日にGemini APIから終了する予定であること、Google AI Plus(月額$4.99、6月に$7.99から改定)の新設とGoogle AI Ultraの2段階構成($99.99/$199.99)、Adobe Fireflyの基盤がFirefly Image Model 5(2026年3月GA、ネイティブ約4MP)になり標準解像度生成・Generative Fillがプレミアムクレジット非消費になったこと、Stable Diffusion 4(2026年4月投入、U-Netから拡散トランスフォーマーへ刷新、SD4 Ultraは4096×4096ネイティブ・専用文字描画モジュール搭載)を反映して本文・比較表・料金表・注意点を書き換え。Black Forest LabsのFLUX 3(画像専業から画像・動画・音声のマルチモーダルモデルへ転換)、Ideogram V4の料金、xAI Grok Imagine「Image 2.0」(2026年8月7日投入)の言及も更新

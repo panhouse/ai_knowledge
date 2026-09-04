@@ -4,7 +4,7 @@ part: 8
 chapter: 第1章 検索・リサーチ特化
 tags: [Perplexity, 検索特化型AI, 引用, ファクトチェック, 情報収集]
 created: 2026-07-06
-updated: 2026-07-20
+updated: 2026-08-19
 ---
 
 # Perplexityの基本
@@ -26,9 +26,13 @@ Perplexityの回答は、基本的に次の流れで作られる。
 
 この「毎回のトークン生成の裏で必ずWeb検索を行い、出典を紐付ける」設計は、いわゆるRAG(Retrieval-Augmented Generation、検索で得た外部情報を根拠に回答を生成する手法)を検索エンジンの形で実装したものと理解すると分かりやすい。無料版・標準検索の裏側では、Perplexity自身が開発した軽量モデル「Sonar」(Meta社のLlama 3.3をベースに、事実の正確さと読みやすさを重視して追加学習したモデル)が使われており、高速に動作する。
 
-有料プランでは「Pro Search」というモードが使え、質問の複雑さに応じて複数回の検索・複数ステップの推論を行い、回答に使うAIモデル(GPT-5系、Claude、Gemini、Grokなど主要モデルや、Perplexity自身のSonarファミリー)をユーザーが選択できる。さらに、通常のPro Searchより踏み込んで自律的に大量の情報源を巡回・統合する「Deep Research(Research)」モード、複数のスレッドや資料をまとめて共同作業できる「Spaces」、参照元を学術論文・SNS・動画などに絞り込む「Focus(フォーカス)」モードといった機能が用意されている。最上位のMaxプランでは「Model Council(モデル評議会)」という機能も使え、1つの質問をClaude・GPT系・Geminiなど複数モデルに同時に投げ、その回答を統合モデルが突き合わせて「各モデルの見解が一致する点/割れる点」を示してくれる。重要な意思決定の裏取りで、1つのモデルの答えを鵜呑みにしたくない場面向けの機能である。
+有料プランでは「Pro Search」というモードが使え、質問の複雑さに応じて複数回の検索・複数ステップの推論を行い、回答に使うAIモデル(2026年8月時点でGPT-5.2、Claude Opus 4.6、Gemini、Grok、オープンウェイトモデルのKimi K3など主要モデルや、Perplexity自身のSonarファミリー)をユーザーが選択できる(「Best」を選べば質問内容に応じて自動選択される)。さらに、通常のPro Searchより踏み込んで自律的に大量の情報源を巡回・統合する「Deep Research(Research)」モード、複数のスレッドや資料をまとめて共同作業できる「Spaces」、参照元を学術論文・SNS・動画などに絞り込む「Focus(フォーカス)」モードといった機能が用意されている。Deep Researchは2026年にかけてClaude Opus 4.5をベースに強化され、調査結果をテキストのレポートだけでなく、プレゼン資料・表計算・ダッシュボード・簡易Webサイトとして直接生成できるようになった(旧称「Labs」の機能を統合したもの)。最上位のMaxプランでは「Model Council(モデル評議会)」という機能も使え、1つの質問をClaude・GPT系・Geminiなど複数モデルに同時に投げ、その回答を統合モデルが突き合わせて「各モデルの見解が一致する点/割れる点」を示してくれる。重要な意思決定の裏取りで、1つのモデルの答えを鵜呑みにしたくない場面向けの機能である。
 
-2025年半ばにChromiumベースのAIブラウザ「Comet」が投入され、当初はMaxプラン限定の有料機能だったが、2025年10月に全世界で無料開放され、2026年にかけてWindows・Mac・Android・iOSの全プラットフォームに展開された。現在はComet自体のダウンロード・基本利用は無料で、Pro/Max契約者はブラウザ内の高度なAI機能をより多く使える形になっている。Comet内蔵の「Comet Assistant」は当初はページ要約や質問応答が中心だったが、2026年にかけて自律的に複数ステップのタスク(フォーム入力、他タブを横断した情報収集、資料や表の作成など)をこなす「エージェント」的な挙動に強化されており、この自律実行の基盤として、安全にコードを実行・Web操作させるためのサンドボックス環境「SPACE」も2026年7月に発表されている(裏側の技術であり、利用者が直接操作するものではない)。
+2025年半ばにChromiumベースのAIブラウザ「Comet」が投入され、当初はMaxプラン限定の有料機能だったが、2025年10月にWindows・Mac向けが、2025年11月にAndroid向けが、2026年3月にiOS向けが無料開放され、全プラットフォームで無料ダウンロード・基本利用ができる状態になっている(Pro/Max契約者はブラウザ内の高度なAI機能をより多く使える)。Comet内蔵の「Comet Assistant」は当初はページ要約や質問応答が中心だったが、複数タブを横断した情報収集や比較、簡単なフォーム入力などをこなす「エージェント」的な挙動に強化されている。
+
+2026年2月には、Cometのブラウザという枠を超えてWord・Excel・PowerPoint・Outlook・TeamsなどMicrosoft 365のファイルや(Macでは)ローカルファイル・アプリまで横断してタスクを代行する上位のエージェント製品「Perplexity Computer」がMaxプラン限定機能として登場した。Claude Opus 4.6を司令塔役に、Gemini・GPT-5.2・Grokなど計19種類のモデルをタスクの性質(推論・コーディングはClaude、深い調査はGemini、長文脈の処理はGPT、軽量で速さが必要な作業はGrok、といった具合)に応じて自動的に振り分けて動かす仕組みで、Comet Assistantより大がかりな複数ステップの業務代行を任せたい場合に使う。こうした自律実行の基盤として、安全にコードを実行・Web操作させるためのサンドボックス環境「SPACE」も2026年7月に発表されている(裏側の技術であり、利用者が直接操作するものではない)。
+
+このほか、Pro以上のプランではPayPal・Venmoと連携した「Buy with Pro」機能で、商品検索から購入までをチャット内でワンクリック完結できる。また、コンテンツを無断学習に使っているという報道機関からの批判・訴訟を受け、2025年後半に月額$5の追加サブスクリプション「Comet Plus」を開始した。有力メディア(The New Yorker、Washington Post、Fortuneなど)の有料記事にAIアシスタント経由でアクセスできるようにする代わりに、収益の8割を提携パブリッシャーに還元する仕組みで、Pro/Max契約者には追加費用なしで含まれる。
 
 ## 使いどころ・使い分け
 
@@ -66,6 +70,8 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 | 案件やプロジェクト単位で複数の調べものをまとめて管理したい | Spaces |
 | 重要な判断の裏取りで、複数モデルの見解の一致・不一致まで確認したい(Maxプラン限定) | Model Council |
 | ブラウザ内で複数タブを横断した調べもの・フォーム入力などを自動でやらせたい | Comet(Comet Assistant) |
+| ブラウザの枠を超えてMicrosoft 365ファイルやローカルファイルまで横断した本格的な業務代行を任せたい(Maxプラン限定) | Perplexity Computer |
+| 気になった商品をそのままチャット内で購入まで完結させたい(Pro以上) | Buy with Pro(PayPal/Venmo連携) |
 
 **Deep Researchについては、ChatGPT・Gemini・Claudeの同種機能との比較を[生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)で詳しく整理しているので、そちらを参照。本ページではPerplexity単体の基本機能に絞る。**
 
@@ -83,6 +89,7 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 - 自分やチームが書いた原稿・提案書の数値や主張を、実際に裏付けが取れるかファクトチェックする
 - 市場調査・トレンド調査のとっかかりとして、複数の記事を横断的に要約させる
 - レポートや記事に載せる出典リンクの候補を、テーマを渡して収集する
+- 出張・イベント用の備品や書籍などをチャット内で検索し、そのままワンクリックで購入する(Buy with Pro)
 
 ### 基本の操作手順(画面の場所)
 
@@ -94,6 +101,8 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 6. 複数の調べものを1つのプロジェクトとしてまとめたい場合は、左側メニューの「Spaces」から新規スペースを作成し、資料のアップロードやカスタム指示の設定、関連スレッドの整理ができる
 7. Maxプランで複数モデルの見解を突き合わせたい場合は、モデル選択欄から「Model Council」を選んで質問を送信すると、複数モデルの回答とその一致点・相違点をまとめた統合結果が返る
 8. ブラウザで自動操作までさせたい場合は、Cometブラウザ(perplexity.ai/cometから無料ダウンロード。Windows・Mac・Android・iOS対応)をインストールし、サイドバーの「Comet Assistant」に「このページを要約して」「このタブとこのタブを比較して」のように指示すると、複数タブを横断した要約・比較や、フォーム入力などの簡単な自動操作を代行してくれる
+9. Maxプランでブラウザの外まで含めた業務代行をさせたい場合は、左側メニューの「Computer」からPerplexity Computerを起動し、「このExcelの数値をもとにPowerPointの資料を作って」のようにタスクを渡すと、複数のAIモデルを自動で使い分けながら複数ステップの作業を代行する(Mac版では「Personal Computer」機能でローカルファイル・アプリの操作まで拡張できる)
+10. 商品を検索してそのまま購入したい場合は、回答中に表示される商品カードから「Buy with Pro」を選び、連携済みのPayPal/Venmoアカウントでワンクリック決済できる(Pro以上のプランが必要)
 
 ### コピペで使える質問例(ファクトチェック)
 
@@ -125,18 +134,21 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 | プロジェクト単位の整理 | Spaces | プロジェクト機能・GPTs | Gem・ノートブック機能 |
 | 専用ブラウザ | Comet(Chromiumベース、無料) | Atlas | Chrome統合(拡張機能等) |
 | 複数モデルの回答を突き合わせる機能 | Model Council(Maxのみ) | 明確な同等機能は薄い | 明確な同等機能は薄い |
+| ブラウザ外の業務ファイル・アプリまで横断するエージェント | Perplexity Computer(Maxのみ) | ChatGPT Agent | Gemini in Chrome / Workspace連携(範囲は異なる) |
+| チャット内での商品購入 | Buy with Pro(PayPal/Venmo連携) | ショッピング機能(範囲は異なる) | 明確な同等機能は薄い |
 | 社内資料とWeb検索の横断検索 | Internal Knowledge Search(Enterprise Pro/Max) | コネクタ機能(範囲は異なる) | Gemini Enterpriseのデータ連携(範囲は異なる) |
 
-### 料金プラン(2026年7月時点の目安)
+### 料金プラン(2026年8月時点の目安)
 
 | プラン | 料金 | 主な内容 |
 |---|---|---|
-| Free | ¥0 | 標準検索は無制限。Pro Search(高度な検索)・Deep Researchはそれぞれ1日数回程度(公称値は3〜5回程度と変動があり、正確な回数は要確認)に制限。フロンティアモデルの選択やModel Councilは不可 |
-| Pro | 月額$20(年払いで$200、月あたり約$16.67) | Pro Search・Deep Researchの利用枠が大幅拡大(ただし後述の通り「無制限」ではなくフェアユース上限あり)、GPT-5系・Claude・Geminiなど主要モデルの選択、PitchBook・Statista等の有料データソースへのアクセス、Comet Assistant/Computerの自律操作、Labs(レポート・表・簡易Webアプリの自動生成)などが解放 |
-| Max | 月額$200(年払いで$2,000) | Proの全機能に加え、Model Council、Labs・Computer(自律エージェント)の利用上限撤廃、より高いDeep Research上限を提供。AIをコア業務基盤として使うプロフェッショナル向け |
+| Free | ¥0 | 標準検索は無制限。Pro Searchは1日3回程度、Deep Researchは1日5回程度に制限(公称値は情報源により差があり、正確な回数は要確認)。フロンティアモデルの選択・Perplexity Computer・Model Councilは不可 |
+| Pro | 月額$20(年払いで$200、月あたり約$16.67) | Pro Search・Deep Researchの利用枠が大幅拡大(ただし後述の通り「無制限」ではなくフェアユース上限あり)、GPT-5.2・Claude Opus 4.6・Gemini・Grok・Kimi K3(オープンウェイト)など主要モデルの選択、PitchBook・Statista等の有料データソースへのアクセス、Comet Assistantの自律操作、Deep Research経由でのレポート・表・簡易Webアプリの自動生成、Buy with Proでのワンクリック購入、Comet Plus(通常月額$5)が追加費用なしで利用可能 |
+| Max | 月額$200(年払いで約$167/月・年払い$2,000) | Proの全機能に加え、Model Council、複数モデルを自動編成してMicrosoft 365ファイルやローカルファイルまで横断作業する「Perplexity Computer」(月間クレジット制)、より高いDeep Research上限、動画生成(Sora 2 Pro等)を提供。AIをコア業務基盤として使うプロフェッショナル向け |
 | Enterprise Pro | 1シートあたり月額$40(年払い$400) | Proの機能に加え、SSO・SCIM・監査ログなどチーム管理・セキュリティ機能、社内ファイル(数百件規模)とWebを横断検索できるInternal Knowledge Searchを追加 |
 | Enterprise Max | 1シートあたり月額$325(年払い$3,250) | Enterprise Proの機能に、より高い利用上限・優先アクセス・拡張された監査ログや保持期間設定を追加した最上位プラン |
-| Education Pro | 月額$10程度 | 大学等に在籍する学生・教職員向けの割引プラン(SheerIDなどでの本人確認が必要) |
+| Education Pro | 月額$10(通常のProの50%割引) | 大学等に在籍する学生・教職員向けの割引プラン(SheerIDなどでの本人確認が必要。過去に実施していた「12か月無料」の全員向けキャンペーンは2026年1月で終了) |
+| Comet Plus(単体) | 月額$5 | Comet Assistant経由で有力メディア(The New Yorker、Washington Post、Fortune等)の有料記事にアクセスできる追加サブスクリプション。収益の8割を提携パブリッシャーに還元する仕組み。Pro/Max契約者には追加費用なしで含まれる |
 
 料金・上限は変更が非常に頻繁で、2026年前半には一部Proユーザーの利用上限が予告なく引き下げられて反発を招く出来事もあった(Perplexity側は「プロモーションコードの不正利用対策で一部アカウントが対象になった」と説明している)。契約前には必ず[Perplexity公式の料金ページ](https://www.perplexity.ai/pro)、[Perplexity Enterprise料金ページ](https://www.perplexity.ai/enterprise/pricing)、[Perplexityヘルプセンター「どのプランが自分に合っているか」](https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you)で最新の数値を確認すること。
 
@@ -147,9 +159,9 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 - **創作・コーディングには向かない**: 検索特化型のため、アイデア発想の自由度やコード生成の精度はChatGPT・Gemini・Claudeなど汎用LLMに劣る場面が多い。用途によってツールを切り替える
 - **無料版の上限に注意**: 無料版はPro Search・Deep Researchともに1日数回程度に制限される。頻繁に高度な検索を使う業務利用ではPro以上の契約が前提になる
 - **「無制限」を鵜呑みにしない**: Pro/Maxの利用枠は「大幅拡大」であっても技術的にはフェアユース上限が設定されており、2026年前半には一部の長期Proユーザーが予告なく利用上限を大きく引き下げられ、SNS上で反発が広がった経緯がある(Perplexity側は「プロモーションコードの不正転売対策」と説明)。業務で恒常的に大量利用する予定なら、契約前後で実際の上限を自分のアカウントで確認する
-- **Max・Enterprise Maxは高額**: Max($200/月)やEnterprise Max(1シート$325/月)は個人の一般的な利用には過剰な場合が多い。まずはPro($20/月)で十分か検討し、Deep ResearchやModel Council、上位モデルの利用頻度が業務上どれだけ必要かで判断する
+- **Max・Enterprise Maxは高額**: Max($200/月)やEnterprise Max(1シート$325/月)は個人の一般的な利用には過剰な場合が多い。まずはPro($20/月)で十分か検討し、Deep ResearchやModel Council、Perplexity Computerの利用頻度が業務上どれだけ必要かで判断する
 - **社外秘情報の扱い**: 個人向けPro/FreeプランのPerplexityはWeb検索が前提の設計のため、社内文書のみを根拠にした質問には向かない。Enterprise Pro/Maxの「Internal Knowledge Search」は社内ファイルとWeb検索を横断できるが、これはEnterprise契約者向けの機能であり、個人のPro契約では利用できない点に注意。データの取り扱い・学習利用に関する契約条件も個人向けとEnterprise向けで異なるため、業務利用前に確認する
-- **ブラウザ拡張・自律操作のリスク**: Comet Assistantのような自律操作機能は、フォーム入力やページ横断の作業を代行できる分、悪意あるWebページの指示に従ってしまう「プロンプトインジェクション」のリスクも一般のチャットAIより高くなる。決済や機密情報の入力を伴う操作は自動化させず、自分の目で最終確認する
+- **ブラウザ・エージェントの自律操作には実証済みのリスクがある**: 2026年3月にセキュリティ企業Zenity Labsが、Cometに仕込んだ「PleaseFix」「PerplexedComet」と呼ばれる脆弱性を公表した。会議招待やWebページに埋め込んだ悪意ある指示(プロンプトインジェクション)によって、ユーザーが気づかないうちにエージェントを乗っ取り、ローカルファイルを外部に送信させたり、ブラウザ拡張機能(1Passwordなど)のセッションを悪用したりできる、というものだった。Perplexity側は実行境界を厳格化する修正を行い対応済みだが、Comet AssistantやPerplexity Computerのような自律操作機能全般に共通するリスクとして、決済・機密情報の入力を伴う操作は自動化させず、自分の目で最終確認する習慣を持つ
 
 ## 最初の一歩
 
@@ -162,6 +174,12 @@ ChatGPTやGeminiアプリにも検索連携(グラウンディング)機能が�
 - [NotebookLMの基本](notebooklm-basics.md)
 
 ## 更新履歴
+
+### 2026-08-19: モデル・エージェント機能・料金・セキュリティを最新化
+
+- **内容**: 利用可能モデルをGPT-5.2・Claude Opus 4.6・Gemini・Grok・Kimi K3(オープンウェイト)に更新し、Deep ResearchがClaude Opus 4.5ベースに強化されプレゼン・表計算・ダッシュボードを直接生成できるようになったこと(旧Labsを統合)を追記。2026年2月に登場したMax限定の新エージェント製品「Perplexity Computer」(19モデルを自動編成し、Microsoft 365ファイルやMacのローカルファイル・アプリまで横断してタスク代行)を新規に追加。PayPal/Venmo連携の「Buy with Pro」(チャット内でのワンクリック購入)と、報道機関への収益還元プログラムとして始まった追加サブスクリプション「Comet Plus」(月額$5、Pro/Maxには追加費用なしで付帯)を追記。Cometの無料化タイムラインをWindows/Mac(2025年10月)→Android(2025年11月)→iOS(2026年3月)に精緻化。セキュリティ面では、2026年3月にZenity Labsが公表したCometの脆弱性「PleaseFix/PerplexedComet」(会議招待経由のゼロクリック乗っ取りでローカルファイル窃取や拡張機能セッション悪用が可能だった具体的事例、Perplexity側で修正済み)を注意点に反映。料金プランのFree枠の回数目安、Education Proの「12か月無料」キャンペーン終了(2026年1月)も更新
+- **出典**: [Introducing Perplexity Computer | Perplexity](https://www.perplexity.ai/hub/blog/introducing-perplexity-computer)、[Perplexity launches 'Computer' AI agent that coordinates 19 models | VentureBeat](https://venturebeat.com/technology/perplexity-launches-computer-ai-agent-that-coordinates-19-models-priced-at)、[Perplexity's new Computer is another bet that users need many AI models | TechCrunch](https://techcrunch.com/2026/02/27/perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models)、[Perplexity Pricing in 2026 for Individuals, Orgs & Developers | Finout](https://www.finout.io/blog/perplexity-pricing-in-2026)、[What advanced AI models are included in my subscription? | Perplexity Help Center](https://www.perplexity.ai/help-center/en/articles/10354919-what-advanced-ai-models-are-included-in-my-subscription)、[Perplexity Selects PayPal to Power Agentic Commerce](https://www.nasdaq.com/press-release/perplexity-selects-paypal-power-agentic-commerce-2025-05-14)、[Perplexity has cooked up a new way to pay publishers for their content | Engadget](https://www.engadget.com/ai/perplexity-has-cooked-up-a-new-way-to-pay-publishers-for-their-content-204255019.html)、[Perplexity's Comet Plus – Legal Peace Offering Or New Dawn For Publishers In The AI Era? | Forbes](https://www.forbes.com/sites/anishasircar/2025/08/28/perplexitys-comet-plus--legal-peace-offering-or-new-dawn-for-publishers-in-the-ai-era/)、[Zenity Labs discloses PleaseFix/PerplexedComet vulnerability](https://zenity.io/company-overview/newsroom/company-news/zenity-labs-discloses-pleasefix-perplexedagent-vulnerability)、[Researchers Trick Perplexity's Comet AI Browser Into Phishing Scam | The Hacker News](https://thehackernews.com/2026/03/researchers-trick-perplexitys-comet-ai.html)、[Perplexity Comet became free in 2025, but agent risks remain | Windows Forum](https://windowsforum.com/windows-news.4/perplexity-comet-became-free-in-2025-but-agent-risks-remain.441399/)、[Perplexity Student Discount 2026 | glbGPT](https://www.glbgpt.com/hub/perplexity-student-discount-how-to-get-perplexity-pro-free-in-2025/)
+- **注記**: perplexity.ai配下の公式ページの多くは本セッションから直接アクセスできず(egress制限)、検索エンジンのスニペットと複数の第三者記事の突き合わせに基づく記述を含む。Comet各プラットフォームの無料化日、モデルの細かいバージョン番号、Free枠の具体的回数は情報源間で若干の食い違いがあり、契約・運用前には必ず公式サイトで最新値を確認すること
 
 ### 2026-07-20: 仕組み・料金・注意点を最新化
 - **内容**: Cometブラウザが2025年10月に無料開放され全プラットフォーム(Windows/Mac/Android/iOS)に展開されたこと、Comet Assistantが自律操作(エージェント)機能に強化されたこととその基盤サンドボックス「SPACE」(2026年7月発表)、Maxプラン限定の新機能「Model Council」(複数モデルの回答を突き合わせる機能)、Enterprise向け「Internal Knowledge Search」(社内ファイルとWeb検索の横断)を追記。料金プランの記述を「Pro Search無制限」から「フェアユース上限あり」に修正し、2026年前半に一部Proユーザーの利用上限が予告なく引き下げられた騒動を注意点に追加。プロンプトインジェクションなど自律操作特有のリスクも追記
