@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-03
+- [婚活・マッチングサービス業界における生成AI活用事例](topics/part14-industry-cases/matchmaking-dating-industry-ai-use-cases.md): 新規執筆
 - [司法書士・行政書士における生成AI活用事例](topics/part15-job-role-cases/judicial-administrative-scrivener-ai-use-cases.md): 新規執筆
 - [AML・取引不正検知AI企業一覧](topics/part16-japan-ai-companies/aml-fraud-detection-ai-companies-japan.md): 新規執筆
 - [税理士における生成AI活用事例](topics/part15-job-role-cases/tax-accountant-ai-use-cases.md): 新規執筆
