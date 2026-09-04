@@ -152,6 +152,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第11章 エンジニア・開発
 - [エンジニア・開発職における生成AI活用事例](engineer-development-ai-use-cases.md)
+- [SRE・インフラエンジニアにおける生成AI活用事例](sre-infrastructure-engineer-ai-use-cases.md)
 
 ### 第12章 研究開発・品質管理
 - [研究開発(R&D)職における生成AI活用事例](rd-ai-use-cases.md)

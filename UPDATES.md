@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-25
+- [SRE・インフラエンジニアにおける生成AI活用事例](topics/part15-job-role-cases/sre-infrastructure-engineer-ai-use-cases.md): 新規執筆(インシデント対応・IaC生成・AIOps連携の活用事例)
 ## 2026-08-24
 - [パチンコ・アミューズメント業界における生成AI活用事例](topics/part14-industry-cases/amusement-pachinko-industry-ai-use-cases.md): 新規執筆(稼働予測・出玉データ分析・会員AIレコメンド・プライズ在庫最適化と、風営法・広告ガイドラインの規制論点を整理)
 - [リフォーム・リノベーション業界における生成AI活用事例](topics/part14-industry-cases/home-renovation-remodeling-ai-use-cases.md): 新規執筆(AIパース生成・劣化診断・見積書自動化・補助金適合診断・職人スケジュール調整・施主向けチャットボット・契約書チェックの活用事例)
