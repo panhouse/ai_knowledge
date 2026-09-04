@@ -4,7 +4,7 @@ part: 7
 chapter: 第5章 画像・PDFの読み取り活用(Vision入力)
 tags: [Vision入力, マルチモーダル, OCR, AI-OCR, スキャンPDF, 手書き文字認識, 領収書処理, 画像認識]
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-08-28
 ---
 
 # 画像・PDFの読み取り活用(Vision入力)の基本
@@ -33,6 +33,8 @@ Vision入力とは、ChatGPT・Gemini・Claude・Copilotといったチャット
 ### Vision入力の技術的な仕組み(使いこなしに必要な範囲)
 
 画像はモデル内部でいくつかの小さなタイル(断片)に分割され、それぞれが「トークン」(AIが処理する文章・画像の最小単位)に変換されてテキストと同じ土俵で処理される。画像の解像度が高い・枚数が多いほど消費するトークン数が増え、料金や1回あたりの処理量の上限に影響する。PDFの場合、多くのツールは「PDF内の各ページを画像として1枚ずつ読み込む」処理を裏側で行っており、スキャンPDF(文字情報を持たず画像として保存されたPDF)もテキストPDF(文字情報を持つPDF)も同じVision入力の経路で扱われる。
+
+Vision入力を支える土台のモデルも更新が続いている。OpenAIは2025年12月にGPT-5.2を投入し、画面レイアウトの理解や複雑な図表の解釈精度を高めた。Googleは2026年2月にGemini 3 Proの後継となるGemini 3.1 Proを、2026年8月には高速・低コスト版のGemini 3.7 Flashを投入し、いずれもOCR関連のベンチマークで上位に位置づけられている。Anthropicも2025年後半以降Claude Sonnet/Opusの4.5系モデルの改良を重ねている。ただし各社の精度向上のペースはベンチマークの取り方によって評価が割れるため、「新しいモデルだから安心」と過信せず、重要な読み取りは引き続き人が原本と突き合わせる運用を変えないこと。
 
 ## 使いどころ・使い分け
 
@@ -106,23 +108,23 @@ Vision入力とは、ChatGPT・Gemini・Claude・Copilotといったチャット
 どの画像がどの行に対応するか分かるよう、ファイル順を保ったまま出力してください。
 ```
 
-### 料金・上限の目安(2026年7月時点)
+### 料金・上限の目安(2026年8月時点)
 
-ツールごとに1メッセージあたりの添付枚数・サイズの上限が異なるため、大量枚数を1回で処理しようとすると上限エラーになりやすい。
+ツールごとに1メッセージあたりの添付枚数・サイズの上限が異なるため、大量枚数を1回で処理しようとすると上限エラーになりやすい。2026年に入ってから各社とも上限を緩和する方向で仕様変更しており、特にClaudeは7月時点から枚数・サイズの上限が大きく広がった。
 
-| ツール | 1メッセージあたりの上限(目安) | 画像サイズ上限 | 備考 |
+| ツール | 1メッセージあたりの上限(目安) | ファイル・画像サイズ上限 | 備考 |
 |---|---|---|---|
-| ChatGPT(Plus/Go以上) | 添付ファイル最大10〜20個程度(プラン・時期により変動) | 画像1枚あたり最大20MB程度 | 無料版は1日あたりの画像アップロード枚数に制限あり([マネーフォワード クラウド](https://biz.moneyforward.com/ai/basic/3309/)) |
-| Claude(全プラン共通) | 1メッセージあたり最大5ファイル程度 | 1ファイルあたり数十MB程度(プロジェクト機能では上限が別設定になる場合あり) | 無料/Pro/Maxでサイズ・枚数の基本仕様は同じ([ネタメモ](https://netamemo.com/claude-file-upload-limit/)) |
-| Gemini(有料プラン) | 1プロンプトあたり最大10個程度のファイル | 1ファイルあたり最大2GB程度(動画含む) | 無料プランは動画時間などに別途制限([note: ヒロ](https://note.com/hiro_seki/n/nc21a801cf718)) |
-| Microsoft Copilot | Microsoft 365ライセンス連携時は1ファイル最大10MB程度・1日あたりの総量に上限 | ライセンスなしの場合はさらに小さい制限(1MB程度)になる場合あり | 長い資料は事前に分割・要約してから読み込ませることが推奨される([Saiteki AI](https://saiteki-ai.com/basics/ai-tool/microsoft-copilot/microsoft-copilot-chat-files/)) |
+| ChatGPT(Go/Plus) | 1メッセージ最大20ファイル、3時間で80ファイルまで(2026年2月のアップデートで拡大) | ファイル本体は最大512MB(以前の25MBから大幅緩和)、画像は1枚20MB、文書は200万トークンまで | Proは実質無制限、無料版は1日3〜5ファイル程度([OpenAI Help Center: File Uploads FAQ](https://help.openai.com/en/articles/8555545-file-uploads-faq)) |
+| Claude(全プラン共通) | 1メッセージ最大20ファイル、1会話あたり最大100ファイルまで(2026年4月のヘルプ改訂で従来の5ファイル程度から大幅拡大) | 1ファイルあたり最大500MB、画像は1枚10MB程度 | PDFは100ページまでは図表込みで視覚的に解析、101〜1000ページはテキストのみ抽出。プロジェクト機能は1ファイル30MBまでで件数上限はないが、実質的には200Kトークンのコンテキストウィンドウが上限になる([Plenvo: Claude.ai Upload Limits Explained](https://plenvo.ai/blog/claude-ai-upload-limits-explained)) |
+| Gemini(無料/有料共通) | 全プラットフォーム共通で1プロンプトあたり最大10ファイル(画像・PDF・動画含む) | 動画以外は1ファイル最大100MB、動画は最大2GB | 無料版は利用量に応じたローリング制限があり、時間を置くか上限プラン(Google AI Pro/Ultra)への切り替えで緩和される([Google Gemini Apps ヘルプ](https://support.google.com/gemini/answer/14903178)) |
+| Microsoft Copilot | 個人向け(ライセンスなし)は1会話あたり最大20ファイル程度 | 個人向けは1ファイル最大50MB程度。Microsoft 365ライセンス連携時(Copilot Chat)は、以前話題になった「1ファイル1MBまで」への縮小がすでに撤廃され、1プロンプト最大512MBまで扱える | ライセンス種別で上限が大きく異なるため、社内のどのCopilotを使っているか(個人向けか、M365連携か)を先に確認する([UofT IITS: Copilot File Upload Limit Reduced](https://www.utm.utoronto.ca/iits/news/copilot-file-upload-limit-reduced-what-you-need-know)) |
 
-個人向けプランの月額料金はChatGPT Plus・Claude Pro・Google AI Proがいずれも概ね月20ドル前後(Geminiは日本円建てで月2,900円程度)で横並びになっており、Vision入力自体に追加料金がかかることは基本的にない。ただし画像・PDFの枚数や解像度が多いほど消費するトークン量(処理量の単位)が増えるため、API経由で大量処理する場合は従量課金が積み上がる点に注意する。上限値・料金は変更が頻繁なため、大量処理を計画する際は必ず各社の最新のヘルプページで確認すること。
+個人向けプランは、いずれも入門〜上位の複数段階に分かれる構成が定着した。ChatGPTはFree(無料)・Go(月1,400円)・Plus(月3,000円)・Pro(月16,800円/30,000円の2段階)の4層、ClaudeはFree・Pro(月20ドル、消費税込みで概ね月3,000円前後)・Max(5xが月100ドル、20xが月200ドル)、GeminiはFree・Google AI Plus(月725円)・Google AI Pro(月2,900円)・Google AI Ultra(月14,500〜32,000円)という構成になっている。日常的にVision入力を使う中核プラン同士(ChatGPT Plus・Claude Pro・Google AI Pro)を比べると依然として月20ドル前後(3,000円弱)で横並びだが、上下にプランが増えたため単純比較しにくくなっている点は要注意。Vision入力自体に追加料金がかかることは基本的にない。ただし画像・PDFの枚数や解像度が多いほど消費するトークン量(処理量の単位)が増えるため、API経由で大量処理する場合は従量課金が積み上がる点に注意する。上限値・料金は変更が頻繁なため、大量処理を計画する際は必ず各社の最新のヘルプページで確認すること。
 
 ## 注意点・よくある誤解
 
 - **「読み取れた」=「合っている」ではない**: LLMは文脈から「もっともらしい」文字・数字を補って答えることがあり、崩れた文字や潰れた数字を、実際とは違う尤もらしい値に読み替えてしまうことがある(ハルシネーション、もっともらしい誤情報を生成する現象、の画像版)。金額・日付・番号など数値が絡む項目は、必ず元の画像と目視で突き合わせる
-- **大量の帳票を機械的に流し込みたいなら専用OCR(AI-OCR)が本命**: チャットAIのVision入力は1メッセージあたりの枚数上限が数枚〜十数枚程度と少なく、月数千枚規模の処理には向かない。大量処理は会計ソフトのAI-OCR機能などの専用ツールに任せ、チャットAIは例外対応・柔軟な読み替えが必要な少量案件に使い分けるのが実務的
+- **大量の帳票を機械的に流し込みたいなら専用OCR(AI-OCR)が本命**: 2026年に入って各ツールとも1メッセージあたりの添付枚数上限は拡大したが(ChatGPT・Claudeとも最大20ファイル程度)、それでも月数千枚規模の処理には向かない。大量処理は会計ソフトのAI-OCR機能などの専用ツールに任せ、チャットAIは例外対応・柔軟な読み替えが必要な少量案件に使い分けるのが実務的
 - **手書きは活字より格段に精度が落ちる**: 特に崩し字・走り書きの日本語手書きは誤読が多い。重要な手書きメモは、AIに一次変換させた後、必ず人が原本と読み合わせる
 - **解像度・撮影環境が精度を大きく左右する**: 暗い場所での撮影、斜めからの撮影、感熱紙レシートの退色は誤読の主因になる。正面から明るい場所で撮る、可能ならスキャナーを使う、といった一手間で精度は大きく改善する
 - **個人情報・機密情報が写り込んだ画像の扱いに注意**: 領収書には氏名・カード番号の一部、社内資料の写真には機密情報が写り込むことがある。無料プランなど学習利用に同意した設定でアップロードすると、AIの学習データに使われる可能性がある。各ツールのデータ保護設定は[Gemini・Claude・Copilotの初期設定とデータ利用オプトアウト比較](../part03-ai-chat-tools/ai-chat-tools-privacy-and-setup-comparison.md)を参照して確認する
@@ -140,6 +142,10 @@ Vision入力とは、ChatGPT・Gemini・Claude・Copilotといったチャット
 - [経理・財務職における生成AI活用事例](../part15-job-role-cases/finance-accounting-ai-use-cases.md)
 
 ## 更新履歴
+
+### 2026-08-28: 料金・上限値を最新化
+- **内容**: 「料金・上限の目安」節を2026年8月時点の情報に更新。特にClaudeは1メッセージ最大20ファイル・1会話最大100ファイル・1ファイル最大500MBへ上限が大幅拡大(7月時点は5ファイル程度)、ChatGPT(Go/Plus)は1メッセージ最大20ファイル・ファイル本体最大512MB、Geminiは全プラットフォーム共通で1プロンプト最大10ファイル・動画以外は1ファイル最大100MB、Microsoft Copilotは個人向け/M365ライセンス連携で上限が異なる(ライセンス連携時は「1MBまで縮小」の制限が撤廃され最大512MBまで)ことを確認して反映。個人向け料金プランもChatGPT(Free/Go/Plus/Pro 2層)・Claude(Free/Pro/Max 2層)・Gemini(Free/Google AI Plus/Pro/Ultra)といずれも多層化が進んだため料金段落を更新。「仕組み・背景」節にGPT-5.2・Gemini 3.1 Pro・Gemini 3.7 Flashなど基盤モデルの更新動向を追記
+- **出典**: [OpenAI Help Center: File Uploads FAQ](https://help.openai.com/en/articles/8555545-file-uploads-faq)、[Plenvo: Claude.ai Upload Limits: 20 Per Message vs. 100 Per Conversation, Explained](https://plenvo.ai/blog/claude-ai-upload-limits-explained)、[Google Gemini Apps ヘルプ: Upload and analyse files in Gemini Apps](https://support.google.com/gemini/answer/14903178)、[UofT IITS: Copilot File Upload Limit Reduced: What You Need to Know](https://www.utm.utoronto.ca/iits/news/copilot-file-upload-limit-reduced-what-you-need-know)、[AI革命株式会社メディア: ChatGPT料金一覧【2026年8月版】](https://ai-revolution.co.jp/media/chatgpt-pricing/)、[genai-ai.co.jp: Claude料金プラン完全比較【2026年8月最新】](https://genai-ai.co.jp/ai-kanri/blog/cc-claude-pricing-guide-3/)、[株式会社Uravation: Geminiの有料プランはどれ？全プラン比較と選び方【2026年8月】](https://uravation.com/media/gemini-paid-plan-comparison-2026/)、[OpenAI: Introducing GPT-5.2](https://openai.com/index/introducing-gpt-5-2/)、[note(ヒロ): 【2026年最新】Gemini 3.1 Proとは？特徴・料金・使い方をわかりやすく解説](https://note.com/hiro_seki/n/n4ced42d3b9c1)
 
 ### 2026-07-25: 初版執筆
 - **内容**: Vision入力(チャットAIによる画像・PDF・手書きメモの読み取り)の定義、従来型OCR・AI-OCRとの違いの整理、精度が出やすい/出にくいケースの具体例、ChatGPT/Gemini/Claude/Copilotの画面操作手順とコピペ用プロンプト例(領収書抽出・手書きメモのテキスト化・複数枚一括構造化)、各ツールの2026年7月時点の添付枚数・サイズ上限と料金の目安を整理
