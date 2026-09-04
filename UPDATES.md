@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-21
+- [引越し業界における生成AI活用事例](topics/part14-industry-cases/moving-relocation-industry-ai-use-cases.md): 新規執筆(AI見積もり・LINEチャットボット・需要予測・AIマッチング・LLMO対策の活用事例)
 - [看護師・医療従事者における生成AI活用事例](topics/part15-job-role-cases/nurse-medical-staff-ai-use-cases.md): 新規執筆(音声入力による看護記録・申し送り、患者説明資料のやさしい日本語化、外国人患者対応、シフト調整、院内研修Q&A化の活用事例)
 - [農業テック(アグリテック)AI企業一覧(国内)](topics/part16-japan-ai-companies/agritech-ai-companies-japan.md): 新規執筆(サグリ・inaho・AGRIST・ベジタリア・ルートレック・ネットワークス・ファームノート・オプティムの7社を収録)
 ## 2026-08-20
