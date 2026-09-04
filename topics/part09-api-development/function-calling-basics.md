@@ -4,7 +4,7 @@ part: 9
 chapter: 第2章 API活用実践
 tags: [API, Function Calling, Tool Use, AIエージェント, Responses API]
 created: 2026-07-05
-updated: 2026-07-22
+updated: 2026-08-20
 ---
 
 # Function Calling(Tool Calling)の基本
@@ -29,11 +29,13 @@ Function Callingの処理は、次の5ステップで進む。
 
 なお、2025〜2026年にかけて各社は以下のような機能拡張を進めている(詳細は本文末の出典を参照)。
 
-- **並列ツール呼び出し(parallel tool calls)**: 1回のやり取りで複数のツールを同時に呼び出せる機能。OpenAIのAPIでは`parallel_tool_calls`パラメータで制御でき、処理に依存関係がある場合(Aの結果がないとBを呼べない、など)はあえて無効化することが推奨されている。Anthropicは並列ツール呼び出しがデフォルトで有効になっており、複数の`tool_use`ブロックへの結果は1つの`user`メッセージにまとめて返す必要がある。
-- **スキーマの厳密一致(strict mode)**: OpenAIの「Structured Outputs」(ツール定義に`"strict": true`を付ける)やAnthropicの「strict tool use」(ツール定義に`strict: true`、ベータヘッダー不要)など、モデルの出力を指定したJSON Schemaに完全一致させる仕組みが各社で整備され、引数の型崩れによるエラーが起きにくくなっている。
-- **大量のツールを扱う仕組み**: Anthropicの「Tool Search Tool」(`tool_search_tool_regex_20251119`/`tool_search_tool_bm25_20251119`)のように、数百〜数千個のツールをモデルのコンテキストに全部読み込ませず、使う可能性があるツールに`defer_loading: true`を付けて必要な時だけ検索・呼び出す機能も登場している。
-- **OpenAIのAPI体系の刷新**: OpenAIは2025年に「Responses API」を新設し、Function Calling・Web検索・コード実行・リモートMCPサーバー呼び出しなどを1つのAPIリクエストの中でエージェント的にループさせられるようにした。旧来の「Assistants API」は2026年8月26日に廃止予定であり、新規に実装するなら基本はResponses APIを使う(詳細は次項)。
-- **Gemini 3系の thought signature**: Gemini 3以降のモデルでFunction Callingを使う場合、モデルが返す`functionCall`パートには`thoughtSignature`(内部の思考過程を表す暗号化データ)が付与される。マルチターンの会話でこれを次のリクエストに含め忘れると、`400`エラー(thought signature is required)になる。公式SDK(Google Gen AI SDK)を使えば自動的に処理されるが、raw HTTPで直接APIを叩く場合は明示的に扱う必要がある。
+- **並列ツール呼び出し(parallel tool calls)**: 1回のやり取りで複数のツールを同時に呼び出せる機能。OpenAIのAPIでは`parallel_tool_calls`パラメータで制御でき、処理に依存関係がある場合(Aの結果がないとBを呼べない、など)はあえて無効化することが推奨されている。Anthropicも既定で複数の`tool_use`ブロックを1ターンで返しうる(逆に1つに限定したい場合は`tool_choice`に`disable_parallel_tool_use: true`を指定する)。どちらも実行順序自体はAPIが決めるわけではなく、「並行実行して良いか(副作用のない読み取り専用の処理か)」の判断は開発者側のコードの責任になる。
+- **スキーマの厳密一致(strict mode)**: OpenAIの「Structured Outputs」(ツール定義に`"strict": true`を付ける)やAnthropicの「strict tool use」(ツール定義に`strict: true`)など、モデルの出力トークン自体を指定したJSON Schemaに一致するものだけに制約する「grammar-constrained sampling」という技術が各社で整備され、`"2"`のような文字列型と数値型の取り違えや必須項目の欠落が起きにくくなっている。OpenAIは2025年半ばにstrict modeと並列ツール呼び出しの併用にも対応し、GPT-5以降のモデルは両立できる。
+- **大量のツールを扱う仕組み**: Anthropicの「Tool Search Tool」(`tool_search_tool_regex_20251119`/`tool_search_tool_bm25_20251119`)のように、数百〜数千個のツールをモデルのコンテキストに全部読み込ませず、使う可能性があるツールに`defer_loading: true`を付けて必要な時だけ検索・呼び出す機能も登場している(公表されているベンチマークでは、トークン消費を約85%削減しつつMCPツールの選択精度も上がる結果が出ている)。
+- **「組み込みツール」と「カスタム関数」は別物**: OpenAIのResponses APIやAnthropicのMessages APIには、Web検索・コード実行・ファイル検索・リモートMCPサーバー呼び出しなどモデル提供側が用意する「組み込みツール(built-in tools)」がある。これらはスキーマ定義や実行コードを書かずに`tools`に名前を指定するだけで使え、実行自体もOpenAI/Anthropic側のサーバーで完結する。一方、本ページで扱う「関数呼び出し(custom function calling)」は、社内APIやDBなど自社が持つ機能をツール化するもので、スキーマ定義も実際の実行も開発者側の責任になる。両者は同じ`tools`パラメータの中に混在させて1回のリクエストで使い分けられる。
+- **OpenAIのAPI体系の刷新と旧APIの廃止**: OpenAIは2025年に「Responses API」を新設し、Function Calling・Web検索・コード実行・リモートMCPサーバー呼び出しなどを1つのAPIリクエストの中でエージェント的にループさせられるようにした。旧来の「Assistants API」(`/v1/assistants`・`/v1/threads`等)は**2026年8月26日に廃止**され、それ以降は呼び出すとエラーになる(移行猶予・縮退モードはない)。本ページ執筆時点(2026年8月20日)であと数日に迫っており、まだ移行できていない場合は最優先でResponses APIへの移行作業を進める必要がある。新規に実装するなら基本はResponses APIを使う(詳細は次項)。
+- **Gemini 3系の thought signature**: Gemini 3以降のモデルでFunction Callingを使う場合、モデルが返す`functionCall`パートには`thoughtSignature`(内部の思考過程を表す暗号化データ)が付与される。マルチターンの会話でこれを次のリクエストに含め忘れると、`400`エラー(thought signature is required)になる。連続してツールを呼ぶ場合は呼び出しごとにsignatureが付くため、すべて送り返す必要がある。公式SDK(Google Gen AI SDK)を使えば自動的に処理されるが、raw HTTPで直接APIを叩く場合は明示的に扱う必要がある。
+- **大規模エージェント向けの発展形(Anthropic)**: 2025年11月に追加された「Programmatic Tool Calling」は、モデルがツールを1回ずつ呼ぶのではなく、複数のツール呼び出しを組み合わせるコードそのものを書いて管理された実行環境の中で走らせる仕組みで、公表事例ではツール数が多い業務エージェントの入力トークンを4割弱削減できたとされる。2026年4月には、安価なモデル(Haiku/Sonnet)がタスクを回しながら、行き詰まった時だけ高性能モデル(Opus)に相談する「Advisor Strategy」も登場した。いずれも本ページの基本形(呼び出し要求→開発者が実行→結果を返す)を土台にした、コスト最適化のための上級者向け拡張という位置づけ。
 
 ## 使いどころ・使い分け
 
@@ -111,7 +113,7 @@ Function Callingの処理は、次の5ステップで進む。
 // -> 「東京は現在晴れ、気温29度です。」
 ```
 
-**旧来のChat Completions API**(`/v1/chat/completions`)では、ツール定義は`{"type": "function", "function": {"name": ..., "parameters": ...}}`のように`function`キーの中にネストする形式で、モデルからの呼び出し要求はレスポンスの`tool_calls`配列(`function.name`/`function.arguments`)、結果は`role: "tool"`のメッセージ(`tool_call_id`で紐付け)として返す。Chat Completionsは引き続き使えるが、OpenAIは複数ツールの連鎖・組み込みツール(Web検索・コード実行・リモートMCPサーバーなど)との併用を前提とするならResponses APIへの移行を推奨している(Assistants APIは2026年8月26日に廃止予定)。
+**旧来のChat Completions API**(`/v1/chat/completions`)では、ツール定義は`{"type": "function", "function": {"name": ..., "parameters": ...}}`のように`function`キーの中にネストする形式で、モデルからの呼び出し要求はレスポンスの`tool_calls`配列(`function.name`/`function.arguments`)、結果は`role: "tool"`のメッセージ(`tool_call_id`で紐付け)として返す。Chat Completionsは自社APIだけを呼ぶ単純な用途なら引き続き使えるが、OpenAIの組み込みツール(Web検索・コード実行・リモートMCPサーバーなど)と組み合わせて1リクエストの中でエージェント的にループさせたい場合はResponses APIが前提になる。**Assistants API**(`/v1/assistants`・`/v1/threads`)は**2026年8月26日で廃止**され、それ以降はエラーになるため、まだ使っている場合は直ちにResponses APIへの移行を進める必要がある。
 
 AnthropicのClaudeやGoogleのGeminiでもキー名が違うだけで考え方はまったく同じ(ツールのスキーマを渡す → モデルが呼び出し要求を返す → 開発者が実行 → 結果を返す)。
 
@@ -125,7 +127,7 @@ AnthropicのClaudeやGoogleのGeminiでもキー名が違うだけで考え方�
 | 実行結果の返し方 | 次のリクエストの`input`に`type: "function_call_output"`(`call_id`と`output`)を追加 | `tool_result`コンテンツブロック(`tool_use_id`を紐付け)。複数の結果は1つの`user`メッセージにまとめる | `functionResponse`(`name`と`response`) |
 | 厳密スキーマ一致の機能 | Structured Outputs(ツール定義に`strict: true`) | strict tool use(ツール定義に`strict: true`、ベータヘッダー不要) | 対応するSchema制約(サポート属性は限定的) |
 | 並列ツール呼び出し | `parallel_tool_calls`パラメータで制御(既定は有効) | 既定で有効(結果は1メッセージにまとめて返す) | 対応(依存関係がなければ複数の`functionCall`が同時に返る) |
-| 備考 | 旧`functions`/`function_call`トップレベルパラメータは非推奨・廃止済み。Assistants APIは2026-08-26に廃止予定 | 「Tool Search Tool」(`tool_search_tool_regex_20251119`/`_bm25_20251119`)で大量ツールを検索方式で扱う機能を追加 | Gemini 3系はマルチターンの`functionCall`に`thoughtSignature`を含め忘れると400エラーになる。公式SDK利用時は自動処理される |
+| 備考 | 旧`functions`/`function_call`トップレベルパラメータは非推奨・廃止済み。Assistants APIは2026-08-26に廃止(移行猶予なし) | 「Tool Search Tool」(`tool_search_tool_regex_20251119`/`_bm25_20251119`)で大量ツールを検索方式で扱う機能や、「Programmatic Tool Calling」「Advisor Strategy」など大規模エージェント向けの拡張を追加 | Gemini 3系はマルチターンの`functionCall`に`thoughtSignature`を含め忘れると400エラーになる。公式SDK利用時は自動処理される |
 
 いずれのプロバイダーも同時に複数のツール呼び出しを1ターンで返す「並列ツール呼び出し」に対応しているが、処理の順序に依存関係がある場合(前の結果がないと次の関数を呼べない場合など)は、並列実行をオフにする設定を使う必要がある。
 
@@ -159,7 +161,8 @@ MCPはFunction Callingを置き換えるものではなく、その「配線」�
 - **実行前の安全確認(Human-in-the-loop)を軽視しない**: メール送信・決済・データ削除など取り返しのつかない操作をツール化する場合、モデルの呼び出し要求をそのまま無条件に実行するのは危険。金額や対象が一定の条件を超える場合は人間の承認を挟む、実行ログを残す、権限を最小限にするなど、セキュリティ面の設計が必須になる(この観点はセキュリティ関連のトピックで別途扱う)。
 - **JSONモード/Structured Outputsとの混同**: 「決まった形式でデータを出力させたい」だけであれば、外部実行を伴わないJSONモードやStructured Outputsの方がシンプルな場合がある。外部システムへの問い合わせ・操作が必要かどうかで使い分ける。
 - **料金への影響**: ツールの定義(スキーマ)自体も入力トークンとしてAPI利用料に加算される。ツールの数が多い・説明文が長いほどコストが上がる点は見落とされがちなので、必要なツールだけを都度渡すなど設計上の工夫をする。
-- **OpenAIの実装は「どのAPIか」で形が変わる**: Chat Completions(ツール定義が`function`キーの中にネスト)とResponses API(フラットな構造)ではJSONの形が異なるため、他社ブログやサンプルコードをコピペする際は年式とAPIの種類を必ず確認する。新規実装ならResponses APIが基本(Assistants APIは2026年8月26日に廃止予定)。
+- **OpenAIの実装は「どのAPIか」で形が変わる**: Chat Completions(ツール定義が`function`キーの中にネスト)とResponses API(フラットな構造)ではJSONの形が異なるため、他社ブログやサンプルコードをコピペする際は年式とAPIの種類を必ず確認する。新規実装ならResponses APIが基本。Assistants APIは**2026年8月26日で廃止**され、以降は`/v1/assistants`系のエンドポイントを呼ぶとエラーになる点に注意(移行猶予やAPIの縮退運用はない)。
+- **「組み込みツール」を使うだけならFunction Callingの実装は不要**: Web検索・コード実行・ファイル検索など、モデル提供側の組み込みツールを使うだけなら、スキーマ定義や実行コードを自分で書く必要はなく、`tools`にツール名を指定するだけで動く。関数のスキーマ設計や実行結果の受け渡しに手間がかかるのは、あくまで自社のAPI・DBをツール化する「カスタム関数」の場合であり、両者を混同しないこと。なお自社APIだけを呼ぶ単純な用途では、組み込みツールを使わないChat Completions APIの方がトークン単価だけで済み割安なケースもある。
 - **Gemini 3系のthought signature忘れによる400エラー**: raw HTTPやSDKの薄いラッパー経由で直接Gemini APIを叩いている場合、マルチターンの会話で前回の`functionCall`パートに付いていた`thoughtSignature`を次のリクエストに含め忘れると、「thought signature is required」という400エラーになる。公式のGoogle Gen AI SDKを使っていれば通常は自動処理されるが、独自にリクエストを組み立てている場合は要注意。
 
 ## 最初の一歩
@@ -171,6 +174,10 @@ MCPはFunction Callingを置き換えるものではなく、その「配線」�
 - [OpenAI APIの基本](openai-api-basics.md)
 
 ## 更新履歴
+
+### 2026-08-20: 組み込みツールとの違い・Assistants API廃止の直前対応・Anthropicの大規模エージェント向け拡張を追加して最新化
+- **内容**: OpenAI/Anthropicの「組み込みツール(Web検索・コード実行・リモートMCPサーバー等)」と本ページの「カスタム関数呼び出し」が別物であること、両者は同じ`tools`に混在させられることを仕組み・注意点に追記。OpenAI Assistants APIの廃止日(2026年8月26日)が執筆時点で目前に迫っており、移行猶予なくエラーになる旨を強調する形に書き直し。Anthropicの並列ツール呼び出し(`disable_parallel_tool_use`)・strict tool useの技術名(grammar-constrained sampling)を正確化。Anthropicが2025年11月以降に追加した「Programmatic Tool Calling」(ツール呼び出しをコードとしてまとめて実行)と2026年4月の「Advisor Strategy」(安価なモデルが高性能モデルに相談する仕組み)を、大規模エージェント向けの発展形として追加
+- **出典**: [OpenAI Developer Community: Assistants API beta deprecation — August 26, 2026 sunset](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666)、[OpenAI: Function calling](https://developers.openai.com/api/docs/guides/function-calling)、[OpenAI: Using tools](https://developers.openai.com/api/docs/guides/tools)、[Anthropic: Strict tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use)、[Anthropic: Parallel tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use)、[Anthropic: Tool search tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool)、[Anthropic: Programmatic tool calling](https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)、[The Agent Report: Anthropic's Advanced Tool Use Platform (2026-06)](https://the-agent-report.com/2026/06/anthropic-advanced-tool-use-platform-june-2026/)
 
 ### 2026-07-22: OpenAI Responses APIとGemini 3のthought signatureを反映して最新化
 - **内容**: OpenAIの標準インターフェースがResponses API(ツール定義がフラットな構造、`output`配列の`function_call`要素、`function_call_output`での結果返却)に移行した点を反映して概念コード例と各社比較表を全面改訂。Chat Completions(ネスト構造)は互換のため残っている旨と、Assistants APIが2026年8月26日に廃止予定である旨を追記。Anthropicの並列ツール呼び出しの既定値・Tool Search Toolの正式名称(`tool_search_tool_regex_20251119`/`_bm25_20251119`)を明確化。Gemini 3系で必須になった`thoughtSignature`(マルチターンで送り返さないと400エラー)を仕組み・比較表・注意点に追加
