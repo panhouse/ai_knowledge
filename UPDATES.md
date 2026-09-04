@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-01
+- [ファッション・アパレルAI企業一覧(需要予測・バーチャル試着)](topics/part16-japan-ai-companies/fashion-apparel-ai-companies-japan.md): 新規執筆(データグリッド・Bodygram Japan・SENSY・VRC・ワンダフルフライの5社を収録)
 - [産業用ロボット・FA(ファクトリーオートメーション)メーカーにおける生成AI活用事例](topics/part14-industry-cases/industrial-robotics-fa-ai-use-cases.md): 新規執筆(ファナック×Google/AWS・安川電機×Google DeepMind・三菱電機Maisart等、自然言語操作・ティーチング高速化・予知保全の活用事例)
 - [太陽光発電・再生可能エネルギー事業における生成AI活用事例](topics/part14-industry-cases/solar-renewable-energy-ai-use-cases.md): 新規執筆(発電量予測・O&M異常検知・FIT/FIP収益最適化の活用事例)
 - [AIアバター・バーチャルヒューマン企業一覧(国内)](topics/part16-japan-ai-companies/ai-avatar-virtual-human-companies-japan.md): 新規執筆(AVITA・ティファナ・ドットコム・AIdeaLab・Sally・JetB・ソフトバンクロボティクスの6社を収録)
