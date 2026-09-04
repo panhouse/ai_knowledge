@@ -4,14 +4,14 @@ part: 8
 chapter: 第1章 検索・リサーチ特化
 tags: [GenSpark, 検索特化型AI, AIエージェント, スライド生成, リサーチ]
 created: 2026-07-06
-updated: 2026-07-23
+updated: 2026-08-20
 ---
 
 # GenSparkの基本
 
 ## これは何か
 
-「競合を調べて、そのままスライドや表にまとめてほしい」——調べものと資料化を別々のツールで往復する手間をなくしたい、というニーズに応えるのがGenSpark(ジェンスパーク)である。単一のAIモデルに質問を投げるのではなく、**複数のLLM(大規模言語モデル)を役割分担させて1つのタスクをこなす「Mixture-of-Agents(混合エージェント)」というアーキテクチャ**を採用したAI検索・AIエージェントのプラットフォームで、検索結果の要約にとどまらず、スライド・表計算・資料の自動生成、メールやチームチャットの代行、自律的なタスク実行まで扱えるのが特徴である。2024年6月にAI検索エンジンとして出発し、2025年4月の自律実行型「Super Agent」投入を経て、2026年7月時点では、仕事に関する情報を継続的に記憶する「SecondBrain」を核とした統合ワークスペース「Genspark AI Workspace」(2026年7月21日公開の最新版はバージョン6.0)へと発展している。
+「競合を調べて、そのままスライドや表にまとめてほしい」——調べものと資料化を別々のツールで往復する手間をなくしたい、というニーズに応えるのがGenSpark(ジェンスパーク)である。単一のAIモデルに質問を投げるのではなく、**複数のLLM(大規模言語モデル)を役割分担させて1つのタスクをこなす「Mixture-of-Agents(混合エージェント)」というアーキテクチャ**を採用したAI検索・AIエージェントのプラットフォームで、検索結果の要約にとどまらず、スライド・表計算・資料の自動生成、メールやチームチャットの代行、自律的なタスク実行まで扱えるのが特徴である。2024年6月にAI検索エンジンとして出発し、2025年4月の自律実行型「Super Agent」投入を経て、2026年7月時点では、仕事に関する情報を継続的に記憶する「SecondBrain」を核とした統合ワークスペース「Genspark AI Workspace」(2026年7月21日公開の最新版はバージョン6.0)へと発展している。さらに2026年8月3日には、クラウド版とは別に、無料・オープンソースのデスクトップ版オフィススイート「GenOffice」(Word・Excel・PowerPoint・PDFに対応)も公開しており、クラウドの有料ワークスペースと無料のローカルアプリを両輪で展開する体制になっている。
 
 ## 仕組み・背景
 
@@ -26,8 +26,9 @@ GenSparkは、Baidu(百度)出身のEric Jing・Kay Zhuらが2023年に創業し
 - **2026年4月**: 「AI Workspace 4.0」で「Claw for Desktop」(ローカルのファイルを直接扱えるデスクトップ版)とMicrosoft Office連携を追加
 - **2026年6月**: シリーズBをさらに1億ドル追加した4.85億ドル(累計調達額は約6.45億ドル)に拡大し、評価額は26億ドルに到達
 - **2026年7月21日**: 「AI Workspace 6.0」を公開。仕事に関する情報(メール・会議メモ・通話・文書・CRMなど)を横断的に記憶し続ける「SecondBrain」、それを補うハードウェア端末「SecondBrain Note」(会話を自動で録音・記憶させる名刺サイズのデバイス、価格199ドル・導入記念価格179ドル)、人とAIエージェントが同じチャット空間で共同作業する「GenTeam」、ユーザーの文体や人間関係を学習するメールクライアント「GenMail」、プロンプト一つで画像・プロトタイプ・ブランド資産を作る「AI Design」、ノーコードで業務アプリ(簡易CRM・ダッシュボード等)を組み立てられる「AgentBase」を一挙に追加した
+- **2026年8月3日**: オープンソースのデスクトップ版オフィススイート「GenOffice」(Apache 2.0ライセンス)を公開。Word(.docx)・Excel(.xlsx)・PowerPoint(.pptx)・PDF・Markdownをネイティブ形式のまま編集でき、サイドバー型のチャットではなく文書そのものにAIエージェントを組み込んだ点が特徴。macOS・Windows・Linuxに対応し、オフラインでの編集機能は無料・広告なし・ライセンス料なしで使える一方、Web検索を伴うリサーチや資料生成などサーバー側のAI機能はGensparkアカウントのクレジットを消費する
 
-この結果、年換算売上(ARR)は2025年の約5,000万ドルから2026年には2.5億ドルへ急拡大し、法人契約数は7,000社超、月間アクティブユーザー数は200万人超と報じられている。競合ひしめくAI検索・エージェント市場で短期間に規模を伸ばしている一方、製品の重心(検索→エージェント→記憶・コラボレーション基盤)が数か月単位で変わり続けている点は、業務導入の際に念頭に置く必要がある。
+この結果、年換算売上(ARR)は2025年の約5,000万ドルから2026年には2.5億ドル超へ急拡大し、法人契約数は7,000社超、月間アクティブユーザー数は200万人超と報じられている。競合ひしめくAI検索・エージェント市場で短期間に規模を伸ばしている一方、製品の重心(検索→エージェント→記憶・コラボレーション基盤→無料デスクトップアプリ)が数か月単位で変わり続けている点は、業務導入の際に念頭に置く必要がある。
 
 ## 使いどころ・使い分け
 
@@ -42,6 +43,8 @@ GenSparkは、Baidu(百度)出身のEric Jing・Kay Zhuらが2023年に創業し
 | 向いている用途 | 「調べて、資料の形にする」までを一気に終わらせたい業務(競合調査→提案資料、リサーチ→スプレッドシート化など) | 「事実確認・出典付きの調べもの」に特化した一問一答 | 社内資料・議事録・論文など「手元にある資料」の理解・要約 | 汎用対話・文章作成・コーディング |
 
 判断の目安は、**「調べた内容をそのまま資料の形(スライド・表・ドキュメント・簡易アプリ)にまで仕上げたい」ならGenSpark**、**「出典を明示した事実確認をすばやく行いたい」ならPerplexity**、**「手元にある自社資料だけを根拠にした要約・Q&Aをしたい」ならNotebookLM**、**「汎用的な対話・創作・コーディング」ならChatGPT**という住み分けになる。検索特化型AIの位置づけ全般については[Perplexityの基本](./perplexity-basics.md)・[NotebookLMの基本](./notebooklm-basics.md)も参照。
+
+なお、「クラウド上でリサーチから資料化までAIに任せたい」場合はGenSpark本体(クレジット消費あり)、「Word・Excel・PowerPoint形式のファイルを普段づかいの無料ソフトとして手元で編集したい」だけであれば、2026年8月公開の無料デスクトップアプリ「GenOffice」が候補になる(基本編集は無料、Web検索を伴うAI機能のみクレジット消費)。Microsoft 365やGoogle Workspaceの代替を検討する場合は、この2階建ての使い分けを意識するとよい。
 
 ### 向かない使い方
 
@@ -64,6 +67,7 @@ GenSparkは、Baidu(百度)出身のEric Jing・Kay Zhuらが2023年に創業し
 - **GenTeam / GenMail**: GenTeamは人とAIエージェントが同じチャット空間で共同作業するコラボレーション機能、GenMailはユーザーの文体・人間関係・優先度を学習するメールクライアント(いずれもWorkspace 6.0で追加)
 - **Custom Super Agent / Super Agent Store**: プロンプト一つで自分専用のエージェントを作成し、社内外で再利用・共有・公開できる機能(2026年1〜3月頃に追加)
 - **Genspark AIブラウザ**: 閲覧中のあらゆるWebページ上でSuper Agentが動作するブラウザアプリ(macOS版が先行、Windows版は展開中)。価格比較・YouTube要約・自動巡回(Autopilotモード)などに対応
+- **GenOffice**: 2026年8月3日公開のオープンソース・デスクトップ版オフィススイート(Apache 2.0ライセンス、macOS/Windows/Linux対応)。Word・Excel・PowerPoint・PDF・Markdownをネイティブ形式のまま編集でき、オフラインでの基本編集は無料・広告なし。文書内にSuper Agentが組み込まれており、Web検索を伴うリサーチや資料生成などサーバー側の機能を使う場合のみクレジットを消費する
 - **Call For Me・AI Meeting Notes・AI Pods・Chrome拡張機能など**: 電話代行、議事録作成、ポッドキャスト風音声コンテンツ生成、ブラウザ連携といった従来からの機能群も引き続き提供されている
 
 ### 基本の操作手順(画面の場所)
@@ -114,7 +118,8 @@ GenSparkは、Baidu(百度)出身のEric Jing・Kay Zhuらが2023年に創業し
 - **SecondBrainなど「常時記憶」系機能の情報管理には特に注意**: 2026年7月に追加されたSecondBrainは、メール・会議・通話内容などを横断的かつ継続的に記憶する機能であり、専用ハードウェア「SecondBrain Note」を使うと対面の会話まで自動録音・記憶される。第三者との会話が本人の同意なく記録・保存される懸念があるため、導入前に自社の情報管理ポリシーや録音に関する法令(録音同意の要否など)を確認する
 - **日本語UIは未整備**: 画面(UI)自体は英語のままで、入力・出力を日本語で行う形になる。専門用語やカタカナ表記の訳揺れ、長文・専門的内容での精度低下が生じることがあるため、社外向け資料にそのまま使う場合は表記・内容を人手でチェックする
 - **入力内容の取り扱いに注意**: 入力した内容がサービス改善(AIの学習等)に利用される場合があるとされ、個人が特定される情報や社外秘の内容の入力は避ける
-- **日本での知名度はまだ発展途上**: 米国では評価額26億ドル(2026年6月時点、累計調達額約6.45億ドル)・年換算売上2.5億ドル・月間アクティブユーザー200万人超・法人契約7,000社超と急成長しているが、日本国内での利用実績・レビューの蓄積はPerplexityやChatGPTに比べるとまだ少ない。組織導入の際は、まず個人アカウントの無料枠で使用感を確認してから展開範囲を広げるのが無難
+- **日本での知名度はまだ発展途上**: 米国では評価額26億ドル(2026年6月時点、累計調達額約6.45億ドル)・年換算売上2.5億ドル超・月間アクティブユーザー200万人超・法人契約7,000社超と急成長しているが、日本国内での利用実績・レビューの蓄積はPerplexityやChatGPTに比べるとまだ少ない。組織導入の際は、まず個人アカウントの無料枠で使用感を確認してから展開範囲を広げるのが無難
+- **GenOfficeは「無料」と「クレジット消費」の境界を要確認**: 2026年8月公開のGenOfficeはオフラインでの文書編集自体は無料・オープンソース(Apache 2.0)だが、Web検索を伴うリサーチ・データ分析・スライド自動生成などのAI機能を使うとGensparkアカウントのクレジットを消費する。「無料ソフト」という触れ込みだけで導入すると、AI機能を使った途端に想定外のクレジット消費・課金が発生しうる点に注意する
 
 ## 最初の一歩
 
@@ -127,6 +132,11 @@ genspark.aiに無料登録し、直近で調べたい競合や市場のテーマ
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](../part12-business-practice/ai-research-and-information-gathering.md)
 
 ## 更新履歴
+
+### 2026-08-20: GenOffice(無料オープンソース版デスクトップオフィス)を反映して最新化
+- **内容**: 2026年8月3日公開の無料オープンソース・デスクトップ版オフィススイート「GenOffice」(Apache 2.0ライセンス、Word/Excel/PowerPoint/PDF/Markdown対応、macOS・Windows・Linux対応)を新設。オフライン編集は無料・広告なしだが、Web検索を伴うAI機能はクレジット消費という無料/有料の境界を「使いどころ・使い分け」「実務での使い方」「注意点」の各節に追記。クラウド版AI Workspace 6.0・料金プラン・企業動向(評価額26億ドル、ARR2.5億ドル超、法人契約7,000社超、月間アクティブユーザー200万人超)は2026年8月時点でも同水準であることを確認
+- **出典**: [Genspark Open Sources GenOffice: A Free, Ad-Free AI Office Suite for macOS and Windows with Docs, Sheets, Slides, PDF | MarkTechPost](https://www.marktechpost.com/2026/08/03/genspark-open-sources-genoffice-a-free-ad-free-ai-office-suite-for-macos-and-windows-with-docs-sheets-slides-pdf/)、[Genspark Open Sources GenOffice: The AI-Native Desktop Alternative To Microsoft Office | Open Source For You](https://www.opensourceforu.com/2026/08/genspark-open-sources-genoffice-the-ai-native-desktop-alternative-to-microsoft-office/)、[GenOffice - genspark-ai/genoffice | GitHub](https://github.com/genspark-ai/genoffice)、[GenOffice Open-Source AI Office Suite — Aug 2026 | explainx.ai](https://explainx.ai/blog/genspark-genoffice-open-source-ai-office-august-2026)、[GenOffice: Genspark Ships an AI Office Suite in One Week | Enera](https://www.eneralabs.com/blog/genspark-genoffice-ai-native-office-enterprise-2026/)、[Genspark Inc. Revenue 2026: $250M ARR, $2.6B Valuation | Latka](https://getlatka.com/companies/genspark.ai)、[Genspark Credits Explained: How Plus, Pro, and Free Plan Credits Actually Burn | Scribe](https://scribehow.com/page/Genspark_Credits_Explained_How_Plus_Pro_and_Free_Plan_Credits_Actually_Burn__0spWBp8XQyqyWUsRWyK-Sg)、[Genspark AI Review 2026: Sparkpages, Super Agent, and the Real Costs | Cybernews](https://cybernews.com/ai-tools/genspark-ai-review/)
+- **注記**: genspark.ai公式サイト(pricing・blog・genoffice配下)は本セッションから直接アクセスできず(egressブロック)、GitHub上の公式リポジトリと複数の第三者記事・レビュー記事の突き合わせに基づく記述を含む
 
 ### 2026-07-23: 2026年7月時点の最新機能・料金・企業動向に更新
 - **内容**: 2026年7月21日公開の「AI Workspace 6.0」(SecondBrain・SecondBrain Note・GenTeam・GenMail・AI Design・AgentBase)を反映し、2026年3〜6月のWorkspace 3.0/4.0・Claw for Desktop・シリーズB拡大(評価額26億ドル、累計調達額約6.45億ドル)・ARR2.5億ドル・法人契約7,000社超などの最新数値を追記。比較表にNotebookLMを追加し、Perplexityの料金・機能変化(無制限Pro Search、Labsの表・レポート生成)を反映。SecondBrain等の常時記憶機能に関する情報管理上の注意点を新設
