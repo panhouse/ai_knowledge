@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-22
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part08-specialized-ai-tools/local-llm-basics.md): Ollama/LM Studioの最新版・Meta「Muse Glimmer」の登場・ハードウェア選定目安の節を最新化・増強
 - [Transformer・Attention機構とスケーリング則の基本](topics/part02-llm-basics/transformer-attention-and-scaling-laws.md): MoE・Mamba/SSMハイブリッド構成の主流化(Qwen3.8-Max・Mamba-3等)の節を最新化・増強
 - [旅行・観光業界向けAI企業一覧(国内)](topics/part16-japan-ai-companies/travel-tourism-ai-companies-japan.md): 新規執筆(tripla・ビースポーク・メトロエンジン・AVA Intelligence・ナビタイムジャパン・Kotozna・楽天グループの7社を収録)
 - [エージェント開発フレームワークの基本(OpenAI Agents SDK・Claude Agent SDK・LangGraph等)](topics/part09-api-development/agent-development-framework-basics.md): 新規執筆(OpenAI Agents SDK・Claude Agent SDK・LangGraph・Google ADK・Microsoft Agent Framework・CrewAIの比較)
