@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-03
+- [税理士における生成AI活用事例](topics/part15-job-role-cases/tax-accountant-ai-use-cases.md): 新規執筆
 - [IR・決算開示支援AI企業一覧](topics/part16-japan-ai-companies/ir-disclosure-support-ai-companies-japan.md): 新規執筆
 - [大学教員・研究者における生成AI活用事例](topics/part15-job-role-cases/university-faculty-researcher-ai-use-cases.md): 新規執筆
 - [AIレッドチーミングの基本](topics/part04-risk-security/ai-red-teaming-basics.md): 新規執筆(実施体制・頻度・外部ベンダー活用)
