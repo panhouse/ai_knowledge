@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-28
+- [社会インフラ点検・保守AI企業一覧](topics/part16-japan-ai-companies/infrastructure-inspection-ai-companies-japan.md): 新規執筆(BIPROGY・応用地質・パスコ・NTT e-Drone Technology・Fracta Japan・PAL構造の6社を収録)
 - [医療画像診断支援AI企業一覧](topics/part16-japan-ai-companies/medical-imaging-diagnosis-ai-companies-japan.md): 新規執筆(エルピクセル・AIメディカルサービス・メドメイン・富士フイルム・キヤノンメディカルシステムズ・エムスリーAIの6社を収録)
 ## 2026-08-27
 - [モビリティ・自動運転AI企業一覧](topics/part16-japan-ai-companies/mobility-autonomous-driving-ai-companies-japan.md): 新規執筆(ティアフォー・Turing・T2・日産自動車・トヨタ自動車/ウーブン・バイ・トヨタ・本田技研工業/ソニー・ホンダモビリティの6社を収録)
