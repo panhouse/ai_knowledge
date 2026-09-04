@@ -30,4 +30,5 @@ part: 2
 - [コンテキストウィンドウの基本(なぜ大切か・モデル別の違い)](context-window-basics.md)
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](model-types-and-selection-basics.md)
 - [ファインチューニング・RAG・プロンプトの使い分け](finetuning-vs-rag-vs-prompting.md)
+- [コンテキストエンジニアリングとは何か](context-engineering-basics.md)
 - [Transformer・Attention機構とスケーリング則の基本](transformer-attention-and-scaling-laws.md)
