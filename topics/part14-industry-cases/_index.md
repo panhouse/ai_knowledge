@@ -104,6 +104,7 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [林業・水産業における生成AI活用事例](forestry-fisheries-ai-use-cases.md)
 - [フィットネス・スポーツクラブ業界における生成AI活用事例](fitness-industry-ai-use-cases.md)
 - [冠婚葬祭業(結婚式・葬儀)における生成AI活用事例](wedding-funeral-industry-ai-use-cases.md)
+- [上下水道(水道インフラ)業界における生成AI活用事例](water-utility-industry-ai-use-cases.md)
 - [テーマパーク・レジャー施設業界における生成AI活用事例](theme-park-leisure-facility-ai-use-cases.md)
 - [歯科業界における生成AI活用事例](dental-industry-ai-use-cases.md)
 - [決済・フィンテック業界における生成AI活用事例](payment-fintech-industry-ai-use-cases.md)

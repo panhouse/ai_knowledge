@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-26
+- [上下水道(水道インフラ)業界における生成AI活用事例](topics/part14-industry-cases/water-utility-industry-ai-use-cases.md): 新規執筆(漏水検知・管路劣化予測・浄水場運転支援・スマートメーター・顧客対応・広域化における活用事例)
 ## 2026-08-25
 - [IT運用監視(AIOps)AI企業一覧](topics/part16-japan-ai-companies/aiops-it-operations-ai-companies-japan.md): 新規執筆(はてな・NRI・ヘッドウォータース・インフォメーション・ディベロプメント・NTTデータグループの5社を収録)
 - [テーマパーク・レジャー施設業界における生成AI活用事例](topics/part14-industry-cases/theme-park-leisure-facility-ai-use-cases.md): 新規執筆(混雑予測・多言語チャットボット・周遊プラン提案・ダイナミックプライシング・スタッフマニュアル生成・SNSプロモーションの活用事例)
