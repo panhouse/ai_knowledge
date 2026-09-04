@@ -88,6 +88,7 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [製造業向け画像検査・予知保全AI企業一覧](manufacturing-inspection-ai-companies-japan.md)
 - [翻訳・多言語化AI企業一覧](translation-ai-companies-japan.md)
 - [AI専業コンサルティングファーム一覧](ai-specialized-consulting-firms-japan.md)
+- [AIアバター・バーチャルヒューマン企業一覧(国内)](ai-avatar-virtual-human-companies-japan.md)
 - [スマートファクトリー・産業用IoT AI企業一覧](smart-factory-industrial-iot-ai-companies-japan.md)
 - [倉庫自動化・物流ロボットAI企業一覧](warehouse-robotics-logistics-automation-ai-companies-japan.md)
 - [eKYC・本人確認AI企業一覧](ekyc-identity-verification-ai-companies-japan.md)

@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-01
+- [AIアバター・バーチャルヒューマン企業一覧(国内)](topics/part16-japan-ai-companies/ai-avatar-virtual-human-companies-japan.md): 新規執筆(AVITA・ティファナ・ドットコム・AIdeaLab・Sally・JetB・ソフトバンクロボティクスの6社を収録)
 ## 2026-08-31
 - [生成AIの電力消費・データセンター投資とエネルギー動向(2026年時点)](topics/part13-ai-trends/ai-energy-and-datacenter-trends.md): 新規執筆(ハイパースケーラーのcapex・原子力/ガス電力調達・電力ボトルネックとレート制限への影響を整理)
 - [Azure OpenAI Service・Amazon Bedrock経由でのLLM API利用の基本(直接契約との違い)](topics/part09-api-development/enterprise-cloud-llm-api-basics.md): 新規執筆(クラウド経由のLLM API利用と直接契約の違い)
