@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-23
+- [RPA・AI-OCR企業一覧(国内)](topics/part16-japan-ai-companies/rpa-ai-ocr-companies-japan.md): 新規執筆(AI inside、NTTアドバンステクノロジ(WinActor)、オープン(BizRobo!)、Cogent Labs、キヤノンマーケティングジャパン、UiPathの6社を収録)
 - [家具・インテリア業界における生成AI活用事例](topics/part14-industry-cases/furniture-interior-industry-ai-use-cases.md): 新規執筆(IKEA Kreativ・ニトリ×燈の部屋シミュレーション・Wayfair Decorify・ミサワホームInterior Makerの活用事例整理)
 - [スポーツ・フィットネス業界向けAI企業一覧(国内)](topics/part16-japan-ai-companies/sports-fitness-ai-companies-japan.md): 新規執筆(ユーフォリア・ライブリッツ・asken・hacomono・Sportip・MY TRAINERの6社を収録)
 - [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](topics/part15-job-role-cases/financial-advisor-ai-use-cases.md): 新規執筆(資産配分提案書・ライフプランシミュレーション説明文のドラフト作成と、断定的判断の提供禁止・適合性の原則など規制リスクの整理)
