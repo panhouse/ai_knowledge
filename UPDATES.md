@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-01
+- [太陽光発電・再生可能エネルギー事業における生成AI活用事例](topics/part14-industry-cases/solar-renewable-energy-ai-use-cases.md): 新規執筆(発電量予測・O&M異常検知・FIT/FIP収益最適化の活用事例)
 - [AIアバター・バーチャルヒューマン企業一覧(国内)](topics/part16-japan-ai-companies/ai-avatar-virtual-human-companies-japan.md): 新規執筆(AVITA・ティファナ・ドットコム・AIdeaLab・Sally・JetB・ソフトバンクロボティクスの6社を収録)
 ## 2026-08-31
 - [生成AIの電力消費・データセンター投資とエネルギー動向(2026年時点)](topics/part13-ai-trends/ai-energy-and-datacenter-trends.md): 新規執筆(ハイパースケーラーのcapex・原子力/ガス電力調達・電力ボトルネックとレート制限への影響を整理)
