@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-23
+- [医師における生成AI活用事例](topics/part15-job-role-cases/physician-ai-use-cases.md): 新規執筆(音声入力によるSOAPカルテ下書き・AI問診・文献検索・患者説明文書の活用事例)
 ## 2026-08-22
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part13-ai-trends/japan-generative-ai-landscape.md): 政策動向・企業導入率・主要プレイヤーの節を最新化・増強
 - [調剤薬局・ドラッグストア業界における生成AI活用事例](topics/part14-industry-cases/pharmacy-drugstore-industry-ai-use-cases.md): 新規執筆(薬歴記録支援・OTC接客・在庫発注最適化・電子処方箋連携の活用事例)
