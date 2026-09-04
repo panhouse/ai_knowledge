@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-21
+- [訪問看護・在宅医療における生成AI活用事例](topics/part14-industry-cases/home-nursing-care-ai-use-cases.md): 新規執筆(訪問記録・看護サマリー音声入力、多職種連携、訪問ルート最適化、状態変化予測、家族向け説明資料生成の活用事例)
 - [音声合成・音声認識AI企業一覧(国内)](topics/part16-japan-ai-companies/voice-synthesis-recognition-ai-companies-japan.md): 新規執筆(エーアイ・CoeFont・テクノスピーチ・ReadSpeaker Japan(旧HOYA VoiceText)・NTTテクノクロス・Human Dataware Labの6社を収録)
 - [学習塾・予備校における生成AI活用事例](topics/part14-industry-cases/cram-school-tutoring-industry-ai-use-cases.md): 新規執筆(AI個別指導・志望校判定・保護者面談資料生成・講師向け教材支援・生徒募集マーケティングの活用事例)
 - [引越し業界における生成AI活用事例](topics/part14-industry-cases/moving-relocation-industry-ai-use-cases.md): 新規執筆(AI見積もり・LINEチャットボット・需要予測・AIマッチング・LLMO対策の活用事例)
