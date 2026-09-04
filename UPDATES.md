@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-24
+- [リフォーム・リノベーション業界における生成AI活用事例](topics/part14-industry-cases/home-renovation-remodeling-ai-use-cases.md): 新規執筆(AIパース生成・劣化診断・見積書自動化・補助金適合診断・職人スケジュール調整・施主向けチャットボット・契約書チェックの活用事例)
 - [記者・編集者における生成AI活用事例](topics/part15-job-role-cases/journalist-editor-ai-use-cases.md): 新規執筆(取材メモの文字起こし・記事構成案生成・ファクトチェック補助・校正校閲の活用事例)
 - [フードテックAI企業一覧(国内)](topics/part16-japan-ai-companies/foodtech-ai-companies-japan.md): 新規執筆(NEC・トライエッティング・ブレインパッド・Laboro.AI・AI CROSSの5社を収録)
 - [介護職員における生成AI活用事例](topics/part15-job-role-cases/caregiver-eldercare-worker-ai-use-cases.md): 新規執筆(音声入力による介護記録・申し送り要約・家族向け報告・見守りセンサー連携・夜勤シフトの活用事例)
