@@ -2,9 +2,9 @@
 title: "Gem(Geminiのカスタムボット機能)の基本"
 part: 6
 chapter: 第2章 主要ツールでの作り方
-tags: [Gemini, Gem, カスタムGPT, プロンプト管理, Google Workspace]
+tags: [Gemini, Gem, カスタムGPT, プロンプト管理, Google Workspace, Gemini Spark]
 created: 2026-07-06
-updated: 2026-07-23
+updated: 2026-08-20
 ---
 
 # Gem(Geminiのカスタムボット機能)の基本
@@ -13,15 +13,27 @@ updated: 2026-07-23
 
 Gem(ジェム)は、Geminiに「役割」と「指示」を固定で覚え込ませ、参照資料(ナレッジファイル)まで紐づけて保存できる、自分専用のカスタムAIを作る機能である。これがないと、「議事録を決まった形式で要約して」「この口調でメールをチェックして」といった前提説明を、チャットを開くたびに毎回コピペし直す羽目になる。GemはChatGPTの「GPTs(カスタムGPT)」、Claudeの「Projects」に相当する機能で、一度作れば以後はワンクリックで同じ役割のAIを呼び出せる。
 
-似た名前の「保存済み情報(Saved info)」という別機能もあり、この2つは混同されやすい。本ページはGemに絞って、作り方・使いどころ・注意点を整理する。
+似た名前の「保存済み情報(Saved info)」という別機能、および2025年末に追加された「Gems from Google Labs(Opalベースのミニアプリ作成機能)」という別機能もあり、この3つは混同されやすい。本ページは従来からある会話型のGem(以下「Gem」)に絞って、作り方・使いどころ・注意点を整理する。
+
+**先に重要な注意**: 2026年8月時点で、GoogleがこのGem機能自体を2026年10月20日で終了し、後継の「Skills(Gemini Spark内の機能)」への移行を促す告知が一部ユーザーの画面に表示されているとの報道が複数の海外メディアから出ている(Google公式の正式発表はまだない)。詳細と対処法は「仕組み・背景」および「注意点・よくある誤解」を参照。
 
 ## 仕組み・背景
 
 Gemは「指示(カスタム指示)」+「ナレッジ(任意で添付する参照ファイル)」の組み合わせを1つの名前付きボットとして保存する仕組みである。作成・編集・一覧管理は「Gemマネージャー」という専用画面で行う。
 
-もともとGemは有料の「Gemini Advanced」(現在のGoogle AI Pro相当)などの契約者限定機能だったが、2025年3月にGoogle公式ブログで無料ユーザーへの展開が発表され、2026年7月時点でも無料プランでGemの作成・利用ができる状態が続いている([Google公式ブログ](https://blog.google/products/gemini/new-gemini-app-features-march-2025/)、[9to5Google](https://9to5google.com/2025/03/25/gemini-gems-free-mobile/))。ネット上の解説記事には「Gemはpro以上の機能」と書かれたものも残っているが、これは古い情報か、法人向けプランの話と混同している可能性が高い。無料プランと有料プランの違いは「作れるかどうか」ではなく、**そのGemが動くモデルの性能と使える回数**にある。2026年7月時点では無料プランのGeminiアプリは軽量モデルの「Gemini 3.6 Flash」(2026年7月21日公開)がデフォルトで動作し、Google AI Pro/Ultraなどの有料プランではより高性能なPro系モデルや、無料プランより多い利用枠でGemを動かせる([Google公式ブログ: Gemini 3.6 Flash発表](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)、[9to5Google](https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/))。モデル名はGoogleのアップデート頻度が高く数か月単位で変わるため、正確な現行モデルはGeminiアプリのモデル選択メニューで都度確認するのが確実である。
+もともとGemは有料の「Gemini Advanced」(現在のGoogle AI Pro相当)などの契約者限定機能だったが、2025年3月にGoogle公式ブログで無料ユーザーへの展開が発表され、2026年8月時点でも無料プランでGemの作成・利用ができる状態が続いている([Google公式ブログ](https://blog.google/products/gemini/new-gemini-app-features-march-2025/)、[9to5Google](https://9to5google.com/2025/03/25/gemini-gems-free-mobile/))。ネット上の解説記事には「Gemはpro以上の機能」と書かれたものも残っているが、これは古い情報か、法人向けプランの話と混同している可能性が高い。無料プランと有料プランの違いは「作れるかどうか」ではなく、**そのGemが動くモデルの性能と使える回数**にある。2026年8月時点では無料プランのGeminiアプリは軽量モデルの「Gemini 3.6 Flash」(2026年7月21日公開)がデフォルトで動作し、有料プランでは上位モデルの「Gemini 3.1 Pro」や、2026年8月13日に公開されたばかりの「Gemini 3.7 Flash」など、より高性能なモデルや多い利用枠でGemを動かせる([Google公式ブログ: Gemini 3.6 Flash発表](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)、[9to5Google](https://9to5google.com/2026/07/21/gemini-3-6-flash-launch/))。モデル名はGoogleのアップデート頻度が高く数か月単位で変わるため、正確な現行モデルはGeminiアプリのモデル選択メニューで都度確認するのが確実である。
 
-また2026年5月には、Geminiアプリ全体の利用上限の仕組みが「1日◯回」という固定回数制から、プロンプトの複雑さや会話の長さを加味した「コンピュート使用量ベース+5時間ごとにリセット、週次でも上限あり」という方式に切り替わった。この変更はGemの利用にもそのまま適用されるため、Gemを多用する業務では有料プランの利用枠(変更直後の反発を受けて有料プランは利用枠が3倍に引き上げられている)を踏まえて運用するとよい([9to5Google: Gemini app now has compute-based usage limits](https://9to5google.com/2026/05/19/google-ai-ultra-100/)、[9to5Google: Google adjusts Gemini's new usage limits](https://9to5google.com/2026/05/28/gemini-new-usage-limits/))。
+また2026年5月には、Geminiアプリ全体の利用上限の仕組みが「1日◯回」という固定回数制から、プロンプトの複雑さや会話の長さを加味した「コンピュート使用量ベース+5時間ごとにリセット、週次でも上限あり」という方式に切り替わった。この変更はGemの利用にもそのまま適用される。2026年5月のGoogle I/Oを機に有料プランの名称・構成も整理され、下位から「Google AI Plus」「Google AI Pro」「Google AI Ultra(2段階)」という体系になっている(詳しい料金は「実務での使い方」の表を参照)。Gemを多用する業務では、無料プランは上限に達しやすいことを踏まえ、有料プランの利用枠や、Pro/Ultra契約者が上限超過時に買い足せる従量課金クレジット(PAYG AIクレジット)の利用を検討するとよい([9to5Google: Gemini app now has compute-based usage limits](https://9to5google.com/2026/05/19/google-ai-ultra-100/)、[9to5Google: Google adjusts Gemini's new usage limits](https://9to5google.com/2026/05/28/gemini-new-usage-limits/)、[9to5Google: What Gemini features you get with Google AI Plus, Pro, & Ultra](https://9to5google.com/2026/05/25/google-ai-plus-pro-ultra-gemini-features/))。
+
+### 「Gems from Google Labs(Opal)」との混同に注意
+
+2025年12月以降、Gemマネージャーの画面には、本ページで扱う従来型のGem(会話型のカスタムボット)に加えて、「Gems from Google Labs」という別機能も同居するようになった。これはGoogle Labsの実験的なノーコードツール「Opal」を土台にした機能で、自然言語の指示から画像・動画・音声・テキストの複数モデルを組み合わせた**ミニアプリ・多段ワークフロー**(例: 講義メモを渡すと要約・学習ガイド・ポッドキャスト風音声を一括生成する、など)を作れる([Google公式ヘルプ: Create & manage AI mini-apps or custom workflows as Gems from Google Labs](https://support.google.com/gemini/answer/16802014?hl=en)、[Google公式ブログ: Build interactive mini apps with Opal in the Gemini app](https://blog.google/innovation-and-ai/models-and-research/google-labs/mini-apps-opal-gemini-app-experiment/))。同じ「Gem」という名前だが、目的も作り方も別物である。「特定の役割を固定して繰り返し相談したい」なら本ページの(従来型の)Gem、「入力から複数ステップの成果物を自動生成する仕組みを作りたい」ならOpalベースのGems from Google Labsを選ぶ、と使い分けるとよい。
+
+### 2026年10月にGemが終了する?という報道(2026年8月時点・未確定情報)
+
+2026年8月上旬、GeminiのWebアプリの一部ユーザー向けに「Gems are retiring October 20 - Save your Gem content or recreate them as skills to keep your workflows running(Gemは10月20日に終了します。指示内容を保存するか、Skillsとして作り直してください)」という告知バナーが、機能フラグの裏で発見されたと海外の複数メディア(TestingCatalog、Android Authorityなど)が報じている。これは2026年8月20日時点でGoogleが公式に発表した内容ではなく、フラグの状態からリーク的に見つかったものであるため、実施時期や実施の有無自体が変わる可能性がある([TestingCatalog: Google may retire Gems in October, forcing migration to Skills](https://www.testingcatalog.com/google-may-retire-gems-in-october-forcing-migration-to-skills/)、[Android Authority: Google could retire a free Gemini feature in favor of a paid one](https://www.androidauthority.com/google-retire-gemini-gems-leak-3696240/))。
+
+報道によれば、移行先とされる「Skills」は、Gemとは別の枠組みである「**Gemini Spark**」(ブラウザ操作やスケジュール実行までこなすGoogleのエージェント機能)の中の一部品で、性質が大きく異なる。GemはGeminiアプリのサイドバーから誰でも無料で使える「役割の固定」機能であるのに対し、Skillsは「特定タスクの実行手順とツールをGeminiに教え込む」エージェント向けの部品であり、**Google AI ProまたはUltraの有料契約が必須**、個人アカウント限定(職場・学校アカウント不可)、かつEU経済領域(EEA)・英国・スイス・ナイジェリアでは提供されていない([Android Authority: 同上](https://www.androidauthority.com/google-retire-gemini-gems-leak-3696240/)、[9to5Google: Gemini Spark rolling out to Google AI Pro users in the US](https://9to5google.com/2026/07/23/gemini-spark-google-ai-pro-us/))。仮にこの報道どおりGemが終了しSkillsに一本化された場合、無料プランのユーザーや上記対象地域のユーザーは、同等機能を使えなくなる可能性がある点が実務上の懸念材料である。自動移行についても報道時点では確認されておらず、手作業での作り直しが必要になる見込みとされている。
 
 Gemと紛らわしいのが「**保存済み情報(Saved info)**」という機能である。両者は目的も挙動もまったく違う。なお2026年1月に、この機能を含むGoogleアカウント全体の個人設定エリアが「パーソナライズ」から「**Personal Intelligence**」という名称に統合され、Gmail・写真などの連携アプリの管理と合わせて扱われるようになった。保存済み情報自体の管理は引き続き `gemini.google.com/saved-info` または「設定→Personal Intelligence」からアクセスできる([Google公式ヘルプ: Connect your Google apps to personalize your Gemini experience](https://support.google.com/gemini/answer/16598406?hl=en))。
 
@@ -44,12 +56,13 @@ Gemと紛らわしいのが「**保存済み情報(Saved info)**」という機�
 | 手元の特定資料**だけ**を根拠に正確に調べたい(社内マニュアルなど) | NotebookLM([Google Geminiの基本](../part03-ai-chat-tools/google-gemini-basics.md)を参照)。GemのナレッジもRAG(検索拡張生成)的に使えるが、正確な出典追跡が主目的ならNotebookLMの方が向く |
 | 複数人のチームで同じ役割のAIを使い回したい | Gemの共有機能(後述)、または法人向けGoogle Workspace with Gemini |
 | Google Drive上のフォルダ・メール・カレンダーをまとめて1つの作業空間として扱いたい | Gemより粒度が広い「Google Driveプロジェクト」機能(後述、Gemとは別物) |
+| 入力データから要約・音声・画像など複数形式の成果物を自動で一括生成したい(ノーコードのミニアプリ) | Gemではなく「Gems from Google Labs(Opal)」(前掲) |
 
-判断の目安はシンプルで、「同じ指示を3回以上コピペしている業務」があればGem化の候補になる。
+判断の目安はシンプルで、「同じ指示を3回以上コピペしている業務」があればGem化の候補になる。ただし2026年10月にGem自体が終了する可能性が報じられている(前掲)ため、当面は「新しいGemをどんどん作り込む」より「今あるGemの指示文をドキュメント側にも保管しておく」を優先するのが無難である。
 
 ## 実務での使い方
 
-### Gemの作成手順(2026年7月時点の目安)
+### Gemの作成手順(2026年8月時点の目安)
 
 1. gemini.google.com を開き、左側メニューの「Gemを表示」をクリック
 2. 「Gemマネージャー」画面が開くので、「+新しいGem」を選択
@@ -64,6 +77,19 @@ Gemと紛らわしいのが「**保存済み情報(Saved info)**」という機�
 4. 右側のプレビューでテスト対話をしながら内容を調整し、「保存」をクリック
 
 作成したGemはGeminiのWeb版・モバイルアプリ・Google Workspaceのサイドパネルに加え、2026年にはGoogle Drive内の「Ask Gemini」画面(drive.google.comで右上の「Ask Gemini」→左上メニューから「Gems」を選択)からも直接呼び出せるようになった([Google公式ヘルプ: Use Gems with Gemini in Google Drive](https://support.google.com/drive/answer/16684485?hl=en)、[Google Workspace Updates: Ask Gemini in Drive now generally available](https://workspaceupdates.googleblog.com/2026/04/ask-gemini-in-drive-now-generally-available.html))。似た名前の「Google Driveプロジェクト」は、特定のフォルダ・メール・予定をひとまとめにした作業空間を作る別機能で、Gem(役割・指示の保存)とは目的が異なる点に注意する。
+
+### プラン別の違い(2026年8月時点)
+
+Gemの作成・利用そのものは無料プランでも可能。プランの違いは「Gemが動くモデルの性能」「利用回数(コンピュート使用量ベースの上限)」に現れる。
+
+| プラン | 月額目安 | Gemで使えるモデル・枠の目安 |
+|---|---|---|
+| 無料 | 0円 | Gemini 3.6 Flashが基本。上限に達しやすい |
+| Google AI Plus | 4.99ドル(2026年6月に7.99ドルから値下げ) | 無料より広い利用枠、ストレージ400GB |
+| Google AI Pro | 19.99ドル | Gemini 3.1 Proや3.7 Flashなど上位モデル、Deep Research等も含めた高い利用枠、上限超過時に買い足せるPAYG AIクレジット |
+| Google AI Ultra(標準/上位) | 99.99ドル/199.99ドル | Pro比でさらに高い利用枠(2026年5月のGoogle I/Oで単一の249.99ドルプランが2段階に再編)、Deep Think、Gemini Sparkなど |
+
+(価格は米国向けの目安。日本向けの実際の価格・為替は都度Google公式サイトで確認する)([9to5Google: What Gemini features you get with Google AI Plus, Pro, & Ultra](https://9to5google.com/2026/05/25/google-ai-plus-pro-ultra-gemini-features/))
 
 ### コピペで使える指示欄のテンプレート例
 
@@ -120,6 +146,7 @@ Gemの共有はGoogle Driveのファイル共有と同じ権限管理の仕組�
 
 ## 注意点・よくある誤解
 
+- **2026年10月にGemが終了するとの未確認報道がある**: 前述の通り、2026年8月時点でGoogleは公式にGem終了を発表していないが、機能フラグの裏で「10月20日に終了、Skillsとして作り直しを」という告知が見つかったと複数メディアが報じている。もし実施されると、後継の「Skills」はGoogle AI Pro/Ultraの有料契約が必須でEEA・英国・スイス・ナイジェリアでは使えない見込みのため、無料プランやこれらの地域で使っているGemは同等機能を失う可能性がある。自動移行も確認されていない。実務上は、**重要なGemの指示文(と、それを使う理由・運用ルール)をGemini外のドキュメントにも保管しておく**ことをおすすめする。続報が出たら本ページを改訂する
 - **GemとGPTs・Projectsは「保存できる範囲」が微妙に違う**: GPTsはActions(外部API呼び出し)まで組み込めるが、Gemは指示文とナレッジファイルの範囲にとどまる。外部システム連携までやりたい場合はGemだけでは不十分な場合がある
 - **「Gemは有料プラン限定」という古い情報に注意**: 2025年3月以降は無料プランでも作成・利用できる。ネット記事の中には移行前の情報のまま止まっているものがあるため、実際の挙動は自分のアカウントで確認するのが確実
 - **利用上限は「1日◯回」ではなくなった**: 2026年5月の仕様変更で、Geminiアプリ全体(Gemを含む)の利用上限はプロンプトの複雑さ・会話の長さを踏まえたコンピュート使用量ベースに変わり、5時間ごと・週次の二段構えでリセットされる方式になった。Gemを業務で多用する場合、無料プランでは上限に達しやすい点を踏まえておく
@@ -129,7 +156,7 @@ Gemの共有はGoogle Driveのファイル共有と同じ権限管理の仕組�
 
 ## 最初の一歩
 
-自分が毎回同じ前提・フォーマットを説明してからGeminiに頼んでいる業務を1つ選び、その指示を書き込んだGemを1つ作ってみる(共有範囲は「非公開」で十分)。
+自分が毎回同じ前提・フォーマットを説明してからGeminiに頼んでいる業務を1つ選び、その指示を書き込んだGemを1つ作ってみる(共有範囲は「非公開」で十分)。すでにGemを使っている場合は、この機会に各Gemの指示文をコピーしてGoogleドキュメントなどに保管しておくと、10月のGem終了報道がどう転んでも安心である。
 
 ## 関連トピック
 
@@ -138,6 +165,10 @@ Gemの共有はGoogle Driveのファイル共有と同じ権限管理の仕組�
 - [ChatGPTのメモリ(Memory)機能](../part03-ai-chat-tools/chatgpt-memory-feature.md)
 
 ## 更新履歴
+
+### 2026-08-20: Gem終了報道・Opal版Gem・料金プラン再編を反映し最新化・増強
+- **内容**: 2026年8月上旬に複数の海外メディアが報じた「Gemを2026年10月20日に終了し、Gemini Spark内の『Skills』へ移行させる」という未確認情報(Google公式発表はまだない)を、リスクと対処法(指示文の外部保管)込みで追記。2025年12月に追加されたOpalベースの「Gems from Google Labs」(ミニアプリ生成機能)を本ページのGemと混同しないよう仕組み・使い分け表に追記。2026年5月のGoogle I/Oで有料プランが「Google AI Plus($4.99)/Pro($19.99)/Ultra(標準$99.99・上位$199.99)」に再編されたことと、Gemで使えるモデルがGemini 3.6 Flash(無料)・Gemini 3.1 Pro・Gemini 3.7 Flash(2026年8月13日公開、有料)に更新されたことを反映
+- **出典**: [TestingCatalog: Google may retire Gems in October, forcing migration to Skills](https://www.testingcatalog.com/google-may-retire-gems-in-october-forcing-migration-to-skills/)、[Android Authority: Google could retire a free Gemini feature in favor of a paid one](https://www.androidauthority.com/google-retire-gemini-gems-leak-3696240/)、[9to5Google: Gemini Spark rolling out to Google AI Pro users in the US](https://9to5google.com/2026/07/23/gemini-spark-google-ai-pro-us/)、[9to5Google: What Gemini features you get with Google AI Plus, Pro, & Ultra](https://9to5google.com/2026/05/25/google-ai-plus-pro-ultra-gemini-features/)、[Google公式ヘルプ: Create & manage AI mini-apps or custom workflows as Gems from Google Labs](https://support.google.com/gemini/answer/16802014?hl=en)、[Google公式ブログ: Build interactive mini apps with Opal in the Gemini app](https://blog.google/innovation-and-ai/models-and-research/google-labs/mini-apps-opal-gemini-app-experiment/)
 
 ### 2026-07-23: モデル・利用上限・Personal Intelligence改称などを最新化
 - **内容**: 無料プランのデフォルトモデルがGemini 3.6 Flash(2026年7月21日公開)へ更新されたこと、2026年5月からGeminiアプリ全体の利用上限が「コンピュート使用量+5時間ごと/週次リセット」方式に変わりGemの利用にも影響すること、「保存済み情報」を含む個人設定エリアが2026年1月に「Personal Intelligence」へ改称されたこと、Google DriveのAsk Gemini画面からGemを直接呼び出せるようになったこと(2026年4月GA)、Claude Projectsが2026年2月以降無料プランでも最大5件まで作成可能になったことを反映し、他ツール対応表・注意点を更新
