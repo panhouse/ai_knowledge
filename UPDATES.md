@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-21
+- [クリーニング業界における生成AI活用事例](topics/part14-industry-cases/dry-cleaning-industry-ai-use-cases.md): 新規執筆(画像認識AIによるシミ・汚れ判定、宅配クリーニングのチャットボット受付、需要予測・配送ルート最適化の活用事例)
 - [官公庁・自治体向けGovTech AI企業一覧(国内)](topics/part16-japan-ai-companies/govtech-ai-companies-japan.md): 新規執筆(グラファー・トラストバンク・Polimill・内田洋行・NEC・富士通Japan・JAPAN AIの7社を収録)
 - [訪問看護・在宅医療における生成AI活用事例](topics/part14-industry-cases/home-nursing-care-ai-use-cases.md): 新規執筆(訪問記録・看護サマリー音声入力、多職種連携、訪問ルート最適化、状態変化予測、家族向け説明資料生成の活用事例)
 - [音声合成・音声認識AI企業一覧(国内)](topics/part16-japan-ai-companies/voice-synthesis-recognition-ai-companies-japan.md): 新規執筆(エーアイ・CoeFont・テクノスピーチ・ReadSpeaker Japan(旧HOYA VoiceText)・NTTテクノクロス・Human Dataware Labの6社を収録)
