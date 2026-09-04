@@ -72,6 +72,7 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [カスタマーサクセス(CS)AI企業一覧](customer-success-ai-companies-japan.md)
 - [議事録・文字起こしAI企業一覧](meeting-minutes-ai-companies-japan.md)
 - [契約書・法務AI企業一覧](legal-contract-ai-companies-japan.md)
+- [IR・決算開示支援AI企業一覧](ir-disclosure-support-ai-companies-japan.md)
 - [国産基盤モデル・研究開発系AI企業一覧](foundation-model-companies-japan.md)
 - [コンサル・SIer系のAI企業一覧](consulting-sier-ai-companies.md)
 - [物流・SCM AI企業一覧](logistics-scm-ai-companies-japan.md)
