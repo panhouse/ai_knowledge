@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-23
+- [化粧品業界における生成AI活用事例](topics/part14-industry-cases/cosmetics-industry-ai-use-cases.md): 新規執筆(資生堂・花王・ポーラ等の処方開発AI、パーソナライズ肌診断、需要予測AIエージェント等の活用事例)
 - [建築士・設計士における生成AI活用事例](topics/part15-job-role-cases/architect-ai-use-cases.md): 新規執筆(コンセプトパース・BIM連携レンダリング・確認申請事前チェック・施主提案の活用事例)
 - [RPA・AI-OCR企業一覧(国内)](topics/part16-japan-ai-companies/rpa-ai-ocr-companies-japan.md): 新規執筆(AI inside、NTTアドバンステクノロジ(WinActor)、オープン(BizRobo!)、Cogent Labs、キヤノンマーケティングジャパン、UiPathの6社を収録)
 - [家具・インテリア業界における生成AI活用事例](topics/part14-industry-cases/furniture-interior-industry-ai-use-cases.md): 新規執筆(IKEA Kreativ・ニトリ×燈の部屋シミュレーション・Wayfair Decorify・ミサワホームInterior Makerの活用事例整理)
