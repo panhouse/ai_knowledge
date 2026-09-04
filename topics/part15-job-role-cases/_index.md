@@ -140,6 +140,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第8章 法務・知財・コンプライアンス
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
+- [社会保険労務士(社労士)における生成AI活用事例](labor-social-security-consultant-ai-use-cases.md)
 - [知財・特許担当者における生成AI活用事例](ip-patent-ai-use-cases.md)
 
 ### 第9章 総務・秘書・購買調達

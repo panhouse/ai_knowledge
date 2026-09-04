@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-30
+- [社会保険労務士(社労士)における生成AI活用事例](topics/part15-job-role-cases/labor-social-security-consultant-ai-use-cases.md): 新規執筆(就業規則ドラフト・給与計算/手続き書類チェック・労務相談一次対応・助成金リサーチの活用事例と独占業務の線引き)
 - [スマートファクトリー・産業用IoT AI企業一覧](topics/part16-japan-ai-companies/smart-factory-industrial-iot-ai-companies-japan.md): 新規執筆(日立製作所・ファナック・三菱電機・i Smart Technologies・NTTドコモビジネス・オプティムの6社を収録)
 - [自動車整備・鈑金業界における生成AI活用事例](topics/part14-industry-cases/auto-repair-bodyshop-industry-ai-use-cases.md): 新規執筆(故障診断支援・AI鈑金見積もり・整備マニュアル検索・顧客説明文生成・部品在庫最適化・技術伝承の活用事例)
 - [語学学校業界における生成AI活用事例](topics/part14-industry-cases/language-school-industry-ai-use-cases.md): 新規執筆(AI英会話アプリとの競合/併用・発音評価AI・復習支援・資格試験対策の活用事例)
