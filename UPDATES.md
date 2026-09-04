@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-20
+- [生成AIによるBPR(業務プロセス再構築)](topics/part12-business-practice/generative-ai-bpr.md): エージェント型AIの普及実態とプロセスマイニングとの融合の節を最新化・増強
 - [AIプロジェクトの進め方と評価指標の基礎](topics/part01-ai-basics/ai-project-and-evaluation-basics.md): AIエージェントの評価軸(タスク成功率・トラジェクトリ評価)とLLM-as-a-Judgeの2026年実務ポイントを最新化・増強
 - [GenSparkの基本](topics/part08-specialized-ai-tools/genspark-basics.md): GenOffice(無料オープンソース版デスクトップオフィス)を反映して最新化・増強
 - [Difyワークフローの基本](topics/part10-nocode-lowcode/dify-workflow-basics.md): MCP対応・キャンバスUX改善・料金プラン上限値の節を最新化・増強
