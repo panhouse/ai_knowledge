@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-20
+- [Function Calling(Tool Calling)の基本](topics/part09-api-development/function-calling-basics.md): 組み込みツールとの違い・Assistants API廃止直前情報・Anthropicの大規模エージェント向け拡張を反映して最新化・増強
 - [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): OpenAI系(GPT-5.1・GPT-5.2)の出力Markdown既定動作の変化を反映して最新化・増強
 ## 2026-08-19
 - [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): 個人・法人Copilotアプリ統合、Cowork(GA)、GPT-5.6化を反映して最新化
