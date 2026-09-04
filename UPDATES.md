@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-25
+- [倉庫管理・在庫管理担当者における生成AI活用事例](topics/part15-job-role-cases/warehouse-inventory-manager-ai-use-cases.md): 新規執筆(需要予測・発注点算出、棚卸差異分析、欠品/過剰在庫アラートの要約、多言語作業手順書生成の活用事例)
 - [SRE・インフラエンジニアにおける生成AI活用事例](topics/part15-job-role-cases/sre-infrastructure-engineer-ai-use-cases.md): 新規執筆(インシデント対応・IaC生成・AIOps連携の活用事例)
 ## 2026-08-24
 - [パチンコ・アミューズメント業界における生成AI活用事例](topics/part14-industry-cases/amusement-pachinko-industry-ai-use-cases.md): 新規執筆(稼働予測・出玉データ分析・会員AIレコメンド・プライズ在庫最適化と、風営法・広告ガイドラインの規制論点を整理)
