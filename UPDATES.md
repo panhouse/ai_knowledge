@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-25
+- [テーマパーク・レジャー施設業界における生成AI活用事例](topics/part14-industry-cases/theme-park-leisure-facility-ai-use-cases.md): 新規執筆(混雑予測・多言語チャットボット・周遊プラン提案・ダイナミックプライシング・スタッフマニュアル生成・SNSプロモーションの活用事例)
 - [歯科業界における生成AI活用事例](topics/part14-industry-cases/dental-industry-ai-use-cases.md): 新規執筆(電子カルテ・SOAP作成支援、予約・リコール自動化、レセプトAIチェック、患者向け説明資料、口腔内画像・レントゲン診断支援、多言語対応、歯科技工所連携の7領域を整理)
 - [決済・フィンテック業界における生成AI活用事例](topics/part14-industry-cases/payment-fintech-industry-ai-use-cases.md): 新規執筆(決済代行・BNPL・送金特化の不正検知・チャージバック・KYC・カスタマーサポート事例)
 - [イベント・展示会業界における生成AI活用事例](topics/part14-industry-cases/event-exhibition-industry-ai-use-cases.md): 新規執筆(出展社向け提案資料生成・来場者チャットボット・動線分析・SNS告知・名刺リード要約とフォローメール・ブースデザイン生成の活用事例)
