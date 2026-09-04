@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-21
+- [農業テック(アグリテック)AI企業一覧(国内)](topics/part16-japan-ai-companies/agritech-ai-companies-japan.md): 新規執筆(サグリ・inaho・AGRIST・ベジタリア・ルートレック・ネットワークス・ファームノート・オプティムの7社を収録)
 ## 2026-08-20
 - [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): GPT-5.6 Sol統合・Claude Opus 5・Gemini 3.7 Flash・Copilotバンドル恒久化を反映して最新化・増強
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 患者向け説明の節にChatGPT Healthを追加、OPTiM AIホスピタル・Insilico Medicineの新機能を反映、改正個人情報保護法を踏まえて規制動向の節を最新化・増強
