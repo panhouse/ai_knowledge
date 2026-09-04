@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-19
+- [Perplexityの基本](topics/part08-specialized-ai-tools/perplexity-basics.md): モデル・Perplexity Computer・Comet Plus・料金・セキュリティ(PleaseFix/PerplexedComet)を最新化
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): Opus 5の登場とCowork統合を反映して最新化
 - [IT・情報通信における生成AI活用事例](topics/part14-industry-cases/it-telecom-ai-use-cases.md): NTTデータ「AIネイティブ開発」(人月型契約の見直し)とDeutsche Telekom・Bharti Airtelなど海外キャリアの自律型ネットワーク運用事例を追加し最新化
 - [税理士・社労士向けAI SaaS企業一覧](topics/part16-japan-ai-companies/tax-labor-consultant-ai-companies-japan.md): 新規執筆(TKC・freee・ミロク情報サービス・日本デジタル研究所・OBC・エムケイシステムの6社を収録)
