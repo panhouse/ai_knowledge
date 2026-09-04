@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-28
+- [ケアマネジャー(介護支援専門員)における生成AI活用事例](topics/part15-job-role-cases/care-manager-ai-use-cases.md): 新規執筆(ケアプラン作成支援・モニタリング記録の音声入力・給付管理業務効率化の活用事例)
 - [造園・エクステリア業界における生成AI活用事例](topics/part14-industry-cases/landscaping-exterior-industry-ai-use-cases.md): 新規執筆(造園・エクステリア業界における画像生成AIでの外構デザイン提案・見積作成・技能伝承等の活用事例)
 - [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 各ツールの添付枚数・サイズ上限と料金プランの節を最新化
 - [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](topics/part08-specialized-ai-tools/meeting-minutes-ai-basics.md): 料金プラン(tl;dv・Fireflies.ai)とTeams Copilot/Google Meet/Zoom AI Companionの機能・言語対応の節を最新化
