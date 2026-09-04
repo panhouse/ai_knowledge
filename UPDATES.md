@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-28
+- [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 各ツールの添付枚数・サイズ上限と料金プランの節を最新化
 - [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](topics/part08-specialized-ai-tools/meeting-minutes-ai-basics.md): 料金プラン(tl;dv・Fireflies.ai)とTeams Copilot/Google Meet/Zoom AI Companionの機能・言語対応の節を最新化
 - [測量・ドローン点検業界における生成AI活用事例](topics/part14-industry-cases/surveying-drone-inspection-industry-ai-use-cases.md): 新規執筆(ドローン画像解析による橋梁・道路・太陽光パネル点検、点群データの3Dモデル化・報告書自動生成の活用事例)
 - [栄養士・調理師における生成AI活用事例](topics/part15-job-role-cases/dietitian-cook-ai-use-cases.md): 新規執筆(献立作成・栄養計算自動化・アレルギー対応チェック・栄養指導資料作成の活用事例)
