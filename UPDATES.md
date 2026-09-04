@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-20
+- [Difyワークフローの基本](topics/part10-nocode-lowcode/dify-workflow-basics.md): MCP対応・キャンバスUX改善・料金プラン上限値の節を最新化・増強
 - [Function Calling(Tool Calling)の基本](topics/part09-api-development/function-calling-basics.md): 組み込みツールとの違い・Assistants API廃止直前情報・Anthropicの大規模エージェント向け拡張を反映して最新化・増強
 - [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): OpenAI系(GPT-5.1・GPT-5.2)の出力Markdown既定動作の変化を反映して最新化・増強
 ## 2026-08-19
