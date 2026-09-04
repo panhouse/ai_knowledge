@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-03
+- [コンテキストエンジニアリングとは何か](topics/part02-llm-basics/context-engineering-basics.md): 新規執筆(コンテキストウィンドウに何を入れるかを設計する実務)
 - [AIエージェントの可観測性・トレーシングの基本](topics/part09-api-development/agent-observability-and-tracing-basics.md): 新規執筆(LangSmith・Langfuse等の比較と選び方)
 ## 2026-09-02
 - [中古車販売・オークション業界における生成AI活用事例](topics/part14-industry-cases/used-car-sales-auction-industry-ai-use-cases.md): 新規執筆(AI画像査定・相場分析・仕入れ価格予測・輸出書類処理の活用事例)
