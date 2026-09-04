@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-02
+- [電力需給最適化・エネルギーAI企業一覧(国内)](topics/part16-japan-ai-companies/energy-grid-demand-optimization-ai-companies-japan.md): 新規執筆(TRENDE・Looop・デジタルグリッド・アイ・グリッド・ソリューションズ・Shizen Connect・エナリス・Yanekaraの7社を収録)
 - [スーパーマーケット業界における生成AI活用事例](topics/part14-industry-cases/supermarket-industry-ai-use-cases.md): 新規執筆(生鮮食品の需要予測・自動発注、ダイナミックプライシング、セルフレジ不正検知、チラシ自動生成の活用事例)
 - [労務・給与担当者における生成AI活用事例](topics/part15-job-role-cases/payroll-labor-administration-staff-ai-use-cases.md): 新規執筆(給与計算チェック・年末調整・勤怠異常検知・社会保険手続き案内・社内規程Q&Aの活用事例)
 ## 2026-09-01

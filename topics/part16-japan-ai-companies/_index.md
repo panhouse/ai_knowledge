@@ -88,6 +88,7 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [製造業向け画像検査・予知保全AI企業一覧](manufacturing-inspection-ai-companies-japan.md)
 - [翻訳・多言語化AI企業一覧](translation-ai-companies-japan.md)
 - [AI専業コンサルティングファーム一覧](ai-specialized-consulting-firms-japan.md)
+- [電力需給最適化・エネルギーAI企業一覧(国内)](energy-grid-demand-optimization-ai-companies-japan.md)
 - [オンライン診療・遠隔医療プラットフォームAI企業一覧](telemedicine-ai-companies-japan.md)
 - [ファッション・アパレルAI企業一覧(需要予測・バーチャル試着)](fashion-apparel-ai-companies-japan.md)
 - [AIアバター・バーチャルヒューマン企業一覧(国内)](ai-avatar-virtual-human-companies-japan.md)
