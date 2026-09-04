@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-28
+- [測量・ドローン点検業界における生成AI活用事例](topics/part14-industry-cases/surveying-drone-inspection-industry-ai-use-cases.md): 新規執筆(ドローン画像解析による橋梁・道路・太陽光パネル点検、点群データの3Dモデル化・報告書自動生成の活用事例)
 - [栄養士・調理師における生成AI活用事例](topics/part15-job-role-cases/dietitian-cook-ai-use-cases.md): 新規執筆(献立作成・栄養計算自動化・アレルギー対応チェック・栄養指導資料作成の活用事例)
 - [生成AI利用コストの管理・予算配分](topics/part12-business-practice/ai-cost-management-and-budgeting.md): ChatGPT Business Premiumシート新設・Claude Teamシート下限緩和・FinOps for AI最新統計を反映して最新化
 - [社会インフラ点検・保守AI企業一覧](topics/part16-japan-ai-companies/infrastructure-inspection-ai-companies-japan.md): 新規執筆(BIPROGY・応用地質・パスコ・NTT e-Drone Technology・Fracta Japan・PAL構造の6社を収録)
