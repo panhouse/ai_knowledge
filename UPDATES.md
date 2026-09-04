@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-27
+- [決済・フィンテックAI企業一覧](topics/part16-japan-ai-companies/payment-fintech-ai-companies-japan.md): 新規執筆(GMOペイメントゲートウェイ・セカンドサイトアナリティカ・UPSIDER・Paidy・Smartpay・メルペイ・Finatextの7社を収録)
 - [データアノテーション・ラベリングAI企業一覧](topics/part16-japan-ai-companies/data-labeling-annotation-ai-companies-japan.md): 新規執筆(FastLabel・ブライセン・データ・タング・Nextremer・ヒューマンサイエンス・LTSグループの6社を収録)
 - [証券・資産運用業界における生成AI活用事例](topics/part14-industry-cases/asset-management-securities-industry-ai-use-cases.md): 新規執筆(リサーチ支援・運用提案書ドラフト・ロボアドバイザーの生成AI化・営業コンプライアンス監視・バックオフィス事務の活用事例)
 - [サイバーセキュリティ業界における生成AI活用事例](topics/part14-industry-cases/cybersecurity-industry-ai-use-cases.md): 新規執筆(AI SOC・LLMフィッシング検知・AIペネトレーションテスト自動化・攻撃側のAI悪用という業界動向の整理)
