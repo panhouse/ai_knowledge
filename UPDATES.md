@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-20
+- [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 患者向け説明の節にChatGPT Healthを追加、OPTiM AIホスピタル・Insilico Medicineの新機能を反映、改正個人情報保護法を踏まえて規制動向の節を最新化・増強
 - [Gem(Geminiのカスタムボット機能)の基本](topics/part06-custom-ai/gemini-gem-feature.md): Gem終了報道・Opal版Gem・料金プラン再編の節を最新化・増強
 - [n8nの基本](topics/part10-nocode-lowcode/n8n-basics.md): 公式MCPサーバー機能(AIにワークフローを作らせる仕組み)の節を最新化・増強
 - [生成AIによるBPR(業務プロセス再構築)](topics/part12-business-practice/generative-ai-bpr.md): エージェント型AIの普及実態とプロセスマイニングとの融合の節を最新化・増強
