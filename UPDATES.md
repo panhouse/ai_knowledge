@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-24
+- [不動産営業(仲介・売買)における生成AI活用事例](topics/part15-job-role-cases/real-estate-agent-ai-use-cases.md): 新規執筆(業務フェーズ別のAI活用マップと、重要事項説明はAI代行不可などの職種特有の注意点を整理)
 - [ゲーム開発支援AI企業一覧(国内)](topics/part16-japan-ai-companies/game-development-ai-companies-japan.md): 新規執筆(モリカトロン・AIQVE ONE・monoAI technology・Spellbrush Japan・Cygames AI Studioの5社を収録)
 - [創薬AI企業一覧(国内)](topics/part16-japan-ai-companies/drug-discovery-ai-companies-japan.md): 新規執筆(Preferred Networks・Elix・MOLCURE・エクサウィザーズ・FRONTEOの5社を収録)
 - [保険営業(生命保険・損害保険)における生成AI活用事例](topics/part15-job-role-cases/insurance-agent-ai-use-cases.md): 新規執筆(ヒアリング・提案書・告知書確認・既契約者フォロー・保険金請求・募集文書コンプライアンスの活用事例)
