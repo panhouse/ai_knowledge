@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-20
+- [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): OpenAI系(GPT-5.1・GPT-5.2)の出力Markdown既定動作の変化を反映して最新化・増強
 ## 2026-08-19
 - [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): 個人・法人Copilotアプリ統合、Cowork(GA)、GPT-5.6化を反映して最新化
 - [知財・特許担当者における生成AI活用事例](topics/part15-job-role-cases/ip-patent-ai-use-cases.md): 新規執筆(発明発掘・先行技術調査/FTO・クレーム/明細書ドラフト・拒絶理由通知対応・商標調査・IPランドスケープの活用事例)
