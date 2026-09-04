@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-30
+- [コンビニエンスストア業界における生成AI活用事例](topics/part14-industry-cases/convenience-store-industry-ai-use-cases.md): 新規執筆(単品管理・発注AI、売場分析・省人化、本部業務、多言語対応の活用事例)
 - [ホームセンター(DIY小売)業界における生成AI活用事例](topics/part14-industry-cases/home-center-diy-retail-ai-use-cases.md): 新規執筆(カインズの発注自動化・DCMのDアドバイザー・画像生成AIによるインテリア提案などの活用事例)
 - [社会保険労務士(社労士)における生成AI活用事例](topics/part15-job-role-cases/labor-social-security-consultant-ai-use-cases.md): 新規執筆(就業規則ドラフト・給与計算/手続き書類チェック・労務相談一次対応・助成金リサーチの活用事例と独占業務の線引き)
 - [スマートファクトリー・産業用IoT AI企業一覧](topics/part16-japan-ai-companies/smart-factory-industrial-iot-ai-companies-japan.md): 新規執筆(日立製作所・ファナック・三菱電機・i Smart Technologies・NTTドコモビジネス・オプティムの6社を収録)
