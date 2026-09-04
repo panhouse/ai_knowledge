@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-31
+- [生成AIによる翻訳・多言語化の実務活用](topics/part12-business-practice/ai-translation-and-localization-for-business.md): 新規執筆(汎用LLMとDeepL・Google翻訳の使い分け、用語集・スタイルガイドをプロンプトに組み込む運用)
 - [生成AIと個人情報保護法の実務 ― 顧客情報を入力してよいか、匿名加工・仮名加工の考え方](topics/part04-risk-security/personal-data-protection-risks-in-generative-ai.md): 新規執筆(個人情報保護法の観点から顧客情報の入力可否・匿名加工/仮名加工の使い分けを整理)
 ## 2026-08-30
 - [理学療法士・作業療法士(リハビリ専門職)における生成AI活用事例](topics/part15-job-role-cases/pt-ot-rehabilitation-therapist-ai-use-cases.md): 新規執筆(リハビリ記録・AI歩行分析アプリ・自主トレ指導箋作成・多職種連携文書の活用事例)
