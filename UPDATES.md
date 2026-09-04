@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-03
+- [AIエージェントの可観測性・トレーシングの基本](topics/part09-api-development/agent-observability-and-tracing-basics.md): 新規執筆(LangSmith・Langfuse等の比較と選び方)
 ## 2026-09-02
 - [中古車販売・オークション業界における生成AI活用事例](topics/part14-industry-cases/used-car-sales-auction-industry-ai-use-cases.md): 新規執筆(AI画像査定・相場分析・仕入れ価格予測・輸出書類処理の活用事例)
 - [不動産管理(プロパティマネジメント)担当者における生成AI活用事例](topics/part15-job-role-cases/property-management-ai-use-cases.md): 新規執筆(入居者対応・滞納督促・空室対策・修繕見積比較・重説チェックの活用事例)

@@ -32,6 +32,7 @@ part: 9
 - [MCP(Model Context Protocol)の基本](mcp-basics.md)
 - [Computer Use(画面操作エージェント)の仕組みと実務の基本](computer-use-basics.md)
 - [A2A(Agent2Agent)プロトコルの基本](a2a-protocol-basics.md)
+- [AIエージェントの可観測性・トレーシングの基本(LangSmith・Langfuse等)](agent-observability-and-tracing-basics.md)
 - [JSONモード・Structured Outputsの基本](json-mode-structured-outputs.md)
 - [GAS(Google Apps Script)からのAI API連携](gas-ai-api-integration.md)
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](business-system-api-integration-basics.md)
