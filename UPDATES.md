@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-04
+- [Claude(Anthropic)の基本](topics/part03-ai-chat-tools/claude-basics.md): モデルラインナップ(Fable 5.1/Mythos 5.1)とCoworkの内蔵ブラウザ機能を最新化・増強
 - [ChatGPTのプラン比較](topics/part03-ai-chat-tools/chatgpt-plan-comparison.md): Business座席のStandard/Premium分化を最新化・増強
 ## 2026-09-03
 - [婚活・マッチングサービス業界における生成AI活用事例](topics/part14-industry-cases/matchmaking-dating-industry-ai-use-cases.md): 新規執筆
