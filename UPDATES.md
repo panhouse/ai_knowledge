@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-30
+- [eKYC・本人確認AI企業一覧](topics/part16-japan-ai-companies/ekyc-identity-verification-ai-companies-japan.md): 新規執筆(TRUSTDOCK・Liquid・ポラリファイ・NEC・xID・ネクスウェイ・ショーケースの7社を収録)
 ## 2026-08-28
 - [フードデリバリー・宅配代行業界における生成AI活用事例](topics/part14-industry-cases/food-delivery-industry-ai-use-cases.md): 新規執筆(配達員ルート最適化・需要予測・注文トラブル対応チャットボット等の活用事例)
 - [ケアマネジャー(介護支援専門員)における生成AI活用事例](topics/part15-job-role-cases/care-manager-ai-use-cases.md): 新規執筆(ケアプラン作成支援・モニタリング記録の音声入力・給付管理業務効率化の活用事例)
