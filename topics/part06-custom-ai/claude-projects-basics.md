@@ -2,9 +2,9 @@
 title: "Claude(Anthropic)の「プロジェクト」機能の基本"
 part: 6
 chapter: 第2章 主要ツールでの作り方
-tags: [Claude, Projects, カスタムAI, Anthropic, Fable 5]
+tags: [Claude, Projects, カスタムAI, Anthropic, Fable 5, Opus 5]
 created: 2026-07-06
-updated: 2026-07-22
+updated: 2026-08-19
 ---
 
 # Claude(Anthropic)の「プロジェクト」機能の基本
@@ -20,7 +20,8 @@ Projectsは「カスタム指示(project instructions)」「ナレッジ(参照�
 - **カスタム指示**: そのプロジェクト内のすべての会話に適用される、役割・トーン・回答ルールなどの指示文。GPTsの「Instructions」、Gemの「カスタム指示」に相当する
 - **プロジェクトナレッジ**: PDF・Word・スプレッドシート・コードなどをアップロードしておくと、会話の中でClaudeが参照する。1ファイルあたり30MBが上限で、アップロード数自体には上限がない(ただし後述のコンテキスト容量には収まる必要がある)
 - **コンテキストウィンドウとRAGモードへの自動切り替え**: プロジェクトが一度に読み込める分量は200,000トークン(日本語で数百ページ相当)が基本上限だが、有料プラン(Pro/Max/Team/Enterprise)では、アップロードしたナレッジがこの上限に近づくと、Claudeが自動的に**RAG(検索拡張生成、必要な部分だけを都度検索して参照する仕組み)モード**に切り替わり、実質的な容量を最大10倍(約200万トークン相当)まで拡張できる。全文を読み込む場合と応答品質は変わらないとされているが、「アップロードした全文を毎回読んでいる」わけではなくなる点は、後述の注意点で扱う
-- **利用できるモデル**: プロジェクト内の会話でも、画面上部のモデル選択から通常のClaude.aiと同じモデル(Opus 4.8・Sonnet 5・Haiku 4.5・Fable 5)を選べる。ただしFable 5は2026年7月20日以降、Max/Team Premiumプランには利用上限の50%相当で標準搭載される一方、Pro/Team Standardプランでは一度きりの利用クレジット経由でのアクセスに限られる(詳細は「実務での使い方」)
+- **利用できるモデル**: プロジェクト内の会話でも、画面上部のモデル選択から通常のClaude.aiと同じモデルを選べる。2026年7月24日に**Opus 5**が登場し、Opus 4.8の後継としてMaxプランの既定モデル・Proプランで選べる最上位モデルの座を引き継いだ(Opus 4.8も選択肢としては残る)。このほかSonnet 5・Haiku 4.5・最上位モデルのFable 5が選べる。Fable 5は2026年7月20日以降、Max/Team Premiumプランには利用上限の50%相当で標準搭載される一方、Pro/Team Standardプランでは一度きりの利用クレジット経由でのアクセスに限られる(詳細は「実務での使い方」)
+- **Cowork(タスクを丸ごと任せるエージェント機能)との統合**: 2026年7月以降、Web版・デスクトップ版ではChatとCoworkのホーム画面・サイドバーが統合され、Projectsとartifactsは両モードで共通して扱われるようになった。プロジェクト内でカスタム指示・ナレッジを詰めた上で、実際の作業だけをCoworkに任せる、という使い分けがしやすくなっている(Coworkの詳細は[Claude Cowork(エージェント型タスク実行)の基本](../part11-ai-agents/claude-cowork-basics.md)を参照)
 
 なお、プロジェクト名・説明欄はあくまで自分たちの整理用のラベルであり、Claude自身がそれを読んで挙動を変えるわけではない(実際の振る舞いを決めるのはカスタム指示とナレッジ)。
 
@@ -48,7 +49,7 @@ ChatGPTのGPTs・GeminiのGemとの主な違いは次の通り。
 
 ## 実務での使い方
 
-### 作成手順(2026年7月時点の目安)
+### 作成手順(2026年8月時点の目安)
 
 1. claude.aiにログインし、左サイドバーの「Projects」をクリック
 2. 「+ New project」(新規プロジェクト作成)をクリック
@@ -83,7 +84,7 @@ ChatGPTのGPTs・GeminiのGemとの主な違いは次の通り。
 
 共有プロジェクトであっても、メンバー各自が行った個々の会話の中身自体は既定で他メンバーに見えない(共有されるのはカスタム指示とナレッジ、明示的に共有した会話のみ)。
 
-### プラン別の料金とプロジェクト・モデルの使える範囲(2026年7月時点)
+### プラン別の料金とプロジェクト・モデルの使える範囲(2026年8月時点)
 
 | プラン | 料金の目安 | Projects作成数 | Fable 5へのアクセス |
 |---|---|---|---|
@@ -94,7 +95,7 @@ ChatGPTのGPTs・GeminiのGemとの主な違いは次の通り。
 | Team Premium | 1シートあたり月額$125(年払い$100) | 実質無制限 | Max同様、標準搭載(上限50%相当) |
 | Enterprise | 個別見積もり | 実質無制限 | 契約内容による(営業担当に確認) |
 
-Fable 5(Claudeの最上位モデル)は2026年7月20日から料金プランへの組み込みが整理され、Max・Team Premiumでは「他モデルの半分の利用上限」で常時使えるようになった一方、Pro・Team Standardでは都度クレジットを消費する形が続く。プロジェクト内でどのモデルを使うかは会話ごとにモデル選択メニューから切り替えられるため、「重い分析はFable 5、日常的なやり取りはSonnet 5」のように使い分けるとよい。
+Fable 5(Claudeの最上位モデル)は2026年7月20日から料金プランへの組み込みが整理され、Max・Team Premiumでは「他モデルの半分の利用上限」で常時使えるようになった一方、Pro・Team Standardでは都度クレジットを消費する形が続く。プロジェクト内でどのモデルを使うかは会話ごとにモデル選択メニューから切り替えられるため、「重い分析・自律的な作業はFable 5、コーディングや複雑な推論はOpus 5、日常的なやり取りはSonnet 5」のように使い分けるとよい。
 
 ### Google Drive・GitHubとの連携
 
@@ -118,8 +119,13 @@ Fable 5(Claudeの最上位モデル)は2026年7月20日から料金プランへ�
 - [GPTsの作り方と公開設定](gpts-creation-basics.md)
 - [Gem(Geminiのカスタムボット機能)の基本](gemini-gem-feature.md)
 - [Claude(Anthropic)の基本](../part03-ai-chat-tools/claude-basics.md)
+- [Claude Cowork(エージェント型タスク実行)の基本](../part11-ai-agents/claude-cowork-basics.md)
 
 ## 更新履歴
+
+### 2026-08-19: Opus 5の登場とCowork統合を反映して最新化
+- **内容**: 2026年7月24日に登場したOpus 5がOpus 4.8を継いでMaxプランの既定モデル・Proプランの最上位選択モデルになったことを「利用できるモデル」節とモデルの使い分けの記述に反映。Web/デスクトップ版でChatとCoworkのホーム画面・サイドバーが統合され、Projects/artifactsが両モードで共通化された点を新設し、Coworkの基本ページへの相互リンクを追加。料金プラン表・Fable 5のアクセス条件・ファイル容量(30MB/ファイル)・RAGモードへの自動切り替え・Free版のプロジェクト数上限(5個)・Google Drive連携の制約は2026年8月時点でも変更がないことを裏取りの上で確認し、日付表記のみ更新
+- **出典**: [Axios: Anthropic releases new model, Opus 5](https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5)、[X (@mikeyk): Chat and Cowork now share one home tab](https://x.com/mikeyk/status/2074531605537046953)、[TechCrunch: Claude Cowork expands to mobile and web](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)、[VentureBeat: Anthropic brings Claude Cowork to mobile and web](https://venturebeat.com/technology/anthropic-brings-claude-cowork-to-mobile-and-web-as-usage-data-shows-most-users-arent-coding)、[Tech Times: Claude Fable 5 Billing Splits Today](https://www.techtimes.com/articles/320999/20260720/claude-fable-5-billing-splits-today-max-gets-it-free-pro-pays-per-token.htm)
 
 ### 2026-07-22: プラン・料金体系とFable 5関連の記述を最新化
 - **内容**: プラン別の料金表(Free/Pro/Max 5x・20x/Team Standard・Premium/Enterprise)を新設し、2026年7月20日付でFable 5がMax・Team Premiumに標準搭載(他モデル比50%の利用上限)、Pro・Team Standardはクレジット経由アクセスになった変更を反映。プロジェクト内のモデル選択、RAGモードの実質容量(約200万トークン相当)、Google Drive連携・共有権限(「Can use」「Can edit」)の表記を裏取りの上で更新
