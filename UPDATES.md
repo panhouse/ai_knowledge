@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-02
+- [労務・給与担当者における生成AI活用事例](topics/part15-job-role-cases/payroll-labor-administration-staff-ai-use-cases.md): 新規執筆(給与計算チェック・年末調整・勤怠異常検知・社会保険手続き案内・社内規程Q&Aの活用事例)
 ## 2026-09-01
 - [オンライン診療・遠隔医療プラットフォームAI企業一覧](topics/part16-japan-ai-companies/telemedicine-ai-companies-japan.md): 新規執筆(MICIN・メドレー・ファストドクター・カラダメディカ・CROSS SYNCの5社を収録)
 - [人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例](topics/part15-job-role-cases/recruiting-agent-career-advisor-ai-use-cases.md): 新規執筆(RA/CA個人の業務フェーズ別のAI活用マップ・MENDAN等の専業ツール・プロンプト例・職業安定法/個人情報上の留意点を整理)
