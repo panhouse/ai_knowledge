@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-30
+- [語学学校業界における生成AI活用事例](topics/part14-industry-cases/language-school-industry-ai-use-cases.md): 新規執筆(AI英会話アプリとの競合/併用・発音評価AI・復習支援・資格試験対策の活用事例)
 - [倉庫自動化・物流ロボットAI企業一覧](topics/part16-japan-ai-companies/warehouse-robotics-logistics-automation-ai-companies-japan.md): 新規執筆(ラピュタロボティクス・Mujin・LexxPluss・プラスオートメーション・Preferred Robotics・TELEXISTENCE・京セラコミュニケーションシステムの7社を収録)
 - [eKYC・本人確認AI企業一覧](topics/part16-japan-ai-companies/ekyc-identity-verification-ai-companies-japan.md): 新規執筆(TRUSTDOCK・Liquid・ポラリファイ・NEC・xID・ネクスウェイ・ショーケースの7社を収録)
 ## 2026-08-28
