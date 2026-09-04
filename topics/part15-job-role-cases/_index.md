@@ -113,6 +113,8 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第2章 営業・セールス
 - [営業職における生成AI活用](sales-ai-use-cases.md)
+- [不動産営業(仲介・売買)における生成AI活用事例](real-estate-agent-ai-use-cases.md)
+- [保険営業(生命保険・損害保険)における生成AI活用事例](insurance-agent-ai-use-cases.md)
 
 ### 第3章 マーケティング・広報
 - [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
@@ -134,9 +136,11 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 ### 第7章 経理・財務・内部監査
 - [経理・財務職における生成AI活用事例](finance-accounting-ai-use-cases.md)
 - [内部監査職における生成AI活用事例](internal-audit-ai-use-cases.md)
+- [公認会計士・監査法人職員における生成AI活用事例](cpa-external-auditor-ai-use-cases.md)
 
 ### 第8章 法務・知財・コンプライアンス
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
+- [知財・特許担当者における生成AI活用事例](ip-patent-ai-use-cases.md)
 
 ### 第9章 総務・秘書・購買調達
 - [総務職における生成AI活用事例](general-affairs-ai-use-cases.md)
@@ -149,13 +153,16 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第11章 エンジニア・開発
 - [エンジニア・開発職における生成AI活用事例](engineer-development-ai-use-cases.md)
+- [SRE・インフラエンジニアにおける生成AI活用事例](sre-infrastructure-engineer-ai-use-cases.md)
 
 ### 第12章 研究開発・品質管理
 - [研究開発(R&D)職における生成AI活用事例](rd-ai-use-cases.md)
 - [品質管理・QA職における生成AI活用事例](quality-assurance-ai-use-cases.md)
+- [臨床開発・治験担当者(CRA・CRC)における生成AI活用事例](clinical-trial-cra-crc-ai-use-cases.md)
 
 ### 第13章 生産管理・サプライチェーン
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](production-management-scm-ai-use-cases.md)
+- [倉庫管理・在庫管理担当者における生成AI活用事例](warehouse-inventory-manager-ai-use-cases.md)
 
 ### 第14章 デザイナー・クリエイティブ
 - [デザイナー・クリエイティブ職における生成AI活用事例](designer-creative-ai-use-cases.md)
@@ -169,8 +176,18 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [コンサルタント・リサーチャー職における生成AI活用事例](consultant-researcher-ai-use-cases.md)
 
 ### 第18章 その他の職種
+- [銀行員(窓口・融資担当)における生成AI活用事例](bank-teller-loan-officer-ai-use-cases.md)
 - [店舗・販売スタッフ職における生成AI活用事例](retail-store-staff-ai-use-cases.md)
 - [教員・保育士における生成AI活用事例](teacher-childcare-worker-ai-use-cases.md)
 - [ドライバー・配送スタッフにおける生成AI活用事例](driver-delivery-staff-ai-use-cases.md)
 - [製造・建設現場の作業員・現場監督における生成AI活用事例](frontline-worker-supervisor-ai-use-cases.md)
 - [栄養士・調理師における生成AI活用事例](dietitian-cook-ai-use-cases.md)
+- [獣医師における生成AI活用事例](veterinarian-ai-use-cases.md)
+- [医療事務・クリニック受付職における生成AI活用事例](medical-office-clerk-ai-use-cases.md)
+- [記者・編集者における生成AI活用事例](journalist-editor-ai-use-cases.md)
+- [介護職員における生成AI活用事例](caregiver-eldercare-worker-ai-use-cases.md)
+- [薬剤師における生成AI活用事例](pharmacist-ai-use-cases.md)
+- [建築士・設計士における生成AI活用事例](architect-ai-use-cases.md)
+- [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](financial-advisor-ai-use-cases.md)
+- [医師における生成AI活用事例](physician-ai-use-cases.md)
+- [看護師・医療従事者における生成AI活用事例](nurse-medical-staff-ai-use-cases.md)
