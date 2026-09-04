@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-23
+- [スポーツ・フィットネス業界向けAI企業一覧(国内)](topics/part16-japan-ai-companies/sports-fitness-ai-companies-japan.md): 新規執筆(ユーフォリア・ライブリッツ・asken・hacomono・Sportip・MY TRAINERの6社を収録)
 - [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](topics/part15-job-role-cases/financial-advisor-ai-use-cases.md): 新規執筆(資産配分提案書・ライフプランシミュレーション説明文のドラフト作成と、断定的判断の提供禁止・適合性の原則など規制リスクの整理)
 - [研究開発・特許調査AI企業一覧(国内)](topics/part16-japan-ai-companies/rd-patent-research-ai-companies-japan.md): 新規執筆(AI Samurai・リーガルテック株式会社(Tokkyo.Ai)・FRONTEO・Elix・Preferred Computational Chemistry・MOLCUREの6社を収録)
 - [鉱業・資源開発における生成AI活用事例](topics/part14-industry-cases/mining-resource-industry-ai-use-cases.md): 新規執筆(資源探査AI・自律運搬・商社の資源先物AI・社内知識エージェントの活用事例)
