@@ -88,6 +88,7 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [製造業向け画像検査・予知保全AI企業一覧](manufacturing-inspection-ai-companies-japan.md)
 - [翻訳・多言語化AI企業一覧](translation-ai-companies-japan.md)
 - [AI専業コンサルティングファーム一覧](ai-specialized-consulting-firms-japan.md)
+- [医療画像診断支援AI企業一覧](medical-imaging-diagnosis-ai-companies-japan.md)
 - [モビリティ・自動運転AI企業一覧](mobility-autonomous-driving-ai-companies-japan.md)
 - [決済・フィンテックAI企業一覧](payment-fintech-ai-companies-japan.md)
 - [データアノテーション・ラベリングAI企業一覧](data-labeling-annotation-ai-companies-japan.md)

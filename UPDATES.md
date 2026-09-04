@@ -4,6 +4,8 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-08-28
+- [医療画像診断支援AI企業一覧](topics/part16-japan-ai-companies/medical-imaging-diagnosis-ai-companies-japan.md): 新規執筆(エルピクセル・AIメディカルサービス・メドメイン・富士フイルム・キヤノンメディカルシステムズ・エムスリーAIの6社を収録)
 ## 2026-08-27
 - [モビリティ・自動運転AI企業一覧](topics/part16-japan-ai-companies/mobility-autonomous-driving-ai-companies-japan.md): 新規執筆(ティアフォー・Turing・T2・日産自動車・トヨタ自動車/ウーブン・バイ・トヨタ・本田技研工業/ソニー・ホンダモビリティの6社を収録)
 - [広告代理店業界における生成AI活用事例](topics/part14-industry-cases/advertising-agency-industry-ai-use-cases.md): 新規執筆(電通AI For Growth 3.0・博報堂DY生活者発想プラットフォーム・ADKトラポケ等、代理店の提案・メディアバイイング・効果測定の活用事例)
