@@ -4,7 +4,7 @@ part: 8
 chapter: 第6章 会議・議事録AI
 tags: [議事録AI, 文字起こし, Notta, Rimo, tl;dv, Otter.ai, Fireflies.ai, Teams Copilot, Google Meet, Zoom AI Companion]
 created: 2026-07-25
-updated: 2026-07-25
+updated: 2026-08-28
 ---
 
 # 議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)
@@ -39,7 +39,7 @@ updated: 2026-07-25
 | 議事録の一元管理 | 得意(ツールが違っても同じ形式で1か所に蓄積) | 苦手(会議ツールごとに議事録の置き場所・形式がバラバラになりやすい) |
 | 追加契約・情報の持ち出し | 社外SaaSへ音声・文字起こしを渡すことになる | 既存契約(Microsoft 365・Google Workspace・Zoom)の範囲内で完結しやすい |
 | 専用機能の豊富さ | カスタム辞書・CRM連携・検索ライブラリ・クリップ生成など専用機能が豊富 | 会議ツールの標準機能に限定されることが多い |
-| 導入のしやすさ | 無料/低価格プランで個人がすぐ試せる | 上位ライセンス(Microsoft 365 Copilot、Google AI Pro/Ultra等)が前提のことが多い |
+| 導入のしやすさ | 無料/低価格プランで個人がすぐ試せる | 上位ライセンス(Microsoft 365 Copilot、Google Workspace Business Standard/Plus以上のGemini機能等)が前提のことが多い |
 | セキュリティ・情報漏洩の論点 | 社外ボットの会議参加・音声アップロードへの社内承認が要る | 既存のセキュリティ・データ保持ポリシーを流用しやすい |
 
 判断の目安は次の通り。
@@ -49,15 +49,15 @@ updated: 2026-07-25
 - **カスタム議事録テンプレート、CRM連携、複数言語混在の会議、無料で試したい** → 専用ツール(特にtl;dv・Fireflies.aiは無料枠が手厚い)
 - **人事評価・M&A・契約交渉など機密度が特に高い会議** → 社外ツールへの音声アップロードを避け、純正機能または録音なしの手動メモに切り替える(後述の注意点参照)
 
-### 専用ツール5社比較(2026年7月時点の目安)
+### 専用ツール5社比較(2026年8月時点の目安)
 
 | ツール | 開発元 | 料金目安(月額、個人向け) | 対応言語 | 特徴 | 議事録フォーマット | 連携先 |
 |---|---|---|---|---|---|---|
 | **Notta** | Notta株式会社(日本) | Free ¥0/Premium 月1,980円(年払い月1,185円)/Business 月4,180円(年払い月2,508円)/Enterprise 要問合せ | 58言語 | 日本語精度に定評、カスタム辞書(Premium最大200語・Business最大1,000語) | 要約+話者別文字起こし | Zoom/Google Meet/Teams/Webexに自動参加 |
 | **Rimo Voice** | Rimo合同会社(日本) | 文字起こしプラン 月1,650円(年払い月1,100円)/プロ(AI議事録)プラン 月4,950円(年払い月3,300円) | 日本語特化(多言語対応も一部あり) | 国産で日本語会議に強い、録画Bot・会議AIアシスタント | AI議事録(要約・論点整理) | Zoom/Google Meet/Teams |
-| **tl;dv** | tl;dv(海外) | Free ¥0(AI要約は生涯10回まで)/Pro 年払い$18・月払い$22(1ユーザー)/Business 年払い$59(1ユーザー) | 30言語以上 | カスタムAIプロンプト・要約テンプレート、営業向けCRM連携が強い | 要約・クリップ・アクションアイテム | Zoom/Google Meet/Teams、Salesforce・HubSpot等CRM |
-| **Otter.ai** | Otter.ai(海外) | Basic ¥0(月300分)/Pro 年払い$8.33・月払い$16.99(月1,200分)/Business 年払い$19.99・月払い$30(無制限会議+6,000分/人の取込) | 主に英語が強み、日本語は精度に留意 | 共有カスタム用語集、話者タグ付け、アクションアイテムの担当者割当 | 要約+全文文字起こし | Zoom/Google Meet/Teams |
-| **Fireflies.ai** | Fireflies.ai(海外) | Free $0/Pro 年払い$10・月払い$18/Business 年払い$19/Enterprise 年払い$39(すべて1ユーザー) | 多言語対応 | 全プラン無制限文字起こし・無制限AI要約(AIクレジット制で細部機能を制御)、Perplexity連携の会議中Web検索「Talk to Fireflies」 | 要約・アクションアイテム・会議中の箇条書きノート | Zoom/Google Meet/Teams、多数のCRM・タスク管理ツール |
+| **tl;dv** | tl;dv(海外) | Free ¥0(AI要約は生涯10回まで、録音・文字起こしは無制限だが3か月で自動削除)/Pro 年払い$18・月払い$22(1ユーザー)/Business 年払い$59・月払い$98(1ユーザー、40%OFFの年払いキャンペーンが継続中) | 30言語以上 | カスタムAIプロンプト・要約テンプレート、営業向けCRM連携が強い | 要約・クリップ・アクションアイテム | Zoom/Google Meet/Teams、Salesforce・HubSpot等CRM |
+| **Otter.ai** | Otter.ai(海外) | Basic ¥0(月300分、1会議30分まで)/Pro 年払い$8.33・月払い$16.99(月1,200分、1会議90分まで)/Business 年払い$19.99・月払い$30(会議は無制限・1会議4時間まで+取込6,000分/人) | 主に英語が強み、日本語は精度に留意 | 共有カスタム用語集、話者タグ付け、アクションアイテムの担当者割当 | 要約+全文文字起こし | Zoom/Google Meet/Teams |
+| **Fireflies.ai** | Fireflies.ai(海外) | Free $0/Pro 年払い$10・月払い$18/Business 年払い$19・月払い$29/Enterprise 年払い$39(要問合せ、すべて1ユーザー) | 100以上の言語 | 文字起こし・AI要約自体はプランを問わず無制限だが、**録音の保存容量には上限があり**Freeはチーム全体で約400分・Proは1人あたり8,000分(Business/Enterpriseは無制限)。AIクレジット数もFree 20/Pro 20+/Business 30/Enterprise 50と差がある。Perplexity連携の会議中Web検索「Talk to Fireflies」も搭載 | 要約・アクションアイテム・会議中の箇条書きノート | Zoom/Google Meet/Teams、多数のCRM・タスク管理ツール |
 
 料金・機能・無料枠の上限は変更が非常に頻繁である。契約前には必ず各社公式サイト([Notta料金ページ](https://www.notta.ai/pricing)、[RimoVoiceプランと利用料金](https://guide.rimo.app/ja/articles/8885029-%E3%83%97%E3%83%A9%E3%83%B3%E3%81%A8%E5%88%A9%E7%94%A8%E6%96%99%E9%87%91)、[tl;dv Pricing](https://tldv.io/pricing/)、[Otter.ai Pricing](https://otter.ai/pricing)、[Fireflies.ai Pricing](https://fireflies.ai/pricing))で最新の数値を確認すること。
 
@@ -65,11 +65,12 @@ updated: 2026-07-25
 
 | | Microsoft Teams(Copilot) | Google Meet(Gemini) | Zoom(AI Companion) |
 |---|---|---|---|
-| 機能名 | Copilot「Intelligent Recap」 | 「Take notes for me」 | AI Companionの会議要約 |
-| 前提ライセンス | Microsoft 365 Copilotライセンス+管理者の利用許可 | Google AI Pro/Ultraなど対象Workspaceサブスクリプション | Zoom Workplace有料プラン(Basicは機能・時間に制限) |
-| 出力形式 | 論点別に整理されたMarkdown要約、決定事項・アクションアイテム | Googleドキュメントとして自動保存、要約とアクションアイテムをメール通知 | 要点・決定事項・アクションアイテムの要約 |
-| 日本語対応 | 対応 | 2026年6月から日本語含む7言語に対応 | 対応 |
-| 参加者への告知 | 文字起こし開始が会議内に表示される | 開始時に全参加者へ通知、許可が必要 | 録音・要約開始が会議内に表示される |
+| 機能名 | Copilot「Intelligent Recap」(音声のみで生成する「Audio Recap」も2026年6月にGA) | 「Take notes for me」 | AI Companion 2.0の会議要約 |
+| 前提ライセンス | Microsoft 365 Copilotライセンス+管理者の利用許可 | 2025年1月以降、Gemini機能はBusiness Standard/Plus・Enterprise等の有料Workspaceプランに標準搭載(単体アドオンは廃止)。Business Standard/Plusはデフォルトでオン、Enterprise系はデフォルトオフで管理者が有効化。個人向けGoogle AI Pro/Ultraでも利用可 | Zoom Workplace有料プラン(Basicは対象外) |
+| 出力形式 | 論点別に整理されたMarkdown要約、決定事項・アクションアイテム | Googleドキュメントとして自動保存、要約とアクションアイテムをメール通知(2026年4月以降、要約・決定事項・次のステップ・詳細のセクションを個別にオン/オフ可能) | 要点・決定事項・アクションアイテムの要約、画面共有中の文字・図表もAIが認識(Visual Intelligence/OCR) |
+| 日本語対応 | Intelligent Recap(テキスト要約)は日本語含む20言語以上に対応、音声で聞ける「Audio Recap」も2026年3月に日本語含む8言語へ拡大 | 日本語を含む8言語に対応(1回の会議で使えるのは1言語のみ) | 対応 |
+| 参加者への告知 | 文字起こし開始が会議内に表示される(文字起こし・録音なしでも要約だけ生成する設定も選択可) | 開始時に全参加者へ通知、許可が必要 | 録音・要約開始が会議内に表示される |
+| 新機能 | 録音・文字起こしを保存せず音声のみから要約する設定(コンプライアンス要件向け) | 2026年8月からAndroid/Web/iOSで対面(オンライン接続なし)の会議・打ち合わせもマイクで拾ってメモ生成する機能をロールアウト中 | サイドパネルのAIアシスタントで過去の会議・タスクを横断検索できる機能を追加 |
 
 ## 実務での使い方
 
@@ -99,8 +100,9 @@ updated: 2026-07-25
 
 **Google Meet(Gemini)**
 1. 会議参加前の画面で「Geminiでメモを作成」をクリックするか、会議中に右上のペンマークから「メモの作成を開始」を選ぶ
-2. メモを取る言語を選択する(2026年6月以降、日本語を含む7言語に対応)
-3. 会議終了後、自動生成されたGoogleドキュメントがGoogle Driveに保存され、要約とアクションアイテムがメールで通知される
+2. メモを取る言語を選択する(日本語を含む8言語に対応。1回の会議で使えるのは1言語のみ)
+3. 会議中に「要約」「決定事項」「次のステップ」「詳細」のどのセクションを生成するかをオン/オフで選べる
+4. 会議終了後、自動生成されたGoogleドキュメントがGoogle Driveに保存され、要約とアクションアイテムがメールで通知される
 
 **Zoom(AI Companion)**
 1. 個人利用の場合は会議コントロールバーの「AI Companion」アイコンから「ミーティングの要約」を有効化する
@@ -158,7 +160,8 @@ updated: 2026-07-25
 - **無料プランの制限に注意**: 無料プランは録音時間・月間分数・AI要約の回数(tl;dvは生涯10回など)に上限があることが多く、日常的な業務利用では有料プランへの切り替えが前提になる場合が多い
 - **セール価格・料金改定が頻繁**: 議事録AI各社は料金体系の変更やキャンペーン価格(期間限定の年払い割引など)が非常に多い。契約前に必ず公式サイトの最新表示を確認する
 - **情報漏洩リスクへの配慮**: 専用ツールの多くは録音Botが会議に参加し、音声・文字起こしデータを社外のSaaS事業者のサーバーにアップロードする。人事評価・M&A・契約交渉など機密度の高い会議では、社内承認済みのツールに限定するか、そもそも録音・自動議事録化を避ける判断も必要になる。また会議参加者への事前告知(録音Bot参加への同意)を忘れないこと。詳しくは[情報漏洩防止の基本](../part04-risk-security/information-leakage-prevention.md)を参照
-- **純正機能はライセンス前提**: Teams CopilotのIntelligent RecapやGoogle Meetの「Take notes for me」は、それぞれMicrosoft 365 Copilotライセンス・Google AI Pro/Ultra等の上位契約が前提になっている場合が多く、「Teamsを使っているから無料で使える」わけではない点に注意する
+- **純正機能はライセンス前提**: Teams CopilotのIntelligent Recapは引き続きMicrosoft 365 Copilotライセンスが前提。Google Meetの「Take notes for me」は2025年1月のGemini機能バンドル化以降、Business Standard/Plus等の有料Workspaceプランに標準搭載されたが、「Teams/Meetを使っているから無料で使える」わけではない点に注意する(Enterprise系プランはデフォルトオフで管理者の有効化が必要)
+- **「無制限」の表記は文字起こし・要約の話で、保存容量には別の上限があることが多い**: Fireflies.aiは全プランで文字起こし・AI要約自体は無制限だが、録音の保存容量(Freeはチーム全体で約400分など)は別枠で管理されている。「無制限プラン」と見て安心せず、ストレージ・クレジットなど複数の上限を確認する
 
 ## 最初の一歩
 
@@ -172,6 +175,11 @@ updated: 2026-07-25
 - [情報漏洩防止の基本](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-08-28: 料金プラン・機能を最新化
+- **内容**: Notta・Rimo Voice・Otter.aiの料金・無料枠は2026年8月時点でも変更なしと確認。tl;dvはBusinessプランの月払い価格($98)と無料プランの3か月自動削除仕様を追記。Fireflies.aiは「全プラン無制限」の表記に加え、録音の保存容量(Free約400分/チーム、Pro 8,000分/人など)とAIクレジット数の差を追記。会議ツール純正機能は、Teams CopilotのIntelligent Recap対応言語が20言語以上に拡大し音声のみで生成する「Audio Recap」(2026年3月に8言語へ拡大、6月GA)、Google MeetはGemini機能が2025年1月にBusiness Standard/Plus等へ標準バンドル化されたためライセンス前提の記述を修正し、要約セクションの個別オン/オフ(2026年4月)・対面会議向けメモ生成(2026年8月ロールアウト中)を追記、Zoom AI Companionは2.0への機能拡張(画面内容の認識・サイドパネルAIアシスタント)を追記
+- **出典**: [Fireflies Pricing 2026: Which Plan Is Right for You? | Fireflies.ai](https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you/)、[What's included in the Fireflies Free plan | Fireflies Knowledge Base](https://guide.fireflies.ai/articles/4027724828-learn-about-the-fireflies-free-plan)、[tl;dv Pricing 2026: Costs, Plans & Hidden Limits | Claap](https://www.claap.io/blog/tl-dv-pricing)、[What are the limits of the Free plan? | tl;dv Help Center](https://intercom.help/tldv/en/articles/8919450-what-are-the-limits-of-the-free-plan)、[Otter AI Pricing 2026 | Claap](https://www.claap.io/blog/otter-pricing)、[Nottaの料金プラン比較｜Smarf](https://smarf.jp/article/20609/)、[Rimo Voice 料金プラン | Rimo](https://rimo.app/about/voice/plans)、[Microsoft 365 Copilot: Audio recap language expansion in Microsoft Teams | M365 Admin](https://m365admin.handsontek.net/microsoft-365-copilot-audio-recap-language-expansion-microsoft-teams/)、[Microsoft Teams: AI meeting recap without transcript to meet compliance policies | M365 Admin](https://m365admin.handsontek.net/microsoft-teams-ai-meeting-recap-without-transcript-meet-compliance-policies/)、[Gemini for Google Workspace Pricing: 2026 Guide | Redress Compliance](https://redresscompliance.com/gemini-google-workspace-licensing-whats-included)、[Google Meet Now Takes Notes at In-Person Meetings with Gemini](https://pasqualepillitteri.it/en/news/11419/google-meet-take-notes-in-person-meetings)、[Google Meet rolling out 'Take Notes' for in-person meetings | 9to5Google](https://9to5google.com/2026/08/13/google-meet-take-notes-in-person/)、[Zoom AI Companion 2.0: New Features | USC Information Technology Services](https://itservices.usc.edu/2026/03/31/zoom-ai-companion-2-0-new-features-to-enhance-your-meetings-classes/)
+- **注記**: この実行環境ではネットワークegressプロキシにより外部サイトへの直接アクセス(WebFetch)がすべて遮断されており、各社公式ページへの再アクセスは試みたが実施できなかった。検索エンジンのスニペットと、公式ブログ・ヘルプセンター記事を含む複数の第三者記事の突き合わせに基づく記述である点は前回更新時と同様。料金・無料枠・保存容量の上限は変更が非常に頻繁なため目安とし、契約前には必ず公式サイトで最新値を確認すること
 
 ### 2026-07-25: 初版執筆
 - **内容**: 議事録・文字起こしAIを「専用ツール(Notta・Rimo Voice・tl;dv・Otter.ai・Fireflies.ai)」と「会議ツール純正機能(Teams Copilot・Google Meet Gemini・Zoom AI Companion)」の2系統に整理し、料金・対応言語・話者分離・辞書登録・連携先を横並び比較。導入手順(画面の場所)、コピペ用議事録フォーマット・要約プロンプト、情報漏洩リスクへの注意点を整理
