@@ -54,3 +54,4 @@ ChatGPT / Gemini / Claude / Copilot などの汎用AIチャットツールを、
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
 - [DeepSeekの基本](deepseek-basics.md)
 - [Grok(xAI)の基本](grok-basics.md)
+- [Meta AIの基本](meta-ai-basics.md)
