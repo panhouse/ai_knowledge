@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-04
+- [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): ChatGPTのプラン再編・Adobe新ティア・Ideogram新料金を反映し、「SD4」情報の未確認である旨を明記する節を最新化・増強
 - [Cursorの基本(AIコードエディタ)](topics/part08-specialized-ai-tools/cursor-basics.md): SpaceXによる買収完了・OpenAIのモデル提供終了予定・Bugbot・Self-Hosted Machinesを反映して最新化・増強
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): GPT-6 Astra発表・ロールアウト開始とo3終了を反映して最新化・増強
 - [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): モデルラインナップ(Gemini 3.8 Flash/3.8 Flash Cyber)・Gemini 3.5 Pro/Gemini 4の状況・Gemini Notebookの利用上限を2026年9月時点に最新化
