@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-25
+- [医療事務・クリニック受付職における生成AI活用事例](topics/part15-job-role-cases/medical-office-clerk-ai-use-cases.md): 新規執筆(予約受付・電話対応、問診票要約、レセプト作成支援、多言語案内、保険資格確認の活用事例)
 - [倉庫管理・在庫管理担当者における生成AI活用事例](topics/part15-job-role-cases/warehouse-inventory-manager-ai-use-cases.md): 新規執筆(需要予測・発注点算出、棚卸差異分析、欠品/過剰在庫アラートの要約、多言語作業手順書生成の活用事例)
 - [SRE・インフラエンジニアにおける生成AI活用事例](topics/part15-job-role-cases/sre-infrastructure-engineer-ai-use-cases.md): 新規執筆(インシデント対応・IaC生成・AIOps連携の活用事例)
 ## 2026-08-24
