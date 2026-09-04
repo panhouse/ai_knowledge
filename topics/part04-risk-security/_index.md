@@ -32,3 +32,4 @@ part: 4
 - [シャドーAI(無許可利用)対策](shadow-ai-basics.md)
 - [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](ai-content-detection-and-watermarking-basics.md)
 - [社内AI利用ガイドラインの作り方](ai-internal-guideline-basics.md)
+- [生成AIと個人情報保護法の実務 ― 顧客情報を入力してよいか、匿名加工・仮名加工の考え方](personal-data-protection-risks-in-generative-ai.md)
