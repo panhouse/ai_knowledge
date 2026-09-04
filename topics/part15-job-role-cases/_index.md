@@ -137,6 +137,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第8章 法務・知財・コンプライアンス
 - [法務職における生成AI活用事例](legal-ai-use-cases.md)
+- [知財・特許担当者における生成AI活用事例](ip-patent-ai-use-cases.md)
 
 ### 第9章 総務・秘書・購買調達
 - [総務職における生成AI活用事例](general-affairs-ai-use-cases.md)
@@ -174,3 +175,6 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [ドライバー・配送スタッフにおける生成AI活用事例](driver-delivery-staff-ai-use-cases.md)
 - [製造・建設現場の作業員・現場監督における生成AI活用事例](frontline-worker-supervisor-ai-use-cases.md)
 - [建築士・設計士における生成AI活用事例](architect-ai-use-cases.md)
+- [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](financial-advisor-ai-use-cases.md)
+- [医師における生成AI活用事例](physician-ai-use-cases.md)
+- [看護師・医療従事者における生成AI活用事例](nurse-medical-staff-ai-use-cases.md)
