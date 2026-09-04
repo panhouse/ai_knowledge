@@ -31,3 +31,4 @@ part: 13
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](ai-industry-major-players-trends.md)
 - [日本における生成AI動向(採用状況・主要プレイヤー・政策)](japan-generative-ai-landscape.md)
 - [生成AI導入による組織構造・マネジメントへの影響](generative-ai-organizational-impact.md)
+- [生成AIの電力消費・データセンター投資とエネルギー動向(2026年時点)](ai-energy-and-datacenter-trends.md)
