@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-22
+- [調剤薬局・ドラッグストア業界における生成AI活用事例](topics/part14-industry-cases/pharmacy-drugstore-industry-ai-use-cases.md): 新規執筆(薬歴記録支援・OTC接客・在庫発注最適化・電子処方箋連携の活用事例)
 - [Chain-of-Thought(CoT)プロンプティング](topics/part05-prompt-engineering/chain-of-thought-prompting.md): ◯◯の節を最新化・増強
 - [Meta AIの基本](topics/part03-ai-chat-tools/meta-ai-basics.md): 新規執筆(WhatsApp/Instagram/Facebook/Messenger連携とMuse Spark移行、データ利用方針の要点)
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part08-specialized-ai-tools/local-llm-basics.md): Ollama/LM Studioの最新版・Meta「Muse Glimmer」の登場・ハードウェア選定目安の節を最新化・増強
