@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-03
+- [司法書士・行政書士における生成AI活用事例](topics/part15-job-role-cases/judicial-administrative-scrivener-ai-use-cases.md): 新規執筆
 - [AML・取引不正検知AI企業一覧](topics/part16-japan-ai-companies/aml-fraud-detection-ai-companies-japan.md): 新規執筆
 - [税理士における生成AI活用事例](topics/part15-job-role-cases/tax-accountant-ai-use-cases.md): 新規執筆
 - [IR・決算開示支援AI企業一覧](topics/part16-japan-ai-companies/ir-disclosure-support-ai-companies-japan.md): 新規執筆
