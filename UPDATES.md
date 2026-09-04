@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-27
+- [広告代理店業界における生成AI活用事例](topics/part14-industry-cases/advertising-agency-industry-ai-use-cases.md): 新規執筆(電通AI For Growth 3.0・博報堂DY生活者発想プラットフォーム・ADKトラポケ等、代理店の提案・メディアバイイング・効果測定の活用事例)
 - [獣医師における生成AI活用事例](topics/part15-job-role-cases/veterinarian-ai-use-cases.md): 新規執筆(投与量計算・鑑別診断の壁打ち・文献検索・飼い主説明準備など臨床現場での使い分け)
 - [決済・フィンテックAI企業一覧](topics/part16-japan-ai-companies/payment-fintech-ai-companies-japan.md): 新規執筆(GMOペイメントゲートウェイ・セカンドサイトアナリティカ・UPSIDER・Paidy・Smartpay・メルペイ・Finatextの7社を収録)
 - [データアノテーション・ラベリングAI企業一覧](topics/part16-japan-ai-companies/data-labeling-annotation-ai-companies-japan.md): 新規執筆(FastLabel・ブライセン・データ・タング・Nextremer・ヒューマンサイエンス・LTSグループの6社を収録)
