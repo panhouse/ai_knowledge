@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-31
+- [Azure OpenAI Service・Amazon Bedrock経由でのLLM API利用の基本(直接契約との違い)](topics/part09-api-development/enterprise-cloud-llm-api-basics.md): 新規執筆(クラウド経由のLLM API利用と直接契約の違い)
 - [生成AIによる翻訳・多言語化の実務活用](topics/part12-business-practice/ai-translation-and-localization-for-business.md): 新規執筆(汎用LLMとDeepL・Google翻訳の使い分け、用語集・スタイルガイドをプロンプトに組み込む運用)
 - [生成AIと個人情報保護法の実務 ― 顧客情報を入力してよいか、匿名加工・仮名加工の考え方](topics/part04-risk-security/personal-data-protection-risks-in-generative-ai.md): 新規執筆(個人情報保護法の観点から顧客情報の入力可否・匿名加工/仮名加工の使い分けを整理)
 ## 2026-08-30

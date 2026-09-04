@@ -37,5 +37,6 @@ part: 9
 - [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](business-system-api-integration-basics.md)
 - [Google Gemini APIの基本](google-gemini-api-basics.md)
 - [リアルタイム音声API(ボイスエージェント構築)の基本](realtime-voice-api-basics.md)
+- [Azure OpenAI Service・Amazon Bedrock経由でのLLM API利用の基本(直接契約との違い)](enterprise-cloud-llm-api-basics.md)
 - [エージェント開発フレームワークの基本(OpenAI Agents SDK・Claude Agent SDK・LangGraph等)](agent-development-framework-basics.md)
 - [ストリーミング応答(Streaming)の基本](streaming-api-basics.md)
