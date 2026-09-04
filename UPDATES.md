@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-25
+- [決済・フィンテック業界における生成AI活用事例](topics/part14-industry-cases/payment-fintech-industry-ai-use-cases.md): 新規執筆(決済代行・BNPL・送金特化の不正検知・チャージバック・KYC・カスタマーサポート事例)
 - [イベント・展示会業界における生成AI活用事例](topics/part14-industry-cases/event-exhibition-industry-ai-use-cases.md): 新規執筆(出展社向け提案資料生成・来場者チャットボット・動線分析・SNS告知・名刺リード要約とフォローメール・ブースデザイン生成の活用事例)
 - [与信審査・融資AI企業一覧](topics/part16-japan-ai-companies/credit-screening-lending-ai-companies-japan.md): 新規執筆(マネーフォワード、フリーファイナンスラボ、H.I.F.、MILIZE、LINE Credit、アライズイノベーションの6社を収録)
 - [カスタマーサクセス(CS)AI企業一覧](topics/part16-japan-ai-companies/customer-success-ai-companies-japan.md): 新規執筆(ユニリタ/Growwwing、HiCustomer、KiZUKAI、STANDS/Onboarding、クラウドサーカス/Fullstarの5社を収録)
