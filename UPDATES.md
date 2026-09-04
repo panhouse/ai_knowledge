@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-03
+- [大学教員・研究者における生成AI活用事例](topics/part15-job-role-cases/university-faculty-researcher-ai-use-cases.md): 新規執筆
 - [AIレッドチーミングの基本](topics/part04-risk-security/ai-red-teaming-basics.md): 新規執筆(実施体制・頻度・外部ベンダー活用)
 - [AIエージェントのSkills(スキル)機能とは何か](topics/part11-ai-agents/claude-skills-and-agent-skills-basics.md): 新規執筆(MCP・カスタムボットとの違い)
 - [コンテキストエンジニアリングとは何か](topics/part02-llm-basics/context-engineering-basics.md): 新規執筆(コンテキストウィンドウに何を入れるかを設計する実務)
