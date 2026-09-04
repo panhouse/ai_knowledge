@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-19
+- [ストリーミング応答(Streaming)の基本](topics/part09-api-development/streaming-api-basics.md): 新規執筆(SSEベースの逐次応答の仕組み、OpenAI/Anthropic/Geminiの実装比較、JSONモード・Function Calling・Batch APIとの使い分け)
 - [生成AIの発展の歴史](topics/part01-ai-basics/ai-history-and-evolution.md): 中国発オープンウェイトモデルの追い上げ(Kimi K3・DeepSeek V4)を反映して最新化
 
 ## 2026-08-18
