@@ -60,6 +60,7 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [建設・不動産における生成AI活用事例](construction-realestate-ai-use-cases.md)
 - [保育・幼児教育における生成AI活用事例](childcare-early-education-ai-use-cases.md)
 - [教育における生成AI活用事例](education-ai-use-cases.md)
+- [学習塾・予備校における生成AI活用事例](cram-school-tutoring-industry-ai-use-cases.md)
 - [エネルギー・電力・インフラにおける生成AI活用事例](energy-infrastructure-ai-use-cases.md)
 - [金融・保険における生成AI活用事例](finance-insurance-ai-use-cases.md)
 - [外食・フードサービス業における生成AI活用事例](food-service-ai-use-cases.md)
@@ -102,3 +103,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [林業・水産業における生成AI活用事例](forestry-fisheries-ai-use-cases.md)
 - [フィットネス・スポーツクラブ業界における生成AI活用事例](fitness-industry-ai-use-cases.md)
 - [冠婚葬祭業(結婚式・葬儀)における生成AI活用事例](wedding-funeral-industry-ai-use-cases.md)
+- [引越し業界における生成AI活用事例](moving-relocation-industry-ai-use-cases.md)

@@ -66,6 +66,7 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [ノーコード・エージェント基盤系の国内AI企業一覧](nocode-agent-platform-ai-companies-japan.md)
 - [人事・採用AI企業一覧](hr-recruiting-ai-companies-japan.md)
 - [経理・会計AI企業一覧](accounting-ai-companies-japan.md)
+- [税理士・社労士向けAI SaaS企業一覧](tax-labor-consultant-ai-companies-japan.md)
 - [営業支援AI企業一覧](sales-support-ai-companies-japan.md)
 - [カスタマーサポートAI企業一覧](customer-support-ai-companies-japan.md)
 - [議事録・文字起こしAI企業一覧](meeting-minutes-ai-companies-japan.md)
@@ -87,3 +88,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [翻訳・多言語化AI企業一覧](translation-ai-companies-japan.md)
 - [AI専業コンサルティングファーム一覧](ai-specialized-consulting-firms-japan.md)
 - [音声合成・音声認識AI企業一覧(国内)](voice-synthesis-recognition-ai-companies-japan.md)
+- [農業テック(アグリテック)AI企業一覧(国内)](agritech-ai-companies-japan.md)
