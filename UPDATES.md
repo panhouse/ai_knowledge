@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-04
+- [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
 - [画像生成AIの基本(Midjourney・Stable Diffusion・GPT Image/DALL-E 3などの選び方)](topics/part08-specialized-ai-tools/image-generation-ai-basics.md): ChatGPTのプラン再編・Adobe新ティア・Ideogram新料金を反映し、「SD4」情報の未確認である旨を明記する節を最新化・増強
 - [Cursorの基本(AIコードエディタ)](topics/part08-specialized-ai-tools/cursor-basics.md): SpaceXによる買収完了・OpenAIのモデル提供終了予定・Bugbot・Self-Hosted Machinesを反映して最新化・増強
