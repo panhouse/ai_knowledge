@@ -6,6 +6,119 @@
 
 ## 2026-08-30
 - [理学療法士・作業療法士(リハビリ専門職)における生成AI活用事例](topics/part15-job-role-cases/pt-ot-rehabilitation-therapist-ai-use-cases.md): 新規執筆(リハビリ記録・AI歩行分析アプリ・自主トレ指導箋作成・多職種連携文書の活用事例)
+- [害虫駆除・特殊清掃業界における生成AI活用事例](topics/part14-industry-cases/pest-control-specialty-cleaning-industry-ai-use-cases.md): 新規執筆(見積もり自動化・害虫画像診断・作業報告書生成・発生予測の活用事例)
+- [コンビニエンスストア業界における生成AI活用事例](topics/part14-industry-cases/convenience-store-industry-ai-use-cases.md): 新規執筆(単品管理・発注AI、売場分析・省人化、本部業務、多言語対応の活用事例)
+- [ホームセンター(DIY小売)業界における生成AI活用事例](topics/part14-industry-cases/home-center-diy-retail-ai-use-cases.md): 新規執筆(カインズの発注自動化・DCMのDアドバイザー・画像生成AIによるインテリア提案などの活用事例)
+- [社会保険労務士(社労士)における生成AI活用事例](topics/part15-job-role-cases/labor-social-security-consultant-ai-use-cases.md): 新規執筆(就業規則ドラフト・給与計算/手続き書類チェック・労務相談一次対応・助成金リサーチの活用事例と独占業務の線引き)
+- [スマートファクトリー・産業用IoT AI企業一覧](topics/part16-japan-ai-companies/smart-factory-industrial-iot-ai-companies-japan.md): 新規執筆(日立製作所・ファナック・三菱電機・i Smart Technologies・NTTドコモビジネス・オプティムの6社を収録)
+- [自動車整備・鈑金業界における生成AI活用事例](topics/part14-industry-cases/auto-repair-bodyshop-industry-ai-use-cases.md): 新規執筆(故障診断支援・AI鈑金見積もり・整備マニュアル検索・顧客説明文生成・部品在庫最適化・技術伝承の活用事例)
+- [語学学校業界における生成AI活用事例](topics/part14-industry-cases/language-school-industry-ai-use-cases.md): 新規執筆(AI英会話アプリとの競合/併用・発音評価AI・復習支援・資格試験対策の活用事例)
+- [倉庫自動化・物流ロボットAI企業一覧](topics/part16-japan-ai-companies/warehouse-robotics-logistics-automation-ai-companies-japan.md): 新規執筆(ラピュタロボティクス・Mujin・LexxPluss・プラスオートメーション・Preferred Robotics・TELEXISTENCE・京セラコミュニケーションシステムの7社を収録)
+- [eKYC・本人確認AI企業一覧](topics/part16-japan-ai-companies/ekyc-identity-verification-ai-companies-japan.md): 新規執筆(TRUSTDOCK・Liquid・ポラリファイ・NEC・xID・ネクスウェイ・ショーケースの7社を収録)
+## 2026-08-28
+- [フードデリバリー・宅配代行業界における生成AI活用事例](topics/part14-industry-cases/food-delivery-industry-ai-use-cases.md): 新規執筆(配達員ルート最適化・需要予測・注文トラブル対応チャットボット等の活用事例)
+- [ケアマネジャー(介護支援専門員)における生成AI活用事例](topics/part15-job-role-cases/care-manager-ai-use-cases.md): 新規執筆(ケアプラン作成支援・モニタリング記録の音声入力・給付管理業務効率化の活用事例)
+- [造園・エクステリア業界における生成AI活用事例](topics/part14-industry-cases/landscaping-exterior-industry-ai-use-cases.md): 新規執筆(造園・エクステリア業界における画像生成AIでの外構デザイン提案・見積作成・技能伝承等の活用事例)
+- [画像・PDFの読み取り活用(Vision入力)の基本](topics/part07-data-analysis/vision-input-basics.md): 各ツールの添付枚数・サイズ上限と料金プランの節を最新化
+- [議事録・文字起こしAIの基本(Notta・Rimo・tl;dv等)](topics/part08-specialized-ai-tools/meeting-minutes-ai-basics.md): 料金プラン(tl;dv・Fireflies.ai)とTeams Copilot/Google Meet/Zoom AI Companionの機能・言語対応の節を最新化
+- [測量・ドローン点検業界における生成AI活用事例](topics/part14-industry-cases/surveying-drone-inspection-industry-ai-use-cases.md): 新規執筆(ドローン画像解析による橋梁・道路・太陽光パネル点検、点群データの3Dモデル化・報告書自動生成の活用事例)
+- [栄養士・調理師における生成AI活用事例](topics/part15-job-role-cases/dietitian-cook-ai-use-cases.md): 新規執筆(献立作成・栄養計算自動化・アレルギー対応チェック・栄養指導資料作成の活用事例)
+- [生成AI利用コストの管理・予算配分](topics/part12-business-practice/ai-cost-management-and-budgeting.md): ChatGPT Business Premiumシート新設・Claude Teamシート下限緩和・FinOps for AI最新統計を反映して最新化
+- [社会インフラ点検・保守AI企業一覧](topics/part16-japan-ai-companies/infrastructure-inspection-ai-companies-japan.md): 新規執筆(BIPROGY・応用地質・パスコ・NTT e-Drone Technology・Fracta Japan・PAL構造の6社を収録)
+- [医療画像診断支援AI企業一覧](topics/part16-japan-ai-companies/medical-imaging-diagnosis-ai-companies-japan.md): 新規執筆(エルピクセル・AIメディカルサービス・メドメイン・富士フイルム・キヤノンメディカルシステムズ・エムスリーAIの6社を収録)
+## 2026-08-27
+- [モビリティ・自動運転AI企業一覧](topics/part16-japan-ai-companies/mobility-autonomous-driving-ai-companies-japan.md): 新規執筆(ティアフォー・Turing・T2・日産自動車・トヨタ自動車/ウーブン・バイ・トヨタ・本田技研工業/ソニー・ホンダモビリティの6社を収録)
+- [広告代理店業界における生成AI活用事例](topics/part14-industry-cases/advertising-agency-industry-ai-use-cases.md): 新規執筆(電通AI For Growth 3.0・博報堂DY生活者発想プラットフォーム・ADKトラポケ等、代理店の提案・メディアバイイング・効果測定の活用事例)
+- [獣医師における生成AI活用事例](topics/part15-job-role-cases/veterinarian-ai-use-cases.md): 新規執筆(投与量計算・鑑別診断の壁打ち・文献検索・飼い主説明準備など臨床現場での使い分け)
+- [決済・フィンテックAI企業一覧](topics/part16-japan-ai-companies/payment-fintech-ai-companies-japan.md): 新規執筆(GMOペイメントゲートウェイ・セカンドサイトアナリティカ・UPSIDER・Paidy・Smartpay・メルペイ・Finatextの7社を収録)
+- [データアノテーション・ラベリングAI企業一覧](topics/part16-japan-ai-companies/data-labeling-annotation-ai-companies-japan.md): 新規執筆(FastLabel・ブライセン・データ・タング・Nextremer・ヒューマンサイエンス・LTSグループの6社を収録)
+- [証券・資産運用業界における生成AI活用事例](topics/part14-industry-cases/asset-management-securities-industry-ai-use-cases.md): 新規執筆(リサーチ支援・運用提案書ドラフト・ロボアドバイザーの生成AI化・営業コンプライアンス監視・バックオフィス事務の活用事例)
+- [サイバーセキュリティ業界における生成AI活用事例](topics/part14-industry-cases/cybersecurity-industry-ai-use-cases.md): 新規執筆(AI SOC・LLMフィッシング検知・AIペネトレーションテスト自動化・攻撃側のAI悪用という業界動向の整理)
+- [大学・高等教育機関における生成AI活用事例](topics/part14-industry-cases/higher-education-industry-ai-use-cases.md): 新規執筆(研究支援・学生支援チャットボット・学術的誠実性・入試でのAI取り扱い・AIリテラシー教育必修化の事例整理)
+## 2026-08-26
+- [医療機器製造業における生成AI活用事例](topics/part14-industry-cases/medical-device-manufacturing-ai-use-cases.md): 新規執筆(薬事申請・ISO13485/QMS文書管理・添付文書多言語化・PMS・外観検査の活用事例)
+- [臨床開発・治験担当者(CRA・CRC)における生成AI活用事例](topics/part15-job-role-cases/clinical-trial-cra-crc-ai-use-cases.md): 新規執筆(CRA・CRCの業務フェーズ別活用マップ、CSR自動作成AI・RBM・DCTの事例)
+- [公認会計士・監査法人職員における生成AI活用事例](topics/part15-job-role-cases/cpa-external-auditor-ai-use-cases.md): 新規執筆(外部監査における生成AI活用と独立性・自己レビューの論点整理)
+- [銀行員(窓口・融資担当)における生成AI活用事例](topics/part15-job-role-cases/bank-teller-loan-officer-ai-use-cases.md): 新規執筆(窓口・融資担当の業務フェーズ別活用事例)
+- [気象・防災AI企業一覧](topics/part16-japan-ai-companies/weather-disaster-prevention-ai-companies-japan.md): 新規執筆(Spectee・ウェザーニューズ・JX通信社・建設技術研究所・応用地質・日本工営・日本気象株式会社の7社を収録)
+- [人事評価・タレントマネジメントAI企業一覧](topics/part16-japan-ai-companies/talent-management-ai-companies-japan.md): 新規執筆(カオナビ・タレントパレット・あしたのチーム・Wevox・モチベーションクラウド・KAKEAIの6社を収録)
+- [カーボンニュートラル・ESG(GHG算定・報告)AI企業一覧](topics/part16-japan-ai-companies/carbon-esg-reporting-ai-companies-japan.md): 新規執筆(アスエネ・ゼロボード・e-dash・booost technologies・サステナブル・ラボ・シェルパ・アンド・カンパニー・ウイングアーク1stの7社を収録)
+- [上下水道(水道インフラ)業界における生成AI活用事例](topics/part14-industry-cases/water-utility-industry-ai-use-cases.md): 新規執筆(漏水検知・管路劣化予測・浄水場運転支援・スマートメーター・顧客対応・広域化における活用事例)
+## 2026-08-25
+- [IT運用監視(AIOps)AI企業一覧](topics/part16-japan-ai-companies/aiops-it-operations-ai-companies-japan.md): 新規執筆(はてな・NRI・ヘッドウォータース・インフォメーション・ディベロプメント・NTTデータグループの5社を収録)
+- [テーマパーク・レジャー施設業界における生成AI活用事例](topics/part14-industry-cases/theme-park-leisure-facility-ai-use-cases.md): 新規執筆(混雑予測・多言語チャットボット・周遊プラン提案・ダイナミックプライシング・スタッフマニュアル生成・SNSプロモーションの活用事例)
+- [歯科業界における生成AI活用事例](topics/part14-industry-cases/dental-industry-ai-use-cases.md): 新規執筆(電子カルテ・SOAP作成支援、予約・リコール自動化、レセプトAIチェック、患者向け説明資料、口腔内画像・レントゲン診断支援、多言語対応、歯科技工所連携の7領域を整理)
+- [決済・フィンテック業界における生成AI活用事例](topics/part14-industry-cases/payment-fintech-industry-ai-use-cases.md): 新規執筆(決済代行・BNPL・送金特化の不正検知・チャージバック・KYC・カスタマーサポート事例)
+- [イベント・展示会業界における生成AI活用事例](topics/part14-industry-cases/event-exhibition-industry-ai-use-cases.md): 新規執筆(出展社向け提案資料生成・来場者チャットボット・動線分析・SNS告知・名刺リード要約とフォローメール・ブースデザイン生成の活用事例)
+- [与信審査・融資AI企業一覧](topics/part16-japan-ai-companies/credit-screening-lending-ai-companies-japan.md): 新規執筆(マネーフォワード、フリーファイナンスラボ、H.I.F.、MILIZE、LINE Credit、アライズイノベーションの6社を収録)
+- [カスタマーサクセス(CS)AI企業一覧](topics/part16-japan-ai-companies/customer-success-ai-companies-japan.md): 新規執筆(ユニリタ/Growwwing、HiCustomer、KiZUKAI、STANDS/Onboarding、クラウドサーカス/Fullstarの5社を収録)
+- [医療事務・クリニック受付職における生成AI活用事例](topics/part15-job-role-cases/medical-office-clerk-ai-use-cases.md): 新規執筆(予約受付・電話対応、問診票要約、レセプト作成支援、多言語案内、保険資格確認の活用事例)
+- [倉庫管理・在庫管理担当者における生成AI活用事例](topics/part15-job-role-cases/warehouse-inventory-manager-ai-use-cases.md): 新規執筆(需要予測・発注点算出、棚卸差異分析、欠品/過剰在庫アラートの要約、多言語作業手順書生成の活用事例)
+- [SRE・インフラエンジニアにおける生成AI活用事例](topics/part15-job-role-cases/sre-infrastructure-engineer-ai-use-cases.md): 新規執筆(インシデント対応・IaC生成・AIOps連携の活用事例)
+## 2026-08-24
+- [パチンコ・アミューズメント業界における生成AI活用事例](topics/part14-industry-cases/amusement-pachinko-industry-ai-use-cases.md): 新規執筆(稼働予測・出玉データ分析・会員AIレコメンド・プライズ在庫最適化と、風営法・広告ガイドラインの規制論点を整理)
+- [リフォーム・リノベーション業界における生成AI活用事例](topics/part14-industry-cases/home-renovation-remodeling-ai-use-cases.md): 新規執筆(AIパース生成・劣化診断・見積書自動化・補助金適合診断・職人スケジュール調整・施主向けチャットボット・契約書チェックの活用事例)
+- [記者・編集者における生成AI活用事例](topics/part15-job-role-cases/journalist-editor-ai-use-cases.md): 新規執筆(取材メモの文字起こし・記事構成案生成・ファクトチェック補助・校正校閲の活用事例)
+- [フードテックAI企業一覧(国内)](topics/part16-japan-ai-companies/foodtech-ai-companies-japan.md): 新規執筆(NEC・トライエッティング・ブレインパッド・Laboro.AI・AI CROSSの5社を収録)
+- [介護職員における生成AI活用事例](topics/part15-job-role-cases/caregiver-eldercare-worker-ai-use-cases.md): 新規執筆(音声入力による介護記録・申し送り要約・家族向け報告・見守りセンサー連携・夜勤シフトの活用事例)
+- [薬剤師における生成AI活用事例](topics/part15-job-role-cases/pharmacist-ai-use-cases.md): 新規執筆(薬歴記録・疑義照会・医薬品情報検索・患者説明の平易化/多言語化・在庫予測の活用事例)
+- [不動産営業(仲介・売買)における生成AI活用事例](topics/part15-job-role-cases/real-estate-agent-ai-use-cases.md): 新規執筆(業務フェーズ別のAI活用マップと、重要事項説明はAI代行不可などの職種特有の注意点を整理)
+- [ゲーム開発支援AI企業一覧(国内)](topics/part16-japan-ai-companies/game-development-ai-companies-japan.md): 新規執筆(モリカトロン・AIQVE ONE・monoAI technology・Spellbrush Japan・Cygames AI Studioの5社を収録)
+- [創薬AI企業一覧(国内)](topics/part16-japan-ai-companies/drug-discovery-ai-companies-japan.md): 新規執筆(Preferred Networks・Elix・MOLCURE・エクサウィザーズ・FRONTEOの5社を収録)
+- [保険営業(生命保険・損害保険)における生成AI活用事例](topics/part15-job-role-cases/insurance-agent-ai-use-cases.md): 新規執筆(ヒアリング・提案書・告知書確認・既契約者フォロー・保険金請求・募集文書コンプライアンスの活用事例)
+## 2026-08-23
+- [レンタル・リース業界における生成AI活用事例](topics/part14-industry-cases/rental-leasing-industry-ai-use-cases.md): 新規執筆(需要予測AI・AIチャットボット・見積書処理AI・危険運転検知AI・スタイリングAIの活用事例)
+- [化粧品業界における生成AI活用事例](topics/part14-industry-cases/cosmetics-industry-ai-use-cases.md): 新規執筆(資生堂・花王・ポーラ等の処方開発AI、パーソナライズ肌診断、需要予測AIエージェント等の活用事例)
+- [建築士・設計士における生成AI活用事例](topics/part15-job-role-cases/architect-ai-use-cases.md): 新規執筆(コンセプトパース・BIM連携レンダリング・確認申請事前チェック・施主提案の活用事例)
+- [RPA・AI-OCR企業一覧(国内)](topics/part16-japan-ai-companies/rpa-ai-ocr-companies-japan.md): 新規執筆(AI inside、NTTアドバンステクノロジ(WinActor)、オープン(BizRobo!)、Cogent Labs、キヤノンマーケティングジャパン、UiPathの6社を収録)
+- [家具・インテリア業界における生成AI活用事例](topics/part14-industry-cases/furniture-interior-industry-ai-use-cases.md): 新規執筆(IKEA Kreativ・ニトリ×燈の部屋シミュレーション・Wayfair Decorify・ミサワホームInterior Makerの活用事例整理)
+- [スポーツ・フィットネス業界向けAI企業一覧(国内)](topics/part16-japan-ai-companies/sports-fitness-ai-companies-japan.md): 新規執筆(ユーフォリア・ライブリッツ・asken・hacomono・Sportip・MY TRAINERの6社を収録)
+- [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](topics/part15-job-role-cases/financial-advisor-ai-use-cases.md): 新規執筆(資産配分提案書・ライフプランシミュレーション説明文のドラフト作成と、断定的判断の提供禁止・適合性の原則など規制リスクの整理)
+- [研究開発・特許調査AI企業一覧(国内)](topics/part16-japan-ai-companies/rd-patent-research-ai-companies-japan.md): 新規執筆(AI Samurai・リーガルテック株式会社(Tokkyo.Ai)・FRONTEO・Elix・Preferred Computational Chemistry・MOLCUREの6社を収録)
+- [鉱業・資源開発における生成AI活用事例](topics/part14-industry-cases/mining-resource-industry-ai-use-cases.md): 新規執筆(資源探査AI・自律運搬・商社の資源先物AI・社内知識エージェントの活用事例)
+- [医師における生成AI活用事例](topics/part15-job-role-cases/physician-ai-use-cases.md): 新規執筆(音声入力によるSOAPカルテ下書き・AI問診・文献検索・患者説明文書の活用事例)
+## 2026-08-22
+- [日本における生成AI動向(採用状況・主要プレイヤー・政策)](topics/part13-ai-trends/japan-generative-ai-landscape.md): 政策動向・企業導入率・主要プレイヤーの節を最新化・増強
+- [調剤薬局・ドラッグストア業界における生成AI活用事例](topics/part14-industry-cases/pharmacy-drugstore-industry-ai-use-cases.md): 新規執筆(薬歴記録支援・OTC接客・在庫発注最適化・電子処方箋連携の活用事例)
+- [Chain-of-Thought(CoT)プロンプティング](topics/part05-prompt-engineering/chain-of-thought-prompting.md): ◯◯の節を最新化・増強
+- [Meta AIの基本](topics/part03-ai-chat-tools/meta-ai-basics.md): 新規執筆(WhatsApp/Instagram/Facebook/Messenger連携とMuse Spark移行、データ利用方針の要点)
+- [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](topics/part08-specialized-ai-tools/local-llm-basics.md): Ollama/LM Studioの最新版・Meta「Muse Glimmer」の登場・ハードウェア選定目安の節を最新化・増強
+- [Transformer・Attention機構とスケーリング則の基本](topics/part02-llm-basics/transformer-attention-and-scaling-laws.md): MoE・Mamba/SSMハイブリッド構成の主流化(Qwen3.8-Max・Mamba-3等)の節を最新化・増強
+- [旅行・観光業界向けAI企業一覧(国内)](topics/part16-japan-ai-companies/travel-tourism-ai-companies-japan.md): 新規執筆(tripla・ビースポーク・メトロエンジン・AVA Intelligence・ナビタイムジャパン・Kotozna・楽天グループの7社を収録)
+- [エージェント開発フレームワークの基本(OpenAI Agents SDK・Claude Agent SDK・LangGraph等)](topics/part09-api-development/agent-development-framework-basics.md): 新規執筆(OpenAI Agents SDK・Claude Agent SDK・LangGraph・Google ADK・Microsoft Agent Framework・CrewAIの比較)
+- [ベクトルデータベースの基本(Embeddingとの関係)](topics/part07-data-analysis/vector-database-basics.md): 主要製品の料金・ハイブリッド検索のRRF既定値・Embeddingモデルの新版を最新化・増強
+- [ハルシネーションとは何か・対策](topics/part04-risk-security/hallucination-and-countermeasures.md): Vectara定番リーダーボードの最新値・GPT-5.6の評価手法・2026年8月の法的トラブル事例とEUの無過失責任規制の節を最新化・増強
+## 2026-08-21
+- [クリーニング業界における生成AI活用事例](topics/part14-industry-cases/dry-cleaning-industry-ai-use-cases.md): 新規執筆(画像認識AIによるシミ・汚れ判定、宅配クリーニングのチャットボット受付、需要予測・配送ルート最適化の活用事例)
+- [官公庁・自治体向けGovTech AI企業一覧(国内)](topics/part16-japan-ai-companies/govtech-ai-companies-japan.md): 新規執筆(グラファー・トラストバンク・Polimill・内田洋行・NEC・富士通Japan・JAPAN AIの7社を収録)
+- [訪問看護・在宅医療における生成AI活用事例](topics/part14-industry-cases/home-nursing-care-ai-use-cases.md): 新規執筆(訪問記録・看護サマリー音声入力、多職種連携、訪問ルート最適化、状態変化予測、家族向け説明資料生成の活用事例)
+- [音声合成・音声認識AI企業一覧(国内)](topics/part16-japan-ai-companies/voice-synthesis-recognition-ai-companies-japan.md): 新規執筆(エーアイ・CoeFont・テクノスピーチ・ReadSpeaker Japan(旧HOYA VoiceText)・NTTテクノクロス・Human Dataware Labの6社を収録)
+- [学習塾・予備校における生成AI活用事例](topics/part14-industry-cases/cram-school-tutoring-industry-ai-use-cases.md): 新規執筆(AI個別指導・志望校判定・保護者面談資料生成・講師向け教材支援・生徒募集マーケティングの活用事例)
+- [引越し業界における生成AI活用事例](topics/part14-industry-cases/moving-relocation-industry-ai-use-cases.md): 新規執筆(AI見積もり・LINEチャットボット・需要予測・AIマッチング・LLMO対策の活用事例)
+- [看護師・医療従事者における生成AI活用事例](topics/part15-job-role-cases/nurse-medical-staff-ai-use-cases.md): 新規執筆(音声入力による看護記録・申し送り、患者説明資料のやさしい日本語化、外国人患者対応、シフト調整、院内研修Q&A化の活用事例)
+- [農業テック(アグリテック)AI企業一覧(国内)](topics/part16-japan-ai-companies/agritech-ai-companies-japan.md): 新規執筆(サグリ・inaho・AGRIST・ベジタリア・ルートレック・ネットワークス・ファームノート・オプティムの7社を収録)
+## 2026-08-20
+- [主要AIチャットツールのプラン・料金・モデル横断比較(ChatGPT/Gemini/Claude/Copilot)](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): GPT-5.6 Sol統合・Claude Opus 5・Gemini 3.7 Flash・Copilotバンドル恒久化を反映して最新化・増強
+- [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 患者向け説明の節にChatGPT Healthを追加、OPTiM AIホスピタル・Insilico Medicineの新機能を反映、改正個人情報保護法を踏まえて規制動向の節を最新化・増強
+- [Gem(Geminiのカスタムボット機能)の基本](topics/part06-custom-ai/gemini-gem-feature.md): Gem終了報道・Opal版Gem・料金プラン再編の節を最新化・増強
+- [n8nの基本](topics/part10-nocode-lowcode/n8n-basics.md): 公式MCPサーバー機能(AIにワークフローを作らせる仕組み)の節を最新化・増強
+- [生成AIによるBPR(業務プロセス再構築)](topics/part12-business-practice/generative-ai-bpr.md): エージェント型AIの普及実態とプロセスマイニングとの融合の節を最新化・増強
+- [AIプロジェクトの進め方と評価指標の基礎](topics/part01-ai-basics/ai-project-and-evaluation-basics.md): AIエージェントの評価軸(タスク成功率・トラジェクトリ評価)とLLM-as-a-Judgeの2026年実務ポイントを最新化・増強
+- [GenSparkの基本](topics/part08-specialized-ai-tools/genspark-basics.md): GenOffice(無料オープンソース版デスクトップオフィス)を反映して最新化・増強
+- [Difyワークフローの基本](topics/part10-nocode-lowcode/dify-workflow-basics.md): MCP対応・キャンバスUX改善・料金プラン上限値の節を最新化・増強
+- [Function Calling(Tool Calling)の基本](topics/part09-api-development/function-calling-basics.md): 組み込みツールとの違い・Assistants API廃止直前情報・Anthropicの大規模エージェント向け拡張を反映して最新化・増強
+- [プロンプトにおけるMarkdown活用](topics/part05-prompt-engineering/prompt-markdown-structuring.md): OpenAI系(GPT-5.1・GPT-5.2)の出力Markdown既定動作の変化を反映して最新化・増強
+## 2026-08-19
+- [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): 個人・法人Copilotアプリ統合、Cowork(GA)、GPT-5.6化を反映して最新化
+- [知財・特許担当者における生成AI活用事例](topics/part15-job-role-cases/ip-patent-ai-use-cases.md): 新規執筆(発明発掘・先行技術調査/FTO・クレーム/明細書ドラフト・拒絶理由通知対応・商標調査・IPランドスケープの活用事例)
+- [Grok(xAI)の基本](topics/part03-ai-chat-tools/grok-basics.md): モデル世代交代(Grok 4.6)・Cursor買収完了・利用上限の週次共有枠化を反映して最新化
+- [Perplexityの基本](topics/part08-specialized-ai-tools/perplexity-basics.md): モデル・Perplexity Computer・Comet Plus・料金・セキュリティ(PleaseFix/PerplexedComet)を最新化
+- [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): Opus 5の登場とCowork統合を反映して最新化
+- [IT・情報通信における生成AI活用事例](topics/part14-industry-cases/it-telecom-ai-use-cases.md): NTTデータ「AIネイティブ開発」(人月型契約の見直し)とDeutsche Telekom・Bharti Airtelなど海外キャリアの自律型ネットワーク運用事例を追加し最新化
+- [税理士・社労士向けAI SaaS企業一覧](topics/part16-japan-ai-companies/tax-labor-consultant-ai-companies-japan.md): 新規執筆(TKC・freee・ミロク情報サービス・日本デジタル研究所・OBC・エムケイシステムの6社を収録)
+- [プロンプトインジェクションとは何か(仕組みと対策)](topics/part04-risk-security/prompt-injection-basics.md): 新型攻撃ADI(Agent Data Injection)・裁判所での隠しプロンプト事例・Claude Chrome拡張機能の脆弱性再発・ChatGPT Atlas終了後の状況を反映して最新化
+- [ストリーミング応答(Streaming)の基本](topics/part09-api-development/streaming-api-basics.md): 新規執筆(SSEベースの逐次応答の仕組み、OpenAI/Anthropic/Geminiの実装比較、JSONモード・Function Calling・Batch APIとの使い分け)
+- [生成AIの発展の歴史](topics/part01-ai-basics/ai-history-and-evolution.md): 中国発オープンウェイトモデルの追い上げ(Kimi K3・DeepSeek V4)を反映して最新化
 
 ## 2026-08-18
 - [石油製品・LPガス販売業界における生成AI活用事例](topics/part14-industry-cases/petroleum-lpgas-retail-ai-use-cases.md): 新規執筆(LPガス配送最適化・AI給油監視解禁・タンクローリー配車AI化の活用事例)
