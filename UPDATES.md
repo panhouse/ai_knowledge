@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-01
+- [人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例](topics/part15-job-role-cases/recruiting-agent-career-advisor-ai-use-cases.md): 新規執筆(RA/CA個人の業務フェーズ別のAI活用マップ・MENDAN等の専業ツール・プロンプト例・職業安定法/個人情報上の留意点を整理)
 - [ファッション・アパレルAI企業一覧(需要予測・バーチャル試着)](topics/part16-japan-ai-companies/fashion-apparel-ai-companies-japan.md): 新規執筆(データグリッド・Bodygram Japan・SENSY・VRC・ワンダフルフライの5社を収録)
 - [産業用ロボット・FA(ファクトリーオートメーション)メーカーにおける生成AI活用事例](topics/part14-industry-cases/industrial-robotics-fa-ai-use-cases.md): 新規執筆(ファナック×Google/AWS・安川電機×Google DeepMind・三菱電機Maisart等、自然言語操作・ティーチング高速化・予知保全の活用事例)
 - [太陽光発電・再生可能エネルギー事業における生成AI活用事例](topics/part14-industry-cases/solar-renewable-energy-ai-use-cases.md): 新規執筆(発電量予測・O&M異常検知・FIT/FIP収益最適化の活用事例)
