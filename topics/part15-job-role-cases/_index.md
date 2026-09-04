@@ -183,6 +183,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [教員・保育士における生成AI活用事例](teacher-childcare-worker-ai-use-cases.md)
 - [ドライバー・配送スタッフにおける生成AI活用事例](driver-delivery-staff-ai-use-cases.md)
 - [製造・建設現場の作業員・現場監督における生成AI活用事例](frontline-worker-supervisor-ai-use-cases.md)
+- [不動産管理(プロパティマネジメント)担当者における生成AI活用事例](property-management-ai-use-cases.md)
 - [人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例](recruiting-agent-career-advisor-ai-use-cases.md)
 - [理学療法士・作業療法士(リハビリ専門職)における生成AI活用事例](pt-ot-rehabilitation-therapist-ai-use-cases.md)
 - [ケアマネジャー(介護支援専門員)における生成AI活用事例](care-manager-ai-use-cases.md)
