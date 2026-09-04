@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-22
+- [ベクトルデータベースの基本(Embeddingとの関係)](topics/part07-data-analysis/vector-database-basics.md): 主要製品の料金・ハイブリッド検索のRRF既定値・Embeddingモデルの新版を最新化・増強
 - [ハルシネーションとは何か・対策](topics/part04-risk-security/hallucination-and-countermeasures.md): Vectara定番リーダーボードの最新値・GPT-5.6の評価手法・2026年8月の法的トラブル事例とEUの無過失責任規制の節を最新化・増強
 ## 2026-08-21
 - [クリーニング業界における生成AI活用事例](topics/part14-industry-cases/dry-cleaning-industry-ai-use-cases.md): 新規執筆(画像認識AIによるシミ・汚れ判定、宅配クリーニングのチャットボット受付、需要予測・配送ルート最適化の活用事例)
