@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-19
+- [知財・特許担当者における生成AI活用事例](topics/part15-job-role-cases/ip-patent-ai-use-cases.md): 新規執筆(発明発掘・先行技術調査/FTO・クレーム/明細書ドラフト・拒絶理由通知対応・商標調査・IPランドスケープの活用事例)
 - [Grok(xAI)の基本](topics/part03-ai-chat-tools/grok-basics.md): モデル世代交代(Grok 4.6)・Cursor買収完了・利用上限の週次共有枠化を反映して最新化
 - [Perplexityの基本](topics/part08-specialized-ai-tools/perplexity-basics.md): モデル・Perplexity Computer・Comet Plus・料金・セキュリティ(PleaseFix/PerplexedComet)を最新化
 - [Claude(Anthropic)の「プロジェクト」機能の基本](topics/part06-custom-ai/claude-projects-basics.md): Opus 5の登場とCowork統合を反映して最新化
