@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-24
+- [介護職員における生成AI活用事例](topics/part15-job-role-cases/caregiver-eldercare-worker-ai-use-cases.md): 新規執筆(音声入力による介護記録・申し送り要約・家族向け報告・見守りセンサー連携・夜勤シフトの活用事例)
 - [薬剤師における生成AI活用事例](topics/part15-job-role-cases/pharmacist-ai-use-cases.md): 新規執筆(薬歴記録・疑義照会・医薬品情報検索・患者説明の平易化/多言語化・在庫予測の活用事例)
 - [不動産営業(仲介・売買)における生成AI活用事例](topics/part15-job-role-cases/real-estate-agent-ai-use-cases.md): 新規執筆(業務フェーズ別のAI活用マップと、重要事項説明はAI代行不可などの職種特有の注意点を整理)
 - [ゲーム開発支援AI企業一覧(国内)](topics/part16-japan-ai-companies/game-development-ai-companies-japan.md): 新規執筆(モリカトロン・AIQVE ONE・monoAI technology・Spellbrush Japan・Cygames AI Studioの5社を収録)
