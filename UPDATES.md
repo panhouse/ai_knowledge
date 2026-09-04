@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-24
+- [パチンコ・アミューズメント業界における生成AI活用事例](topics/part14-industry-cases/amusement-pachinko-industry-ai-use-cases.md): 新規執筆(稼働予測・出玉データ分析・会員AIレコメンド・プライズ在庫最適化と、風営法・広告ガイドラインの規制論点を整理)
 - [リフォーム・リノベーション業界における生成AI活用事例](topics/part14-industry-cases/home-renovation-remodeling-ai-use-cases.md): 新規執筆(AIパース生成・劣化診断・見積書自動化・補助金適合診断・職人スケジュール調整・施主向けチャットボット・契約書チェックの活用事例)
 - [記者・編集者における生成AI活用事例](topics/part15-job-role-cases/journalist-editor-ai-use-cases.md): 新規執筆(取材メモの文字起こし・記事構成案生成・ファクトチェック補助・校正校閲の活用事例)
 - [フードテックAI企業一覧(国内)](topics/part16-japan-ai-companies/foodtech-ai-companies-japan.md): 新規執筆(NEC・トライエッティング・ブレインパッド・Laboro.AI・AI CROSSの5社を収録)
