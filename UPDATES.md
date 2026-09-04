@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-19
+- [IT・情報通信における生成AI活用事例](topics/part14-industry-cases/it-telecom-ai-use-cases.md): NTTデータ「AIネイティブ開発」(人月型契約の見直し)とDeutsche Telekom・Bharti Airtelなど海外キャリアの自律型ネットワーク運用事例を追加し最新化
 - [税理士・社労士向けAI SaaS企業一覧](topics/part16-japan-ai-companies/tax-labor-consultant-ai-companies-japan.md): 新規執筆(TKC・freee・ミロク情報サービス・日本デジタル研究所・OBC・エムケイシステムの6社を収録)
 - [プロンプトインジェクションとは何か(仕組みと対策)](topics/part04-risk-security/prompt-injection-basics.md): 新型攻撃ADI(Agent Data Injection)・裁判所での隠しプロンプト事例・Claude Chrome拡張機能の脆弱性再発・ChatGPT Atlas終了後の状況を反映して最新化
 - [ストリーミング応答(Streaming)の基本](topics/part09-api-development/streaming-api-basics.md): 新規執筆(SSEベースの逐次応答の仕組み、OpenAI/Anthropic/Geminiの実装比較、JSONモード・Function Calling・Batch APIとの使い分け)
