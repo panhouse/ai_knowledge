@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-08-26
+- [医療機器製造業における生成AI活用事例](topics/part14-industry-cases/medical-device-manufacturing-ai-use-cases.md): 新規執筆(薬事申請・ISO13485/QMS文書管理・添付文書多言語化・PMS・外観検査の活用事例)
 - [臨床開発・治験担当者(CRA・CRC)における生成AI活用事例](topics/part15-job-role-cases/clinical-trial-cra-crc-ai-use-cases.md): 新規執筆(CRA・CRCの業務フェーズ別活用マップ、CSR自動作成AI・RBM・DCTの事例)
 - [公認会計士・監査法人職員における生成AI活用事例](topics/part15-job-role-cases/cpa-external-auditor-ai-use-cases.md): 新規執筆(外部監査における生成AI活用と独立性・自己レビューの論点整理)
 - [銀行員(窓口・融資担当)における生成AI活用事例](topics/part15-job-role-cases/bank-teller-loan-officer-ai-use-cases.md): 新規執筆(窓口・融資担当の業務フェーズ別活用事例)
