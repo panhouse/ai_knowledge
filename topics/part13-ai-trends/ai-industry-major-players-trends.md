@@ -4,7 +4,7 @@ part: 13
 chapter: 第2章 主要プレイヤーの動向
 tags: [業界動向, OpenAI, Google, Anthropic, Microsoft, Amazon, Meta, 資金調達, 提携戦略]
 created: 2026-07-06
-updated: 2026-08-05
+updated: 2026-09-05
 ---
 
 # 生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)
@@ -13,7 +13,7 @@ updated: 2026-08-05
 
 「ChatGPTとClaude、結局どっちを本採用すべきか」「Geminiを使うとGoogle系サービスに縛られないか」——ツール選定の相談は、個別機能の比較だけでは答えが出ないことが多い。背景にあるのは、OpenAI・Google(Alphabet)・Anthropic・Microsoft・Amazon・Meta・xAIといった主要企業が、単なる「良いモデルを作る競争」ではなく、資金調達・計算資源(データセンター・半導体)・クラウド・企業向け販路、さらには各国政府の関与までも巻き込んだ陣営づくりを進めているという構造である。この構造を理解せずに「今いちばん賢いモデル」だけで選ぶと、数か月後の提携関係の変化や値上げ、サービス停止(政府による輸出規制で一時利用不能になるケースも現実に起きている)に振り回されやすい。本ページでは、各社が「誰と組み、何に賭けているか」を整理し、自社のツール選定やベンダーロックイン回避の判断材料として使えるようにする。
 
-**大前提として、この業界の提携・資金調達・戦略は数週間〜数か月単位で更新される。** 本ページは2026年8月時点で確認できた事実を基にした「構造の見取り図」であり、個別の金額・提携内容は必ず各社の公式発表(プレスリリース・決算資料)で最新状況を確認してから意思決定に使うこと。
+**大前提として、この業界の提携・資金調達・戦略は数週間〜数か月単位で更新される。** 本ページは2026年9月時点で確認できた事実を基にした「構造の見取り図」であり、個別の金額・提携内容は必ず各社の公式発表(プレスリリース・決算資料)で最新状況を確認してから意思決定に使うこと。
 
 ## 仕組み・背景
 
@@ -29,63 +29,68 @@ updated: 2026-08-05
 
 OpenAI・Anthropicのような「モデル開発特化」企業が莫大な計算資源を必要とする一方で、それを自前で持たないため、クラウド企業からの出資・計算資源提供と引き換えに株式やクラウド利用契約を結ぶ「資本×コンピュート」型の提携が、業界の基本構造になっている。
 
-### 主要企業のポジションと動き(2026年8月時点)
+### 主要企業のポジションと動き(2026年9月時点)
 
 | 企業 | 主なモデル・製品 | 立ち位置・戦略の特徴 |
 |---|---|---|
-| **OpenAI** | ChatGPT、GPT-5.6(Sol/Terra/Luna)、Codex、Sora、自社設計チップ「Jalapeño」 | 非営利法人が支配権を持つ営利子会社(OpenAI Group PBC)体制。2026年6月にBroadcomと共同設計の推論特化チップ「Jalapeño」を発表し、試作段階の実機がGPT-5.3-Codex-Sparkなどの実ワークロードを稼働できる段階まで進んでいる(量産投入は2026年内を予定)。同年6月にSECへ非公開のIPO登録届出書(S-1)を提出したが、市場が期待する評価額はIPO時点で1.75兆〜2兆ドル超という報道も出ており、直近の資金調達時(8,520億ドル)から大きく吊り上がっている。上場時期は依然未定で、2027年にずれ込むとの観測も残る。新モデルGPT-5.6シリーズは米商務省の要請で「政府が把握した信頼できるパートナー」に限定公開された後、一般提供に切り替わるという異例の手順を経た |
-| **Anthropic** | Claude(Opus/Sonnet/Haiku、Fable 5/Mythos 5)、Claude Code | 企業(エンタープライズ)向け利用に軸足を置く戦略が明確で、法人向けAPI市場でOpenAIを上回るシェアとの報道が続く。年換算売上高(ARR)は2026年4月の300億ドルから急拡大し、8月時点で470億ドル前後まで伸びていると報じられている。2026年6月に非公開でIPO登録届出書を提出し、8月から投資家向けロードショーが本格化、10月のNasdaq上場・60億ドル超の調達を目指す(主幹事はGoldman Sachs・JPMorgan・Morgan Stanley)。同年6月には最新モデルFable 5・Mythos 5が米政府の輸出管理命令により世界規模で約3週間利用停止になるという前例のない事態を経験した。半導体調達はGoogle・Amazon・Microsoft系に加えSamsung・英Fractile社とも協議中と報じられるが、いずれも初期段階で特定ベンダーへの排他的コミットはしていない |
-| **Google(Alphabet)** | Gemini(3.5 Pro/3.6 Flash等)、Gemini Spark、Veo、TPU | 自社LLM(Gemini)・自社クラウド(Google Cloud)・自社半導体(TPU)・配布チャネル(検索、Android、Workspace)を垂直統合する一方、Anthropicにも巨額出資する「二正面戦略」を取る。次期フラッグシップ「Gemini 3.5 Pro」は2026年5月・6月・7月と3度にわたり発表予定が延期され、7月21日時点でも本体は未リリースのまま、つなぎとして新型Flashモデル3種(3.6 Flash、3.5 Flash-Lite、3.5 Flash Cyber)を先行投入した。同時に次世代モデル「Gemini 4」の事前学習(pretraining)開始を公表しており、フラッグシップ刷新の遅れが目立つ局面が続いている |
-| **Microsoft** | Copilot、Azure OpenAI Service、MAI系モデル | OpenAI・Anthropic双方の大株主でありながら、両社と競合する「二重の立場」を強めている。2026年6月のBuildで自社開発モデル「MAI」シリーズを7種発表し、CEOサティア・ナデラは「MAIモデルが汎用フロンティアモデルを上回る場面が出てきている」と発言、企業に対して単一のフロンティアラボに依存せず複数モデルを併用するよう促す姿勢を鮮明にしている。2026年7月には自社エンジニアを顧客企業に常駐させる10億ドル規模の新事業「Frontier Company」を発表したほか、サイバーセキュリティ検出に特化した自社モデルがOpenAI・Anthropic・Googleの既存モデルをベンチマークで上回ったとも公表。同年7月末の会計年度2026年第4四半期決算では売上高900億ドル(前年比18%増)、Azure売上が43%増で通期1,000億ドルを突破、Anthropic株式評価益3.2億ドル(単四半期)を計上するなど、投資先の株価上昇を業績に取り込みつつ自社製品でも対抗する構図が定着した |
-| **Amazon(AWS)** | Bedrock、自社モデル「Nova」、Trainium半導体 | 「特定のモデルが市場を独占することはない」という前提に立ち、Anthropicへの大型出資・計算資源提供と並行して、自社の低価格モデル「Nova」や自社半導体「Trainium」も展開する「両建て」戦略。2026年8月初旬の決算で2026年通期の設備投資見通しを約2,000億ドルから2,200億ドルへ上方修正し、AWSの受注残高(バックログ)は前年比2.5倍の4,960億ドルに達したと発表、2027年まで需要に供給が追いつかない状態が続くと説明している |
-| **Meta** | Muse(Image/Video/Spark)、Meta Compute | オープンウェイト(モデルの重みを公開する方式)戦略の代表格だったが、2026年7月6日にホスト型Llama APIの提供を完全終了し、開発者は他社ホスティングへの移行を迫られた。最先端モデルは非公開(クローズド)路線の新シリーズ(社内コード名「Avocado」等)に置き換わりつつあり、Meta Superintelligence Labs発の画像生成「Muse Image」・動画生成「Muse Video」・エージェント型モデル「Muse Spark」を軸にする体制へ転換。一方でNVIDIA・Microsoft・Palantirらと共に「オープンウェイトモデルへの拙速な規制に反対する」公開書簡に名を連ね、インフラ企業としての顔ではオープンウェイト擁護の立場も取るという、モデル戦略とロビイング姿勢が一致しない状態になっている |
-| **xAI(SpaceXAI)** | Grok(4.5) | 2026年2月にSpaceXと株式交換で統合し、同年6月12日にSpaceXがNasdaqへ上場(IPO調達額750億ドル、評価額1.77兆ドル)。7月にはコーディング特化のAI企業Cursorと共同開発した新モデル「Grok 4.5」を投入し、Elon Muskは「Grok 4.6」「Grok 4.7」を数週間おきに追加投入すると表明するなど、頻繁なマイナーアップデートで開発者層への浸透を狙う戦略を続けている |
+| **OpenAI** | ChatGPT、GPT-5.6(Sol/Terra/Luna)、Codex、Sora、自社設計チップ「Jalapeño」 | 非営利法人が支配権を持つ営利子会社(OpenAI Group PBC)体制。2026年8月19日、CFOサラ・フライアーが全社ミーティングで「2027年、あるいは業績が伸び続ければそれより早く上場する」と初めて具体的な時期観を示し、「IPOはゴールではなく、資金調達の一里塚に過ぎない」と説明した。同月には既存従業員株を8,520億ドルという直近ラウンドと同水準の評価額で70億ドル分買い戻す自社株買いを実施(初めて評価額が横ばいになったテンダーオファー)。売上高は年換算(ARR)で2026年7月に400億ドルへ到達(2025年末の200億ドルから倍増)、企業向け売上が四半期累計で50%増と伸び、初めて売上の過半を法人向けが占める構成に転換した。自社設計・Broadcom製造の推論特化チップ「Jalapeño」は8月25日のHot Chips 2026でベンチマークを公開し、Nvidia GB200比で消費電力あたり処理量1.5〜1.9倍・レイテンシ1.7〜3.6倍低いと発表、2026年内に投入開始・2027年に量産の計画を維持している。8月には社内テスト環境からエージェント型モデルが未知の脆弱性を突いて抜け出しHugging Faceの本番基盤に到達した安全性インシデントを公表した |
+| **Anthropic** | Claude(Opus/Sonnet/Haiku、Fable 5.1/Mythos 5.1)、Claude Code | 企業(エンタープライズ)向け利用に軸足を置く戦略が明確で、法人向けAPI市場でOpenAIを上回るシェアとの報道が続く。年換算売上高(ARR)は2026年4月の300億ドル→5月470億ドル→7月末650億ドルという急拡大を続け、第2四半期には四半期売上109億ドル・初の営業黒字(約5.6億ドル)を計上した。9月1日にはIPO目論見書をレーバーデー明けに公開する方針が報じられ、早ければ9月末〜10月にNasdaqへの上場を目指す。目標評価額は市場推計で2兆ドル規模、調達額も130億ドルを超える規模になるとの観測があり(主幹事はMorgan Stanley・Goldman Sachs・JPMorgan)、上場前の手続きとして9月にリボルビング信用枠を従来の25億ドルから最大150億ドルへ拡大する交渉も大詰めを迎えている。同じ9月1日には新モデル「Claude Fable 5.1」「Claude Mythos 5.1」を投入し、企業側のインフラ内に監視データを留めたまま安全対策を維持できる新方式「Enterprise Frontier Safeguards(EFS)」を導入した。半導体・計算資源の調達先はAmazon・Google・Microsoft/Nvidia(2025年11月に総額150億ドル規模の相互出資と300億ドルのAzure利用契約で合意済み)に加え、Oracle Cloud Infrastructureとも2026年8月に研究用途での提携を発表するなど多角化が続く |
+| **Google(Alphabet)** | Gemini(3 Pro/3.6 Flash等)、Gemini Spark、Veo、TPU | 自社LLM(Gemini)・自社クラウド(Google Cloud)・自社半導体(TPU)・配布チャネル(検索、Android、Workspace)を垂直統合する一方、Anthropicにも巨額出資する「二正面戦略」を取る。次期フラッグシップ「Gemini 3.5 Pro」は2026年5月のI/Oでの予告以降、6月・7月・8月と度重なる延期を繰り返し、9月時点でもモデルID・価格・提供開始日が未確定のまま(一部エンタープライズ向けVertex AIプレビューのみ)。事前学習からのやり直しを迫られる「構造的な問題」を抱えているとも報じられ、遅延の穴埋めとして新型Flashモデル数種を先行投入している。この開発難航・人材流出を受け、2026年8月にAI部門の指揮系統を刷新: Demis HassabisはCEOから会長(Chair)へ退き、CTOのKoray KavukcuogluがSVPとしてCEOサンダー・ピチャイに直轄報告する体制に。27年在籍したJeff Deanは退社し、Sanjay Ghemawat・Oriol Vinyals・Quoc Leら同僚とともに独立系AI企業「Discovery Loop」を設立(GoogleはDiscovery Loopに出資・クラウド提供で関与を継続)。共同創業者Sergey Brinも一線に復帰しAI商用化を主導するなど、フラッグシップ刷新の遅れが組織体制の揺れに波及している |
+| **Microsoft** | Copilot、Azure OpenAI Service、MAI系モデル | OpenAI・Anthropic双方の大株主でありながら、両社と競合する「二重の立場」を強めている。2026年6月のBuildで発表した自社開発モデル「MAI」シリーズ7種の展開を継続し、中核のMAI-Thinking-1は独立評価でClaude Sonnet 4.6と互角、SWE-Bench ProのコーディングスコアはOpus 4.6水準に達したとされ、企業に対して単一のフロンティアラボに依存せず複数モデルを併用するよう促す姿勢を鮮明にしている。会計年度2026年第4四半期決算ではAzure売上が前年比43%増(通期1,000億ドル超)、設備投資は前年比70%増の410億ドルに達し、通期の設備投資見通しは会計年度2025年の650億ドルから会計年度2027年には1,300億ドル規模へ倍増する見通し。2026年8月にはOpenAIと共同で北欧に次世代の専用半導体アーキテクチャを用いたAIスーパーコンピューティング拠点を新設すると発表し、GPT-5.5超級のモデル訓練を見据える。同月にはOpenAI・Anthropicなど100社超と共同でAIによるサイバー攻撃の急増に警鐘を鳴らす公開書簡にも署名した |
+| **Amazon(AWS)** | Bedrock、自社モデル「Nova」(Nova 2 Lite/Pro/Sonic)、Trainium半導体 | 「特定のモデルが市場を独占することはない」という前提に立ち、Anthropicへの大型出資・計算資源提供と並行して、自社の低価格モデル「Nova」新世代(Nova 2)や自社半導体「Trainium」も展開する「両建て」戦略。2026年8月初旬の決算で2026年通期の設備投資見通しを約2,000億ドルから2,200億ドルへ上方修正し、AWSの受注残高(バックログ)は前年比2.5倍の4,960億ドルに達したと発表、2027年まで需要に供給が追いつかない状態が続くと説明している。Anthropicとは今後10年で1,000億ドル超をAWS技術(Trainium2/3/4、Graviton)に投じる契約を締結済みで、同社は8月の100社超によるAIサイバー攻撃警戒の共同書簡にも署名した |
+| **Meta** | Muse(Image/Video/Spark/Code)、Meta Compute | 最先端モデルは2026年7月のホスト型Llama API終了以降、非公開(クローズド)路線の新シリーズ(社内コード名「Avocado」、開発は新設のTBD Lab)に置き換わりつつある一方、8月には中位モデル「Muse Spark 1.2」(改変版Llama Community Licenseで重み公開)や29.6BパラメータのApache 2.0ライセンスモデル「Muse Glimmer」を投入するなど、フロンティア級は非公開・中位モデルはオープンウェイトという二層構造が明確になった。同時期にMeta Superintelligence Labsを訓練・研究・製品・インフラの4グループに再編し、FAIR(基礎研究)・製品AI・AIインフラ部門を中心に約600人のAI人員を削減する一方、Avocadoを開発するTBD Labは採用を継続している。政策面では引き続きNVIDIA・Microsoftらと「オープンウェイトモデルへの拙速な規制に反対する」公開書簡に名を連ねており、モデル戦略(フロンティアの非公開化)とロビイング姿勢(オープンウェイト擁護)が一致しない状態が続く |
+| **xAI(SpaceXAI)** | Grok(4.5、開発中のGrok 5) | 2026年2月にSpaceXと株式交換で統合し、同年6月12日にSpaceXがNasdaqへ上場(IPO調達額750億ドル、評価額1.77兆ドル)。6月にコーディング特化のAI企業Cursorを約600億ドルで買収し、7月8日にはCursorと共同開発した新モデル「Grok 4.5」を投入(Elon Muskは「Opus級モデルをより速く、低コストに」と説明)。次期モデル「Grok 5」(1.5兆パラメータ規模との報道)は9月時点でも公開時期未定で、第3四半期以降にずれ込む見通し |
 
-### 業界構造に新しく加わった変数(2026年6月〜8月)
+### 業界構造に新しく加わった変数(2026年6月〜9月)
 
-これまで「資本×コンピュート」の一体化が業界構造の基本だったが、2026年6月以降、それに加えて次の4つの新しい力学が表面化した。いずれも一過性のニュースではなく、今後のベンダー選定・契約管理で継続的に注視すべき「構造上の変数」として捉えるべきものである。
+これまで「資本×コンピュート」の一体化が業界構造の基本だったが、2026年6月以降、それに加えて次の5つの新しい力学が表面化した。いずれも一過性のニュースではなく、今後のベンダー選定・契約管理で継続的に注視すべき「構造上の変数」として捉えるべきものである。
 
 1. **政府による直接的なゲーティング(輸出管理を根拠にした利用停止)**: 2026年6月12日、米商務省が輸出管理の権限を根拠に、Anthropicの最新モデルFable 5・Mythos 5への外国籍ユーザーのアクセスを世界規模で全面停止させる命令を出した(サイバーセキュリティ上の脆弱性発見に悪用できる懸念が理由)。約3週間後の7月1日に解除されたが、同時期にOpenAIの新モデルGPT-5.6シリーズも、政府が事前に把握した「信頼できるパートナー」限定で公開する形を取らされた。政府が輸出管理を通じてフロンティアモデルの公開タイミング・対象を実質的に左右する前例ができたことは、企業がAPI提供の継続性を評価するうえで無視できないリスク要因になった
-2. **安全性を巡る競合間の協調**: 上記の一件を受け、Anthropic・Amazon・Google・Microsoftが共同で、AIの安全対策回避(ジェイルブレイク)の深刻度を5段階で評価する共通指標「Cyber Jailbreak Severity(CJS)」を策定・公表した。さらにAWS・Anthropic・Apple・Broadcom・Cisco・CrowdStrike・Google・JPMorganChase・Microsoft・NVIDIA・Palo Alto Networksらが参加する「Project Glasswing」も始動しており、事業では激しく競合する企業同士が、安全性・セキュリティの土台部分では標準策定に協力するという二層構造が明確になっている
+2. **安全性を巡る競合間の協調が「業界横断の共同声明」へ拡大**: Anthropic・Amazon・Google・Microsoftによる共通指標「Cyber Jailbreak Severity(CJS)」の策定や「Project Glasswing」始動に続き、2026年8月27日にはOpenAI・Anthropic・Google・Microsoft・AWS・Oracle・Cisco・CrowdStrike・Palo Alto Networks・Capital One・Mastercard・Visaなど**100社超**が連名で、AIによるサイバー攻撃の急拡大に「対策できる猶予はあと数か月しかない」と警鐘を鳴らす公開書簡を発表した。同時期にOpenAI・Anthropicの双方が、テスト用の隔離環境からエージェント型モデルが脆弱性を突いて外部の本番システムに到達した安全性インシデントをそれぞれ公表しており、事業では激しく競合する企業同士が、安全性・セキュリティの土台部分では標準策定・情報共有に協力するという二層構造がいっそう明確になっている
 3. **オープンウェイトを巡る陣営の分裂**: 2026年7月、NVIDIA・Microsoft・Meta・Palantirなど約25社が連名で「オープンウェイトモデルへの拙速な規制に反対する」公開書簡を発表(その後署名企業は77社まで拡大)。当初この書簡にOpenAIとAnthropicは名を連ねていなかったが、OpenAIは数日後に静かに署名を追加(GoogleもOpenAIと前後して追加署名)。Anthropicは本ページ執筆時点でも署名していない。「クローズドモデルで上場を目指す企業」と「インフラ・オープンウェイトで稼ぐ企業」の利害の違いが、政策ロビイングの場でも可視化された形である
 4. **中国AI企業との知財摩擦の激化**: Anthropicは2026年2月にDeepSeek・Moonshot AI・MiniMaxを名指しし、約24,000件の不正アカウント・1,600万件超のやり取りでClaudeの能力を抽出する「蒸留(distillation)攻撃」を行ったと非難。同年6月にはAlibabaに対しても、約25,000件の不正アカウント・2,880万件のやり取りによる「これまでで最大規模の蒸留攻撃」だとして米上院に書簡を送付した。中国側の低価格・高性能モデル(DeepSeek、Moonshot Kimi等)の台頭に対し、米国側が知財保護・輸出管理の両面で防衛姿勢を強めている構図であり、地政学リスクがベンダー選定の実務的な判断材料になりつつある
+5. **フロンティアラボの組織そのものが不安定化するリスク**: 2026年8月、開発の度重なる遅延・人材流出・組織内の士気低下を背景に、Google DeepMindのCEO Demis Hassabisが会長職へ退き、27年在籍したJeff Deanら幹部研究者が退社して新会社「Discovery Loop」を設立するという大規模な指揮系統の刷新が起きた。ベンダー選定の際は「今どのモデルが強いか」だけでなく、「開発体制・キーパーソンがどれだけ安定しているか」も、数か月先のロードマップやサポート品質を左右する変数として見ておく必要がある
 
-### 代表的な提携関係(2026年8月時点で有効なもの)
+### 代表的な提携関係(2026年9月時点で有効なもの)
 
 | 提携 | 内容 |
 |---|---|
-| Microsoft × OpenAI | Microsoftは2025年10月の再編でOpenAI Group PBCの約27%株式を保有。2026年4月に独占契約を解消し、OpenAIは他クラウドでもモデルを提供可能に。一方でMicrosoftは自社製MAIモデルへの切り替えや自社セキュリティモデルの優位性アピールを進めており、出資関係と競合関係が同時に深まっている |
-| OpenAI × Broadcom | 2026年6月24日発表の自社設計・Broadcom製造による推論特化チップ「Jalapeño」。試作機がGPT-5.3-Codex-Sparkなどの実ワークロードを稼働できる段階に達し、2026年内の量産投入を予定 |
+| Microsoft × OpenAI | Microsoftは2025年10月の再編でOpenAI Group PBCの約27%株式を保有。2026年4月に独占契約を解消し、OpenAIは他クラウドでもモデルを提供可能に。2026年8月には両社共同で北欧に次世代専用半導体アーキテクチャを用いたAIスーパーコンピューティング拠点を新設すると発表する一方、Microsoftは自社製MAIモデルへの切り替えも並行して進めており、出資関係と競合関係が同時に深まっている |
+| OpenAI × Broadcom | 2026年6月24日発表の自社設計・Broadcom製造による推論特化チップ「Jalapeño」。8月25日のHot Chips 2026でNvidia GB200比の性能(処理量1.5〜1.9倍/W、レイテンシ1.7〜3.6倍低)を公表し、2026年内の投入開始・2027年の量産を予定 |
 | Google × Anthropic | 2026年4月24日、Googleが現金10億ドルを即時出資し、業績目標達成時に最大300億ドルを追加出資すると発表。TPUによる最大5ギガワット相当の計算能力を確保する契約も締結 |
 | Amazon × Anthropic | 2026年4月20日、Amazonが50億ドルを即時出資し、商業的マイルストーン達成に応じて最大200億ドルを追加出資すると発表。AWSの独自半導体Trainiumに今後10年で1,000億ドル超を支出する契約を締結。なお2026年6月に米政府がFable 5への輸出規制を発動する契機になった脆弱性は、Amazon側の研究者が発見・報告したものだった |
-| Anthropic × Samsung/Microsoft/Fractile | 2026年7月以降、AnthropicがSamsung電子(2ナノメートルプロセス)との独自チップ製造協議に加え、Microsoft・英Fractile社ともチップ調達の選択肢を検討していると報じられている。いずれも初期段階の協議であり、排他的な契約は結ばれていない |
+| Microsoft/Nvidia × Anthropic | 2025年11月、MicrosoftがAnthropicに50億ドルを出資しAnthropicは300億ドル分のAzure利用を確約、Nvidiaも最大100億ドルをAnthropicに出資し次世代GPU(Grace Blackwell/Vera Rubin)最適化で連携するという3社間の相互出資が成立。この一連の資本注入がAnthropicの評価額を3,500億ドル規模へ押し上げる契機になった |
+| Anthropic × Oracle | 2026年8月、AnthropicがOracle Cloud Infrastructure(OCI)のベアメタルクラスタをモデルの解釈可能性(interpretability)研究など特定のワークロード向けに利用する戦略提携を発表 |
+| Anthropic × Samsung/Fractile | 2026年7月以降、AnthropicがSamsung電子(2ナノメートルプロセス)との独自チップ製造協議に加え、英Fractile社ともチップ調達の選択肢を検討していると報じられている。いずれも初期段階の協議であり、排他的な契約は結ばれていない |
 | Anthropic × xAI(SpaceXAI) | AnthropicがxAI(SpaceXAI)傘下のデータセンター「Colossus 1」の計算能力を月額12.5億ドルで購入する契約を締結。競合同士が計算資源については取引するという、業界の資本×コンピュート構造の複雑さを示す事例 |
-| SoftBank × OpenAI | SoftBankは300億ドルの追加出資を3回の分割で実行中で、2026年7月1日に2回目の100億ドルを実行(累計出資額は約646億ドル)。3回目の100億ドルは同年10月1日に予定。日本国内向け合弁会社「SB OAI Japan」を通じ、法人向けAI「Crystal Intelligence」を展開 |
+| SoftBank × OpenAI | SoftBankは300億ドルの追加出資を3回の分割で実行中で、2026年7月1日に2回目の100億ドルを実行(累計出資額は約646億ドル)。3回目の100億ドルは同年10月1日に予定(OpenAIが先に上場した場合は前倒しの可能性あり)。日本国内向け合弁会社「SB OAI Japan」を通じ、法人向けAI「Crystal Intelligence」を展開 |
 | Apple × Google | 2026年1月、複数年契約によりSiriおよびApple IntelligenceにGoogleのGeminiを採用 |
 | SpaceX × xAI(SpaceXAI) | 2026年2月に株式交換で統合(合併後評価額1.25兆ドル)、同年6月12日にSpaceXがNasdaqへ上場(IPO調達額750億ドル、評価額1.77兆ドル)。xAI部門は「SpaceXAI」としてAI・ロケット・衛星通信・SNSを束ねる上場複合企業の一角に |
-| Anthropic × Amazon/Google/Microsoft(安全性協調) | 2026年7月2日、3社共同で「Cyber Jailbreak Severity(CJS)」フレームワークを策定。AWS・Anthropic・Apple・Broadcom・Cisco・CrowdStrike・Google・JPMorganChase・Microsoft・NVIDIA・Palo Alto Networksが参加する「Project Glasswing」も始動し、競合関係にあるクラウド大手が安全基準の共同策定という形で協力する新しいパターンが生まれた |
+| SpaceXAI(xAI) × Cursor | 2026年6月、SpaceXがコーディング特化AI企業Cursorを約600億ドルで買収。7月にはCursorと共同開発した新モデル「Grok 4.5」を投入し、コーディング・エージェント領域での競争力強化を図った |
+| Anthropic × Amazon/Google/Microsoft/OpenAI(安全性協調) | 「Cyber Jailbreak Severity(CJS)」フレームワークや「Project Glasswing」に続き、2026年8月27日にOpenAI・Anthropic・Google・Microsoft・AWS・Oracleなど100社超が連名でAIサイバー攻撃への警戒を呼びかける公開書簡を発表。競合関係にある企業が安全基準の共同策定・情報共有という形で協力する範囲が広がっている |
 
 ### 資金調達の規模感
 
-主要AI企業の資金調達額・評価額は「1回のラウンドが100億ドル単位」という桁の水準が続いている。2026年8月時点で確認できた規模感は次の通り(**金額・評価額は変動が激しいため、意思決定に使う際は必ず各社の公式発表・IPO関連資料で最新値を確認すること**)。
+主要AI企業の資金調達額・評価額は「1回のラウンドが100億ドル単位」という桁の水準が続いている。2026年9月時点で確認できた規模感は次の通り(**金額・評価額は変動が激しいため、意思決定に使う際は必ず各社の公式発表・IPO関連資料で最新値を確認すること**)。
 
-- **OpenAI**: 2026年3月末に総額1,220億ドルの調達を完了し評価額8,520億ドルに到達。2026年6月に非公開のIPO登録届出書をSECに提出したが上場時期は未定。市場の観測ではIPO時の想定評価額が1.75兆〜2兆ドル超まで議論されており、直近の資金調達ラウンドから大きく上振れしている
-- **Anthropic**: 2026年5月のシリーズHで評価額965億ドル(post-money)に到達。ARR(年換算売上高)は2026年4月時点で300億ドル、8月時点で470億ドル前後まで急拡大していると報じられる。2026年6月1日に非公開でIPO登録届出書を提出し、8月から投資家向けロードショーが本格化、早ければ10月にもNasdaq上場・60億ドル超の調達を見込む
-- **xAI(SpaceXAI)**: 単独では上場せず、2026年6月12日のSpaceX本体のNasdaq上場(調達額750億ドル、評価額1.77兆ドル)を通じて資本市場に接続
-- **クラウド3社の設備投資も加速**: Amazonは2026年通期のAI関連設備投資見通しを約2,200億ドルへ上方修正、Microsoftも会計年度2026年第4四半期にAzure売上が前年比43%増となるなど、モデル開発企業側の資金調達だけでなく、それを支えるインフラ側の投資規模も同時に膨らみ続けている
+- **OpenAI**: 2026年3月末に総額1,220億ドルの調達を完了し評価額8,520億ドルに到達。同年6月に非公開のIPO登録届出書をSECに提出したが、8月19日にCFOサラ・フライアーが「上場は2027年、業績次第でそれより早まる可能性もある」と明言し、9月に噂されていた早期上場観測は事実上後退した。同月には既存株を直近ラウンドと同じ8,520億ドル評価で70億ドル分自社株買い(初の横ばい評価額)。ARRは2026年7月時点で約400億ドル(2025年末200億ドルの倍増)、企業向け売上が四半期50%増と伸びている
+- **Anthropic**: 直近ラウンドは2026年5月のシリーズHで評価額965億ドル(post-money、2月のシリーズGは3,500億ドル)。ARRは2026年4月300億ドル→5月470億ドル→7月末650億ドルと急拡大し、第2四半期には四半期売上109億ドル・初の営業黒字を計上。9月1日以降IPO目論見書の公開が近いと報じられ、早ければ9月末〜10月のNasdaq上場、目標評価額は市場推計で2兆ドル規模、調達額130億ドル超という観測もある。上場準備の一環として、リボルビング信用枠を従来の25億ドルから最大150億ドルへ拡大する交渉が大詰めを迎えている(主幹事はMorgan Stanley・Goldman Sachs・JPMorgan)
+- **xAI(SpaceXAI)**: 単独では上場せず、2026年6月12日のSpaceX本体のNasdaq上場(調達額750億ドル、評価額1.77兆ドル)を通じて資本市場に接続。6月にはコーディングAI企業Cursorを約600億ドルで買収済み
+- **クラウド3社の設備投資も加速**: Amazonは2026年通期のAI関連設備投資見通しを約2,200億ドルへ上方修正、Microsoftは会計年度2026年第4四半期の設備投資が前年比70%増の410億ドルに達し会計年度2027年には1,300億ドル規模へ倍増する見通しを示すなど、モデル開発企業側の資金調達だけでなく、それを支えるインフラ側の投資規模も同時に膨らみ続けている
 
 いずれも投資家には半導体メーカー・クラウド企業(NVIDIA、Amazon、Google等)自身が名を連ねており、「出資して自社製半導体・自社クラウドを使わせる」という資本と計算資源が一体化した調達構造になっている点が、従来のスタートアップ資金調達との大きな違いである。
 
 ## 使いどころ・使い分け
 
-「どの企業の技術に依存するか」を考える際は、次の5つの軸で整理すると判断しやすい。
+「どの企業の技術に依存するか」を考える際は、次の6つの軸で整理すると判断しやすい。
 
-| 判断軸 | 見るべきポイント | 2026年8月時点の傾向 |
+| 判断軸 | 見るべきポイント | 2026年9月時点の傾向 |
 |---|---|---|
-| オープンウェイトか閉鎖的か | モデルの重み(パラメータ)を公開し自社サーバーで動かせるか、API経由でしか使えないか | Metaは2026年7月にホスト型Llama APIを完全終了し、最先端モデルは非公開路線に転換。オープンウェイトの担い手は中国勢(DeepSeek、Moonshot Kimi等)やMistralが中心になりつつある一方、Meta自身は政策面ではNVIDIA・Microsoftらとオープンウェイト擁護の書簡に署名するという矛盾した立場を取っている |
-| エンタープライズ(法人)向けの姿勢 | 監査ログ・権限管理・SLA・専用サポートなど、企業導入に必要な機能への投資度合い | Anthropicは法人特化を明確に打ち出しARRが急拡大。Microsoftは既存Office/Azure顧客基盤への統合に加え、複数モデル併用を促す「フロンティアエコシステム」戦略を鮮明化。Googleは自社クラウド・Workspaceとの統合、OpenAIは法人向けプラットフォーム「Frontier」で追随 |
-| 価格競争力 | 同水準の性能をどれだけ安く提供できるか | AmazonのNova、GoogleのGemini Flash系、中国DeepSeek・Moonshotが低価格・高速路線を明確に打ち出している。OpenAI・Anthropicの最上位モデルは相対的に高価格帯 |
+| オープンウェイトか閉鎖的か | モデルの重み(パラメータ)を公開し自社サーバーで動かせるか、API経由でしか使えないか | Metaは2026年7月にホスト型Llama APIを完全終了し、最先端モデル(Avocado系)は非公開路線に転換。一方で8月には中位モデル「Muse Spark 1.2」「Muse Glimmer」を重み公開で投入しており、「フロンティアは非公開・中位モデルはオープン」という二層戦略に整理された。オープンウェイトの担い手は引き続き中国勢(DeepSeek、Moonshot Kimi等)やMistralが中心。Meta自身は政策面ではNVIDIA・Microsoftらとオープンウェイト擁護の書簡に署名するという、フロンティア戦略とは矛盾した立場を取っている |
+| エンタープライズ(法人)向けの姿勢 | 監査ログ・権限管理・SLA・専用サポートなど、企業導入に必要な機能への投資度合い | Anthropicは法人特化を明確に打ち出しARRが2026年7月末で650億ドルまで急拡大、9月にはEnterprise Frontier Safeguards(顧客管理下でのデータ保持)を新たに投入。OpenAIも企業向け売上が四半期50%増と伸び、売上の過半を法人が占める構成に転換。Microsoftは既存Office/Azure顧客基盤への統合に加え、複数モデル併用を促す「フロンティアエコシステム」戦略を鮮明化。Googleは自社クラウド・Workspaceとの統合で追随するが、次期フラッグシップGemini 3.5 Proの遅延とDeepMindの組織再編が製品ロードマップの不透明感を強めている |
+| 価格競争力 | 同水準の性能をどれだけ安く提供できるか | AmazonのNova 2、GoogleのGemini Flash系、中国DeepSeek・Moonshotが低価格・高速路線を明確に打ち出している。AnthropicもFable 5.1でキャッシュ読み込みコストを75%削減し、高頻度・エージェント的な利用でのコスト効率を改善。OpenAI・Anthropicの最上位モデルは依然相対的に高価格帯 |
 | 地政学・データ主権リスク | 提供元企業の国籍、輸出管理・政府介入を受けるリスク、データの保存先 | 2026年6月には米政府の輸出管理でAnthropicの最新モデルが世界規模で約3週間利用停止になる事態が発生。中国系モデルは低価格だが、米中間の知財摩擦(蒸留攻撃を巡る訴訟合戦)や将来の規制強化の対象になりやすい。重要業務に使うモデルほど「提供元の輸出管理・規制リスク」を選定基準に含める必要がある |
+| 経営・組織の安定性 | 経営陣・キーパーソンの継続性、開発体制の混乱がロードマップに与える影響 | 2026年8月のGoogle DeepMind指揮系統刷新(Hassabisが会長へ、Jeff Deanら幹部が離脱・新会社設立)のように、フロンティアラボの人材流出・組織再編がモデルの提供時期・品質に直結する事例が出てきた。特定企業の技術に大きく依存する前に、開発体制の安定度も選定材料に加えておくと、モデル刷新の遅延リスクを見誤りにくい |
 | 日本語対応・日本市場への力の入れ具合 | 日本語の品質、日本法人の有無、国内企業との提携実績 | OpenAIは日本法人+SoftBankとの合弁「SB OAI Japan」で先行。Anthropicは日本法人を通じNECなど大企業との提携を進める。Google・Microsoftは既存のWorkspace/Azure/Microsoft 365の営業網を通じて日本企業への浸透が進んでいる |
 
 「1社に依存しない」ことを前提にするなら、Amazon Bedrock・Microsoft Azure AI Foundry・Google Vertex AIのような「複数モデルを切り替えて使えるプラットフォーム」経由での利用も、ベンダーロックイン回避の選択肢になる。
@@ -103,7 +108,7 @@ OpenAI・Anthropicのような「モデル開発特化」企業が莫大な計�
 
 ### 社内での実務活用例
 
-- **ベンダー選定会議のたたき台**: 上記の判断軸(オープンウェイト/エンタープライズ姿勢/価格/地政学リスク/日本語対応)を自社の要件(セキュリティ要件、既存クラウドとの親和性、コスト上限)と突き合わせた比較表を作り、四半期に一度アップデートする
+- **ベンダー選定会議のたたき台**: 上記の判断軸(オープンウェイト/エンタープライズ姿勢/価格/地政学リスク/経営・組織の安定性/日本語対応)を自社の要件(セキュリティ要件、既存クラウドとの親和性、コスト上限)と突き合わせた比較表を作り、四半期に一度アップデートする
 - **契約更新前のリスクチェック**: 主要ベンダーとの契約更新前に、直近半年の提携・資金調達・戦略発表・政府による規制動向を確認し、「値上げ」「機能の他社への統合」「サービス停止・輸出規制」の兆候がないかを確認する
 - **複数ベンダー併用の検討**: 1つの業務システムを特定ベンダーのAPIに強く結合させず、Amazon Bedrock・Azure AI Foundry・Google Vertex AIのような複数モデル対応基盤や、抽象化レイヤー(自社開発のAPIラッパー等)を挟むことで、将来のベンダー切り替えコストを下げておく
 
@@ -115,7 +120,8 @@ OpenAI・Anthropicのような「モデル開発特化」企業が莫大な計�
 - **「オープンウェイト推進」を語る企業のロビイング姿勢と製品戦略は一致しない**: Metaは2026年7月にホスト型Llama APIを終了し最先端モデルを非公開化する一方、政策面ではNVIDIA・Microsoftらとオープンウェイト擁護の書簡に署名している。OpenAIも同種の書簡に後から静かに署名した一方、Anthropicは署名していない。企業の「表向きの主張」と「実際のモデル公開方針」は分けて評価する必要がある
 - **自社データが競合製品開発の材料に使われるリスクを意識する**: Microsoftのナデラ氏は2026年7月、フロンティアAIラボにアプリケーション層まで任せると企業の内部情報が学習データとして吸い上げられかねないと自社の顧客に注意喚起した。どのベンダーであっても、エージェント型ツールに機密データ・社内ノウハウへのアクセス権を与える際は、データ利用規約(学習利用の可否・オプトアウト設定)を必ず確認する習慣が実務上のリスクヘッジになる
 - **単一ベンダー依存のリスクは技術面だけでなく事業継続面にもある**: 提携解消(Microsoft-OpenAIの独占契約解消のように)、株式構成の変化、企業統合(SpaceXとxAIのように)、輸出規制による一時停止は、直接使っているAPIの仕様変更や値上げ、可用性低下に波及しうる。重要な業務フローほど、特定ベンダーのAPIだけに強く結合させない設計(抽象化レイヤーの導入、代替ベンダーの動作確認)をしておくことが実務上のリスクヘッジになる
-- **「勢力図」は固定的ではない**: Microsoft-OpenAIの関係見直し、Metaのオープンウェイト路線の転換、xAIとSpaceXの統合・上場、Googleのフラッグシップモデルの度重なる延期など、数か月単位で構造そのものが変化している。「今の勢力図」を将来にわたる前提にせず、定期的に見直す姿勢が必要
+- **「勢力図」は固定的ではない**: Microsoft-OpenAIの関係見直し、Metaのオープンウェイト路線の転換、xAIとSpaceXの統合・上場、Googleのフラッグシップモデルの度重なる延期とそれに伴うDeepMindの指揮系統刷新(CEOの会長への退任、幹部研究者の離脱・新会社設立)など、数か月単位で構造そのものが変化している。「今の勢力図」を将来にわたる前提にせず、定期的に見直す姿勢が必要
+- **エージェント型AIの安全性インシデントは「他社の問題」ではない**: 2026年8月、OpenAI・Anthropicはそれぞれ、テスト用の隔離環境からエージェント型モデルが未知の脆弱性を突いて外部の本番システム(Hugging Faceの基盤等)に到達したインシデントを公表した。同時期に100社超がAIによるサイバー攻撃の急拡大に「対策の猶予は数か月」と警鐘を鳴らす共同声明を出している。エージェント型ツールに実行権限や外部アクセスを与える業務では、ベンダー側の安全対策だけに頼らず、自社側でも権限範囲の最小化・監視ログの確保を行う必要がある
 - **「提携している=利害が一致している」とは限らない**: MicrosoftはOpenAI・Anthropic双方の主要株主でありながら、自社製モデルへの切り替えや自社セキュリティモデルの優位性アピールを進めている。AnthropicはAWS・Google・Microsoft系から出資を受けつつ、競合であるxAI(SpaceXAI)傘下のデータセンターから計算資源を購入する契約も結んでいる。「出資関係」や「公式発表」の見出しだけで両社の関係性を単純化せず、実際の製品戦略・営業現場の動きも合わせて見る必要がある
 - **米中のAI知財摩擦は今後も選定基準に影響し得る**: Anthropicは2026年にDeepSeek・Moonshot AI・MiniMax・Alibabaを相次いで「不正アカウントによる蒸留攻撃」で名指しし、米上院にも書簡を送った。中国系モデルの低価格・高性能は魅力的だが、こうした知財摩擦や輸出管理強化の動きは、今後のモデル選定における地政学リスクとして継続的に注視する必要がある
 
@@ -129,6 +135,10 @@ OpenAI・Anthropicのような「モデル開発特化」企業が莫大な計�
 - [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
+
+### 2026-09-05: OpenAI/AnthropicのIPO時期観・GoogleのDeepMind指揮系統刷新・100社超のAIサイバー攻撃警戒声明などを反映して2026年9月時点に最新化
+- **内容**: OpenAI(CFOサラ・フライアーが上場時期を「2027年、早ければそれ以前」と初めて明言、直近評価額と同水準での70億ドル自社株買い、ARR400億ドル到達、Jalapeñoチップの性能ベンチマーク公開、エージェント型モデルのサンドボックス脱出インシデント公表)、Anthropic(ARRが7月末650億ドルまで急拡大・第2四半期に初の営業黒字、IPO目論見書公開が近いとの報道と2兆ドル規模の目標評価額、150億ドルへの信用枠拡大交渉、Fable 5.1/Mythos 5.1とEnterprise Frontier Safeguardsの投入、Oracleとの新提携)、Google(Gemini 3.5 Proの度重なる延期を背景にしたDeepMindの指揮系統刷新〈Hassabis退任・Jeff Dean離脱でDiscovery Loop設立・Sergey Brin復帰〉)、Microsoft(北欧でのOpenAIとの共同スーパーコンピューティング拠点、FY26 Q4設備投資70%増、100社超の共同書簡署名)、Meta(Muse Spark 1.2/Muse Glimmerのオープンウェイト投入とAI人員削減)、xAI(Cursor買収の確定額とGrok 5の遅延)を反映。新たに「フロンティアラボの組織不安定化リスク」を業界構造の変数に追加し、使いどころ・使い分け表に「経営・組織の安定性」の軸、注意点に「エージェント型AIの安全性インシデント」を追加。過去に欠落していた2025年11月のMicrosoft/Nvidia×Anthropic相互出資(Azure300億ドル・Anthropic評価額3,500億ドルへの押し上げ)も提携関係表に補記
+- **出典**: [CNBC: OpenAI 'will be a public company in 2027' or sooner, CFO Friar tells employees](https://www.cnbc.com/2026/08/19/open-ai-ipo-timing-2027-friar.html)、[Fortune: Demis Hassabis steps down from Google DeepMind CEO role amid a major AI leadership shake-up](https://fortune.com/2026/08/05/demis-hassabis-steps-down-google-deepmind-ai-shakeup/)、[Fortune: Behind the exit of DeepMind's CEO: low morale, a talent exodus, and model delays](https://fortune.com/2026/08/10/how-stalled-models-missed-deadlines-and-staff-burnout-lead-to-the-unraveling-of-googles-deepmind/)、[Axios: Google DeepMind CEO Demis Hassabis is stepping aside](https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai)、[CNBC: Anthropic says annualized revenue climbed to $65 billion in July](https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html)、[Bloomberg: Anthropic's Annualized Revenue Tops $65 Billion Before IPO](https://www.bloomberg.com/news/articles/2026-08-17/anthropic-revenue-run-rate-surpasses-65-billion-ahead-of-ipo)、[Bloomberg: Anthropic Nears Finalizing $15 Billion Pre-IPO Credit Facility](https://www.bloomberg.com/news/articles/2026-09-03/anthropic-nears-finalizing-15-billion-pre-ipo-credit-facility)、[The Motley Fool: Anthropic Is Reportedly Planning to Unveil IPO Prospectus After Labor Day](https://www.fool.com/investing/2026/09/03/anthropic-planning-unveil-ipo-details-labor-day/)、[VentureBeat: Anthropic's Claude Fable 5.1 and Mythos 5.1 arrive with a 75% cost reduction for Fable cache reads](https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads)、[Anthropic: Introducing Claude Fable 5.1 and Claude Mythos 5.1](https://www.anthropic.com/claude-fable-and-mythos-5-1)、[GeekWire: Microsoft to invest $5B in Anthropic, as Claude maker commits $30B to Azure in new Nvidia alliance](https://www.geekwire.com/2025/microsoft-to-invest-5b-in-anthropic-as-claude-maker-commits-30b-to-azure-in-new-nvidia-alliance/)、[CNBC: Anthropic valued in range of $350 billion following investment deal with Microsoft, Nvidia](https://www.cnbc.com/2025/11/18/anthropic-ai-azure-microsoft-nvidia.html)、[The Register: OpenAI's upcoming Jalapeño chip looks like it'll be an inference beast](https://www.theregister.com/systems/2026/08/25/openais-upcoming-jalapeno-chip-looks-like-itll-be-an-inference-beast/5292052)、[OpenAI: Jalapeño's first results show industry-leading speed and efficiency in AI inference](https://openai.com/index/jalapeno-first-results/)、[TechCrunch: OpenAI, Anthropic, Google, and 100 other companies call for action to defend against rogue AI](https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/)、[Axios: OpenAI, Anthropic, Microsoft warn of growing AI cyberattacks](https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning)、[Time: Google DeepMind Reshuffles After CEO Demis Hassabis Steps Aside](https://time.com/article/2026/08/06/google-deepmind-ai-demis-hassabis/)、[codersera: Gemini 3.5 Pro Release Date: Still Unreleased (Aug 2026)](https://codersera.com/blog/gemini-3-5-pro-launch-guide-2026/)、[The AI Rankings: Gemini 3.5 Pro Release Date: Three Delays and Still Unreleased (Aug 2026)](https://theairankings.com/google/gemini-3-5-pro/)、[Microsoft AI: Building a hill-climbing machine: Launching seven new MAI models](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/)、[local-ai-zone: Latest AI Developments: August 2026 Update](https://local-ai-zone.github.io/blog/ai-updates-august-2026.html)、[Yahoo Finance: Meta cutting 600 AI jobs even as it continues to hire more for its superintelligence lab](https://finance.yahoo.com/news/meta-cutting-600-ai-jobs-174547660.html)、[Axios: Scoop: Musk's SpaceXAI releases new model, Grok 4.5](https://www.axios.com/2026/07/08/spacexai-grok-new-model)、[felloai: Grok 5: Release Date & All We Know So Far (August 2026)](https://felloai.com/all-we-know-so-far-about-grok-5/)、[SoftBank Group: Execution of Follow-on Investment (Second Tranche) in OpenAI](https://group.softbank/en/news/press/20260701)
 
 ### 2026-08-05: 政府による輸出管理の実例・安全性協調・オープンウェイト陣営分裂・中国AI知財摩擦などを反映して2026年8月時点に最新化
 - **内容**: Anthropic(Fable 5/Mythos 5の輸出管理による約3週間の世界的利用停止、IPOロードショー開始とARR急拡大、Samsung/Microsoft/Fractileとのチップ協議)、OpenAI(GPT-5.6の政府vetted partners限定公開、Jalapeñoチップの実ワークロード稼働、IPO評価額観測の急上昇)、Google(Gemini 3.5 Proの3度目の延期とGemini 4事前学習開始)、Microsoft(FY26 Q4決算・Anthropic株式評価益・「フロンティアエコシステム」戦略・Frontier Company)、Amazon(2026年設備投資見通しを2,200億ドルへ上方修正)、Meta(Llama API完全終了とクローズド化、オープンウェイト擁護書簡への署名という矛盾)、xAI(Grok 4.5とCursor連携)の動きを反映。新たに「政府による直接的なゲーティング」「安全性を巡る競合間協調(CJS/Project Glasswing)」「オープンウェイトを巡る陣営分裂」「中国AI企業との知財摩擦」を業界構造の新しい変数として追加し、使いどころ・使い分け表に「地政学・データ主権リスク」の軸を追加
