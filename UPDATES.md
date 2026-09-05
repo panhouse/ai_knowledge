@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-05
+- [音声・音楽生成AIの基本(Suno・Udio・ElevenLabsなどの選び方)](topics/part08-specialized-ai-tools/audio-music-generation-ai-basics.md): 著作権訴訟の進展(GEMA勝訴・Sony新訴訟)とGoogle Lyria/ElevenLabs Musicの新規参入を反映し最新化・増強
+
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
