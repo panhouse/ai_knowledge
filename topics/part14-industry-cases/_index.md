@@ -136,3 +136,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [調剤薬局・ドラッグストア業界における生成AI活用事例](pharmacy-drugstore-industry-ai-use-cases.md)
 - [クリーニング業界における生成AI活用事例](dry-cleaning-industry-ai-use-cases.md)
 - [引越し業界における生成AI活用事例](moving-relocation-industry-ai-use-cases.md)
+- [障害福祉サービス事業者における生成AI活用事例](disability-welfare-services-ai-use-cases.md)
