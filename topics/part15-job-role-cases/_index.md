@@ -144,6 +144,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [営業職における生成AI活用](sales-ai-use-cases.md)
 - [不動産営業(仲介・売買)における生成AI活用事例](real-estate-agent-ai-use-cases.md)
 - [保険営業(生命保険・損害保険)における生成AI活用事例](insurance-agent-ai-use-cases.md)
+- [製薬MR(医薬情報担当者)における生成AI活用事例](pharma-mr-ai-use-cases.md)
 
 ### 第3章 マーケティング・広報
 - [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
