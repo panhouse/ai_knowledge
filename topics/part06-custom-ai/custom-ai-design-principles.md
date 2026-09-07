@@ -4,7 +4,7 @@ part: 6
 chapter: 第1章 カスタムAIの基礎
 tags: [GPTs, Gem, Claude Projects, Copilot Agent Builder, カスタムAI, システムプロンプト, ガバナンス]
 created: 2026-07-06
-updated: 2026-07-24
+updated: 2026-09-07
 ---
 
 # カスタムAIの基礎(共通設計原則)
@@ -28,7 +28,9 @@ GPTs(ChatGPT)、Gem(Gemini)、Projects(Claude)、Agent Builder(Microsoft 365 Cop
 
 つまり「指示文をどう書くか」「ナレッジをどう与えるか」「誰に公開するか」という設計判断は、ツールをまたいで**そのまま使い回せるスキル**である。実体は、毎回の会話冒頭に同じシステムプロンプトと参照資料を自動で読み込ませているだけであり、魔法のような仕組みが動いているわけではない。裏側の技術的な仕組み(RAGによる検索、トークン数の上限)は[GPTsのナレッジファイルとアクション連携](gpts-knowledge-and-actions.md)で詳しく扱っている。
 
-Microsoft 365 CopilotのAgent Builderは他の3つとやや毛色が異なり、「指示+公開Webサイトの知識」だけで作るエージェントは無料で使えるが、SharePointや社内データ(Microsoft Graphコネクタ経由)を参照させるエージェントは、Microsoft 365 Copilotライセンスまたは従量課金の対象になる([Microsoft Learn: Agents for Microsoft 365 Copilot Chat](https://learn.microsoft.com/en-us/copilot/agents))。2026年に入り、ナレッジソースにOneDriveのフォルダ・最大50ファイルを追加できるようになるなど機能拡張が続いている一方([Microsoft Learn: Microsoft 365 Copilotで宣言型エージェントにナレッジソースを追加する](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-add-knowledge))、SharePoint上に作ったエージェントについては、Microsoft 365 Copilotライセンスを持たない利用者からの利用を1インタラクションあたりの従量課金(Copilot Studioのpay-as-you-goメーターで消費)で許可する仕組みも整備されつつある([Microsoft Tech Community: Consumption-based pricing for agents built in SharePoint](https://techcommunity.microsoft.com/blog/spblog/consumption-based-pricing-for-agents-built-in-sharepoint/4389591))。社内データに触れさせるかどうかで、必要なライセンス・ガバナンスの重さが変わる点は、他ツールにはない特徴である。
+Microsoft 365 CopilotのAgent Builderは他の3つとやや毛色が異なり、「指示+公開Webサイトの知識」だけで作るエージェントは無料で使えるが、SharePointや社内データ(Microsoft Graphコネクタ経由)を参照させるエージェントは、Microsoft 365 Copilotライセンスまたは従量課金の対象になる([Microsoft Learn: Agents for Microsoft 365 Copilot Chat](https://learn.microsoft.com/en-us/copilot/agents))。2026年に入り、ナレッジソースにOneDriveのフォルダ・最大50ファイルを追加できるようになるなど機能拡張が続いている一方([Microsoft Learn: Microsoft 365 Copilotで宣言型エージェントにナレッジソースを追加する](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-add-knowledge))、SharePoint上に作ったエージェントについては、Microsoft 365 Copilotライセンスを持たない利用者からの利用を1インタラクションあたりの従量課金(Copilot Studioのpay-as-you-goメーターで消費)で許可する仕組みも整備されつつある([Microsoft Tech Community: Consumption-based pricing for agents built in SharePoint](https://techcommunity.microsoft.com/blog/spblog/consumption-based-pricing-for-agents-built-in-sharepoint/4389591))。社内データに触れさせるかどうかで、必要なライセンス・ガバナンスの重さが変わる点は、他ツールにはない特徴である。エージェントの名前は30文字、説明は1,000文字、指示は8,000文字、知識源は最大20件(SharePointサイトやコネクタ単位)という上限も設けられており、1つのエージェントに情報を詰め込みすぎない設計を促す作りになっている([Microsoft Learn: Microsoft 365 CopilotのAgent Builderを使用してエージェントを構築する](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-build-agents))。
+
+なお2026年に入り、GPTs/Gem/Projects/Agent Builderのような「1つの箱に指示・ナレッジ・公開範囲をまとめて呼び出す」型の**ボット**とは別に、「特定タスクの手順書」を`SKILL.md`という共通形式(YAMLフロントマター+Markdown本文)のファイルにまとめ、該当するタスクが来たときだけAIが自動で読み込む**Skills**という仕組みが、Anthropic(Claude、2025年10月〜)・Google(Gemini CLI/Antigravity CLI、2025年11月〜)・Microsoft(Copilot Studio、2026年7月の全面刷新〜)と複数ベンダーで足並みを揃えて広がりつつある。カスタムAI(ボット)が「役割・トーン・参照資料をまるごと固定する」ためのものであるのに対し、Skillsは「特定の作業手順だけを必要な時にだけ読み込ませる」ためのものであり、両者は排他的ではなく併用できる概念である。詳しい仕組み(プログレッシブ・ディスクロージャー、MCPとの違い)は[AIエージェントのSkills(スキル)機能とは何か](../part11-ai-agents/claude-skills-and-agent-skills-basics.md)を参照。なおGoogleについては、2026年8月以降、無料機能である現行のGemを2026年10月20日に終了し、Gemini Spark内の有料機能「Skills」への移行を促す告知が一部ユーザー向けに表示されているとの報道が海外メディア複数から出ているが、2026年9月時点でGoogle公式の正式発表はまだない(詳細は[Gem(Geminiのカスタムボット機能)の基本](gemini-gem-feature.md)を参照)。
 
 ## 使いどころ・使い分け
 
@@ -96,14 +98,14 @@ Microsoft 365 CopilotのAgent Builderは他の3つとやや毛色が異なり、
 
 ### ツール横断の対応付け(作成画面の入口)
 
-| ツール | 作成画面への入口 | 必要プラン(2026年7月時点の目安) |
+| ツール | 作成画面への入口 | 必要プラン(2026年9月時点の目安) |
 |---|---|---|
-| ChatGPT(GPTs) | 左サイドバー「GPTを探す」→「＋作成する」 | GPT Builder(作成機能)はPlus以上が必要。Freeはストア内の既成GPTを使うことはできるが、自分で新規作成はできない([OpenAI Help Center: Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt)) |
-| Gemini(Gem) | 「Gemを表示」→「Gemを作成」([Google Gemini アプリ ヘルプ](https://support.google.com/gemini/answer/15146780)) | 無料プランでも作成・利用可(動作モデルの性能や利用回数は有料プランの方が優遇される) |
+| ChatGPT(GPTs) | 左サイドバー「GPTを探す」→「＋作成する」 | GPT Builder(作成機能)はPlus以上が必要。無料の「Free」および低価格の「Go」(2026年に日本を含む主要国へ展開)はストア内の既成GPTを使うことはできるが、自分で新規作成はできない([OpenAI Help Center: Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt)) |
+| Gemini(Gem) | 「Gemを表示」→「Gemを作成」([Google Gemini アプリ ヘルプ](https://support.google.com/gemini/answer/15146780)) | 無料プランでも作成・利用可(動作モデルの性能や利用回数は有料プランの方が優遇される)。※Gem自体が2026年10月に終了する可能性が報じられている(未確認情報、下記注参照) |
 | Claude(Projects) | 左サイドバー「Projects」→「+ New project」 | Freeでも作成可だが上限5件まで。Pro/Max/Team/Enterpriseは無制限かつRAG(検索拡張生成)の参照容量も拡大される |
 | Microsoft 365 Copilot(Agent Builder) | Copilotアプリの「エージェントの作成」 | 公開Web知識のみのエージェントは無料。SharePoint等の社内データ参照はMicrosoft 365 Copilotライセンス、またはCopilot Studioの従量課金(pay-as-you-goメーター)が必要 |
 
-料金・上限値は変更が頻繁なため、実際に作る直前に各ツールの公式ヘルプで最新情報を確認すること。
+料金・上限値は変更が頻繁なため、実際に作る直前に各ツールの公式ヘルプで最新情報を確認すること。特にGemini Gemは前述の通り終了の可能性が報じられており、この表よりも[Gem(Geminiのカスタムボット機能)の基本](gemini-gem-feature.md)の最新の注意書きを優先して確認してほしい。
 
 ## 注意点・よくある誤解
 
@@ -112,6 +114,7 @@ Microsoft 365 CopilotのAgent Builderは他の3つとやや毛色が異なり、
 - **公開範囲を広げるほど責任も重くなる**: 個人利用のPrivateな設定なら気軽に試行錯誤できるが、組織内共有・一般公開に進めるほど、内容の正確性・機密情報の扱い・保守体制について説明責任が生じる
 - **「便利だから」で無制限に増やさない**: 1つ1つは有用でも、似たような役割のカスタムAIが乱立すると、どれを使えばよいか分からなくなり、結局誰も使わなくなる。新しく作る前に、既存のカスタムAIを拡張・統合できないか検討する
 - **ツールが変わっても考え方は使い回せる**: 「指示+ナレッジ+公開範囲」という設計の型を理解しておけば、GPTsで学んだコツはGemやClaude Projects、Copilot Agent Builderにもほぼそのまま応用できる
+- **機能自体がベンダー都合で終了・置き換えられることがある**: 2026年8月には、Googleが無料機能のGemを終了し有料の「Skills」への移行を促すとの未確認報道が出るなど、カスタムAI機能そのものの存続は保証されていない。指示文やナレッジの構成案は、そのツール専用画面だけでなく社内ドキュメント(GoogleドキュメントやNotionなど)にも控えを残しておくと、仕様変更や終了が実際に起きたときにゼロから作り直さずに済む
 
 ## 最初の一歩
 
@@ -125,8 +128,13 @@ Microsoft 365 CopilotのAgent Builderは他の3つとやや毛色が異なり、
 - [GPTsのナレッジファイルとアクション連携](gpts-knowledge-and-actions.md)
 - [GPTsにおけるプロンプトインジェクション対策](gpts-prompt-injection-defense.md)
 - [ロール(役割)プロンプティング](../part05-prompt-engineering/role-prompting.md)
+- [AIエージェントのSkills(スキル)機能とは何か](../part11-ai-agents/claude-skills-and-agent-skills-basics.md)
 
 ## 更新履歴
+
+### 2026-09-07: 「Skills」の台頭とGemini Gem終了報道を反映し最新化
+- **内容**: 「仕組み・背景」に、GPTs/Gem/Projects/Agent Builderのようなボット型カスタムAIとは別に、`SKILL.md`形式(YAMLフロントマター+Markdown本文)で特定タスクの手順を必要な時だけ読み込ませる「Skills」がAnthropic・Google・Microsoft複数ベンダーで足並みを揃えて広がりつつある動きを追記し、Part11の詳細ページへリンク。Microsoft 365 Copilot Agent Builderの技術上限(指示8,000文字・知識源最大20件など)を追記。Googleが2026年8月以降、無料のGemを2026年10月20日に終了し有料の「Skills」への移行を促すとの未確認報道が出ている件を、ツール横断の対応表・注意点の両方に反映(2026年9月時点でGoogle公式発表はなし)。ChatGPTの料金体系がFree/Go/Plus/Pro/Business/Enterpriseの6段階で安定していることを確認し、GPTs作成にPlus以上が必要な点・Claude Projects無料プランの上限5件を2026年9月時点の情報として再確認
+- **出典**: [Microsoft Learn: Microsoft 365 CopilotのAgent Builderを使用してエージェントを構築する](https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/agent-builder-build-agents)、[AIエージェントのSkills(スキル)機能とは何か](../part11-ai-agents/claude-skills-and-agent-skills-basics.md)、[TestingCatalog: Google may retire Gems in October, forcing migration to Skills](https://www.testingcatalog.com/google-may-retire-gems-in-october-forcing-migration-to-skill/)、[Android Authority: Google could retire a free Gemini feature in favor of a paid one](https://www.androidauthority.com/google-retire-gemini-gems-leak-3696240/)、[OpenAI Help Center: Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt)
 
 ### 2026-07-24: 各ツールのプラン・機能条件を再検証し最新化
 - **内容**: ツール横断の対応付け表を実態に合わせて修正(ChatGPTはGPT Builderの利用にPlus以上が必要な点を明確化、GeminiのGem作成画面の入口をGoogle公式ヘルプの表記に合わせて修正、Claude Projectsの無料プランの上限が「5件」であることを明記)。Microsoft 365 Copilot Agent BuilderについてOneDriveの知識ソース対応拡張(フォルダ・最大50ファイル)とSharePointエージェントの従量課金(pay-as-you-go)の仕組みを追記。「社内での乱立を防ぐ」節に、IPA「情報セキュリティ10大脅威2026」でAI利用リスク(シャドーAI含む)が組織向け脅威として初めて第3位に選出された事実を追加し、乱立対策の裏付けを補強
