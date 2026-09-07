@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-07
+- [コンサル・SIer系のAI企業一覧](topics/part16-japan-ai-companies/consulting-sier-ai-companies.md): 全社の情報を最新化・増強し、三菱総合研究所(MRI)を追加
+
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
