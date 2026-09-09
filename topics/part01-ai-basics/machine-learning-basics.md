@@ -4,7 +4,7 @@ part: 1
 chapter: 第3章 機械学習の基礎
 tags: [機械学習, 教師あり学習, 教師なし学習, 強化学習, AI基礎]
 created: 2026-07-06
-updated: 2026-07-29
+updated: 2026-09-09
 ---
 
 # 機械学習の基礎(教師あり学習・教師なし学習・強化学習)
@@ -60,8 +60,9 @@ RLHFはその後も進化しており、報酬モデルの学習を省略して�
 | 代表的な業務での使い道 | 需要予測、与信スコアリング、不良品検知、解約予兆検知、価格予測 | 顧客セグメンテーション、異常検知(過去に異常事例が少ない場合)、レコメンドの土台となる嗜好クラスタリング | 工場・物流・在庫の動的最適化、広告の入札戦略、ゲームAI、LLMの応答品質の調整(RLHF) |
 | 代表アルゴリズム | 線形回帰、決定木、ランダムフォレスト、SVM | k-means、次元削減手法 | Q学習、方策勾配法、PPO・DPO・GRPO(LLMのRLHF・推論モデルの学習で使用) |
 | 向いている場面 | 「何が正解か」を人間が既に知っており、大量に事例がある | 「何が正解か」自体をまだ知らない、探索的にデータを理解したい | 正解データを事前に用意できず、環境との相互作用で改善していく必要がある |
+| 迷ったときの初手 | 正解データを既に持っている、または作るコストが許容範囲 | 正解データを作るコスト・時間が高すぎる、まず全体傾向を掴みたい | まず教師あり・教師なしで代替できないか検討し、それでも足りない場合の最終手段 |
 
-実務でよく混同されるのが異常検知だ。過去に異常事例が十分に蓄積されていて「これが異常」とラベル付けできるなら教師あり学習が適するが、異常事例が少ない・未知の異常を検知したい場合は教師なし学習(正常データの分布から外れるものを検知する)の方が適している([Sky株式会社の解説](https://www.skygroup.jp/media/article/3445/))。「精度が高いから」という理由だけで教師あり学習を選ぶと、そもそも正解ラベルを用意できずプロジェクトが頓挫することがあるため、まず「正解ラベルを現実的に用意できるか」を最初に確認するのが実務のコツである。
+実務でよく混同されるのが異常検知だ。過去に異常事例が十分に蓄積されていて「これが異常」とラベル付けできるなら教師あり学習が適するが、異常事例が少ない・未知の異常を検知したい場合は教師なし学習(正常データの分布から外れるものを検知する)の方が適している([Sky株式会社の解説](https://www.skygroup.jp/media/article/3445/)、[AI Market「異常検知とは」2026年最新版](https://ai-market.jp/technology/abnormal-detection/))。「精度が高いから」という理由だけで教師あり学習を選ぶと、そもそも正解ラベルを用意できずプロジェクトが頓挫することがあるため、まず「正解ラベルを現実的に用意できるか」を最初に確認するのが実務のコツである。目安としては、ラベル付けのコストが許容範囲なら教師あり学習の方が精度は高いが、ラベルなしで即座に着手できる教師なし学習を探索フェーズの第一歩として選ぶ、という順序が現実的である。
 
 ## 実務での使い方
 
@@ -83,7 +84,10 @@ RLHFはその後も進化しており、報酬モデルの学習を省略して�
 | 未知のサイバー攻撃パターンを検知したい | 教師なし学習(異常検知) | 「通常と異なる通信パターンを検出」 |
 | 倉庫のロボットの搬送ルートを状況に応じて最適化したい | 強化学習 | シミュレーション上で試行錯誤し、搬送効率が最も高いルート選択方針を獲得 |
 
-これらは自社でゼロから開発する場合は情シス・データ部門やベンダーとの協業が前提になるが、Excel・BIツール(Tableau、Power BIなど)に付属する「予測」「クラスター分析」機能や、クラウドサービス(Google Cloud、Microsoft Azure、AWSの機械学習系サービス)のノーコード機能を使えば、専門のエンジニアがいなくても簡易的な教師あり学習・教師なし学習を試すことができる。まずは自社データをBIツールの予測機能にかけてみる、という小さな一歩が現実的な入り口になる。
+これらは自社でゼロから開発する場合は情シス・データ部門やベンダーとの協業が前提になるが、専門のエンジニアがいなくても試せるノーコードの選択肢は2026年9月時点で以下のように整理できる。
+
+- **Excel・BIツールの付属機能**: Excelの「予測シート」、TableauはEinstein Discoveryで予測モデリングや「もしこうだったら」のシナリオ分析をダッシュボードに組み込める([Tableau公式ブログの解説](https://www.tableau.com/ja-jp/blog))。Power BIも予測・傾向分析のビジュアルを標準搭載しており、まず自社データをこれらの予測機能にかけてみるのが最も敷居の低い入り口になる。
+- **クラウドのノーコードML**: AWSは「Amazon SageMaker Canvas」でデータ取り込み〜モデル構築〜予測までをコード不要・画面操作だけで完結できる([AWS公式ドキュメント](https://docs.aws.amazon.com/ja_jp/sagemaker/latest/dg/canvas.html))。Microsoftは「Azure Machine Learning」のノーコードdesignerに加え、2026年はAI関連サービスの窓口が「Microsoft Foundry」に整理されつつある([AI総合研究所の解説](https://www.ai-souken.com/article/azure-ai-services-introduction))。Googleは長年「AutoML」ブランドで提供してきたノーコードML機能をVertex AIに統合していたが、2026年4月のGoogle Cloud Next '26で発表された「Gemini Enterprise Agent Platform」にさらに統合が進んでいる([アイフレンズの解説](https://aifriends.jp/gemini-enterprise-agent-platform-google-vertex-ai-rebrand-2026/))。旧称(AutoML・Vertex AI)で検索すると情報が古い場合があるため、最新のツール名で検索し直すのが実務のコツである。
 
 ## 注意点・よくある誤解
 
@@ -103,6 +107,10 @@ RLHFはその後も進化しており、報酬モデルの学習を省略して�
 - [LLMの仕組み:確率的単語予測と学習プロセス](../part02-llm-basics/llm-mechanism-basics.md)
 
 ## 更新履歴
+
+### 2026-09-09: 実務ツールの節をノーコードML・BIツールの最新名称に最新化、異常検知の判断基準を補強
+- **内容**: 「実務での使い方」節のクラウド・BIツール記述を具体化。Amazon SageMaker Canvas、Azure Machine LearningのノーコードdesignerとMicrosoft Foundryへの整理、Google CloudのAutoML/Vertex AIが2026年4月のGoogle Cloud Next '26で「Gemini Enterprise Agent Platform」へ統合された経緯を追記し、旧称で調べると情報が古い場合がある旨を明記。「使いどころ・使い分け」の比較表に「迷ったときの初手」の行を追加し、異常検知における教師あり/教師なしの選択基準(ラベル付けコストと着手の早さのトレードオフ)を補強
+- **出典**: [アイフレンズ「Gemini Enterprise Agent Platform」](https://aifriends.jp/gemini-enterprise-agent-platform-google-vertex-ai-rebrand-2026/)、[AI総合研究所「Azureで使えるAIサービス」](https://www.ai-souken.com/article/azure-ai-services-introduction)、[AWS公式ドキュメント「SageMaker Canvas」](https://docs.aws.amazon.com/ja_jp/sagemaker/latest/dg/canvas.html)、[AI Market「異常検知とは」2026年最新版](https://ai-market.jp/technology/abnormal-detection/)
 
 ### 2026-07-29: 強化学習の節にRLHF以降の発展(DPO・GRPO・RLVR)と推論モデルとの関係を追記
 - **内容**: 「強化学習」節に、RLHFの後継として登場したDPO(報酬モデルを介さない直接選好最適化)とGRPO(検証可能な報酬によるRLVR)を追加し、DeepSeek-R1やOpenAI o3、Gemini「Thinking」、Claudeの拡張思考のような「推論モデル」がこれらの手法で鍛えられている位置づけを整理。使いどころ・使い分けの比較表の代表アルゴリズム欄も更新
