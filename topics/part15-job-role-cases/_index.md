@@ -206,6 +206,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第17章 経営者・管理職
 - [経営者・管理職における生成AI活用事例](executive-management-ai-use-cases.md)
+- [中間管理職(マネージャー)における生成AI活用事例](middle-manager-ai-use-cases.md)
 ### 第16章 コンサルタント・リサーチャー
 - [コンサルタント・リサーチャー職における生成AI活用事例](consultant-researcher-ai-use-cases.md)
 
