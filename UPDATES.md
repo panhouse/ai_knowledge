@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-11
+- [ITプロジェクトマネージャー(システム開発PM)における生成AI活用事例](topics/part15-job-role-cases/it-project-manager-ai-use-cases.md): 新規執筆(見積もり・WBS・ステアリングコミッティ報告・議事録要約・リスク管理・RFP評価。TIS・NTTデータ・日立情報通信エンジニアリング・SCSK・PMIの5事例を収録)
+
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
