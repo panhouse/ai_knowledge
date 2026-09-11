@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-11
+- [スケジュール調整・日程管理AI企業一覧(国内)](topics/part16-japan-ai-companies/scheduling-appointment-coordination-ai-companies-japan.md): 新規執筆(Jicoo・immedio・AIさくらさん・PKSHA×トライアンフ・TimeRexなど生成AI機能を持つ日程調整サービスを整理)
+
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
