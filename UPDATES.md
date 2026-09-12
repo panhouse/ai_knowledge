@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-12
+- [測量・地図(地理空間情報)業界における生成AI活用事例](topics/part14-industry-cases/geospatial-mapping-industry-ai-use-cases.md): 新規執筆(衛星画像・空中写真のAI変化検出、対話型AIによる地図作成、住所データのLLMクレンジング)
+
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
