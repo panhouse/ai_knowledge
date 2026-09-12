@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-12
+- [自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例](topics/part14-industry-cases/auto-parts-supplier-industry-ai-use-cases.md): 新規執筆(技術文書解析・品質検査・需要予測・技能伝承・全社基盤・予知保全の事例カタログ)
+
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
