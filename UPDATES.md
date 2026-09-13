@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-13
+- [GPTsのナレッジファイルとアクション連携](topics/part06-custom-ai/gpts-knowledge-and-actions.md): ◯◯の節を最新化
+
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
