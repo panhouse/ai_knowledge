@@ -33,6 +33,7 @@
 - [製薬MR(医薬情報担当者)における生成AI活用事例](topics/part15-job-role-cases/pharma-mr-ai-use-cases.md): 新規執筆(薬機法・製薬協コード下でのMR業務における生成AI活用事例カタログ)
 ## 2026-09-07
 - [生成AIの出力検証(出力側ガードレール)の基本](topics/part04-risk-security/ai-output-validation-basics.md): 新規執筆(システムプロンプト漏洩・PII漏洩の検知、構造化出力/スキーマ検証、人間による承認ゲート)
+- [カスタムAIの基礎(共通設計原則)](topics/part06-custom-ai/custom-ai-design-principles.md): 「Skills」の台頭とGemini Gem終了報道を反映して最新化・増強
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
