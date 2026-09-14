@@ -129,3 +129,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [スケジュール調整・日程管理AI企業一覧(国内)](scheduling-appointment-coordination-ai-companies-japan.md)
 - [コンテンツモデレーション・不正利用検知AI企業一覧(国内)](content-moderation-fraud-detection-ai-companies-japan.md)
 - [マテリアルズインフォマティクス(材料開発AI)企業一覧(国内)](materials-informatics-ai-companies-japan.md)
+- [衛星データ解析・宇宙関連AI企業一覧(国内)](satellite-earth-observation-ai-companies-japan.md)
