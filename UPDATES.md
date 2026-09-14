@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-14
+- [暗号資産・仮想通貨取引所業界における生成AI活用事例](topics/part14-industry-cases/crypto-exchange-industry-ai-use-cases.md): 新規執筆(eKYC・AML不正検知・多言語カスタマーサポートを中心に整理)
+
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
