@@ -40,6 +40,8 @@
 - [議事録・文字起こしAI企業一覧](topics/part16-japan-ai-companies/meeting-minutes-ai-companies-japan.md): 既存8社の料金・最新動向の節を最新化・増強
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Work/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): ChatGPT Tasksのイベントトリガー・Gemini SparkのGoogle AI Pro拡大・Copilot Coworkの「Automations」改称等を反映して最新化・増強
 - [オープンソースAIモデルのライセンス比較(商用利用時の論点)](topics/part08-specialized-ai-tools/open-source-model-license-comparison.md): Gemma4のApache 2.0全面移行、GLM/Kimiの追加、国内モデルのライセンス状況を反映して最新化・増強
+## 2026-09-08
+- [防犯・監視カメラ映像解析AI企業一覧(国内)](topics/part16-japan-ai-companies/video-surveillance-analytics-ai-companies-japan.md): 新規執筆(防犯・監視カメラ映像解析AI企業一覧)
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
