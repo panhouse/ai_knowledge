@@ -144,3 +144,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [動物園・水族館業界における生成AI活用事例](zoo-aquarium-industry-ai-use-cases.md)
 - [eスポーツ業界における生成AI活用事例](esports-industry-ai-use-cases.md)
 - [フリーランス・ギグワーカープラットフォーム業界における生成AI活用事例](gig-economy-platform-industry-ai-use-cases.md)
+- [家電量販店業界における生成AI活用事例](consumer-electronics-retail-industry-ai-use-cases.md)
