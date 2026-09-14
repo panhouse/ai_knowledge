@@ -139,3 +139,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [外国人材紹介・技能実習/特定技能支援業界における生成AI活用事例](foreign-worker-staffing-industry-ai-use-cases.md)
 - [アニメ・映像制作業界における生成AI活用事例](anime-video-production-industry-ai-use-cases.md)
 - [障害福祉サービス事業者における生成AI活用事例](disability-welfare-services-ai-use-cases.md)
+- [フリマ・C2Cマーケットプレイス運営業界における生成AI活用事例](c2c-marketplace-platform-industry-ai-use-cases.md)

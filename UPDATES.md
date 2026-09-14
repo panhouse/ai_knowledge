@@ -27,6 +27,7 @@
 - [電話自動応答・音声AI受付(ボイスボット)企業一覧(国内)](topics/part16-japan-ai-companies/voicebot-phone-reception-ai-companies-japan.md): 新規執筆(IVRy・ミライAI・fondesk IVR・Switch・AI Worker VoiceAgentの計5社を収録)
 - [障害福祉サービス事業者における生成AI活用事例](topics/part14-industry-cases/disability-welfare-services-ai-use-cases.md): 新規執筆(就労継続支援・放課後等デイサービス・グループホーム・相談支援など障害福祉サービス事業者の生成AI活用事例)
 - [ペットテック(ペット関連)AI企業一覧(国内)](topics/part16-japan-ai-companies/pettech-ai-companies-japan.md): 新規執筆(見守りデバイス・痛み検知AI・保険金査定AIの国内5社を収録)
+- [フリマ・C2Cマーケットプレイス運営業界における生成AI活用事例](topics/part14-industry-cases/c2c-marketplace-platform-industry-ai-use-cases.md): 新規執筆(出品支援・検索・信頼安全・カスタマーサポートの4領域でメルカリ等の事例を整理)
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
