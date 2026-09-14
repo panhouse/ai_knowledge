@@ -6,6 +6,7 @@
 
 ## 2026-09-12
 - [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): 2026年後半の最新調査・検知ツール動向を反映して最新化・増強
+- [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): 主要サービスの提供状況の節を最新化・増強
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
