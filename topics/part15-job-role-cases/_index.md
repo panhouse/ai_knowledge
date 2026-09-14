@@ -205,6 +205,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 
 ### 第15章 翻訳・通訳
 - [翻訳・通訳担当における生成AI活用事例](translation-interpretation-ai-use-cases.md)
+- [字幕翻訳・ローカライズ担当における生成AI活用事例](subtitle-localization-specialist-ai-use-cases.md)
 
 ### 第17章 経営者・管理職
 - [経営者・管理職における生成AI活用事例](executive-management-ai-use-cases.md)
