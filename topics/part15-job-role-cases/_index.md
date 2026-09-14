@@ -238,3 +238,4 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [看護師・医療従事者における生成AI活用事例](nurse-medical-staff-ai-use-cases.md)
 - [通関士・貿易事務担当者における生成AI活用事例](customs-broker-trade-operations-ai-use-cases.md)
 - [美容師・理容師における生成AI活用事例](hairdresser-barber-ai-use-cases.md)
+- [塾講師・家庭教師における生成AI活用事例](tutor-cram-school-instructor-ai-use-cases.md)

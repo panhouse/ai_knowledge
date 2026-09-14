@@ -78,6 +78,7 @@
 - [百貨店業界における生成AI活用事例](topics/part14-industry-cases/department-store-industry-ai-use-cases.md): 新規執筆(外商・インバウンド・VMD等、百貨店特有のAI活用事例)
 - [生産技術者(プロセス・設備エンジニア)における生成AI活用事例](topics/part15-job-role-cases/production-engineer-process-technology-ai-use-cases.md): 新規執筆(設備故障診断・PLC/ラダー生成・予知保全アラート解釈の事例カタログ)
 - [ITプロジェクトマネージャー(システム開発PM)における生成AI活用事例](topics/part15-job-role-cases/it-project-manager-ai-use-cases.md): 新規執筆(見積もり・WBS・ステアリングコミッティ報告・議事録要約・リスク管理・RFP評価。TIS・NTTデータ・日立情報通信エンジニアリング・SCSK・PMIの5事例を収録)
+- [塾講師・家庭教師における生成AI活用事例](topics/part15-job-role-cases/tutor-cram-school-instructor-ai-use-cases.md): 新規執筆(個別指導・家庭教師の診断・記録・保護者報告の実名事例カタログ)
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
