@@ -33,6 +33,7 @@
 - [暗号資産・仮想通貨取引所業界における生成AI活用事例](topics/part14-industry-cases/crypto-exchange-industry-ai-use-cases.md): 新規執筆(eKYC・AML不正検知・多言語カスタマーサポートを中心に整理)
 - [営業支援AI企業一覧](topics/part16-japan-ai-companies/sales-support-ai-companies-japan.md): 既存8社の最新動向を反映し、Sales Markerを新規追加して最新化
 - [ChatGPTの初期設定とデータ利用のオプトアウト](topics/part03-ai-chat-tools/chatgpt-initial-setup-and-opt-out.md): 広告(Ad Controls)設定の追加とZDRに関する誤解の訂正を反映して最新化
+- [ChatGPTのメモリ(Memory)機能](topics/part03-ai-chat-tools/chatgpt-memory-feature.md): Dreaming V3・メモリソース機能・法人プランの既定値を反映して最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
