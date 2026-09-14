@@ -229,3 +229,4 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](financial-advisor-ai-use-cases.md)
 - [医師における生成AI活用事例](physician-ai-use-cases.md)
 - [看護師・医療従事者における生成AI活用事例](nurse-medical-staff-ai-use-cases.md)
+- [通関士・貿易事務担当者における生成AI活用事例](customs-broker-trade-operations-ai-use-cases.md)
