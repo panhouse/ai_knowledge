@@ -14,6 +14,8 @@
 - [自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例](topics/part14-industry-cases/auto-parts-supplier-industry-ai-use-cases.md): 新規執筆(技術文書解析・品質検査・需要予測・技能伝承・全社基盤・予知保全の事例カタログ)
 - [求荷求車・配送マッチングAI企業一覧](topics/part16-japan-ai-companies/freight-matching-logistics-ai-companies-japan.md): 新規執筆(収録5社)
 - [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): OWASP LLM Top 10 2026・UK AISIの実評価事例・Anthropicバグバウンティ公開などを反映して最新化・増強
+## 2026-09-13
+- [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 現在のAIバブル論の節を最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
