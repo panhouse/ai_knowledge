@@ -150,3 +150,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [会計事務所・税理士法人における生成AI活用事例](accounting-tax-firm-industry-ai-use-cases.md)
 - [図書館・博物館業界における生成AI活用事例](library-museum-industry-ai-use-cases.md)
 - [地方銀行・信用金庫業界における生成AI活用事例](regional-bank-credit-union-ai-use-cases.md)
+- [データセンター運営業界における生成AI活用事例](data-center-operation-industry-ai-use-cases.md)
