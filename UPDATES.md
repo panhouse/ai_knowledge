@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-14
+- [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
+
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
