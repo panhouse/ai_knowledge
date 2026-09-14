@@ -9,6 +9,8 @@
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [人事(HR)職における生成AI活用事例](topics/part15-job-role-cases/hr-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [法務職における生成AI活用事例](topics/part15-job-role-cases/legal-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
+## 2026-09-05
+- [LLMの得意・不得意と挙動の特性](topics/part02-llm-basics/llm-strengths-and-limitations.md): ナレッジカットオフの節を最新化・増強
 
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
