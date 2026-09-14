@@ -16,6 +16,7 @@
 - [ChatGPTのWeb検索機能](topics/part03-ai-chat-tools/chatgpt-web-search-feature.md): 検索クエリのfan-out化・広告の選定ロジック・Atlas終了を反映して最新化・増強
 - [JSONモード・Structured Outputsの基本](topics/part09-api-development/json-mode-structured-outputs.md): Anthropicパラメータ移行・OpenAI GPT-5.6・Gemini新API(Interactions API)登場を反映して最新化・増強
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): 主要モデルの世代・料金・オープンウェイト動向を2026年9月時点に最新化・増強
+- [Claude Codeの基本](topics/part11-ai-agents/claude-code-basics.md): 権限モデル(Autoモードの既定化)・料金・機能を2026年9月時点に最新化・増強
 
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
