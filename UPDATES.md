@@ -18,6 +18,7 @@
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 現在のAIバブル論の節を最新化
 - [Tree of Thought(ToT)プロンプティング](topics/part05-prompt-engineering/tree-of-thought-prompting.md): 推論モデルの世代交代(GPT-6 Astra・Claude Opus 5・Gemini 3.1 Pro)を踏まえて使いどころ・実務例の節を最新化
 - [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の訴訟動向・ベンダー補償規約・司法判断の節を最新化
+- [人事・採用AI企業一覧](topics/part16-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 掲載企業の情報を最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
