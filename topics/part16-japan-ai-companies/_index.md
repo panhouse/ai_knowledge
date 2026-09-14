@@ -126,3 +126,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [データセンター・AIインフラ運用AI企業一覧(国内)](datacenter-ai-infrastructure-companies-japan.md)
 - [ビル管理・スマートビル(BEMS)AI企業一覧](facility-management-smart-building-ai-companies-japan.md)
 - [スケジュール調整・日程管理AI企業一覧(国内)](scheduling-appointment-coordination-ai-companies-japan.md)
+- [コンテンツモデレーション・不正利用検知AI企業一覧(国内)](content-moderation-fraud-detection-ai-companies-japan.md)
