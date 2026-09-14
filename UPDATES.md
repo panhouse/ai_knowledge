@@ -24,6 +24,7 @@
 ## 2026-09-06
 - [外国人材紹介・技能実習/特定技能支援業界における生成AI活用事例](topics/part14-industry-cases/foreign-worker-staffing-industry-ai-use-cases.md): 新規執筆(技能実習/特定技能支援業界のAI活用マップと制度移行の最新状況)
 - [アニメ・映像制作業界における生成AI活用事例](topics/part14-industry-cases/anime-video-production-industry-ai-use-cases.md): 新規執筆(中割り・背景生成・AI吹替・著作権/労働問題の論点整理)
+- [電話自動応答・音声AI受付(ボイスボット)企業一覧(国内)](topics/part16-japan-ai-companies/voicebot-phone-reception-ai-companies-japan.md): 新規執筆(IVRy・ミライAI・fondesk IVR・Switch・AI Worker VoiceAgentの計5社を収録)
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
