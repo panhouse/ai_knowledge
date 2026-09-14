@@ -68,6 +68,7 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [訪問看護・在宅医療における生成AI活用事例](home-nursing-care-ai-use-cases.md)
 - [宿泊・観光業における生成AI活用事例](hospitality-tourism-ai-use-cases.md)
 - [IT・情報通信における生成AI活用事例](it-telecom-ai-use-cases.md)
+- [SIer・システムインテグレーション業界における生成AI活用事例](system-integrator-industry-ai-use-cases.md)
 - [物流・運輸における生成AI活用事例](logistics-transportation-ai-use-cases.md)
 - [製造業における生成AI活用事例](manufacturing-ai-use-cases.md)
 - [メディア・広告・エンタメにおける生成AI活用事例](media-entertainment-ai-use-cases.md)
