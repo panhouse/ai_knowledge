@@ -4,7 +4,7 @@ part: 5
 chapter: 第3章 思考を引き出す手法
 tags: [プロンプトエンジニアリング, ToT, 応用手法, 戦略立案, 推論モデル]
 created: 2026-07-06
-updated: 2026-07-30
+updated: 2026-09-13
 ---
 
 # Tree of Thought(ToT)プロンプティング
@@ -31,15 +31,16 @@ ToTが効くのは「唯一の正解がなく、複数のアプローチが並�
 | 外部情報の取得や実際の操作を伴う問題 | ReAct | 最新の競合価格を調べてから比較表を作る、社内システムを検索しながら回答する |
 | 形式・トーンを揃えたいだけの単純作業 | Zero-shot/Few-shot | メール文面の整形、要約のトーン統一 |
 
-もう一段大事な判断軸は「2023年当時ほどToTの効果に期待しすぎない」ことだ。ToTが提案された2023年は、モデルが内部で多段階の探索をしていなかったため、プロンプト側で明示的に「複数案→評価→選択」の型を与える効果が大きかった。しかし2025〜2026年にかけて主流になったOpenAIのGPT-5.1系、Anthropic Claudeの拡張思考(extended thinking)、Google Geminiの「Deep Think」系モデルは、ユーザーに見えない内部処理として既に複数の解法候補を試し、行き詰まれば別の道筋に戻る、という探索を自動でやっている。そのため、これらの推論モデルに対してプロンプトでToTの型を重ねて指示しても、純粋な数学・コーディングのような「唯一の正解がある」タスクでは、素のモデルに任せた方が同等かそれ以上の精度をより低コストで出せることが多いというのが2026年時点での実務的な見立てだ。
+もう一段大事な判断軸は「2023年当時ほどToTの効果に期待しすぎない」ことだ。ToTが提案された2023年は、モデルが内部で多段階の探索をしていなかったため、プロンプト側で明示的に「複数案→評価→選択」の型を与える効果が大きかった。しかし2025〜2026年にかけて主流になった推論モデル、具体的にはOpenAIのGPT-6 Astra・GPT-5.6系、AnthropicのClaude Opus 5(拡張思考の後継である adaptive thinking)、GoogleのGemini 3.1 Pro(Deep Think系)は、ユーザーに見えない内部処理として既に複数の解法候補を試し、行き詰まれば別の道筋に戻る、という探索を自動でやっている。そのため、これらの推論モデルに対してプロンプトでToTの型を重ねて指示しても、純粋な数学・コーディングのような「唯一の正解がある」タスクでは、素のモデルに任せた方が同等かそれ以上の精度をより低コスト・低レイテンシで出せることが多いというのが2026年9月時点での実務的な見立てだ。実際、複数の実務ガイドが2026年時点の原則として「まず推論モデルに(強めのプロンプトを添えて)直接解かせてみて、それで失敗する・迷走する場合にのみToTの型を重ねる」というエスカレーション順序を推奨しており、ToTを最初から使うことは推奨されなくなってきている。
 
-さらに2026年に入って各社が足並みを揃えたのが、「思考する/しない」の二択ではなく**内部探索の強さを段階的に指定できるダイヤル**の標準化だ。OpenAIはGPT-5.1でAPIの`reasoning_effort`パラメータを`none`(推論なし・低遅延)/`low`/`medium`/`high`の4段階で公開し、Google GeminiもDeep Think系モデルで`thinking_budget`を`Minimal`/`Low`/`Medium`/`High`で指定できるようにした。Anthropicも拡張思考の`budget_tokens`で思考量を連続的に調整できる。つまり「複数案を比較検討してから答えてほしい」というニーズの多くは、もはやプロンプトで探索の型を書かなくても、この効果レベルのダイヤルを上げるだけで満たせるようになってきている。プロンプト版ToTの出番は、この項の続きで挙げる「比較の過程を人間が見て検証・修正したい」「複数案の比較表そのものが成果物として必要」という、精度そのものではなく**成果物の形**を目的とする場面に、より明確に絞られてきたと言える。
+さらに2026年にかけて各社が足並みを揃えたのが、「思考する/しない」の二択ではなく**内部探索の強さを段階的に指定できるダイヤル**の標準化だ。OpenAIはAPIの`reasoning_effort`(Responses APIでは`reasoning.effort`)パラメータを公開しており、2026年7月投入のGPT-5.6系では`none`〜`xhigh`の5段階(ただし「これ以上は推論しない」という上限指定であり、簡単な質問では高い段階を指定しても内部的に推論トークンをほぼ使わないことがある)、2026年9月投入の最新フラグシップGPT-6 Astraでは`low`/`medium`/`high`/`xhigh`/`max`の5段階(こちらは常に何らかの推論を行い、`none`は指定できない)を選べる。Google Geminiも3.1系モデルで`thinking_level`パラメータを`low`/`medium`(3.1で新設)/`high`(旧Deep Think相当)/`max`の4段階で公開し(Gemini 3系は思考そのものをオフにはできない)、旧世代の`thinking_budget`(トークン数で直接指定する方式)は3.x系では`thinking_level`と併用不可になった。Anthropicも2026年前半にClaude 4.6世代から、トークン数を直接指定する旧来の`budget_tokens`(拡張思考)を廃止し、`thinking: {type: "adaptive"}`(アダプティブシンキング)と`effort`パラメータ(`low`/`medium`/`high`/`xhigh`/`max`)の組み合わせに刷新した。現行のClaude Opus 5では思考が既定でオンになっており、`effort`が唯一の深さ調整の手段になっている。つまり「複数案を比較検討してから答えてほしい」というニーズの多くは、もはやプロンプトで探索の型を書かなくても、この効果レベルのダイヤルを上げるだけで満たせるようになってきている。プロンプト版ToTの出番は、この項の続きで挙げる「比較の過程を人間が見て検証・修正したい」「複数案の比較表そのものが成果物として必要」という、精度そのものではなく**成果物の形**を目的とする場面に、より明確に絞られてきたと言える。
 
 一方で、次のような場面ではプロンプト版ToTは今も価値がある。
 
 - **比較検討の過程自体を人間が見て選びたい場合**: 推論モデルの内部思考は要約されて見えにくいが、ToTは分岐そのものをテキストとして出力させるため、「なぜその案を選んだか」を人間が検証・修正しやすい
 - **複数案を意思決定者に提示する資料が欲しい場合**: 経営会議・企画書のように、そもそも「複数案の比較表」という成果物が必要な業務
 - **モデルが1つの思い込みに固執しやすいテーマ**: ブレインストーミング的に強制的に視点を分散させたい場合
+- **エージェントのループの中で探索を明示的に制御したい場合**: 業務エージェントが複数の実行プランを試して評価・却下する必要がある場面では、推論モデル任せにせず候補生成と評価をプロンプト(またはワークフロー)側で分離した方が挙動を追いやすい
 
 ## 実務での使い方
 
@@ -87,21 +88,22 @@ Tree of Thoughtsの考え方で検討してください。
 点数が僅差の場合は、両案の良いところを合成した代替案を提示してもかまいません。
 ```
 
-### モデル別の使い分け目安(2026年7月時点)
+### モデル別の使い分け目安(2026年9月時点)
 
 | モデル・モード | プロンプト版ToTの効果 | 理由 |
 |---|---|---|
-| ChatGPTの「Instant」、または`reasoning_effort: none/low`、Claudeの拡張思考オフ、Geminiの「Fast」または`thinking_budget: Minimal` | 有効 | 内部で複数案の探索を自動でしないため、プロンプト側で型を与える価値が大きい |
-| ChatGPTの「Thinking」「Pro」、または`reasoning_effort: medium/high`、Claudeの拡張思考オン(budget_tokens大)、Geminiの「Deep Think」または`thinking_budget: High` | 数学・コーディングなど正解が1つの問題では効果が薄い/むしろ冗長化。戦略立案・複数案提示など「比較の過程」自体が成果物になる問題では依然有効 | 内部で既に多段探索をしているため上乗せ効果が小さいが、比較表という「見える形」を明示的に要求する価値は残る |
+| ChatGPTの軽量モード(`reasoning.effort: none`が選べるGPT-5.6系)、Claudeで思考を無効化した状態、Geminiの`thinking_level: low` | 有効 | 内部で複数案の探索をほぼしないため、プロンプト側で型を与える価値が大きい |
+| ChatGPTの「Thinking」相当(`reasoning.effort: high/xhigh/max`)、Claude Opus 5などの標準の思考オン状態(`effort: high`以上)、Geminiの`thinking_level: high/max`(Deep Think系) | 数学・コーディングなど正解が1つの問題では効果が薄い/むしろ冗長化・高コスト化。戦略立案・複数案提示など「比較の過程」自体が成果物になる問題では依然有効 | 内部で既に多段探索をしているため上乗せ効果が小さいが、比較表という「見える形」を明示的に要求する価値は残る |
 
-まず試すなら、プロンプトでToTの型を書く前に、使っているツールの効果レベル(Thinking/Deep Think/reasoning_effortなど)を一段上げるだけで足りないかを確認するのが2026年時点でのコスト効率の良い順序だ。それでも「比較表という成果物」自体が必要な場合にだけ、プロンプト版ToTを重ねるとよい。
+まず試すなら、プロンプトでToTの型を書く前に、使っているツールの効果レベル(`reasoning.effort`/`thinking_level`/`effort`など、呼び方はツールごとに異なる)を一段上げるだけで足りないかを確認するのが2026年時点でのコスト効率の良い順序だ。それでも「比較表という成果物」自体が必要な場合にだけ、プロンプト版ToTを重ねるとよい。なお各社ともパラメータ名・段階の呼び方は頻繁に変わるため、実際に使う際はツールの最新のヘルプ・APIドキュメントで名称を確認するのが安全だ。
 
 料金面では、ToTは「3案×評価×選定」を1回のプロンプトでまとめて生成させるため、通常のCoTより出力トークン数が数倍に増えやすい。推論モデルと組み合わせるとさらに思考トークンが加算されるため、重要な意思決定に絞って使い、日常的な定型業務には使わないのがコスト管理上の基本になる。
 
 ## 注意点・よくある誤解
 
 - **「ToT=常にCoTより高精度」ではない**: 2023年の論文はパズル的な探索タスクでの結果であり、唯一の正解がある事実確認や単純計算にToTを使っても精度は上がらず、トークン消費と待ち時間だけが増える
-- **推論モデルへの「二重がけ」に注意**: Claudeの拡張思考やChatGPTのThinking、GeminiのDeep Thinkなど、既に内部で多段推論をしているモデルにプロンプト版ToTを重ねても、上乗せ効果は限定的なことが多い。まずは`reasoning_effort`や`thinking_budget`などの効果レベルを上げてモデル任せで試し、「比較表という成果物」が必要な場合にだけ明示的なToT型を使う
+- **推論モデルへの「二重がけ」に注意**: Claude Opus 5の adaptive thinking、ChatGPTのThinking系(`reasoning.effort`)、GeminiのDeep Think系(`thinking_level`)など、既に内部で多段推論をしているモデルにプロンプト版ToTを重ねても、上乗せ効果は限定的なことが多い。まずは各社の効果レベルのパラメータを上げてモデル任せで試し、「比較表という成果物」が必要な場合にだけ明示的なToT型を使う
+- **旧来のトークン数指定は既に廃止・非推奨**: Claudeの`budget_tokens`(拡張思考)は2026年前半の世代から段階的に廃止され、`effort`パラメータ+adaptive thinkingに置き換わった。古い記事やテンプレートに残る`budget_tokens`の指定例は、最新モデルではエラーになる場合があるので鵜呑みにしない
 - **案が3つとも似た方向性になりやすい**: 「毛色が異なる案を」と明示しないと、AIは似たり寄ったりの案を3つ並べるだけになりがちで、比較検討の意味が薄れる
 - **自己評価は自分の案に甘くなりがち**: 1回のプロンプトで「案出し→評価」を両方やらせると、出した案を無理に肯定する評価になることがある。重要な判断では、案出しと評価を別プロンプト・別ターンに分ける、あるいは「あえて否定的な立場から評価して」と指示すると精度が上がる
 - **本物のToT(探索アルゴリズム)と混同しない**: 論文本来のToTは複数回のAPI呼び出しとコードによる探索制御を伴う実装であり、チャット画面での1発プロンプトはあくまで簡易的な模倣である。過大な期待をせず「発想の幅を広げる補助」として使うのが実務的な位置づけ
@@ -117,6 +119,16 @@ Tree of Thoughtsの考え方で検討してください。
 - [プロンプトの基本構成要素](./prompt-basic-structure.md)
 
 ## 更新履歴
+
+### 2026-09-13: 主要3社の推論モデル・世代交代(GPT-6 Astra、Claude Opus 5、Gemini 3.1 Pro)を踏まえて「使いどころ・使い分け」「実務での使い方」「注意点」を最新化
+- **内容**: OpenAIの最新フラグシップがGPT-6 Astra(2026年9月3日発表、`reasoning.effort`は`low`〜`max`の5段階で`none`指定不可)、GPT-5.6系(2026年7月、`reasoning.effort`は`none`〜`xhigh`だが上限指定でありモデルが自律的に推論をスキップすることがある)であること、Google Gemini 3.1 Pro(2026年2月)が`thinking_level`(`low`/`medium`/`high`/`max`)を採用し旧`thinking_budget`と併用不可になったこと、Anthropicが2026年前半のClaude 4.6世代から`budget_tokens`(拡張思考)を廃止して`effort`パラメータ+adaptive thinkingに刷新し、現行のClaude Opus 5では思考が既定でオンになっていることを反映。あわせて「まず推論モデルに直接解かせ、失敗した場合にのみToTの型を重ねる」という2026年時点のエスカレーション順序の考え方、業務エージェントのループ内で探索を明示的に制御したい場合という追加のユースケースを盛り込んだ
+- **出典**: [GPT-6 Astra Model - OpenAI API](https://developers.openai.com/api/docs/models/gpt-6-astra)
+- **出典**: [OpenAI launches its new family of models with GPT-5.6 - TechCrunch](https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/)
+- **出典**: [Gemini 3.1 Pro - Google Cloud Documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-pro)
+- **出典**: [Thinking - Gemini Enterprise Agent Platform - Google Cloud Documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking)
+- **出典**: [Extended thinking - Claude Platform Docs](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)
+- **出典**: [What's new in Claude Opus 5 - Claude Platform Docs](https://platform.claude.com/docs/en/models/opus-5/whats-new-opus-5)
+- **出典**: [What is Tree of Thoughts Prompting? Branching Reasoning in 2026 - FutureAGI](https://futureagi.com/blog/what-is-tree-of-thoughts-prompting-2026/)
 
 ### 2026-07-30: 推論モデルの「効果レベルのダイヤル」標準化を踏まえて使い分け節を最新化
 - **内容**: OpenAI GPT-5.1の`reasoning_effort`(none/low/medium/high)、Google GeminiのDeep Think系`thinking_budget`(Minimal/Low/Medium/High)、Anthropic Claudeの拡張思考`budget_tokens`など、2026年に主要3社が「思考する/しない」の二択から段階指定できるダイヤルへ足並みを揃えたことを反映し、「使いどころ・使い分け」「モデル別の使い分け目安」「注意点」の各節を更新。プロンプト版ToTの出番が「精度」より「比較表という成果物の形」を目的とする場面により明確に絞られてきた、という論点を追加

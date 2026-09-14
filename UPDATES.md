@@ -16,6 +16,7 @@
 - [ジェイルブレイク(脱獄)とは何か・対策](topics/part04-risk-security/jailbreak-basics.md): OWASP LLM Top 10 2026・UK AISIの実評価事例・Anthropicバグバウンティ公開などを反映して最新化・増強
 ## 2026-09-13
 - [AIの3つのブームと「冬の時代」――生成AIブームは何が違うのか](topics/part01-ai-basics/ai-boom-history-and-ai-winters.md): 現在のAIバブル論の節を最新化
+- [Tree of Thought(ToT)プロンプティング](topics/part05-prompt-engineering/tree-of-thought-prompting.md): 推論モデルの世代交代(GPT-6 Astra・Claude Opus 5・Gemini 3.1 Pro)を踏まえて使いどころ・実務例の節を最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
