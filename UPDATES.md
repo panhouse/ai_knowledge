@@ -8,6 +8,7 @@
 - [シャドーAI(無許可利用)対策](topics/part04-risk-security/shadow-ai-basics.md): 2026年後半の最新調査・検知ツール動向を反映して最新化・増強
 - [ファインチューニング・RAG・プロンプトの使い分け](topics/part02-llm-basics/finetuning-vs-rag-vs-prompting.md): 主要サービスの提供状況の節を最新化・増強
 - [ChatGPTの初期設定とカスタム指示の書き方](topics/part03-ai-chat-tools/chatgpt-custom-instructions.md): 既存チャットへの即時反映・GPT-6 Astra・ChatGPT Pulse・Claudeメモリ導入を反映して最新化・増強
+- [動画配信・OTTプラットフォーム業界における生成AI活用事例](topics/part14-industry-cases/video-streaming-ott-industry-ai-use-cases.md): 新規執筆
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離

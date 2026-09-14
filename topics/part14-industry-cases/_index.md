@@ -153,3 +153,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [データセンター運営業界における生成AI活用事例](data-center-operation-industry-ai-use-cases.md)
 - [カラオケ・ネットカフェ・複合カフェ業界における生成AI活用事例](karaoke-internet-cafe-amusement-facility-ai-use-cases.md)
 - [百貨店業界における生成AI活用事例](department-store-industry-ai-use-cases.md)
+- [動画配信・OTTプラットフォーム業界における生成AI活用事例](video-streaming-ott-industry-ai-use-cases.md)
