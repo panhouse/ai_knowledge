@@ -31,6 +31,7 @@
 - [カスタマーサポートAI企業一覧](topics/part16-japan-ai-companies/customer-support-ai-companies-japan.md): 既存7社の情報を最新化しAI Shiftを新規追加
 - [ChatGPTの「プロジェクト」機能](topics/part03-ai-chat-tools/chatgpt-projects-feature.md): 共有プロジェクトの全プラン展開とプロジェクト記憶の切り替え、ChatGPT Workの拡張を反映して最新化
 - [暗号資産・仮想通貨取引所業界における生成AI活用事例](topics/part14-industry-cases/crypto-exchange-industry-ai-use-cases.md): 新規執筆(eKYC・AML不正検知・多言語カスタマーサポートを中心に整理)
+- [営業支援AI企業一覧](topics/part16-japan-ai-companies/sales-support-ai-companies-japan.md): 既存8社の最新動向を反映し、Sales Markerを新規追加して最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
