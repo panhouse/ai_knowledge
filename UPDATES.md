@@ -55,6 +55,7 @@
 - [バッチ処理(Batch API)の基本](topics/part09-api-development/batch-api-basics.md): Mistral Batch API・xAI Grokの割引実態を追記し、各社の上限・機能を2026年9月時点に最新化
 - [RAGの精度を上げる方法](topics/part07-data-analysis/rag-accuracy-improvement.md): チャンクオーバーラップ・コンテキスト崖の最新研究とHyDEを反映し最新化・増強
 - [AGI(汎用人工知能)とは何か](topics/part13-ai-trends/what-is-agi.md): OpenAI「GPT-6 Astra」のAGI宣言と独立系ベンチマークとの食い違いを反映して最新化・増強
+- [DifyでのRAG実装(ナレッジベースの作成とワークフロー連携)](topics/part10-nocode-lowcode/dify-rag-implementation.md): ナレッジパイプラインとサマリーインデックスを追記して最新化
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
