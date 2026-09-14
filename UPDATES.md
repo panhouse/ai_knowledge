@@ -35,6 +35,7 @@
 - [生成AIの出力検証(出力側ガードレール)の基本](topics/part04-risk-security/ai-output-validation-basics.md): 新規執筆(システムプロンプト漏洩・PII漏洩の検知、構造化出力/スキーマ検証、人間による承認ゲート)
 - [カスタムAIの基礎(共通設計原則)](topics/part06-custom-ai/custom-ai-design-principles.md): 「Skills」の台頭とGemini Gem終了報道を反映して最新化・増強
 - [契約書・法務AI企業一覧](topics/part16-japan-ai-companies/legal-contract-ai-companies-japan.md): 全社の情報を2026年9月時点に最新化し、マネーフォワードを新規追加
+- [Difyワークフローの主要ノードと組み立て方](topics/part10-nocode-lowcode/dify-workflow-nodes.md): 「終了」→「出力」ノードへの名称・仕様変更、エージェントノードの拡張、変数代入・ドキュメント抽出・リスト操作ノード等を反映して最新化・増強
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
