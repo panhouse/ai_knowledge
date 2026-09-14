@@ -20,6 +20,7 @@
 - [生成AIの著作権リスクと実務での注意点](topics/part04-risk-security/copyright-risks-in-generative-ai.md): 海外の訴訟動向・ベンダー補償規約・司法判断の節を最新化
 - [人事・採用AI企業一覧](topics/part16-japan-ai-companies/hr-recruiting-ai-companies-japan.md): 掲載企業の情報を最新化
 - [ChatGPTの音声(Advanced Voice Mode)機能](topics/part03-ai-chat-tools/chatgpt-voice-mode-feature.md): 料金プラン(Pro二段階化・Team→Business改称)とSynthID電子透かしの節を2026年9月時点に最新化
+- [特化型AIツールの選び方(用途別マップと比較)](topics/part08-specialized-ai-tools/specialized-ai-tools-selection-guide.md): 料金・モデル動向とWindsurf/Devin Desktop、Sora終了、Suno・Udio訴訟和解の節を最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離

@@ -4,7 +4,7 @@ part: 8
 chapter: 第5章 ツール横断の選び方
 tags: [ツール選定, 特化型AI, 検索特化AI, コーディング支援AI, ローカルLLM, シャドーAI]
 created: 2026-07-06
-updated: 2026-07-29
+updated: 2026-09-13
 ---
 
 # 特化型AIツールの選び方(用途別マップと比較)
@@ -32,14 +32,14 @@ ChatGPT・Gemini・Claudeのような汎用チャットAIは「幅広いタス�
 Part 8はこの5つの軸に沿って章立てされている。
 
 - **第1章 検索・リサーチ特化**: Perplexity・GenSpark・NotebookLM。ライブのWeb検索、または「渡した資料だけ」に根拠を絞ることでハルシネーション(AIが事実でないことをもっともらしく生成する現象)を抑える
-- **第2章 コーディング支援AI**: GitHub Copilot・[Cursor](./cursor-basics.md)・[Cline](./cline-basics.md)・[Windsurf(2026年6月にCognition社の「Devin Desktop」へ製品名変更)](./windsurf-basics.md)。IDE(統合開発環境)に統合し、コード補完から複数ファイルの自律編集まで担う
-- **第3章 画像・動画・音声の生成AI**: [画像生成AI](./image-generation-ai-basics.md)(Midjourney、Stable Diffusion、GPT Image/DALL-E 3など)・[動画生成AI](./video-generation-ai-basics.md)(Runway、Luma Dream Machine、Klingなど。OpenAI Soraは2026年3月に提供終了が発表され、Web/アプリは同年4月26日、APIも同年9月24日に終了予定)・[音声・音楽生成AI](./audio-music-generation-ai-basics.md)(Suno、Udio、ElevenLabsなど)。モダリティ(表現の種類)ごとに専用のモデル・UIが発展している
+- **第2章 コーディング支援AI**: GitHub Copilot・[Cursor](./cursor-basics.md)・[Cline](./cline-basics.md)・[Windsurf(2026年6月にCognition社の「Devin Desktop」へ製品名変更。ローカルエージェントもCascadeから後継の「Devin Local」に置き換わった)](./windsurf-basics.md)。IDE(統合開発環境)に統合し、コード補完から複数ファイルの自律編集まで担う
+- **第3章 画像・動画・音声の生成AI**: [画像生成AI](./image-generation-ai-basics.md)(Midjourney、Stable Diffusion、GPT Image/DALL-E 3など)・[動画生成AI](./video-generation-ai-basics.md)(Runway、Luma Dream Machine、Klingなど。OpenAI Soraは2026年3月に提供終了が発表され、Web/アプリは同年4月26日に終了済み、APIも同年9月24日に終了予定)・[音声・音楽生成AI](./audio-music-generation-ai-basics.md)(Suno、Udio、ElevenLabsなど。SunoはWarner Music Groupと、UdioはUniversal Music GroupおよびWarnerと2025〜2026年にかけて相次いで和解し、無断学習モデルの廃止・ライセンス済みモデルへの移行が進む)。モダリティ(表現の種類)ごとに専用のモデル・UIが発展している
 - **第4章 ローカル・オープンモデル**: Ollama・LM StudioでLlama・Gemma・Mistral・DeepSeek・Qwenなどのオープンウェイトモデルを自社機材で動かす。「何を作るか」ではなく「どこで処理するか」を変える選択肢
 - **第6章 会議・議事録AI**: [議事録・文字起こしAI](./meeting-minutes-ai-basics.md)。Notta・Rimo Voice・tl;dvなどの専用ツールと、Teams(Copilot)・Google Meet(Gemini)・Zoom(AI Companion)の会議ツール純正機能に分かれる
 
 ### 「ツールが増えすぎる」問題は数字にも表れている
 
-Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア)実態調査によれば、大企業が実際に利用しているアプリケーションは平均2,191個に上り、その6割超がIT部門の正式な承認・管理の外にあるという。AIツールについても、従業員の67%が会社の許可なく未承認のAIツールを業務に使っているという調査結果(Second Talent、2026年)がある。特化型AIツールは効果が大きい分、選定・契約を個人任せにすると「似たようなツールに何重にも課金している」「情報漏洩リスクを誰も把握していない」という状態に陥りやすい。だからこそ、個人の思いつきではなく「課題→カテゴリ→ツール」という共通の地図を持つ意味がある。
+Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア)実態調査によれば、大企業が実際に利用しているアプリケーションは平均2,191個に上り、その6割超がIT部門の正式な承認・管理の外にあるという。AIツールについても、米国従業員の65%が雇用主未承認のAIツールを業務に使っており、そのうち71%が機密データをそれらのツールに入力したことを認めているという2026年の調査(Teramind「Shadow AI Report 2026」)がある。英国の調査でも71%が職場で未承認の一般消費者向けAIツールを使った経験があると回答しており、シャドーAI(会社が把握していないAIツールの業務利用)は国・調査を問わず共通の課題になっている。特化型AIツールは効果が大きい分、選定・契約を個人任せにすると「似たようなツールに何重にも課金している」「情報漏洩リスクを誰も把握していない」という状態に陥りやすい。だからこそ、個人の思いつきではなく「課題→カテゴリ→ツール」という共通の地図を持つ意味がある。
 
 ## 使いどころ・使い分け
 
@@ -60,7 +60,7 @@ Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア
 | 社内文書・契約書・議事録など、手元の資料だけを根拠に正確に答えてほしい | 検索特化型AI(ソースグラウンデッド) | NotebookLM | [NotebookLMの基本](./notebooklm-basics.md) |
 | コードを書く・レビューする時間を減らしたい、実装を任せたい | コーディング支援AI | GitHub Copilot、Cursor、Cline、Windsurf(Devin Desktop) | [GitHub Copilotの基本](./github-copilot-basics.md)・[Cursorの基本](./cursor-basics.md)・[Clineの基本](./cline-basics.md)・[Windsurfの基本](./windsurf-basics.md) |
 | 広告バナー・SNS用イラスト・商品イメージなど画像を作りたい | 画像生成AI | Midjourney、Stable Diffusion、GPT Image/DALL-E 3、Nano Banana、Adobe Firefly | [画像生成AIの基本](./image-generation-ai-basics.md) |
-| プロモーション動画・ショート動画・簡易アニメーションを作りたい | 動画生成AI | Runway、Luma Dream Machine、Kling(Soraは提供終了予定のため新規採用は非推奨) | [動画生成AIの基本](./video-generation-ai-basics.md) |
+| プロモーション動画・ショート動画・簡易アニメーションを作りたい | 動画生成AI | Runway(Gen-4.5)、Luma Dream Machine、Kling(3.0)、Google Veo(Soraは2026年4月にWeb/アプリを終了済み、APIも同年9月末で終了するため新規採用は非推奨) | [動画生成AIの基本](./video-generation-ai-basics.md) |
 | BGM・ナレーション・ポッドキャスト風音声を作りたい | 音声・音楽生成AI | Suno、Udio、ElevenLabs など | [音声・音楽生成AIの基本](./audio-music-generation-ai-basics.md) |
 | 顧客情報・契約書・未公開の技術情報など、外部にデータを一切出したくない | ローカル・オープンモデル | Ollama、LM Studio | [ローカルLLMの基本](./local-llm-basics.md) |
 | 会議中のメモ取りをやめて議論に集中したい、議事録を自動で残したい | 会議・議事録AI | Notta、Rimo Voice、tl;dv、またはTeams Copilot・Google Meet(Gemini)・Zoom AI Companion | [議事録・文字起こしAIの基本](./meeting-minutes-ai-basics.md) |
@@ -79,7 +79,7 @@ Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア
 
 特化型ツール同士、および汎用チャットAIとの機能境界は固定的ではない。例えば GenSpark は検索特化から出発しながらスライド・表の自動生成まで担う「資料化エージェント」に育っており、GitHub Copilot の Agent Mode は単純な補完ツールから複数ファイルを横断編集する汎用的な自律エージェントに近づいている。逆にChatGPT・Geminiアプリの検索機能や画像生成機能も年々強化されており、「軽い用途なら汎用チャットAI、その用途を頻繁に・大量にこなすなら特化型ツール」という濃淡で捉えるのが実務的である。ツール名ではなく「今の課題に一番効くのはどれか」を都度見直す姿勢が重要になる。
 
-この「境界のあいまいさ」は、ツール自体の消長にもつながる。コーディング支援AIのWindsurfは2026年6月、開発元Cognition社の看板エージェント「Devin」ブランドに統合され製品名が「Devin Desktop」に変わった。動画生成AIのSoraは2026年3月に提供終了が発表され、Web/アプリ版は同年4月26日に、APIも同年9月24日に停止予定である。「今人気のツール」がそのまま数か月後も存在するとは限らない前提で、特定ツールへの過度な業務依存(スクリプト・マニュアルへの固定的な組み込みなど)は避けるのが実務上の教訓になる。
+この「境界のあいまいさ」は、ツール自体の消長にもつながる。コーディング支援AIのWindsurfは2026年6月、開発元Cognition社の看板エージェント「Devin」ブランドに統合され製品名が「Devin Desktop」に変わり、同年7月1日にはローカルエージェントのCascadeが終了し、Rustで書き直され高速・低コストになった後継「Devin Local」に置き換わった。Devin DesktopはOSSの「Agent Client Protocol」に対応し、Codex・Claude Agent・Gemini CLIなど他社のコーディングエージェントを同じエディタ内で切り替えて使えるようになっている。動画生成AIのSoraは2026年3月に提供終了が発表され、Web/アプリ版は同年4月26日に停止済み、APIも同年9月24日に停止予定である。「今人気のツール」がそのまま数か月後も存在するとは限らない前提で、特定ツールへの過度な業務依存(スクリプト・マニュアルへの固定的な組み込みなど)は避けるのが実務上の教訓になる。
 
 ## 実務での使い方
 
@@ -111,26 +111,28 @@ Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア
 | データを外部に出さない処理 | 不可(クラウド送信が前提) | Ollama・LM Studioによるローカル実行 |
 | 会議の自動文字起こし・議事録化 | 不可(会議に同席してリアルタイムで聞き取ることはできない) | Notta・Rimo Voice・tl;dv、またはTeams Copilot・Google Meet(Gemini)・Zoom AI Companion |
 
-### 料金レンジのざっくり目安(2026年7月時点)
+### 料金レンジのざっくり目安(2026年9月時点)
 
 | カテゴリ | 個人向けの目安 | 備考 |
 |---|---|---|
-| 検索・リサーチ特化 | Free〜月額$20程度(上位プラン・企業向けは$40〜$325) | Perplexity Pro $20/月(Max $200/月、Enterprise Pro $40/月)、GenSpark Plus $19.99〜$24.99/月(Pro $199.99〜$249.99/月)が目安。詳細は各ページ参照 |
-| コーディング支援AI | Free〜月額$100〜200程度 | GitHub Copilot Pro $10/月・Pro+ $39/月・Max $100/月(2026年6月にAIクレジット従量制へ移行)、Cursor Pro $20/月・Pro+ $60/月・Ultra $200/月が目安。詳細は[GitHub Copilotの基本](./github-copilot-basics.md)・[Cursorの基本](./cursor-basics.md)参照 |
-| 画像・動画・音声生成AI | Free〜月額数十ドル、または生成量に応じた従量課金 | ツールごとに枚数・秒数課金と月額課金が混在するため契約前に必ず各社公式サイトを確認。詳細は[画像生成AIの基本](./image-generation-ai-basics.md)・[動画生成AIの基本](./video-generation-ai-basics.md)・[音声・音楽生成AIの基本](./audio-music-generation-ai-basics.md)参照 |
+| 検索・リサーチ特化 | Free〜月額$20程度(上位プラン・企業向けは$40〜$325) | Perplexity Pro $20/月(学生・教員向けEducation Pro $10/月が新設、Max $200/月、Enterprise Pro $40/席、Enterprise Max $325/席)、GenSpark Plus $24.99/月〜(Pro $249.99/月〜、いずれもクレジット制)が目安。詳細は各ページ参照 |
+| コーディング支援AI | Free〜月額$100〜200程度 | GitHub Copilot Pro $10/月・Pro+ $39/月・Max $100/月(2026年6月にAIクレジット従量制へ移行し、同年9月にはClaude Sonnet 4.6など旧モデルの提供終了と、Copilot Chatの各UIを1つに統合する変更が進行中)、Cursor Pro $20/月・Pro+ $60/月・Ultra $200/月(2026年8月に定額の「Auto」枠を廃止)が目安。詳細は[GitHub Copilotの基本](./github-copilot-basics.md)・[Cursorの基本](./cursor-basics.md)参照 |
+| 画像・動画・音声生成AI | Free〜月額数十ドル、または生成量に応じた従量課金 | Midjourneyは2022年の提供開始から料金据え置き(Basic $10〜Mega $120)。ツールごとに枚数・秒数課金と月額課金が混在するため契約前に必ず各社公式サイトを確認。詳細は[画像生成AIの基本](./image-generation-ai-basics.md)・[動画生成AIの基本](./video-generation-ai-basics.md)・[音声・音楽生成AIの基本](./audio-music-generation-ai-basics.md)参照 |
 | ローカル・オープンモデル | ソフト自体は無料(Ollama・LM Studio) | 主コストはPC・GPU等のハードウェア投資。詳細は[ローカルLLMの基本](./local-llm-basics.md)参照 |
-| 会議・議事録AI | Free〜月額数千円/人 | tl;dv Pro 約¥2,400/月・Notta Pro 約¥1,600/月が目安。Teams・Meet・Zoomの純正機能は既存の会議ツール契約に含まれる場合が多い。詳細は[議事録・文字起こしAIの基本](./meeting-minutes-ai-basics.md)参照 |
+| 会議・議事録AI | Free〜月額数千円/人 | tl;dv Pro $20/人/月(年払い)、Rimo Voice 約¥1,650/月、Notta Business 約¥2,508/人/月が目安。Teams・Meet・Zoomの純正機能は既存の会議ツール契約に含まれる場合が多い。詳細は[議事録・文字起こしAIの基本](./meeting-minutes-ai-basics.md)参照 |
 
 料金は変更が非常に頻繁なため、この表は「レンジの感覚をつかむ」目的にとどめ、契約前には必ず各ツールの公式サイト・本リポジトリの該当ページで最新の数値を確認すること。
 
 ## 注意点・よくある誤解
 
-- **ツールを増やすほど「シャドーAI」化するリスクが高まる**: 従業員の67%が未承認のAIツールを業務利用しているという調査もあり、個人が思いつきで契約した特化型ツールが会社として把握されない情報漏洩経路になりかねない。導入前に情報システム部門・上長へ一言相談する習慣をつける
+- **ツールを増やすほど「シャドーAI」化するリスクが高まる**: 2026年の調査(Teramind「Shadow AI Report 2026」)では米国従業員の65%が雇用主未承認のAIツールを業務利用し、うち71%が機密データを入力したと回答している。個人が思いつきで契約した特化型ツールが会社として把握されない情報漏洩経路になりかねない。導入前に情報システム部門・上長へ一言相談する習慣をつける
 - **サブスクリプションの重複に気づきにくい**: 検索特化・コーディング支援など、似た課題を解決する複数ツールを個人が併用し、結果的に月額$20前後のサブスクを何個も契約しているケースがある。半年に一度は契約中のAIツール一覧を棚卸しする
 - **カテゴリの名前で選ばない**: 「検索特化型」「コーディング支援」といった名称は目安に過ぎず、実際の機能は年々重なりが増えている(GenSparkの資料化、Copilotの汎用エージェント化等)。名称よりも「今の課題に一番効くか」を都度確認する
 - **特化型ツールでも情報漏洩リスクはゼロにならない**: NotebookLM・Perplexity・GitHub CopilotなどのクラウドサービスもWeb検索や外部サーバーへの送信を伴う。社外秘データを扱う際は各ツールのデータ利用規約(学習に使われるか等)を確認し、必要ならローカルLLMを検討する
 - **変化が速い領域である**: 特化型AI市場は新規参入・機能追加・料金改定のスピードが非常に速い。本ページやリンク先の各ページも定期的に見直すが、実際の契約前には必ず最新の公式情報を確認すること
-- **人気ツールでも突然の提供終了・ブランド統合が起こる**: 話題を集めたOpenAIのSoraは2026年3月に提供終了を発表され、コーディング支援AIのWindsurfも2026年6月に「Devin Desktop」へ製品名が変わった。特定のツール名・URLを業務マニュアルやプロンプト集に固定的に書き込みすぎず、半年に一度は「このツールはまだ存在し、同じ名前・仕様か」を確認する運用にしておく
+- **人気ツールでも突然の提供終了・ブランド統合が起こる**: 話題を集めたOpenAIのSoraは2026年3月に提供終了を発表され、Web/アプリ版はすでに終了、APIも2026年9月24日に終了予定である。コーディング支援AIのWindsurfも2026年6月に「Devin Desktop」へ製品名が変わり、同年7月にはローカルエージェント自体もCascadeから「Devin Local」へ置き換わった。特定のツール名・URLを業務マニュアルやプロンプト集に固定的に書き込みすぎず、半年に一度は「このツールはまだ存在し、同じ名前・仕様か」を確認する運用にしておく
+- **コーディング支援AIはモデルの入れ替わりも速い**: GitHub Copilotは2026年6月にAIクレジットの従量課金へ移行し、同年9月にはClaude Sonnet 4.6など提供モデルの一部が順次廃止・入れ替えになっている。使い慣れたモデルが急に選べなくなることがあるため、チームで標準採用しているモデル名は定期的に見直す
+- **画像・音声生成AIは権利処理の前提が変わりつつある**: 音楽生成AIのSuno・Udioは大手レコード会社(Warner、Universal等)との著作権訴訟が2025〜2026年にかけて相次いで和解し、無断学習モデルの廃止・無料プランでの商用利用禁止・ダウンロード制限などライセンス済みモデルへの移行が進んでいる。一方でSony Musicなど和解していないレーベルとの訴訟は継続中であり、商用利用時は各ツールの利用規約・ライセンス条件を都度確認する
 
 ## 最初の一歩
 
@@ -155,6 +157,10 @@ Torii社の2026年SaaS(Software as a Service、クラウド型ソフトウェア
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-09-13: 料金・モデル動向とWindsurf/Devin Desktop、Sora終了、Suno・Udio訴訟和解の反映
+- **内容**: Perplexity(Education Pro新設・Max/Enterprise Max等の料金)、GenSpark(クレジット制の最新料金)、GitHub Copilot(2026年9月のモデル順次廃止・Copilot Chat統合)、Cursor(2026年8月の定額Auto枠廃止)の料金・仕様を最新値に更新。動画生成AIの主要モデルをKling 3.0・Runway Gen-4.5・Veo 3.1に更新し、OpenAI SoraのWeb/アプリ終了(2026年4月26日)とAPI終了予定(同年9月24日)を反映。音声・音楽生成AIの節にSuno・Udioと大手レコード会社の著作権訴訟の相次ぐ和解(無断学習モデル廃止・ライセンス済みモデルへの移行)を追記。Windsurf/Devin DesktopのローカルエージェントがCascadeから「Devin Local」に置き換わったこと、Agent Client Protocol対応で他社エージェントも併用可能になったことを追記。シャドーAIの統計をTeramind「Shadow AI Report 2026」等の最新調査に更新
+- **出典**: [Perplexity Pricing in 2026 for Individuals, Orgs & Developers | Finout](https://www.finout.io/blog/perplexity-pricing-in-2026)、[Genspark AI pricing (2026): what it really costs | eesel AI](https://www.eesel.ai/blog/genspark-ai-pricing)、[GitHub Copilot is moving to usage-based billing | GitHub Blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)、[Upcoming changes to GitHub Copilot policies and billing | GitHub Changelog](https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing/)、[Cursor AI pricing: all plans and credits (Sept 2026) | lowcode.agency](https://www.lowcode.agency/blog/cursor-ai-pricing)、[Windsurf Renamed Devin Desktop 2026: Devin Local, ACP & Pricing | news.creeta.com](https://news.creeta.com/en/windsurf-renamed-devin-desktop-2026/)、[What to know about the Sora discontinuation | OpenAI Help Center](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation)、[AI Video Generation Showdown 2026: Kling v3 vs MiniMax Hailuo 02 vs Runway Gen-4.5 vs Luma | AI Magicx](https://www.aimagicx.com/blog/ai-video-generation-showdown-2026)、[The Suno & Udio Lawsuits, Label Settlements, and What 'AI Music Tags' Mean for Producers in 2026 | Dubspot](https://blog.dubspot.com/suno-udio-ai-music-lawsuits-2026)、[Midjourney pricing in 2026: Plans, GPU hours, and what it actually costs | eesel AI](https://www.eesel.ai/blog/midjourney-pricing)、[Ollama vs LM Studio 2026: CLI Power vs GUI Comfort for Local LLMs | Morph](https://www.morphllm.com/comparisons/ollama-vs-lm-studio)、[tl;dv Pricing 2026 | Capterra](https://www.capterra.com/p/10015832/tldv/)、[AI議事録ツール比較2026 | 0120.co.jp](https://0120.co.jp/blog/ai-training-48/)、[Shadow AI Report 2026 | Teramind](https://www.teramind.co/l/shadow-ai-report-2026/)
 
 ### 2026-07-29: 第6章「会議・議事録AI」の追加とツール動向の反映
 - **内容**: Part 8第6章として新設された「会議・議事録AI」を軸の比較表・用途別選定マップ・ツール横断の対応表・料金表に追加し、[議事録・文字起こしAIの基本](./meeting-minutes-ai-basics.md)にリンク。あわせて、それまで「今後拡充予定」だった画像・動画・音声生成AI、Cursor・Cline・Windsurfの各個別ページが公開済みであることを反映してリンクを追加。OpenAI Soraの提供終了(Web/アプリは2026年4月26日、APIは同年9月24日終了予定)、WindsurfのCognition社「Devin Desktop」への製品名変更(2026年6月)を本文・比較表に反映し、Perplexity・GenSpark・GitHub Copilot・Cursorの料金レンジを2026年7月時点の最新値に更新
