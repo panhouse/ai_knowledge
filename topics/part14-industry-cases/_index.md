@@ -152,3 +152,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [地方銀行・信用金庫業界における生成AI活用事例](regional-bank-credit-union-ai-use-cases.md)
 - [データセンター運営業界における生成AI活用事例](data-center-operation-industry-ai-use-cases.md)
 - [カラオケ・ネットカフェ・複合カフェ業界における生成AI活用事例](karaoke-internet-cafe-amusement-facility-ai-use-cases.md)
+- [百貨店業界における生成AI活用事例](department-store-industry-ai-use-cases.md)
