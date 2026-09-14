@@ -124,3 +124,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [建設現場の安全管理・危険予知AI企業一覧(国内)](construction-site-safety-ai-companies-japan.md)
 - [保育・こども見守りAI企業一覧(国内)](nursery-childcare-monitoring-ai-companies-japan.md)
 - [データセンター・AIインフラ運用AI企業一覧(国内)](datacenter-ai-infrastructure-companies-japan.md)
+- [ビル管理・スマートビル(BEMS)AI企業一覧](facility-management-smart-building-ai-companies-japan.md)
