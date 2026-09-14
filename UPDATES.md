@@ -14,6 +14,7 @@
 - [リアルタイム音声API(ボイスエージェント構築)の基本](topics/part09-api-development/realtime-voice-api-basics.md): OpenAI/Google/ElevenLabsの最新モデル・料金・機能の節を最新化・増強
 - [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](topics/part08-specialized-ai-tools/video-generation-ai-basics.md): Sora API終了目前の状況・Runway Aleph 2.0/Edit Studio・Kling 3.0系ライン・Veo 3.1の4K対応・Grok Imagine等新興ツールを反映して最新化・増強
 - [ChatGPTのWeb検索機能](topics/part03-ai-chat-tools/chatgpt-web-search-feature.md): 検索クエリのfan-out化・広告の選定ロジック・Atlas終了を反映して最新化・増強
+- [JSONモード・Structured Outputsの基本](topics/part09-api-development/json-mode-structured-outputs.md): Anthropicパラメータ移行・OpenAI GPT-5.6・Gemini新API(Interactions API)登場を反映して最新化・増強
 
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
