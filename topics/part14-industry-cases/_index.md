@@ -154,3 +154,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [カラオケ・ネットカフェ・複合カフェ業界における生成AI活用事例](karaoke-internet-cafe-amusement-facility-ai-use-cases.md)
 - [百貨店業界における生成AI活用事例](department-store-industry-ai-use-cases.md)
 - [動画配信・OTTプラットフォーム業界における生成AI活用事例](video-streaming-ott-industry-ai-use-cases.md)
+- [測量・地図(地理空間情報)業界における生成AI活用事例](geospatial-mapping-industry-ai-use-cases.md)
