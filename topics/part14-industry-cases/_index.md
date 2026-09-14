@@ -145,3 +145,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [eスポーツ業界における生成AI活用事例](esports-industry-ai-use-cases.md)
 - [フリーランス・ギグワーカープラットフォーム業界における生成AI活用事例](gig-economy-platform-industry-ai-use-cases.md)
 - [家電量販店業界における生成AI活用事例](consumer-electronics-retail-industry-ai-use-cases.md)
+- [会計事務所・税理士法人における生成AI活用事例](accounting-tax-firm-industry-ai-use-cases.md)

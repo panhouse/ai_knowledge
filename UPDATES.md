@@ -58,6 +58,8 @@
 - [DifyでのRAG実装(ナレッジベースの作成とワークフロー連携)](topics/part10-nocode-lowcode/dify-rag-implementation.md): ナレッジパイプラインとサマリーインデックスを追記して最新化
 - [建設現場の安全管理・危険予知AI企業一覧(国内)](topics/part16-japan-ai-companies/construction-site-safety-ai-companies-japan.md): 新規執筆(不安全行動検知カメラ・熱中症ウェアラブル・AIリスク予測の5社を収録)
 - [保育・こども見守りAI企業一覧(国内)](topics/part16-japan-ai-companies/nursery-childcare-monitoring-ai-companies-japan.md): 新規執筆(保育現場のオペレーション向けAI企業5社を整理)
+## 2026-09-10
+- [会計事務所・税理士法人における生成AI活用事例](topics/part14-industry-cases/accounting-tax-firm-industry-ai-use-cases.md): 新規執筆(業種別事例カタログ)
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
 - [DeepSeekの基本](topics/part03-ai-chat-tools/deepseek-basics.md): モデルラインナップ(V4 GA移行の正確な経緯・マルチモーダル実験モデル追加)と料金・規制動向の節を2026年9月時点に最新化・増強
