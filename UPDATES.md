@@ -12,6 +12,7 @@
 ## 2026-09-05
 - [LLMの得意・不得意と挙動の特性](topics/part02-llm-basics/llm-strengths-and-limitations.md): ナレッジカットオフの節を最新化・増強
 - [リアルタイム音声API(ボイスエージェント構築)の基本](topics/part09-api-development/realtime-voice-api-basics.md): OpenAI/Google/ElevenLabsの最新モデル・料金・機能の節を最新化・増強
+- [動画生成AIの基本(Sora・Runway・Luma Dream Machine・Klingなどの選び方)](topics/part08-specialized-ai-tools/video-generation-ai-basics.md): Sora API終了目前の状況・Runway Aleph 2.0/Edit Studio・Kling 3.0系ライン・Veo 3.1の4K対応・Grok Imagine等新興ツールを反映して最新化・増強
 
 ## 2026-09-04
 - [生成AIの最新モデル動向(2026年:主要モデルの進化とベンチマークの見方)](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 Astra・Claude Fable 5.1の投入を反映して最新化・増強
