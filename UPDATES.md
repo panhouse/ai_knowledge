@@ -12,6 +12,7 @@
 - [測量・地図(地理空間情報)業界における生成AI活用事例](topics/part14-industry-cases/geospatial-mapping-industry-ai-use-cases.md): 新規執筆(衛星画像・空中写真のAI変化検出、対話型AIによる地図作成、住所データのLLMクレンジング)
 - [マテリアルズインフォマティクス(材料開発AI)企業一覧(国内)](topics/part16-japan-ai-companies/materials-informatics-ai-companies-japan.md): 新規執筆(MI-6・EAGLYS・SCSK・NTTデータ数理システム・HPCシステムズの5社を収録)
 - [自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例](topics/part14-industry-cases/auto-parts-supplier-industry-ai-use-cases.md): 新規執筆(技術文書解析・品質検査・需要予測・技能伝承・全社基盤・予知保全の事例カタログ)
+- [求荷求車・配送マッチングAI企業一覧](topics/part16-japan-ai-companies/freight-matching-logistics-ai-companies-japan.md): 新規執筆(収録5社)
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
