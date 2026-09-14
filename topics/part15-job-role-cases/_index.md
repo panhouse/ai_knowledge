@@ -144,6 +144,7 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [営業職における生成AI活用](sales-ai-use-cases.md)
 - [不動産営業(仲介・売買)における生成AI活用事例](real-estate-agent-ai-use-cases.md)
 - [保険営業(生命保険・損害保険)における生成AI活用事例](insurance-agent-ai-use-cases.md)
+- [製薬MR(医薬情報担当者)における生成AI活用事例](pharma-mr-ai-use-cases.md)
 
 ### 第3章 マーケティング・広報
 - [マーケティング職における生成AI活用](marketing-ai-use-cases.md)
@@ -187,6 +188,8 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 ### 第11章 エンジニア・開発
 - [エンジニア・開発職における生成AI活用事例](engineer-development-ai-use-cases.md)
 - [SRE・インフラエンジニアにおける生成AI活用事例](sre-infrastructure-engineer-ai-use-cases.md)
+- [データエンジニアにおける生成AI活用事例](data-engineer-ai-use-cases.md)
+- [ITプロジェクトマネージャー(システム開発PM)における生成AI活用事例](it-project-manager-ai-use-cases.md)
 
 ### 第12章 研究開発・品質管理
 - [研究開発(R&D)職における生成AI活用事例](rd-ai-use-cases.md)
@@ -197,17 +200,21 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 ### 第13章 生産管理・サプライチェーン
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](production-management-scm-ai-use-cases.md)
 - [倉庫管理・在庫管理担当者における生成AI活用事例](warehouse-inventory-manager-ai-use-cases.md)
+- [生産技術者(プロセス・設備エンジニア)における生成AI活用事例](production-engineer-process-technology-ai-use-cases.md)
 
 ### 第14章 デザイナー・クリエイティブ
 - [デザイナー・クリエイティブ職における生成AI活用事例](designer-creative-ai-use-cases.md)
 
 ### 第15章 翻訳・通訳
 - [翻訳・通訳担当における生成AI活用事例](translation-interpretation-ai-use-cases.md)
+- [字幕翻訳・ローカライズ担当における生成AI活用事例](subtitle-localization-specialist-ai-use-cases.md)
 
 ### 第17章 経営者・管理職
 - [経営者・管理職における生成AI活用事例](executive-management-ai-use-cases.md)
+- [中間管理職(マネージャー)における生成AI活用事例](middle-manager-ai-use-cases.md)
 ### 第16章 コンサルタント・リサーチャー
 - [コンサルタント・リサーチャー職における生成AI活用事例](consultant-researcher-ai-use-cases.md)
+- [市場調査アナリスト(マーケットリサーチャー)における生成AI活用事例](market-research-analyst-ai-use-cases.md)
 
 ### 第18章 その他の職種
 - [銀行員(窓口・融資担当)における生成AI活用事例](bank-teller-loan-officer-ai-use-cases.md)
@@ -229,3 +236,6 @@ Part 14(業種別)と対になる事例カタログで、業種を横断して
 - [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](financial-advisor-ai-use-cases.md)
 - [医師における生成AI活用事例](physician-ai-use-cases.md)
 - [看護師・医療従事者における生成AI活用事例](nurse-medical-staff-ai-use-cases.md)
+- [通関士・貿易事務担当者における生成AI活用事例](customs-broker-trade-operations-ai-use-cases.md)
+- [美容師・理容師における生成AI活用事例](hairdresser-barber-ai-use-cases.md)
+- [塾講師・家庭教師における生成AI活用事例](tutor-cram-school-instructor-ai-use-cases.md)
