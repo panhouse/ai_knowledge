@@ -123,3 +123,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [防犯・監視カメラ映像解析AI企業一覧(国内)](video-surveillance-analytics-ai-companies-japan.md)
 - [建設現場の安全管理・危険予知AI企業一覧(国内)](construction-site-safety-ai-companies-japan.md)
 - [保育・こども見守りAI企業一覧(国内)](nursery-childcare-monitoring-ai-companies-japan.md)
+- [データセンター・AIインフラ運用AI企業一覧(国内)](datacenter-ai-infrastructure-companies-japan.md)
