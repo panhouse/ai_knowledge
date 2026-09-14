@@ -23,6 +23,7 @@
 - [特化型AIツールの選び方(用途別マップと比較)](topics/part08-specialized-ai-tools/specialized-ai-tools-selection-guide.md): 料金・モデル動向とWindsurf/Devin Desktop、Sora終了、Suno・Udio訴訟和解の節を最新化
 - [GPTsのナレッジファイルとアクション連携](topics/part06-custom-ai/gpts-knowledge-and-actions.md): ◯◯の節を最新化
 - [ChatGPTの画像生成機能](topics/part03-ai-chat-tools/chatgpt-image-generation-feature.md): GPT Image 2.5(ChatGPT Images 2.5)の節を最新化
+- [生成AI導入のROI測定・効果測定の考え方](topics/part12-business-practice/ai-roi-measurement.md): 調査データの節を最新化
 
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
