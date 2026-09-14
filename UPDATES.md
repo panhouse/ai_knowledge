@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-14
+- [国産基盤モデル・研究開発系AI企業一覧](topics/part16-japan-ai-companies/foundation-model-companies-japan.md): 資金調達・新モデル・政府調達動向を反映して最新化し、新興2社(NEC、カスタマークラウド)を追加
+
 ## 2026-09-11
 - [営業職における生成AI活用](topics/part15-job-role-cases/sales-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
 - [マーケティング職における生成AI活用](topics/part15-job-role-cases/marketing-ai-use-cases.md): 実名の導入事例カタログ(5件)を新設し、活用パターンと節を分離
