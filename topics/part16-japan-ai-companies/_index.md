@@ -118,3 +118,4 @@ Part 16 は **企業そのものの一覧カタログ**。教科書ページの�
 - [音声合成・音声認識AI企業一覧(国内)](voice-synthesis-recognition-ai-companies-japan.md)
 - [農業テック(アグリテック)AI企業一覧(国内)](agritech-ai-companies-japan.md)
 - [電話自動応答・音声AI受付(ボイスボット)企業一覧(国内)](voicebot-phone-reception-ai-companies-japan.md)
+- [ペットテック(ペット関連)AI企業一覧(国内)](pettech-ai-companies-japan.md)
