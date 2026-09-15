@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-15
+- [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvasの完全終了(o3退役)とGPT-6 Astra登場、最新プラン体系を反映して最新化
+
 ## 2026-09-14
 - [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
 - [宇宙・衛星産業における生成AIの活用事例](topics/part14-industry-cases/satellite-space-industry-ai-use-cases.md): 新規執筆(衛星データ解析・軌道上衝突回避へのAI活用事例)
