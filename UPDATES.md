@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-15
+- [経営コンサルティング業界における生成AI活用事例](topics/part14-industry-cases/management-consulting-industry-ai-use-cases.md): 新規執筆(McKinsey Lilli・BCG Deckster/GENE・Bain・Big4の社内AI活用とNRI等国内ファームの動向を整理)
+
 ## 2026-09-14
 - [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
 - [宇宙・衛星産業における生成AIの活用事例](topics/part14-industry-cases/satellite-space-industry-ai-use-cases.md): 新規執筆(衛星データ解析・軌道上衝突回避へのAI活用事例)
