@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-15
+- [研修・人材育成系の国内AI企業一覧](topics/part16-japan-ai-companies/ai-training-hr-development-companies-japan.md): 掲載企業7社の情報を最新化(社名変更2件を反映)し、DMM生成AI CAMPを新規追加。frontmatterの`chapter`欠落も修正
+
 ## 2026-09-14
 - [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
 - [宇宙・衛星産業における生成AIの活用事例](topics/part14-industry-cases/satellite-space-industry-ai-use-cases.md): 新規執筆(衛星データ解析・軌道上衝突回避へのAI活用事例)
