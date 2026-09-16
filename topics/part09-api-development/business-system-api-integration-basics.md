@@ -4,7 +4,7 @@ part: 9
 chapter: 第3章 業務ツール連携
 tags: [kintone, kintone AI, Slack, Slack MCP, Power Automate, AI Builder, Salesforce, Agentforce Builder, API連携, Webhook, 業務システム連携]
 created: 2026-07-06
-updated: 2026-07-30
+updated: 2026-09-16
 ---
 
 # 業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)
@@ -52,7 +52,7 @@ updated: 2026-07-30
 | kintone | JavaScriptカスタマイズ+`kintone.proxy()` | 2026年6月に標準AI機能「kintone AI」(検索AI・アプリ作成AI・要約・質問応答など6機能、クレジット制)が正式提供開始。既製プラグインの選択肢もある |
 | Slack | Incoming Webhook(投稿専用)/ Events API・Bot Token(双方向)/ Slack公式のMCPサーバー(2026年前半に一般提供) | 双方向の自作には常時稼働サーバーが必要。2026年3月に刷新されたSlackbotのAI機能やMCPサーバーで足りないか先に確認する価値がある |
 | Microsoft Power Automate(Excel含む) | AI Builderのプロンプトビルダー、またはHTTPアクション | いずれもプレミアムライセンスが前提になることが多い。AI Builderの旧クレジットは2026年11月1日に終了しCopilotクレジットへ移行 |
-| Salesforce | Agentforce(Agentforce Builder/Agentforce Studio)、Einstein、Flow+外部サービス連携 | 2026年7月13日の週から新規エージェント作成はAgentforce Studioに一本化。まず公式のAI機能で要件が満たせないか確認するのが基本 |
+| Salesforce | Agentforce(Agentforce Builder/Agentforce Studio)、Einstein、Flow+外部サービス連携 | 2026年7月13日の週から新規エージェント作成はAgentforce Studioに一本化。2026年8月にはSlack Actions(キャンバス作成・メッセージ送信・ユーザー検索など)が追加され、AgentforceのエージェントにSlack上の定型操作を直接実行させられるようになった。まず公式のAI機能で要件が満たせないか確認するのが基本 |
 
 ## 実務での使い方
 
@@ -169,7 +169,7 @@ HTTPアクションの直後に「JSONの解析(Parse JSON)」アクションを
 
 Salesforceは、Agentforce(自律的に判断して業務を遂行するAIエージェントを、ローコードの「Agentforce Builder」で作る仕組み)とEinstein(予測・分類・生成AIの基盤機能群)という2つのAI機能を統合している。独自にAPI連携を組む前に、まず次の公式ルートで要件が満たせないかを確認するのが基本的な考え方になる。
 
-- **Agentforce Builder(Agentforce Studio)/ Prompt Builder**: ローコードでAIエージェントやプロンプトを組み立てる公式機能。2026年7月13日の週から、Setup内の旧Agentforce Builderでは新規エージェントを作成できなくなり、新規作成はAgentforce Studio内のAgentforce Builderに一本化された(既存エージェントの編集・運用は旧画面でも引き続き可能)
+- **Agentforce Builder(Agentforce Studio)/ Prompt Builder**: ローコードでAIエージェントやプロンプトを組み立てる公式機能。2026年7月13日の週から、Setup内の旧Agentforce Builderでは新規エージェントを作成できなくなり、新規作成はAgentforce Studio内のAgentforce Builderに一本化された(既存エージェントの編集・運用は旧画面でも引き続き可能)。2026年8月には、Agentforceで組んだ従業員向けエージェント(Employee Agent)にSlack上での行動をそのまま実行させられる「Slack Actions」(キャンバスの作成、チャンネルへのメッセージ送信、ユーザー検索といった定型のSlack操作をあらかじめ部品化したもの)が追加され、Salesforce側でエージェントを作り、Slackと接続してユーザーをマッピングし、Slack管理画面からインストールするだけで、Slack上のチャットからAgentforceのエージェントを呼び出して社内システムの操作までさせられるようになった
 - **Flow + 外部サービス連携(Named Credentials)/ Apexコールアウト**: Salesforce標準の自動化機能から外部のAI APIを呼び出す、業務システム側にコードを書く経路(本ページの経路1に相当)
 - **MuleSoft連携**: 複数システムを横断する複雑な連携が必要な場合の統合基盤
 
@@ -197,6 +197,10 @@ Salesforceは、Agentforce(自律的に判断して業務を遂行するAIエー
 - [Zapierの基本](../part10-nocode-lowcode/zapier-basics.md)
 
 ## 更新履歴
+
+### 2026-09-16: SalesforceのSlack Actionsを追記して最新化
+- **内容**: 2026年8月に追加されたAgentforceの「Slack Actions」(キャンバス作成・チャンネルへのメッセージ送信・ユーザー検索といった定型のSlack操作をエージェントに部品として持たせる機能)を「主要な業務システム別の標準的な連携先」表と「Salesforceなど主要CRM」の節に追記。SalesforceとSlackが同じAgentforce基盤上で連携を深めている動きを反映
+- **出典**: [Slack: Set up and manage Agentforce in Slack](https://slack.com/help/articles/36218109305875-Set-up-and-manage-Agentforce-in-Slack)、[Slack: Agentforce AI agent, now powered by Slack Actions and Data](https://slack.com/blog/news/agentforce-ai-slack-actions-data)
 
 ### 2026-07-30: 主要ベンダーの公式AI機能拡充を反映して最新化
 - **内容**: kintone標準AI機能「kintone AI」(2026年6月正式提供、検索AI・アプリ作成AI・要約・質問応答など6機能・クレジット制)、Slackbotの大幅刷新(2026年3月、30以上のAI機能)とSlack公式MCP(Model Context Protocol)サーバー・Real-Time Search APIの一般提供(2026年前半)、Power Automate AI Builderクレジットの完全廃止(2026年11月1日)に向けた具体的な移行スケジュール、Salesforce Agentforce Builderの旧画面(Setup内)での新規エージェント作成終了(2026年7月13日の週〜Agentforce Studioに一本化)を反映。あわせて「まず主要ベンダーの公式AI機能で足りないか確認する」という判断の観点を、Salesforce限定からkintone・Slackにも広げて全体に追記
