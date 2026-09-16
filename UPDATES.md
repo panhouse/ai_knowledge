@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-16
+- [Zapierの基本](topics/part10-nocode-lowcode/zapier-basics.md): Zapier Agentsの独立アドオン化・アクティビティ課金への移行を反映して最新化
+
 ## 2026-09-14
 - [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
 - [宇宙・衛星産業における生成AIの活用事例](topics/part14-industry-cases/satellite-space-industry-ai-use-cases.md): 新規執筆(衛星データ解析・軌道上衝突回避へのAI活用事例)
