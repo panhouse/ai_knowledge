@@ -161,3 +161,4 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [法律事務所・弁護士法人における生成AI活用事例](law-firm-legal-services-ai-use-cases.md)
 - [税務署・国税庁など税務行政における生成AI活用事例](tax-administration-agency-ai-use-cases.md)
 - [消防・防災機関における生成AI活用事例](fire-disaster-prevention-agency-ai-use-cases.md)
+- [経営コンサルティング業界における生成AI活用事例](management-consulting-industry-ai-use-cases.md)
