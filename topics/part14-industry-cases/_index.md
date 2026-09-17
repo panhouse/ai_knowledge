@@ -158,4 +158,7 @@ Part 1〜13 が「概念・手法の教科書」であるのに対し、ここ�
 - [自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例](auto-parts-supplier-industry-ai-use-cases.md)
 - [宇宙・衛星産業における生成AIの活用事例](satellite-space-industry-ai-use-cases.md)
 - [暗号資産・仮想通貨取引所業界における生成AI活用事例](crypto-exchange-industry-ai-use-cases.md)
+- [法律事務所・弁護士法人における生成AI活用事例](law-firm-legal-services-ai-use-cases.md)
+- [税務署・国税庁など税務行政における生成AI活用事例](tax-administration-agency-ai-use-cases.md)
+- [消防・防災機関における生成AI活用事例](fire-disaster-prevention-agency-ai-use-cases.md)
 - [経営コンサルティング業界における生成AI活用事例](management-consulting-industry-ai-use-cases.md)
