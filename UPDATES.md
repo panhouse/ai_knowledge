@@ -19,6 +19,7 @@
 - [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part16-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 掲載企業の情報を最新化し、インターセクト株式会社(Askhub)を新規追加
 - [研修・人材育成系の国内AI企業一覧](topics/part16-japan-ai-companies/ai-training-hr-development-companies-japan.md): 掲載企業7社の情報を最新化(社名変更2件を反映)し、DMM生成AI CAMPを新規追加。frontmatterの`chapter`欠落も修正
 - [Zapierの基本](topics/part10-nocode-lowcode/zapier-basics.md): Zapier Agentsの独立アドオン化・アクティビティ課金への移行を反映して最新化
+- [業務システム・SaaSとのAI API連携の基本(kintone・Slack・Excel/Power Automate等)](topics/part09-api-development/business-system-api-integration-basics.md): SalesforceのSlack Actions追加を反映して最新化
 
 ## 2026-09-14
 - [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
