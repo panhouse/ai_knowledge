@@ -2,9 +2,9 @@
 title: "Clineの基本(コーディング支援AI)"
 part: 8
 chapter: 第2章 コーディング支援AI
-tags: [Cline, コーディング支援AI, AIエージェント, BYOK, オープンソース]
+tags: [Cline, コーディング支援AI, AIエージェント, BYOK, オープンソース, Cline SDK]
 created: 2026-07-06
-updated: 2026-07-31
+updated: 2026-09-17
 ---
 
 # Clineの基本(コーディング支援AI)
@@ -19,7 +19,7 @@ Cline(クライン)は、VS CodeやJetBrains系IDEに追加する**オープン�
 
 ### 生まれた経緯
 
-Clineは2024年6月、Anthropicが開催したハッカソンの場で、開発者のSaoud Rizwan氏が個人で作ったツールが元になっている。当時リリースされたばかりのClaude 3.5 Sonnetのモデルカード(性能・特性の説明資料)に「自律的にコーディングできる」という記述を見て試作したのが最初で、拡張機能の名前は当初「Claude Dev」だった。その後Cline(クライン)へ改名されたが、VS Code拡張機能のID(`saoudrizwan.claude-dev`)には今も旧名が残っている。ライセンスはApache 2.0で、GitHub上で誰でもソースコードを閲覧・改変できる。2026年7月時点でGitHubスター数6万2000超、VS Code Marketplaceや後述のCLIを含むインストール数は500万を超える規模に成長した。
+Clineは2024年6月、Anthropicが開催したハッカソンの場で、開発者のSaoud Rizwan氏が個人で作ったツールが元になっている。当時リリースされたばかりのClaude 3.5 Sonnetのモデルカード(性能・特性の説明資料)に「自律的にコーディングできる」という記述を見て試作したのが最初で、拡張機能の名前は当初「Claude Dev」だった。その後Cline(クライン)へ改名されたが、VS Code拡張機能のID(`saoudrizwan.claude-dev`)には今も旧名が残っている。ライセンスはApache 2.0で、GitHub上で誰でもソースコードを閲覧・改変できる。2026年9月時点でGitHubスター数は6万8000超まで伸びており、VS Code Marketplaceや後述のCLIを含むインストール数も拡大が続いている。
 
 ### エージェント的な動作の中身
 
@@ -43,6 +43,12 @@ ClineはCopilotのAgent ModeやCursorのComposerと同様に、以下のよう�
 - ACP(Agent Client Protocol、AIコーディングエージェントとエディタの通信を標準化する規格。LSP(Language Server Protocol)のエージェント版に相当)に対応し、`--acp`オプションを付けて起動すると、JetBrains・Zed・Neovim・EmacsなどACP対応エディタからClineを呼び出せる
 
 つまりClineは「VS Code/JetBrains拡張機能」から「CLI + ACPで動く汎用エージェント基盤」へと立ち位置を広げつつある。ただし業務での主戦場は依然としてVS Code拡張機能であり、CLIは「CI/CDへの組み込み」「VS Code以外のエディタを使うエンジニア」向けの選択肢として押さえておけばよい。
+
+### Cline SDKとKanban(2026年5月〜)
+
+2026年5月13日、Cline社はエージェントの内部実装を独立した実行基盤として切り出した「**Cline SDK**」(npmパッケージ`@cline/sdk`、OSS)を公開した。これは自社製品(CLI・後述のKanban)を動かす基盤そのものをオープンソース化したもので、開発者がCI/CDパイプラインや自社サービス・独自のエージェントプラットフォームにClineのエージェント機能を組み込めるようにする狙いがある。SDKは「専門タスクに委任するサブエージェント(agent teams)」をランタイムに標準搭載しており、単一セッション内で複数の役割を持つエージェントに作業を振り分けられる。CLIとKanbanはすでにこのSDK上に移行済みで、VS Code/JetBrains拡張機能も順次移行が進められている。
+
+あわせて登場した「**Cline Kanban**」は、複数のCLIエージェントを並行実行させて管理するためのローカルWebアプリ(研究プレビュー段階)。タスクカードごとに独立したGit worktree(作業ツリー)とターミナルを割り当てることで、複数エージェントが競合なく同時に作業できる点が特徴で、カード完了時に連携タスクを自動着手させる仕組みも持つ。アカウント登録不要でインストール済みのCLIエージェントを自動検出して起動する。
 
 ### Plan/Actモード
 
@@ -141,6 +147,10 @@ VS CodeにCline拡張機能をインストールし、少額のAPIキー(利用�
 - [Anthropic API(Claude API)の基本](../part09-api-development/anthropic-api-basics.md)
 
 ## 更新履歴
+
+### 2026-09-17: Cline SDK・Cline Kanbanの登場を反映して最新化
+- **内容**: 2026年5月13日公開のオープンソース実行基盤「Cline SDK」(`@cline/sdk`、CI/CDや自社サービスへの組み込み・サブエージェント機能を標準搭載)と、並行マルチエージェント管理ツール「Cline Kanban」(研究プレビュー、Git worktreeでの並行実行)を追記。GitHubスター数を最新値(6万8000超)に更新
+- **出典**: [Cline Blog: Introducing Cline SDK](https://cline.bot/blog/introducing-cline-sdk-the-upgraded-agent-runtime)、[MarkTechPost: Cline Releases Cline SDK](https://www.marktechpost.com/2026/05/14/cline-releases-cline-sdk-an-open-source-agent-runtime-now-powering-its-cli-and-kanban-with-ide-extensions-being-migrated/)、[Cline CLI - Coding Agents in Your Terminal and on a Kanban Board(公式)](https://cline.bot/cli)、[GitHub: cline/cline](https://github.com/cline/cline)
 
 ### 2026-07-31: 「仕組み・背景」「実務での使い方」を最新化
 - **内容**: 2026年2月公開の「Cline CLI 2.0」(ターミナル完結のエージェント、並列実行・ヘッドレスCI/CD対応)と、ACP(Agent Client Protocol)によるJetBrains/Zed/Neovim/Emacsなどエディタ横断対応を追記。対応モデルにGPT-5・Gemini 3.0・Kimi K2.5・MiniMax M2.5などを追加。Teamsプラン「最初の10シート無期限無料」の実務的な意味合いを補足し、GitHubスター数・インストール数を更新
