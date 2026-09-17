@@ -4,7 +4,15 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-16
+- [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): 料金プランを公式サイトの最新表記(推論クレジット制度など)に更新
+
 ## 2026-09-15
+- [法律事務所・弁護士法人における生成AI活用事例](topics/part14-industry-cases/law-firm-legal-services-ai-use-cases.md): 新規執筆(大手法律事務所の知見製品化・弁護士法72条・判例ハルシネーション懲戒事例を中心に整理)
+- [税務署・国税庁など税務行政における生成AI活用事例](topics/part14-industry-cases/tax-administration-agency-ai-use-cases.md): 新規執筆(税務相談チャットボット「ふたば」・AI-OCR・KSK2による税務調査リスクスコアリングを中心に整理)
+- [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvasの完全終了(o3退役)とGPT-6 Astra登場、最新プラン体系を反映して最新化
+- [消防・防災機関における生成AI活用事例](topics/part14-industry-cases/fire-disaster-prevention-agency-ai-use-cases.md): 新規執筆(119番通報AI・火災調査/救急報告書作成支援・避難所運営DXを整理)
+- [経営コンサルティング業界における生成AI活用事例](topics/part14-industry-cases/management-consulting-industry-ai-use-cases.md): 新規執筆(McKinsey Lilli・BCG Deckster/GENE・Bain・Big4の社内AI活用とNRI等国内ファームの動向を整理)
 - [特許事務所・弁理士事務所における生成AI活用事例](topics/part14-industry-cases/patent-attorney-firm-ai-use-cases.md): 新規執筆(IPTech弁理士法人・朝日特許事務所・みらい翻訳等の事務所単位でのAI導入事例を整理)
 
 ## 2026-09-14
