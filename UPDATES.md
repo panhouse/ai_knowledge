@@ -4,7 +4,11 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-16
+- [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): 料金プランを公式サイトの最新表記(推論クレジット制度など)に更新
+
 ## 2026-09-15
+- [法律事務所・弁護士法人における生成AI活用事例](topics/part14-industry-cases/law-firm-legal-services-ai-use-cases.md): 新規執筆(大手法律事務所の知見製品化・弁護士法72条・判例ハルシネーション懲戒事例を中心に整理)
 - [税務署・国税庁など税務行政における生成AI活用事例](topics/part14-industry-cases/tax-administration-agency-ai-use-cases.md): 新規執筆(税務相談チャットボット「ふたば」・AI-OCR・KSK2による税務調査リスクスコアリングを中心に整理)
 
 ## 2026-09-14
