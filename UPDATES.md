@@ -6,6 +6,7 @@
 
 ## 2026-09-17
 - [OpenAI APIの基本](topics/part09-api-development/openai-api-basics.md): GPT-6 Astraの登場と料金体系を反映して最新化
+- [Clineの基本(コーディング支援AI)](topics/part08-specialized-ai-tools/cline-basics.md): Cline SDK・Cline Kanbanの登場を反映して最新化
 
 ## 2026-09-16
 - [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): 料金プランを公式サイトの最新表記(推論クレジット制度など)に更新
