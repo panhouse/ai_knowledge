@@ -11,6 +11,7 @@
 - [法律事務所・弁護士法人における生成AI活用事例](topics/part14-industry-cases/law-firm-legal-services-ai-use-cases.md): 新規執筆(大手法律事務所の知見製品化・弁護士法72条・判例ハルシネーション懲戒事例を中心に整理)
 - [税務署・国税庁など税務行政における生成AI活用事例](topics/part14-industry-cases/tax-administration-agency-ai-use-cases.md): 新規執筆(税務相談チャットボット「ふたば」・AI-OCR・KSK2による税務調査リスクスコアリングを中心に整理)
 - [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvasの完全終了(o3退役)とGPT-6 Astra登場、最新プラン体系を反映して最新化
+- [消防・防災機関における生成AI活用事例](topics/part14-industry-cases/fire-disaster-prevention-agency-ai-use-cases.md): 新規執筆(119番通報AI・火災調査/救急報告書作成支援・避難所運営DXを整理)
 
 ## 2026-09-14
 - [衛星データ解析・宇宙関連AI企業一覧(国内)](topics/part16-japan-ai-companies/satellite-earth-observation-ai-companies-japan.md): 新規執筆(Synspective・QPS研究所/iQPS・Ridge-i・天地人・Axelspaceの5社を収録)
