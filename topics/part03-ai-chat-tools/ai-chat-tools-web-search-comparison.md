@@ -2,9 +2,9 @@
 title: "主要AIチャットツールのWeb検索機能比較(ChatGPT・Gemini・Claude・Copilot)"
 part: 3
 chapter: 第4章 生成・分析の主要機能
-tags: [Web検索, ChatGPT search, グラウンディング, 出典, ChatGPT, Gemini, Claude, Copilot, ツール比較]
+tags: [Web検索, ChatGPT search, グラウンディング, 出典, ChatGPT, Gemini, Claude, Copilot, ツール比較, GPT-6 Astra]
 created: 2026-07-07
-updated: 2026-08-02
+updated: 2026-09-17
 ---
 
 # 主要AIチャットツールのWeb検索機能比較(ChatGPT・Gemini・Claude・Copilot)
@@ -26,11 +26,13 @@ ChatGPT・Gemini・Claude・Microsoft Copilotはいずれも「リアルタイ�
 
 検索を実行するタイミングも、いずれも基本は「質問内容から鮮度が必要そうだとAI自身が自動判定して検索を挟む」方式で、ユーザーが毎回明示的に指示する必要はない。ただし手動で強制オン/オフする手段の有無・場所はツールごとに異なる(次章で詳述)。
 
+**2026年9月3日に登場した次世代フラッグシップ「GPT-6 Astra」は、ChatGPTの検索・音声モードの裏側でも使えるようになっている。** 音声モードでの検索や高度な推論が必要な質問では、テキストチャットと同じモデル・推論強度の選択UIから、GPT-5.6系だけでなくGPT-6 Astraを指定できる。裏側の検索エンジン(Bing + OAI-SearchBot)自体は変わらないが、検索結果を要約・統合する言語モデルの性能が上がった形になる。
+
 **2026年に入り、Claudeの検索エンジン内部の処理が強化された点は特筆に値する。** Anthropicは2026年2月、Web検索ツールに「動的フィルタリング(dynamic filtering)」という仕組みを追加した(API向けのツールバージョン`web_search_20260209`以降)。これはClaudeが検索結果のHTMLを一度コードで処理し、ナビゲーションや広告など無関係な部分を除いてから本文の生成に使う仕組みで、複数企業・複数条件を横断するような検索を多用する質問ほど、無駄なノイズが減り応答が速く・安く済むようになる。claude.aiのチャット画面やClaude Codeでも同じ検索基盤を使っているため、この改善は間接的にビジネス利用者にも及ぶ。
 
 ## 使いどころ・使い分け
 
-### 4ツールの横並び比較表(2026年8月時点)
+### 4ツールの横並び比較表(2026年9月時点)
 
 | | ChatGPT | Google Gemini | Claude | Microsoft Copilot |
 |---|---|---|---|---|
@@ -38,7 +40,7 @@ ChatGPT・Gemini・Claude・Microsoft Copilotはいずれも「リアルタイ�
 | 手動切り替え | 入力欄の「+」→「Web検索」で強制オン | 通常チャットは自動判定が基本。Deep Researchでは検索対象の選択が可能 | 入力欄左下のスライダー(ツール)アイコン→「Web search」トグル | 無料版はほぼ常時検索前提。Microsoft 365 Copilotのチャットは右上「…」→「Web content」トグル、またはチャット設定→パーソナライズ→詳細設定の「Web検索」トグルでも切り替え可能 |
 | 無料プランでの利用 | 全プランで利用可(未登録ユーザーも可) | 利用可(2026年5月以降、回数制限ではなく5時間ごと・週単位で更新される「使用量(compute)」ベースの制限に移行) | 利用可(2025年に無料プランへも展開済み) | 個人向け無料版はほぼ無制限に利用可 |
 | 有料プランでの上限拡大 | 追加料金なし(全プラン共通の利用枠内) | Google AI Plus($4.99)・AI Pro($19.99)・AI Ultra(2026年5月のGoogle I/Oで5倍/$99.99・20倍/$199.99の2階層に分割)の順で上限が拡大(Deep Researchなど検索を多用する機能ほど消費が大きい) | 具体的な検索回数の固定値は非公開。全体のメッセージ利用上限を消費する形で、Pro/Max(5x)/Max(20x)ほど上限が大きい。API経由の利用は1,000検索あたり10ドル+トークン費用 | Microsoft 365 CopilotはAIクレジット制で利用上限を管理(検索専用の数字は非公開) |
-| 出典の示し方 | 本文中の番号付き引用+回答下の「ソース」ボタンでパネル表示 | 回答下の「Sources」ボタンでサイドパネル表示。Deep Researchレポートは本文中に数字引用+末尾に文献リスト | 本文中の番号付きインライン引用(クリックで出典URLへ、引用元テキストの該当箇所を最大150文字まで保持) | リンク付き引用+実際にBingへ送った検索クエリ自体も引用セクションに表示(透明性の強化)。2026年6月からはWord/PowerPointファイルの引用元も、文書全体ではなく該当箇所に直接リンクする「Deep citations」に対応 |
+| 出典の示し方 | 本文中の番号付き引用+回答下の「ソース」ボタンでパネル表示。無料プランでも人物・場所・商品などの画像が回答内に直接表示されるようになった | 回答下の「Sources」ボタンでサイドパネル表示。Deep Researchレポートは本文中に数字引用+末尾に文献リスト | 本文中の番号付きインライン引用(クリックで出典URLへ、引用元テキストの該当箇所を最大150文字まで保持) | リンク付き引用+実際にBingへ送った検索クエリ自体も引用セクションに表示(透明性の強化)。2026年6月にプレビュー開始した「Deep citations」(引用元の該当箇所への直リンク)は2026年9月に一般提供(GA)となり、対象がWord/PowerPointからMeetings・Web・PDFへ拡大中 |
 | 企業向け管理設定 | Enterprise/Eduでワークスペース単位・ロール単位のON/OFF | Web Grounding for Enterprise(規制業界向けの別サービス。データ非ログ・VPC対応) | Team/Enterpriseは管理者がAdmin設定で有効化するまでメンバーに表示されない | IT管理者がテナント側でWeb検索(パブリックWebアクセス)自体を無効化可能。2026年7月からは特定ドメイン最大1,000件を検索対象から個別に除外する設定にも対応 |
 
 ### 判断基準
@@ -118,6 +120,10 @@ Web検索そのものに個別の追加料金がかかるツールは基本的�
 - [Microsoft Copilotの基本](microsoft-copilot-basics.md)
 
 ## 更新履歴
+
+### 2026-09-17: GPT-6 Astraの検索対応とMicrosoft 365 Copilot「Deep citations」のGA化を反映
+- **内容**: 2026年9月3日登場のGPT-6 AstraがChatGPTの検索・音声モードでも選択できるようになった点、無料ChatGPTの検索結果に画像がインライン表示されるようになった点を追記。Microsoft 365 Copilotの「Deep citations」が2026年6月のプレビューを経て2026年9月に一般提供(GA)となり、対象がWord/PowerPointからMeetings・Web・PDFへ拡大中である点を反映
+- **出典**: [OpenAI: GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra/)、[ChatGPT Release Notes | OpenAI Help Center](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)、[Microsoft 365 Copilot Deep Citations: Rollout, Security, and Admin Controls](https://en.ittrip.xyz/ai/copilot-deep-citations)
 
 ### 2026-08-02: 2026年8月時点の最新情報に更新
 - **内容**: 「仕組み・背景」にAnthropicが2026年2月に追加したWeb検索の「動的フィルタリング(dynamic filtering)」を追記。比較表・実務手順を更新し、Microsoft 365 Copilotの詳細な手動切り替え手順(パーソナライズ→詳細設定)、2026年6月の「Deep citations」(引用元の該当箇所への直リンク)、2026年7月の検索対象ドメイン除外設定(最大1,000件)を追加。GeminiはGoogle I/O 2026でのAI Ultra階層分割(5倍/$99.99・20倍/$199.99)とAI Plus($4.99)を含む料金体系に更新。Claude Web検索APIの従量課金(1,000検索あたり10ドル)を料金セクションに追記。「注意点」に、検索機能の効率・透明性向上と引用の正確性は別問題である旨を追記
