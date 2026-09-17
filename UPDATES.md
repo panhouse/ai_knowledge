@@ -5,6 +5,19 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-16
+- [Hugging Faceの基本(AIモデル・データセットのハブ)](topics/part08-specialized-ai-tools/huggingface-basics.md): 料金プランを公式サイトの最新表記(推論クレジット制度など)に更新
+
+## 2026-09-15
+- [法律事務所・弁護士法人における生成AI活用事例](topics/part14-industry-cases/law-firm-legal-services-ai-use-cases.md): 新規執筆(大手法律事務所の知見製品化・弁護士法72条・判例ハルシネーション懲戒事例を中心に整理)
+- [税務署・国税庁など税務行政における生成AI活用事例](topics/part14-industry-cases/tax-administration-agency-ai-use-cases.md): 新規執筆(税務相談チャットボット「ふたば」・AI-OCR・KSK2による税務調査リスクスコアリングを中心に整理)
+- [ChatGPTのCanvas機能](topics/part03-ai-chat-tools/chatgpt-canvas-feature.md): パネル型Canvasの完全終了(o3退役)とGPT-6 Astra登場、最新プラン体系を反映して最新化
+- [消防・防災機関における生成AI活用事例](topics/part14-industry-cases/fire-disaster-prevention-agency-ai-use-cases.md): 新規執筆(119番通報AI・火災調査/救急報告書作成支援・避難所運営DXを整理)
+- [経営コンサルティング業界における生成AI活用事例](topics/part14-industry-cases/management-consulting-industry-ai-use-cases.md): 新規執筆(McKinsey Lilli・BCG Deckster/GENE・Bain・Big4の社内AI活用とNRI等国内ファームの動向を整理)
+- [特許事務所・弁理士事務所における生成AI活用事例](topics/part14-industry-cases/patent-attorney-firm-ai-use-cases.md): 新規執筆(IPTech弁理士法人・朝日特許事務所・みらい翻訳等の事務所単位でのAI導入事例を整理)
+- [GPTs・Gem・Copilot Agent・Claude Projectsの比較と使い分け](topics/part06-custom-ai/custom-ai-tools-comparison.md): GPTs新規作成終了・Gem終了報道・各ツールの料金/モデルを反映して最新化
+- [コーディング支援AIの選び方・比較(Cursor・GitHub Copilot・Cline・Windsurf)](topics/part08-specialized-ai-tools/coding-assistant-ai-comparison.md): SpaceXによるCursor買収完了とOpenAIのモデル提供終了予定、各ツールの料金・モデル一覧を最新化
+- [ノーコード・エージェント基盤系の国内AI企業一覧](topics/part16-japan-ai-companies/nocode-agent-platform-ai-companies-japan.md): 掲載企業の情報を最新化し、インターセクト株式会社(Askhub)を新規追加
+- [研修・人材育成系の国内AI企業一覧](topics/part16-japan-ai-companies/ai-training-hr-development-companies-japan.md): 掲載企業7社の情報を最新化(社名変更2件を反映)し、DMM生成AI CAMPを新規追加。frontmatterの`chapter`欠落も修正
 - [Zapierの基本](topics/part10-nocode-lowcode/zapier-basics.md): Zapier Agentsの独立アドオン化・アクティビティ課金への移行を反映して最新化
 
 ## 2026-09-14
