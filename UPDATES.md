@@ -6,6 +6,7 @@
 
 ## 2026-09-18
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Fable 5.1の登場とSonnet 5の価格恒久化、Fast modeを反映して最新化
+- [Claude Coworkの基本](topics/part11-ai-agents/claude-cowork-basics.md): Coworkとチャットの統合(「one Claude」化)とClaude Docs/Slides/Designの登場を反映して最新化
 
 ## 2026-09-17
 - [OpenAI APIの基本](topics/part09-api-development/openai-api-basics.md): GPT-6 Astraの登場と料金体系を反映して最新化
