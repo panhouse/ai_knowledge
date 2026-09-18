@@ -10,6 +10,7 @@
 - [OpenAI Codexの基本](topics/part11-ai-agents/openai-codex-basics.md): ChatGPTデスクトップアプリへの統合とクレジットレートカード改定を反映して最新化
 - [Google Antigravityの基本](topics/part11-ai-agents/google-antigravity-basics.md): GA(正式提供)移行とGemini 3.8/3.7 Flashのモデル追加を反映して最新化
 - [Difyとは何か](topics/part10-nocode-lowcode/dify-basics.md): v1.17.0/v1.17.1の新機能(E2Bサンドボックス・統合トレーシング・データセットスコープAPIキー)を反映して最新化
+- [GPTsの作り方と公開設定](topics/part06-custom-ai/gpts-creation-basics.md): GPTs廃止(Pluginsへの移行)の公式発表と確定スケジュールを反映して最新化
 
 ## 2026-09-17
 - [OpenAI APIの基本](topics/part09-api-development/openai-api-basics.md): GPT-6 Astraの登場と料金体系を反映して最新化
