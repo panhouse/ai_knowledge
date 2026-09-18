@@ -8,6 +8,7 @@
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Fable 5.1の登場とSonnet 5の価格恒久化、Fast modeを反映して最新化
 - [Claude Coworkの基本](topics/part11-ai-agents/claude-cowork-basics.md): Coworkとチャットの統合(「one Claude」化)とClaude Docs/Slides/Designの登場を反映して最新化
 - [OpenAI Codexの基本](topics/part11-ai-agents/openai-codex-basics.md): ChatGPTデスクトップアプリへの統合とクレジットレートカード改定を反映して最新化
+- [Google Antigravityの基本](topics/part11-ai-agents/google-antigravity-basics.md): GA(正式提供)移行とGemini 3.8/3.7 Flashのモデル追加を反映して最新化
 
 ## 2026-09-17
 - [OpenAI APIの基本](topics/part09-api-development/openai-api-basics.md): GPT-6 Astraの登場と料金体系を反映して最新化
