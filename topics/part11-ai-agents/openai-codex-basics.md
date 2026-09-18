@@ -4,7 +4,7 @@ part: 11
 chapter: 第2章 コーディングエージェント
 tags: [AIエージェント, Codex, OpenAI, コーディングエージェント, ChatGPT]
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-09-18
 ---
 
 # OpenAI Codexの基本
@@ -27,25 +27,30 @@ Codex のもう一つの軸は**クラウド実行**である。手元のマシ�
 
 | 入口 | 特徴 |
 |---|---|
-| **Codex アプリ** | デスクトップアプリ。macOS 版が先行し、2026年3月4日の更新で Windows 対応 |
+| **ChatGPT デスクトップアプリ** | 2026年2月にOpenAIがChatGPTデスクトップアプリ・Codexアプリ・ChatGPT Atlas(ブラウザ)を1本の統合アプリに集約すると発表し、以降Codexは**単独のデスクトップアプリとしては存在せず**、ChatGPTデスクトップアプリに組み込まれた形で提供されている(既存のCodexアプリは自動的に新しいChatGPTデスクトップアプリに置き換わった) |
 | **Codex CLI** | ターミナルから。**オープンソース**で公開されている |
 | **IDE 拡張** | VS Code、Cursor など VS Code 系エディタに Codex エージェントを組み込む |
-| **Codex クラウド** | OpenAI 側の環境で実行。多数のタスクを並列処理できる |
+| **Codex クラウド** | OpenAI 側の環境で実行。多数のタスクを並列処理できる(GitHubレビューやSlack連携などクラウド機能も含む) |
 
 CLI がオープンソースである点は、社内での挙動確認や独自の組み込みをしたい場合に効いてくる。
+社内マニュアルに「Codexアプリを開く」と案内している場合は、ChatGPTデスクトップアプリ内の
+Codex機能を指す説明に更新しておく。
 
 ### モデルと「クレジット」
 
 Codex の消費量は**クレジット**という単位で管理される。クレジットはトークン使用量を
 分かりやすい単位に換算したもので、モデルごとに単価が異なる。
-2026年8月時点の主なレートは次のとおり([Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card))。
+2026年9月時点の主なレートは次のとおり([Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card))。
 
 | モデル | 入力(100万トークンあたり) | キャッシュ入力 | 出力 |
 |---|---|---|---|
-| GPT-5.6 Sol | 125 | 12.5 | 750 |
+| GPT-5.6 Sol | 100 | 10 | 500 |
 | GPT-5.6 Terra | 50 | 5 | 300 |
 | GPT-5.6 Luna | 5 | 0.5 | 30 |
 | GPT-5.4 | 62.50 | 6.25 | 375 |
+
+最上位のSolは2026年8月時点の125/12.5/750から、9月時点で100/10/500に値下げされている。
+Terra・Luna・GPT-5.4のレートは変わっていない。
 
 **Sol / Terra / Luna は同じ世代の中で「賢さと価格」が違うモデル**という関係にある。
 Luna は Sol の25分の1の入力単価で、日常的な作業はこちらで足りることが多い。
@@ -91,7 +96,7 @@ API キー方式なら固定上限なしで、通常のAPI料金がかかる。
 
 ## 実務での使い方
 
-### 使えるプラン(2026年8月時点)
+### 使えるプラン(2026年9月時点)
 
 Codex は **ChatGPT の Free / Go / Plus / Pro / Business / Edu / Enterprise すべてに含まれる**
 ([Codex pricing](https://learn.chatgpt.com/docs/pricing))。
@@ -99,10 +104,10 @@ Codex は **ChatGPT の Free / Go / Plus / Pro / Business / Edu / Enterprise す
 | プラン | 月額 | Codex の位置づけ |
 |---|---|---|
 | Free | $0 | 動作を試す程度 |
-| Go | 低価格帯 | 軽い用途 |
+| Go | $8 | 軽い用途 |
 | Plus | $20 | 個人利用の標準 |
 | Pro | $100 / $200(5x / 20x) | 日常的に回す |
-| Business | $20/ユーザー | 上限は Plus 相当。組織管理機能つき |
+| Business | $20/ユーザー(年払い、2ユーザー以上。月払いは$25) | 上限は Plus 相当。組織管理機能つき |
 | Enterprise / Edu | 個別 | 大規模導入 |
 
 **実際のコスト感**として、OpenAI 自身が「Codex は平均で開発者1人あたり月 $100〜$200 程度」
@@ -151,6 +156,10 @@ Codex には「どこまで自動で実行してよいか」を決める承認�
 
 ## 注意点・よくある誤解
 
+- **「Codexアプリ」は単独では存在しない。** 2026年2月の統合発表以降、Codexは
+  ChatGPTデスクトップアプリ・ChatGPT Atlas(ブラウザ)と統合され、単体アプリとしての
+  インストール導線はなくなった。過去にCodexアプリを個別インストールしていた環境も
+  自動的にChatGPTデスクトップアプリへ置き換わっている
 - **「ChatGPT に含まれる」は「追加費用ゼロ」ではない。** 含まれるのは一定の上限までで、
   本格運用すると上限に当たる。実質的なコストは月 $100〜$200/人が目安
 - **モデル名が価格差を表している。** Sol / Terra / Luna の違いを知らずに既定のまま使うと、
@@ -180,6 +189,13 @@ ChatGPT を契約しているなら、Codex CLI を入れて既存プロジェ�
 - [情報漏洩を防ぐデータ管理](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-09-18: デスクトップアプリ統合とレートカード改定を反映
+- **内容**: 2026年2月に発表されたChatGPTデスクトップアプリ・Codexアプリ・ChatGPT Atlasの統合を反映し、
+  「Codexアプリ」が単独では存在せずChatGPTデスクトップアプリに組み込まれたことを4つの入口の表と
+  注意点に追記。クレジットレートカードのGPT-5.6 Sol(125/12.5/750→100/10/500に値下げ、
+  Terra・Luna・GPT-5.4は変更なし)とGoプランの月額($8)を最新値に更新
+- **出典**: [ChatGPT Learn: Pricing](https://learn.chatgpt.com/docs/pricing)、[Neowin: OpenAI launches ChatGPT Work and unveils unified desktop app with Codex built in](https://www.neowin.net/amp/openai-launches-chatgpt-work-and-unveils-unified-desktop-app-with-codex-built-in/)
 
 ### 2026-08-05: 初版執筆
 - **内容**: Codex の位置づけ(ChatGPT契約に含まれる・クラウド並列実行が軸)、
