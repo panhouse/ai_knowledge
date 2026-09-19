@@ -12,6 +12,7 @@
 - [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): レジストリ急拡大・Microsoft Copilot対応GA・ChatGPT Developer mode条件を反映して最新化
 - [生成AI利用コストの管理・予算配分](topics/part12-business-practice/ai-cost-management-and-budgeting.md): 料金プラン・API単価・課金方式の変化を最新化
 - [ベクトルデータベースの基本(Embeddingとの関係)](topics/part07-data-analysis/vector-database-basics.md): Amazon S3 Vectors・クラウド純正勢を追加し、Pinecone/Weaviate/Zillizの最新動向を反映
+- [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part04-risk-security/ai-regulation-and-governance-trends.md): EU規則番号確定・新期限、日本のプリンシプル・コード正式決定、米国新法を反映して最新化
 
 ## 2026-09-18
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Fable 5.1の登場とSonnet 5の価格恒久化、Fast modeを反映して最新化
