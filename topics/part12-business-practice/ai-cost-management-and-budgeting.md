@@ -4,7 +4,7 @@ part: 12
 chapter: 第1章 導入の設計
 tags: [コスト管理, 予算配分, チャージバック, トークン課金, FinOps, AIエージェント]
 created: 2026-07-25
-updated: 2026-08-28
+updated: 2026-09-19
 ---
 
 # 生成AI利用コストの管理・予算配分
@@ -24,7 +24,9 @@ updated: 2026-08-28
 - **シート課金(定額)**: ChatGPT Business/Enterprise、Microsoft 365 Copilot、Claude Team/Enterprise、Gemini for Google Workspaceなど、「1ユーザーあたり月額◯円」で契約する形態。利用量にかかわらず費用は一定で、予算化しやすい
 - **従量課金(API)**: OpenAI API・Anthropic API・Google Gemini APIなど、開発者向けにモデルを直接呼び出す契約。「トークン(文章を分割した処理単位)」の入出力量に応じて課金され、使うほど・呼び出す回数が増えるほど費用が線形以上に増える
 
-[トークンとは何か](../part02-llm-basics/what-are-tokens.md)で扱っているとおり、API課金は「入力トークン」と「出力トークン」で単価が異なり(出力側が3〜6倍程度高いのが一般的)、さらにモデルのグレード(上位モデルほど高性能・高単価)によっても単価が数倍〜数十倍変わる。同じ業務でも「どのモデルを使うか」の選択だけでコストが大きく変動するのが、生成AIの予算管理が従来のITコスト管理と最も違う点である。
+[トークンとは何か](../part02-llm-basics/what-are-tokens.md)で扱っているとおり、API課金は「入力トークン」と「出力トークン」で単価が異なり(出力側が3〜6倍程度高いのが一般的)、さらにモデルのグレード(上位モデルほど高性能・高単価)によっても単価が数倍〜数十倍変わる。例えば2026年9月時点で、OpenAIの最上位モデル「GPT-6 Astra」はAPI経由で入力$10・出力$50(100万トークンあたり、以下同様)、Anthropicの最上位「Claude Opus 5」は入力$5・出力$25であるのに対し、Googleの廉価モデル「Gemini 3.5 Flash-Lite」は入力$0.30・出力$2.50程度と、同じ「AIを使う」でも数十倍の単価差がある。同じ業務でも「どのモデルを使うか」の選択だけでコストが大きく変動するのが、生成AIの予算管理が従来のITコスト管理と最も違う点である。
+
+なお、単価は下がることもある。Anthropicは主力モデル「Claude Sonnet 5」について、当初は導入価格(入力$2・出力$10)を2026年9月1日に本来価格の入力$3・出力$15へ値上げする予定だったが、この値上げを撤回し、導入価格のまま据え置くと発表している。モデル単価は「いずれ上がる・下がる」のどちらの前提も置かず、契約更新のたびに公式情報で確認する姿勢が必要である。
 
 ### なぜ従来のIT予算管理より難しいのか
 
@@ -45,6 +47,8 @@ updated: 2026-08-28
 
 **判断の目安**: 「業務として恒常的に・多くの人が使う」対話的な利用はシート課金、「システムに組み込む・処理量が変動する・一部の開発チームだけが使う」用途は従量課金、という住み分けが基本形。実務では両方を併用する企業がほとんどで、全社ヘルプデスク的な用途はシート契約、社内ツールへの組み込みはAPIという二本立てにするのが典型的な構成である。
 
+**両者の境界も動きつつある点に注意**: Claude Enterpriseは以前から「シート料(定額)+使用量(API従量課金)」を分離する方式を採っているが、OpenAIも2026年にChatGPT Enterpriseの新規契約向けに、座席料に加えてChat・Codex・音声・画像生成などの利用量をトークン単位で計測して課金する「トークンベース課金」を用意した(後述)。シート課金と従量課金は排他的な二択ではなく、大手ベンダーほど両者を組み合わせたハイブリッド契約を選べるようになってきている。
+
 ### 見積もりが甘くなりやすい場面
 
 - **AIエージェント(自律的に計画・実行するAI)を使ったワークフロー**: 1回のユーザー依頼が、内部では「調べる→考える→ツールを呼ぶ→結果を確認する→もう一度考える」という多段階のAI呼び出しに展開される。単純なチャット応答に比べてトークン消費が大きく増える構造的リスクがあるため、通常のチャット利用の感覚で予算を組むと大きく外れる(詳細は後述)
@@ -52,7 +56,7 @@ updated: 2026-08-28
 
 ## 実務での使い方
 
-### 1. 法人契約でよくあるコスト構造(2026年8月時点の目安)
+### 1. 法人契約でよくあるコスト構造(2026年9月時点の目安)
 
 シート課金型の主要ツールの価格帯は次のとおり。**モデル同様、料金は数か月単位で改定されるため、契約前に必ず公式ページ・営業担当に最新価格を確認すること。** 特にChatGPT Enterprise・Gemini Enterprise等の見積もり制プランは、ここに記載の水準感はあくまで目安である。
 
@@ -60,13 +64,15 @@ updated: 2026-08-28
 |---|---|---|---|
 | OpenAI | ChatGPT Business(旧Team) Standard | 年契約$20、月契約$25 | 最低2席。2026年4月2日に旧価格(年契約$25・月契約$30)から値下げされた |
 | OpenAI | ChatGPT Business Premium(新設) | 年契約$100、月契約$125 | 2026年8月に新設されたシート種別。Standard比で利用量5倍・回答生成の5時間ごとの上限撤廃。1ワークスペース内でStandardとPremiumを混在させられる |
-| OpenAI | ChatGPT Enterprise | 個別見積り(非公開) | 業界筋では「$45〜75程度(平均$60前後)・最低150席」という情報が出回っているが、OpenAI公式の確認は取れていない未確認情報。契約前に必ず営業担当に確認する |
+| OpenAI | ChatGPT Enterprise(クレジット制) | 個別見積り(非公開) | 業界筋では「$45〜75程度(平均$60前後)・最低150席」という情報が出回っているが、OpenAI公式の確認は取れていない未確認情報。契約前に必ず営業担当に確認する |
+| OpenAI | ChatGPT Enterprise(トークンベース課金・新方式) | 座席料+利用量(トークン)の実費 | 2026年に新規契約向けに追加された課金方式。Chat・ChatGPT Work・Codex・音声・検索・画像生成・オフィスツール・Workspace Agents等の利用量をモデル・機能ごとの単価表(レートカード)でトークン計測して座席料に上乗せ請求する。使用量に応じた契約を選んだ新規Enterprise顧客が対象で、既存のクレジット制Enterpriseと並存する |
 | Microsoft | Microsoft 365 Copilot(E3/E5への追加) | $30 | M365 E3/E5等の対象ライセンスが前提 |
-| Microsoft | Microsoft 365 Copilot Business(〜300ユーザー向け) | 年契約$18(2026年7月1日〜12月31日の期間限定価格、通常$21)、月契約$25.20 | Microsoft 365 Businessプランが前提。期間限定価格の終了日は公式ページで複数回延長されており、契約時に最新の終了日を必ず確認する |
+| Microsoft | Microsoft 365 Copilot Business(〜300ユーザー向け) | 年契約$18(2026年7月1日〜12月31日の期間限定価格、通常$21)、月契約$25.20 | Microsoft 365 Businessプランが前提。期間限定価格の期間はMicrosoft公式ページで2026年9月時点も「2026年7月1日〜12月31日」と確認済み |
 | Anthropic | Claude Team(Standard) | 年契約$20、月契約$25 | 2026年7月20日にシート数下限が5席→2席に緩和。上限は150席(超える場合はEnterpriseへ移行) |
 | Anthropic | Claude Team(Premium) | 年契約$100、月契約$125 | 同上 |
 | Anthropic | Claude Enterprise | $20(シート料。使用量は含まれず別途API従量課金) | セルフサーブは最低20席、営業担当経由は最低50席。「シートに使用量をバンドルする」方式から「フラットなシート料+従量課金を完全分離」する方式になっている |
 | Google | Gemini(Google Workspace) | Business Starter 目安$7、Standard 目安$14、Plus 目安$22 | 2025年3月以降、Geminiは単体アドオンではなく各Workspaceプランに標準搭載される方式に変更された |
+| Google | Gemini Workspaceの追加オプション「AI Expanded Access」 | Google公式は価格非公開(外部推計で目安$20/月) | 2026年2月提供開始。Business Standard/Plus・Enterprise Standard/Plusへのアドオンで、画像・動画生成(Nano Banana Pro・Veo 3.1)やNotebookLM、Workspace Studio自動化などの利用上限を引き上げる。標準プランの上限に頻繁に達するヘビーユーザーがいる場合の追加コストとして予算化を検討する |
 | Google | Gemini Enterprise(エージェント基盤、Workspaceとは別製品) | 目安$21〜(Business)、Standard/Plusはさらに上 | Workspaceの「Gemini」とは別契約の製品なので混同しないよう注意 |
 
 **従量課金(API)側のメーター課金の例**として、Microsoft 365 CopilotのAgent機能・Copilot Studioは、月額固定のシートとは別に「Copilot Studioクレジット」を使うメーター制が用意されている(25,000クレジットで月額$200、または従量課金なら1クレジット$0.01)。クレジットの消費量は機能によって大きく異なり、シンプルな回答が1クレジット程度なのに対し、自律的に動く「エージェントのアクション」1回で25クレジット以上を消費することもある。エージェント機能を使うほどこの従量課金部分が積み上がる点は、後述する「エージェントのコスト構造」の理解に直結する。
@@ -138,6 +144,7 @@ FinOps(クラウドコストを財務・エンジニアリング・事業部門�
 - **AIエージェントの多重呼び出しでコストが跳ね上がる構造を理解する**: Gartnerは2026年3月、エージェント型AIのタスクは通常のチャット応答に比べて**タスクあたり5〜30倍程度のトークンを消費する**と指摘している(エージェントは複数ステップの処理のたびに、それまでの会話履歴・システムプロンプトを含む文脈全体を毎回モデルに読み込ませ直すため、同じ文脈に何度も課金される構造になっているのが主因)。さらに2026年8月には、「トークン単価は2030年までに9割下がる見通しである一方、エージェント型ワークフロー1件あたりの推論コストは2028年までに5倍超に増える」という一見矛盾した予測(Gartnerはこれを「推論のパラドックス」と呼ぶ)を発表しており、モデルの世代が上がるほど、より複雑で・より高価なトークンを使うようになる構造が背景にある。Gartnerは2025年6月時点でも、ガバナンス不足・投資対効果の不透明さ・コストの制御不能を主な理由に、**2027年末までにエージェント型AIプロジェクトの4割超が中止に追い込まれる**と予測しており、エージェント活用を広げる際は「1件あたりの呼び出し回数の上限」「1タスクあたりのコスト上限」を事前に設計しておくことが欠かせない
 - **大企業でも青天井になった実例がある**: 報道によれば、ある大手企業では開発者向けAIコーディングツールの利用が数か月で社内に急拡大し、年間のAI予算を数か月で使い切ったとされる。また、社内に一律で制限のないAI利用権限を与えた結果、月間の請求額が非常に高額に達したという事例も報道されているが、こちらは企業名が明らかにされていない伝聞情報であり、裏付けの取れた統計ではなく「起こり得るリスクの実例」として参考にとどめるべきである
 - **ChatGPTなどのサブスク契約とAPI従量課金は別会計**: 「ChatGPT Plus/Businessを契約しているから、API経由の利用も安くなる・含まれる」と誤解しやすいが、両者は完全に別契約・別請求である。社内のどこかの部署がAPIを直接契約して使っている場合、シート課金の請求書だけを見ていては全社の生成AI支出を把握できない
+- **「シート課金だから予算は固定」とも限らなくなってきている**: OpenAIのChatGPT Enterpriseトークンベース課金のように、大手ベンダーのEnterpriseプランでも座席料に利用量課金を上乗せする契約が登場している。「シート契約=定額」という前提のまま予算を組むと、契約形態によっては想定外の変動費が乗る場合があるため、契約時に課金方式(クレジット制か・トークンベースか)を必ず確認する
 
 ## 最初の一歩
 
@@ -151,6 +158,10 @@ FinOps(クラウドコストを財務・エンジニアリング・事業部門�
 - [トークンとは何か](../part02-llm-basics/what-are-tokens.md)
 
 ## 更新履歴
+
+### 2026-09-19: 料金プラン・API単価・課金方式の変化を最新化
+- **内容**: OpenAIがChatGPT Enterpriseの新規契約向けに、座席料+利用量(トークン計測)のハイブリッド課金「トークンベース課金」を追加した点(既存のクレジット制Enterpriseと並存)を反映し、「シート課金 vs 従量課金」の二分法にハイブリッド契約という第三の選択肢が出てきたことを追記。Google Workspaceの新アドオン「AI Expanded Access」(2026年2月提供開始、画像・動画生成やNotebookLMの利用上限を引き上げる、価格非公開)をGeminiの価格表に追加。Microsoft 365 Copilot Businessの期間限定価格($18、2026年7月1日〜12月31日)を公式ページで再確認(変更なし)。モデル単価の具体例として、OpenAI「GPT-6 Astra」(入力$10/出力$50、2026年9月3日リリース)・Anthropic「Claude Opus 5」(入力$5/出力$25)・Google「Gemini 3.5 Flash-Lite」(入力$0.30/出力$2.50程度)を追加し、Anthropicが「Claude Sonnet 5」の導入価格($2/$10)を2026年9月1日の値上げ予定($3/$15)を撤回してそのまま据え置くと発表した点(モデル単価の予見可能性に関する事例)を追記
+- **出典**: [ChatGPT Rate Card (Enterprise token-based pricing) - OpenAI Help Center](https://help.openai.com/en/articles/20001415-chatgpt-rate-card-enterprise-token-based-pricing)、[Token-based billing for ChatGPT Enterprise - OpenAI Help Center](https://help.openai.com/en/articles/20001520-token-based-billing-for-chatgpt-enterprise)、[Microsoft 365 Copilot Plans and Pricing(公式)](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing)、[Google Workspace Updates: Get higher access to advanced AI in Google Workspace(公式)](https://workspaceupdates.googleblog.com/2026/02/google-workspace-ai-expanded-access.html)、[AI Expanded Access - Google Workspace Help(公式)](https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/ai-expanded-access)、[GPT-6 Astra: A new generation of intelligence - OpenAI(公式)](https://openai.com/index/gpt-6-astra/)、[GPT-6 Astra Pricing Confirms OpenAI's Premium Track - Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/gpt-6-astra-pricing-confirms-125442006.html)、[Pricing - Claude Platform Docs(公式)](https://platform.claude.com/docs/en/about-claude/pricing)、[Claude Opus 5 pricing in 2026 - eesel AI](https://www.eesel.ai/blog/claude-opus-5-pricing)、[Gemini pricing in 2026 - CloudZero](https://www.cloudzero.com/blog/gemini-pricing/)
 
 ### 2026-08-28: 料金プラン・統計データを最新化
 - **内容**: ChatGPT Businessに5倍利用量・5時間上限撤廃の新シート「Premium」($125/$100)が2026年8月に新設された点、Microsoft 365 Copilot Businessの特別価格($18)の適用期間が2026年12月31日まで延長された点、Claude Teamのシート数下限が2026年7月20日に5席→2席へ緩和され上限150席が明示された点、Claude Enterpriseがセルフサーブ最低20席・営業経由最低50席である点を反映。FinOps Foundation「State of FinOps 2026」の新データ(AI予算超過企業73%、エージェント型プロジェクトの予算超過率2.4倍、トークン単価8割下落に対しAI支出総額は4.8倍に増加)、Gartnerが2026年8月に発表した「推論のパラドックス」(トークン単価は下がるがエージェント型ワークフローの推論コストは2028年までに5倍超に増加)を追加。Anthropic公式のClaude Code実コスト目安(開発者1人・1日$13、月$150〜250)、Copilot Studioクレジットの機能別消費量(エージェントのアクション1回で25クレジット以上)を新たに追記
