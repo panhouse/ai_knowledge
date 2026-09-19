@@ -7,6 +7,7 @@
 ## 2026-09-19
 - [RAG(検索拡張生成)の基本](topics/part07-data-analysis/rag-basics.md): NotebookLMの「Gemini Notebook」改称・ロングコンテキスト最新事情・Gemini APIのマネージドRAG機能を反映して最新化
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): オープンウェイトの大型MoEモデル(Alibaba Qwen3.8シリーズ)の動向を追記
+- [主要AIエージェントの比較と選び方](topics/part11-ai-agents/ai-agent-tools-comparison.md): Devinのクォータ制移行・GitHub Copilot/Google Julesを比較に追加して最新化
 
 ## 2026-09-18
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Fable 5.1の登場とSonnet 5の価格恒久化、Fast modeを反映して最新化
