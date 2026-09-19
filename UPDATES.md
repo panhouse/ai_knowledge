@@ -9,6 +9,7 @@
 - [モデルの種類と選び方(マルチモーダル・パラメータ数・SLM・VLM)](topics/part02-llm-basics/model-types-and-selection-basics.md): オープンウェイトの大型MoEモデル(Alibaba Qwen3.8シリーズ)の動向を追記
 - [主要AIエージェントの比較と選び方](topics/part11-ai-agents/ai-agent-tools-comparison.md): Devinのクォータ制移行・GitHub Copilot/Google Julesを比較に追加して最新化
 - [システムプロンプトの役割と書き方](topics/part05-prompt-engineering/system-prompt-basics.md): Claudeの個人向け指示欄「Instructions for Claude」とGPTs廃止・Plugins移行の節を最新化
+- [MCP(Model Context Protocol)の基本](topics/part09-api-development/mcp-basics.md): レジストリ急拡大・Microsoft Copilot対応GA・ChatGPT Developer mode条件を反映して最新化
 
 ## 2026-09-18
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Fable 5.1の登場とSonnet 5の価格恒久化、Fast modeを反映して最新化
