@@ -136,6 +136,7 @@ OpenAI・Anthropicのような「モデル開発特化」企業が莫大な計�
 
 - [AGI(汎用人工知能)とは何か](what-is-agi.md)
 - [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)
+- [海外の主要基盤モデル企業一覧(フロンティアAI企業)](../part17-overseas-ai-companies/foundation-model-companies-overseas.md) — 本ページが扱う業界動向・戦略分析に対し、各社の企業プロフィール(資金調達・提携)を軽量カタログとして一覧できる
 
 ## 更新履歴
 
