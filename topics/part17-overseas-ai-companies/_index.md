@@ -70,3 +70,4 @@ Part 17 は **海外企業版の一覧カタログ**。教科書ページのよ�
 - [中国発の基盤モデル企業一覧](china-foundation-model-companies-overseas.md)
 - [海外のAI半導体・インフラ企業一覧](ai-chip-infrastructure-companies-overseas.md)
 - [海外の契約書・法務AI企業一覧](legal-contract-ai-companies-overseas.md)
+- [海外の営業支援AI企業一覧](sales-support-ai-companies-overseas.md)

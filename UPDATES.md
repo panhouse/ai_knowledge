@@ -9,6 +9,7 @@
 - [欧州発の新興基盤モデル企業一覧](topics/part17-overseas-ai-companies/emerging-foundation-model-companies-europe-overseas.md): 新規執筆(Mistral AI・Cohere・AI21 Labsの3社を収録)
 - [中国発の基盤モデル企業一覧](topics/part17-overseas-ai-companies/china-foundation-model-companies-overseas.md): 新規執筆(DeepSeek・Alibaba(Qwen)・Moonshot AI(Kimi)・Zhipu AI(Z.ai)の4社を収録)
 - [海外の契約書・法務AI企業一覧](topics/part17-overseas-ai-companies/legal-contract-ai-companies-overseas.md): 新規執筆(Harvey・Legora・Ironcladの3社を収録。Part17第3章の初ページ)
+- [海外の営業支援AI企業一覧](topics/part17-overseas-ai-companies/sales-support-ai-companies-overseas.md): 新規執筆(Clay・Apollo.io・Gongの3社を収録)
 
 ## 2026-09-19
 - 体系変更: [Part 17: 海外AI企業マップ](topics/part17-overseas-ai-companies/_index.md) を新設(4章構成)。Part 16「国内AI企業マップ」の海外版で、Part 3・Part 9の個別ツールページと重複しないよう「企業としてのプロフィール(資金調達・戦略・提携)」に絞ったカタログとして運用する(CLAUDE.mdの体系マップも合わせて更新)
