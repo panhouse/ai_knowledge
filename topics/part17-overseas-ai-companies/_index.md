@@ -66,3 +66,4 @@ Part 17 は **海外企業版の一覧カタログ**。教科書ページのよ�
 ## 収録ページ
 
 - [海外の主要基盤モデル企業一覧(フロンティアAI企業)](foundation-model-companies-overseas.md)
+- [海外のAI半導体・インフラ企業一覧](ai-chip-infrastructure-companies-overseas.md)

@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-20
+- [海外のAI半導体・インフラ企業一覧](topics/part17-overseas-ai-companies/ai-chip-infrastructure-companies-overseas.md): 新規執筆(NVIDIA・AMD・Broadcom・Groq・Cerebras Systemsの5社を収録)
+
 ## 2026-09-19
 - 体系変更: [Part 17: 海外AI企業マップ](topics/part17-overseas-ai-companies/_index.md) を新設(4章構成)。Part 16「国内AI企業マップ」の海外版で、Part 3・Part 9の個別ツールページと重複しないよう「企業としてのプロフィール(資金調達・戦略・提携)」に絞ったカタログとして運用する(CLAUDE.mdの体系マップも合わせて更新)
 - [海外の主要基盤モデル企業一覧(フロンティアAI企業)](topics/part17-overseas-ai-companies/foundation-model-companies-overseas.md): 新規執筆(OpenAI・Anthropic・Google・Microsoft・Amazon・Meta・xAIの7社を収録。数値・固有名詞はPart13「生成AI業界の主要プレイヤーと動向」で確認済みの出典に基づく)
