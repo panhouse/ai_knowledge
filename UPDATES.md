@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-21
+- [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
+
 ## 2026-09-20
 - [海外のAI半導体・インフラ企業一覧](topics/part17-overseas-ai-companies/ai-chip-infrastructure-companies-overseas.md): 新規執筆(NVIDIA・AMD・Broadcom・Groq・Cerebras Systemsの5社を収録)
 - [欧州発の新興基盤モデル企業一覧](topics/part17-overseas-ai-companies/emerging-foundation-model-companies-europe-overseas.md): 新規執筆(Mistral AI・Cohere・AI21 Labsの3社を収録)
