@@ -4,7 +4,7 @@ part: 7
 chapter: 第3章 RAGの基礎
 tags: [Embedding, 埋め込み, ベクトル, セマンティック検索, RAG]
 created: 2026-07-06
-updated: 2026-07-31
+updated: 2026-09-21
 ---
 
 # Embedding(埋め込み)とは何か
@@ -88,7 +88,7 @@ vector_b = embedding_model.embed("年次有給休暇の持ち越しについて�
 similarity = cosine_similarity(vector_a, vector_b)  # 1.0に近いほど意味が近い
 ```
 
-### 主要なEmbeddingモデルの比較(2026年7月時点)
+### 主要なEmbeddingモデルの比較(2026年9月時点)
 
 料金・仕様は変更されやすいため、導入前に必ず各社公式サイトで最終確認すること。
 
@@ -96,7 +96,8 @@ similarity = cosine_similarity(vector_a, vector_b)  # 1.0に近いほど意味�
 |---|---|---|---|---|---|
 | **text-embedding-3-small** | OpenAI | 1,536(次元数を指定して短縮可) | 対応 | $0.02(バッチ利用は$0.01) | コストが最も安く、多くのRAG実装で既定の選択肢になっている |
 | **text-embedding-3-large** | OpenAI | 3,072(短縮可) | 対応 | $0.13(バッチ利用は$0.065) | smallより精度が高い代わりに料金・保存容量も増える。MTEBベンチマーク(意味検索など複数タスクの精度を横断比較する代表的な指標)で64.6点程度 |
-| **gemini-embedding-001** | Google | 3,072が既定(1,536/768に短縮可、精度劣化が小さい設計) | 100以上の言語に対応、多言語ベンチマークで上位 | $0.15(バッチ利用は$0.075) | 多言語の検索精度に強みがあり、日本語を含む非英語データのRAGで選ばれやすい。MTEB英語版で68点台とトップクラスの評価も報告されている |
+| **gemini-embedding-001** | Google | 3,072が既定(1,536/768に短縮可、精度劣化が小さい設計) | 100以上の言語に対応、多言語ベンチマークで上位 | $0.15(バッチ利用は$0.075) | テキスト専用モデル。多言語の検索精度に強みがあり、日本語を含む非英語データのRAGで選ばれやすい。MTEB英語版で68点台とトップクラスの評価も報告されている |
+| **gemini-embedding-2** | Google | 3,072(テキスト・画像・音声・動画・文書を同じ空間に埋め込むネイティブ・マルチモーダル対応) | 100以上の言語に対応 | $0.20(001より約33%高い) | 2026年4月にGA(一般提供)。入力上限が001(2,048トークン)の4倍にあたる8,192トークンに拡大し、動画検索などのマルチモーダル用途に対応する一方、001とはベクトル空間が非互換(後述の「異なるモデル同士は混ぜられない」に該当し、乗り換え時は全データの再インデックス化が必要) |
 | **embed-v4.0** | Cohere | 1,536 | 対応(多言語) | テキスト$0.12、画像$0.47 | テキストと画像を同じ空間に埋め込めるマルチモーダル対応、最大12.8万トークンの長文入力に対応(OpenAIの8,191トークンやVoyageの3.2万トークンより大幅に長く、長文を分割せずに扱いやすい) |
 | **voyage-4ファミリー(voyage-4-large/voyage-4/voyage-4-lite/voyage-4-nano)** | Voyage AI(MongoDB傘下) | 2048/1024/512/256から選択(全モデル共通) | 対応 | voyage-4-lite $0.02、voyage-4 $0.06、voyage-4-large $0.12(いずれもバッチ利用で33%引き) | シリーズ内でベクトル空間を共有しており、サイズ違いのモデルを組み合わせても再インデックス不要。新規アカウントはシリーズ全体で最初の2億トークンが無料。2026年6月には長文のチャンク分割の悩みを軽減する新モデル「voyage-context-4」も登場 |
 | **BGE-M3** | BAAI(オープンソース、MIT license) | 1,024 | 100以上の言語に対応 | 無料(自社サーバーで動かす場合はサーバー費用が発生) | 密ベクトル・疎ベクトル・トークン単位のベクトルを同時に出力でき、ハイブリッド検索を1モデルで実現。データを外部に送れない場合の有力な選択肢 |
@@ -107,7 +108,7 @@ similarity = cosine_similarity(vector_a, vector_b)  # 1.0に近いほど意味�
 
 - **「まず試したい・コストを抑えたい」→ OpenAI text-embedding-3-small**(実績が多く安価)
 - **「日本語など英語以外のデータが中心」→ Google gemini-embedding-001**(多言語の検索精度で高評価)
-- **「画像も一緒に検索したい」→ Cohere embed-v4.0**(テキストと画像を同じ空間で扱える)
+- **「画像も一緒に検索したい」→ Cohere embed-v4.0**(テキストと画像を同じ空間で扱える)。**動画・音声も含めて検索したい→ Google gemini-embedding-2**(2026年4月GA。テキスト・画像・音声・動画・文書を1つの空間に統一)
 - **「データを外部API に送れない・自社サーバー内で完結させたい」→ BGE-M3・Qwen3-Embeddingなどオープンソースモデル**(自社サーバーで運用する分、構築・保守の手間は増える)
 - **「日本語データの精度を特に重視したい、かつ自社サーバーで完結させたい」→ PLaMo-Embedding-1B(商用利用可)やSarashina3 embedding**(国産の日本語特化モデル。Sarashinaは商用利用時にライセンス条件を要確認)
 - **「Difyなどノーコードツールを使うだけ」→ ツールの既定設定のままでよい**(既定モデルで十分なことが多く、自分で比較検討する必要は薄い)
@@ -132,6 +133,10 @@ OpenAIやGoogleのEmbedding APIを試す前に、まずはDifyの「ナレッジ
 - [DifyでのRAG実装](../part10-nocode-lowcode/dify-rag-implementation.md)
 
 ## 更新履歴
+
+### 2026-09-21: Google「gemini-embedding-2」の追加を反映して最新化
+- **内容**: Googleが2026年4月にGA(一般提供)したマルチモーダル対応の新モデル「gemini-embedding-2」を比較表に追加。テキストのみ対応の従来モデル「gemini-embedding-001」(入力上限2,048トークン)に対し、embedding-2は入力上限8,192トークン(4倍)でテキスト・画像・音声・動画・文書を同一の埋め込み空間に統一できる一方、価格は001より約33%高く、001とはベクトル空間が非互換であること(乗り換え時は全データの再インデックス化が必要、本ページの核心的な注意点と同じ制約)を明記。「選び方の目安」に、動画・音声も含めて検索したい場合の選択肢としてgemini-embedding-2を追加
+- **出典**: [Google AI for Developers: Embeddings | Gemini API](https://ai.google.dev/gemini-api/docs/embeddings)、[OpenRouter: Gemini Embedding 2 Preview vs Gemini Embedding 001](https://openrouter.ai/compare/google/gemini-embedding-2-preview/google/gemini-embedding-001)
 
 ### 2026-07-31: 主要モデル比較表とVoyage AIの制約解説を最新化
 - **内容**: Voyage AIの料金をvoyage-4/voyage-4-lite/voyage-4-largeで細分化し、シリーズ内でベクトル空間を共有する仕様(サイズ違いモデルの組み合わせが再インデックス不要)を追記。長文チャンク分割の課題を軽減する新モデルvoyage-context-4に言及。比較表にオープンソースのQwen3-Embedding(多言語MTEB上位)と、国産の日本語特化モデルSarashina3 embedding・PLaMo-Embedding-1B(いずれもMatryoshka表現学習による次元短縮に対応)を追加し、「選び方の目安」にも反映。OpenAI・Google・Cohereの料金・仕様は変更なしを確認

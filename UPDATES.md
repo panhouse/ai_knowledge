@@ -7,6 +7,7 @@
 ## 2026-09-21
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
 - [小売・流通・ECにおける生成AI活用事例](topics/part14-industry-cases/retail-ai-use-cases.md): ファミリーマート「AIレコメンド発注」・楽天市場「セマンティックサーチ」の事例を追加
+- [Embedding(埋め込み)とは何か](topics/part07-data-analysis/embedding-basics.md): Googleのマルチモーダル対応新モデル「gemini-embedding-2」を追加して最新化
 
 ## 2026-09-20
 - [海外のAI半導体・インフラ企業一覧](topics/part17-overseas-ai-companies/ai-chip-infrastructure-companies-overseas.md): 新規執筆(NVIDIA・AMD・Broadcom・Groq・Cerebras Systemsの5社を収録)
