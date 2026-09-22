@@ -4,7 +4,7 @@ part: 9
 chapter: 第3章 業務ツール連携
 tags: [GAS, Google Apps Script, UrlFetchApp, PropertiesService, スプレッドシート, Gemini API, カスタム関数, 業務自動化]
 created: 2026-07-06
-updated: 2026-07-31
+updated: 2026-09-22
 ---
 
 # GAS(Google Apps Script)からのAI API連携
@@ -33,8 +33,11 @@ Google自身のGemini APIについては、Google Cloudの公式Codelab(「Autom
 | 数万件規模のデータを一括で要約・分類したい | △ 不向き(6分の実行時間制限に収まらない) | [バッチ処理(Batch API)の基本](batch-api-basics.md) |
 | リアルタイムに近い応答速度が必要なチャット機能 | △ 不向き(UrlFetchAppは同期呼び出しで待ち時間がそのままユーザーに返る) | Dify・専用チャットボット製品 |
 | セルの値をトリガーに「都度AIで加工する」軽い処理(要約・分類・翻訳・キーワード抽出) | ◎ 得意分野そのもの | - |
+| コードを一切書かず、対象プランでとにかく1セルだけ試したい | △ 本記事の対象外(コードを書く前提) | Google Sheets組み込みの`=AI()`/`=Gemini()`関数(対象のGoogle Workspace/Google AIプランで利用可) |
 
 判断基準はシンプルで、「自分やチームの手元の業務改善で完結するか」「実行時間・呼び出し頻度が個人利用の範囲に収まるか」で分ける。社内向けの軽い自動化ならGASが最短ルート、社外向け・大量処理・高可用性が必要になった時点で専用の基盤に切り替える、という使い分けになる。
+
+なお、Googleスプレッドシートには`=AI("要約して", A1)`または`=Gemini("要約して", A1)`のように書ける組み込みのAI関数もある(対象のGoogle Workspace/Google AIプランのみ、範囲引数でシート内のセルを渡す形式で、他のシート・ファイルへのアクセスや`IF`などへの埋め込みはできない)。プロンプトの調整やGmail・Docsへの応用まで踏み込みたいなら本記事のカスタム関数方式、コードを書かずスプレッドシート内だけで完結させたいなら組み込みのAI関数、という使い分けになる。**この2つは名前が競合する**点に注意(次の「実務での使い方」を参照)。
 
 ## 実務での使い方
 
@@ -73,7 +76,7 @@ const apiKey = PropertiesService.getScriptProperties().getProperty('OPENAI_API_K
 
 ### ステップ3: カスタム関数を書く(OpenAIの例)
 
-セルに`=AI_SUMMARIZE(A1)`と書けば、A1セルの文章をAIが1文で要約してくれる関数の例。
+セルに`=AI_SUMMARIZE(A1)`と書けば、A1セルの文章をAIが1文で要約してくれる関数の例。**関数名は`AI`や`Gemini`にしないこと**(理由は後述)。
 
 ```javascript
 /**
@@ -89,7 +92,7 @@ function AI_SUMMARIZE(text) {
   const url = 'https://api.openai.com/v1/chat/completions';
 
   const payload = {
-    model: '(使用するモデル名。2026年7月時点ではGPT-5.6ファミリーの軽量モデル(Luna等)のような低コスト版が候補。モデル世代の更新は数か月単位で起きるため、必ず platform.openai.com/docs/models で最新のモデル名を確認する)',
+    model: 'gpt-5.6-luna', // 2026年9月時点の軽量・低コストモデル。モデル世代の更新は数か月単位で起きるため、必ず platform.openai.com/docs/models で最新のモデル名を確認する
     messages: [
       { role: 'system', content: '与えられた文章を日本語で1文に要約して。要約以外の説明は出力しない。' },
       { role: 'user', content: text }
@@ -139,7 +142,7 @@ Geminiを呼ぶ場合のコード例(APIキーはURLに付ける点がOpenAI/Cla
 function AI_SUMMARIZE_GEMINI(text) {
   if (!text) return '';
   const apiKey = PropertiesService.getScriptProperties().getProperty('GEMINI_API_KEY');
-  const model = '(使用するモデル名。2026年7月時点ではGemini 3系のFlash/Flash-Lite系が軽量モデルの候補(旧2.5 Flashは2026年10月に提供終了予定)。ai.google.dev/gemini-api/docs/models で最新のモデル名を確認する)';
+  const model = 'gemini-3.1-flash-lite'; // 2026年9月時点の軽量モデル(旧Gemini 2.5系は2026年10月以降順次廃止予定)。ai.google.dev/gemini-api/docs/models で最新のモデル名を確認する
   const url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model
     + ':generateContent?key=' + apiKey;
 
@@ -170,7 +173,7 @@ function callClaude(text) {
   const url = 'https://api.anthropic.com/v1/messages';
 
   const payload = {
-    model: '(使用するモデル名)',
+    model: 'claude-haiku-4-5', // 2026年9月時点の軽量モデル。docs.claude.com/en/docs/about-claude/models/overview で最新のモデル名を確認する
     max_tokens: 300,
     messages: [
       { role: 'user', content: '次の文章を日本語で1文に要約して:\n' + text }
@@ -229,11 +232,12 @@ function draftAutoReplies() {
 - **APIキーをスクリプト本文に直書きしない**: GASのプロジェクトは共同編集者に共有したり、コピーして配布したりできるため、コード中に`const apiKey = "sk-..."`のように書くと簡単に流出する。必ずPropertiesServiceに保存し、コードにはキーそのものを書かない。
 - **カスタム関数は実行時間30秒、通常のスクリプトは6分で強制終了する**: セルの数式として呼ばれるカスタム関数は約30秒でタイムアウトし、それより長い処理(大量データの一括処理など)はトリガーやメニュー実行の通常の関数(こちらは1回の実行あたり最大6分。コンシューマ向け・Google Workspaceのアカウントいずれも同じ)に分けて設計する。6分を超える処理が必要な場合は、処理を分割して複数回のトリガー実行に分けるなどの工夫が必要。
 - **カスタム関数は権限ダイアログを表示できない**: 事前に手動実行で承認しておかないと、セルに`#ERROR!`が出るだけで原因が分かりにくい。
+- **カスタム関数の名前を`AI`や`Gemini`にしない**: Googleスプレッドシートには`=AI(...)`/`=Gemini(...)`という組み込みのAI関数があり(対象のGoogle Workspace/Google AIプランのみ)、同じ名前でカスタム関数を定義すると、そちらが組み込み関数側に上書きされてしまい、自作のコードが呼ばれなくなる。`AI_SUMMARIZE`のように衝突しない名前を付ける。
 - **セルの再計算が予期しない課金を生む**: カスタム関数はスプレッドシートを開き直したり、依存する他のセルを編集・並べ替えたりするたびに自動で再計算され、その都度AI APIが呼ばれて課金対象になる。数百行に一括でAI関数をコピーすると、シートを開くだけで数百回分のAPI呼び出しが走ることがある。対策としては、結果が確定したら「コピー→形式を選択して貼り付け→値のみ貼り付け」で数式を固定値に変換する、あるいはカスタム関数ではなく「ボタンを押した時だけ実行する」通常の関数+カスタムメニューの形にする方法がある。
 - **UrlFetchAppには1日あたりの呼び出し回数の上限(クォータ)がある**: 目安として、個人のGoogleアカウント(無料版)は1日20,000回、Google Workspaceアカウントは1日100,000回。クォータは日付が変わるタイミングではなく「その日最初のリクエストから24時間後」にリセットされる点に注意。`fetchAll()`で並列に複数リクエストを送っても、内訳のURL1件ずつが個別にカウントされるため並列化しても消費量は減らない。大量のセルに一斉適用する前に、想定呼び出し回数が上限に収まるか確認する。
 - **時間主導型トリガーにも1日あたりの合計実行時間の上限がある**: 個人のGoogleアカウントは1日90分、Google Workspaceアカウントは1日6時間まで。Gmail自動下書き・Docs要約のような定期実行を頻繁な間隔(例: 5分おき)で組むと、他のトリガーと合わせてこの上限に達することがあるため、実行間隔は業務上必要な頻度まで絞る。
 - **本番の社外向けシステムには使わない**: GASは可用性やスケーラビリティを保証する仕組みではないため、多数のユーザーが同時にアクセスするサービスや、ミスがあった際の影響が大きい業務には不向き。その場合は自社サーバーや[Dify](../part10-nocode-lowcode/dify-workflow-nodes.md)などの専用基盤、大量データなら[バッチ処理(Batch API)の基本](batch-api-basics.md)を検討する。
-- **モデル名・料金は変更が頻繁**: 本文のコード例では意図的に固定のモデル名を書かず「(使用するモデル名)」としている。実際に使うモデルは各社の公式ドキュメント(OpenAI: platform.openai.com、Gemini: ai.google.dev、Claude: platform.claude.com)で最新のものを確認する。
+- **モデル名・料金は変更が頻繁**: 本文のコード例のモデル名(`gpt-5.6-luna`・`gemini-3.1-flash-lite`・`claude-haiku-4-5`)は2026年9月時点のもので、各社とも数か月おきに世代交代する。実際に使うモデルは各社の公式ドキュメント(OpenAI: platform.openai.com、Gemini: ai.google.dev、Claude: docs.claude.com)で最新のものを確認する。3社のモデル体系・料金の横並び比較は[主要LLM APIの横断比較](llm-api-cross-tool-comparison.md)を参照。
 
 ## 最初の一歩
 
@@ -242,11 +246,17 @@ OpenAI・Gemini・Claudeのいずれか1つでAPIキーを取得し、スプレ�
 ## 関連トピック
 
 - [OpenAI APIの基本](openai-api-basics.md)
+- [Google Gemini APIの基本](google-gemini-api-basics.md)
+- [主要LLM APIの横断比較(OpenAI・Anthropic・Google)](llm-api-cross-tool-comparison.md)
 - [Function Calling(Tool Calling)の基本](function-calling-basics.md)
 - [バッチ処理(Batch API)の基本](batch-api-basics.md)
 - [AIが扱いやすいデータ形式](../part07-data-analysis/ai-friendly-data-formats.md)
 
 ## 更新履歴
+
+### 2026-09-22: コード例のモデル名を実値に更新、組み込みAI関数との使い分けを追記
+- **内容**: コード例のモデル指定を、説明文だけのプレースホルダーから2026年9月時点の実際のモデルID(OpenAI: `gpt-5.6-luna`、Gemini: `gemini-3.1-flash-lite`、Claude: `claude-haiku-4-5`)に置き換え、[主要LLM APIの横断比較](llm-api-cross-tool-comparison.md)・[Google Gemini APIの基本](google-gemini-api-basics.md)の最新モデル名と整合させた。あわせてGoogleスプレッドシート組み込みの`=AI()`/`=Gemini()`関数(対象プラン限定)を「使いどころ・使い分け」に追記し、カスタム関数名を`AI`/`Gemini`にすると組み込み関数に上書きされる注意点を追加。UrlFetchAppの1日あたり呼び出し上限・実行時間制限(6分/6時間トリガー)・Vertex AI Advanced Serviceの`VertexAI.Endpoints.generateContent()`という呼び出し方は公式ドキュメントで変更がないことを確認済み
+- **出典**: [Google for Developers: Quotas for Google Services](https://developers.google.com/apps-script/guides/services/quotas)、[Google for Developers: Quickstart: Generate text using Agent Platform](https://developers.google.com/apps-script/quickstart/vertex-ai)、[Google Docs Editors Help: Use the AI function in Google Sheets](https://support.google.com/docs/answer/15877199)、[主要LLM APIの横断比較(本リポジトリ)](llm-api-cross-tool-comparison.md)
 
 ### 2026-07-31: クォータの節・モデル動向を最新化
 - **内容**: UrlFetchAppの1日あたり呼び出し上限(個人20,000回/Workspace 100,000回、24時間ローリングリセット、`fetchAll()`でも個別カウント)と、時間主導型トリガーの1日あたり合計実行時間上限(個人90分/Workspace 6時間)を具体的な数値で追記。GeminiのVertex AI Advanced Serviceがプレビュー版モデルで内部エラーを起こしうる点を追記。OpenAI(GPT-5.6ファミリー)・Gemini(3系Flash/Flash-Lite、旧2.5 Flashは2026年10月提供終了予定)のモデル世代交代を踏まえてコード例のモデル名ヒントを更新
