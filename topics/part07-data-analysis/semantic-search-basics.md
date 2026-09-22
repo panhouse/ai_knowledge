@@ -4,14 +4,14 @@ part: 7
 chapter: 第4章 RAGの精度改善と基盤
 tags: [セマンティック検索, キーワード検索, ハイブリッド検索, BM25, RRF, エンタープライズサーチ]
 created: 2026-07-06
-updated: 2026-07-30
+updated: 2026-09-22
 ---
 
 # セマンティック検索の基本
 
 ## これは何か
 
-セマンティック検索(semantic search、意味検索)とは、検索語と文字面が一致しなくても、意味が近い文書を探し出せる検索方式のこと。社内の従来のファイルサーバーやポータルの検索窓は「入力した単語がそのまま含まれる文書」しか見つけられない**キーワード検索**が主流で、「有休の繰越」で検索しても、資料に「年次有給休暇の持ち越し」としか書かれていなければヒットしない。この「表記が違うだけで欲しい情報にたどり着けない」という長年の悩みを解消するのがセマンティック検索であり、ChatGPTのファイルアップロード、NotebookLM、Microsoft 365 Copilot、Glean、Notionのエンタープライズ検索など、2026年時点の主要な社内検索・AIチャットツールの多くが標準搭載している。本ページは、[Embedding(埋め込み)とは何か](./embedding-basics.md)で説明した技術要素を土台に、「キーワード検索・セマンティック検索・ハイブリッド検索」という**検索方式そのものの違いと使い分け**に絞って整理する。
+セマンティック検索(semantic search、意味検索)とは、検索語と文字面が一致しなくても、意味が近い文書を探し出せる検索方式のこと。社内の従来のファイルサーバーやポータルの検索窓は「入力した単語がそのまま含まれる文書」しか見つけられない**キーワード検索**が主流で、「有休の繰越」で検索しても、資料に「年次有給休暇の持ち越し」としか書かれていなければヒットしない。この「表記が違うだけで欲しい情報にたどり着けない」という長年の悩みを解消するのがセマンティック検索であり、ChatGPTのファイルアップロード、Gemini Notebook(旧NotebookLM。Googleが2026年7月に改称)、Microsoft 365 Copilot、Glean、Notionのエンタープライズ検索など、2026年時点の主要な社内検索・AIチャットツールの多くが標準搭載している。本ページは、[Embedding(埋め込み)とは何か](./embedding-basics.md)で説明した技術要素を土台に、「キーワード検索・セマンティック検索・ハイブリッド検索」という**検索方式そのものの違いと使い分け**に絞って整理する。
 
 ## 仕組み・背景
 
@@ -62,9 +62,9 @@ updated: 2026-07-30
 | ツール・製品 | セマンティック検索の実装状況 | 利用者側の操作 |
 |---|---|---|
 | **ChatGPT(ファイルアップロード・プロジェクト機能)** | ファイルの内容を自動でEmbedding化し検索 | 特に設定不要。ファイルを追加するだけ |
-| **NotebookLM(Google)** | ソース追加時に自動でセマンティック検索を実行 | 特に設定不要 |
-| **Microsoft 365 Copilot / SharePoint** | テナント・利用者ごとに「意味索引(Semantic Index)」を自動生成し、キーワード的な理解に意味的な理解を組み合わせて検索。管理者が意味索引そのものをオフにすることはできず、サイト・ライブラリ単位で「Microsoft Searchでインデックスしない」設定にすることで意味索引への反映範囲を管理する。2026年には開発者向けに、この意味索引へ直接問い合わせて回答の根拠テキストを取得できる「Microsoft 365 Copilot Retrieval API」が一般提供(GA)され、社内データを別のRAG基盤に複製・再インデックス化せずに自社アプリへ組み込めるようになった | 利用者側の設定は基本不要。管理者は検索対象範囲(サイト・ライブラリの索引除外)を管理できる。開発者はRetrieval APIを使って独自アプリから意味索引を検索できる |
-| **Notionのエンタープライズ検索** | Notion内のページに加え、Slack・Google Drive・GitHub・Jira・Microsoft Teams・SharePoint・Salesforceなど連携先を横断してセマンティック検索し、要約付きで回答(Business/Enterpriseプラン以上、一部機能はベータ)。管理者が特定ページを「検証済み」として認定でき、同じ内容の新旧資料が混在していても検索結果・AIの引用で正しい方を優先表示できる | ワークスペース設定から連携アプリを追加するだけで有効化。ページの「検証済み」設定は管理者が個別に行う |
+| **Gemini Notebook(Google、旧NotebookLM)** | ソース追加時に自動でセマンティック検索を実行。2026年7月にNotebookLMから改称されたが、機能・使い方は連続しており移行作業は不要 | 特に設定不要 |
+| **Microsoft 365 Copilot / SharePoint** | テナント・利用者ごとに「意味索引(Semantic Index)」を自動生成し、キーワード的な理解に意味的な理解を組み合わせて検索。管理者が意味索引そのものをオフにすることはできず、サイト・ライブラリ単位で「Microsoft Searchでインデックスしない」設定にすることで意味索引への反映範囲を管理する。開発者向けに、この意味索引へ直接問い合わせて回答の根拠テキストを取得できる「Microsoft 365 Copilot Retrieval API」が提供されており、社内データを別のRAG基盤に複製・再インデックス化せずに自社アプリへ組み込める。2026年には、Copilotライセンスを持たない利用者向けにも従量課金(pay-as-you-go)でこのAPIを使える仕組みがプレビュー提供され、SharePoint・Copilotコネクタなどテナント単位のデータ(OneDriveなど個人単位のデータは対象外)に限り検索できるようになった | 利用者側の設定は基本不要。管理者は検索対象範囲(サイト・ライブラリの索引除外)や従量課金APIの有効化を管理できる。開発者はRetrieval APIを使って独自アプリから意味索引を検索できる |
+| **Notionのエンタープライズ検索** | Notion内のページに加え、Slack・Google Drive・Jira・Gmail・Microsoft Teams・SharePoint & OneDrive・GitHub・Microsoft Outlook・Linearなど連携先(AIコネクタ)を横断してセマンティック検索し、要約付きで回答(Business/Enterpriseプラン以上)。管理者が特定ページを「検証済み」として認定でき、同じ内容の新旧資料が混在していても検索結果・AIの引用で正しい方を優先表示できる | ワークスペース設定から連携アプリ(AIコネクタ)を追加するだけで有効化。ページの「検証済み」設定は管理者が個別に行う |
 | **Slack AI(検索・まとめ機能)** | メッセージ内容をベクトル化して保存し、自然文の質問に対して意味的に近いスレッドを検索 | 有料プランでSlack AIを有効化するだけ |
 | **Dify(ナレッジベース)** | 「検索設定」で「ベクトル検索」「全文検索(キーワード)」「ハイブリッド検索」を明示的に選択できる | 「ナレッジ」→対象のナレッジベース→「設定」→「検索設定」から切り替え。具体的な手順・重み調整は[RAGの精度を上げる方法](./rag-accuracy-improvement.md)を参照 |
 | **Glean・Elasticsearch・Azure AI Search(企業向けエンタープライズサーチ)** | ハイブリッド検索(BM25+ベクトル検索+RRF)を標準機能として提供し、企業の複数システム(Slack、Google Workspace、Salesforce等)を横断検索する専用製品 | 管理者が導入・データ連携を設定。利用者は検索窓を使うだけ |
@@ -80,14 +80,14 @@ updated: 2026-07-30
 検索語B(口語的な言い換え): 有休っていつまでに使わないと消えるの?
 ```
 
-キーワード検索中心のツール(古いファイルサーバー検索など)では検索語Bはヒットしにくいが、ChatGPTのファイルアップロードやNotebookLMのようなセマンティック検索を使うツールでは、検索語Bでも同じ資料が根拠として引用される。社内の検索窓が「言い換えるとヒットしない」ツールなのか、「言い換えてもヒットする」ツールなのかを把握しておくと、資料の探し方や、資料自体の書き方(表記を統一するか、Q&A形式で言い換えを先回りして書いておくか)の判断に役立つ。
+キーワード検索中心のツール(古いファイルサーバー検索など)では検索語Bはヒットしにくいが、ChatGPTのファイルアップロードやGemini Notebook(旧NotebookLM)のようなセマンティック検索を使うツールでは、検索語Bでも同じ資料が根拠として引用される。社内の検索窓が「言い換えるとヒットしない」ツールなのか、「言い換えてもヒットする」ツールなのかを把握しておくと、資料の探し方や、資料自体の書き方(表記を統一するか、Q&A形式で言い換えを先回りして書いておくか)の判断に役立つ。
 
-### 料金の目安(企業向けエンタープライズサーチ、2026年7月時点)
+### 料金の目安(企業向けエンタープライズサーチ、2026年9月時点)
 
 社内検索を強化する専用製品を検討する場合、目安として以下のような費用感になる。料金・プランは変更されやすいため、導入前に必ず各社公式サイトで確認すること。
 
 - **Glean**: 公開の料金表はなく個別見積もり。基本のEnterprise Searchライセンスが1ユーザーあたり月額$45〜50程度、AIエージェント機能を含む「Work AI」アドオンが別途月額$15程度が目安とされる。最低契約規模は概ね100席前後、年間契約額は$50,000〜60,000程度からが相場とされる(いずれも非公式の推計であり、Glean自身は金額を公表していない)
-- **Google Cloud Agent Search(旧Vertex AI Search)**: 無料枠として月10,000クエリまで利用可能。従量課金(General Pricing)は標準(Standard Edition)が1,000クエリあたり$1.50、高度な機能を使うエンタープライズ(Enterprise Edition)が1,000クエリあたり$4.00が公式料金。月間1,500万クエリを超えるような大規模利用では、クエリ数・保存データ量をコミットする定額寄りの「Configurable Pricing」も選べる
+- **Google Cloud Agent Search(旧Vertex AI Search)**: 無料枠として月10,000クエリまで利用可能。従量課金(General Pricing)は標準(Standard Edition)が1,000クエリあたり$1.50、高度な機能を使うエンタープライズ(Enterprise Edition)が1,000クエリあたり$4.00が公式料金で、2026年9月時点でも変更なしを確認済み。月間1,500万クエリを超えるような大規模利用では、クエリ数・保存データ量をコミットする定額寄りの「Configurable Pricing」も選べる。なお、上位のクラウド基盤ブランドである「Vertex AI」自体は2026年4月にGoogle Cloudコンソールから姿を消し「Gemini Enterprise Agent Platform」に統合されたが、Agent Search単体の製品名・料金体系は変わっていない
 - **Microsoft 365 Copilot / SharePointの意味索引**: 対象データがすでにSharePoint・OneDriveにあれば追加のインフラ構築は不要。Copilotのライセンス費用(1人あたり月額数千円)に含まれる
 - **Dify(自前でRAGアプリを構築)**: ナレッジベース機能自体は無料利用枠の範囲で試せるが、埋め込みモデルの呼び出し料金・保存容量などが別途発生する。詳細は[Embedding(埋め込み)とは何か](./embedding-basics.md)の料金比較表を参照
 
@@ -97,11 +97,11 @@ updated: 2026-07-30
 - **「ハイブリッド検索にすれば必ず精度が上がる」わけではない**: 検索対象の資料が少量で表記も統一されている場合は効果が薄く、逆に計算量が増える分だけ応答速度がわずかに遅くなることもある。まず自社の検索対象の性質(型番中心か、自然文の質問中心か)を見極めてから採用を判断する
 - **精度は埋め込みモデルとデータの整備状況に依存する**: セマンティック検索の質は、裏側で使われているEmbeddingモデルの性能や、資料のノイズ(目次・免責事項など)の少なさに左右される。「セマンティック検索を有効にしたのに精度が悪い」と感じたら、検索方式そのものより資料側の整備やEmbeddingモデルの選定を疑うとよい(詳細は[RAGの精度を上げる方法](./rag-accuracy-improvement.md)を参照)
 - **Microsoft 365 Copilotの意味索引は管理者でもオフにできない**: 利用者本人がアクセス権を持つ範囲でしか検索結果に出ない設計にはなっているが、「特定のサイトを索引対象から外したい」場合はサイト・ライブラリ単位で個別に設定する必要があり、初期設定のまま放置すると想定外の範囲が検索対象になっている可能性がある
-- **「なぜこの文書がヒットしたか」を説明しにくい**: キーワード検索は「この単語を含むから」と一目で説明できるが、セマンティック検索は数値的な近さに基づくため、利用者が「見当違いの結果だ」と感じたときに理由を説明しづらい。検索結果に根拠箇所の引用(NotebookLMのような機能)が表示されるツールを選ぶと、この弱点を補いやすい
+- **「なぜこの文書がヒットしたか」を説明しにくい**: キーワード検索は「この単語を含むから」と一目で説明できるが、セマンティック検索は数値的な近さに基づくため、利用者が「見当違いの結果だ」と感じたときに理由を説明しづらい。検索結果に根拠箇所の引用(Gemini Notebook〈旧NotebookLM〉のような機能)が表示されるツールを選ぶと、この弱点を補いやすい
 
 ## 最初の一歩
 
-普段使っている社内の検索窓やAIツールで、資料に書かれている表現そのままの検索語と、それを口語的に言い換えた検索語の2通りで同じ内容を検索し、結果が変わるかを確認してみる。結果が大きく変わる(言い換えるとヒットしない)場合は、そのツールがキーワード検索中心である可能性が高く、ChatGPTのファイルアップロードやNotebookLMなど、セマンティック検索を使うツールへの切り替えを検討する価値がある。
+普段使っている社内の検索窓やAIツールで、資料に書かれている表現そのままの検索語と、それを口語的に言い換えた検索語の2通りで同じ内容を検索し、結果が変わるかを確認してみる。結果が大きく変わる(言い換えるとヒットしない)場合は、そのツールがキーワード検索中心である可能性が高く、ChatGPTのファイルアップロードやGemini Notebook(旧NotebookLM)など、セマンティック検索を使うツールへの切り替えを検討する価値がある。
 
 ## 関連トピック
 
@@ -111,6 +111,10 @@ updated: 2026-07-30
 - [RAGの精度を上げる方法](./rag-accuracy-improvement.md)
 
 ## 更新履歴
+
+### 2026-09-22: NotebookLMの改称とツール横断の対応付けを最新化
+- **内容**: Googleが2026年7月にNotebookLMを「Gemini Notebook」に改称したことを反映し、本文・表中の全ての表記を「Gemini Notebook(旧NotebookLM)」に更新(機能・使い方は連続しており移行作業は不要)。Microsoft 365 Copilot Retrieval APIの節に、Copilotライセンスを持たない利用者向けの従量課金(pay-as-you-go)アクセス(プレビュー、SharePoint・Copilotコネクタなどテナント単位のデータに限定、OneDriveなど個人単位のデータは対象外)を追記。Notionのエンタープライズ検索のAIコネクタ一覧を、公式ヘルプページで確認できる現行の連携先(Slack・Google Drive・Jira・Gmail・Microsoft Teams・SharePoint & OneDrive・GitHub・Microsoft Outlook・Linear)に更新(旧版に記載していたSalesforceは現行の公式一覧に見当たらないため削除)。Google Cloud Agent Searchの節に、上位ブランドの「Vertex AI」が2026年4月にコンソールから姿を消し「Gemini Enterprise Agent Platform」に統合された経緯を補足(Agent Search単体の製品名・料金は変更なしを確認)
+- **出典**: [Google Workspace Updates: NotebookLM is now Gemini Notebook](https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html)、[Google Blog: NotebookLM is now Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/)、[Microsoft Learn: Microsoft 365 Copilot Retrieval API Overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/ai-services/retrieval/overview)、[Notion Help Center: Notion AI Connectors overview](https://www.notion.com/help/notion-ai-connectors)(2026-09-22時点で取得・確認)、[Google Cloud: Agent Search pricing](https://cloud.google.com/generative-ai-app-builder/pricing)(2026-09-22時点で取得・確認、料金は変更なし)、[Google Cloud Docs: Gemini Enterprise Agent Platform name changes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/vertex-ai-name-changes)
 
 ### 2026-07-30: 料金・ツール横断の対応付けを最新化
 - **内容**: Google Cloud Agent Search(旧Vertex AI Search)の料金を公式の従量課金額(標準1,000クエリ$1.50、エンタープライズ1,000クエリ$4.00)に更新、Gleanの料金目安をEnterprise Searchライセンス($45〜50/月)とWork AIアドオン($15/月)に分けて具体化。Microsoft 365 Copilotの節に、開発者が意味索引へ直接問い合わせられる「Microsoft 365 Copilot Retrieval API」のGA(一般提供)を追記。Notionのエンタープライズ検索の節に連携先の拡大(Slack・Google Drive・GitHub・Jira・Teams・SharePoint・Salesforce等)と「検証済み」ページ機能を追記。ハイブリッド検索の節に、複雑な質問を自動でサブクエリに分解する「エージェント的検索(agentic retrieval)」の実用化を追記
