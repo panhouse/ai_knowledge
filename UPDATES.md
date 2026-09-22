@@ -8,6 +8,7 @@
 - [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 導入事例カタログを新設し、NTTドコモ・日立製作所・ソフトバンクの3社の事例を追加
 - [宿泊・観光業における生成AI活用事例](topics/part14-industry-cases/hospitality-tourism-ai-use-cases.md): 導入事例カタログを新設し、星野リゾート・倉敷アイビースクエア・楽天トラベル・じゃらんリサーチセンター×熱海市・小田急ホテルセンチュリーサザンタワーの5事例を追加
 - [ディープラーニング(深層学習)の基礎](topics/part01-ai-basics/deep-learning-basics.md): NVIDIA決算実績(2026年8月発表)とH200対中出荷の実態を反映して最新化
+- [GPTsにおけるプロンプトインジェクション対策](topics/part06-custom-ai/gpts-prompt-injection-defense.md): GPTs廃止・Plugins移行の影響とOWASP LLM Top 10 2026を反映して最新化
 
 ## 2026-09-21
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
