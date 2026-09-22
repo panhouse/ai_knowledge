@@ -10,6 +10,7 @@
 - [ディープラーニング(深層学習)の基礎](topics/part01-ai-basics/deep-learning-basics.md): NVIDIA決算実績(2026年8月発表)とH200対中出荷の実態を反映して最新化
 - [GPTsにおけるプロンプトインジェクション対策](topics/part06-custom-ai/gpts-prompt-injection-defense.md): GPTs廃止・Plugins移行の影響とOWASP LLM Top 10 2026を反映して最新化
 - [セマンティック検索の基本](topics/part07-data-analysis/semantic-search-basics.md): NotebookLMの「Gemini Notebook」改称等を反映して最新化
+- [Zero-shot・Few-shotプロンプティング](topics/part05-prompt-engineering/zero-shot-and-few-shot-prompting.md): 推論モデルとFew-shotの関係を3社の公式ガイドで裏取りし訂正
 
 ## 2026-09-21
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
