@@ -12,6 +12,7 @@
 - [セマンティック検索の基本](topics/part07-data-analysis/semantic-search-basics.md): NotebookLMの「Gemini Notebook」改称等を反映して最新化
 - [Zero-shot・Few-shotプロンプティング](topics/part05-prompt-engineering/zero-shot-and-few-shot-prompting.md): 推論モデルとFew-shotの関係を3社の公式ガイドで裏取りし訂正
 - [GAS(Google Apps Script)からのAI API連携](topics/part09-api-development/gas-ai-api-integration.md): コード例のモデル名を実値に更新し、Googleスプレッドシート組み込みAI関数との使い分けを追記
+- [バックオフィス職における生成AI活用](topics/part15-job-role-cases/backoffice-ai-use-cases.md): 導入事例カタログを新設し、ニップン・吉田海運・ヨネックス・鹿児島銀行の4事例を追加
 
 ## 2026-09-21
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
