@@ -11,6 +11,7 @@
 - [GPTsにおけるプロンプトインジェクション対策](topics/part06-custom-ai/gpts-prompt-injection-defense.md): GPTs廃止・Plugins移行の影響とOWASP LLM Top 10 2026を反映して最新化
 - [セマンティック検索の基本](topics/part07-data-analysis/semantic-search-basics.md): NotebookLMの「Gemini Notebook」改称等を反映して最新化
 - [Zero-shot・Few-shotプロンプティング](topics/part05-prompt-engineering/zero-shot-and-few-shot-prompting.md): 推論モデルとFew-shotの関係を3社の公式ガイドで裏取りし訂正
+- [GAS(Google Apps Script)からのAI API連携](topics/part09-api-development/gas-ai-api-integration.md): コード例のモデル名を実値に更新し、Googleスプレッドシート組み込みAI関数との使い分けを追記
 
 ## 2026-09-21
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
