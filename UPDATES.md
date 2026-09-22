@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-22
+- [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 導入事例カタログを新設し、NTTドコモ・日立製作所・ソフトバンクの3社の事例を追加
+
 ## 2026-09-21
 - [生成AIのマルチモーダル化の動向(Omniモデル・統合マルチモーダルAI)](topics/part13-ai-trends/multimodal-ai-trends.md): GPT-6 Astra・Qwen3.8-Omni-Flashなど2026年9月時点の各社動向に最新化
 - [小売・流通・ECにおける生成AI活用事例](topics/part14-industry-cases/retail-ai-use-cases.md): ファミリーマート「AIレコメンド発注」・楽天市場「セマンティックサーチ」の事例を追加
