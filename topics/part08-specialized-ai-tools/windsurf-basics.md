@@ -4,7 +4,7 @@ part: 8
 chapter: 第2章 コーディング支援AI
 tags: [Windsurf, Devin Desktop, Cascade, コーディング支援AI, AIエディタ, Cognition]
 created: 2026-07-06
-updated: 2026-08-01
+updated: 2026-09-23
 ---
 
 # Windsurfの基本(コーディング支援AI)
@@ -36,7 +36,7 @@ Windsurfを開発したCodeium社は2025年、複数の大手から争奪戦の�
 
 ### Cognition傘下での進化とDevin Desktopへの統合(2026年)
 
-Cognitionは買収後、自社のコーディング専用モデル「SWE-1」シリーズを投入し、高速版の「SWE-1.5」「SWE-1.6」をWindsurfに組み込んだ。あわせて、コードベースの構造を図として可視化する「Codemaps(コードマップ)」、大規模コードベースから関連コードを高速検索する「Fast Context」といった独自機能を追加した。2026年7月8日にはさらに新しい「SWE-1.7」を投入しており、GPT-5.5に近い性能をより低コストで実現するモデルとして、長時間タスク(デバッグ・機能実装・大規模移行作業など)向けに位置づけられている。
+Cognitionは買収後、自社のコーディング専用モデル「SWE-1」シリーズを投入し、高速版の「SWE-1.5」「SWE-1.6」をWindsurfに組み込んだ。あわせて、コードベースの構造を図として可視化する「Codemaps(コードマップ)」、大規模コードベースから関連コードを高速検索する「Fast Context」といった独自機能を追加した。2026年7月8日には「SWE-1.7」を投入し、さらに2026年9月10日には後継の**「SWE-2」**を投入した。SWE-2は2.8兆パラメータの基盤モデル「Kimi K3」をベースに、medium/high/maxの3段階の推論エフォート(思考の深さ)を1回の強化学習で同時に訓練した初のSWEモデルとされる。Cognitionの自社ベンチマークでは、FrontierCode 1.1 MainスコアがClaude Fable 5.1(50.9%)に1ポイント差の50.0%まで迫りながら、コストは64%安いと主張している(ベンダー自身の発表値であり、独立評価機関による検証ではない点に留意)。SWE-2はDevin Desktop・CLI・Web版で提供が始まっており、2026年10月10日まで無料で利用でき、期間終了後のlist priceは100万トークンあたり入力3ドル・出力15ドル・キャッシュ入力0.3ドル(2026年12月31日までクレジット契約の企業向けに75%引き)とされている。同時期にはGoogleの「Gemini 3.7 Flash」もDevin Desktop・CLIで利用可能になった。
 
 そして2026年6月2日、Cognitionは自動更新を通じてWindsurfを「Devin Desktop」として再出荷した。既存ユーザーの設定・契約プラン・拡張機能・キーバインドはそのまま引き継がれている。主な変更点は以下の通り。
 
@@ -75,7 +75,7 @@ Windsurf(Devin Desktop)は2026年3月19日に、それまでの「クレジッ�
 
 | ツール | 提供元 | 位置づけ | 特徴 |
 |---|---|---|---|
-| Windsurf(現Devin Desktop) | Cognition | AI専用スタンドアロンエディタ(VS Codeフォーク) | Cascade→Devin Localによる自律編集。自社モデル(SWE-1.7等)、Codemaps・Spacesによるコードベース可視化とマルチエージェント連携。SOC 2/HIPAA/FedRAMP対応で規制業種にも強い |
+| Windsurf(現Devin Desktop) | Cognition | AI専用スタンドアロンエディタ(VS Codeフォーク) | Cascade→Devin Localによる自律編集。自社モデル(SWE-2等)、Codemaps・Spacesによるコードベース可視化とマルチエージェント連携。SOC 2/HIPAA/FedRAMP対応で規制業種にも強い |
 | Cursor | Anysphere | AI専用スタンドアロンエディタ(VS Codeフォーク) | 複数ファイル編集(Composer)・専用エージェントワークスペースの完成度が高い。個人開発者からの評価が高い |
 | GitHub Copilot | GitHub(Microsoft) | 既存IDEへの後付け拡張機能 | 40種以上のIDE・エディタに対応。GitHub本体(Issue・PR)との統合が深い |
 | Cline | OSSコミュニティ | VS Code拡張機能(オープンソース・無料) | ツール自体は無料でAPIキーを自分で用意するBYOM方式。コスト・カスタマイズ重視の開発者向け(詳細は別ページ参照) |
@@ -93,7 +93,7 @@ Windsurf/Devin DesktopとCursorはどちらも「AI専用に作られたエデ�
 
 ### 初期設定の場所
 
-- **モデル選択**: Cascadeパネル上部のモデル切り替えメニューから、SWE-1.7・Claude・GPT系・Gemini系などを都度選べる
+- **モデル選択**: Cascadeパネル上部のモデル切り替えメニューから、SWE-2(2026年9月10日投入、medium/high/maxの推論エフォートを選択可)・Claude・GPT系・Gemini系などを都度選べる
 - **プロジェクト固有のルール**: プロジェクトのルートフォルダに `.windsurfrules` ファイルを置くと、コーディング規約やスタックの前提知識をAIに常時渡せる(いわゆるカスタム指示)
 - **MCP(外部ツール連携)設定**: Cascadeパネル右上の「MCP」アイコン→「Configure」から設定ファイル(`~/.codeium/windsurf/mcp_config.json`、Windowsは`%USERPROFILE%\.codeium\windsurf\mcp_config.json`)を編集するか、内蔵マーケットプレイスから追加する
 
@@ -127,6 +127,10 @@ Windsurf/Devin DesktopとCursorはどちらも「AI専用に作られたエデ�
 - [ローカルLLMの基本(自社PC・サーバーで動かす生成AI)](local-llm-basics.md)
 
 ## 更新履歴
+
+### 2026-09-23: 新モデル「SWE-2」投入を反映して最新化
+- **内容**: 2026年9月10日にCognitionが投入した新しいコーディング専用モデル「SWE-2」(前身SWE-1.7の後継、2.8兆パラメータの基盤モデル「Kimi K3」をベースに、medium/high/maxの推論エフォートを1回の強化学習で同時訓練した初のSWEモデル)を仕組み・背景と初期設定の節に反映。Cognition自社ベンチマークでの性能・コスト面の主張(FrontierCode 1.1 MainでClaude Fable 5.1に1ポイント差まで肉薄しつつ64%安価、ただしベンダー自身の発表値)、Devin Desktop・CLIでの2026年10月10日までの無料提供とlist price、同時期に追加されたGemini 3.7 Flashへの対応を追記
+- **出典**: [Cognition公式ブログ「Introducing SWE-2: Pushing the Pareto Frontier」](https://cognition.com/blog/swe-2)
 
 ### 2026-08-01: 最新モデル・料金・新機能を反映して最新化
 - **内容**: Devin Desktopへの改称(2026年6月2日)自体に撤回・再変更はないことを確認した上で、新モデル「SWE-1.7」(2026年7月8日投入、GPT-5.5相当の性能を低コストで実現)への言及を追加。Teamsプランの料金詳細(月額最低80ドル+フルシート1人あたり40ドル)を修正・明確化。エージェント間でコンテキストを共有する新機能「Spaces」を仕組み・背景の節に追記。Cognitionの資金調達状況(2026年5月に10億ドル調達・評価額約260億ドル・ARR約4.92億ドル)を追加し、企業としての存続性・信頼性の判断材料を補強した
