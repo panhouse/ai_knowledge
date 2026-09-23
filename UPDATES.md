@@ -9,6 +9,7 @@
 - [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): 導入事例カタログを新設し、ソフトバンク・KDDI・アフラック生命保険の3社の事例を追加
 - [NotebookLM(Gemini Notebook)の基本](topics/part08-specialized-ai-tools/notebooklm-basics.md): 利用上限方式の変更(9月2日〜)とモバイル新機能5種(9月15日発表)を反映して最新化
 - [Makeの基本](topics/part10-nocode-lowcode/make-basics.md): 2025年11月のプラン・料金調整(クレジット追加購入の割増統一、Core/Proのクレジット上限変更、カスタムAIプロバイダーの全有料プラン解放)を反映して最新化
+- [コンビニエンスストア業界における生成AI活用事例](topics/part14-industry-cases/convenience-store-industry-ai-use-cases.md): 導入事例カタログを新設し、ファミリーマート・ローソン・セブン-イレブンの3社の事例を追加
 
 ## 2026-09-22
 - [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 導入事例カタログを新設し、NTTドコモ・日立製作所・ソフトバンクの3社の事例を追加
