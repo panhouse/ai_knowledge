@@ -72,3 +72,4 @@ Part 17 は **海外企業版の一覧カタログ**。教科書ページのよ�
 - [海外の契約書・法務AI企業一覧](legal-contract-ai-companies-overseas.md)
 - [海外の営業支援AI企業一覧](sales-support-ai-companies-overseas.md)
 - [海外のカスタマーサポートAI企業一覧](customer-support-ai-companies-overseas.md)
+- [海外のマーケティングAI企業一覧](marketing-ai-companies-overseas.md)
