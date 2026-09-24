@@ -76,3 +76,4 @@ Part 17 は **海外企業版の一覧カタログ**。教科書ページのよ�
 - [海外の人事・採用AI企業一覧](hr-recruiting-ai-companies-overseas.md)
 - [海外のデータ分析・BI AI企業一覧](data-analytics-bi-ai-companies-overseas.md)
 - [海外の経理・会計AI企業一覧](finance-accounting-ai-companies-overseas.md)
+- [海外の会議・文字起こしAI企業一覧](meeting-minutes-ai-companies-overseas.md)
