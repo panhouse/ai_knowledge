@@ -4,7 +4,7 @@ part: 1
 chapter: 第5章 認識系AIの応用
 tags: [画像認識, 音声認識, 自然言語処理, 異常検知, 需要予測, AI基礎]
 created: 2026-07-06
-updated: 2026-08-01
+updated: 2026-09-24
 ---
 
 # 認識系AIの応用(画像認識・音声認識・従来型自然言語処理)
@@ -32,7 +32,7 @@ OCRは「文字」というくくりの中で物体検出的な手法(どこに�
 
 ### 音声認識:音声波形をテキストに変換する
 
-音声認識(ASR: Automatic Speech Recognition)は、マイクで捉えた音声波形をディープラーニングでテキストに変換する技術。クリアな音声環境では誤り率(WER: Word Error Rate、書き起こしの誤り割合)が5〜6%台まで下がっており、人間の書き起こしに迫る水準に達しているという計測結果もある一方、雑音・方言・専門用語の多用があると精度が落ちるため、業界特化の辞書登録などの運用が精度を左右する点は変わらない([note「AI音声認識の精度比較2026年版」](https://note.com/ai_labo26/n/nf56c0385a1dd))。日本語特化エンジンとして「AmiVoice Cloud Platform」(アドバンスト・メディア)が国内で高い認識精度と実績を持ち、多言語対応では15.5億パラメータの「Whisper large-v3」(OpenAI、オープンソースで99以上の言語に対応)や、Gemini系モデルとの統合で文脈理解を活かす「Google Speech-to-Text(Chirp 2)」が広く使われている。
+音声認識(ASR: Automatic Speech Recognition)は、マイクで捉えた音声波形をディープラーニングでテキストに変換する技術。クリアな音声環境では誤り率(WER: Word Error Rate、書き起こしの誤り割合)が5〜6%台まで下がっており、人間の書き起こしに迫る水準に達しているという計測結果もある一方、雑音・方言・専門用語の多用があると精度が落ちるため、業界特化の辞書登録などの運用が精度を左右する点は変わらない([note「AI音声認識の精度比較2026年版」](https://note.com/ai_labo26/n/nf56c0385a1dd))。日本語特化エンジンとして「AmiVoice Cloud Platform」(アドバンスト・メディア)が国内で高い認識精度と実績を持ち、多言語対応では長らく「Whisper large-v3」(OpenAI、15.5億パラメータ、オープンソースで99以上の言語に対応)が定番だったが、2026年に入り後継候補が相次いで登場している。AlibabaのASR特化モデル「Qwen3-ASR」は52言語・22の中国語方言に対応し、英語ベンチマーク(Tedlium)でのWERはWhisper large-v3やGPT-4o Transcribeを上回ったと報告されている。日本語では、HEROZの11モデル比較(2026年8月)によると、Cohereの「Cohere Transcribe」がCommon Voice・FLEURSベンチマークでgpt-4o-transcribeに匹敵する精度を示す一方、朗読音声(JSUT)ではWhisper large-v3が依然優位という結果が出ており、「既存システムを慌てて置き換える必要はないが、新規導入時はWhisperのファインチューニングに投資する前に候補を比較検討すべき」との整理がされている。文脈理解を活かす用途では、Gemini系モデルと統合された「Google Speech-to-Text(Chirp 2)」も広く使われている。
 
 ### 従来型の自然言語処理(NLP):生成AI以前の「読む・分類する」技術
 
@@ -85,7 +85,7 @@ OCRは「文字」というくくりの中で物体検出的な手法(どこに�
 | 画像認識API(汎用) | Google Cloud Vision AI、AWS Rekognition、Azure AI Vision |
 | 画像認識(自前学習・エッジ向けOSS) | YOLO26(Ultralytics) |
 | 音声認識(日本語特化) | AmiVoice Cloud Platform(アドバンスト・メディア) |
-| 音声認識(多言語・API) | Whisper API(large-v3、OpenAI)、Google Speech-to-Text(Chirp 2)、AWS Transcribe |
+| 音声認識(多言語・API) | Whisper API(large-v3、OpenAI)、Qwen3-ASR(Alibaba)、Cohere Transcribe、Google Speech-to-Text(Chirp 2)、AWS Transcribe |
 | AI-OCR | AI inside「DX Suite」、Cogent Labs「SmartRead」(旧Tegakiの手書きエンジンを内蔵)、各クラウドベンダーのOCR API |
 | 需要予測・在庫最適化 | sinops、Deep Predictor(AI Cross)、Amazon Chronos-2・Google TimesFM 2.5などの時系列基盤モデル |
 | 柔軟な認識補助(汎用マルチモーダルLLM) | GPT-5.5/5.6(OpenAI)、Gemini 3.1 Pro(Google)、Claude Sonnet 5(Anthropic) |
@@ -112,6 +112,10 @@ OCRは「文字」というくくりの中で物体検出的な手法(どこに�
 - [ディープラーニング(深層学習)の基礎](deep-learning-basics.md)
 
 ## 更新履歴
+
+### 2026-09-24: 音声認識(ASR)の新モデル動向を最新化
+- **内容**: 音声認識の節に、Whisper large-v3の後継候補として登場したAlibaba「Qwen3-ASR」(52言語対応、英語ベンチマークでWhisper large-v3・GPT-4o Transcribeを上回るWERを記録)と「Cohere Transcribe」を追加。HEROZの日本語ASR11モデル比較(2026年8月)から、朗読音声ではWhisper large-v3が依然優位、雑多な音声環境ではCohere Transcribeが有力候補という2026年9月時点の実務的な使い分けを反映。ツール横断の対応表にも両モデルを追加
+- **出典**: [HEROZ Tech Blog: Whisperはまだ第一候補？日本語ASR 11モデルを比較して分かったこと](https://techblog.heroz.jp/entry/2026/08/18/120000)、[Neosophie Blog: 【2026年最新】日本語音声認識(ASR/STT)モデル比較](https://neosophie.com/ja/blog/20260226-japanese-asr-benchmark)
 
 ### 2026-08-01: 最新化(モデル・製品名の更新と時系列基盤モデルの追記)
 - **内容**: 画像認識の代表モデルをYOLO26(2026年1月公開、NMS-free、CPU推論最大43%高速化)に更新。音声認識の精度指標(WER 5〜6%台)とエンジン(Whisper large-v3、Google Speech-to-Text Chirp 2)を最新化。従来型NLPの節にLLM API価格の60〜80%下落と使い分けの現状を追記。異常検知・需要予測の節にChronos-2・TimesFM 2.5などの時系列基盤モデルを新規追記。マルチモーダルLLMの表記をGPT-5.5/5.6、Gemini 3.1 Pro、Claude Sonnet 5に更新し、外観検査・需要予測の事例を差し替え
