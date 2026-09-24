@@ -10,6 +10,7 @@
 - [生成AIによる文章作成・編集の実務活用](topics/part12-business-practice/ai-writing-and-editing.md): ツール横断の対応付けの節を2026年9月時点の状況(ChatGPT Writing Blocksへの一本化、Gemini in Docsの新機能、Copilotのエージェント機能GA・Claude Fable 5.1提供開始)に最新化
 - [生成AI時代の働き方とスキルの変化](topics/part13-ai-trends/ai-era-work-and-skills.md): PwC Japan(2026年9月)の日本企業の賃金還元ギャップとStanford Digital Economy Lab(2026年8月)の若年層雇用ギャップのデータを追加して最新化
 - [製薬業界における生成AI活用事例](topics/part14-industry-cases/pharmaceutical-industry-ai-use-cases.md): 導入事例カタログを新設し、Moderna・アステラス製薬・Pfizerの3社の事例を追加
+- [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): 導入事例カタログを新設し、帝国ホテル・中日ドラゴンズ・freee株式会社の3社の事例を追加
 
 ## 2026-09-23
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): 導入事例カタログを新設し、すかいらーくホールディングス・リンガーハット・鳥貴族の3社の事例を追加
