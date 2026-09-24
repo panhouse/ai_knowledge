@@ -6,6 +6,7 @@
 
 ## 2026-09-24
 - [海外のマーケティングAI企業一覧](topics/part17-overseas-ai-companies/marketing-ai-companies-overseas.md): 新規執筆(Jasper・Writer・HubSpot(Breeze)の3社を収録)
+- [海外の人事・採用AI企業一覧](topics/part17-overseas-ai-companies/hr-recruiting-ai-companies-overseas.md): 新規執筆(Eightfold AI・Paradox(Workdayグループ)・HireVueの3社を収録)
 
 ## 2026-09-23
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): 導入事例カタログを新設し、すかいらーくホールディングス・リンガーハット・鳥貴族の3社の事例を追加
