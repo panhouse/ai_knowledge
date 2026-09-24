@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-24
+- [海外のマーケティングAI企業一覧](topics/part17-overseas-ai-companies/marketing-ai-companies-overseas.md): 新規執筆(Jasper・Writer・HubSpot(Breeze)の3社を収録)
+
 ## 2026-09-23
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): 導入事例カタログを新設し、すかいらーくホールディングス・リンガーハット・鳥貴族の3社の事例を追加
 - [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): 導入事例カタログを新設し、ソフトバンク・KDDI・アフラック生命保険の3社の事例を追加
