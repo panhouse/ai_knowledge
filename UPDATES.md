@@ -13,6 +13,7 @@
 - [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): 導入事例カタログを新設し、帝国ホテル・中日ドラゴンズ・freee株式会社の3社の事例を追加
 - [海外のデータ分析・BI AI企業一覧](topics/part17-overseas-ai-companies/data-analytics-bi-ai-companies-overseas.md): 新規執筆(Databricks・Snowflake・ThoughtSpotの3社を収録)
 - [認識系AIの応用(画像認識・音声認識・従来型自然言語処理)](topics/part01-ai-basics/recognition-ai-applications.md): 音声認識(ASR)の新モデル動向(Qwen3-ASR・Cohere Transcribe)を反映して最新化
+- [海外の経理・会計AI企業一覧](topics/part17-overseas-ai-companies/finance-accounting-ai-companies-overseas.md): 新規執筆(Ramp・BILL(Bill.com)・Brex(Capital Oneグループ)の3社を収録)
 
 ## 2026-09-23
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): 導入事例カタログを新設し、すかいらーくホールディングス・リンガーハット・鳥貴族の3社の事例を追加
