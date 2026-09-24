@@ -11,6 +11,7 @@
 - [生成AI時代の働き方とスキルの変化](topics/part13-ai-trends/ai-era-work-and-skills.md): PwC Japan(2026年9月)の日本企業の賃金還元ギャップとStanford Digital Economy Lab(2026年8月)の若年層雇用ギャップのデータを追加して最新化
 - [製薬業界における生成AI活用事例](topics/part14-industry-cases/pharmaceutical-industry-ai-use-cases.md): 導入事例カタログを新設し、Moderna・アステラス製薬・Pfizerの3社の事例を追加
 - [経理・財務職における生成AI活用事例](topics/part15-job-role-cases/finance-accounting-ai-use-cases.md): 導入事例カタログを新設し、帝国ホテル・中日ドラゴンズ・freee株式会社の3社の事例を追加
+- [海外のデータ分析・BI AI企業一覧](topics/part17-overseas-ai-companies/data-analytics-bi-ai-companies-overseas.md): 新規執筆(Databricks・Snowflake・ThoughtSpotの3社を収録)
 
 ## 2026-09-23
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): 導入事例カタログを新設し、すかいらーくホールディングス・リンガーハット・鳥貴族の3社の事例を追加
