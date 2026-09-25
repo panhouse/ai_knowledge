@@ -7,6 +7,7 @@
 ## 2026-09-25
 - [金融・保険における生成AI活用事例](topics/part14-industry-cases/finance-insurance-ai-use-cases.md): 導入事例カタログを新設し、野村ホールディングス・JPMorgan Chase・Klarnaの3社の事例を追加
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 導入事例カタログを新設し、Abridge・湘南鎌倉総合病院・Tempus AIの3事例を追加
+- [教育における生成AI活用事例](topics/part14-industry-cases/education-ai-use-cases.md): 導入事例カタログを新設し、Arizona State University・渋谷区教育委員会・N高等学校/S高等学校の3事例を追加
 
 ## 2026-09-24
 - [海外のマーケティングAI企業一覧](topics/part17-overseas-ai-companies/marketing-ai-companies-overseas.md): 新規執筆(Jasper・Writer・HubSpot(Breeze)の3社を収録)
