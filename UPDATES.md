@@ -12,6 +12,7 @@
 - [情報システム(IT)部門における生成AI活用事例](topics/part15-job-role-cases/information-systems-ai-use-cases.md): 導入事例カタログを新設し、Moderna・ServiceNow・Amazonの3社の事例を追加
 - [海外のコーディング支援AI企業一覧](topics/part17-overseas-ai-companies/coding-assistant-ai-companies-overseas.md): 新規執筆(Anysphere(Cursor)・Cognition(Devin/Windsurf)・Replitの3社を収録)
 - [海外の画像・動画生成AI企業一覧](topics/part17-overseas-ai-companies/image-video-generation-ai-companies-overseas.md): 新規執筆(Midjourney・Runway・Luma AIの3社を収録)
+- [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): A2AがMCPと同じAgentic AI Foundation(AAIF)に参加した統治体制の変化(2026年8月20日)を反映して最新化
 
 ## 2026-09-24
 - [海外のマーケティングAI企業一覧](topics/part17-overseas-ai-companies/marketing-ai-companies-overseas.md): 新規執筆(Jasper・Writer・HubSpot(Breeze)の3社を収録)
