@@ -78,3 +78,4 @@ Part 17 は **海外企業版の一覧カタログ**。教科書ページのよ�
 - [海外の経理・会計AI企業一覧](finance-accounting-ai-companies-overseas.md)
 - [海外の会議・文字起こしAI企業一覧](meeting-minutes-ai-companies-overseas.md)
 - [海外のコーディング支援AI企業一覧](coding-assistant-ai-companies-overseas.md)
+- [海外の画像・動画生成AI企業一覧](image-video-generation-ai-companies-overseas.md)
