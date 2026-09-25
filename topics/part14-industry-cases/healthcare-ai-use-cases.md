@@ -4,7 +4,7 @@ part: 14
 chapter: "第4章 医療・ヘルスケア"
 tags: [医療, ヘルスケア, 生成AI活用事例, アンビエントAIスクライブ, 画像診断支援, 医薬品開発]
 created: 2026-07-06
-updated: 2026-08-20
+updated: 2026-09-25
 ---
 
 # 医療・ヘルスケアにおける生成AI活用事例
@@ -276,6 +276,61 @@ updated: 2026-08-20
   公開データの暗記ではなく実務課題への対応力を実データで確認する姿勢は、
   創薬に限らず専門領域へ生成AIを導入する際の評価設計全般に応用できる考え方である
 
+## 導入事例カタログ
+
+上記の事例に加え、`templates/case-card.md` の書式で新たに3件の実名事例を追加する。
+
+### Abridge(米・AI医療スクライブ大手) — 対象業務: 診療記録作成・臨床意思決定支援
+- **導入形態**: 専用SaaS導入
+- **段階**: 全社展開(複数の大手医療システムで本番稼働)
+- **やったこと**: 診察の会話からカルテ記録を自動生成する「AIスクライブ」に加え、
+  2026年からUpToDate・New England Journal of Medicine・JAMAの文献を診察中に
+  そのまま参照できる臨床意思決定支援機能を追加。Kaiser Permanente(医師約25,000人)・
+  Mayo Clinic・Johns Hopkins・Duke Healthなど300以上の医療システムで導入されている
+- **効果**: 臨床意思決定支援機能の利用量は展開後2か月でクリニシャン1人あたりの
+  問い合わせ数が3倍に増加。Corewell Healthでは臨床医の90%が「患者によりしっかり
+  向き合えるようになった」、Lee Healthでは86%が「勤務時間外の記録作業が減った」と回答
+  (2026年、Abridge公表)。「Best in KLAS Ambient AI」部門を2025・2026年と2年連続で受賞
+- **学べること**: 「記録作成の自動化」で終わらせず、記録された会話データを起点に
+  「その場で根拠となる文献を提示する」機能へ発展させている点が学びどころ。
+  AIスクライブ導入の効果は文書作成時間の短縮だけでなく、
+  空いた時間をどう患者対応に再配分できたかで測るとよい
+- **出典**: [Abridge scales up AI decision support across 300 health systems(Fierce Healthcare)](https://www.fiercehealthcare.com/ai-and-machine-learning/abridge-expands-ai-decision-support-more-clinicians-bid-become-healthcares) / 最終確認日: 2026-09-25
+
+### 湘南鎌倉総合病院(徳洲会グループ・急性期病院) — 対象業務: 電話予約対応
+- **導入形態**: 専用SaaS導入(Dr.JOY株式会社の病院特化AI電話)
+- **段階**: 部門展開(予約関連の電話に絞って導入)
+- **やったこと**: 「断らない医療」を掲げる同院で、件数の多い予約の新規受付・変更・
+  キャンセルの電話対応にAI電話を導入。AIが受けた予約変更・キャンセル内容は
+  各診療科のiPadにリアルタイムで表示される仕組みとした
+- **効果**: AI電話が1日平均9.3時間絶え間なく稼働し、電話回線の混雑が解消。
+  職員が電話対応に追われず外来患者の受付・相談によりしっかり対応できるようになった
+  (Dr.JOY公表)。同社のAI電話は2025年の「病院DXアワード2025」優秀賞を受賞し、
+  導入病院向け調査ではリリース11か月時点で導入施設の96%・実務担当者53名の97%が
+  業務改善を実感したと公表されている
+- **学べること**: 病院の電話業務すべてを一度にAI化するのではなく、
+  「件数が多く定型的な予約関連」に絞って着手した段階導入の設計が、
+  現場の合意形成を得やすくした一因。効果は稼働時間・対応件数のような
+  運用指標に加え、「職員が本来の対応に使える時間が増えたか」まで含めて説明すると
+  現場に伝わりやすい
+- **出典**: [断らない医療を実現させたAI電話(湘南鎌倉総合病院 採用サイト)](https://officework.skgh.jp/project/project01/) / [病院DXアワード2025 優秀賞(Dr.JOY公表資料)](https://www.kenshin.gr.jp/wp/wp-content/uploads/2025/07/aicall-2.pdf) / 最終確認日: 2026-09-25
+
+### Tempus AI × Northwestern Medicine(米・腫瘍領域データ企業と医療システム) — 対象業務: 電子カルテ統合の臨床コパイロット
+- **導入形態**: 専用SaaS導入(EHRへの統合)
+- **段階**: PoC/先行導入(最初の導入医療システムとして展開開始)
+- **やったこと**: がん領域のデータ・AI企業Tempus AIが開発する生成AI臨床コパイロット
+  「David」を、Northwestern Medicineが電子カルテ(EHR)基盤に統合する形で
+  業界で最初に導入。診察前の患者サマリー・治療歴の自動生成、診察中のリアルタイムな
+  メモ作成・要点抽出、診察後の記録作成・治療計画・保険の事前承認手続き・
+  臨床試験マッチングまでを一気通貫でカバーする設計とした
+- **効果**: 2026年に発表されたばかりの取り組みで、稼働後の定量効果は
+  2026年9月時点で未公表(業界初のEHR統合事例であることが主な公表内容)
+- **学べること**: 「診察前」「診察中」「診察後」という時間軸で機能を分けて
+  設計している点は、他院がAI導入ロードマップを描く際の参考になる。
+  発表直後で効果の数値が出ていない事例を紹介する際は、
+  「まだ稼働実績の数値はない」と明記したうえで、設計思想を学ぶ材料として扱うとよい
+- **出典**: [Tempus Expands Next Platform to Deliver Real-Time Clinical Intelligence(Tempus公式プレスリリース)](https://www.businesswire.com/news/home/20260528392115/en/Tempus-Expands-Next-Platform-to-Deliver-Real-Time-Clinical-Intelligence-and-Close-Critical-Care-Gaps-Across-Oncology) / 最終確認日: 2026-09-25
+
 ## 注意点・よくある誤解
 
 - **誤情報が命に関わる**: 医療分野のハルシネーション(もっともらしい誤情報)は
@@ -337,6 +392,18 @@ updated: 2026-08-20
 - [製薬業界における生成AI活用事例](pharmaceutical-industry-ai-use-cases.md)
 
 ## 更新履歴
+
+### 2026-09-25: 導入事例カタログを新設し、Abridge・湘南鎌倉総合病院・Tempus AIの3事例を追加
+- **内容**: `templates/case-card.md` の書式で「導入事例カタログ」節を新設し、
+  Abridge(AIスクライブ+臨床意思決定支援、300以上の医療システムに導入)、
+  湘南鎌倉総合病院×Dr.JOY「AI電話」(予約対応の電話業務、1日9.3時間稼働)、
+  Tempus AI×Northwestern Medicine「David」(EHR統合の生成AI臨床コパイロット、
+  業界初のEHR統合事例)の3事例を追加した
+- **出典**:
+  [Abridge scales up AI decision support across 300 health systems(Fierce Healthcare)](https://www.fiercehealthcare.com/ai-and-machine-learning/abridge-expands-ai-decision-support-more-clinicians-bid-become-healthcares)、
+  [断らない医療を実現させたAI電話(湘南鎌倉総合病院 採用サイト)](https://officework.skgh.jp/project/project01/)、
+  [病院DXアワード2025 優秀賞(Dr.JOY公表資料)](https://www.kenshin.gr.jp/wp/wp-content/uploads/2025/07/aicall-2.pdf)、
+  [Tempus Expands Next Platform to Deliver Real-Time Clinical Intelligence(Tempus公式)](https://www.businesswire.com/news/home/20260528392115/en/Tempus-Expands-Next-Platform-to-Deliver-Real-Time-Clinical-Intelligence-and-Close-Critical-Care-Gaps-Across-Oncology)
 
 ### 2026-08-20: 患者向けAIに新事例を追加、個人情報保護法改正を反映して規制動向を最新化
 - **内容**: 患者向け説明・問い合わせ対応の項目にOpenAI「ChatGPT Health」
