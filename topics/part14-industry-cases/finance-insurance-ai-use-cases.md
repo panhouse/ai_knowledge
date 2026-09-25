@@ -4,7 +4,7 @@ part: 14
 chapter: "第3章 金融・保険"
 tags: [金融, 保険, 生成AI活用事例, 融資審査, コンプライアンス, 不正検知, コールセンター, 損害査定]
 created: 2026-07-06
-updated: 2026-08-04
+updated: 2026-09-25
 ---
 
 # 金融・保険における生成AI活用事例
@@ -219,6 +219,58 @@ updated: 2026-08-04
   紙の書類が多い業務ほど、まずはOCRの精度・コストというわかりやすい指標で
   導入効果を測れるところから始めるとよい
 
+## 導入事例カタログ
+
+上記の業務領域別の事例に加え、`templates/case-card.md` の書式で新たに3件の実名事例を追加する。
+
+### 野村ホールディングス(証券・国内大手) — 対象業務: 広告審査・コンプライアンスチェック
+- **導入形態**: 内製(AWS生成AIイノベーションセンターと共同開発)
+- **段階**: 全社展開
+- **やったこと**: Amazon BedrockとAnthropic Claudeを基盤に、マルチLLMオーケストレーションを
+  組み込んだ生成AIプラットフォーム「Core AI」を構築。広告審査(金融商品の広告・販促物が
+  法令・社内規定に適合しているかの確認)業務にAIによるコンプライアンスチェックを組み込み、
+  グローバルなオペレーションの最適化にも活用している
+- **効果**: 広告審査の精度向上と処理時間の短縮を実現(AWS公表のケーススタディでは
+  「精度の向上」「処理時間の短縮」「シームレスなグローバル運用の実現」と定性的に説明されて
+  おり、具体的な削減率・件数は非公表)
+- **学べること**: 「広告審査」のような、法令チェックという明確なルールと大量の反復作業が
+  組み合わさった業務は、生成AIによる一次チェック+人による最終確認という設計と相性がよい
+- **出典**: [Nomura Group | AWS 生成AI導入事例](https://aws.amazon.com/solutions/case-studies/bedrock-nomura) / 最終確認日: 2026-09-25
+
+### JPMorgan Chase(米大手銀行) — 対象業務: 全社的な生成AI活用基盤(LLM Suite)
+- **導入形態**: 内製(OpenAI・Anthropicのモデルを内部基盤に統合)
+- **段階**: 全社展開
+- **やったこと**: 社内データベース・業務アプリと接続した独自の生成AI基盤「LLM Suite」を
+  2024年夏に稼働開始。投資銀行部門のプレゼン資料作成、SEC提出書類の要約、決算資料の分析、
+  与信判断・不正検知など450件超のユースケースで活用し、2026年までに1,000件規模への
+  拡大を計画している
+- **効果**: 2025年時点で従業員約15万人が週次で利用(2025年後半には利用者の約半数が
+  毎日利用)。CEOジェイミー・ダイモン氏はAI関連投資により年間20億ドル規模の
+  ビジネス価値(コスト削減・収益機会)を生み出していると2025年に説明した
+  (2022年時点の1億ドルから2025年に20億ドルへ拡大)
+- **学べること**: 一つの巨大な社内AI基盤を全部門に配布し、部門ごとのユースケースを
+  積み上げていく「プラットフォーム先行」型の展開方法。効果測定を「削減時間」ではなく
+  「年間ビジネス価値」という経営指標に翻訳して説明している点も参考になる
+- **出典**: [In the AI arms race, JPMorgan is unstoppable(eMarketer)](https://www.emarketer.com/content/ai-arms-race-jpmorgan-2-billion) / [JPMorgan Chase AI Spending Targets Cost Savings and Margin Gains(Investing.com)](https://www.investing.com/analysis/jpmorgan-chase-ai-spending-targets-cost-savings-and-margin-gains-200678084) / 最終確認日: 2026-09-25
+
+### Klarna(スウェーデン発フィンテック・後払い決済) — 対象業務: カスタマーサポート
+- **導入形態**: 専用SaaS導入(OpenAIとの協業でAIアシスタントを構築)
+- **段階**: 全社展開(その後、方針を一部見直し)
+- **やったこと**: 2024年2月、OpenAI技術を活用したAIカスタマーサポートアシスタントを
+  23市場・35以上の言語で提供開始。返金・返品対応など幅広い問い合わせに24時間対応する
+  設計とした
+- **効果**: 稼働開始1か月で会話230万件(全問い合わせの約3分の2)に対応し、
+  フルタイム従業員700人分の業務量に相当したとKlarnaとOpenAIが公表(2024年2月)。
+  平均対応時間は11分から2分未満に短縮、再問い合わせ率は25%減少し、2024年通期で
+  4,000万ドルの利益改善効果があったと公表されている。ただし2025年5月、Klarnaの
+  CEOは「コスト削減に寄りすぎた」として人による対応の採用を再開すると表明しており、
+  自動化一辺倒ではなく人とAIの配分を継続的に見直す運用に変わっている
+- **学べること**: 導入直後の華々しい効率化数値だけでなく、1年超運用した後に
+  「自動化の行き過ぎ」を認めて軌道修正した点まで含めて学ぶ価値がある事例。
+  カスタマーサポートのAI化は、対応件数・時間の指標だけでなく顧客体験・
+  ブランドへの影響も継続的に見ながら人とAIの比率を調整する前提で設計するとよい
+- **出典**: [Klarna's AI assistant does the work of 700 full-time agents(OpenAI公式)](https://openai.com/index/klarna/) / [Klarna AI assistant handles two-thirds of customer service chats in its first month(Klarna公式プレスリリース)](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/) / [Klarna AI Saved $40M on Support — Then Walked It Back(Twig)](https://www.twig.so/blog/klarna-ai-customer-support-efficiency) / 最終確認日: 2026-09-25
+
 ## 注意点・よくある誤解
 
 - **顧客の個人情報・機密情報の取り扱いが最大の論点**: 金融庁は2025年3月に
@@ -265,6 +317,20 @@ updated: 2026-08-04
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 
 ## 更新履歴
+
+### 2026-09-25: 導入事例カタログを新設し、野村ホールディングス・JPMorgan Chase・Klarnaの3社の事例を追加
+- **内容**: `templates/case-card.md` の書式で「導入事例カタログ」節を新設し、
+  野村ホールディングスの生成AIプラットフォーム「Core AI」(広告審査・コンプライアンス)、
+  JPMorgan Chaseの全社基盤「LLM Suite」(年間20億ドル規模のビジネス価値)、
+  KlarnaのAIカスタマーサポート(1か月で700人分の業務量に相当、その後人員採用を再開した
+  軌道修正まで含む)の3事例を追加した
+- **出典**:
+  [Nomura Group | AWS 生成AI導入事例](https://aws.amazon.com/solutions/case-studies/bedrock-nomura)、
+  [In the AI arms race, JPMorgan is unstoppable(eMarketer)](https://www.emarketer.com/content/ai-arms-race-jpmorgan-2-billion)、
+  [JPMorgan Chase AI Spending Targets Cost Savings and Margin Gains(Investing.com)](https://www.investing.com/analysis/jpmorgan-chase-ai-spending-targets-cost-savings-and-margin-gains-200678084)、
+  [Klarna's AI assistant does the work of 700 full-time agents(OpenAI公式)](https://openai.com/index/klarna/)、
+  [Klarna AI assistant handles two-thirds of customer service chats in its first month(Klarna公式)](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/)、
+  [Klarna AI Saved $40M on Support — Then Walked It Back(Twig)](https://www.twig.so/blog/klarna-ai-customer-support-efficiency)
 
 ### 2026-08-04: 各事例を2026年8月時点の最新状況に更新し、生命保険の新規事例を追加
 - **内容**: MUFG×Sakana AIの実案件検証フェーズ移行、みずほ銀行のマルチターンヒアリング・
