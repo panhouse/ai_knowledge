@@ -4,7 +4,7 @@ part: 15
 chapter: 第10章 情報システム・情報セキュリティ
 tags: [情報システム部門, 情シス, ヘルプデスク, AIOps, シャドーAI, SaaS管理, ライセンス管理, 障害対応, ドキュメント生成]
 created: 2026-07-13
-updated: 2026-08-10
+updated: 2026-09-25
 ---
 
 # 情報システム(IT)部門における生成AI活用事例
@@ -48,6 +48,61 @@ updated: 2026-08-10
 | 想定外の質問への対応 | 弱い(「わかりません」で終わりやすい) | 表現の揺れ(言い換え・誤字・口語表現)にも比較的強い |
 | 立ち上げの手間 | 想定問答の作り込みに時間がかかる | 既存マニュアルを読み込ませれば始められるが、精度は運用しながら改善が必要 |
 | 精度が上がるまでの期間 | 作り込み次第 | 導入直後は回答精度が低め(実例では約50%)で、FAQ追加・改善を重ねて数か月で向上(同実例で約80%) |
+
+## 導入事例カタログ
+
+ここまでは職種横断で使える汎用的な活用パターン・プロンプト例を紹介した。以下は
+`templates/case-card.md` の書式による実名企業の導入事例(情シス部門主導で
+社内向け生成AI基盤・ヘルプデスクを構築・運用した事例)である。
+
+### Moderna(米・製薬) — 対象業務: 全社的な生成AIツール展開とガバナンス
+- **導入形態**: 専用SaaS導入(OpenAI ChatGPT Enterprise)
+- **段階**: 全社展開
+- **やったこと**: IT・デジタル部門が主導し、全社員がChatGPT Enterpriseを使える
+  環境を整備。社内向けカスタムGPT(法務・研究開発・広報など各部門向けの
+  専用アシスタント)を750件作成し、利用状況・ガバナンスを一元的に管理する
+  体制を構築した
+- **効果**: 750件のカスタムGPTの構築を約2か月で完了し、利用者1人あたり
+  週平均120回のChatGPT Enterprise会話が行われていると2024年にOpenAIが
+  公式事例として公表している
+- **学べること**: 情シス部門が「AIツールを配って終わり」にせず、
+  各部門が自分の業務用GPTを作れる基盤と、それを横断的に把握・統制する
+  仕組みをセットで用意している点が学びどころ。全社展開するAIツールほど、
+  利用状況の可視化とガバナンスを担う部署(多くは情シス)を最初から決めておく
+  必要がある
+- **出典**: [Moderna(OpenAI公式事例)](https://openai.com/index/moderna/) / 最終確認日: 2026-09-25
+
+### ServiceNow(米・ITSMプラットフォーム企業) — 対象業務: 自社の従業員向けセルフサービス・ヘルプデスク
+- **導入形態**: 内製(自社製品Now Assistを自社IT部門で活用する「Now on Now」の取り組み)
+- **段階**: 全社展開
+- **やったこと**: 自社の従業員向けポータル・検索機能にNow Assistの生成AI機能を
+  組み込み、従業員が問い合わせチケットを起票する前に、生成AIによる要約・
+  回答候補で自己解決できるようにするセルフサービス化を進めた
+- **効果**: 導入後、従業員側のケースデフレクション率(AIによる自己解決で
+  チケット化を回避できた割合)が14ポイント向上。導入から120日以内に、
+  年間換算でフルタイム従業員(FTE)約50人分に相当する生産性向上効果があったと
+  ServiceNowが自社公表している
+- **学べること**: ITSM(ITサービスマネジメント)ツールのベンダー自身が
+  自社の情シス業務に自社製品を適用し、効果を「デフレクション率」
+  「FTE換算の生産性」という具体的な経営指標で示している点が参考になる。
+  自社導入(ドッグフーディング)の効果測定の型として応用できる
+- **出典**: [Now on Now – Now Assist(ServiceNow公式カスタマーストーリー)](https://www.servicenow.com/customers/now-on-now-now-assist.html) / 最終確認日: 2026-09-25
+
+### Amazon(米・EC/クラウド) — 対象業務: 社内開発者向けナレッジアシスタント
+- **導入形態**: 内製(Amazon Q Businessを利用)
+- **段階**: 全社展開
+- **やったこと**: 社内のソフトウェア開発者体験を担うAmazon Software Builder
+  Experience(ASBX)組織が主導し、Slackや社内ツール「Sage」にAmazon Q
+  Businessを統合。開発者が技術的な質問をする際、これまで人に聞いて数時間
+  待っていたやり取りを、その場でAIが回答する仕組みに置き換えた
+- **効果**: 2024年の実績として、数万人のAmazon社内開発者からの100万件超の
+  質問に回答し、技術調査にかかる時間を合計45万時間以上削減。
+  回答までの時間は数時間から数秒に短縮されたとAWS公式ブログが公表している
+- **学べること**: 「情シスへの問い合わせ」を人手で待つ時間そのものが
+  コストであるという視点で効果を測定している点が参考になる。既存の
+  コミュニケーションツール(Slack等)にAIを組み込み、新しいツールを
+  別途覚えさせない設計が、数万人規模での定着につながっている
+- **出典**: [Reducing time spent waiting with Amazon Q(AWS公式ブログ)](https://aws.amazon.com/blogs/devops/reducing-time-spent-waiting-with-amazon-q/) / 最終確認日: 2026-09-25
 
 ## 実務での使い方
 
@@ -190,6 +245,17 @@ AIOpsツール(Datadog Bits AI、ServiceNow Now Assistなど)を導入済みの�
 - [生成AI導入の社内展開・浸透のすすめ方](../part12-business-practice/ai-adoption-rollout-basics.md)
 
 ## 更新履歴
+
+### 2026-09-25: 導入事例カタログを新設し、Moderna・ServiceNow・Amazonの3社の事例を追加
+- **内容**: `templates/case-card.md` の書式で「導入事例カタログ」節を新設し、
+  Moderna(ChatGPT Enterprise全社展開・カスタムGPT750件、OpenAI公式事例)、
+  ServiceNow「Now on Now」(自社製品Now Assistの自社活用、デフレクション率14pt向上)、
+  Amazon(Amazon Q Businessによる社内開発者向けアシスタント、年間45万時間超の削減)の
+  3社の実名事例を追加した
+- **出典**:
+  [Moderna(OpenAI公式)](https://openai.com/index/moderna/)、
+  [Now on Now – Now Assist(ServiceNow公式)](https://www.servicenow.com/customers/now-on-now-now-assist.html)、
+  [Reducing time spent waiting with Amazon Q(AWS公式ブログ)](https://aws.amazon.com/blogs/devops/reducing-time-spent-waiting-with-amazon-q/)
 
 ### 2026-08-10: シャドーAI・AIOps・管理者機能を最新情報に更新
 - **内容**: IPA「情報セキュリティ10大脅威2026」でAI関連リスクが組織編3位に初選出された事実を「仕組み・背景」に追加してシャドーAI対策の重要性の裏付けを補強。AIOps市場動向にDatadog「DASH 2026」での100超の新機能発表(Bits AI強化・AI Guard等)を追加。シーン3(シャドーAI棚卸し)に、統制対象が人のアカウントからAIエージェントの権限そのものへ広がっている動き(JumpCloud Agentic IAM、AIエージェントへのアクセス権限に関する調査結果)を追記。シーン5(ライセンス管理)にMicrosoft Copilotの新しい利用状況エクスポート機能・利用者自動分類(導入タブ)を追記。ツール横断比較表を2026年8月時点に更新し、Claude Team/Enterpriseのシート体系、Claude Enterpriseのモデル・effort制御、Gemini Enterpriseの管理コンソール統合、ChatGPT Businessの請求タイミング変更(2026年8月19日〜)を反映
