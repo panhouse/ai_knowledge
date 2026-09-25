@@ -4,7 +4,7 @@ part: 15
 chapter: 第5章 企画・プロダクト・データ分析
 tags: [データアナリスト, BI, text-to-SQL, ダッシュボード, Power BI, Looker, Amazon Quick Suite, BigQuery, pandas, Claude for Excel]
 created: 2026-07-15
-updated: 2026-08-11
+updated: 2026-09-25
 ---
 
 # データアナリスト/BIアナリスト職における生成AI活用事例
@@ -167,6 +167,60 @@ JupyterNotebookで、変数dfにすでにCSVを読み込んだDataFrameが入っ
 
 BIツールもJupyterも使わず、手元のExcelファイルを直接AIに触らせたい場合は、Claude for Excel(Anthropicが提供するExcelアドイン、2026年5月に一般提供開始)やMicrosoft 365 Copilot in Excelが選択肢になる。Claude for Excelはリボンから起動するサイドパネル形式で、開いているブック全体の文脈(複数シート・数式の依存関係)を踏まえて集計・ピボット・グラフ作成をチャットで依頼できる。ただし利用にはClaude Pro以上の有償プランが必要で、Excelファイルをそのまま渡すこと自体は他のAI分析ツールと同じデータ取り扱いの注意点(後述の「注意点・よくある誤解」を参照)が当てはまる。
 
+## 導入事例カタログ
+
+ここまでは職種横断で使える汎用的な活用パターン・プロンプト例を紹介した。以下は
+`templates/case-card.md` の書式による実名企業の導入事例(社内システムとして
+text-to-SQL・データ分析エージェントを構築した事例)である。
+
+### LinkedIn(米・ビジネスSNS) — 対象業務: 社内データ分析基盤でのSQL生成
+- **導入形態**: 内製(LangChain・LangSmithを使用)
+- **段階**: 全社展開
+- **やったこと**: 社内データサイエンス基盤「DARWIN」に組み込むAIアシスタント
+  「SQL Bot」を構築。自然言語の質問を、埋め込みベースの検索で関連テーブルを
+  特定したうえでSQLに変換する。生成されたSQLに誤りがあった場合にユーザーが
+  修正を依頼できる「Fix with AI」機能も備える
+- **効果**: 社内の様々な事業部門の従業員数百人が日常的に利用している
+  (2024年12月、LinkedIn公式エンジニアリングブログで公表)
+- **学べること**: 「テーブル候補を絞り込んでからSQLを生成する」という2段階構成に
+  することで、大規模な社内データウェアハウス特有の「どのテーブルを使うべきか
+  わからない」という初心者の壁を下げている点が参考になる
+- **出典**: [Practical Text-to-SQL for Data Analytics(LinkedIn公式エンジニアリングブログ)](https://www.linkedin.com/blog/engineering/ai/practical-text-to-sql-for-data-analytics) / 最終確認日: 2026-09-25
+
+### Uber(米・配車/フードデリバリー) — 対象業務: 社内データ分析基盤でのSQL生成
+- **導入形態**: 内製
+- **段階**: 全社展開
+- **やったこと**: 自然言語の質問からSQLクエリを生成する社内ツール「QueryGPT」を
+  構築。事業ドメインごとにSQLサンプル・テーブルを整理した「Workspace」を用意し、
+  Intent Agent(意図解析)・Table Agent(テーブル選定)・Column Prune Agent
+  (不要列の除去)という複数のAIエージェントが連携してクエリを組み立てる設計とした
+- **効果**: 社内データ基盤では月間約120万件のクエリが実行されており、
+  従来はデータセットを探しSQLを書くのに平均10分程度かかっていた作業が、
+  QueryGPT導入後は約3分に短縮されたと2024年9月にUber公式エンジニアリング
+  ブログで公表されている
+- **学べること**: 「1発でSQLを生成する」のではなく、意図解析・テーブル選定・
+  不要列除去という工程を専門エージェントに分業させている設計。大規模な
+  データウェアハウスほど、テーブル選定の精度が生成SQLの質を左右するため、
+  ここに専用の工程を割く価値がある
+- **出典**: [QueryGPT – Natural Language to SQL Using Generative AI(Uber公式エンジニアリングブログ)](https://www.uber.com/en-CA/blog/query-gpt/) / 最終確認日: 2026-09-25
+
+### メルカリ(フリマアプリ運営) — 対象業務: 社内データ分析全般(仮説立案からSQL実行まで)
+- **導入形態**: 内製(Google ADK[Agent Development Kit]を使用)
+- **段階**: 全社展開
+- **やったこと**: 課題意識の言語化からデータカタログ検索、社内ドキュメント参照、
+  分析仕様書の作成、SQL記述までを一気通貫で支援するマルチエージェントシステム
+  「Socrates」を構築。BigQuery・Slack・GitHub・Confluence・Google Driveなど
+  社内の複数システムと接続し、各工程を専門エージェントが分担する
+- **効果**: 累計1,000人以上の社員が利用し、データ分析の手続きが「誰でも
+  再現可能」になったと社内発表されている。ユーザーが作成したシステムプロンプトが
+  蓄積されることで、データの扱い方に関する暗黙知が形式知化されるコミュニティ効果も
+  生まれている(2026年、メルカリエンジニアの技術発表資料より)
+- **学べること**: 「SQLを書く」工程だけでなく、その前段の「課題意識をよい仮説に
+  変換する」「どのテーブル・ドキュメントを見るべきか」という、データ分析で
+  実は最も時間がかかる工程までエージェント化した点が特徴。SQL生成だけを
+  自動化しても分析全体のボトルネックは解消しないという教訓が読み取れる
+- **出典**: [データ分析エージェント Socrates の育て方(メルカリエンジニア Speaker Deck)](https://speakerdeck.com/na0/detafen-xi-eziento-socrates-noyu-tefang) / 最終確認日: 2026-09-25
+
 ## 注意点・よくある誤解
 
 - **文法的に正しいSQL・コードでも、業務ルールを反映できていないことがある**: AIはテーブルのスキーマ(列名・型)は理解できても、「キャンセル済みの注文は売上に含めない」「退会済み会員は分母から除く」といった暗黙の業務ルールまでは知らない。生成されたクエリ・コードは、必ず既知の実績値と桁感が合っているか、条件分岐(WHERE句・フィルタ)が業務ルール通りかを人が確認してから使う。特に金額・件数が意思決定に直結する集計は、独立した別の方法(手動集計・既存レポートとの突き合わせ)で検算する
@@ -190,6 +244,16 @@ BIツールもJupyterも使わず、手元のExcelファイルを直接AIに触�
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 
 ## 更新履歴
+
+### 2026-09-25: 導入事例カタログを新設し、LinkedIn・Uber・メルカリの3社の事例を追加
+- **内容**: `templates/case-card.md` の書式で「導入事例カタログ」節を新設し、
+  LinkedIn「SQL Bot」(社内数百人が利用)、Uber「QueryGPT」(クエリ作成時間を
+  10分から3分に短縮)、メルカリ「Socrates」(累計1,000人以上が利用する
+  データ分析マルチエージェント)の3社の実名事例を追加した
+- **出典**:
+  [Practical Text-to-SQL for Data Analytics(LinkedIn公式)](https://www.linkedin.com/blog/engineering/ai/practical-text-to-sql-for-data-analytics)、
+  [QueryGPT – Natural Language to SQL Using Generative AI(Uber公式)](https://www.uber.com/en-CA/blog/query-gpt/)、
+  [データ分析エージェント Socrates の育て方(メルカリエンジニア Speaker Deck)](https://speakerdeck.com/na0/detafen-xi-eziento-socrates-noyu-tefang)
 
 ### 2026-08-11: 料金・機能情報を最新化
 - **内容**: Power BI Copilotの必要Fabric容量が2025年4月にF64からF2に緩和された点、Amazon Q in QuickSightが2025年10月に「Amazon Quick Suite」へブランド統合され料金体系(Author Proが50→40ドル/月に値下げ)が変わった点、Tableau Pulseのプレミアム機能に必要な「Tableau+」の価格目安、ThoughtSpot SpotterのEssentials/Proプランごとの機能差(Spotter AIエージェントの有無・クエリ上限)、Gemini in BigQueryのプロアクティブなエージェント機能・Data Engineering Agent(GA)を反映。新たにAnthropicの「Claude for Excel」(2026年5月GA)を実務ツールとして比較表・実務シーンに追加
