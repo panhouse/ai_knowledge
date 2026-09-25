@@ -4,7 +4,7 @@ part: 9
 chapter: 第4章 MCP・エージェント連携
 tags: [A2A, Agent2Agent, MCP, AIエージェント, マルチエージェント]
 created: 2026-07-07
-updated: 2026-08-01
+updated: 2026-09-25
 ---
 
 # A2A(Agent2Agent)プロトコルの基本
@@ -47,9 +47,13 @@ A2Aでは、依頼した仕事を`Task(タスク)`という単位で管理する
 - 2026年3月: v1.0(安定版)をリリース。Signed Agent Cards、支払いに関する拡張仕様「AP2(Agent Payments Protocol)」などが追加
 - 2026年4月9日: 発足1周年時点で、対応組織150社超、GitHubスター22,000超、Python・JavaScript・Java・Go・.NETの5言語SDKが揃い、Microsoft Copilot Studio・Azure AI Foundry・Amazon Bedrock AgentCoreでの正式サポートを発表
 - 2026年4月22日: Google Cloud Next 2026にてv1.2を発表
+- 2026年5月28日: パッチ版v1.0.1をリリース。HTTPバインディングで`application/a2a+json`を優先させる修正、トランスコーディング関連エラーへの対応、仕様内のTaskStatus値の修正など、バグ修正が中心
 - 2026年7月23日時点: GitHubスターは25,000超まで増加(4月時点の22,000超からさらに拡大)。一方でLinux Foundationのプロジェクト分析(LFX Insights)では、コード貢献の51%超が依然として単一組織(Google)に集中しているとのデータもあり、「150社超が支援表明」という数字ほどには開発の担い手が分散していない実態も指摘されている
+- **2026年8月20日: A2AがAgentic AI Foundation(AAIF)の「Growth Stageプロジェクト」として正式に受け入れられたと発表。** これにより、これまで別組織だったA2A(Linux Foundation直下の「Agent2Agentプロジェクト」)とMCP(AAIF)が、**同じAAIFという1つの統治団体の傘下に一本化**された
 
-なお、MCPは2025年12月9日にAnthropicからLinux Foundation傘下の別組織「Agentic AI Foundation(AAIF)」に寄贈されている(共同設立はAnthropic・OpenAI・Block)。AAIFは2026年2月時点で146会員、4月以降は170会員超(JPMorgan Chase・American Express・Autodeskなど大手企業も参加)に拡大しており、A2A側の「Agent2Agentプロジェクト」と並んで多ベンダー・ガバナンス体制を強化している。さらに2026年7月28日にはMCP自体の仕様も新版(2026-07-28版)にアップデートされ、公式ブログによれば対応SDK(TypeScript・Python)の累計ダウンロード数は合計10億件を突破、月間ダウンロードもTier1 SDK合計で5億件規模に達したと発表されている。A2AとMCPは同じLinux Foundationの傘の下にはあるが、**別々のプロジェクトとして並走して開発が進んでいる**規格であり、統合された単一の規格ではない点、また普及の勢いには依然として差がある点に注意したい。
+なお、MCPは2025年12月9日にAnthropicからLinux Foundation傘下の組織「Agentic AI Foundation(AAIF)」に寄贈されている(共同設立はAnthropic・OpenAI・Block)。AAIFは2026年2月時点で146会員、4月以降は170会員超、8月13日時点では247会員(直近3か月で57組織が新規加入)まで拡大しており、JPMorgan Chase・American Express・Autodeskなど大手企業も参加している。2026年7月28日にはMCP自体の仕様も新版(2026-07-28版)にアップデートされ、公式ブログによれば対応SDK(TypeScript・Python)の累計ダウンロード数は合計10億件を突破、月間ダウンロードもTier1 SDK合計で5億件規模に達したと発表されている。
+
+2026年8月20日のA2AのAAIF参加により、状況は本ページの旧版が説明していた「別々の組織が別々に運営」という構図から変化した。**A2AとMCPは現在、同じAAIFという統治団体のもとで、それぞれ別プロジェクトとして運営されている**(統合された単一の規格になったわけではなく、役割分担は従来通り: MCPが「エージェント⇔ツール」の縦方向、A2Aが「エージェント⇔エージェント」の横方向)。単独ベンダー(Google)への貢献の集中が指摘されていたA2Aにとって、複数の競合ベンダーが支持する中立的な統治団体に加わることは、特定企業の製品判断に規格の将来が左右されないようにするガバナンス上の意味合いが大きいと報じられている。
 
 ## 使いどころ・使い分け
 
@@ -61,7 +65,7 @@ MCPとA2Aは役割が異なるため、どちらか一方を選ぶというよ�
 | 典型的な使いどころ | Slack・Google Drive・社内DBなど「道具」への接続 | 他部門・他社・他ベンダーの「別のエージェント」への仕事の依頼 |
 | 主な情報単位 | Tools(操作)・Resources(データ)・Prompts(定型指示) | Agent Card(能力の公開)・Task(依頼した仕事の単位) |
 | 想定する相手の性質 | 受け身の道具・データソース | 自律的に判断し、追加確認や成果物の返送までこなす別のエージェント |
-| 決める人 | Agentic AI Foundation(旧Anthropic主導、2025年12月移管) | Linux Foundation傘下のAgent2Agentプロジェクト(旧Google主導、2025年6月移管) |
+| 決める人 | Agentic AI Foundation(AAIF、旧Anthropic主導、2025年12月移管) | AAIF(2026年8月20日にGrowth Stageプロジェクトとして参加。旧Google主導、2025年6月にLinux Foundation傘下の別組織へ移管された後、2026年8月にMCPと同じAAIFへ合流) |
 | 2026年7月時点の普及度 | 業界標準として定着(SDK累計ダウンロード10億件突破、月間5億件規模、登録サーバー1万件超) | 対応組織150社超・GitHubスター25,000超と裾野は拡大中だが、「支援表明」と「本番導入の厚み」には差があるとの指摘もあり、MCPほど広くは普及していない発展途上の規格 |
 
 判断基準はシンプルで、「相手が受け身の道具・データか、それとも自律的に動く別のエージェントか」で選ぶ。実際の構築では、1つのエージェントの中でMCPを使って自社ツールに接続しつつ、そのエージェント自体をA2A経由で他部門・他社のエージェントから呼び出せるようにする、という**二層構成**が2026年時点でのエンタープライズ設計の定番になりつつある。
@@ -97,7 +101,7 @@ A2A自体はMCPと同様にオープンな規格であり、規格の利用そ�
 - **普及度はMCPほど高くない**: 2026年7月時点でMCPはSDK累計ダウンロード10億件超、対するA2Aは対応組織150社超・GitHubスター25,000超と、桁が2〜3桁違う規模差がある。「A2Aさえ入れれば他社のどんなエージェントとも即連携できる」というのは楽観的すぎる期待で、実際には接続したい相手側もA2Aに対応している必要がある
 - **「支援表明」と「本番導入」を混同しない**: A2Aの「対応組織150社超」は製品資料やプレスリリースでの支援表明ベースの数字であり、実際に本番環境で稼働しているエージェント間連携の件数を直接示すものではないと指摘する識者もいる。デモの多くは「3つのエージェントで、関数呼び出し1回分の仕事をしている」だけという批判もあり、自社のユースケースが本当にA2Aの対等なエージェント間連携を必要とする規模・複雑さかを見極めることが重要
 - **実装・運用コストへの懐疑的な見方もある**: MCPが提供する機能(長時間タスクの管理、状態を持ったやり取りなど)とA2Aが目指す機能に重なりがあるとの指摘があり、「MCPに加えてA2A用の通信層まで二重に管理するコストに見合うか」を疑問視する声も出ている
-- **ガバナンス移管とAnthropic側のMCPの移管を混同しない**: A2AはGoogle主導からLinux Foundation傘下の「Agent2Agentプロジェクト」(2025年6月移管)、MCPはAnthropic主導からLinux Foundation傘下の別組織「Agentic AI Foundation」(2025年12月移管)へと、それぞれ別の経緯・別の組織に移管されている。「同じ組織が両方を管理している」わけではない
+- **ガバナンスは2026年8月に一本化されたが、規格自体は統合されていない**: A2AはGoogle主導からLinux Foundation傘下の「Agent2Agentプロジェクト」(2025年6月移管)、MCPはAnthropic主導から同じくLinux Foundation傘下の「Agentic AI Foundation(AAIF)」(2025年12月移管)へと、当初は別の経緯・別の組織に移管されていた。2026年8月20日にA2AがAAIFのGrowth Stageプロジェクトとして参加したことで、現在は両者とも同じAAIFのもとで運営されているが、これは統治団体が一本化されただけであり、A2AとMCPが1つの規格に統合されたわけではない。役割分担(縦方向のツール接続と横方向のエージェント間連携)は従来通り別々である点に注意する
 - **Agent Card=安全性の保証ではない**: 署名付きAgent Card(Signed Agent Cards)は「本物の提供元が発行したカードか」を検証する仕組みであり、そのエージェント自体の振る舞いが安全であることまでは保証しない。連携するエージェントに与える権限(取引の実行範囲、参照できるデータの範囲など)は別途、自社の運用ルールとして設計する必要がある
 
 ## 最初の一歩
@@ -111,6 +115,20 @@ A2A自体はMCPと同様にオープンな規格であり、規格の利用そ�
 - [AIエージェントの基本](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
+
+### 2026-09-25: A2AのAgentic AI Foundation(AAIF)参加という統治体制の変化を反映
+- **内容**: 2026年8月20日、A2AがMCPと同じ統治団体「Agentic AI Foundation(AAIF)」の
+  Growth Stageプロジェクトとして正式に参加したことを反映。これまで「A2AとMCPは
+  別組織が別々に統治している」と説明していた記述を、「現在は同じAAIFのもとで
+  運営されているが、規格自体が統合されたわけではない」という2026年9月時点の
+  正確な状態に更新した。あわせてAAIFの会員数を170会員超→247会員(2026年8月13日時点)に、
+  A2Aのバージョン履歴にパッチ版v1.0.1(2026年5月28日リリース)を追記した
+- **出典**:
+  [A New Chapter for A2A: Joining the Agentic AI Foundation(A2A Protocol公式ブログ)](https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/)、
+  [A2A joins AAIF's open agentic stack(Agentic AI Foundation公式)](https://aaif.io/blog/a2a-joins-aaif)、
+  [Agent2Agent Joins The Agentic AI Foundation Alongside MCP(Forbes)](https://www.forbes.com/sites/janakirammsv/2026/08/19/agent2agent-joins-the-agentic-ai-foundation-alongside-mcp/)、
+  [Agentic AI Foundation Welcomes 57 New Members(Linux Foundation公式)](https://www.linuxfoundation.org/press/agentic-ai-foundation-welcomes-57-new-members-gaining-major-financial-services-players-and-apac-leaders)、
+  [A2A Protocol Releases(GitHub)](https://github.com/a2aproject/A2A/releases)
 
 ### 2026-08-01: 2026年7月時点の普及状況とMCPとの規模比較を最新化
 - **内容**: GitHubスターを22,000超→25,000超(2026年7月23日時点)に更新し、コード貢献が単一組織に集中している(LFX Insights)というガバナンス上の留意点を追加。MCP側の統治団体AAIF(Agentic AI Foundation)の会員数拡大(2026年2月時点146会員→4月以降170会員超)と、2026年7月28日のMCP仕様更新・SDK累計ダウンロード10億件突破という最新実績を反映し、比較表・注意点の普及度記述をより具体的な数字ベースに更新。A2Aの拡張仕様AP2がFIDO Allianceに寄贈された(2026年5月)ことを追記し、「支援表明」と「本番導入の厚み」は別物という批判的な視点を注意点に追加
