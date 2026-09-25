@@ -14,6 +14,7 @@
 - [海外の画像・動画生成AI企業一覧](topics/part17-overseas-ai-companies/image-video-generation-ai-companies-overseas.md): 新規執筆(Midjourney・Runway・Luma AIの3社を収録)
 - [A2A(Agent2Agent)プロトコルの基本](topics/part09-api-development/a2a-protocol-basics.md): A2AがMCPと同じAgentic AI Foundation(AAIF)に参加した統治体制の変化(2026年8月20日)を反映して最新化
 - [不動産・建設AI企業一覧](topics/part16-japan-ai-companies/realestate-construction-ai-companies-japan.md): ANDPADの導入実績・estieの農林中央金庫との資本業務提携を反映して最新化
+- [海外の音声・音声合成AI企業一覧](topics/part17-overseas-ai-companies/voice-ai-companies-overseas.md): 新規執筆(ElevenLabs・Deepgram・Cartesiaの3社を収録)
 
 ## 2026-09-24
 - [海外のマーケティングAI企業一覧](topics/part17-overseas-ai-companies/marketing-ai-companies-overseas.md): 新規執筆(Jasper・Writer・HubSpot(Breeze)の3社を収録)
