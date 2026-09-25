@@ -10,6 +10,7 @@
 - [教育における生成AI活用事例](topics/part14-industry-cases/education-ai-use-cases.md): 導入事例カタログを新設し、Arizona State University・渋谷区教育委員会・N高等学校/S高等学校の3事例を追加
 - [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part15-job-role-cases/data-analyst-ai-use-cases.md): 導入事例カタログを新設し、LinkedIn・Uber・メルカリの3社の事例を追加
 - [情報システム(IT)部門における生成AI活用事例](topics/part15-job-role-cases/information-systems-ai-use-cases.md): 導入事例カタログを新設し、Moderna・ServiceNow・Amazonの3社の事例を追加
+- [海外のコーディング支援AI企業一覧](topics/part17-overseas-ai-companies/coding-assistant-ai-companies-overseas.md): 新規執筆(Anysphere(Cursor)・Cognition(Devin/Windsurf)・Replitの3社を収録)
 
 ## 2026-09-24
 - [海外のマーケティングAI企業一覧](topics/part17-overseas-ai-companies/marketing-ai-companies-overseas.md): 新規執筆(Jasper・Writer・HubSpot(Breeze)の3社を収録)
