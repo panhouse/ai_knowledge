@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-26
+- [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
+
 ## 2026-09-25
 - [金融・保険における生成AI活用事例](topics/part14-industry-cases/finance-insurance-ai-use-cases.md): 導入事例カタログを新設し、野村ホールディングス・JPMorgan Chase・Klarnaの3社の事例を追加
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 導入事例カタログを新設し、Abridge・湘南鎌倉総合病院・Tempus AIの3事例を追加
