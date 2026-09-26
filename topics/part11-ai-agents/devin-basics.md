@@ -2,9 +2,9 @@
 title: Devinの基本(Cognition社の自律コーディングエージェント)
 part: 11
 chapter: 第2章 コーディングエージェント
-tags: [AIエージェント, Devin, Cognition, コーディングエージェント, ACU]
+tags: [AIエージェント, Devin, Cognition, コーディングエージェント, ACU, クォータ制, SWE-2]
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-09-26
 ---
 
 # Devinの基本(Cognition社の自律コーディングエージェント)
@@ -19,7 +19,15 @@ Devin は、米スタートアップ Cognition が開発するコーディング
 [Antigravity](google-antigravity-basics.md)が主要AIベンダーの一角(Anthropic/OpenAI/Google)による
 製品であるのに対し、Devin は**コーディングエージェント専業のスタートアップ**が作った独立製品という
 位置づけが特徴で、Slack起点の依頼やPRレビューの自動化など、**チームの開発フローに乗せる**方向の
-機能が充実している。
+機能が充実している。開発元Cognitionは2026年5月に10億ドルを調達し評価額約250億ドルに達したのに続き、
+同年9月時点では評価額400億ドル台での新規調達交渉が報じられるなど急成長しており、
+年間経常収益(ARR)は2025年5月の約3,700万ドルから2026年時点で約4.92億ドルまで拡大したと報じられている
+(Bloomberg・TechCrunchなど複数メディアの報道。数値は交渉中の評価額を含み今後変わり得る)。
+
+本ページが扱う「Devin」は、Slackやダッシュボードから依頼してPRを受け取る**クラウド型の自律エージェント**
+であり、旧「Windsurf」から改称されたAI専用エディタ「[Devin Desktop](../part08-specialized-ai-tools/windsurf-basics.md)」
+(旧Cascade、現Devin Local)とは別製品である。どちらもCognitionの「Devin」ブランドに統合されているため、
+社内で名称を混同しないよう注意する。
 
 ## 仕組み・背景
 
@@ -43,18 +51,24 @@ UIのモックアップ(画像・Figma)や画面録画の動画を渡すだけ�
 
 ## 使いどころ・使い分け
 
-### ACU(Agentic Compute Unit)課金の実額感
+### クォータ制課金への移行(2026年3月〜)
 
-Devin最大の特徴は、作業量を**ACU(Agentic Compute Unit)**という独自単位で計測する
-従量課金である。1 ACU ≒ 15分間の自律作業に相当する。
+Devinは当初、作業量を**ACU(Agentic Compute Unit)**という独自単位(1 ACU ≒ 15分間の自律作業)で
+計測する従量課金だったが、2026年3月19日、セルフサーブ(Free/Pro/Max/Teams)プランについては
+**日次・週次で自動リフレッシュする「クォータ(利用枠)」制**に切り替わった。消費量はACU換算ではなく
+モデルごとのトークン使用量で決まり、クォータを使い切った分はドル建てで従量課金される。
+**ACUという単位そのものはなくなっておらず、Enterprise契約では引き続きACU建てで請求される**
+(発注書に記載のレート)点に注意する。
 
-| 作業の重さ | ACU目安 | Core プランでの費用目安 |
+| プラン区分 | 課金方式 | 特徴 |
 |---|---|---|
-| 典型的なバグ修正 | 2〜3 ACU | $4.50〜$6.75 |
-| 複数ファイルにまたがる移行作業 | 30 ACU超 | $67.50以上 |
+| Free / Pro / Max / Teams(セルフサーブ) | トークン使用量に応じたクォータ制 | クォータは日次・週次で自動回復。超過分は従量課金 |
+| Enterprise | ACU従量課金(発注書ベース) | 旧来のACU単位がそのまま残る |
 
-**「1タスクいくら」が見える**のは予算管理上の利点だが、**重い作業ほどコストが跳ねる**ため、
-サブスク定額のClaude Code・Antigravityとは予算の立て方が根本的に異なる。
+セルフサーブ移行前(〜2026年3月)の実額目安として、Core プランでは典型的なバグ修正が2〜3 ACU
+($4.50〜$6.75)、複数ファイルにまたがる移行作業が30 ACU超($67.50以上)という水準だった。
+現行のクォータ制でも「軽い作業は消費が少なく、重い作業ほど消費が増える」という感覚自体は同じだが、
+**「1 ACU=◯ドル」という単純な換算では見積もれなくなった**点が実務上の変化である。
 
 ### 向く場面・向かない場面
 
@@ -70,16 +84,23 @@ Devin最大の特徴は、作業量を**ACU(Agentic Compute Unit)**という独�
 
 ## 実務での使い方
 
-### 使えるプラン(2026年8月時点)
+### 使えるプラン(2026年9月時点)
 
-| プラン | 月額 | ACU料金 |
+2026年3月のクォータ制移行にあわせてプラン体系も刷新され、旧来の「Core $20」「Team $500」構成から
+以下に変わった。
+
+| プラン | 月額 | 内容 |
 |---|---|---|
-| Core | $20 | $2.25/ACU |
-| Team | $500 | 250 ACU込み、超過分は$2/ACU |
-| Enterprise | 個別見積 | 個別契約 |
+| Free | $0 | Devin Desktop(タブ補完・インライン編集)は無制限。クラウドエージェント・API等は利用不可 |
+| Pro | $20 | クォータ増、フロンティアモデル全種を利用可、クラウドエージェント・API利用可 |
+| Max | $200 | Proよりさらに大幅増量したクォータ |
+| Teams | 基本$80+開発者1席$40(最大200席) | Proの内容に加え、共有・共同編集、一元請求、管理ダッシュボード |
+| Enterprise | 個別見積 | SSO、専用アカウント管理、ACU従量課金(発注書ベース) |
 
-無料プランはなく、最初から従量課金が発生する点はClaude Code・Codex(いずれも無料枠あり)との
-明確な違いになる。
+**無料プラン(Free)が2026年3月に新設された**が、自律的にタスクをこなすクラウドエージェント機能は
+Pro以上が前提で、実質的には月$20〜から使う製品という位置づけは変わっていない。
+2026年9月10日には自社モデル「SWE-2」(Moonshot AIの基盤モデル「Kimi K3」をベースに後学習)が
+Proプランにバンドルされる形でリリースされ、2026年10月10日までは無料で利用できる。
 
 ### 始め方
 
@@ -109,13 +130,14 @@ Devin最大の特徴は、作業量を**ACU(Agentic Compute Unit)**という独�
   条件のよいタスクを選んで見せていたとの指摘があり、公表されたベンチマーク成績も
   「対象を絞った一部のみ」を評価したものだった。2026年時点の製品は当時から機能が拡張されているが、
   **「自律的に完遂できる」という宣伝文句をそのまま信じず、自社のコードベースで実際に試す**姿勢が重要
-- **ACU従量課金は重い作業でコストが跳ねる**: 移行作業のような大きなタスクを丸ごと投げると、
-  想定より高くつくことがある。タスクを小さく切って依頼するとコストの見通しが立てやすい
+- **クォータ・ACUとも重い作業で消費が跳ねる**: 移行作業のような大きなタスクを丸ごと投げると、
+  想定よりクォータ消費やコストが大きくなることがある。タスクを小さく切って依頼すると見通しが立てやすい
 - **PRは必ず人がレビューする**: Devin Reviewによる自動修正・CI通過は「マージしてよい」ことを
   意味しない。差分・テスト内容・設計判断の妥当性は人が確認する
 - **間接プロンプトインジェクション**: Issueやコメント、取り込む依存パッケージに仕込まれた指示に
   従ってしまう可能性がある([プロンプトインジェクションとは何か](../part04-risk-security/prompt-injection-basics.md))
-- **料金・機能は変わりやすい**: 本ページの数値は2026年8月時点。導入判断のたびに公式サイトで確認する
+- **料金・機能は変わりやすい**: 本ページの数値は2026年9月時点。2026年3月にも課金方式そのものが
+  ACUからクォータ制へ変わっており、導入判断のたびに公式サイト(devin.ai/pricing)で確認する
 
 ## 最初の一歩
 
@@ -126,12 +148,28 @@ Devin最大の特徴は、作業量を**ACU(Agentic Compute Unit)**という独�
 
 - [AIエージェントとは何か](ai-agent-basics.md)
 - [主要AIエージェントの比較と選び方](ai-agent-tools-comparison.md)
+- [Windsurf(Devin Desktop)の基本](../part08-specialized-ai-tools/windsurf-basics.md)
 - [Claude Codeの基本](claude-code-basics.md)
 - [OpenAI Codexの基本](openai-codex-basics.md)
 - [Google Antigravityの基本](google-antigravity-basics.md)
 - [プロンプトインジェクションとは何か(仕組みと対策)](../part04-risk-security/prompt-injection-basics.md)
 
 ## 更新履歴
+
+### 2026-09-26: 課金方式の変更・新モデル・企業動向を反映して最新化
+- **内容**: 2026年3月19日にセルフサーブプラン(Free/Pro/Max/Teams)の課金がACU従量課金から
+  日次・週次のクォータ制へ移行したこと(Enterprise契約は引き続きACU建て)を反映。
+  プラン体系を旧Core($20)/Team($500)構成から新Free($0)/Pro($20)/Max($200)/Teams(基本$80+席$40)/
+  Enterprise構成に更新。2026年9月10日リリースの新モデル「SWE-2」(Kimi K3ベース、2026年10月10日まで
+  無料)を追記。Windsurfが2026年6月に「Devin Desktop」としてDevinブランドに統合されたことに触れ、
+  クラウド型のDevin(本ページ)と混同しないよう関連トピックにリンクを追加。Cognitionの資金調達・
+  評価額急上昇(2026年5月に評価額約250億ドル、9月時点で400億ドル台の交渉報道)を仕組み・背景に追記
+- **出典**: [Cognition公式ブログ「New self-serve plans for Devin」](https://cognition.com/blog/new-self-serve-plans-for-devin)、
+  [Devin公式ドキュメント「Quota-Based Usage」](https://docs.devin.ai/desktop/accounts/quota)、
+  [Devin公式ドキュメント「Billing」](https://docs.devin.ai/admin/billing)、
+  [VentureBeat「Devin 2.0 is here」](https://venturebeat.com/programming-development/devin-2-0-is-here-cognition-slashes-price-of-ai-software-engineer-to-20-per-month-from-500)、
+  [TechCrunch「AI coding startup Cognition raises $1B at $25B pre-money valuation」](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/)、
+  [runtimewire.com「Cognition ships SWE-2」](https://runtimewire.com/article/cognition-swe-2-coding-model-scott-wu)
 
 ### 2026-08-07: 初版執筆
 - **内容**: Devinの位置づけ(Cognition社によるコーディングエージェント専業スタートアップの製品)、
