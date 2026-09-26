@@ -7,6 +7,7 @@
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
 - [物流・運輸における生成AI活用事例](topics/part14-industry-cases/logistics-transportation-ai-use-cases.md): 導入事例カタログを新設し、C.H. Robinson・Kuehne+Nagel・UPSの3社の事例を追加
+- [Devinの基本(Cognition社の自律コーディングエージェント)](topics/part11-ai-agents/devin-basics.md): ACU従量課金からクォータ制への移行(2026年3月)、新プラン体系、新モデル「SWE-2」を反映して最新化
 
 ## 2026-09-25
 - [金融・保険における生成AI活用事例](topics/part14-industry-cases/finance-insurance-ai-use-cases.md): 導入事例カタログを新設し、野村ホールディングス・JPMorgan Chase・Klarnaの3社の事例を追加
