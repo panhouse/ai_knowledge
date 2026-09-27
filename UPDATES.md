@@ -14,6 +14,7 @@
 - [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part15-job-role-cases/information-security-ai-use-cases.md): 導入事例カタログを新設し、Elanco・Blackbaud・Apex Fintech Solutions・Boyne Resorts・東洋紡の5社の事例を追加
 - [社内AI利用ガイドラインの作り方](topics/part04-risk-security/ai-internal-guideline-basics.md): 管理者設定の最新動向(ChatGPT/Gemini/Claude/Copilotのコスト可視化・アクセス制御機能)とAI事業者ガイドライン活用の手引き・統計を反映して最新化
 - [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](topics/part06-custom-ai/custom-ai-cross-tool-prompt-injection-defense.md): Copilot Studioの実インシデント(ShareLeak/CVE-2026-21520)、GeminiJackの修正状況、AnthropicのInference Hooksを反映して最新化
+- [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](topics/part07-data-analysis/graphrag-and-agentic-rag-basics.md): Microsoft本家GraphRAGのメンテナンスモード移行、Dify/Neo4j/Azure/Google Cloudの最新動向を反映して最新化
 
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
