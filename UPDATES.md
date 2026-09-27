@@ -9,6 +9,7 @@
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part15-job-role-cases/product-manager-ai-use-cases.md): 導入事例カタログを新設し、LaunchDarkly・Autodesk・CallRail・BigChangeの4社の事例を追加
 - [ReAct(Reasoning and Acting)プロンプティング](topics/part05-prompt-engineering/react-prompting.md): Claude/ChatGPT/Geminiの現行モデル・製品名(Fable 5.1・Opus 5.5・Cowork統合・GPT-6 Sol/Luna・Gemini 3.7 Flash)を反映して最新化
 - [フレーム問題・シンボルグラウンディング問題とチューリングテスト](topics/part01-ai-basics/classic-ai-problems-and-turing-test.md): 2025年11月〜2026年6月の新しい学術論文3本を追記して最新化
+- [士業・専門サービスにおける生成AI活用事例](topics/part14-industry-cases/professional-services-ai-use-cases.md): 導入事例カタログを新設し、あずさ監査法人(KPMG)・トーマツ(デロイト トーマツ)・司法書士法人丸山洋一郎事務所の3件の事例を追加
 
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
