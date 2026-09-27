@@ -4,7 +4,7 @@ part: 7
 chapter: 第4章 RAGの精度改善と基盤
 tags: [RAG, GraphRAG, Agentic RAG, 知識グラフ, ナレッジグラフ, AIエージェント, マルチホップ検索]
 created: 2026-07-06
-updated: 2026-08-01
+updated: 2026-09-27
 ---
 
 # GraphRAG・Agentic RAGの基本(発展形RAGの選び方)
@@ -21,7 +21,11 @@ GraphRAGは、Microsoft Researchが2024年に提唱し、同年7月にOSS(オー
 
 具体的には、通常のベクトル検索型RAGは「A社の設立年」のような1つの文書内で答えが見つかる質問には強いが、「A社とB社の資本関係」「この規程改定が影響する部署をすべて挙げて」のように**複数の文書をまたいで関係を辿る質問(マルチホップクエリ)**には弱い。各チャンクを個別にベクトル化しているだけなので、チャンク同士のつながりという情報がそもそも保存されていないためだ。GraphRAGは関係性そのものを事前に構造化しておくことで、この種の質問に答えられるようにする。
 
-ただし知識グラフの構築(インデックス化)には、資料からエンティティ・関係を抜き出す作業にLLM(大規模言語モデル)を何度も呼び出す必要があり、構築コストが通常のRAGより高くなりやすい。Microsoft自身の発表によれば、初期(2024年前半)は1データセットのインデックス化に約33,000ドルかかっていたが、その後「LazyGraphRAG」という改良版によって、事前の要約処理を省き必要になったタイミングで関係を辿る方式に切り替えることで、インデックスコストを通常のベクトルRAG並みまで下げられるようになった。`microsoft/graphrag`はOSSとして継続的に更新されており(PyPI上の最新リリースは2026年7月時点)、実務で使える選択肢であり続けている。加えて、同じ「グラフ+RAG」の発想を独自実装で追求したOSSの**LightRAG**のように、小型モデルでのエンティティ抽出やインクリメンタル更新(資料追加時にグラフ全体を作り直さずに済む仕組み)を売りに、Microsoft実装よりさらに低コストな抽出ロジックをうたう代替ライブラリも増えており、「GraphRAG=必ず高コスト」という2024年時点のイメージは薄れつつある。とはいえ、コストと精度のバランスは実装ごとに大きく異なり、実装元が公表する削減率は自社に有利な条件での比較であることも多いため、導入時は自社データでの比較検証(PoC、概念実証)を挟むことが望ましい。
+ただし知識グラフの構築(インデックス化)には、資料からエンティティ・関係を抜き出す作業にLLM(大規模言語モデル)を何度も呼び出す必要があり、構築コストが通常のRAGより高くなりやすい。Microsoft自身の発表によれば、初期(2024年前半)は1データセットのインデックス化に約33,000ドルかかっていたが、その後「LazyGraphRAG」という改良版によって、事前の要約処理を省き必要になったタイミングで関係を辿る方式に切り替えることで、インデックスコストを10〜90%削減できるとMicrosoftは説明している。
+
+ただし本家`microsoft/graphrag`の開発体制には2026年に入り大きな変化があった。GitHub公式リポジトリのトップには「本プロジェクトは大部分がメンテナンスモードに入り、新規PRの受け入れや新機能の実装は行わない。CVE(セキュリティ脆弱性)対応を中心としたバグ修正・依存関係の更新のみを継続する」という趣旨の告知が掲載されており、理由として「2024年7月の初版リリース以降、フロンティアモデル(最先端の大規模言語モデル)の能力が大きく変化し、Microsoftの研究ポートフォリオもそれに応じて多様化した」ことが挙げられている。もっともパッケージ自体はCVE対応・依存関係更新のリリースが継続しており(PyPI上の最新版は2026年9月時点でv3.2.0)、GraphRAGとLazyGraphRAGの技術自体は「Microsoft Discovery」という科学研究向けのエージェント基盤に組み込まれるなど、Microsoft社内での活用は続いている。つまり「OSSとしての新機能開発は本家では止まったが、技術・実装としては引き続き現役」という状態であり、今後の機能追加は後述するLightRAGやNeo4j、Difyのような周辺エコシステム側が主導していく可能性が高い。
+
+加えて、同じ「グラフ+RAG」の発想を独自実装で追求したOSSの**LightRAG**(香港大学発、国際会議EMNLP 2025で採択された手法)のように、小型モデルでのエンティティ抽出やインクリメンタル更新(資料追加時にグラフ全体を作り直さずに済む仕組み)を売りに、Microsoft実装よりさらに低コストな抽出ロジックをうたう代替ライブラリも活発に更新が続いており(GitHub上でも2026年3月時点まで更新継続)、「GraphRAG=必ず高コスト、かつMicrosoft実装一択」という2024年時点のイメージは薄れつつある。とはいえ、コストと精度のバランスは実装ごとに大きく異なり、実装元が公表する削減率は自社に有利な条件での比較であることも多いため、導入時は自社データでの比較検証(PoC、概念実証)を挟むことが望ましい。
 
 ### Agentic RAGとは
 
@@ -31,7 +35,7 @@ Agentic RAGは、「検索(Retrieval)→生成(Generation)」を1回きりのパ
 
 なお、この考え方は業務システムの外でも既に一般ユーザー向けの機能として実装されている。ChatGPTやGeminiの「Deep Research」機能(複数のWebページを自律的に検索・巡回して調査レポートを作る機能)は、Agentic RAGの発想を検索エンジン向けに応用したものと言える。
 
-さらに2025年後半以降は、企業向け検索基盤そのものにAgentic RAGの考え方が組み込まれ始めている。Microsoft Azure AI Searchの「エージェント検索(agentic retrieval)」は、複雑な質問をLLMが複数のサブクエリに自動分解し、並列で検索・リランキングした上で結果を統合する処理を標準機能として提供しており、2026年には社内文書(SharePoint・OneLake等)やWebを横断する「Foundry IQ」ナレッジベースへと発展している。Google CloudのAgent Search(旧Vertex AI Search。提供元のVertex AIも「Gemini Enterprise Agent Platform」へ名称変更が進行中)も、SQL検索・ベクトル検索など複数の取得手段をLLMが自律的に選択する仕組みを備える。つまり2024年時点は「LangGraphなどでエンジニアが自作する」しか選択肢がなかったが、2026年時点では「クラウドの検索基盤が標準機能として提供する」という選択肢も現実的になってきている。
+さらに2025年後半以降は、企業向け検索基盤そのものにAgentic RAGの考え方が組み込まれ始めている。Microsoft Azure AI Searchの「エージェント検索(agentic retrieval)」は、複雑な質問をLLMが複数のサブクエリに自動分解し、並列で検索・リランキングした上で結果を統合する処理を標準機能として提供しており、社内文書(SharePoint・OneLake等)やWebを横断する企業向け知識層「Foundry IQ」ナレッジベースの中核機能へと発展している。Microsoftの検証によれば、Foundry IQのエージェント検索は複数データソースを力任せに全検索する方式と比べてRAG回答の品質スコアを平均36%改善し、小型モデルと組み合わせた場合はコストを抑えながら証拠の再現率(recall、必要な情報をどれだけ取りこぼさず拾えたか)を最大54%高められるという。Google CloudのAgent Search(旧Vertex AI Search)も2026年5月に、SQL検索・ベクトル検索など複数の取得手段をLLMが自律的に選択しながら複数のデータストアを横断して段階的に検索する「エージェント型検索」を追加した。なお提供元のVertex AIは、2026年4月のGoogle Cloud Next 2026で発表された「Gemini Enterprise Agent Platform」への統合が同年5月に完了しており、コンソール上でも「Vertex AI」の呼称は使われなくなっている(既存のAPIエンドポイント自体は変更なし)。つまり2024年時点は「LangGraphなどでエンジニアが自作する」しか選択肢がなかったが、2026年時点では「クラウドの検索基盤が標準機能として提供する」という選択肢が実用段階に入ってきている。
 
 ## 使いどころ・使い分け
 
@@ -43,7 +47,7 @@ Agentic RAGは、「検索(Retrieval)→生成(Generation)」を1回きりのパ
 | 構築コスト | 低い(チャンク化・埋め込みのみ) | 高い(エンティティ・関係抽出にLLM呼び出しが多数走る。LazyGraphRAGやLightRAGなど軽量な実装で大幅に低減可能) | 中〜高い(検索ロジック自体をエージェントとして設計・実装する必要がある。ただしAzure AI Search等のマネージド機能を使えば軽減できる場合もある) |
 | 運用コスト・レイテンシ | 低い(検索1回+生成1回) | 中程度(検索自体は速いが、資料更新時にグラフの再構築が必要) | 高い(検索を複数回繰り返す分、応答時間・トークン消費が数倍〜十数倍に増えやすい) |
 | 必要な技術力 | 低い(既存ツールの機能で対応可能) | 高い(知識グラフの設計・運用にエンジニアリングが必須) | 高い(エージェントの判断ロジック・ツール構成の設計が必須。マネージド機能を使う場合は設定レベルまで下がる) |
-| 代表的な実装 | ChatGPTプロジェクト、NotebookLM、Dify ナレッジベース | Microsoft GraphRAG、LightRAG、Neo4j + LangChain | LangGraph、LlamaIndex、Azure AI Search(エージェント検索)、Dify Agentアプリ、Copilot Studio エージェント |
+| 代表的な実装 | ChatGPTプロジェクト、NotebookLM(2026年7月に「Gemini Notebook」へ改称)、Dify ナレッジベース | Microsoft GraphRAG(本家は2026年にメンテナンスモード入り)、LightRAG、Neo4j + LangChain | LangGraph、LlamaIndex、Azure AI Search(Foundry IQ/エージェント検索)、Dify Agentアプリ、Copilot Studio エージェント |
 
 ### 導入判断のチェックリスト
 
@@ -55,21 +59,21 @@ Agentic RAGは、「検索(Retrieval)→生成(Generation)」を1回きりのパ
 
 ## 実務での使い方
 
-2026年8月時点では、GraphRAGはDifyやNotebookLMのような一般的なノーコード・個人向けツールに「ワンクリックで有効化できる標準機能」としてはまだ搭載されておらず、エンジニアがシステムを組み立てる前提の選択肢という位置づけが続いている([RAGの基本](rag-basics.md)の発展形の節と同じ整理)。一方Agentic RAGは、後述するAzure AI SearchやGoogle Cloud Agent Searchのようにクラウド検索基盤側が標準機能として提供し始めており、二つの発展形で「自作が必須か、製品で済ませられるか」の温度差が広がってきた。ビジネス側の担当者としては、下記の実装手段が「エンジニアに何を頼めばよいか」の共通言語として押さえておくと話がしやすい。
+2026年9月時点でも、GraphRAGはDifyやNotebookLM(Gemini Notebook)のような一般的なノーコード・個人向けツールに「ワンクリックで有効化できる標準機能」としてはまだ搭載されておらず、エンジニアがシステムを組み立てる前提の選択肢という位置づけが続いている([RAGの基本](rag-basics.md)の発展形の節と同じ整理)。ただしDifyでは、ビルトインのナレッジベースにネイティブなGraphRAG機能を追加するコミュニティ発のプルリクエストが提出されており(2026年9月時点で未マージ)、ノーコード側の標準機能化に向けた動きも出始めている。一方Agentic RAGは、後述するAzure AI SearchやGoogle Cloud Agent Searchのようにクラウド検索基盤側が標準機能として提供する段階に入っており、二つの発展形で「自作が必須か、製品で済ませられるか」の温度差がさらに広がった。ビジネス側の担当者としては、下記の実装手段が「エンジニアに何を頼めばよいか」の共通言語として押さえておくと話がしやすい。
 
 ### GraphRAGの主な実装手段
 
-- **Microsoft GraphRAG(OSSライブラリ)**: GitHub上で公開されているPythonライブラリ(`microsoft/graphrag`)。資料を投入すると、エンティティ抽出・関係マッピング・コミュニティ検出・コミュニティ要約までを自動化してくれるが、インデックス化の際にLLMを多数回呼び出すため、資料量が多いとコストと時間がかかる。後継の「LazyGraphRAG」は事前の要約処理を省く方式で、インデックスコストを通常のベクトルRAG並みに抑えられるとMicrosoftは説明しており、本体は2026年7月時点でもPyPIへのリリースが続く現役のOSSプロジェクト
-- **LightRAG(OSSライブラリ)**: 香港大学発のOSS。小型モデルでのエンティティ抽出とインクリメンタル更新(資料を追加してもグラフ全体を作り直さずに済む)を売りに、Microsoft GraphRAGよりインデックスコスト・トークン消費を大幅に抑えられるとする実装。「Microsoft GraphRAG並みの精度をより安く」を狙う代替候補として押さえておくとよいが、精度面の優劣はデータ規模や質問の種類で変わるため、採用前にPoCでの比較を推奨
-- **Neo4j + LangChain / 公式`neo4j-graphrag`パッケージ**: グラフデータベースのNeo4jに知識グラフを構築し、LangChainの`GraphCypherQAChain`や、Neo4j公式のPythonパッケージ`neo4j-graphrag`を使って自然言語の質問をグラフ検索用のクエリ言語(Cypher)に変換して検索する構成。エンジニアがグラフの設計から関与する分、業務ドメインに合わせたスキーマ(エンティティ・関係の種類の定義)を作り込める。Neo4jはMicrosoftが2025年にAutoGenとSemantic Kernelを統合して公開した新しいエージェント開発基盤「Microsoft Agent Framework」向けにも、GraphRAGをコンテキスト提供のツールとして組み込むための連携機能を提供している
-- **Difyでの実現可能性**: ナレッジベース機能そのものにGraphRAGは組み込まれていない。外部のグラフデータベース(Neo4jなど)をHTTPリクエストノードやカスタムツールとしてワークフローから呼び出す構成は技術的には可能だが、グラフの構築・保守は別途エンジニアリングが必要で、Difyだけで完結する話ではない
+- **Microsoft GraphRAG(OSSライブラリ)**: GitHub上で公開されているPythonライブラリ(`microsoft/graphrag`)。資料を投入すると、エンティティ抽出・関係マッピング・コミュニティ検出・コミュニティ要約までを自動化してくれるが、インデックス化の際にLLMを多数回呼び出すため、資料量が多いとコストと時間がかかる。後継の「LazyGraphRAG」は事前の要約処理を省く方式で、インデックスコストを10〜90%抑えられるとMicrosoftは説明している。ただし本家リポジトリは2026年に「大部分がメンテナンスモードに入り、新規PRや新機能は受け付けない」ことを公式にアナウンスしており(バグ修正・CVE対応・依存関係更新のみ継続)、パッケージ自体は2026年9月時点でもv3.2.0までリリースが続く一方、機能面の主導権は後述のLightRAGやNeo4j、Difyのような周辺実装に移りつつある
+- **LightRAG(OSSライブラリ)**: 香港大学発のOSSで、国際会議EMNLP 2025で採択された手法。小型モデルでのエンティティ抽出とインクリメンタル更新(資料を追加してもグラフ全体を作り直さずに済む)を売りに、Microsoft GraphRAGよりインデックスコスト・トークン消費を大幅に抑えられるとする実装。GitHub上でも2026年3月時点まで継続的に更新されており、Microsoft本家がメンテナンスモードに入った後の「グラフRAGの主流実装」の有力候補として注目度が上がっている。精度面の優劣はデータ規模や質問の種類で変わるため、採用前にPoCでの比較を推奨
+- **Neo4j + LangChain / 公式`neo4j-graphrag`パッケージ**: グラフデータベースのNeo4jに知識グラフを構築し、独立した統合パッケージ`langchain-neo4j`が提供する`GraphCypherQAChain`(自然言語の質問をグラフ検索用のクエリ言語Cypherに変換して検索する仕組み)や、Neo4j公式のPythonパッケージ`neo4j-graphrag`を使って検索する構成。エンジニアがグラフの設計から関与する分、業務ドメインに合わせたスキーマ(エンティティ・関係の種類の定義)を作り込める。Neo4jはMicrosoftが2025年にAutoGenとSemantic Kernelを統合して公開した新しいエージェント開発基盤「Microsoft Agent Framework」向けにも、GraphRAGをコンテキスト提供のツールとして組み込むための連携機能を提供している
+- **Difyでの実現可能性**: ビルトインのナレッジベース機能そのものには、2026年9月時点でもまだGraphRAGは組み込まれていない。外部のグラフデータベース(Neo4jなど)や`microsoft/graphrag`をAPI化したものをHTTPリクエストノードやカスタムツールとしてワークフローから呼び出す構成が現実的な選択肢だが、グラフの構築・保守は別途エンジニアリングが必要で、Difyだけで完結する話ではない。なお、ビルトインのナレッジベースにネイティブなナレッジグラフ機能(取り込み時にチャンクごとにエンティティ・関係をLLMで抽出し、ハイブリッド検索の一部として横断検索できるようにする案)を追加するプルリクエストがコミュニティから提出されており、2026年9月時点ではまだマージされていないが、標準機能化に向けた開発は進行中
 
 ### Agentic RAGの主な実装手段
 
 - **LangGraph(LangChain社)**: 「検索する→十分か判断する→不十分なら検索し直す」というループ(状態遷移)をコードで組み立てるためのフレームワーク。2026年時点でAgentic RAGの実装先として最も広く使われている選択肢の1つ
-- **LlamaIndex**: Property Graph Index(ラベル付きプロパティグラフとして知識グラフを構築・検索する仕組み)や、契約書・請求書のような定型文書を軸にしたAgentic Document Workflowsに強みを持つフレームワーク。「文書を読み込んで判断するナレッジワーカー型のエージェント」を作る用途で選ばれやすく、データコネクタの豊富さも特徴
+- **LlamaIndex**: Property Graph Index(ラベル付きプロパティグラフとして知識グラフを構築・検索する仕組み)や、契約書・請求書のような定型文書を軸にしたAgentic Document Workflowsに強みを持つフレームワーク。2026年には汎用のイベント駆動型エージェントフレームワーク「Workflows」が独立パッケージとして1.0に到達し、Agentic Document Workflowsもこの基盤の上で構築される形に整理された。「文書を読み込んで判断するナレッジワーカー型のエージェント」を作る用途で選ばれやすく、データコネクタの豊富さも特徴
 - **Difyの「エージェント」ノード・Agentアプリ**: Difyのワークフロー(チャットフロー)に「エージェント」ノードを組み込むと、ReAct・Function Callingなどの推論戦略をプラグインとして選び、複数のツール(ナレッジ検索ノードをツール化したもの、外部API、Web検索プラグインなど)をLLMに自律的に選択・呼び出しさせられる。ノーコードでAgentic RAGに近い挙動を作れる範囲だが、「検索結果が不十分な場合は検索キーワードを変えて再度ツールを呼び出す」といった自己判断の基準をシステムプロンプトで明示する必要があり、単純なナレッジ検索ノードの設定よりチューニングの試行錯誤が増える
-- **Azure AI Search「エージェント検索(agentic retrieval)」/ Google Cloud Agent Search**: マネージドの検索基盤自体がAgentic RAGを標準機能として提供し始めた例。Azure AI Searchは複雑な質問をLLMが複数のサブクエリに自動分解し、並列検索・リランキングした上で統合結果を返す「エージェント検索」を提供し(2026年4月時点でREST APIとして一般提供)、SharePoint・OneLake・Web等を横断する「Foundry IQ」ナレッジベースへと拡張が進む。Google CloudのAgent Search(旧Vertex AI Search)も、SQL検索・ベクトル検索など複数の取得手段をLLMが自律的に選択する仕組みを提供する。自前でエージェントを組まなくても、対応クラウドの検索基盤を使うだけである程度のAgentic RAGが実現できる選択肢が増えてきた
+- **Azure AI Search「エージェント検索(agentic retrieval)」/ Foundry IQ / Google Cloud Agent Search**: マネージドの検索基盤自体がAgentic RAGを標準機能として提供し始めた例。Azure AI Searchは複雑な質問をLLMが複数のサブクエリに自動分解し、並列検索・リランキングした上で統合結果を返す「エージェント検索」を提供し、企業向け知識層「Foundry IQ」の中核機能になっている。Microsoftの検証では、複数データソースを力任せに全検索する方式と比べてRAG回答の品質スコアを平均36%改善し、小型モデルと組み合わせた場合はコストを抑えつつ証拠の再現率を最大54%高められるという結果が示されている。Google CloudのAgent Search(旧Vertex AI Search)も2026年5月に同種の「エージェント型検索」を追加し、複数のデータストアを横断した段階的な検索に対応した。自前でエージェントを組まなくても、対応クラウドの検索基盤を使うだけである程度のAgentic RAGが実現できる選択肢が実用段階に入ってきている
 - **Copilot Studio・Deep Research系機能**: Microsoft Copilot Studioのエージェント機能や、ChatGPT・GeminiのDeep Research機能は、Agentic RAGの考え方をあらかじめ製品として実装したもの。自前で構築せず「既にエージェント的に検索してくれる機能」を使う選択肢として押さえておくとよい
 
 ### 導入前に確認すべきこと
@@ -87,7 +91,7 @@ Agentic RAGは、「検索(Retrieval)→生成(Generation)」を1回きりのパ
 - **知識グラフは自動更新されない**: 資料を追加・修正しても、再度エンティティ抽出とコミュニティ要約を作り直さない限り、古い関係性のまま検索され続ける。更新頻度が高い資料には運用負荷が重い
 - **Agentic RAGは「賢くなる」のではなく「時間とコストをかけて確認を増やす」仕組み**: 検索を繰り返す分だけ応答が遅くなり、トークン消費(料金)も増える。単純な一問一答やFAQボットに導入すると、コストだけ増えて体感速度が悪化する
 - **エージェントの検索ループには必ず上限を設定する**: 自己判断に任せきると、無関係な検索を繰り返してコストだけ積み上がる「暴走」が起きうる。最大検索回数・最大実行時間などの上限を必ず決めておく
-- **GraphRAGは依然「標準機能」としては未成熟、Agentic RAGは製品化が先行**: DifyやNotebookLMなどでGraphRAGをボタン一つで有効化できる段階にはまだない。一方Agentic RAGは、Azure AI Searchの「エージェント検索」やGoogle Cloud Agent Searchのようにクラウド検索基盤側が標準機能として提供し始めているため、必ずしも自前でエージェントを組まなくても実現できる場面が増えた。ただしこれらは対応するクラウド・製品が限定されるため、「今使っている基盤がどこまで対応しているか」を必ず確認する
+- **GraphRAGは依然「標準機能」としては未成熟、Agentic RAGは製品化が先行**: DifyやNotebookLM(Gemini Notebook)などでGraphRAGをボタン一つで有効化できる段階にはまだない(Difyはネイティブ対応のプルリクエストが進行中だが2026年9月時点で未マージ)。加えて本家Microsoft GraphRAGが2026年にメンテナンスモードへ移行し新機能開発を止めたため、今後の機能拡張はLightRAGやNeo4jのような周辺実装が主導する可能性が高い。一方Agentic RAGは、Azure AI Searchの「エージェント検索/Foundry IQ」やGoogle Cloud Agent Searchのようにクラウド検索基盤側が標準機能として提供する段階に入っており、必ずしも自前でエージェントを組まなくても実現できる場面が増えた。ただしこれらは対応するクラウド・製品が限定されるため、「今使っている基盤がどこまで対応しているか」を必ず確認する
 - **基本形のRAGの改善で解決する問題を、発展形で解決しようとしない**: 回答のブレ・抜け漏れ・的外れといった症状の多くは、[RAGの精度を上げる方法](rag-accuracy-improvement.md)で紹介したチャンキング・ハイブリッド検索・リランキングの調整で解決する。まずそちらを試してから発展形を検討する順番を守る
 
 ## 最初の一歩
@@ -102,6 +106,10 @@ Agentic RAGは、「検索(Retrieval)→生成(Generation)」を1回きりのパ
 - [AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)
 
 ## 更新履歴
+
+### 2026-09-27: GraphRAG本家のメンテナンスモード移行とAgentic RAGのマネージド化の進展を反映して最新化
+- **内容**: Microsoft本家`microsoft/graphrag`がGitHub上で「大部分がメンテナンスモードに入り新規PR・新機能は受け付けない」ことを公式アナウンスした事実(理由・現状のリリース状況を含む)を反映し、「OSSとしては本家が停止、周辺実装(LightRAG・Neo4j・Dify)が主導」という2026年9月時点の構図に書き換えた。LightRAGがEMNLP 2025採択・2026年3月まで更新継続の活発なOSSであること、LangChainの`GraphCypherQAChain`が現在は独立パッケージ`langchain-neo4j`提供であること、DifyがビルトインナレッジベースへのネイティブGraphRAG対応PRを提出済み(未マージ)であることを追記。Agentic RAGの節はAzure AI Search「Foundry IQ」の効果指標(RAG回答品質+36%、証拠再現率+54%)を追記し、Google CloudのVertex AI→Gemini Enterprise Agent Platformへの名称統合が2026年5月に完了したこと、Agent Searchへの「エージェント型検索」追加(2026年5月)を反映。LlamaIndexの「Workflows 1.0」到達も追記
+- **出典**: [GitHub: microsoft/graphrag](https://github.com/microsoft/graphrag)、[PyPI: graphrag](https://pypi.org/project/graphrag/)、[Microsoft Research Blog: LazyGraphRAG sets a new standard for GraphRAG quality and cost](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/)、[GitHub: HKUDS/LightRAG](https://github.com/HKUDS/LightRAG)、[LangChain Reference: GraphCypherQAChain (langchain-neo4j)](https://reference.langchain.com/python/langchain-neo4j/chains/graph_qa/cypher/GraphCypherQAChain)、[GitHub: langgenius/dify PR #41039 - feat(rag): add native knowledge graph (GraphRAG) for built-in knowledge base](https://github.com/langgenius/dify/pull/41039)、[Microsoft Tech Community: Foundry IQ: boost response relevance by 36% with agentic retrieval](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/foundry-iq-boost-response-relevance-by-36-with-agentic-retrieval/4470720)、[Microsoft Tech Community: Foundry IQ: Improve recall by up to 54% with knowledge bases](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/foundry-iq-improve-recall-by-up-to-54-with-knowledge-bases/4524852)、[Google Cloud Docs: Agent Search release notes](https://docs.cloud.google.com/generative-ai-app-builder/docs/release-notes)、[Google Cloud Docs: Gemini Enterprise Agent Platform name changes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/vertex-ai-name-changes)、[LlamaIndex Blog: Announcing Workflows 1.0](https://www.llamaindex.ai/blog/announcing-workflows-1-0-a-lightweight-framework-for-agentic-systems)
 
 ### 2026-08-01: GraphRAGの代替実装とAgentic RAGのマネージド化を反映して最新化
 - **内容**: GraphRAGの節にMicrosoft GraphRAGが2026年7月時点でも活発にリリースが続くOSSであることと、より低コストな代替実装LightRAG、Neo4j公式パッケージ`neo4j-graphrag`・Microsoft Agent Framework(AutoGenとSemantic Kernelの統合後継)との連携を追記。Agentic RAGの節にAzure AI Searchの「エージェント検索(agentic retrieval)」・Foundry IQナレッジベース、Google Cloud Agent Search(旧Vertex AI Search)といったクラウド検索基盤側のマネージド機能化、LlamaIndexのProperty Graph Index/Agentic Document Workflowsを追記。「GraphRAGは依然自作前提、Agentic RAGは製品化が先行」という2026年時点の温度差を比較表・注意点に反映
