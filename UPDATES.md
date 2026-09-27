@@ -16,6 +16,7 @@
 - [Gem・Claude Projects・Copilotエージェントのプロンプトインジェクション対策](topics/part06-custom-ai/custom-ai-cross-tool-prompt-injection-defense.md): Copilot Studioの実インシデント(ShareLeak/CVE-2026-21520)、GeminiJackの修正状況、AnthropicのInference Hooksを反映して最新化
 - [GraphRAG・Agentic RAGの基本(発展形RAGの選び方)](topics/part07-data-analysis/graphrag-and-agentic-rag-basics.md): Microsoft本家GraphRAGのメンテナンスモード移行、Dify/Neo4j/Azure/Google Cloudの最新動向を反映して最新化
 - [ノーコードでのAIエージェント構築(Dify・n8n・Makeでの実務例)](topics/part10-nocode-lowcode/nocode-ai-agent-building.md): Difyの新しい独立型Agent(ベータ)・n8nのHITL/MCP Client Tool・Make AI Agent(New)を反映して最新化
+- [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](topics/part12-business-practice/ai-research-and-information-gathering.md): 2026年9月時点の料金・回数上限・Microsoft Researcherの新モード等を反映して最新化
 
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
