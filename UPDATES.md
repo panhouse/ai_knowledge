@@ -12,6 +12,7 @@
 - [士業・専門サービスにおける生成AI活用事例](topics/part14-industry-cases/professional-services-ai-use-cases.md): 導入事例カタログを新設し、あずさ監査法人(KPMG)・トーマツ(デロイト トーマツ)・司法書士法人丸山洋一郎事務所の3件の事例を追加
 - [IT・情報通信における生成AI活用事例](topics/part14-industry-cases/it-telecom-ai-use-cases.md): 導入事例カタログを新設し、AT&T・Vodafone・IBM・Ciscoの4社の事例を追加
 - [情報セキュリティ担当者(SOC/CISO)における生成AI活用事例](topics/part15-job-role-cases/information-security-ai-use-cases.md): 導入事例カタログを新設し、Elanco・Blackbaud・Apex Fintech Solutions・Boyne Resorts・東洋紡の5社の事例を追加
+- [社内AI利用ガイドラインの作り方](topics/part04-risk-security/ai-internal-guideline-basics.md): 管理者設定の最新動向(ChatGPT/Gemini/Claude/Copilotのコスト可視化・アクセス制御機能)とAI事業者ガイドライン活用の手引き・統計を反映して最新化
 
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
