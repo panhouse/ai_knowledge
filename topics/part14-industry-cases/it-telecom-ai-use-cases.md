@@ -4,7 +4,7 @@ part: 14
 chapter: "第6章 IT・情報通信"
 tags: [IT, 通信, 生成AI活用事例, 社内ヘルプデスク, コーディング支援, カスタマーサポート, ネットワーク保守, AIエージェント]
 created: 2026-07-06
-updated: 2026-08-19
+updated: 2026-09-27
 ---
 
 # IT・情報通信における生成AI活用事例
@@ -27,10 +27,10 @@ IT・通信業界の企業が「社内ヘルプデスク」「ソフトウェア
 
 | 業務領域 | 課題 | AI・生成AIの役割 | 代表事例(本ページ内) |
 |---|---|---|---|
-| 社内ヘルプデスク・IT問い合わせ対応 | 情報システム部門への問い合わせが集中し一次対応に時間がかかる | 社内ポータル・FAQ・マニュアルを学習したAIが一次回答・チケット起票前に解決 | Microsoft「Employee Self-Service Agent」、NTTデータ「社内生成AIサービス」 |
-| ソフトウェア開発プロセスへの組み込み | コーディング・リファクタリング・障害対応に時間がかかり、属人化している | コーディング支援AIを全社的なガイドライン・体制のもとで開発工程に組み込む。SIer(システムインテグレーター)では開発工程そのものをAI向けに作り替える動きも | 富士通「GitHub Copilot」全社展開、Duolingo・Shopifyのエンジニア組織展開、Verizonの技術部門3.3万人への「Claude Code」配布、NTTデータ「AIネイティブ開発」による人月型契約の見直し |
-| カスタマーサポート・コールセンター | 応対品質の個人差、後処理(要約・記録)の負荷、人手不足、カスタマーハラスメント | 応答案の自動生成、通話要約、音声対応AI・振り分けAIによる一次対応の自動化 | 富士通Salesforceサポートデスク「Agentforce」、NEC「NEC Communication Agent」、KDDI・ソフトバンク・NTTドコモビジネスの通信キャリア/SIer各社 |
-| ドキュメント生成・ナレッジ管理 | 社内Wiki・マニュアルが散在し検索性が低く、更新が追いつかない | 応対履歴・過去のFAQからナレッジを自動生成・要約し、ナレッジベースを継続的に更新 | NEC「FAQ自動生成」、NTTデータの運用管理ツールへの生成AI組み込み |
+| 社内ヘルプデスク・IT問い合わせ対応 | 情報システム部門への問い合わせが集中し一次対応に時間がかかる | 社内ポータル・FAQ・マニュアルを学習したAIが一次回答・チケット起票前に解決 | Microsoft「Employee Self-Service Agent」、NTTデータ「社内生成AIサービス」、AT&T「Ask AT&T」、IBM「AskHR」 |
+| ソフトウェア開発プロセスへの組み込み | コーディング・リファクタリング・障害対応に時間がかかり、属人化している | コーディング支援AIを全社的なガイドライン・体制のもとで開発工程に組み込む。SIer(システムインテグレーター)では開発工程そのものをAI向けに作り替える動きも | 富士通「GitHub Copilot」全社展開、Duolingo・Shopifyのエンジニア組織展開、Verizonの技術部門3.3万人への「Claude Code」配布、NTTデータ「AIネイティブ開発」による人月型契約の見直し、AT&T「Ask AT&T」(コーディング支援起点) |
+| カスタマーサポート・コールセンター | 応対品質の個人差、後処理(要約・記録)の負荷、人手不足、カスタマーハラスメント | 応答案の自動生成、通話要約、音声対応AI・振り分けAIによる一次対応の自動化 | 富士通Salesforceサポートデスク「Agentforce」、NEC「NEC Communication Agent」、KDDI・ソフトバンク・NTTドコモビジネスの通信キャリア/SIer各社、Cisco「Circuit」による技術サポートケースの自動解決 |
+| ドキュメント生成・ナレッジ管理 | 社内Wiki・マニュアルが散在し検索性が低く、更新が追いつかない | 応対履歴・過去のFAQからナレッジを自動生成・要約し、ナレッジベースを継続的に更新 | NEC「FAQ自動生成」、NTTデータの運用管理ツールへの生成AI組み込み、Vodafone「Microsoft 365 Copilot」による文書作成・要約の全社展開 |
 | 通信ネットワークの異常検知・保守 | 基地局・コア設備の障害原因特定がベテラン保守員の経験に依存し初動が遅い | 大量のトラフィック・警報データをAIエージェントが横断分析し、被疑箇所と対処案を提示 | NTTドコモのネットワーク保守AIエージェントシステム、Verizonのネットワーク自動化、NTTデータ×NVIDIAの自律型ネットワークエージェント基盤、Deutsche Telekom・Bharti Airtelなど海外キャリアの自律型ネットワーク運用 |
 
 **読み方のコツ**: 「社内ヘルプデスク」と「カスタマーサポート」は一見似ているが、
@@ -338,6 +338,86 @@ IT・通信業界の企業が「社内ヘルプデスク」「ソフトウェア
   なっている。自社が同業他社と比較してどの段階にいるかを把握する際は、
   国内事例だけでなく海外キャリアの動向も合わせて確認するとよい
 
+## 導入事例カタログ
+
+上記の業務領域別の事例に加え、`templates/case-card.md` の書式で海外IT・通信企業の
+実名事例を4件追加する。いずれも本ページの既存事例(Microsoft・NTTデータ・富士通・
+Verizonなど)とは別の企業であり、社内向け(ヘルプデスク・生産性向上)と
+対顧客向け(カスタマーサポート)の両方をカバーする。
+
+### AT&T(米国大手通信キャリア) — 対象業務: 社内ヘルプデスク・ソフトウェア開発支援
+- **導入形態**: 内製(Microsoft・Azureとの協業で開発)
+- **段階**: 全社展開
+- **やったこと**: 2023年6月、社内向け生成AIツール「Ask AT&T」をMicrosoftと共同で
+  開発・提供開始。当初はソフトウェア開発者向けのコード作成・改善支援として始まり、
+  その後はHR・福利厚生など社内規定に関する質問応答、ネットワーク分析、不正検知、
+  文書要約まで全社の幅広い業務に対象を拡大した。回答の根拠を承認済み社内文書に
+  限定するRAG(検索拡張生成)の仕組みを組み込んでいる
+- **効果**: 2024年7月時点で全社員80,000人超が「Ask AT&T」を利用できる状態まで
+  展開(第三者取材: WorkLife、2024年7月)。2026年3月にはAT&Tの最高データ・AI責任者
+  アンディ・マーカス氏が、モバイル・ワールド・コングレス(MWC)の講演で、
+  AI投資1ドルあたり同一年度中に5倍のフリーキャッシュフローを生み出しており、
+  社内では1日あたり270億トークンを処理する規模までAI活用が拡大していると説明した
+  (第三者取材: Broadband Breakfast、2026年3月)
+- **学べること**: 「コーディング支援」という一つの業務から始め、成果を確認しながら
+  人事・ネットワーク・不正対策へと適用範囲を広げていく段階的な展開が、
+  全社共通の生成AIツールを定着させるうえで現実的な進め方になる
+- **出典**: [How AT&T's HR team steers 80,000 workers in using its internal generative AI tool(WorkLife)](https://www.worklife.news/technology/ask-att-ai-tool/) / [Money pit or money maker: AT&T, Windstream talk AI ROI(Fierce Network)](https://www.fierce-network.com/cloud/money-pit-or-money-maker-att-windstream-talk-ai-roi) / [AT&T said it generated 5x return on AI investment(Broadband Breakfast)](https://broadbandbreakfast.com/at-t-said-it-generated-5x-return-on-ai-investment/) / 最終確認日: 2026-09-27
+
+### Vodafone(英国発・欧州/アフリカ展開の通信グループ) — 対象業務: 社内生産性向上(文書作成・要約・情報検索)
+- **導入形態**: 専用SaaS導入(Microsoft 365 Copilotのライセンス展開)
+- **段階**: 全社展開
+- **やったこと**: 2024年1月に発表したMicrosoftとの10年間の戦略的パートナーシップの
+  一環として、法務部門など約300名規模の先行導入から始め、数か月で32か国・
+  68,000ライセンスまで拡大。契約書レビュー、メール・議事録・会議アジェンダの作成、
+  情報検索といった日常業務にCopilotを組み込んだ
+- **効果**: Microsoft公式の事例紹介では、法務部門の担当者が契約書レビューの
+  高速化を証言し、利用者は1週間あたり時間短縮を報告している(ベンダー公表:
+  Microsoft Customer Story、2024年12月)。Digital Workplace Group(DWG)は
+  Vodafoneのこの取り組みに2025年の「AI Enablement at Scale」賞を授与し、
+  32か国・210,000人の従業員に展開が広がったこと、Copilot利用者の定着率(継続利用率)が
+  約8割に達したことを紹介している(第三者取材: Digital Workplace Group、2026年1月開催の
+  会員向けセッション)
+- **学べること**: 「全社一斉配布」ではなく、文書量の多い法務部門など数百人規模で
+  先行導入して効果を確認し、その後短期間で数万人規模に一気に拡大する順序が、
+  大企業でライセンスの定着率を高めるうえで参考になる
+- **出典**: [Time savings and an enhanced employee experience at Vodafone through its use of Microsoft 365 Copilot(Microsoft Customer Stories)](https://www.microsoft.com/en/customers/story/19346-vodafone-microsoft-365-copilot) / [Vodafone to roll out Microsoft AI software to 68,000 employees(RCR Wireless)](https://www.rcrwireless.com/20240917/featured/vodafone-roll-out-microsoft-ai-software-68000-employees) / [Vodafone's success with AI and Copilot enablement at scale(Digital Workplace Group)](https://digitalworkplacegroup.com/events/vodafones-success-with-ai-and-copilot-enablement-at-scale/) / 最終確認日: 2026-09-27
+
+### IBM(米大手IT企業) — 対象業務: 社内ヘルプデスク(人事・福利厚生の問い合わせ対応)
+- **導入形態**: 内製(自社製品watsonx Orchestrateを自社のHR業務に適用)
+- **段階**: 全社展開
+- **やったこと**: 社内向けHRチャットボット「AskHR」を、7,000ページ超の人事ポリシーを
+  参照しながら80種類以上のHRタスクを自動化するデジタルエージェントへと発展させた。
+  2025年にはIBM watsonx Orchestrateを統合し、生成AIとエージェント型自動化の
+  機能を強化した
+- **効果**: 2024年には年間1,150万件超の従業員とのやり取りを処理し、よくある質問への
+  対応(コンテインメント率)は94%に達した。管理職の利用率は99%に達しており、
+  2016年の導入開始以降、人事へのサポートチケットは75%減少、HR部門の運営コストは
+  過去4年間で40%削減されたと公表している(自社公表: IBM Case Study、
+  2025年公表分のデータ)
+- **学べること**: 「チャットボットを配って終わり」ではなく、対応範囲(タスク数)・
+  参照文書量・利用率・コスト削減率を継続的に定量管理し、数年かけて
+  「アシスタント」から「エージェント」へと段階的に機能を強化していくロードマップが、
+  社内ヘルプデスクAIを定着させるうえで参考になる
+- **出典**: [Transforming HR support with agentic AI(IBM Case Studies)](https://www.ibm.com/case-studies/ibm-askhr) / 最終確認日: 2026-09-27
+
+### Cisco(米大手ネットワーク機器メーカー) — 対象業務: カスタマーサポート(技術サポートケースの解決)
+- **導入形態**: 内製(自社開発のAIアシスタント「Circuit」を自社の顧客サポートに適用)
+- **段階**: 全社展開
+- **やったこと**: 社内で開発したAIアシスタント「Circuit」を、セキュアなAI基盤
+  (AIファクトリー)上で稼働させ、顧客から寄せられる技術サポートケースの一次対応・
+  解決に活用。生成AI・エージェント型AIを使って見積もり対応や契約更新率の向上にも
+  役立てている
+- **効果**: 2026会計年度(FY2026)に、人の介在なしにAIのみで完全に解決した
+  サポートケースが145,000件に達したと公表(第三者取材: CX Today、2026年8月)。
+  具体的な解決率や1件あたりの時間短縮効果は同記事では公表されていない
+- **学べること**: 自社が売る製品(AIアシスタント基盤)を自社の顧客サポート業務にも
+  使う「ドッグフーディング(自社製品の自社利用)」によって、量産段階での実運用件数
+  という説得力のある数値を対外的に示せる。技術サポート部門でAI活用を検討する際は、
+  まず「人の介在なしに完全解決できたケース数」を最初のKPIとして測定基盤を用意すると
+  効果を可視化しやすい
+- **出典**: [Cisco Resolves 145,000 Support Cases Using Agentic AI(CX Today)](https://www.cxtoday.com/service-management-connectivity/cisco-agentic-ai-145000-support-cases/) / 最終確認日: 2026-09-27
+
 ## 注意点・よくある誤解
 
 - **開発ツールの導入=生産性向上、ではない**: 富士通・Duolingo・Shopifyの事例が
@@ -379,6 +459,11 @@ IT・通信業界の企業が「社内ヘルプデスク」「ソフトウェア
   業種横断平均(26%)のほぼ2倍という調査結果がある。自社の導入状況を評価する際は、
   「通信・IT業界の中でどの位置にいるか」で判断すると、業種横断平均よりも
   遅れて見えることがある点に注意する
+- **海外IT企業の事例は「自社製品の自社利用」が多い点に注意する**: AT&T・IBM・Ciscoの
+  ように、ITベンダー自身が自社のAI基盤・製品を自社の社内業務やサポート業務に
+  適用している事例は、自社製品の宣伝を兼ねて公表されることが多い。数値の性質
+  (実運用件数なのか、削減率なのか、投資対効果なのか)を見極めたうえで、
+  自社に近い規模・業種の事例として参照するとよい
 
 ## 最初の一歩
 
@@ -392,6 +477,24 @@ IT・通信業界の企業が「社内ヘルプデスク」「ソフトウェア
 - [MCP・エージェント連携](../part09-api-development/_index.md)
 
 ## 更新履歴
+
+### 2026-09-27: 導入事例カタログを新設し、AT&T・Vodafone・IBM・Ciscoの4社の事例を追加
+- **内容**: `templates/case-card.md` の書式で「導入事例カタログ」節を新設し、
+  AT&Tの社内生成AIツール「Ask AT&T」(全社員8万人超への展開、AI投資の5倍リターン)、
+  Vodafoneの「Microsoft 365 Copilot」全社展開(68,000ライセンス、32か国210,000人へ拡大)、
+  IBMの社内HRエージェント「AskHR」(コンテインメント率94%、運営コスト40%削減)、
+  Ciscoの自社AIアシスタント「Circuit」による技術サポートケースの自動解決
+  (FY2026に145,000件をAIのみで解決)の4社の事例を追加した。
+  いずれも本ページの既存事例と重複しない企業を選定した
+- **出典**:
+  [How AT&T's HR team steers 80,000 workers in using its internal generative AI tool(WorkLife)](https://www.worklife.news/technology/ask-att-ai-tool/)、
+  [Money pit or money maker: AT&T, Windstream talk AI ROI(Fierce Network)](https://www.fierce-network.com/cloud/money-pit-or-money-maker-att-windstream-talk-ai-roi)、
+  [AT&T said it generated 5x return on AI investment(Broadband Breakfast)](https://broadbandbreakfast.com/at-t-said-it-generated-5x-return-on-ai-investment/)、
+  [Time savings and an enhanced employee experience at Vodafone through its use of Microsoft 365 Copilot(Microsoft Customer Stories)](https://www.microsoft.com/en/customers/story/19346-vodafone-microsoft-365-copilot)、
+  [Vodafone to roll out Microsoft AI software to 68,000 employees(RCR Wireless)](https://www.rcrwireless.com/20240917/featured/vodafone-roll-out-microsoft-ai-software-68000-employees)、
+  [Vodafone's success with AI and Copilot enablement at scale(Digital Workplace Group)](https://digitalworkplacegroup.com/events/vodafones-success-with-ai-and-copilot-enablement-at-scale/)、
+  [Transforming HR support with agentic AI(IBM Case Studies)](https://www.ibm.com/case-studies/ibm-askhr)、
+  [Cisco Resolves 145,000 Support Cases Using Agentic AI(CX Today)](https://www.cxtoday.com/service-management-connectivity/cisco-agentic-ai-145000-support-cases/)
 
 ### 2026-08-19: 新しい実名事例を追加し、既存事例の数値を最新化
 
@@ -437,7 +540,7 @@ IT・通信業界の企業が「社内ヘルプデスク」「ソフトウェア
   [世界最大級規模のデータを用いたネットワーク保守業務向けAIエージェントシステムの商用化開始(NTTドコモ)](https://www.docomo.ne.jp/info/news_release/2026/02/25_01.html)、
   [NTTドコモ、モバイルネットワーク保守業務のAIエージェント開発 Amazon Bedrock活用で(EnterpriseZine)](https://enterprisezine.jp/news/detail/23821)、
   [NTT DOCOMO Launches Commercial 5G Core Network on AWS, Reducing Time for Deployment 80% with AgentCore(AWS Press Center)](https://press.aboutamazon.com/jp/news/aws/2026/3/ntt-docomo-launches-commercial-5g-core-network-on-aws-reducing-time-for-deployment-80-with-agentcore)、
-  [Agentforce国内最速稼働！実運用から見えた現在地と未来(富士通)](https://global.fujitsu/ja-jp/events/reports/sf-agentforce-20250416)、
+  [Agentforce国内最速稼働!実運用から見えた現在地と未来(富士通)](https://global.fujitsu/ja-jp/events/reports/sf-agentforce-20250416)、
   [Verizon unleashes AI agents, but keeps humans in the loop(Light Reading)](https://www.lightreading.com/network-automation/verizon-unleashes-ai-agents-in-the-network-but-keeps-humans-in-the-loop)、
   [Verizon Accelerates AI-Native Telecom Networks with 70 Million Autonomous Network Actions(TelecomLead)](https://telecomlead.com/5g/verizon-accelerates-ai-native-telecom-networks-with-70-million-autonomous-network-actions-126451)、
   [Verizon architecting network autonomy(Verizon)](https://www.verizon.com/about/news/verizon-architecting-network-autonomy)、
@@ -453,19 +556,19 @@ IT・通信業界の企業が「社内ヘルプデスク」「ソフトウェア
   KDDI、ソフトバンク、NEC、NTTドコモ、Verizon)の導入事例を具体的な効果とともに整理した
 - **出典**:
   [Transforming IT support across Microsoft with the Employee Self-Service Agent(Microsoft Inside Track)](https://www.microsoft.com/insidetrack/blog/transforming-it-support-across-microsoft-with-the-employee-self-service-agent/)、
-  [NTTデータで開発&社内導入！社員の生産性を高める「社内生成AIサービス」とは？(NTTデータ)](https://www.bizxaas.com/application/office/column/article-49.html)、
+  [NTTデータで開発&社内導入!社員の生産性を高める「社内生成AIサービス」とは?(NTTデータ)](https://www.bizxaas.com/application/office/column/article-49.html)、
   [実践的な生成AI人財育成を2027年度までにグローバル全社員へ拡大(NTTデータグループ)](https://www.nttdata.com/global/ja/news/release/2025/102900/)、
   [市民権を得たソフト開発での生成AI活用 富士通もリファクタリングや障害対応に「GitHub Copilot」(ASCII.jp)](https://ascii.jp/elem/000/004/237/4237559/)、
   [富士通、2024年7月からSI事業にコーディング支援AI「GitHub Copilot」を活用(IT Leaders)](https://it.impress.co.jp/articles/-/27160)、
   [How Duolingo uses GitHub(GitHub Customer Stories)](https://github.com/customer-stories/duolingo)、
   [Empowering Devs with AI: How Shopify Made GitHub Copilot Core to its Culture(AI Builders Academy)](https://aibuilders.academy/shopify-github-copilot/)、
   [【生成AIで約8割工数削減】富士通のSalesforceサポートデスクが挑む顧客体験と生産性の向上(Salesforceブログ)](https://www.salesforce.com/jp/blog/jp-fujitsu-ai-casestudy/)、
-  [富士通、サポートデスクにAgentforceを採用 問い合わせの15％をAIエージェントで対応へ(EnterpriseZine)](https://enterprisezine.jp/news/detail/21254)、
+  [富士通、サポートデスクにAgentforceを採用 問い合わせの15%をAIエージェントで対応へ(EnterpriseZine)](https://enterprisezine.jp/news/detail/21254)、
   [KDDI、LINEチャットでの問い合わせに生成AIを採用(コールセンタージャパン・ドットコム)](https://callcenter-japan.com/article/6923/1/)、
   [KDDI株式会社様の生成AIを活用した「お客様の声」の分析およびレポート自動生成機能の導入事例(cloudpack)](https://cloudpack.jp/casestudy/24-18.html)、
   ["ワイモバイル"のカスタマーサポートに自律思考型生成AIを導入(ソフトバンク)](https://www.softbank.jp/corp/news/press/sbkk/2025/20251107_01/)、
   [ソフトバンク株式会社はFoundryを活用してAI駆動型コールセンターを推進(Microsoft Customer Stories)](https://www.microsoft.com/ja-jp/customers/story/25684-softbank-corp-azure-ai-foundry)、
   [NEC、生成AIの活用領域をセキュリティやコールセンターなどに拡大(IT Leaders)](https://it.impress.co.jp/articles/-/25296)、
   [世界最大級規模のデータを用いたネットワーク保守業務向けAIエージェントシステムの商用化開始(NTTドコモ)](https://www.docomo.ne.jp/info/news_release/2026/02/25_01.html)、
-  [NTTドコモ、AIエージェントで障害対応時間50％削減見込む(ITmedia エンタープライズ)](https://www.itmedia.co.jp/enterprise/articles/2603/03/news040.html)、
+  [NTTドコモ、AIエージェントで障害対応時間50%削減見込む(ITmedia エンタープライズ)](https://www.itmedia.co.jp/enterprise/articles/2603/03/news040.html)、
   [Verizon architecting network autonomy(Verizon)](https://www.verizon.com/about/news/verizon-architecting-network-autonomy)
