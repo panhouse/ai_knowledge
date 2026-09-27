@@ -19,6 +19,7 @@
 - [生成AIによる情報収集・リサーチの実務活用(Deep Research機能)](topics/part12-business-practice/ai-research-and-information-gathering.md): 2026年9月時点の料金・回数上限・Microsoft Researcherの新モード等を反映して最新化
 - [生成AI導入による組織構造・マネジメントへの影響](topics/part13-ai-trends/generative-ai-organizational-impact.md): Metaのスパン・オブ・コントロール見直し事例、GitLabの組織フラット化事例、2026年9月時点のAI起因レイオフ集計、日本の人員計画データを追加し最新化
 - [量子化(モデル軽量化)の基本](topics/part08-specialized-ai-tools/quantization-basics.md): EXL2アーカイブ化・Unsloth Dynamic量子化・MLX形式を追記して最新化
+- [LLMの仕組み:確率的単語予測と学習プロセス](topics/part02-llm-basics/llm-mechanism-basics.md): モデル例を2026年9月時点(Opus 5.5/GPT-6/Fable 5.1)に最新化し、トークナイザー変更とRLVR研究動向を追記
 
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
