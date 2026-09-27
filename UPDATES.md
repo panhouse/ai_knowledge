@@ -7,6 +7,7 @@
 ## 2026-09-27
 - [建設・不動産における生成AI活用事例](topics/part14-industry-cases/construction-realestate-ai-use-cases.md): 導入事例カタログを新設し、大林組・三井不動産・Turner Constructionなど4社の事例を追加
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part15-job-role-cases/product-manager-ai-use-cases.md): 導入事例カタログを新設し、LaunchDarkly・Autodesk・CallRail・BigChangeの4社の事例を追加
+- [ReAct(Reasoning and Acting)プロンプティング](topics/part05-prompt-engineering/react-prompting.md): Claude/ChatGPT/Geminiの現行モデル・製品名(Fable 5.1・Opus 5.5・Cowork統合・GPT-6 Sol/Luna・Gemini 3.7 Flash)を反映して最新化
 
 ## 2026-09-26
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログを新設し、IBM・株式会社アドバン・Monksの3社の事例を追加
