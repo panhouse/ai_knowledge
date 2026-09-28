@@ -9,6 +9,7 @@
 - [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](topics/part10-nocode-lowcode/dify-api-integration.md): トリガー機能の3分類・プラン別上限・Zapier公式連携を反映して最新化
 - [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](topics/part04-risk-security/ai-content-detection-and-watermarking-basics.md): Anthropic/ClaudeのSynthID-Text採用、C2PA 2.4、SynthID解読事例、米SB 942等を反映して最新化
 - [サイバーセキュリティ業界における生成AI活用事例](topics/part14-industry-cases/cybersecurity-industry-ai-use-cases.md): 導入事例カタログを新設し、Blackbaud・NOV, Inc.・St. Luke's University Health Network・GMO Flatt Security・NTTセキュリティ・ジャパンの5件の事例を追加
+- [生成AIによるプレゼン資料・ドキュメント作成の実務活用](topics/part12-business-practice/ai-presentation-and-document-creation.md): Copilotのエージェント モード一般提供、ClaudeのMicrosoft 365書き込みコネクタ、ChatGPTのCanvas廃止等を反映して全面更新
 
 ## 2026-09-27
 - [建設・不動産における生成AI活用事例](topics/part14-industry-cases/construction-realestate-ai-use-cases.md): 導入事例カタログを新設し、大林組・三井不動産・Turner Constructionなど4社の事例を追加
