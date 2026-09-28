@@ -2,9 +2,9 @@
 title: サイバーセキュリティ業界における生成AI活用事例
 part: 14
 chapter: "第6章 IT・情報通信"
-tags: [サイバーセキュリティ, AI SOC, ペネトレーションテスト, フィッシング検知, セキュリティベンダー, プロンプトインジェクション, Security Copilot, Charlotte AI, XBOW]
+tags: [サイバーセキュリティ, AI SOC, ペネトレーションテスト, フィッシング検知, セキュリティベンダー, プロンプトインジェクション, Security Copilot, Charlotte AI, XBOW, Purple AI]
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-09-28
 ---
 
 # サイバーセキュリティ業界における生成AI活用事例
@@ -88,7 +88,7 @@ and Security Management)が2027年に約48億ドル規模に達すると予測�
 
 | 活用領域 | 何をAIにやらせるか | 代表的な製品・プレイヤー | 向いている組織 |
 |---|---|---|---|
-| SOC運用支援(AI SOC) | アラートの一次トリアージ、ログ要約、調査レポート作成 | Microsoft Security Copilot、Google Gemini in SecOps、CrowdStrike Charlotte AI、トレンドマイクロ TrendAI Companion、国内MSSPのAI SOCサービス | 24時間監視でアラート量が人力の限界を超えている組織(詳細は[Part 15の該当ページ](../part15-job-role-cases/information-security-ai-use-cases.md)) |
+| SOC運用支援(AI SOC) | アラートの一次トリアージ、ログ要約、調査レポート作成 | Microsoft Security Copilot、Google Gemini in SecOps、CrowdStrike Charlotte AI、SentinelOne Purple AI、トレンドマイクロ TrendAI Companion、国内MSSPのAI SOCサービス | 24時間監視でアラート量が人力の限界を超えている組織(詳細は[Part 15の該当ページ](../part15-job-role-cases/information-security-ai-use-cases.md)) |
 | 脆弱性診断・ペネトレーションテスト | 攻撃者視点での脆弱性探索・悪用検証・報告書ドラフト作成 | XBOW、NodeZero、Takumi byGMO、AIホワイトハッカー byGMO | 診断の頻度・範囲を増やしたいが人手のホワイトハッカーが不足している組織 |
 | フィッシング・マルウェア検知 | メール本文・添付ファイル・通信挙動の解析、判定理由の提示 | ChatSpamDetector、各社EDR/メールセキュリティ製品のAI機能 | フィッシング被害・誤検知の削減を急ぎたい組織 |
 | 脅威インテリジェンス(脅威動向調査) | 大量の脅威レポート・脆弱性情報の要約、攻撃者プロファイリング | Google Threat Intelligence、各社の脅威インテリジェンスサービス | 自社に関係する脅威動向を効率よく追いたいセキュリティ担当・経営層 |
@@ -162,11 +162,99 @@ byイエラエのように「AIでは検出が難しい脆弱性や誤検出を�
 
 | カテゴリ | 製品・サービス例 | 主な機能・特徴 |
 |---|---|---|
-| AI SOCコパイロット | Microsoft Security Copilot、CrowdStrike Charlotte AI、Google Gemini in SecOps、トレンドマイクロ TrendAI Companion | アラート調査支援・要約・レポート作成の自動化。料金体系や国内MSSPサービスの詳細は[情報セキュリティ担当者における生成AI活用事例](../part15-job-role-cases/information-security-ai-use-cases.md)の対応表を参照 |
+| AI SOCコパイロット | Microsoft Security Copilot、CrowdStrike Charlotte AI、SentinelOne Purple AI、Google Gemini in SecOps、トレンドマイクロ TrendAI Companion | アラート調査支援・要約・レポート作成の自動化。料金体系や国内MSSPサービスの詳細は[情報セキュリティ担当者における生成AI活用事例](../part15-job-role-cases/information-security-ai-use-cases.md)の対応表を参照 |
 | AIペネトレーションテスト | XBOW、NodeZero、Takumi byGMO、AIホワイトハッカー byGMO | 攻撃者視点での脆弱性探索・悪用検証を自動化。XBOWは2025年にHackerOneの人間ランキングを上回る成果を報告。国内2社の詳細は[セキュリティAI企業一覧](../part16-japan-ai-companies/security-ai-companies-japan.md)を参照 |
 | フィッシング・迷惑メール検知 | ChatSpamDetector(NTTセキュリティ・ジャパン)、各社メールセキュリティ製品のAI機能 | LLMがメール本文・送信元情報を解析し、判定理由を自然言語で提示 |
 | 脅威インテリジェンス | Google Threat Intelligence、各社の脅威レポートサービス | 大量の脅威情報・脆弱性情報をLLMが要約し、自社への影響を評価する下準備を支援 |
 | 生成AIアプリ自体のセキュリティ診断 | GMO Flatt Securityのセキュリティ評価サービス等 | プロンプトインジェクション耐性など、自社の生成AI活用サービスに潜む脆弱性を評価 |
+
+## 導入事例カタログ
+
+セキュリティベンダー・自社SOCが生成AIをどう組み込み、どんな効果を公表しているかを
+実名事例で見る。ベンダーが自社製品の導入効果として公表しているもの(顧客企業の
+実名コメント付き)と、セキュリティ企業自身が自社開発ツールの実証実験・研究結果として
+公表しているものの両方を含む。
+
+### Blackbaud(米国・寄付管理/非営利セクター向けソフトウェア大手) — 対象業務: SOC運用(脅威検知・調査対応)
+- **導入形態**: 専用SaaS導入(CrowdStrike Falconプラットフォーム+Charlotte AI)
+- **段階**: 全社展開
+- **やったこと**: セキュリティオペレーションをCrowdStrike Falconプラットフォームに統合し、
+  自然言語でクエリ作成・脅威ハンティング・イベントタイムライン生成を行うAIコパイロット
+  「Charlotte AI」を導入。アナリストがCQL(CrowdStrike独自のクエリ言語)を書かずに
+  調査できる運用に切り替えた
+- **効果**: 導入後30日間で3万件超のAI支援調査を実施し、平均対応時間(MTTR)が
+  導入前と比べて3倍速くなったと2025年にCrowdStrikeが顧客事例として公表
+  (Blackbaudのグローバルサイバーオペレーション担当シニアディレクター Don Rahn氏、
+  防御的サイバーオペレーション担当シニアマネージャー Jake Daniels氏のコメント付き)
+- **学べること**: 「クエリ言語を書けるアナリストしか高度な調査ができない」という
+  スキル制約をAIが取り除くと、経験の浅いアナリストでも高度な調査に着手しやすくなる。
+  効果測定を「対応時間の倍率」という分かりやすい指標にして経営層に説明している
+- **出典**: [Blackbaud Customer Story(CrowdStrike公式カスタマーストーリー)](https://www.crowdstrike.com/en-us/resources/customer-stories/blackbaud/) / 最終確認日: 2026-09-28
+
+### NOV, Inc.(米国・石油/エネルギー関連機器メーカー) — 対象業務: SOC運用(脅威ハンティング・ログ分析)
+- **導入形態**: 専用SaaS導入(SentinelOne Purple AI)
+- **段階**: 全社展開
+- **やったこと**: SentinelOneのAI SIEM基盤に、自然言語で脅威ハンティングクエリを
+  生成・実行できるAIアナリスト「Purple AI」を組み込み、ログ管理・SIEM運用チームの
+  日常的な調査業務に活用
+- **効果**: SentinelOneが2024年4月のPurple AI一般提供開始にあわせて公表した事例で、
+  NOVのCISO(最高情報セキュリティ責任者)John McLeod氏が「ログ管理・SIEM業務における
+  チームの効率が大きく向上した」とコメント。SentinelOneは早期導入企業の実績として
+  脅威ハンティングが最大80%高速化したと公表している(NOV1社の削減率ではなく、
+  SentinelOne調べの早期導入企業全体の集計値である点に注意)
+- **学べること**: 「AIが次に調べるべきクエリを提案してくれる」ことで、SIEMの複雑な
+  クエリ作成スキルがなくても高度な脅威ハンティングに近づける。個社の実績値と
+  ベンダーの集計値(複数社平均)を混同せずに読む必要がある
+- **出典**: [SentinelOne Revolutionizes Cybersecurity with Purple AI(SentinelOne公式プレスリリース)](https://www.sentinelone.com/press/sentinelone-revolutionizes-cybersecurity-with-purple-ai/) / 最終確認日: 2026-09-28
+
+### St. Luke's University Health Network(米国・医療機関、15キャンパス・300拠点超) — 対象業務: SOC運用(フィッシングメールの一次トリアージ・インシデントレポート作成)
+- **導入形態**: 専用SaaS導入(Microsoft Security Copilotのエージェント機能)
+- **段階**: 全社展開
+- **やったこと**: Microsoft Defender上でSecurity Copilotの「Security Alert Triage
+  Agent」(旧称Phishing Triage Agent)を稼働させ、フィッシングメールの一次判定と
+  大量の誤検知(false positive)アラートの自動クローズを実施。Entra(アクセス管理)・
+  Intune(脆弱性対応)・Purview(データ保護)の各AIエージェントも組み合わせ、
+  アラートから対応までを横断的に処理する構成にした
+- **効果**: 月あたり200時間近い作業時間を削減し、インシデントレポート作成も
+  時間単位から分単位に短縮されたと2025年9月にMicrosoftが顧客事例として公表
+  (St. Luke'sの副CISO Krista Arndt氏のコメント付き)
+- **学べること**: 医療機関のように24時間365日大量のフィッシングメールに晒される
+  組織では、「一次トリアージの自動クローズ」だけでも人手換算で大きな時間を
+  生み出せる。単一の万能AIではなく、機能ごとに複数のAIエージェントを使い分ける
+  設計が現実的であることを示す事例
+- **出典**: [St. Luke's saves nearly 200 hours monthly with AI-powered Security Copilot agents(Microsoft公式カスタマーストーリー)](https://www.microsoft.com/en/customers/story/25330-st-lukes-university-health-network-microsoft-security-copilot) / 最終確認日: 2026-09-28
+
+### GMO Flatt Security(日本・セキュリティ診断AIエージェント開発、GMOインターネットグループ) — 対象業務: 脆弱性診断(セキュリティ診断AIエージェントの実証実験)
+- **導入形態**: 内製(自社開発のAIエージェント「Takumi」)
+- **段階**: PoC(実証実験。2025年3月に有償サービスとして正式リリース)
+- **やったこと**: 自律的に脆弱性を発見・トリアージするセキュリティ診断AIエージェント
+  「Takumi」を開発し、正式リリース前の実証実験としてVimなど著名なOSS
+  (オープンソースソフトウェア)プロジェクトを対象に診断を実施
+- **効果**: 10日間の実証実験で0-day脆弱性(公表前の未知の脆弱性)を10件発見したと
+  2025年3月にGMOグループが公表。Vimのzip処理に関するデータ損失の脆弱性は、
+  簡単な指示を与えてから約45分で発見されたケースもあったという(自社公表。
+  PoC段階の数値であり、正式リリース後の継続的な実績値ではない)
+- **学べること**: AIエージェントによる脆弱性診断は、多くの目でレビューされ尽くした
+  はずの著名OSSからも未知の脆弱性を見つけられる実力を持ち始めている。ただし
+  PoCの成果と、本番導入後に継続して出せる実績は別物として評価する必要がある
+- **出典**: [GMO Flatt Security、セキュリティAIエージェント「Takumi」リリース(GMOインターネットグループ公式ニュース)](https://group.gmo/news/article/9447/) / 最終確認日: 2026-09-28
+
+### NTTセキュリティ・ジャパン(日本・NTTグループのセキュリティサービス専業会社) — 対象業務: フィッシングメール検知(自社研究開発ツールの評価実験)
+- **導入形態**: 内製(自社開発ツール「ChatSpamDetector」の研究開発)
+- **段階**: PoC(研究論文としての評価実験段階)
+- **やったこと**: LLM(GPT-4、GPT-3.5、Gemini Pro、Llama 2 70Bの4種類)にフィッシング
+  メールの本文・送信元情報を解析させ、判定理由まで自然言語で出力する検知ツール
+  「ChatSpamDetector」を開発。実際のフィッシングメール1,010件・正規メール1,000件の
+  データセットで4モデルの検知性能を比較評価した
+- **効果**: GPT-4を使った場合の検出精度が99.70%となり、比較した4モデルの中で
+  誤検知(正規メールの誤判定)・見逃し(フィッシングメールの検知漏れ)がともに
+  最少だったと2024年4月に自社研究論文・技術ブログで公表(Gemini Pro 98.01%、
+  GPT-3.5 96.92%、Llama 2 70B 79.05%。評価実験の数値であり、本番の受信メール
+  全量に対する運用実績値ではない)
+- **学べること**: フィッシング検知は「モデルの精度差がそのまま実務上の見逃し・
+  誤検知の差になる」領域であり、モデル選定時に自社データで複数モデルを比較評価する
+  価値が大きいことを示す実例
+- **出典**: [ChatSpamDetector: 生成AIによるフィッシングメール検出(NTTセキュリティ・ジャパン公式技術ブログ)](https://jp.security.ntt/insights_resources/tech_blog/chatspamdetector-ai/) / [ChatSpamDetector: Leveraging Large Language Models for Effective Phishing Email Detection(arXiv論文)](https://arxiv.org/abs/2402.18093) / 最終確認日: 2026-09-28
 
 ## 注意点・よくある誤解
 
@@ -194,6 +282,10 @@ byイエラエのように「AIでは検出が難しい脆弱性や誤検出を�
   でもある。導入時は、その製品自体のAI機能がどのような入力(ログ・メール本文・
   Webページの内容など)を処理しているか、そこに悪意ある指示が紛れ込む余地が
   ないかを確認する(仕組みは[プロンプトインジェクションとは何か](../part04-risk-security/prompt-injection-basics.md)を参照)
+- **ベンダー公表の効果指標は「個社の実績」と「複数顧客の集計値」を混同しやすい**:
+  導入事例カタログのSentinelOne/NOVの例のように、「導入企業の担当者コメント」と
+  「ベンダーが早期導入企業全体から集計した数値」が同じ発表の中に混在していることが
+  ある。数値を引用する際は、どの範囲の実績かを確認してから使う
 
 ## 最初の一歩
 
@@ -212,6 +304,17 @@ byイエラエのように「AIでは検出が難しい脆弱性や誤検出を�
 - [IT・情報通信における生成AI活用事例](it-telecom-ai-use-cases.md)
 
 ## 更新履歴
+
+### 2026-09-28: 導入事例カタログを新設し、5件の実名事例を追加
+- **内容**: 新たに「導入事例カタログ」節を追加し、Blackbaud(CrowdStrike Charlotte AI、
+  MTTR3倍)、NOV, Inc.(SentinelOne Purple AI、脅威ハンティング最大80%高速化)、
+  St. Luke's University Health Network(Microsoft Security Copilot、月200時間近い
+  削減)、GMO Flatt Security(セキュリティ診断AIエージェント「Takumi」、実証実験で
+  0-day脆弱性10件発見)、NTTセキュリティ・ジャパン(「ChatSpamDetector」、GPT-4で
+  検出精度99.70%)の5件をカード形式で追加。あわせて「使いどころ・使い分け」
+  「実務での使い方」のツール横断表にSentinelOne Purple AIを追加し、「注意点・
+  よくある誤解」にベンダー公表数値の読み方に関する注意を1件追加した
+- **出典**: [Blackbaud Customer Story(CrowdStrike公式)](https://www.crowdstrike.com/en-us/resources/customer-stories/blackbaud/)、[SentinelOne Revolutionizes Cybersecurity with Purple AI(SentinelOne公式)](https://www.sentinelone.com/press/sentinelone-revolutionizes-cybersecurity-with-purple-ai/)、[St. Luke's saves nearly 200 hours monthly with AI-powered Security Copilot agents(Microsoft公式)](https://www.microsoft.com/en/customers/story/25330-st-lukes-university-health-network-microsoft-security-copilot)、[GMO Flatt Security、セキュリティAIエージェント「Takumi」リリース(GMOインターネットグループ公式)](https://group.gmo/news/article/9447/)、[ChatSpamDetector: 生成AIによるフィッシングメール検出(NTTセキュリティ・ジャパン公式技術ブログ)](https://jp.security.ntt/insights_resources/tech_blog/chatspamdetector-ai/)、[ChatSpamDetector: Leveraging Large Language Models for Effective Phishing Email Detection(arXiv論文)](https://arxiv.org/abs/2402.18093)
 
 ### 2026-08-27: 初版執筆
 - **内容**: サイバーセキュリティ業界における生成AI活用を、(1) AI SOC(主要ベンダーの
