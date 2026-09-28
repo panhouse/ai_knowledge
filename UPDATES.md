@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-28
+- [Reranking(再ランク付け)の基本](topics/part07-data-analysis/reranking-basics.md): Jina Reranker v3.5・Qwen3-Rerankerシリーズ・クラウド内蔵リランキング機能を反映して最新化
+
 ## 2026-09-27
 - [建設・不動産における生成AI活用事例](topics/part14-industry-cases/construction-realestate-ai-use-cases.md): 導入事例カタログを新設し、大林組・三井不動産・Turner Constructionなど4社の事例を追加
 - [プロダクトマネージャー(PdM)職における生成AI活用事例](topics/part15-job-role-cases/product-manager-ai-use-cases.md): 導入事例カタログを新設し、LaunchDarkly・Autodesk・CallRail・BigChangeの4社の事例を追加
