@@ -7,6 +7,7 @@
 ## 2026-09-28
 - [Reranking(再ランク付け)の基本](topics/part07-data-analysis/reranking-basics.md): Jina Reranker v3.5・Qwen3-Rerankerシリーズ・クラウド内蔵リランキング機能を反映して最新化
 - [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](topics/part10-nocode-lowcode/dify-api-integration.md): トリガー機能の3分類・プラン別上限・Zapier公式連携を反映して最新化
+- [AI生成コンテンツの検出・電子透かし(C2PA・SynthIDなど)の基本](topics/part04-risk-security/ai-content-detection-and-watermarking-basics.md): Anthropic/ClaudeのSynthID-Text採用、C2PA 2.4、SynthID解読事例、米SB 942等を反映して最新化
 
 ## 2026-09-27
 - [建設・不動産における生成AI活用事例](topics/part14-industry-cases/construction-realestate-ai-use-cases.md): 導入事例カタログを新設し、大林組・三井不動産・Turner Constructionなど4社の事例を追加
