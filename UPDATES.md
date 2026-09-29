@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-29
+- [経営者・管理職における生成AI活用事例](topics/part15-job-role-cases/executive-management-ai-use-cases.md): 導入事例カタログを新設し、キリンHD・旭鉄工・Shopifyの3件の事例を追加
 - [コンサルタント・リサーチャー職における生成AI活用事例](topics/part15-job-role-cases/consultant-researcher-ai-use-cases.md): 導入事例カタログを新設し、McKinsey・PwC・BCG(HBS共同実験)・アクセンチュアの4件の事例を追加
 
 ## 2026-09-28
