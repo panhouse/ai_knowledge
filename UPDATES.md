@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-09-29
+- [コンサルタント・リサーチャー職における生成AI活用事例](topics/part15-job-role-cases/consultant-researcher-ai-use-cases.md): 導入事例カタログを新設し、McKinsey・PwC・BCG(HBS共同実験)・アクセンチュアの4件の事例を追加
+
 ## 2026-09-28
 - [Reranking(再ランク付け)の基本](topics/part07-data-analysis/reranking-basics.md): Jina Reranker v3.5・Qwen3-Rerankerシリーズ・クラウド内蔵リランキング機能を反映して最新化
 - [DifyのAPI連携(作ったアプリを外部システムから呼び出す)](topics/part10-nocode-lowcode/dify-api-integration.md): トリガー機能の3分類・プラン別上限・Zapier公式連携を反映して最新化

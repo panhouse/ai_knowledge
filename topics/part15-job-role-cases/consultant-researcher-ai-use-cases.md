@@ -4,7 +4,7 @@ part: 15
 chapter: 第16章 コンサルタント・リサーチャー
 tags: [コンサルティング, リサーチ, Deep Research, NDA, 機密情報, McKinsey, BCG]
 created: 2026-08-06
-updated: 2026-08-06
+updated: 2026-09-29
 ---
 
 # コンサルタント・リサーチャー職における生成AI活用事例
@@ -123,6 +123,50 @@ Perplexityは出典リンクの提示が速く一次情報の当たりを付け�
 | 定量分析のたたき台 | ChatGPT/Gemini/Claudeの[データ分析機能](../part07-data-analysis/chatgpt-advanced-data-analysis.md) |
 | 機密性の高いクライアント情報の入力 | 法人向けEnterprise/Teamプラン(学習非利用がデフォルト)。個人向け無料プランは不可 |
 
+## 導入事例カタログ
+
+ここまでは職種横断で使える汎用的なプロンプト例を紹介した。以下は
+`templates/case-card.md` の書式による実名組織の事例である。大手コンサルティングファームが
+「自社の知識検索」「全社員へのチャットAI配備」「社内問い合わせ対応」にどう組み込んだかと、
+コンサルタントの成果物の質に与える影響を測った第三者の実験結果を収録する。
+
+### McKinsey & Company(戦略コンサルティング大手) — 対象業務: 社内ナレッジ検索・議論の壁打ち
+- **導入形態**: 内製(自社開発の生成AIプラットフォーム「Lilli」)
+- **段階**: 全社展開(2023年8月時点で約7,000人が利用可能、2023年秋までに全社員へ拡大予定と報道)
+- **やったこと**: 自社の知識資産(40超の情報源・10万件超の文書)を検索・要約する機能と、外部情報を対象にしたチャット機能の2つのモードを持つ。質問に対し関連情報を5〜7件特定して要点を要約し、リンクと該当分野の専門家を提示する。会議・プレゼン前の壁打ち相手としても使われる
+- **効果**: 数値公表なし(2023年8月時点の報道では、定量的な効率化指標は示されていない。CTOのコメントは「生産性の新しい水準」という定性的なもの)
+- **学べること**: 社外の汎用AIに機密を渡さず「自社の過去資産を引く」検索型から始め、出典リンクと専門家の紹介まで返す設計にすると、ハルシネーションと属人化の両方に対処しやすい
+- **出典**: [CIO Dive: McKinsey rolls out generative AI tool 'Lilli' to 7K employees(2023-08-17)](https://www.ciodive.com/news/McKinsey-generative-AI-Lilli-platform-internal-employees/691231/) / 最終確認日: 2026-09-29
+
+### PwC(会計・コンサルティング大手) — 対象業務: 全社員向けチャットAIの配備と業務別カスタムGPT開発
+- **導入形態**: 専用SaaS導入(ChatGPT Enterprise)
+- **段階**: 全社展開(米英を中心に10万人超への配備を2024年5月に報道)
+- **やったこと**: ChatGPT Enterpriseを10万人超の社員に展開し、あわせてOpenAIの法人向け再販パートナーにもなった。社内で3,000件超のAI活用ユースケースを洗い出し、税務申告書のレビュー、提案書の回答作成、ソフトウェア開発者の支援などのカスタムGPTを開発中と報じられた
+- **効果**: 洗い出したユースケースの約4割に対応済み、生成AIが米国の主要顧客上位1,000社のうち950社の案件に関与(2024年5月時点、CIO Diveの報道による。PwC自身の業務時間削減などの数値は公表なし)
+- **学べること**: 「全員にツールを配る」だけでなく、先にユースケースを棚卸ししてカスタムGPTに落とし込む二段構えで展開している。棚卸しの件数と対応率を進捗指標にする方法は自社でも真似しやすい
+- **出典**: [CIO Dive: PwC plans ChatGPT Enterprise rollout to 100K employees(2024-05-29)](https://www.ciodive.com/news/pwc-chatgpt-enterprise-openai-partnership/717432/)、[TechCrunch: OpenAI signs on 100K PwC workers to its ChatGPT Enterprise tier(2024-05-29)](https://techcrunch.com/2024/05/29/openai-signs-on-100k-pwc-workers-to-its-chatgpt-enterprise-tier-as-the-consultant-becomes-its-first-resale-partner) / 最終確認日: 2026-09-29
+
+### Boston Consulting Group(戦略コンサルティング大手)× ハーバード・ビジネス・スクール等 — 対象業務: コンサルティング業務全般(実験)
+- **導入形態**: 汎用チャットAI活用(GPT-4を使った統制実験)
+- **段階**: PoC(BCGのコンサルタント758人が参加した野外実験。本番導入後の数値ではない)
+- **やったこと**: BCGのコンサルタント758人を、AIなし・AIあり(GPT-4)などの群に分け、現実的なコンサルティング課題18件を解かせて生産性と品質を比べた
+- **効果**: AIを使った群は平均で12.2%多くのタスクを完了し、25.1%速く完了、成果物の品質評価が高かった参加者が約40%(2023年秋の研究発表。公表主体は研究者=第三者)。一方、AIが苦手な範囲の課題では、AIを使った群の正答率がAIなしより19ポイント低かったと報道されている
+- **学べること**: AIが得意な範囲では明確に速く・質が上がるが、範囲外の課題ではAIの説得力のある誤答に引きずられる。自分の業務のどのタスクが「AIの得意範囲内」かを事前に見極める運用ルールが要る
+- **出典**: [The Harvard Crimson: Harvard Business School Partners with BCG on AI Productivity Study(2023-10-13)](https://www.thecrimson.com/article/2023/10/13/jagged-edge-ai-bcg/) / 最終確認日: 2026-09-29
+
+### アクセンチュア(日本法人・総合コンサルティング) — 対象業務: 社内の人事・法務・調達・総務・経費・契約などの問い合わせ対応
+- **導入形態**: 内製(社内チャットボット「Randy-san」を2023年4月にGPTエンジンへ移行)
+- **段階**: 全社展開(2017年9月に導入、生成AI化は2023年4月)
+- **やったこと**: 人事・法務・調達・総務・経費申請・契約などの社内問い合わせに答えるチャットボットの回答エンジンを生成AI(GPT)に切り替え、社員の質問対応と回答者側の負荷を同時に下げた
+- **効果**: 月間アクティブユーザー1万1,000人超、月約7万件の問い合わせに対応、社員と回答者の両方で年間約20万時間の工数削減(2024年4月時点、自社公表の採用ブログ)
+- **学べること**: コンサルタント本人の分析業務だけでなく、バックオフィスへの問い合わせという「質問する側・答える側の両方の時間」を減らす使い方は、コンサル以外の専門職組織にも転用しやすい
+- **出典**: [アクセンチュア: 仕事の進め方を一新！生成AIを社員のパートナーに(採用ブログ)](https://www.accenture.com/jp-ja/blogs/japan-careers-blog/gen-ai) / 最終確認日: 2026-09-29
+
+### 事例から見える傾向
+
+- **数値の性質が事例ごとに違う**: McKinsey・PwCは規模や利用状況の指標のみで、時間削減の実測値は公表されていない。BCGは実験結果、アクセンチュアは自社公表の実績値。記事などで引用するときは「実験」「導入実績」「利用状況」を混ぜない
+- **機密を扱う職種は「自社閉じ」か「法人契約」が前提**: McKinseyは自社基盤、PwCは法人向けEnterpriseプランと、いずれも汎用の無料チャットAIにクライアント情報を入れる形にはしていない
+
 ## 注意点・よくある誤解
 
 - **クライアント情報の入力はNDA違反になり得る**: NDA(秘密保持契約)は目的外利用・第三者開示の禁止を定めており、クライアントから受け取った資料をそのまま生成AIに入力する行為が、この禁止事項に抵触し契約違反となるリスクが法律専門家から指摘されている([出典](https://storialaw.jp/blog/13047))。入力前に「このクライアントとの契約でAI利用が許可されているか」を必ず確認する。
@@ -144,6 +188,10 @@ Perplexityは出典リンクの提示が速く一次情報の当たりを付け�
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-09-29: 導入事例カタログを新設し、4件の実名事例を追加
+- **内容**: `templates/case-card.md` の書式で「導入事例カタログ」節を新設し、McKinsey(Lilli、数値公表なし)、PwC(ChatGPT Enterprise 10万人超配備)、BCG×HBSの生産性実験(12.2%多く・25.1%速く、範囲外課題では正答率19ポイント低下)、アクセンチュア(社内問い合わせボットの生成AI化、年約20万時間削減)の4件を追加
+- **出典**: [CIO Dive: McKinsey Lilli](https://www.ciodive.com/news/McKinsey-generative-AI-Lilli-platform-internal-employees/691231/)、[CIO Dive: PwC](https://www.ciodive.com/news/pwc-chatgpt-enterprise-openai-partnership/717432/)、[TechCrunch: PwC](https://techcrunch.com/2024/05/29/openai-signs-on-100k-pwc-workers-to-its-chatgpt-enterprise-tier-as-the-consultant-becomes-its-first-resale-partner)、[The Harvard Crimson: BCG研究](https://www.thecrimson.com/article/2023/10/13/jagged-edge-ai-bcg/)、[アクセンチュア採用ブログ](https://www.accenture.com/jp-ja/blogs/japan-careers-blog/gen-ai)
 
 ### 2026-08-06: 初版執筆
 - **内容**: コンサルタント・リサーチャー職(クライアント納品前提)における生成AI活用として、イシューツリーでの仮説構造化、Deep Researchでの市場調査、インタビュー分析、成果物作成のプロンプト例を整理。McKinsey「Lilli」・BCG「Deckster」・Bain「Sage」など大手ファームの内製ツール事例、NRIの国内動向、NDA・クライアント機密情報の取り扱いや「Enterprise/Team」プランの違いといったこの職種特有のリスクを、Part 15第5章(企画・PdM・データアナリスト)との境界線とともに整理
