@@ -4,7 +4,7 @@ part: 14
 chapter: "第1章 製造業"
 tags: [製造業, 生成AI活用事例, 品質管理, 予知保全, 技能伝承, 生産計画, サプライチェーン]
 created: 2026-07-06
-updated: 2026-08-02
+updated: 2026-09-30
 ---
 
 # 製造業における生成AI活用事例
@@ -37,6 +37,39 @@ updated: 2026-08-02
 「サプライチェーン・調達」は**自社が直接見えない範囲(二次・三次サプライヤー)の情報を
 公開データから推定する**用途と、**企業間の交渉・調整という定型対話業務を代行する**用途の
 2系統に大別できる。
+
+## 導入事例カタログ
+
+`templates/case-card.md` の書式で、実名企業の事例をカード形式で並べる
+(既存の「代表事例の詳細」の各事例は、この節の下に従来書式のまま残している)。
+
+### ダイセル(化学・素材メーカー・セイフティSBU) — 対象業務: 設計開発(技術開発センター)
+- **導入形態**: 専用SaaS導入(アクセンチュアの支援による業務変革プロジェクト)
+- **段階**: 部門展開(2023〜2025年に準備段階、2026年から本格導入)
+- **やったこと**: セイフティSBUの技術開発センターで、
+  製造業に特化した生成AI・エージェント型AIを設計開発業務に導入。2026年からAI活用施策を本格展開し、グローバル拠点への横展開も計画
+- **効果**: 設計開発領域の生産性が1.3倍に向上、新規事業に携わる社員比率を30%に拡大(2026年2月時点・自社公表)。
+  2030年までに生産性2倍・新規事業従事率50%を目標とする(目標値であり達成済みの数値ではない)
+- **学べること**: 「AIで空いた工数を新規事業に振り向ける」まで目標に含め、工数削減で終わらせない設計にしている点
+- **出典**: [ダイセル(ニュースリリース)](https://www.daicel.com/news/2026/20260226_1252/) / 最終確認日: 2026-09-30
+
+### thyssenkrupp Automation Engineering(ドイツ・生産設備エンジニアリング) — 対象業務: PLCプログラム作成・機械の可視化画面作成
+- **導入形態**: 専用SaaS導入(Siemens Industrial Copilot)
+- **段階**: 部門展開(2025年以降に世界の拠点へ展開する計画と発表)
+- **やったこと**: EV向けバッテリー検査装置のエンジニアリングにSiemensの「Copilot for Engineering」を組み込み、
+  TIA Portalプロジェクト作成、PLC(工場設備を制御する専用コントローラ)用のSCLコード作成、WinCC Unifiedでの装置画面生成を支援
+- **効果**: 数値公表なし(ベンダー公表の発表文に時間短縮等の数値の記載はない。2024年11月時点)
+- **学べること**: 自然言語でPLCコードと画面を生成させる用途は、エンジニアリング会社の設計工数に直結する。導入判断では自社の検証用テーマ(1台分の装置)で効果を測る前提を置くとよい
+- **出典**: [Siemens(プレスリリース、2024年11月12日)](https://press.siemens.com/global/en/pressrelease/siemens-industrial-copilot-expanded-adopted-thyssenkrupp) / 最終確認日: 2026-09-30
+
+### Schaeffler(ドイツ・自動車/産業部品大手) — 対象業務: 工場自動化(PLC)コード生成
+- **導入形態**: 専用SaaS導入(Siemens Industrial Copilot)
+- **段階**: PoC(2023年11月のSPS展示会でのデモンストレーション)
+- **やったこと**: 自動化エンジニアが自然言語でSchaefflerの自動化仕様を指示し、Industrial CopilotがPLCコードを生成。
+  SiemensのTIA Portal(自動化エンジニアリング環境)とAPI連携して動作
+- **効果**: 数値公表なし(2023年11月時点。デモ段階であり本番展開後の効果ではない)
+- **学べること**: デモ段階の事例であり、効果は未公表。自社の仕様を自然言語で指示してコードを得る使い方の入口として参考になる
+- **出典**: [Siemens(プレスリリース、2023年11月14日)](https://press.siemens.com/global/en/pressrelease/ai-industry-schaeffler-and-siemens-bring-industrial-copilot-shopfloor) / 最終確認日: 2026-09-30
 
 ## 代表事例の詳細
 
@@ -249,6 +282,13 @@ updated: 2026-08-02
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 
 ## 更新履歴
+
+### 2026-09-30: 導入事例カタログを新設し3件の事例を追加
+- **内容**: 「導入事例カタログ」節を新設し、ダイセル・thyssenkrupp Automation Engineering・Schaefflerの3件をカード書式で追加
+- **出典**:
+  [ダイセル](https://www.daicel.com/news/2026/20260226_1252/)、
+  [Siemens: thyssenkrupp採用](https://press.siemens.com/global/en/pressrelease/siemens-industrial-copilot-expanded-adopted-thyssenkrupp)、
+  [Siemens: Schaeffler](https://press.siemens.com/global/en/pressrelease/ai-industry-schaeffler-and-siemens-bring-industrial-copilot-shopfloor)
 
 ### 2026-08-02: 設計・保守・技能伝承・サプライチェーンの節を最新化・増強
 - **内容**: 設計・エンジニアリングの節にパナソニック コネクトの図面照合AIエージェント
