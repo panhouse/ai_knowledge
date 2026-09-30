@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-09-30
+- [公共・自治体における生成AI活用事例](topics/part14-industry-cases/public-sector-ai-use-cases.md): 導入事例カタログを新設し、東京都「A1」・デジタル庁「源内」・シンガポール政府「Pair」の3件の事例を追加
 - [製造業における生成AI活用事例](topics/part14-industry-cases/manufacturing-ai-use-cases.md): 導入事例カタログを新設し、ダイセル・thyssenkrupp Automation Engineering・Schaefflerの3件の事例を追加
 
 ## 2026-09-29
