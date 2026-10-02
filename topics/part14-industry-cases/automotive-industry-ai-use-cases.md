@@ -4,7 +4,7 @@ part: 14
 chapter: "第12章 その他・未分類"
 tags: [自動車業界, 生成AI活用事例, ディーラー, 車載AIアシスタント, アフターサービス, マーケティング]
 created: 2026-07-14
-updated: 2026-08-10
+updated: 2026-10-02
 ---
 
 # 自動車業界における生成AI活用事例
@@ -182,6 +182,34 @@ Google・Amazonといった既存の生成AI基盤に接続する形で提供し
 | 整備マニュアル・TSB検索 | Mastertech.aiのような整備特化AI、社内RAG(検索拡張生成)システム | 汎用チャットAIに直接聞くと存在しない手順を答える(ハルシネーション)リスクが高く、自社データに接続した検索の仕組みが前提になる |
 | 車載音声アシスタント | 各メーカー独自のアシスタント(MBUX、BMW IPA等)+ ChatGPT/Gemini/Alexa+基盤 | 一般ユーザーが個別に設定できるものではなく、購入した車種・年式・地域で対応状況が異なる |
 
+## 導入事例カタログ
+
+上の「代表事例の詳細」(トヨタ系列ディーラー・ホンダ・Mastertech.ai・メルセデス・ベンツなど)を補う事例を、共通カード書式で追加する。
+
+### 現代自動車グループ(現代自動車・起亜)(韓国の自動車大手グループ) — 対象業務: 全社員向け生成AI基盤の展開と業務時間短縮
+- **導入形態**: 内製(ChatGPT・Gemini・Claude を安全な環境で使える社内プラットフォーム「H Chat Pro」)
+- **段階**: 全社展開
+- **やったこと**: 2025年から一般従業員に「H Chat Pro」を提供し、文書作成、情報検索、データ分析、ソフトウェア開発などの日常業務で使えるようにした。あわせて衝突安全の研究、整備対応、顧客レビューの処理といった個別業務にもAIを適用している
+- **効果**: 2026年8月12日公表のプレスリリースで、アクティブユーザーは3万人超で現代自動車・起亜の一般従業員の約80%。衝突安全の研究で関連事例の特定と分析資料の確認にかかる時間が約90%減、整備の対応時間が約42%減、顧客レビュー1件の処理時間が35分から約5分に短縮(自社公表。個別業務の数値で、全社の業務時間の削減率ではない)
+- **学べること**: 複数の外部モデルを1つの社内基盤から安全に使える環境を先に作ると、全社員への展開が進み、個別業務への適用も積み上げやすい
+- **出典**: [Hyundai Motor Group Accelerates AI Transformation Across Its Business, Advancing Toward the Physical AI Era(現代自動車グループ公式)](https://www.hyundaimotorgroup.com/en/news/hyundai-motor-group-accelerates-ai-transformation-across-its-business-advancing-toward-the-physical-ai-era) / 最終確認日: 2026-10-02
+
+### フォード(米国の自動車大手)の販売店ネットワーク — 対象業務: 販売店の見込み客対応・サービス入庫促進(対話型AI)
+- **導入形態**: 専用SaaS導入(Impel の対話型AIを FordDirect の Customer Journey Platform に接続)
+- **段階**: PoC(パイロット)
+- **やったこと**: 2025年1月に Impel と FordDirect が提携を発表。Impel の対話型AIを、フォード販売店向けの顧客管理基盤に接続し、販売からサービスまでの顧客対応を、顧客データをもとに自動化する
+- **効果**: Impel が公表したパイロット結果(2025年1月時点)で、問い合わせ客からの来店予約が65%増、営業担当の発信電話が24%増、見込み客1件あたりの接触回数が2倍、サービス入庫が販売店あたり月最大132件増。パイロットの店舗数と期間は公表されておらず、**本番展開後の数値ではない**(ベンダー公表)
+- **学べること**: メーカーが販売店向けの共通基盤にAIを組み込む形にすると、販売店ごとに個別導入する負担が減る。成果指標は「来店予約数」「入庫件数」のような営業成果で測られている
+- **出典**: [Impel and FordDirect Partner to Bring Industry-Leading Conversational AI to Ford Dealers and Lincoln Retailers(Impel)](https://impel.ai/news/impel-and-ford-direct-partnership-conversational-ai-solutions/) / 最終確認日: 2026-10-02
+
+### 日産自動車(国内大手3社の一角) — 対象業務: 全社員向け社内チャットAI「Nissan AI-Chat」
+- **導入形態**: 内製(Azure OpenAI Service を基盤にした社内チャットアプリ)
+- **段階**: 全社展開
+- **やったこと**: 2023年3月の役員会議で生成AIが話題になったのをきっかけに、従業員サーベイで低かった「ツールが与えられているか」という環境面の課題を解消するため、社内チャットアプリを導入した
+- **効果**: 2024年7月公表のソフトバンクの導入事例ページで、約4人に1人がアクティブユーザー(ベンダー公表)。業務時間の削減などの効果の数値は公表なし
+- **学べること**: 経営層が「ツール環境の整備が遅れている」という課題を認識したうえで、全社向けの安全なチャット環境を先に用意すると、全社展開の土台になる
+- **出典**: [日産自動車(ソフトバンク法人 導入事例)](https://www.softbank.jp/business/case/202407/nissan) / 最終確認日: 2026-10-02
+
 ## 注意点・よくある誤解
 
 - **AI商談記録は「録音・AI利用への同意」が前提**: 顧客との会話を生成AIが要約する
@@ -218,6 +246,10 @@ Google・Amazonといった既存の生成AI基盤に接続する形で提供し
 - [RAG(検索拡張生成)の基本](../part07-data-analysis/rag-basics.md)
 
 ## 更新履歴
+
+### 2026-10-02: 導入事例カタログを新設し、事例3件を追加
+- **内容**: 現代自動車グループ(全社員向けAI基盤「H Chat Pro」)、フォードの販売店向け対話型AI(Impel×FordDirect)、日産自動車(Nissan AI-Chat)の3件をカード書式で追加
+- **出典**: [Hyundai Motor Group(公式)](https://www.hyundaimotorgroup.com/en/news/hyundai-motor-group-accelerates-ai-transformation-across-its-business-advancing-toward-the-physical-ai-era)、[Impel](https://impel.ai/news/impel-and-ford-direct-partnership-conversational-ai-solutions/)、[ソフトバンク法人 日産自動車事例](https://www.softbank.jp/business/case/202407/nissan)
 
 ### 2026-08-10: 車載AIアシスタント・整備支援AI・ホンダの事例を最新化
 
