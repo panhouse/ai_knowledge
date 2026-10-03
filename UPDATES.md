@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-03
+- [農業における生成AI活用事例](topics/part14-industry-cases/agriculture-ai-use-cases.md): 導入事例カタログを新設し、Bayer・Digital Green(Farmer.Chat)・Syngenta(Cropwise AI)の3件の事例を追加
+
 ## 2026-10-02
 - [購買・調達職における生成AI活用事例](topics/part15-job-role-cases/procurement-ai-use-cases.md): 導入事例カタログを新設し、NEC・ウォルマート・ハネウェルの3件の事例を追加
 - [自動車業界における生成AI活用事例](topics/part14-industry-cases/automotive-industry-ai-use-cases.md): 導入事例カタログを新設し、現代自動車グループ・フォード販売店(Impel)・日産自動車の3件の事例を追加
