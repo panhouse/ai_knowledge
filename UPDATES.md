@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-04
+- [法律事務所・弁護士法人における生成AI活用事例](topics/part14-industry-cases/law-firm-legal-services-ai-use-cases.md): 導入事例カタログを新設し、アンダーソン・毛利・友常・Clifford Chance・Latham & Watkinsの3件の事例を追加
+
 ## 2026-10-03
 - [農業における生成AI活用事例](topics/part14-industry-cases/agriculture-ai-use-cases.md): 導入事例カタログを新設し、Bayer・Digital Green(Farmer.Chat)・Syngenta(Cropwise AI)の3件の事例を追加
 
