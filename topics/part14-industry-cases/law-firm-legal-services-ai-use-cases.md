@@ -4,7 +4,7 @@ part: 14
 chapter: 第11章 士業・専門サービス
 tags: [法律事務所, 弁護士法人, 契約書レビュー, リーガルテック, Harvey, LegalOn, MNTSQ, 弁護士法72条, 生成AI活用事例]
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-10-04
 ---
 
 # 法律事務所・弁護士法人における生成AI活用事例
@@ -97,6 +97,34 @@ updated: 2026-09-15
 | 過去の契約・ひな形検索 | 各製品のひな形データベース・条文検索機能 | [RAG(検索拡張生成)](../part07-data-analysis/rag-basics.md)を組んだ社内検索 | 各社のナレッジ連携機能 |
 | 判例・法令の調査 | (国内専用の判例調査AIは発展途上) | 出典確認必須、原典リンクをたどる運用が前提 | Westlaw Edge / Lexis+ AI |
 
+## 導入事例カタログ
+
+上の「実務での使い方」は事務所運営の論点整理と汎用的なプロンプト例である。本節は実名の法律事務所の事例を、共通カード書式で集める。国内大手(西村あさひ・森・濱田松本・長島・大野・常松)の取り組みは「実務での使い方」の1節に記載済みのため、ここでは重複しない3件を追加する。
+
+### アンダーソン・毛利・友常法律事務所(国内大手5大事務所の一角) — 対象業務: 法令・判例・文献のリーガルリサーチ
+- **導入形態**: 専用SaaS導入(弁護士ドットコムのリーガル特化型AIエージェント「Legal Brainエージェント」)
+- **段階**: 全社展開(全弁護士・パラリーガルが対象)
+- **やったこと**: 自然言語で調査意図を入力すると、法令・判例・専門書籍などに基づいて法的論点を抽出し、構造的に示すAIエージェントを導入した。2025年11月11日に公表された
+- **効果**: 公表ページに数値なし(「リサーチ業務を大幅に短縮」という定性的な記述のみ。ベンダー公表)。評価点としてハルシネーションの抑制、出典の明確性、根拠文献の検証可能性が挙げられている
+- **学べること**: 法律業務のAIは「速さ」より、出典を辿って人が検証できることが導入の決め手になる
+- **出典**: [弁護士ドットコム、リーガル特化型AI「Legal Brainエージェント」をアンダーソン・毛利・友常法律事務所に導入](https://www.bengo4.com/corporate/news/article/7th8q9txl6/) / 最終確認日: 2026-10-04
+
+### Clifford Chance(英国の国際大手法律事務所・グローバル拠点) — 対象業務: 全職員向けの文書作成・会議・社内業務支援
+- **導入形態**: 専用SaaS導入(Copilot for Microsoft 365・Viva Suite)と内製(Azure OpenAI上の「Clifford Chance Assist」)の併用
+- **段階**: 全社展開(グローバルの全職員が対象)
+- **やったこと**: 2023年に、Azure OpenAI Service上で自社開発したAIツール「Clifford Chance Assist」を1,800人超のトライアルを経て全事務所に展開した。2024年2月28日には、Copilot for Microsoft 365とViva Suite(Viva InsightsとViva Learningを含む)をグローバルの全職員に導入すると公表した
+- **効果**: 公表ページに数値なし(自社公表)
+- **学べること**: 自社開発の小規模なツールで試し、使い慣れた既存の業務ツール(Microsoft 365)へ広げる順序は、他の専門事務所にも真似しやすい
+- **出典**: [Clifford Chance expands use of generative AI with deployment of Copilot for Microsoft 365 and Viva Suite for its global workforce(Clifford Chance)](https://www.cliffordchance.com/news/news/2024/02/clifford-chance-generative-ai-microsoft.html) / 最終確認日: 2026-10-04
+
+### Latham & Watkins(米国の国際大手法律事務所・海外事例) — 対象業務: 法律調査・文書分析・起案
+- **導入形態**: 専用SaaS導入(Harveyの生成AIスイート)
+- **段階**: 全社展開(全世界の弁護士と法務関連の専門職が対象)
+- **やったこと**: Harveyの生成AIソリューション一式の全社ライセンスを契約し、法律調査・文書分析・起案などに使えるようにした。2025年8月11日に公表された
+- **効果**: 公表ページに数値なし(自社公表)
+- **学べること**: 一部の部署の試行にとどめず全社ライセンスで揃える事務所が出てきている。ただし効果は公表されておらず、導入規模は成果の証拠ではない
+- **出典**: [Latham Announces Firmwide Deployment of Harvey(Latham & Watkins)](https://www.lw.com/en/news/2025/08/latham-announces-firmwide-deployment-of-harvey) / 最終確認日: 2026-10-04
+
 ## 注意点・よくある誤解
 
 - **弁護士法72条(非弁行為の禁止)は依然として境界線である**: 法務省の2023年8月ガイドラインが明確にしたのは、チェックリストに基づく一般的な説明・修正例の提示は弁護士法72条の「鑑定」等にあたらないという点であり、AIが個別事案について法的な結論を出して代理・交渉まで行えば非弁行為に該当しうる。契約書レビューAIの利用範囲を「一般的な指摘」にとどめ、個別の法的助言・交渉代理はAIに行わせない設計を維持する必要がある([LegalOn Technologies公式](https://legalontech.jp/6611/))
@@ -118,6 +146,10 @@ updated: 2026-09-15
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-10-04: 導入事例カタログを新設し、事例3件を追加
+- **内容**: アンダーソン・毛利・友常(Legal Brainエージェント)、Clifford Chance(Copilot・Viva)、Latham & Watkins(Harvey全社導入)の3件をカード書式で追加
+- **出典**: [弁護士ドットコム](https://www.bengo4.com/corporate/news/article/7th8q9txl6/)、[Clifford Chance](https://www.cliffordchance.com/news/news/2024/02/clifford-chance-generative-ai-microsoft.html)、[Latham & Watkins](https://www.lw.com/en/news/2025/08/latham-announces-firmwide-deployment-of-harvey)
 
 ### 2026-09-15: 初版執筆
 - **内容**: 法律事務所・弁護士法人という事業体単位での生成AI活用事例として、西村あさひ法律事務所(AI基本方針・ベスト・オブ・ブリード)、森・濱田松本法律事務所(Harveyとのアジア初独占提携、LegalOn Cloud「MORI HAMADAライブラリー」)、長島・大野・常松法律事務所(MNTSQ AI契約アシスタントのプレイブック監修)といった大手事務所の「知見の製品化」事例、国内契約書レビューAI各製品(LegalForce/MNTSQ/GVA assist/BoostDraft)の比較、海外のeディスカバリー(Relativity/Everlaw)・判例調査AI(Westlaw Edge/Lexis+ AI)の動向、弁護士法72条をめぐる2023年法務省ガイドライン、日弁連の2025年9月「生成AI利活用に関する注意事項」、米国での架空判例引用による懲戒・制裁事例を整理した
