@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-05
+- [スーパーマーケット業界における生成AI活用事例](topics/part14-industry-cases/supermarket-industry-ai-use-cases.md): 導入事例カタログを新設し、アオキスーパー・ヤオコー・サミットの3件の事例を追加
+
 ## 2026-10-04
 - [翻訳・通訳担当における生成AI活用事例](topics/part15-job-role-cases/translation-interpretation-ai-use-cases.md): 導入事例カタログを新設し、日本経済新聞社・Deutsche Bahn・Paysendの3件の事例を追加
 - [法律事務所・弁護士法人における生成AI活用事例](topics/part14-industry-cases/law-firm-legal-services-ai-use-cases.md): 導入事例カタログを新設し、アンダーソン・毛利・友常・Clifford Chance・Latham & Watkinsの3件の事例を追加
