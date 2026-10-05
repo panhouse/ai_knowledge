@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-05
+- [百貨店業界における生成AI活用事例](topics/part14-industry-cases/department-store-industry-ai-use-cases.md): 導入事例カタログを新設し、東武百貨店・東急百貨店・そごう・西武の3件の事例を追加
 - [スーパーマーケット業界における生成AI活用事例](topics/part14-industry-cases/supermarket-industry-ai-use-cases.md): 導入事例カタログを新設し、アオキスーパー・ヤオコー・サミットの3件の事例を追加
 
 ## 2026-10-04
