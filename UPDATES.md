@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-07
+- [大学・高等教育機関における生成AI活用事例](topics/part14-industry-cases/higher-education-industry-ai-use-cases.md): 導入事例カタログを新設し、追手門学院大学・名古屋工業大学・立教学院・千葉工業大学の4件の事例を追加
+
 ## 2026-10-05
 - [百貨店業界における生成AI活用事例](topics/part14-industry-cases/department-store-industry-ai-use-cases.md): 導入事例カタログを新設し、東武百貨店・東急百貨店・そごう・西武の3件の事例を追加
 - [スーパーマーケット業界における生成AI活用事例](topics/part14-industry-cases/supermarket-industry-ai-use-cases.md): 導入事例カタログを新設し、アオキスーパー・ヤオコー・サミットの3件の事例を追加
