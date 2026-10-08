@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-08
+- [ゲーム業界における生成AI活用事例](topics/part14-industry-cases/game-industry-ai-use-cases.md): 導入事例カタログを新設し、スクウェア・エニックス・バンダイナムコ研究所・セガの3件の事例を追加
+
 ## 2026-10-07
 - [大学・高等教育機関における生成AI活用事例](topics/part14-industry-cases/higher-education-industry-ai-use-cases.md): 導入事例カタログを新設し、追手門学院大学・名古屋工業大学・立教学院・千葉工業大学の4件の事例を追加
 
