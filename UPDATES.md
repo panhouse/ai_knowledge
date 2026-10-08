@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-08
+- [記者・編集者における生成AI活用事例](topics/part15-job-role-cases/journalist-editor-ai-use-cases.md): 導入事例カタログを新設し、朝日新聞社・毎日新聞社・信濃毎日新聞社の3件の事例を追加
 - [ゲーム業界における生成AI活用事例](topics/part14-industry-cases/game-industry-ai-use-cases.md): 導入事例カタログを新設し、スクウェア・エニックス・バンダイナムコ研究所・セガの3件の事例を追加
 
 ## 2026-10-07
