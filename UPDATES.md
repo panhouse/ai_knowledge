@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-09
+- [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): 導入事例カタログを新設し、キリンHD/キリンビール・セブン-イレブン・ジャパン・PepsiCoの3件の事例を追加
 - [アパレル・ファッション業界における生成AI活用事例](topics/part14-industry-cases/apparel-fashion-ai-use-cases.md): 導入事例カタログを新設し、ワークマン・Mango・Walmartの3件の事例を追加
 
 ## 2026-10-08
