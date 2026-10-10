@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-10
+- [医師における生成AI活用事例](topics/part15-job-role-cases/physician-ai-use-cases.md): 導入事例カタログを新設し、The Permanente Medical Group・藤田医科大学病院・兵庫医科大学病院・済生会二日市病院の4件の事例を追加
 - [地方銀行・信用金庫業界における生成AI活用事例](topics/part14-industry-cases/regional-bank-credit-union-ai-use-cases.md): 導入事例カタログを新設し、めぶきFG・京都銀行・北國銀行・七十七銀行の4件の事例を追加
 
 ## 2026-10-09
