@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-10
+- [地方銀行・信用金庫業界における生成AI活用事例](topics/part14-industry-cases/regional-bank-credit-union-ai-use-cases.md): 導入事例カタログを新設し、めぶきFG・京都銀行・北國銀行・七十七銀行の4件の事例を追加
+
 ## 2026-10-09
 - [メディア・広告・エンタメにおける生成AI活用事例](topics/part14-industry-cases/media-entertainment-ai-use-cases.md): 導入事例カタログを新設し、テレビ朝日×AI model・読売テレビ・電通/電通デジタル/SB Intuitionsの3件の事例を追加
 - [人材紹介・人材サービス業における生成AI活用事例](topics/part14-industry-cases/staffing-recruiting-industry-ai-use-cases.md): 導入事例カタログを新設し、Adecco Group・パーソルテンプスタッフ・Randstadの3件の事例を追加
