@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-11
+- [鉄道業界における生成AI活用事例](topics/part14-industry-cases/railway-industry-ai-use-cases.md): 導入事例カタログを新設し、京王電鉄(身だしなみ評価・KEIO AI-Hub)・JR東海の3件の事例を追加
+
 ## 2026-10-10
 - [調剤薬局・ドラッグストア業界における生成AI活用事例](topics/part14-industry-cases/pharmacy-drugstore-industry-ai-use-cases.md): 導入事例カタログを新設し、日本調剤・アインHD・コスモファーマ・クリエイトエス・ディーの4件の事例を追加(早見表の日本調剤の数値表現を公式発表に合わせて修正)
 - [医師における生成AI活用事例](topics/part15-job-role-cases/physician-ai-use-cases.md): 導入事例カタログを新設し、The Permanente Medical Group・藤田医科大学病院・兵庫医科大学病院・済生会二日市病院の4件の事例を追加
