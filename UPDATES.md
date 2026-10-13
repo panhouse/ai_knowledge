@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-13
+- [食品製造業における生成AI活用事例](topics/part14-industry-cases/food-manufacturing-ai-use-cases.md): 導入事例カタログを新設し、アサヒビール・明治・日本ハムの3件の事例を追加
+
 ## 2026-10-11
 - [鉄道業界における生成AI活用事例](topics/part14-industry-cases/railway-industry-ai-use-cases.md): 導入事例カタログを新設し、京王電鉄(身だしなみ評価・KEIO AI-Hub)・JR東海の3件の事例を追加
 
