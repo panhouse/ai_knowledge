@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-15
+- [決済・フィンテック業界における生成AI活用事例](topics/part14-industry-cases/payment-fintech-industry-ai-use-cases.md): 導入事例カタログを新設し、三井住友カード・Mastercard・Stripeの3件の事例を追加
+
 ## 2026-10-14
 - [商社・卸売業における生成AI活用事例](topics/part14-industry-cases/trading-wholesale-ai-use-cases.md): 導入事例カタログを新設し、住友商事・国分グループ・豊田通商の3件の事例を追加
 
