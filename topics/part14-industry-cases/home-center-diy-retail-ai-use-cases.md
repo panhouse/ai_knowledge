@@ -4,7 +4,7 @@ part: 14
 chapter: "第2章 小売・流通・EC"
 tags: [ホームセンター, DIY, 小売, 生成AI活用事例, 在庫最適化, 画像生成, 接客AI, RAG]
 created: 2026-08-30
-updated: 2026-08-30
+updated: 2026-10-16
 ---
 
 # ホームセンター(DIY小売)業界における生成AI活用事例
@@ -181,6 +181,34 @@ updated: 2026-08-30
 【関連商品】(あれば型番・売り場)
 ```
 
+## 導入事例カタログ
+
+上の「実務での使い方」で取り上げたカインズ・DCMとは重複しない、実名ホームセンター(海外大手2社・国内1社)の事例を共通カード書式で集める。
+
+### Lowe's(米国ホームセンター大手・約1,700店) — 対象業務: 売り場スタッフ向けAIアシスタント「Mylow Companion」
+- **導入形態**: 内製+ベンダー連携(OpenAIと共同開発。顧客向けチャットボット「Mylow」と同じ基盤)
+- **段階**: 全社展開(2025年5月5日、1,700店超の全店の従業員向けに提供開始と公表)
+- **やったこと**: 売り場の携帯端末向けに、商品情報・DIYの手順アドバイス・在庫情報を自然文(音声入力も可)で引けるアプリを提供。新人でも、自分の担当外の売り場でも、顧客に自信を持って対応できるようにする狙い
+- **効果**: 数値公表なし(ニュースリリース転載記事に業績・削減時間等の指標の記載なし。自社公表)
+- **学べること**: 顧客向けボットと同じ基盤を従業員向けにも流用すると、商品知識の格差を埋める現場ツールを低コストで作れる
+- **出典**: [Lowe's Deploys First At-Scale AI Assistant for Retail Associates(Lowe's発表の転載・Retail Restaurant FB)](https://retailrestaurantfb.com/lowes-deploys-first-at-scale-ai-assistant-for-retail-associates/) / 最終確認日: 2026-10-16
+
+### The Home Depot(米国ホームセンター最大手・米国2,000店超) — 対象業務: 顧客向けAIアシスタント「Magic Apron」(Web・アプリ・店内)
+- **導入形態**: 内製(大規模言語モデルをベースに、同社のプロジェクト知識・商品カタログで学習した独自ツール)
+- **段階**: 全社展開(2025年3月6日にWeb・アプリで発表。2026年9月に米国の店舗へ店内機能を拡大と報道)
+- **やったこと**: How-to・商品質問への回答、プロジェクトガイド、レビュー要約をWeb・アプリで提供。店内では店舗の現地情報を加え、売り場の地図表示・通路単位の商品位置・店舗在庫の確認を、テキスト・音声・画像検索で案内する(アプリの「Store Mode」またはQRコードから利用)。店舗・コンタクトセンターのスタッフを支える基盤とも位置づけ
+- **効果**: 「毎月数百万件の質問に回答」(2026年9月時点・自社発表の報道)。売上等の定量効果は公表なし
+- **学べること**: ECで育てたAIに「店舗固有の在庫・売り場情報」を足して店内に持ち込むと、売り場スタッフの代替ではなく補完として使える
+- **出典**: [The Home Depot Introduces Magic Apron(プレスリリース・Seeking Alpha掲載)](https://seekingalpha.com/pr/20025603-the-home-depot-introduces-magic-apron-a-suite-of-advanced-ai-tools-to-help-customers-with) / [The Home Depot extends AI assistance to stores(Retail Dive)](https://www.retaildive.com/news/the-home-depot-extends-ai-assistance-stores/829240/) / 最終確認日: 2026-10-16
+
+### グッデイ(北部九州・山口を中心とする66店舗のホームセンター) — 対象業務: 園芸相談AI「GooDay園芸サポートAI」
+- **導入形態**: 専用SaaS導入(GreenSnap社の植物育成AIエンジン「growplantsAI」を活用、同社が開発協力)
+- **段階**: 部門展開(2024年9月25日に導入開始。店頭POPの設置は一部店舗から)
+- **やったこと**: グッデイ独自のよくある質問を学習させ、店頭POPのQRコードをスマホで読み取る、またはLINE公式アカウントのメニューから園芸の相談ができるようにした
+- **効果**: 数値公表なし(利用件数・売上効果の記載なし。自社公表)
+- **学べること**: 自前でモデルを作らず、専門領域のAIエンジンに自社のFAQを載せて、店頭QR+LINEという既存の接点に置くだけで始められる
+- **出典**: [グッデイ、AIを活用した「GooDay園芸サポートAI」を導入(@Press)](https://www.atpress.ne.jp/news/7238650) / 最終確認日: 2026-10-16
+
 ## 注意点・よくある誤解
 
 - **発注・在庫管理の自動化は、データ基盤の統合が先**: カインズの事例でも、
@@ -218,6 +246,10 @@ ChatGPTやCopilotのカスタムGPT・Gemに読み込ませ、上記のプロン
 - [画像・PDFの読み取り活用(Vision入力)の基本](../part07-data-analysis/vision-input-basics.md)
 
 ## 更新履歴
+
+### 2026-10-16: 導入事例カタログを新設し、事例3件を追加
+- **内容**: Lowe's(Mylow Companion)、The Home Depot(Magic Apron)、グッデイ(GooDay園芸サポートAI)の3件をカード書式で追加
+- **出典**: [Retail Restaurant FB(Lowe's発表の転載)](https://retailrestaurantfb.com/lowes-deploys-first-at-scale-ai-assistant-for-retail-associates/)、[Seeking Alpha(Home Depotプレスリリース)](https://seekingalpha.com/pr/20025603-the-home-depot-introduces-magic-apron-a-suite-of-advanced-ai-tools-to-help-customers-with)、[Retail Dive](https://www.retaildive.com/news/the-home-depot-extends-ai-assistance-stores/829240/)、[@Press(グッデイ)](https://www.atpress.ne.jp/news/7238650)
 
 ### 2026-08-30: 初版執筆
 - **内容**: Part14(業種別 生成AI活用事例)小売・流通・EC章に、ホームセンター(DIY小売)
