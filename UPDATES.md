@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-18
+- [SIer・システムインテグレーション業界における生成AI活用事例](topics/part14-industry-cases/system-integrator-industry-ai-use-cases.md): 導入事例カタログを新設し、日立製作所・SCSK・TISの3件の事例を追加(日立の記述を一次情報に合わせて訂正)
 - [公認会計士・監査法人職員における生成AI活用事例](topics/part15-job-role-cases/cpa-external-auditor-ai-use-cases.md): 導入事例カタログを新設し、あずさ監査法人/KPMG・デロイト トーマツ・EY新日本の3件の事例を追加(KPMGの「35%削減」の記述を一次情報で確認できないため削除)
 - [BPO・コールセンター運営業界における生成AI活用事例](topics/part14-industry-cases/bpo-call-center-industry-ai-use-cases.md): 導入事例カタログを新設し、SBIいきいき少短・阪急電鉄×アルティウスリンク・JR西日本カスタマーリレーションズの3件の事例を追加(東京ガス・レオパレス21の記述を一次情報に合わせて訂正)
 
