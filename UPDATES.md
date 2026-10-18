@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-18
+- [BPO・コールセンター運営業界における生成AI活用事例](topics/part14-industry-cases/bpo-call-center-industry-ai-use-cases.md): 導入事例カタログを新設し、SBIいきいき少短・阪急電鉄×アルティウスリンク・JR西日本カスタマーリレーションズの3件の事例を追加(東京ガス・レオパレス21の記述を一次情報に合わせて訂正)
+
 ## 2026-10-17
 - [自動車ディーラー業界における生成AI活用事例](topics/part14-industry-cases/car-dealership-industry-ai-use-cases.md): 導入事例カタログを新設し、トヨタモビリティ新大阪・ホンダカーズ埼玉西・三重トヨペットの3件の事例を追加
 
