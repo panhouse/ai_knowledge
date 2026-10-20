@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-20
+- [看護師・医療従事者における生成AI活用事例](topics/part15-job-role-cases/nurse-medical-staff-ai-use-cases.md): 導入事例カタログを新設し、織田病院・大阪国際がんセンター・関西医科大学の3件の事例を追加
+
 ## 2026-10-19
 - [広告代理店業界における生成AI活用事例](topics/part14-industry-cases/advertising-agency-industry-ai-use-cases.md): 導入事例カタログを新設し、dentsu Japan・Hakuhodo DY ONE・ソウルドアウトグループの3件の事例を追加(電通の「4,500エージェント」・ADK「トラポケ」の記述を一次情報で確認できないため削除、ADK×DAIVIDの記述を訂正)
 
