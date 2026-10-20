@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-20
+- [化学・素材業界における生成AI活用事例](topics/part14-industry-cases/chemical-materials-industry-ai-use-cases.md): 導入事例カタログを新設し、住友化学・三井化学×日立・三菱マテリアルの3件の事例を追加
 - [看護師・医療従事者における生成AI活用事例](topics/part15-job-role-cases/nurse-medical-staff-ai-use-cases.md): 導入事例カタログを新設し、織田病院・大阪国際がんセンター・関西医科大学の3件の事例を追加
 
 ## 2026-10-19
