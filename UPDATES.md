@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-23
+- [カスタマーサクセス職における生成AI活用事例](topics/part15-job-role-cases/customer-success-ai-use-cases.md): 導入事例カタログを新設し、Greenlight Guru・Lunit International・ABBYYの3件の海外事例を追加(いずれもベンダー公表、国内の数値付き事例は確認できず)
 - [出版・印刷業界における生成AI活用事例](topics/part14-industry-cases/publishing-printing-ai-use-cases.md): 導入事例カタログを新設し、Springer Nature・ブックオフ・旺文社の3件の事例を追加(いずれも効果の数値は公表確認できず「数値公表なし」)
 - [半導体・電機業界における生成AI活用事例](topics/part14-industry-cases/semiconductor-electronics-ai-use-cases.md): 導入事例カタログを新設し、村田製作所・ローム・東京エレクトロンの3件の事例を追加(ロームは見込み値、東京エレクトロンは検証段階の数値と明記)
 
