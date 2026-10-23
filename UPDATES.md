@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-23
+- [半導体・電機業界における生成AI活用事例](topics/part14-industry-cases/semiconductor-electronics-ai-use-cases.md): 導入事例カタログを新設し、村田製作所・ローム・東京エレクトロンの3件の事例を追加(ロームは見込み値、東京エレクトロンは検証段階の数値と明記)
+
 ## 2026-10-22
 - [エネルギー・電力・インフラにおける生成AI活用事例](topics/part14-industry-cases/energy-infrastructure-ai-use-cases.md): 導入事例カタログを新設し、関西電力・九州電力・中部電力の3件の事例を追加(いずれも効果の数値は公表確認できず「数値公表なし」)
 
