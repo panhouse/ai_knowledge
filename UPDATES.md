@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-10-24
+- [教員・保育士における生成AI活用事例](topics/part15-job-role-cases/teacher-childcare-worker-ai-use-cases.md): 導入事例カタログを新設し、文科省実証事業の岩倉市・石垣市・新座市・宝塚市の3件の事例を追加(実証段階の値で、保育士の公表事例は確認できず)
 - [税理士における生成AI活用事例](topics/part15-job-role-cases/tax-accountant-ai-use-cases.md): 導入事例カタログを新設し、PwC税理士法人×三菱商事・TKC・コミクスの3件の事例を追加(PwCは実証実験の値、TKCは方針表明で数値公表なし)
 - [薬剤師における生成AI活用事例](topics/part15-job-role-cases/pharmacist-ai-use-cases.md): 導入事例カタログを新設し、カケハシ・日本調剤・ウィーメックス・トモズの4件の事例を追加(日本調剤の「7割削減」は原文で確認できず削除)
 
