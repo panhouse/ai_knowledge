@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-24
+- [薬剤師における生成AI活用事例](topics/part15-job-role-cases/pharmacist-ai-use-cases.md): 導入事例カタログを新設し、カケハシ・日本調剤・ウィーメックス・トモズの4件の事例を追加(日本調剤の「7割削減」は原文で確認できず削除)
+
 ## 2026-10-23
 - [カスタマーサクセス職における生成AI活用事例](topics/part15-job-role-cases/customer-success-ai-use-cases.md): 導入事例カタログを新設し、Greenlight Guru・Lunit International・ABBYYの3件の海外事例を追加(いずれもベンダー公表、国内の数値付き事例は確認できず)
 - [出版・印刷業界における生成AI活用事例](topics/part14-industry-cases/publishing-printing-ai-use-cases.md): 導入事例カタログを新設し、Springer Nature・ブックオフ・旺文社の3件の事例を追加(いずれも効果の数値は公表確認できず「数値公表なし」)
