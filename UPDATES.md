@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-10-25
+- [保険営業(生命保険・損害保険)における生成AI活用事例](topics/part15-job-role-cases/insurance-agent-ai-use-cases.md): 導入事例カタログを新設し、アイリック×住友生命×Finatext・三井住友海上×hokan・日本生命の3件の事例を追加(いずれも数値公表なし。日本生命N-Chatを内務職員向けに訂正)
+
 ## 2026-10-24
 - [教員・保育士における生成AI活用事例](topics/part15-job-role-cases/teacher-childcare-worker-ai-use-cases.md): 導入事例カタログを新設し、文科省実証事業の岩倉市・石垣市・新座市・宝塚市の3件の事例を追加(実証段階の値で、保育士の公表事例は確認できず)
 - [税理士における生成AI活用事例](topics/part15-job-role-cases/tax-accountant-ai-use-cases.md): 導入事例カタログを新設し、PwC税理士法人×三菱商事・TKC・コミクスの3件の事例を追加(PwCは実証実験の値、TKCは方針表明で数値公表なし)
