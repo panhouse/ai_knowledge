@@ -59,5 +59,5 @@
 | (スキャンで見つけた候補をここに追記する) | | | | | | |
 | 小売・流通・ECにおける生成AI活用事例 | 14/第2章 | 事例追加 | https://www.watch.impress.co.jp/docs/news/2014409.html / https://www.lycorp.co.jp/ja/news/release/016840/ | 2026-11-11 | B | 完了(2026-11-11、PR #801) |
 | 内部監査職における生成AI活用事例 | 15/第7章 | 事例追加 | https://jpn.nec.com/ad/onlinetv/ax-challenge-audit-ai.html / https://www.ally.com/tech/auditors-are-innovators-using-ai-to-realize-the-future-of-audit/ | 2026-11-11 | B | 完了(2026-11-11、PR #802) |
-| "AIレッドチーミングの基本(実施体制・頻度・外部ベンダー活用)"(AISI「AIセーフティに関する評価観点ガイド」第1.20版=2026年7月、AIエージェント向け評価観点の拡充を反映) | 4/第2章 | 更新 | https://aisi.go.jp/output/output_framework/guide_to_evaluation_perspective_on_ai_safety/ | 2026-11-11 | B | 未着手 |
-| "日本における生成AI動向(採用状況・主要プレイヤー・政策)"(総務省 令和8年版情報通信白書の企業の生成AI業務利用率などを反映) | 13/第4章 | 更新 | https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r08/html/nd121130.html | 2026-11-11 | B | 未着手 |
+| AIレッドチーミングの基本(実施体制・頻度・外部ベンダー活用) — 追記ネタ: AISI「AIセーフティに関する評価観点ガイド」第1.20版=2026年7月、AIエージェント向け評価観点の拡充を反映 | 4/第2章 | 更新 | https://aisi.go.jp/output/output_framework/guide_to_evaluation_perspective_on_ai_safety/ | 2026-11-11 | B | 未着手 |
+| 日本における生成AI動向(採用状況・主要プレイヤー・政策) — 追記ネタ: 総務省 令和8年版情報通信白書の企業の生成AI業務利用率などを反映 | 13/第4章 | 更新 | https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r08/html/nd121130.html | 2026-11-11 | B | 未着手 |
