@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-12
+- [品質管理・QA職における生成AI活用事例](topics/part15-job-role-cases/quality-assurance-ai-use-cases.md): 導入事例カタログを新設し、日本精工・TIS・アルダグラムの3件の事例を追加(TISの約42%削減は検証段階の値、他2件は効果の数値公表なしと明記)
+
 ## 2026-11-11
 - [内部監査職における生成AI活用事例](topics/part15-job-role-cases/internal-audit-ai-use-cases.md): 導入事例カタログを新設し、NEC・Ally Financial・The Exeterの3件の事例を追加(NECは数値公表なし、海外2件は見込み値・計画値と明記)
 - [小売・流通・ECにおける生成AI活用事例](topics/part14-industry-cases/retail-ai-use-cases.md): 導入事例カタログを新設し、イオンリテール・LINEヤフー(Yahoo!ショッピング)・アスクルの3件の事例を追加(LINEヤフーの30%削減は見込み値、他は数値公表なしと明記)
