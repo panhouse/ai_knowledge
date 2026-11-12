@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-12
+- [AIレッドチーミングの基本(実施体制・頻度・外部ベンダー活用)](topics/part04-risk-security/ai-red-teaming-basics.md): AISI評価観点ガイド第1.20版(AIエージェント向け評価観点の拡充)とOSS評価ツールaisevを反映し、エージェント向けテストの対応表とチェック項目を追加
 - [介護業界における生成AI活用事例](topics/part14-industry-cases/eldercare-ai-use-cases.md): 導入事例カタログを新設し、SOMPOケア・シーユーシー・アズパートナーズの3件の事例を追加(シーユーシーは2拠点の実証値、アズパートナーズは入力・転記時間を含まない自社公表値、SOMPOケアは数値公表なしと明記)
 - [品質管理・QA職における生成AI活用事例](topics/part15-job-role-cases/quality-assurance-ai-use-cases.md): 導入事例カタログを新設し、日本精工・TIS・アルダグラムの3件の事例を追加(TISの約42%削減は検証段階の値、他2件は効果の数値公表なしと明記)
 
