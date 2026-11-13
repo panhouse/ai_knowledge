@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-13
+- [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part15-job-role-cases/production-management-scm-ai-use-cases.md): 導入事例カタログを新設し、ヤンマー建機(生産計画の素案作成)・中部鋼鈑(判断基準の言語化を含む生産計画AIのPoC)・NVIDIA(AI Planner)の3件を追加(中部鋼鈑は数値公表なし、NVIDIAは自社公表値と明記)
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): AISI「ヘルスケア領域におけるAIセーフティ評価観点ガイド」(2026年4月)の10評価観点を、導入側がベンダーに確認したい項目と対応付けて注意点に追加
 - [知財・特許担当者における生成AI活用事例](topics/part15-job-role-cases/ip-patent-ai-use-cases.md): 導入事例カタログを新設し、島津製作所(Genzo AI)・NEC(知財DXツール)・オムロン(RD Buddy上の知財AIエージェント)の3件を追加(島津・NECは外販製品の自社公表値、オムロンは数値公表なしと明記)
 - [証券・資産運用業界における生成AI活用事例](topics/part14-industry-cases/asset-management-securities-industry-ai-use-cases.md): 導入事例カタログを新設し、三井住友DSアセットマネジメント(運用部門のAIR)・アセットマネジメントOne(OneQの利用定着)・マネックス証券(MONEX MCP Server)の3件を追加(AIRの年5万時間は見込み値、OneQは利用率指標と明記)
