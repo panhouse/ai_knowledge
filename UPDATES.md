@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-14
+- [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part13-ai-trends/ai-industry-major-players-trends.md): OpenAIの新ラウンド第1回クロージング(評価額1.25兆ドル・約110億ドル、報道ベース)とAnthropicのS-1公開・IPO仮条件(最大644億ドル、11月19日取引開始予定)を反映し、シリーズH評価額の桁の誤記を訂正
 - [人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例](topics/part15-job-role-cases/recruiting-agent-career-advisor-ai-use-cases.md): 導入事例カタログを新設し、アデコ・ウィルオブ・ワーク(いずれもMiiTel Meetings)・マスメディアン(MENDAN)・アイランド・ブレイン(SalesDockのAI活用支援)の4件を追加(いずれもベンダー公表、アデコの応募数増は増員の影響を含むと明記)
 - [経営コンサルティング業界における生成AI活用事例](topics/part14-industry-cases/management-consulting-industry-ai-use-cases.md): 導入事例カタログを新設し、船井総研グループ(Gemini全社展開)・デロイト トーマツ コンサルティング(資料作成支援ツールの内製)・McKinsey(AIエージェントの全社活用)・Bain(ChatGPT EnterpriseとカスタムGPT)の4件を追加(McKinseyはCEO発言ベース、デロイトは2024年3月時点の公表と明記)
 - [化粧品業界における生成AI活用事例](topics/part14-industry-cases/cosmetics-industry-ai-use-cases.md): 導入事例カタログを新設し、資生堂ジャパン(Gemini全社展開と原料探索エージェント)・ファイントゥデイ(在庫調整などのAIエージェント試行)・I-ne(Snowflake Intelligenceによる全社データ分析)の3件を追加(ファイントゥデイはパイロット段階の値、I-neは数値公表なしと明記)
@@ -242,7 +243,7 @@
 - [ベクトルデータベースの基本(Embeddingとの関係)](topics/part07-data-analysis/vector-database-basics.md): Amazon S3 Vectors・クラウド純正勢を追加し、Pinecone/Weaviate/Zillizの最新動向を反映
 - [生成AIの規制・ガバナンス動向(企業が押さえるべきポイント)](topics/part04-risk-security/ai-regulation-and-governance-trends.md): EU規則番号確定・新期限、日本のプリンシプル・コード正式決定、米国新法を反映して最新化
 - [生成AIの最新モデル動向](topics/part13-ai-trends/ai-model-trends-basics.md): GPT-6 AstraのPlus展開・Gemini 3.8 Flash・GLM-5.2を反映して最新化
-- [生成AI業界の主要プレイヤーと動向](topics/part13-ai-trends/ai-industry-major-players-trends.md): GPT-6 Astra投入・Anthropic IPO日程後退・SpaceXのCursor買収完了等を反映して最新化
+- [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part13-ai-trends/ai-industry-major-players-trends.md): GPT-6 Astra投入・Anthropic IPO日程後退・SpaceXのCursor買収完了等を反映して最新化
 
 ## 2026-09-18
 - [Anthropic API(Claude API)の基本](topics/part09-api-development/anthropic-api-basics.md): Claude Fable 5.1の登場とSonnet 5の価格恒久化、Fast modeを反映して最新化
