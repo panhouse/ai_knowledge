@@ -4,7 +4,7 @@ part: 17
 chapter: 第1章 基盤モデル・フロンティアAI系
 tags: [基盤モデル, LLM, OpenAI, Anthropic, Google, Microsoft, Amazon, Meta, xAI]
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-11-14
 ---
 
 # 海外の主要基盤モデル企業一覧(フロンティアAI企業)
@@ -26,17 +26,17 @@ updated: 2026-09-19
 
 - **一言で**: ChatGPTと最新フラッグシップ「GPT-6 Astra」を開発する、非営利法人が支配権を持つ営利子会社(OpenAI Group PBC)体制のAI企業。
 - **代表プロダクト・サービス**: ChatGPT、GPT-6 Astra(2026年9月3日投入)、コーディングエージェント「Codex」、動画生成「Sora」、自社設計・Broadcom製造の推論特化チップ「Jalapeño」。
-- **特徴・強み**: 2026年3月末に総額1,220億ドルの資金調達を完了し評価額8,520億ドルに到達。ARR(年換算売上高)は2026年7月時点で約400億ドル(2025年末の倍)まで急拡大し、企業向け売上が四半期50%増で初めて法人向けが売上の過半を占める構成に転換した。上場は2027年目標との観測があったが、2026年9月13日にサム・アルトマンCEOがAI安全性対応を理由に「2026年中は上場しない」と明言する一方、同時期に評価額1.2兆〜1.5兆ドル規模の新規資金調達が投資家主導で協議されており、非公開のまま調達を続ける方針。SoftBankが主要出資者(累計出資額約646億ドル)で、日本法人はソフトバンクとの合弁「SB OAI Japan」を通じ法人向けAI「Crystal Intelligence」を展開。
+- **特徴・強み**: 2026年3月末に総額1,220億ドルの資金調達を完了し評価額8,520億ドルに到達。ARR(年換算売上高)は2026年7月時点で約400億ドル(2025年末の倍)まで急拡大し、企業向け売上が四半期50%増で初めて法人向けが売上の過半を占める構成に転換した。上場は2027年目標との観測があったが、2026年9月13日にサム・アルトマンCEOがAI安全性対応を理由に「2026年中は上場しない」と明言する一方、非公開のまま調達を続ける方針を取っている。2026年11月6日には、評価額1.25兆ドルの新ラウンドで約110億ドルの第1回クロージングを終えたとBloombergが関係者の話として報じ、CNBCも確認した(OpenAIは調達額・評価額を公式には発表していない)。このラウンドは当初約300億ドルを目指していたが、AI関連株の急落を受けて10月末に目標を最大200億ドルへ引き下げたと報じられており、残りは数週間以内に集める見込みとされる(2026年11月時点)。SoftBankが主要出資者(累計出資額約646億ドル)で、日本法人はソフトバンクとの合弁「SB OAI Japan」を通じ法人向けAI「Crystal Intelligence」を展開。
 - **料金の目安**: GPT-6 AstraのAPI価格は入力100万トークンあたり10ドル・出力50ドル(前世代GPT-5.6 Sol比で約2.5倍に上昇)。ChatGPTのプラン別料金・APIの詳細は[ChatGPTのモデル一覧と使い分け](../part03-ai-chat-tools/chatgpt-model-lineup.md)・[OpenAI APIの基本](../part09-api-development/openai-api-basics.md)を参照。
-- **最終確認日**: 2026-09-19
+- **最終確認日**: 2026-11-14
 
 ### Anthropic
 
 - **一言で**: 企業(エンタープライズ)向け利用に軸足を置く戦略を明確にしている、Claudeシリーズの開発元。
 - **代表プロダクト・サービス**: Claude(Opus/Sonnet/Haiku、最新モデルは「Claude Fable 5.1」「Claude Mythos 5.1」)、開発者向けエージェント「Claude Code」。
-- **特徴・強み**: 法人向けAPI市場でOpenAIを上回るシェアとの報道が続き、ARR(年換算売上高)は2026年4月300億ドル→5月470億ドル→7月末650億ドルと急拡大、第2四半期には四半期売上109億ドル・初の営業黒字(約5.6億ドル)を計上した。2026年9月時点でNasdaq上場に向けた手続きが進行中(当初9月末〜10月上旬目標だったが10月中旬以降・米中間選挙直前へ後ろ倒し)で、目標評価額は市場推計で最大2兆ドル規模、調達額130億ドル超との観測がある。増資に加え、特別目的会社(SPV)を介してGoogle製TPUをリースする「オフバランス」型のチップ調達契約を約60日間で総額710億ドル規模積み上げるなど、資金調達手法の多角化が進む。半導体・計算資源の調達先はAmazon・Google・Microsoft/Nvidia・Oracle Cloud Infrastructureと多岐にわたる。
+- **特徴・強み**: 法人向けAPI市場でOpenAIを上回るシェアとの報道が続き、ARR(年換算売上高)は2026年4月300億ドル→5月470億ドル→7月末650億ドルと急拡大、第2四半期には四半期売上109億ドル・初の営業黒字(約5.6億ドル)を計上した。2026年10月26日にS-1(上場申請書類)を公開し、Nasdaqにティッカー「ANT」で上場を申請した(主幹事はGoldman SachsとMorgan Stanley。直前の非公開ラウンドでの評価額は9,650億ドル)。11月11日に報じられた仮条件は1株70〜78ドルで、8.25億株の売り出しにより最大644億ドルを調達する。評価額は仮条件の上限で完全希薄化ベース約1.4兆ドル(ストックオプション等を除くと約1兆ドル)で、約6週間前に目安とされた約2兆ドルからは引き下げられた。これとは別にGoogle・Nvidia・AMDが主導し、Broadcom・Micron・Microsoft・TSMCが加わるコーナーストーン投資家向けの私募260億ドルがあり、合計で最大904億ドルの調達となる。取引開始は11月19日の予定(2026年11月14日時点では未上場)。S-1では2026年上期の売上高162.9億ドル(前年同期11.6億ドル)が開示された。増資に加え、特別目的会社(SPV)を介してGoogle製TPUをリースする「オフバランス」型のチップ調達契約を約60日間で総額710億ドル規模積み上げるなど、資金調達手法の多角化が進む。半導体・計算資源の調達先はAmazon・Google・Microsoft/Nvidia・Oracle Cloud Infrastructureと多岐にわたる。
 - **料金の目安**: 詳細な最新価格・プランは[Claudeの基本](../part03-ai-chat-tools/claude-basics.md)・[Anthropic APIの基本](../part09-api-development/anthropic-api-basics.md)を参照。
-- **最終確認日**: 2026-09-19
+- **最終確認日**: 2026-11-14
 
 ### Google(Alphabet / Google DeepMind)
 
@@ -90,6 +90,10 @@ updated: 2026-09-19
 - [国産基盤モデル・研究開発系AI企業一覧](../part16-japan-ai-companies/foundation-model-companies-japan.md)
 
 ## 更新履歴
+
+### 2026-11-14: OpenAIの新ラウンドとAnthropicのIPO申請・仮条件を反映
+- **内容**: OpenAIの評価額1.25兆ドルでの約110億ドルの第1回クロージング(Bloomberg報道・CNBC確認、OpenAIは公式発表なし)と目標額の引き下げ、AnthropicのS-1公開(Nasdaq、ティッカー「ANT」)・仮条件(1株70〜78ドル、最大644億ドル、上限で完全希薄化ベース約1.4兆ドル)・コーナーストーン私募260億ドル・11月19日取引開始予定を反映。両社の最終確認日を更新
+- **出典**: [TechCrunch: OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation](https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/)、[GV Wire(Reuters配信): OpenAI secures $11 billion funding at $1.25 trillion valuation](https://gvwire.com/2026/11/06/openai-secures-11-billion-funding-at-1-25-trillion-valuation-bloomberg-news-reports/)、[CNBC(2026-11-06)](https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html)、[CNBC(2026-10-31)](https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html)、[Decrypt: Anthropic makes IPO filing public, plans Nasdaq listing under ANT](https://decrypt.co/381818/anthropic-makes-ipo-filing-public-plans-nasdaq-listing-under-ant)、[The Next Web: Anthropic IPO terms](https://thenextweb.com/news/anthropic-ipo-terms-1-4-trillion-valuation)
 
 ### 2026-09-19: 初版執筆
 - **内容**: OpenAI・Anthropic・Google(Alphabet)・Microsoft・Amazon(AWS)・Meta・xAI(SpaceXAI)の7社について、企業としての立ち位置・資金調達・戦略・提携をまとめた。製品機能・料金の詳細は各社の個別ページ(Part3・Part9)へ内部リンクし、重複を避けた。数値・固有名詞はPart13「生成AI業界の主要プレイヤーと動向」で確認済みの出典に基づく
