@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-14
+- [海外の主要基盤モデル企業一覧(フロンティアAI企業)](topics/part17-overseas-ai-companies/foundation-model-companies-overseas.md): OpenAIの評価額1.25兆ドルでの約110億ドル調達(第1回クロージング、報道ベース)と、AnthropicのS-1公開・IPO仮条件(最大644億ドル、上限で約1.4兆ドル、11月19日取引開始予定)を反映
+
 ## 2026-11-13
 - [生産管理・SCM(サプライチェーンマネジメント)担当における生成AI活用事例](topics/part15-job-role-cases/production-management-scm-ai-use-cases.md): 導入事例カタログを新設し、ヤンマー建機(生産計画の素案作成)・中部鋼鈑(判断基準の言語化を含む生産計画AIのPoC)・NVIDIA(AI Planner)の3件を追加(中部鋼鈑は数値公表なし、NVIDIAは自社公表値と明記)
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): AISI「ヘルスケア領域におけるAIセーフティ評価観点ガイド」(2026年4月)の10評価観点を、導入側がベンダーに確認したい項目と対応付けて注意点に追加
