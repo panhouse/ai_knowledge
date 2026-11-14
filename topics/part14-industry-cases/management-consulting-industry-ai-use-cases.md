@@ -4,7 +4,7 @@ part: 14
 chapter: 第11章 士業・専門サービス
 tags: [経営コンサルティング, McKinsey, BCG, Bain, Big4, ナレッジマネジメント, AIエージェント, 生成AI活用事例]
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-11-14
 ---
 
 # 経営コンサルティング業界における生成AI活用事例
@@ -152,6 +152,42 @@ Enterprise・Claude・Gemini等)に自社の過去提案書・議事録をアッ
 | 資料・スライド作成 | Copilot for PowerPoint、Gemini for Workspace | BCG「Deckster」 | 各社汎用AI+社内テンプレートの組み合わせ |
 | 業務エージェント基盤 | Microsoft Copilot Studio、Dify等のノーコード基盤([Difyの基礎](../part10-nocode-lowcode/dify-basics.md)参照) | PwC 社内エージェントOS、KPMG「Agentspace」、Deloitte「Sidekick」「Zora AI」 | 各社個別のPoC(実証実験)段階が中心 |
 
+## 導入事例カタログ
+
+コンサルティングファームが**自社のコンサルタント業務に**生成AIを組み込んだ実名事例を、共通カード書式で集める(2026年11月時点。顧客向けのAI導入支援サービスは対象外)。公表される指標は「利用率」「作ったGPT・エージェントの数」「削減時間」が中心で、提案品質や受注への効果を数値で示した例はまだ少ない。事例ごとに公表時期が異なるので、時点を確認して読む。
+
+### 船井総研グループ(中堅・中小企業向け経営コンサルティング大手) — 対象業務: コンサルタントの日常業務・顧客向けツール作成・社内ナレッジ活用
+- **導入形態**: 汎用チャットAI活用(Google Workspace with Gemini、NotebookLM)
+- **段階**: 全社展開(検討開始から約4か月で全社導入を完了)
+- **やったこと**: 生成AIに積極的な50名を選んで先行トライアルを始め、1か月後に150名へ広げてから全社展開した。製造業担当のコンサルタントがGeminiに仕様を伝えて顧客向けの現場用アプリを自作したり、社内の業務アプリ開発用のスクリプト例や公式情報をNotebookLMに集めてナレッジベースにしたりしている
+- **効果**: Geminiの社内利用率97%。経験者が1日がかりで行っていたスクリプト作成が5〜10分に短縮できるケースもある(個別ケースの値で全社平均ではない)(2025年8月・ベンダー公表)
+- **学べること**: 積極層の少人数から始め、成功事例を共有しながら段階的に対象を広げると、AIに詳しくない層まで短期間で浸透させやすい
+- **出典**: [Google Workspace ブログ「船井総研グループ: 社内の 97% が Gemini を活用、AI でコンサルティング業務の価値を最大化」(2025年8月20日)](https://workspace.google.com/blog/ja/customer-stories/funai-soken-maximizes-the-value-of-consulting-services-with-ai) / 最終確認日: 2026-11-14
+
+### デロイト トーマツ コンサルティング(Big4系の国内コンサルティングファーム) — 対象業務: 提案・報告資料の作成/社内ナレッジ参照/社内会議の通訳・議事録
+- **導入形態**: 内製
+- **段階**: 部門展開(コンサルティング部門。チャットボットはグループ全体への展開予定と発表)
+- **やったこと**: 概要を入力すると、自社テンプレートとガイドラインに沿って資料の構成・スライドごとの内容・使うテンプレートを生成する資料作成支援ツールを自社開発した。あわせて、社内ファイルをもとに回答しプロンプトのテンプレートを保存・再利用できる社内チャットボット(2023年7月に全コンサルメンバーへ公開)と、社内オンライン会議向けの多言語リアルタイム通訳・議事録ツール(2024年1月公開)を整備した
+- **効果**: 社内チャットボットは2023年12月時点でコンサルメンバーのおよそ6割が利用(2024年3月・自社公表)。資料作成ツールの工数削減は数値公表なし
+- **学べること**: 汎用チャットにとどめず「自社テンプレート・ガイドラインに沿ったスライド構成の生成」まで作り込むと、ファーム固有の成果物の型をAIに守らせやすい
+- **出典**: [デロイト トーマツ ニュースリリース「生成AIを活用しコンサル業務を高度化～資料作成支援ツールなどを開発」(2024年3月13日)](https://www.deloitte.com/jp/ja/about/press-room/nr20240313.html) / 最終確認日: 2026-11-14
+
+### McKinsey & Company(米・戦略コンサルティング大手。海外事例) — 対象業務: 検索・要約・グラフ作成を担うAIエージェントの全社活用
+- **導入形態**: 内製
+- **段階**: 全社展開
+- **やったこと**: 社内AI「Lilli」(本文参照)に続き、検索・要約・グラフ作成などのタスクを自律的にこなすAIエージェントを人間のコンサルタントと並べて稼働させ、浮いた時間をより複雑な課題に振り向けている
+- **効果**: 稼働するAIエージェントは約2万5000、検索や要約などの作業を2025年の1年間で150万時間削減、過去6カ月間で250万点のグラフを作成(2026年1月のCES登壇でのグローバル・マネージング・パートナーの発言・第三者取材。第三者による検証はなく、エージェントの数え方も同社の定義による)
+- **学べること**: 「チャットAIを配る」段階から「エージェントを業務の担い手として数える」段階に進んでいる。ただし他社と比べるときは、エージェントの定義や削減時間の算定方法が自己申告である点に注意する
+- **出典**: [Business Insider Japan「マッキンゼーが『人間がAIに勝てる』3つのスキルを特定」(2026年1月13日)](https://www.businessinsider.jp/article/2601-mckinsey-boss-shares-human-skills-ai-models-cant-do/) / [Business Insider Japan(2026年1月16日)](https://www.businessinsider.jp/article/2601-mckinsey-workforce-ai-agents-consulting-industry-bob-sternfels/) / 最終確認日: 2026-11-14
+
+### Bain & Company(米・戦略コンサルティング大手。海外事例) — 対象業務: データ分析・社内ナレッジ検索・デューデリジェンス資料の分析
+- **導入形態**: 汎用チャットAI活用(ChatGPT Enterprise)+内製(社内AI基盤「Sage」)
+- **段階**: 全社展開
+- **やったこと**: シアトル・ワシントンDCオフィスでのパイロットで、Pythonによるデータ分析コードの生成や複雑なExcel処理の自動化に使えることを示してから、ChatGPT Enterpriseを全社展開した。社員が業務別のカスタムGPT(投資ファンド向けデューデリジェンスでデータルームの資料を分析するボット、調査票の骨子を作るツールなど)を作り、社内マーケットプレイスやコンテストで共有している
+- **効果**: 全社展開から2週間以内にコンサルティング・エキスパート部門の利用率60%、カスタムGPTは2,000超(2024年10月・自社公表)。カスタムGPTは2025年8月時点で19,000超(自社公表)。生産性の数値は公表なし
+- **学べること**: パイロットで具体的な使い道を示してから全社展開し、社員が作ったGPTを共有・表彰する仕組みで、利用を「配布されたAIを使う」から「自分でAIを作る」へ広げている
+- **出典**: [Bain & Company「How to Accelerate Progress on AI」(2024年10月2日)](https://www.bain.com/insights/how-to-accelerate-progress-on-ai/) / [Bain Careers Blog「Five ways Bain is leading with AI」(2025年8月21日)](https://www.bain.com/careers/life-at-bain/careers-blog/five-ways-bain-is-leading-with-ai/) / 最終確認日: 2026-11-14
+
 ## 注意点・よくある誤解
 
 - **専用の社内AI基盤ほど、侵害されたときの被害が大きい**: 2026年3月、
@@ -207,6 +243,10 @@ Enterprise・Claude・Gemini等)に自社の過去提案書・議事録をアッ
 - [ハルシネーションとは何か・対策](../part04-risk-security/hallucination-and-countermeasures.md)
 
 ## 更新履歴
+
+### 2026-11-14: 導入事例カタログを新設(船井総研グループ・デロイト トーマツ コンサルティング・McKinsey・Bain)
+- **内容**: 共通カード書式の「導入事例カタログ」節を新設し、Geminiの社内利用率97%に達した船井総研グループ(ベンダー公表)、自社テンプレートに沿った資料作成支援ツールを内製したデロイト トーマツ コンサルティング(2024年3月の自社公表)、AIエージェント約2万5000・150万時間削減を公表したMcKinsey(CEO発言ベース)、ChatGPT Enterpriseの全社展開とカスタムGPTの社内共有を進めるBain(自社公表)の4件を追加
+- **出典**: [Google Workspace ブログ(船井総研グループ)](https://workspace.google.com/blog/ja/customer-stories/funai-soken-maximizes-the-value-of-consulting-services-with-ai) / [デロイト トーマツ ニュースリリース](https://www.deloitte.com/jp/ja/about/press-room/nr20240313.html) / [Business Insider Japan](https://www.businessinsider.jp/article/2601-mckinsey-boss-shares-human-skills-ai-models-cant-do/) / [Bain & Company](https://www.bain.com/insights/how-to-accelerate-progress-on-ai/) / [Bain Careers Blog](https://www.bain.com/careers/life-at-bain/careers-blog/five-ways-bain-is-leading-with-ai/)
 
 ### 2026-09-15: 初版執筆
 - **内容**: 経営コンサルティングファームが自社の納品業務にどう生成AIを
