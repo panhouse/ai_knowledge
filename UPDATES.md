@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-14
+- [ドライバー・配送スタッフにおける生成AI活用事例](topics/part15-job-role-cases/driver-delivery-staff-ai-use-cases.md): 導入事例カタログを新設し、ココネット(同僚AIによるドライバーの相談ケア)・Amazon(生成AI地図システムWellspring)・Uber(ドライバー向け対話アシスタント)の3件を追加(いずれも実証・テスト段階で、生産性の数値公表なしと明記)
 - [生成AI業界の主要プレイヤーと動向(資金調達・提携・戦略)](topics/part13-ai-trends/ai-industry-major-players-trends.md): OpenAIの新ラウンド第1回クロージング(評価額1.25兆ドル・約110億ドル、報道ベース)とAnthropicのS-1公開・IPO仮条件(最大644億ドル、11月19日取引開始予定)を反映し、シリーズH評価額の桁の誤記を訂正
 - [人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例](topics/part15-job-role-cases/recruiting-agent-career-advisor-ai-use-cases.md): 導入事例カタログを新設し、アデコ・ウィルオブ・ワーク(いずれもMiiTel Meetings)・マスメディアン(MENDAN)・アイランド・ブレイン(SalesDockのAI活用支援)の4件を追加(いずれもベンダー公表、アデコの応募数増は増員の影響を含むと明記)
 - [経営コンサルティング業界における生成AI活用事例](topics/part14-industry-cases/management-consulting-industry-ai-use-cases.md): 導入事例カタログを新設し、船井総研グループ(Gemini全社展開)・デロイト トーマツ コンサルティング(資料作成支援ツールの内製)・McKinsey(AIエージェントの全社活用)・Bain(ChatGPT EnterpriseとカスタムGPT)の4件を追加(McKinseyはCEO発言ベース、デロイトは2024年3月時点の公表と明記)
