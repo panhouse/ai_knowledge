@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-14
+- [人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例](topics/part15-job-role-cases/recruiting-agent-career-advisor-ai-use-cases.md): 導入事例カタログを新設し、アデコ・ウィルオブ・ワーク(いずれもMiiTel Meetings)・マスメディアン(MENDAN)・アイランド・ブレイン(SalesDockのAI活用支援)の4件を追加(いずれもベンダー公表、アデコの応募数増は増員の影響を含むと明記)
 - [経営コンサルティング業界における生成AI活用事例](topics/part14-industry-cases/management-consulting-industry-ai-use-cases.md): 導入事例カタログを新設し、船井総研グループ(Gemini全社展開)・デロイト トーマツ コンサルティング(資料作成支援ツールの内製)・McKinsey(AIエージェントの全社活用)・Bain(ChatGPT EnterpriseとカスタムGPT)の4件を追加(McKinseyはCEO発言ベース、デロイトは2024年3月時点の公表と明記)
 - [化粧品業界における生成AI活用事例](topics/part14-industry-cases/cosmetics-industry-ai-use-cases.md): 導入事例カタログを新設し、資生堂ジャパン(Gemini全社展開と原料探索エージェント)・ファイントゥデイ(在庫調整などのAIエージェント試行)・I-ne(Snowflake Intelligenceによる全社データ分析)の3件を追加(ファイントゥデイはパイロット段階の値、I-neは数値公表なしと明記)
 - [SRE・インフラエンジニアにおける生成AI活用事例](topics/part15-job-role-cases/sre-infrastructure-engineer-ai-use-cases.md): 導入事例カタログを新設し、アスケン(AWS DevOps Agentによるアラート一次調査)・サイバーエージェント(Claude Codeによるオンコール調査のMVP)・カカクコム(Slack上の障害対応エージェント)・PLAY(全社共通MCP基盤)の4件を追加(アスケンの約91.6%短縮は経過時間ベースの自社公表値、他3件は数値公表なしと明記)

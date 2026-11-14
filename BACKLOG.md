@@ -75,3 +75,4 @@
 | SRE・インフラエンジニアにおける生成AI活用事例 | 15/第11章 | 事例追加 | https://tech.asken.inc/entry/2026/09/11/170000 / https://developers.play.jp/entry/2026/11/09/181049 | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定) |
 | 化粧品業界における生成AI活用事例 | 14/第1章 | 事例追加 | https://www.itmedia.co.jp/enterprise/articles/2609/18/news020.html / https://news.mynavi.jp/techplus/article/20260831-4860665 | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定) |
 | 経営コンサルティング業界における生成AI活用事例 | 14/第11章 | 事例追加 | https://workspace.google.com/blog/ja/customer-stories/funai-soken-maximizes-the-value-of-consulting-services-with-ai / https://www.bain.com/insights/how-to-accelerate-progress-on-ai/ | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定) |
+| 人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例 | 15/第18章 | 事例追加 | https://go.miitel.jp/hubfs/case/pdf/pdf-adecco.pdf / https://mendan.biz/case/massmedian | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定) |
