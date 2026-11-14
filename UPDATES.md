@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-14
+- [化粧品業界における生成AI活用事例](topics/part14-industry-cases/cosmetics-industry-ai-use-cases.md): 導入事例カタログを新設し、資生堂ジャパン(Gemini全社展開と原料探索エージェント)・ファイントゥデイ(在庫調整などのAIエージェント試行)・I-ne(Snowflake Intelligenceによる全社データ分析)の3件を追加(ファイントゥデイはパイロット段階の値、I-neは数値公表なしと明記)
 - [SRE・インフラエンジニアにおける生成AI活用事例](topics/part15-job-role-cases/sre-infrastructure-engineer-ai-use-cases.md): 導入事例カタログを新設し、アスケン(AWS DevOps Agentによるアラート一次調査)・サイバーエージェント(Claude Codeによるオンコール調査のMVP)・カカクコム(Slack上の障害対応エージェント)・PLAY(全社共通MCP基盤)の4件を追加(アスケンの約91.6%短縮は経過時間ベースの自社公表値、他3件は数値公表なしと明記)
 - [海外の主要基盤モデル企業一覧(フロンティアAI企業)](topics/part17-overseas-ai-companies/foundation-model-companies-overseas.md): OpenAIの評価額1.25兆ドルでの約110億ドル調達(第1回クロージング、報道ベース)と、AnthropicのS-1公開・IPO仮条件(最大644億ドル、上限で約1.4兆ドル、11月19日取引開始予定)を反映
 
