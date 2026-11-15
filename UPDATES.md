@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-15
+- [秘書・エグゼクティブアシスタント職における生成AI活用事例](topics/part15-job-role-cases/executive-assistant-ai-use-cases.md): 導入事例カタログを新設し、共同ピーアール(会長秘書業務を担うAIエージェント)・バッキンガムシャー州議会(EAのCopilot利用で作業時間20%短縮)・南フロリダ大学(議事録作成エージェント)の3件を追加(英国の数値はEA6名の初期観察、他2件は数値公表なしと明記)
 - [労務・給与担当者における生成AI活用事例](topics/part15-job-role-cases/payroll-labor-administration-staff-ai-use-cases.md): 導入事例カタログを新設し、みずほフィナンシャルグループ(人事照会のAIヘルプデスク)・NTT-ME(問い合わせ記録とRAGによる窓口対応)・日本アイ・ビー・エム(AskHRのAIエージェント統合)の3件を追加(NTT-MEの約40%は担当者の見立て、IBMは経団連報告書の推計値と明記)
 - [歯科業界における生成AI活用事例](topics/part14-industry-cases/dental-industry-ai-use-cases.md): 導入事例カタログを新設し、とし歯科クリニック(全職員のChatGPT研修)・ハートフル歯科医院とアスター歯科(AI電話による受付自動化)・Bedford Dental Group(アンビエント音声AIの診療記録)・ソウル大学校歯科病院(AI型電子カルテの試験導入)の5件を追加(AI電話2件は出典に生成AIの記載がないこと、数値はベンダー公表であることを明記)
 - [医療機器製造業における生成AI活用事例](topics/part14-industry-cases/medical-device-manufacturing-ai-use-cases.md): 導入事例カタログを新設し、テルモ(全社員へのCopilot配布と市民開発)・シスメックスRA(現場発の不良解析AIエージェント)・Medtronic(苦情処理の生成AIパイロット)・Insulet(カスタマーケア)の4件を追加(いずれも数値公表なし、MedtronicはPoC段階と明記)
