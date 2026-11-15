@@ -77,3 +77,4 @@
 | 経営コンサルティング業界における生成AI活用事例 | 14/第11章 | 事例追加 | https://workspace.google.com/blog/ja/customer-stories/funai-soken-maximizes-the-value-of-consulting-services-with-ai / https://www.bain.com/insights/how-to-accelerate-progress-on-ai/ | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定) |
 | 人材紹介エージェント(キャリアアドバイザー)における生成AI活用事例 | 15/第18章 | 事例追加 | https://go.miitel.jp/hubfs/case/pdf/pdf-adecco.pdf / https://mendan.biz/case/massmedian | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定) |
 | ドライバー・配送スタッフにおける生成AI活用事例 | 15/第18章 | 事例追加 | https://prtimes.jp/main/html/rd/p/000000002.000159082.html / https://www.aboutamazon.com/news/operations/amazon-ai-innovations-delivery-forecasting-robotics | 2026-11-14 | B | 完了(2026-11-14。カタログ未保有ページから選定。国内の実名事例は1件のみ確認) |
+| 会計事務所・税理士法人における生成AI活用事例 | 14/第11章 | 事例追加 | https://biz.moneyforward.com/mfc-partner/case/11974/ / https://note.com/eiichiro49/n/n92c8075b021d | 2026-11-15 | B | 完了(2026-11-15。カタログ未保有ページから選定) |
