@@ -80,3 +80,4 @@
 | 会計事務所・税理士法人における生成AI活用事例 | 14/第11章 | 事例追加 | https://biz.moneyforward.com/mfc-partner/case/11974/ / https://note.com/eiichiro49/n/n92c8075b021d | 2026-11-15 | B | 完了(2026-11-15。カタログ未保有ページから選定) |
 | 医療機器製造業における生成AI活用事例 | 14/第4章 | 事例追加 | https://ai-keiei.shift-ai.co.jp/interview-f7-terumo/ / https://www.sbbit.jp/article/st/187303 | 2026-11-15 | B | 完了(2026-11-15。カタログ未保有ページから選定) |
 | 歯科業界における生成AI活用事例 | 14/第4章 | 事例追加 | https://prtimes.jp/main/html/rd/p/000000012.000131402.html / https://ivry.jp/case/astershika/ | 2026-11-15 | B | 完了(2026-11-15。カタログ未保有ページから選定) |
+| 労務・給与担当者における生成AI活用事例 | 15/第6章 | 事例追加 | https://it.impress.co.jp/articles/-/27265 / https://business.ntt-east.co.jp/content/cloudsolution/ih_column-215.html | 2026-11-15 | B | 完了(2026-11-15。カタログ未保有ページから選定) |
