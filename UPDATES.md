@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-15
+- [歯科業界における生成AI活用事例](topics/part14-industry-cases/dental-industry-ai-use-cases.md): 導入事例カタログを新設し、とし歯科クリニック(全職員のChatGPT研修)・ハートフル歯科医院とアスター歯科(AI電話による受付自動化)・Bedford Dental Group(アンビエント音声AIの診療記録)・ソウル大学校歯科病院(AI型電子カルテの試験導入)の5件を追加(AI電話2件は出典に生成AIの記載がないこと、数値はベンダー公表であることを明記)
 - [医療機器製造業における生成AI活用事例](topics/part14-industry-cases/medical-device-manufacturing-ai-use-cases.md): 導入事例カタログを新設し、テルモ(全社員へのCopilot配布と市民開発)・シスメックスRA(現場発の不良解析AIエージェント)・Medtronic(苦情処理の生成AIパイロット)・Insulet(カスタマーケア)の4件を追加(いずれも数値公表なし、MedtronicはPoC段階と明記)
 - [会計事務所・税理士法人における生成AI活用事例](topics/part14-industry-cases/accounting-tax-firm-industry-ai-use-cases.md): 導入事例カタログを新設し、矢﨑会計事務所(Gemini全社開放とデータ移行の効率化)・東日本税理士法人(業務別のツール使い分け)・山下会計事務所(所内資料の専用チャットボット)・あさひ会計事務所(解説資料・外国語資料の作成)の4件を追加(いずれもベンダー公表または代表者の発信で、数値は取材時点の定性的な値を含むと明記)
 
