@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-16
+- [自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例](topics/part14-industry-cases/auto-parts-supplier-industry-ai-use-cases.md): 導入事例カタログを新設し、デンソー・住友電気工業・Continental・Boschの4件を追加(Continentalの80%は仕様書分析工程の「最大」値、住友電工・Boschの利用者数はグループ全体の数値)
 - [鉄鋼・金属加工業における生成AI活用事例](topics/part14-industry-cases/steel-metal-processing-ai-use-cases.md): 導入事例カタログを新設し、日本製鉄・神戸製鋼所・ポスコ・タタ・スチールの4件を追加(日本製鉄の時間削減はパイロットからの試算、神戸製鋼所はPoC段階、タタ・スチールはベンダーとの共同発表の数値)
 
 ## 2026-11-15
