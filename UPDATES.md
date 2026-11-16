@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-16
+- [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](topics/part15-job-role-cases/financial-advisor-ai-use-cases.md): 導入事例カタログを新設し、大和証券・肥後銀行・Morgan Stanley・Merrillの4件を追加(肥後銀行は試行時のベンダー公表値、Merrillは自社の見込み値、Morgan Stanleyの時間削減は個人コメントと注記)
 - [旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例](topics/part14-industry-cases/passenger-transport-ai-use-cases.md): 導入事例カタログを新設し、newmo/未来都・神姫観光・Lyft・Grabの4件を追加(効果数値はいずれも自社公表。神姫観光は数値公表なし、Grabは利用規模のみ)
 - [自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例](topics/part14-industry-cases/auto-parts-supplier-industry-ai-use-cases.md): 導入事例カタログを新設し、デンソー・住友電気工業・Continental・Boschの4件を追加(Continentalの80%は仕様書分析工程の「最大」値、住友電工・Boschの利用者数はグループ全体の数値)
 - [鉄鋼・金属加工業における生成AI活用事例](topics/part14-industry-cases/steel-metal-processing-ai-use-cases.md): 導入事例カタログを新設し、日本製鉄・神戸製鋼所・ポスコ・タタ・スチールの4件を追加(日本製鉄の時間削減はパイロットからの試算、神戸製鋼所はPoC段階、タタ・スチールはベンダーとの共同発表の数値)
