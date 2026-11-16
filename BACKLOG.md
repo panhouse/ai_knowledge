@@ -86,3 +86,4 @@
 | 自動車部品サプライヤー(ティア1・ティア2)業界における生成AI活用事例 | 14/第1章 | 事例追加 | https://www.jbs.co.jp/news/2026/0312-2 / https://digitalpr.jp/r/105357 | 2026-11-16 | B | 完了(2026-11-16。カタログ未保有ページから選定) |
 | 旅客輸送(バス・タクシー・ライドシェア)業界における生成AI活用事例 | 14/第10章 | 事例追加 | https://prtimes.jp/main/html/rd/p/000000049.000137033.html / https://www.lyft.com/blog/posts/aws-and-lyft-bringing-agentic-ai-to-life-for-riders-and-drivers | 2026-11-16 | B | 完了(2026-11-16。カタログ未保有ページから選定) |
 | 金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例 | 15/第18章 | 事例追加 | https://www.atpress.ne.jp/news/533412 / https://www.silicon.co.uk/press-release/morgan-stanley-wealth-management-announces-latest-game-changing-addition-to-suite-of-genai-tools | 2026-11-16 | B | 完了(2026-11-16。カタログ未保有ページから選定) |
+| 大学教員・研究者における生成AI活用事例 | 15/第12章 | 事例追加 | https://ai.vt.edu/content/dam/ai_vt_edu/ChatGPT-Edu-Pilot-Findings-Report.pdf / https://prtimes.jp/main/html/rd/p/000000105.000006186.html | 2026-11-16 | B | 完了(2026-11-16。カタログ未保有ページから選定) |
