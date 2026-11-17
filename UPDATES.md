@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-17
+- [警備業界における生成AI活用事例](topics/part14-industry-cases/security-services-industry-ai-use-cases.md): 導入事例カタログを新設し、セコム(通話要約)・ALSOK(tsuzumiによる応対ログ要約、PoC)・ADT(Sierra AIエージェント、海外)・Securitas Technology(生成AI映像検索、海外)の4件を追加(数値はADTの決算説明会発言の報道のみ、他は数値公表なしと明記)
 - [臨床開発・治験担当者(CRA・CRC)における生成AI活用事例](topics/part15-job-role-cases/clinical-trial-cra-crc-ai-use-cases.md): 導入事例カタログを新設し、IQVIAサービシーズ ジャパン・近畿大学病院ほか・国立がん研究センター中央病院・塩野義製薬・シミックの5件を追加(国がん・塩野義は研究/PoC段階の数値、シミックの75%はBluenoteの目標値と明記)。本文の国がんCSR事例の未確認数値を確認済みの数値に差し替え
 - [Claudeの基本](topics/part03-ai-chat-tools/claude-basics.md): Fable 5.2/Mythos 5.2の公開、Opus・Sonnet・Haiku 5.5へのAPIラインナップ刷新、Max/Ultraへのプラン改称とプラン別のFableの扱いを反映して最新化
 - [海運・港湾業界における生成AI活用事例](topics/part14-industry-cases/maritime-shipping-ai-use-cases.md): 導入事例カタログを新設し、川崎汽船・商船三井・日本郵船(2件)・Maersk(海外)の5件を追加(日本郵船のRAGはPoC段階、MaerskのCX-Email 90%は目標値と明記)。DNV RuleAgentの発表日と規模の記述を原文どおりに訂正
