@@ -4,7 +4,7 @@ part: 3
 chapter: 第5章 主要ツール各論
 tags: [Claude, Anthropic, Claude Code, Cowork, モデルラインナップ]
 created: 2026-07-05
-updated: 2026-09-04
+updated: 2026-11-17
 ---
 
 # Claude(Anthropic)の基本
@@ -17,7 +17,7 @@ Claudeは、AI企業Anthropic(アンソロピック)が開発する生成AIで�
 
 Anthropicは2021年に元OpenAIの研究者らが設立したAI企業で、AIの安全性を重視した開発方針を掲げているのが特徴。Claudeは個人向けチャットサービスの**claude.ai**(Web・スマホアプリ・デスクトップアプリ)と、開発者・企業がシステムに組み込むための**Claude API**(開発者向けの従量課金サービス)の2系統で提供されており、この2つは契約・請求が別立てになっている(ChatGPTの「ChatGPT Plus」契約と「OpenAI API」の従量課金が別会計であるのと同じ構造)。
 
-モデル名は「Opus(オーパス、大作)」「Sonnet(ソネット、定型詩)」「Haiku(俳句)」という文学・音楽の形式名をグレード(性能・価格帯)として使い、最上位には「Fable(寓話)」というシリーズ名が使われている。世代を表す数字(例: Sonnet 5、Opus 5)は数か月単位で更新されることが多く、名称・価格ともに変更頻度が高い。2026年6月30日には新シリーズの「Sonnet 5」が登場し、翌7月1日からFree・Proプランの既定モデルがSonnet 5に切り替わった。さらに7月24日には、Fable 5に迫る性能を約半額の価格で提供する中間グレード「Opus 5」が登場し、claude.aiのMaxプランの既定モデル・Proプランで選べる最上位モデルという位置づけになっている(旧世代のOpus 4.8はAPI経由では引き続き利用できるが、claude.aiの画面上ではOpus 5に置き換わった)。そして2026年9月1日には、最上位「Fable」シリーズの後継モデル「Fable 5.1」が登場した。コーディング・込み入った推論・長時間の自律的エージェント作業でFable 5からさらに性能が底上げされ、加えてプロンプトキャッシュ(繰り返し使う長いプロンプトを安く再利用する仕組み)の読み取り価格が1トークン単価あたり1/4(1M tokensあたり$1.00→$0.25)に下がったことで、実利用コストは典型的な使い方で約25%、エージェント的な使い方では最大45%程度下がっている。旧世代のFable 5もAPI経由では引き続き利用できる。なお最上位のFable 5.1と同等の能力を持つ「Mythos 5.1」というモデルも存在するが、これは米政府と連携する「Project Glasswing」プログラム経由でサイバー防衛担当者や重要インフラ事業者などごく一部にのみ提供される特別枠で、一般の業務利用者が触れる対象ではない。
+モデル名は「Opus(オーパス、大作)」「Sonnet(ソネット、定型詩)」「Haiku(俳句)」という文学・音楽の形式名をグレード(性能・価格帯)として使い、最上位には「Fable(寓話)」というシリーズ名が使われている。世代を表す数字(例: Opus 5 → Opus 5.5)は数か月単位で更新されることが多く、名称・価格ともに変更頻度が高い。2026年は6〜7月に「5」世代(Sonnet 5・Opus 5)が出そろった後、9月22日に「Opus 5.5」、9月28日に「Sonnet 5.5」、10月7日に「Haiku 5.5」が登場し、わずか3週間ほどで主力3グレードが「5.5」世代に入れ替わった。Opus 5.5はOpus 5より入力・出力の単価が2割下がり(Anthropicは典型的な使い方で約40%安く動かせると説明)、Sonnet 5.5は価格を据え置いたまま出力速度が30%以上向上し、Haiku 5.5はHaiku 4.5より平均で約75%安く動かせる。最上位の「Fable」シリーズも、2026年6月のFable 5、9月1日のFable 5.1に続き、11月9日に「Fable 5.2」が登場した。Fable 5.1より出力が最大30%速くなり、API価格も1M tokensあたり入力$10→$8・出力$50→$40に下がっている。Anthropic自身は「多くのコーディング・知識業務はOpus 5.5から始め、最も難しい作業だけFableに上げ、軽い作業はSonnet 5.5・Haiku 5.5に下げる」という使い分けを推奨している(2026年11月時点)。なおFable 5.2と同時に「Mythos 5.2」も公開されたが、サイバーセキュリティ・生命科学といったデュアルユース(軍民両用)分野の審査プログラム(Cyber Verification Program・Life Sciences Verification Program)で認定された組織だけに限定提供されるため、一般の業務利用者が直接選ぶ対象ではない。
 
 ## 使いどころ・使い分け
 
@@ -35,34 +35,42 @@ ChatGPT・Gemini・Claudeはいずれも汎用的なチャットAIで機能は�
 
 ## 実務での使い方
 
-### 個人向けプラン(claude.ai、2026年8月時点の目安)
+### 個人向けプラン(claude.ai、2026年11月時点の目安)
 
 | プラン | 月額目安 | 主な違い |
 |---|---|---|
-| Free | $0 | 既定モデルはSonnet 5(2026年7月1日〜)。Projects・Artifacts・Memory(会話の記憶)は2026年前半にFreeプランへも開放され、Web検索・ファイルアップロードも利用できるが利用量の上限が低く、Cowork・Claude Codeは利用不可 |
-| Pro | $20(年払いなら$17/月相当) | Free比で約5倍の利用量。最上位のFable 5、および中間グレードのOpus 5(Pro内での最上位モデル)にもアクセス可。2026年1月からClaude Cowork・Claude Codeも利用可能になった |
-| Max 5x | $100 | Free比で約25倍(Pro比で約5倍)の利用量。既定モデルがOpus 5(2026年7月24日〜)。混雑時の優先アクセス |
-| Max 20x | $200 | Free比で約100倍(Pro比で約20倍)の利用量。ヘビーユーザー向け。既定モデルはMax 5xと同じくOpus 5 |
-| Team(Standard席) | 1人$25/月(年払いで$20/月相当) | 管理機能・一括請求・プロジェクトの組織内共有。Claude Code・Cowork・Microsoft 365やSlack等との連携も利用可 |
-| Team(Premium席) | 1人$125/月(年払いで$100/月相当) | Standard席の約5倍の利用量。コーディングなど利用量が多いメンバー向け |
-| Enterprise | 座席$20/月〜+使用量は別途API料金で請求 | SSO・監査ログ・カスタムのデータ管理など大企業向け機能。使用量が変動する組織向け。Compliance API(会話・セッション内容の監査用API)の対象がCowork・Claude Codeにも拡大した(2026年8月、ベータ) |
+| Free | $0 | 使えるモデルはSonnet・Haikuのみ(Opus・Fableは不可)。Projects・Artifacts・Memory(会話の記憶)は2026年前半にFreeプランへも開放され、Web検索・ファイルアップロードも利用できるが、利用量の上限が低い。Cowork・Claude Codeは利用不可 |
+| Pro | $20(年払いなら$17/月相当) | Freeより多い利用量。Opus・Sonnet・Haikuを利用可。最上位のFableは定額の利用枠に含まれず、従量制の「使用量クレジット(usage credits)」を消費して使う。2026年1月からClaude Cowork・Claude Codeも利用可能になった |
+| Max | $100 | 旧称「Max 5x」(2026年10月末に改称、料金は据え置き)。Pro比で5倍の利用量。Fableは週次上限の最大50%まで追加料金なしで利用可 |
+| Ultra | $200 | 旧称「Max 20x」(2026年10月末に改称、料金は据え置き)。Pro比で週10倍の利用量。審査を通った(verified)アカウントは5時間ごとの上限がない。Fableは週次上限の最大50%まで追加料金なし |
+| Team(Standard席) | 1人$25/月(年払いで$20/月相当) | 2〜150人のチーム向け。管理機能・一括請求・プロジェクトの組織内共有。Claude Code・Cowork・Microsoft 365やSlack等との連携も利用可。Fableは使用量クレジットで利用 |
+| Team(Premium席) | 1人$125/月(年払いで$100/月相当) | Standard席の5倍の利用量。コーディングなど利用量が多いメンバー向け |
+| Enterprise | 座席$20/月(年払い・最低20席)+使用量は別途API料金で請求 | SSO・監査ログ・カスタムのデータ管理など大企業向け機能。使用量が変動する組織向け。Compliance API(会話・セッション内容の監査用API)の対象がCowork・Claude Codeにも拡大した(2026年8月、ベータ) |
 
-Team・Enterpriseの最低契約席数や条件は情報源により表記が揺れているため(2〜5席など)、契約前に必ず[Anthropic公式の料金ページ](https://claude.com/pricing)で最新の金額・条件を確認すること。料金・利用上限はAnthropicの発表頻度が高く、日本向けには2026年4月から消費税が別途請求される運用になっている。
+プラン名・利用量の表記は2026年10月末に変わったばかりで、ネット上の解説には旧名称(Max 5x/Max 20x)が残っている。契約前に必ず[Anthropic公式の料金ページ](https://claude.com/pricing)で最新の金額・条件を確認すること。料金・利用上限はAnthropicの発表頻度が高く、日本向けには2026年4月から消費税が別途請求される運用になっている。
 
 ### 個人向けプランで使えるモデル
 
-Freeプランは既定でSonnet 5、Haiku 4.5が利用可能。Pro・Max・Team・Enterpriseでは、これに加えて中間グレードのOpus 5(2026年7月24日〜)、および最上位モデルの「Fable 5.1」(2026年9月1日、旧世代Fable 5の後継として登場)にアクセスできる。ただしFable系モデルはSonnet 5・Opus 5と同じ「使い放題」の位置づけではなく、Maxプランでは週次利用上限の一部を消費する形、Pro・Teamの標準席では別枠の利用クレジットを消費する形で提供される(上限の具体的な水準はプランや時期により変わるため、契約前に公式ヘルプセンターで確認する)。Maxプランでは既定モデルがOpus 5(旧世代のOpus 4.8はclaude.aiの画面上ではOpus 5に置き換わり、API経由でのみ引き続き提供)、Proプランでは選択できる最上位モデルという位置づけ。画面右上のモデル選択メニューから、プランで利用可能な範囲のモデルを都度選べる。
+2026年11月時点で、FreeプランはSonnet・Haikuのみで、Opus・Fableは使えない。Pro以上(Pro・Max・Ultra・Team・Enterprise)ではOpusも選べる。最上位のFable系(Fable 5.2・Fable 5.1・Fable 5)は有料プランならどれでも使えるが、プラン・席種によって扱いが次のように異なり、Opus・Sonnetと同じ「定額の利用枠の中で使い放題」ではない。
 
-### 開発者向け:Claude APIのモデルラインナップ(2026年9月時点)
+| 対象 | Fableの扱い(2026年11月時点) |
+|---|---|
+| Max・Ultra | 週次利用上限の最大50%まで追加料金なし(他のモデルより速く上限を消費する) |
+| Pro・TeamのStandard席 | 定額の利用上限に含まれず、最初から従量制の使用量クレジットを消費 |
+| 使用量課金型のEnterprise | API料金で請求 |
+
+Enterpriseでは、Fable 5.2は公開直後は無効の状態で始まり、管理者がオプトアウトしない限り公開から7日後に、Fableを有効にしているロールへ追加される。どのプランでどのモデルが既定になるかは公式に明示されていないため、画面右上のモデル選択メニューで確認・切り替えるのが確実。
+
+### 開発者向け:Claude APIのモデルラインナップ(2026年11月時点)
 
 | モデル | モデルID | コンテキスト | 入力$/1M | 出力$/1M | 位置づけ |
 |---|---|---|---|---|---|
-| Claude Fable 5.1 | `claude-fable-5-1` | 1M | $10.00 | $50.00 | 最も高性能。2026年9月1日発表。最も難しい推論・長時間の自律的エージェント作業向け(最大出力128K)。プロンプトキャッシュの読み取り価格が$0.25/1M(旧Fable 5は$1.00/1M)に下がり、実質コストが2〜4割程度下がった |
-| Claude Opus 5 | `claude-opus-5` | 1M | $5.00 | $25.00 | 2026年7月24日発表。Fable系に迫る性能を半額程度で提供する「日常使いの最上位モデル」。claude.aiのMaxの既定・Proの最上位モデル |
-| Claude Sonnet 5 | `claude-sonnet-5` | 1M | $2.00(2026年8月10日に恒久価格として確定。当初予定していた9月1日からの$3.00への値上げは撤回) | $10.00(同上。当初予定は$15.00) | 速度と知能のバランス型。coding・エージェント作業でOpusに迫る品質。claude.aiのFree/Proの既定モデル |
-| Claude Haiku 4.5 | `claude-haiku-4-5` | 200K | $1.00 | $5.00 | 最速・最安価。簡単なタスク・大量処理向け |
+| Claude Fable 5.2 | `claude-fable-5-2` | 1M | $8.00 | $40.00 | 最も高性能。2026年11月9日発表。難しい推論・長時間の自律的エージェント作業向け(最大出力128K)。Fable 5.1より出力が最大30%速く、価格は$10/$50から引き下げ。出力を最大2.5倍速くする「高速モード(fast mode)」は入力$16/出力$80 |
+| Claude Opus 5.5 | `claude-opus-5-5` | 1M | $4.00 | $20.00 | 2026年9月22日発表。Anthropicが多くの業務の出発点として推奨する主力モデル。Opus 5($5/$25)より典型的な使い方で約40%安い |
+| Claude Sonnet 5.5 | `claude-sonnet-5-5` | 1M | $2.00 | $10.00 | 2026年9月28日発表。速度と知能のバランス型。Sonnet 5と同価格のまま出力が30%以上速い |
+| Claude Haiku 5.5 | `claude-haiku-5-5` | 1M | $0.10〜 | $0.50〜 | 2026年10月7日発表。最速・最安価。分類・抽出・振り分けなど大量処理向け。Haiku 4.5より平均約75%安く動かせる |
 
-上記は現行世代の主要モデル。旧世代のFable 5・Opus 4.8・Opus 4.7・Opus 4.6・Sonnet 4.6も引き続きAPIから利用できるが、新規に組む場合は上表の現行モデルを使うのが基本。料金は変更・改定が非常に多いため、実装・見積もりの前には必ず[Anthropic公式のPricingページ](https://platform.claude.com/docs/en/about-claude/pricing)で最新の値を確認すること。プロンプトキャッシュ(繰り返し使う長いプロンプトを安く再利用する仕組み)やBatch API(即時性が不要な処理を50%引きで処理する仕組み)を使うと、実際のコストはさらに下げられる。
+上記は現行世代の主要モデル。旧世代のFable 5.1・Fable 5、Opus 5・Opus 4.8、Sonnet 5、Haiku 4.5なども引き続きAPIから利用できるが、新規に組む場合は上表の現行モデルを使うのが基本。Fable 5.2と同価格の「Mythos 5.2」は、審査プログラムで認定された組織だけが使える限定提供モデル。料金は変更・改定が非常に多いため、実装・見積もりの前には必ず[Anthropic公式のPricingページ](https://platform.claude.com/docs/en/about-claude/pricing)で最新の値を確認すること。プロンプトキャッシュ(繰り返し使う長いプロンプトを安く再利用する仕組み)やBatch API(即時性が不要な処理を50%引きで処理する仕組み)を使うと、実際のコストはさらに下げられる。
 
 ### Claude Code(開発者向けCLIツール)
 
@@ -106,11 +114,11 @@ claude.aiにはWeb検索機能が組み込まれており、最新情報を検�
 
 - **モデル名・料金の変更頻度が非常に高い**: 数か月単位で新モデルが出て旧モデルの価格が変わる。本ページの数値は目安であり、見積もり・契約の前には必ず公式サイトで確認する
 - **claude.aiの契約とAPIの契約は別会計**: Pro/Maxなどのサブスクリプションに入っていても、開発者向けAPIの利用料は別途従量課金になる(逆にAPI利用者がclaude.aiを個人利用したい場合も別途契約が必要)
-- **Sonnet 5の導入価格は恒久価格として確定した**: 発表当初は2026年8月31日までの期間限定価格(入力$2.00/出力$10.00)とされ、9月1日から入力$3.00/出力$15.00に値上げされる予定だったが、Anthropicは2026年8月10日にこの値上げを撤回し、$2.00/$10.00を恒久価格とすることを発表した。ただし今後の改定がないとは限らないため、長期のコスト試算をする際も都度公式サイトで確認する
+- **世代交代が速く、ネット上に旧情報が残りやすい**: 2026年は「5」世代(6〜7月)から「5.5」世代(9〜10月)へ、最上位のFableも5→5.1→5.2へと、数か月で主力モデルが入れ替わった。プラン名も2026年10月末に「Max 5x→Max」「Max 20x→Ultra」へ変わり、Ultraの利用量は「Pro比20倍」ではなく「Pro比で週10倍」と表記されている。解説記事には旧モデル名・旧価格・旧プラン名が残っているため、見積もり・契約の前には必ず公式で確認する
 - **「Claude」「Claude Code」「Claude Cowork」を混同しない**: 「Claude」はチャットサービス全般の名称、「Claude Code」は開発者向けCLIツール、「Claude Cowork」はターミナル操作なしで一般業務を任せるエージェント機能。それぞれ利用可能プランや操作方法が異なる
 - **CoworkはFreeプランでは使えない**: エージェント的にファイルを読み書きする機能はPro以上の有料プラン限定。無料プランで試せるのはチャット・Projects・Artifacts・Memoryなど(2026年前半にProjects・Artifactsも無料プランへ開放された)
-- **「Opus」「Fable」だけでも複数の世代・派生がある**: claude.aiの画面上ではOpus 4.8がOpus 5に置き換わっており、API上では旧世代のOpus 4.8も引き続き選べる。最上位の「Fable」も2026年9月にFable 5からFable 5.1へ更新されたが、旧Fable 5もAPI経由では引き続き利用できる。またFable 5.1と同等の性能を持つ「Mythos 5.1」は米政府連携プログラム「Project Glasswing」経由のごく一部の利用者向けで、一般業務では登場しない
-- **Fable系モデルは「使い放題」ではない**: Pro/Max/Teamに契約すればFable 5.1が無制限に使えるわけではなく、Maxでは週次利用上限の一部、Pro・Teamの標準席では別枠のクレジットとして提供される。Sonnet 5・Opus 5と同じ感覚で使い倒すと上限に早く達することがあるため、消費ペースをアカウントの使用状況画面で確認しながら使うのが実務のコツ
+- **「Opus」「Fable」だけでも複数の世代・派生がある**: API上ではOpus 5.5の登場後もOpus 5・Opus 4.8などの旧世代を選べる。最上位の「Fable」も、2026年11月時点でFable 5.2・5.1・5の3世代が有料プランとAPIで利用できる。また「Mythos 5.2」は審査プログラムで認定された組織向けの限定提供で、一般業務では登場しない
+- **Fable系モデルは「使い放題」ではない**: Max・Ultraでは週次利用上限の最大50%まで、Pro・TeamのStandard席では従量制の使用量クレジットでの利用になる(2026年11月時点)。Opus・Sonnetと同じ感覚で使い倒すと、上限に早く達したり想定外のクレジット消費が出たりする。普段はOpus 5.5、難所だけFableに切り替える使い方を基本にし、消費ペースをアカウントの使用状況画面で確認しながら使うのが実務のコツ
 
 ## 最初の一歩
 
@@ -123,6 +131,10 @@ claude.aiに無料アカウントで登録し、Artifacts機能を有効にし�
 - [Function Calling(Tool Use)の基本](../part09-api-development/function-calling-basics.md)
 
 ## 更新履歴
+
+### 2026-11-17: Fable 5.2/Mythos 5.2の公開、5.5世代(Opus・Sonnet・Haiku)への移行、Max→Ultraのプラン改称を反映して最新化
+- **内容**: 2026年11月9日発表の「Claude Fable 5.2」(`claude-fable-5-2`、$8/$40。Fable 5.1比で出力が最大30%高速、高速モードは$16/$80)と、審査済み組織向けに限定提供される「Mythos 5.2」を追加。API表を5.5世代(Opus 5.5:$4/$20・9月22日、Sonnet 5.5:$2/$10・9月28日、Haiku 5.5:$0.10/$0.50〜・10月7日)に差し替え。個人プランを「Max(旧Max 5x)/Ultra(旧Max 20x、Pro比で週10倍)」の新名称に更新し、プラン・席種ごとのFableの扱い(週次上限の最大50%/使用量クレジット)、Team 2〜150人・Enterprise最低20席を追記。公式に明示のない「既定モデル」の記述は削除
+- **出典**: [Anthropic: Claude Fable 5.2 and Claude Mythos 5.2](https://www.anthropic.com/news/claude-fable-and-mythos-5-2) / [9to5Mac](https://9to5mac.com/2026/11/09/anthropic-upgrades-claude-with-new-fable-5-2-model-details-here/) / [Anthropic公式: Models overview](https://platform.claude.com/docs/en/about-claude/models/overview) / [Anthropic公式: Pricing](https://platform.claude.com/docs/en/about-claude/pricing) / [Anthropic: Introducing Claude Opus 5.5](https://www.anthropic.com/news/claude-opus-5-5) / [Anthropic: Introducing Claude Sonnet 5.5](https://www.anthropic.com/news/claude-sonnet-5-5) / [Anthropic: Introducing Claude Haiku 5.5](https://www.anthropic.com/news/claude-haiku-5-5) / [Anthropic公式: Plans & Pricing](https://claude.com/pricing) / [Claude Help Center: Claude Fable models on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan) / [Claude Help Center: What is the Ultra plan?](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan) / [The Next Web](https://thenextweb.com/news/claude-ultra-max-plan-rename-five-hour-limit)
 
 ### 2026-09-04: 最上位モデルの世代交代(Fable 5→Fable 5.1/Mythos 5.1)とCoworkの内蔵ブラウザ追加を反映して最新化
 - **内容**: 2026年9月1日に発表された新モデル「Claude Fable 5.1」(`claude-fable-5-1`、$10/$50。旧Fable 5の後継で、コーディング・長時間の自律的エージェント作業の性能が向上し、プロンプトキャッシュの読み取り価格が$1.00→$0.25/1Mに下がったことで実質コストが典型利用で約25%・高度なエージェント利用で最大45%程度下がった)とその同等モデル「Claude Mythos 5.1」(Project Glasswing経由の限定提供)を追加し、旧世代のFable 5・Mythos 5もAPI経由では引き続き利用できることを明記。claude.aiの個人向けプランではFable系モデルがSonnet 5・Opus 5と異なり「使い放題」ではなく、Maxは週次利用上限の一部・Pro/Teamの標準席は別枠クレジットの消費という形で提供される点を新設の注意点として追記(Opus 5・Sonnet 5の位置づけ・価格に変更はないことを公式Pricingページで確認済み)。Claude Coworkにデスクトップアプリ内蔵の「内蔵ブラウザ」(ログイン情報を持たないクリーンなプロファイルでサイドパネル操作)が2026年8月に追加され、ログイン状態を引き継ぐ「Claude in Chrome」との使い分けを追記

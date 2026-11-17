@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-17
+- [Claudeの基本](topics/part03-ai-chat-tools/claude-basics.md): Fable 5.2/Mythos 5.2の公開、Opus・Sonnet・Haiku 5.5へのAPIラインナップ刷新、Max/Ultraへのプラン改称とプラン別のFableの扱いを反映して最新化
 - [海運・港湾業界における生成AI活用事例](topics/part14-industry-cases/maritime-shipping-ai-use-cases.md): 導入事例カタログを新設し、川崎汽船・商船三井・日本郵船(2件)・Maersk(海外)の5件を追加(日本郵船のRAGはPoC段階、MaerskのCX-Email 90%は目標値と明記)。DNV RuleAgentの発表日と規模の記述を原文どおりに訂正
 - [鉄鋼・金属加工業における生成AI活用事例](topics/part14-industry-cases/steel-metal-processing-ai-use-cases.md): JFEスチールのコーディング支援AIの効果を日刊産業新聞の報道で再確認し、68%は検証結果・全体20%は見込み値と訂正、出典を確認できない「2027年度末に約3割」の記述を削除
 
