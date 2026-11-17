@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-17
+- [鉄鋼・金属加工業における生成AI活用事例](topics/part14-industry-cases/steel-metal-processing-ai-use-cases.md): JFEスチールのコーディング支援AIの効果を日刊産業新聞の報道で再確認し、68%は検証結果・全体20%は見込み値と訂正、出典を確認できない「2027年度末に約3割」の記述を削除
+
 ## 2026-11-16
 - [大学教員・研究者における生成AI活用事例](topics/part15-job-role-cases/university-faculty-researcher-ai-use-cases.md): 導入事例カタログを新設し、京都大学・立命館大学・物質・材料研究機構・Virginia Tech・University of Oxfordの5件を追加(数値はトライアル・パイロットの利用者アンケートで、本番展開後の効果ではない)
 - [金融アドバイザー・FP(ファイナンシャルプランナー)における生成AI活用事例](topics/part15-job-role-cases/financial-advisor-ai-use-cases.md): 導入事例カタログを新設し、大和証券・肥後銀行・Morgan Stanley・Merrillの4件を追加(肥後銀行は試行時のベンダー公表値、Merrillは自社の見込み値、Morgan Stanleyの時間削減は個人コメントと注記)
