@@ -4,7 +4,7 @@ part: 14
 chapter: "第12章 その他・未分類"
 tags: [スポーツ, 生成AI活用事例, ファンエンゲージメント, ダイナミックプライシング, 審判支援, ハイライト自動生成, トラッキングデータ]
 created: 2026-07-15
-updated: 2026-08-11
+updated: 2026-11-18
 ---
 
 # スポーツ業界における生成AI活用事例
@@ -260,6 +260,42 @@ updated: 2026-08-11
   採用するのではなく、人間が異議を申し立てたり再確認したりできる余地を残す設計と、
   精度基準を継続的に見直す運用の両方が、公平性への信頼を保つ鍵になる
 
+## 導入事例カタログ
+
+上の「実務での使い方」は、リーグ公式の分析基盤や放送演出など「観客に見える」領域の代表例が中心である。ここでは、**クラブ・リーグの裏方業務(スカウティング、コンテンツ制作、ファン向け問い合わせ)に生成AIを組み込んだ実名事例**を、共通カード書式で集める(2026年11月時点)。出典に生成AIの利用が明記されている事例だけを載せた。
+
+### 三遠ネオフェニックス(B.LEAGUE所属のプロバスケットボールクラブ、愛知県豊橋市) — 対象業務: 対戦相手のスカウティングレポート作成
+- **導入形態**: 内製(AWS上で構築)
+- **段階**: 部門展開(分析担当チームで当該シーズンに利用。正式運用か検証かの区別は出典に明記なし)
+- **やったこと**: Synergy Sports(試合データサービス)からAPIで取得したスタッツを、機械学習のプログラムで重要度づけする。そのうえでAWS Step FunctionsからAmazon Bedrock(AWSの生成AIサービス)を呼び出し、「分析の切り口を3つ選ぶ→切り口ごとに深掘り分析→要約」の順でレポートを生成し、AWS Lambda経由でSlackに投稿する
+- **効果**: 数値公表なし。人では扱いきれない量のデータを分析に使えるようになった、分析の切り口がアナリスト個人に依存しなくなった、新しい気づきが得られた、と定性的に説明(2025年11月、クラブとAWSジャパンの共同執筆記事)
+- **学べること**: 「何を分析するか」の切り口選びを生成AIにさせ、数値の計算は機械学習側に任せる役割分担。結果をチームが普段使うSlackに届ける設計で、読まれるレポートにしている
+- **出典**: [AWS ブログ: 三遠ネオフェニックス様の AWS 生成 AI 事例(2025年11月21日)](https://aws.amazon.com/jp/blogs/news/genai-case-study-san-en-neophoenix/) / 最終確認日: 2026-11-18
+
+### Seattle Seahawks(NFL所属のアメフトチーム。海外事例) — 対象業務: 試合後記者会見の動画公開
+- **導入形態**: 内製(AWS上で構築)
+- **段階**: 部門展開(デジタルコンテンツチームの本番運用。年間1,000本超の動画のうち300本超が記者会見)
+- **やったこと**: 記者会見動画の変換、選手名簿をもとにしたカスタム語彙での文字起こし、スペイン語・ドイツ語への翻訳を自動化し、Amazon Bedrockでタイムコード付きの短い要約を生成する。どの工程が生成AIかは、出典では要約生成以外は明示されていない
+- **効果**: 1本あたり平均30分・60ステップの手作業だった工程が数分に短縮(2024年10月時点、ベンダー公表。AWSのブログ記事)
+- **学べること**: 「毎試合必ず発生する定型コンテンツ」から自動化すると効果が見えやすい。要約・翻訳を同じパイプラインに載せると多言語のファン向け発信も同時に回せる
+- **出典**: [AWS for M&E Blog: How AI is streamlining Seahawks game day coverage(2024年10月10日)](https://aws.amazon.com/blogs/media/how-ai-is-streamlining-seahawks-game-day-coverage) / 最終確認日: 2026-11-18
+
+### Sevilla FC(スペイン・LaLigaのサッカークラブ。海外事例) — 対象業務: 選手獲得のためのスカウティング
+- **導入形態**: 内製(クラブのデータ部門がIBMと共同開発した「Scout Advisor」。IBM watsonx上でMetaのLlama 3.1 70Bを利用)
+- **段階**: 部門展開(スカウティング部門)
+- **やったこと**: スカウトが自然文で条件を入力すると、選手データベースから候補リストを返す。選手ごとに蓄積された大量のスカウティングレポート(2025年2月の記事では30万件超)を要約し、クラブ独自のパフォーマンスデータにつなげる。スペイン語での要約性能を理由にモデルを選んだ
+- **効果**: 削減時間の数値公表なし。従来は候補リスト1つの作成に200〜300時間の分析を要していたこと、スポーツディレクターの「おそらく2分で必要な情報がすべて手に入る」というコメントが紹介されている(2025年2月、ベンダー公表。Metaの記事)
+- **学べること**: 文章で蓄積されたスカウトの所見(定性情報)を検索・要約できるようにするのが生成AIの出番。数値データだけの分析基盤では拾えない情報を活かせる
+- **出典**: [IBM Newsroom(2024年1月23日)](https://newsroom.ibm.com/2024-01-23-Sevilla-FC-Transforms-the-Player-Recruitment-Process-with-the-Power-of-IBM-watsonx-Generative-AI) / [Meta: How Sevilla Football Club Uses Llama and IBM watsonx to Scout Players(2025年2月28日)](https://about.fb.com/news/2025/02/sevilla-football-club-llama-ibm-watsonx-scout-players/) / 最終確認日: 2026-11-18
+
+### Premier League(イングランドのサッカーリーグ。海外事例) — 対象業務: ファン向けのデータ・コンテンツ案内
+- **導入形態**: 専用構築(Microsoftとの5年間の戦略的パートナーシップ)
+- **段階**: 全社展開(リーグ全体の取り組みとして発表)
+- **やったこと**: CopilotとAzure OpenAIを使った「Premier League Companion」で、30シーズン超のスタッツ、30万本の記事、9,000本の動画をもとにファンの質問に自然文で答える。Fantasy Premier League(公式の仮想チーム編成ゲーム)へのAIアシスタント導入や、中継のデータ表示・試合後分析へのAzure OpenAI活用も計画。社内業務もMicrosoft 365・Dynamics 365へ移行する
+- **効果**: 数値公表なし(2025年7月の提携発表時点、自社公表)
+- **学べること**: リーグが持つ過去の記事・動画・データという「資産」をまとめて生成AIの回答の根拠にすると、ファン接点の新しい入口になる
+- **出典**: [Premier League: Premier League announces partnership with Microsoft(2025年7月1日)](https://www.premierleague.com/en/news/4338015/premier-league-announces-partnership-with-microsoft) / 最終確認日: 2026-11-18
+
 ## 注意点・よくある誤解
 
 - **AI判定はあくまで「支援」であり「代替」ではない**: MLBのロボット審判もサッカーのSAOTも、
@@ -291,6 +327,10 @@ WSC Sportsのハイライト自動生成や楽天の「AI解説者」のよう�
 - [宿泊・観光業における生成AI活用事例](hospitality-tourism-ai-use-cases.md)
 
 ## 更新履歴
+
+### 2026-11-18: 導入事例カタログを新設(三遠ネオフェニックス・Seattle Seahawks・Sevilla FC・Premier League)
+- **内容**: 「導入事例カタログ」節を新設し、クラブ・リーグの裏方業務の実名事例として、Amazon Bedrockによるスカウティングレポート自動生成(三遠ネオフェニックス、数値公表なし)、記者会見動画の要約・翻訳の自動化(Seattle Seahawks、海外、ベンダー公表)、Llama 3.1を使った選手スカウティング支援(Sevilla FC、海外)、Copilot/Azure OpenAIによるファン向けCompanion(Premier League、海外、数値公表なし)の4件を追加
+- **出典**: [AWS ブログ(三遠ネオフェニックス)](https://aws.amazon.com/jp/blogs/news/genai-case-study-san-en-neophoenix/) / [AWS for M&E Blog(Seahawks)](https://aws.amazon.com/blogs/media/how-ai-is-streamlining-seahawks-game-day-coverage) / [IBM Newsroom(Sevilla FC)](https://newsroom.ibm.com/2024-01-23-Sevilla-FC-Transforms-the-Player-Recruitment-Process-with-the-Power-of-IBM-watsonx-Generative-AI) / [Meta(Sevilla FC)](https://about.fb.com/news/2025/02/sevilla-football-club-llama-ibm-watsonx-scout-players/) / [Premier League](https://www.premierleague.com/en/news/4338015/premier-league-announces-partnership-with-microsoft)
 
 ### 2026-08-11: 主要事例を2026年8月時点の最新情報に更新
 - **内容**: MLBのStatcastに新機能「Scout Insights」(Gemini 2.5 Flash/Gemma、
