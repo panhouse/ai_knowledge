@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-18
+- [訪問看護・在宅医療における生成AI活用事例](topics/part14-industry-cases/home-nursing-care-ai-use-cases.md): 導入事例カタログを新設し、新潟県内の訪問看護ステーション6事業所(アルム「Team」のAI要約)・船塚クリニック(Copilot+ PCによる記録と計画書の下書き)・Choice Health at Home(海外)の3件を追加(新潟の42%は実証値、Choiceの数値はベンダー公表で公表日なしと明記)
 - [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): Ignite 2026(Home・Office in CopilotのGA、Autopilot/WorkspacesのFrontier提供など)と10月の月次アップデートを提供段階つきで追加し、Copilot Businessアドオンの割引期間延長(2026年12月31日まで)を反映
 
 ## 2026-11-17
