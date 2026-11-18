@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-18
+- [Microsoft Copilotの基本](topics/part03-ai-chat-tools/microsoft-copilot-basics.md): Ignite 2026(Home・Office in CopilotのGA、Autopilot/WorkspacesのFrontier提供など)と10月の月次アップデートを提供段階つきで追加し、Copilot Businessアドオンの割引期間延長(2026年12月31日まで)を反映
+
 ## 2026-11-17
 - [倉庫管理・在庫管理担当者における生成AI活用事例](topics/part15-job-role-cases/warehouse-inventory-manager-ai-use-cases.md): 導入事例カタログを新設し、三井倉庫HD(生成AI出荷検品アプリ)・大塚倉庫(生成AIによる倉庫侵入検知PoC)・Walmart(物流センターの例外対応、海外)の3件を追加(三井倉庫の効果は見込み、他2件は数値公表なしと明記)
 - [不動産管理(プロパティマネジメント)担当者における生成AI活用事例](topics/part15-job-role-cases/property-management-ai-use-cases.md): 導入事例カタログを新設し、クラスコ・旭化成不動産レジデンス・東京ディフェンス・日本賃貸保証(管理業務の周辺事例)の4件を追加(数値は自社公表、全社合計値と管理業務の数値を区別して記載)

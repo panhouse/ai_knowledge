@@ -4,14 +4,14 @@ part: 3
 chapter: 第5章 主要ツール各論
 tags: [Copilot, Microsoft, Microsoft 365, GitHub Copilot, Windows]
 created: 2026-07-06
-updated: 2026-08-19
+updated: 2026-11-18
 ---
 
 # Microsoft Copilotの基本
 
 ## これは何か
 
-「Copilot(コパイロット)」は、Microsoftが自社のほぼ全製品に付けているAI機能の名前で、Windows・Word・Excel・Outlook・Teams・GitHubなど、まったく別物の機能に同じ「Copilot」という名前が使われている。そのため「会社にCopilotが入っていると聞いたが、自分が使っているのはどれなのか」「無料のCopilotと有料のCopilotで何が違うのか」が分からず混乱する人が非常に多い。加えて2026年8月からは、個人向けCopilotアプリと法人向けMicrosoft 365 Copilotアプリそのものが1つに統合され始めており、混乱に拍車がかかっている。このページでは、名前が重複する複数の「Copilot」を整理し、それぞれが何をするツールで、どこで使え、誰向けなのかを一枚の地図にする。
+「Copilot(コパイロット)」は、Microsoftが自社のほぼ全製品に付けているAI機能の名前で、Windows・Word・Excel・Outlook・Teams・GitHubなど、まったく別物の機能に同じ「Copilot」という名前が使われている。そのため「会社にCopilotが入っていると聞いたが、自分が使っているのはどれなのか」「無料のCopilotと有料のCopilotで何が違うのか」が分からず混乱する人が非常に多い。加えて2026年8月からは、個人向けCopilotアプリと法人向けMicrosoft 365 Copilotアプリそのものが1つに統合され始め、2026年11月のMicrosoft Ignite(年次の開発者・IT管理者向けイベント)ではCopilotアプリの中でWord・Excel・PowerPointまで使える形になるなど、入口の姿が短期間で変わり続けている。このページでは、名前が重複する複数の「Copilot」を整理し、それぞれが何をするツールで、どこで使え、誰向けなのかを一枚の地図にする。
 
 ## 仕組み・背景
 
@@ -51,6 +51,30 @@ Microsoftは2023年以降、生成AI機能を横展開する際にブランド�
 
 さらに2026年8月には、Agent 365(社内で個別開発・ガバナンスした業務エージェントを一元管理する仕組み)上で公開したエージェントを、Microsoft 365 Copilot Chatや自作の宣言型エージェント(declarative agent)から「連携エージェント」として呼び出せるようにする機能が一般提供(GA)の対象になっている(呼び出されるエージェント側はAgent2Agent、通称A2Aというエージェント間連携プロトコルへの対応が必要)。1つの専門エージェントを全社で作り込み、複数の業務エージェントから使い回せるようになる点が実務上のメリットだが、この仕組み自体の構築・運用はエージェント開発の話題であり、詳細はPart 11(AIエージェント)側で扱う。
 
+### 2026年10〜11月の変更点(Ignite 2026まで)
+
+2026年10月の月次アップデートと、11月17日に始まったMicrosoft Ignite 2026で、法人向けCopilotの「入口」と「任せ方」が大きく変わった。提供段階が機能ごとに違うので、**一般提供(GA)か、プレビューか、Frontier(Microsoftの先行利用プログラム。参加した組織だけが使える)か**を必ず見分けること。
+
+| 機能 | 何が変わったか | 提供段階(2026年11月18日時点) |
+|---|---|---|
+| **Home(ChatとCoworkの統合)** | 一問一答の「Chat」と、長いタスクを任せる「Cowork」が1つの画面に統合された | Ignite 2026でGAと発表 |
+| **Office in Copilot** | Copilotアプリの中でWord・Excel・PowerPointの文書を作成・編集できる。Microsoftは「Copilotのサブスクリプションライセンスに含まれる」と説明 | Ignite 2026でGAと発表 |
+| **Projects / Skills(Copilot Chatへの拡大)** | Coworkで先行していた「Projects」(関連ファイルや指示をまとめておく作業単位)が11月からCopilot Chatにも展開。手順を再利用できる「Skills」もCopilot Chatで使えるようになる | 2026年11月に順次展開 |
+| **Automations** | Coworkのタスクを、スケジュールやイベントをきっかけに自動実行する | 2026年10月の月次アップデートで発表 |
+| **職種別のプラグイン・スキル** | 営業・サービス・財務・法務向けのプラグインとスキル(Wordの法務向けプラグインなど) | Ignite 2026で「利用可能」と発表 |
+| **Autopilot** | 自分専用のIDを持ち、長時間動き続ける個人向けエージェント。Agent 365で統制する | Frontierの顧客から展開開始 |
+| **Workspaces** | 人とエージェントが共同で作業する共有スペース | Frontier |
+| **Today** | Copilotアプリ・Outlookで、その日の予定や優先事項をまとめて示す機能 | プライベートプレビュー |
+| **Copilot Code** | 自然文の指示からアプリ・ダッシュボードを作る | 「今後数週間で」GA予定 |
+
+あわせて、Copilotの中でOpenAIとAnthropicのモデルを手動で選べること(組織のポリシーで利用可否を管理)も改めて示された。また10月のアップデートでは、PowerPointのレイアウト生成に「Sonnet 5.5」モデルを使う機能が紹介されている。
+
+実務への影響は次の3点。
+
+- **「Copilotアプリで何でもできる」方向に寄っている**: WordやExcelを個別に開かず、Copilotアプリの中で資料作成から長いタスクの委任まで完結させる設計になった。社内マニュアルの操作手順(「Wordを開いて右上のCopilotボタン」等)は、Copilotアプリ起点の手順も併記しておくとよい
+- **Frontierの機能は全社展開の前提にしない**: AutopilotやWorkspacesはFrontier参加組織向けで、仕様や課金が変わる可能性がある。検証用の少人数で試し、正式提供を待ってから全社ルールに組み込む
+- **料金比較の数字はMicrosoftの主張として扱う**: Microsoftは発表の中で、GigaOmの調査を引いて「CopilotはClaudeより84%、ChatGPTより63%安い」(日常的な利用者の場合)と主張している。これはベンダー自身が引用した比較であり、自社の利用パターンでの総コスト(ベースライセンス+アドオン+従量課金)で試算し直すこと
+
 ## 使いどころ・使い分け
 
 ビジネスパーソンが日常業務で比較検討することが多いChatGPT・Gemini・Claudeとの違いは、「汎用AIとしての賢さ」ではなく「自社のOffice文書・メール・会議データにどれだけ深く食い込めるか」にある。
@@ -69,7 +93,7 @@ Microsoftは2023年以降、生成AI機能を横展開する際にブランド�
 
 ## 実務での使い方
 
-### 料金プラン(2026年8月時点の目安)
+### 料金プラン(2026年11月時点の目安)
 
 **個人向け:**
 
@@ -84,7 +108,7 @@ Microsoftは2023年以降、生成AI機能を横展開する際にブランド�
 | プラン | 月額目安(1ユーザーあたり、年払い) | 対象 |
 |---|---|---|
 | Microsoft 365 Copilot Chat | 追加課金なし | 対象のMicrosoft 365ライセンス保有者は全員利用可(Web中心+簡易エージェント。Word/Excel/PowerPoint/OneNote内での利用は前述の組織規模による制限あり) |
-| Microsoft 365 Copilot Business(中小企業向け、300ユーザーまで、アドオン単体) | $18/ユーザー(2026年9月30日までの割引価格、以降は通常価格$21に戻る予定) | Business Basic/Standard/Premiumに追加するアドオン |
+| Microsoft 365 Copilot Business(中小企業向け、300ユーザーまで、アドオン単体) | $18/ユーザー(年払い。通常価格$21からの割引で、割引は2026年7月1日〜12月31日の申込が対象、初年度のみ適用)。月払いは$25.20 | Business Basic/Standard/Premiumに追加するアドオン |
 | Microsoft 365 Business Standard + Copilot(バンドルSKU) | $23.50/ユーザー(年払い) | ベースライセンス込みの統合プラン |
 | Microsoft 365 Business Premium + Copilot(バンドルSKU) | $32/ユーザー(年払い) | ベースライセンス込みの統合プラン。Teams・1TBストレージ・高度なセキュリティ込み |
 | Microsoft 365 Copilot(エンタープライズ向け、アドオン単体) | $30/ユーザー(年契約) | E3/E5等のエンタープライズライセンスに追加するアドオン |
@@ -128,7 +152,7 @@ Microsoft 365 CopilotとMicrosoft 365 Copilot Chat(および利用量課金のCo
 - **無料のCopilotに社内文書を貼り付けない**: 無料版は社内データへのアクセス権もエンタープライズ向けデータ保護もない。機密情報の要約・分析は必ずMicrosoft 365 CopilotかCopilot Chat(いずれも対象ライセンス保有者向け)で行う。2026年8月のアプリ統合でアイコンや見た目が近づいたため、社員がアカウントの種類(個人か会社か)を見誤りやすくなっている点にも注意が必要
 - **Copilot単体では契約できない**: 必ず対象のMicrosoft 365ベースライセンスが前提になるため、見積もりは「アドオン価格」だけでなく「ベースライセンス+アドオン」の合計で比較する
 - **Coworkは「基本料金+従量課金」の二段構え**: Microsoft 365 Copilotライセンス自体の月額に加えて、Coworkのタスク実行分はクレジット従量課金が別途かかる。試験導入時はタスクの種類ごとに消費クレジットを記録し、想定外の高額請求を防ぐ
-- **料金・呼称の変更頻度が高い**: 2025年後半にCopilot Proが実質Microsoft 365 Premiumに統合され、2026年7月にはMicrosoft 365本体のライセンス価格も値上げ、同年8月にはアプリ自体の統合も始まるなど、短期間で名称・料金体系・UIが変わっている。本ページの数値は目安であり、契約前には必ず公式サイトで確認する
+- **料金・呼称の変更頻度が高い**: 2025年後半にCopilot Proが実質Microsoft 365 Premiumに統合され、2026年7月にはMicrosoft 365本体のライセンス価格も値上げ、同年8月にはアプリ自体の統合が始まり、11月にはChatとCoworkの統合(Home)やCopilotアプリ内のOffice機能がGAになるなど、短期間で名称・料金体系・UIが変わっている。本ページの数値は目安であり、契約前には必ず公式サイトで確認する
 - **「無料で使えるCopilot Chat」の範囲は組織規模で変わる**: 2026年4月15日以降、ユーザー数2,000人超の組織では有料ライセンスなしのWord/Excel/PowerPoint/OneNote内Copilot Chatが使えなくなった。全社導入前に自社の対象人数を確認し、必要な範囲は有料のMicrosoft 365 Copilotライセンスで賄う前提で予算を組む
 - **精度は「社内データの整備状況」に左右される**: SharePointやOneDriveのファイル権限・命名規則が乱雑だと、Copilotが正しいデータを見つけられず回答の質が落ちる。導入効果を出すには、Copilot導入前にファイル整理・アクセス権の棚卸しを行うのが実務上のコツ
 
@@ -142,6 +166,10 @@ Microsoft 365 CopilotとMicrosoft 365 Copilot Chat(および利用量課金のCo
 - [Google Geminiの基本](./google-gemini-basics.md)
 
 ## 更新履歴
+
+### 2026-11-18: 2026年10〜11月の変更点(Ignite 2026)と料金を最新化
+- **内容**: Microsoft Ignite 2026(11月17日)で発表されたHome(ChatとCoworkの統合)とOffice in CopilotのGA、Autopilot・Workspaces(Frontier)、Today(プライベートプレビュー)、Copilot Code(数週間内にGA予定)と、10月の月次アップデート(Automations、ProjectsとSkillsのCopilot Chatへの拡大、PowerPointのSonnet 5.5モデル)を提供段階つきの表で追加。Copilot Businessアドオンの割引期間が2026年12月31日まで延長されている点を料金表に反映。GigaOm調査を引いたMicrosoftの価格比較はベンダーの主張として扱う注意を追記
+- **出典**: [Microsoft Copilot Blog: Copilot at Microsoft Ignite(2026年11月17日)](https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/)、[Microsoft Ignite 2026 Book of News](https://news.microsoft.com/events/ignite/2026/book-of-news/)、[Microsoft Community Hub: What's new in Microsoft Copilot – October 2026](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what's-new-in-microsoft-copilot--october-2026/4568528)、[Microsoft公式: Microsoft 365 Copilot Plans and Pricing](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing)
 
 ### 2026-08-19: アプリ統合・Cowork・GPT-5.6・Agent 365連携を反映して最新化
 - **内容**: 2026年8月に始まった個人向けCopilotアプリと法人向けMicrosoft 365 Copilotアプリの統合(アカウント切り替え型の単一アプリ化、アクセスURLの`m365.cloud.microsoft`→`copilot.cloud.microsoft`移行、Deep Research/Podcasts/Group Chat等の個人向け機能終了、データ境界は維持)を「仕組み・背景」に追記。2026年6月16日GAの自律型エージェント「Microsoft 365 Copilot Cowork」(GA時点でAnthropicのClaude Opus 4.8/Sonnet 4.6を採用、PayGo/P3の従量課金)を新しい「Copilot」製品として製品表・料金表・使い分け表に追加。Microsoft 365 Copilotの既定モデルがOpenAIのGPT-5.6に切り替わった点(2026年7月9日)、Agent 365上のエージェントをCopilot Chat・宣言型エージェントから呼び出せる連携機能がGA対象になっている点を追記。Copilot Proのサポート終了(2026年8月1日)を「予定」から「終了済み」に更新。GitHub CopilotのBusiness/Enterprise向け2倍クレジットキャンペーンの終了時期(2026年8月末)を追記
