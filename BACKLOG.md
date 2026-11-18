@@ -98,3 +98,4 @@
 | スポーツ業界における生成AI活用事例 | 14/第12章 | 事例追加 | https://aws.amazon.com/jp/blogs/news/genai-case-study-san-en-neophoenix/ / https://www.premierleague.com/en/news/4338015/premier-league-announces-partnership-with-microsoft | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定) |
 | 製造・建設現場の作業員・現場監督における生成AI活用事例 | 15/第18章 | 事例追加 | https://it.impress.co.jp/articles/-/29733 / https://www.rodo.co.jp/news/222027/ | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定) |
 | 医療事務・クリニック受付職における生成AI活用事例 | 15/第18章 | 事例追加 | https://prtimes.jp/main/html/rd/p/000000217.000048083.html / https://ascii.jp/elem/000/004/234/4234172/ | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定。受付・電話・レセプト点検の生成AI実名事例は未発見) |
+| 介護職員における生成AI活用事例 | 15/第18章 | 事例追加 | https://aws.amazon.com/jp/solutions/case-studies/yasashii-te / https://www.jf-cmca.jp/attach/kenkyu/honbu/r7/seisei-ai.pdf | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定) |
