@@ -96,3 +96,4 @@
 | 製薬業界における生成AI活用事例 — 追記ネタ: 塩野義製薬×日立の規制文書作成支援(CSR約50%・プロトコル約20%削減、社内PoC)は職種ページ(CRA・CRC)にカード化済み。Part 14側の本文から1行リンクに整理する | 14/第4章 | 更新 | https://www.shionogi.com/content/dam/shionogi/jp/news/pdf/2026/2月/J20260224.pdf | 2026-11-17 | C | 未着手 |
 | 訪問看護・在宅医療における生成AI活用事例 | 14/第4章 | 事例追加 | https://prtimes.jp/main/html/rd/p/000000128.000044577.html / https://www.itmedia.co.jp/news/articles/2509/17/news002.html | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定) |
 | スポーツ業界における生成AI活用事例 | 14/第12章 | 事例追加 | https://aws.amazon.com/jp/blogs/news/genai-case-study-san-en-neophoenix/ / https://www.premierleague.com/en/news/4338015/premier-league-announces-partnership-with-microsoft | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定) |
+| 製造・建設現場の作業員・現場監督における生成AI活用事例 | 15/第18章 | 事例追加 | https://it.impress.co.jp/articles/-/29733 / https://www.rodo.co.jp/news/222027/ | 2026-11-18 | B | 完了(2026-11-18。カタログ未保有ページから選定) |
