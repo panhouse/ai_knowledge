@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-19
+- [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](topics/part11-ai-agents/ai-agent-governance-basics.md): 「日本国内の動向」を最新化。デジタル庁「源内基準」第1版の統制措置を企業の規程に置き換える対応表を追加し、AI事業者ガイドライン第1.2版の記述を出典で確認できた内容に差し替え
 - [動画配信・OTTプラットフォーム業界における生成AI活用事例](topics/part14-industry-cases/video-streaming-ott-industry-ai-use-cases.md): 導入事例カタログを新設し、Netflix(『エテルナウタ』の生成AI VFX)・Amazon Prime Video(アニメのAI吹き替えとあらすじ動画の撤回)・Crunchyroll(委託先によるAI字幕の無断使用)の3件を追加。Video Recapsの本文に取り下げの経緯を追記
 - [獣医師における生成AI活用事例](topics/part15-job-role-cases/veterinarian-ai-use-cases.md): 導入事例カタログを新設し、新座どうぶつ病院(VetAsisによるSOAP自動要約と電子カルテ連携)・VEG ER for Pets(救急動物病院グループでのAIスクライブ全社展開)・Ethos Veterinary Health(記録下書きと既往歴要約)の3件を追加(海外2件。いずれも削減時間の数値公表なしと明記)
 - [アニメ・映像制作業界における生成AI活用事例](topics/part14-industry-cases/anime-video-production-industry-ai-use-cases.md): 導入事例カタログを新設し、Netflix×WIT STUDIO×rinna(背景美術に画像生成AIを使った実験作『犬と少年』)・WIT STUDIO(OP映像での方針外の生成AI使用と謝罪・差し替え)・DeNA×Utopai Studios(AIアニメ制作ワークフローの検証)の3件を追加(いずれも効率化の数値公表なし)
