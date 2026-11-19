@@ -4,7 +4,7 @@ part: 15
 chapter: "第18章 その他の職種"
 tags: [獣医師, 獣医療, 生成AI活用事例, カルテ作成, 投与量計算, 画像診断AI, AIスクライブ]
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-11-19
 ---
 
 # 獣医師における生成AI活用事例
@@ -60,6 +60,39 @@ EC商品説明文など)は
 | 文献・エビデンスの検索・要約 | 向く(Perplexity Academic・Consensus等) | 専門データベース(VIN、PubMed等)と併用 | エビデンスレベル・引用元の実在確認は人が行う |
 | 紹介状・診断書・検査依頼書の下書き | 向く(定型フォーマットの整形) | 電子カルテ連携型AIなら検査データを自動反映できる | 送付前に内容の正確性を必ず確認 |
 | 飼い主への説明準備(想定問答・言い換え) | 向く(専門用語のかみ砕き) | - | 終末期・重篤な病状説明はAI任せにせず自分の言葉で伝える |
+
+## 導入事例カタログ
+
+獣医師の業務に生成AIを組み込んだ実名事例を、共通カード書式で集める(2026年11月時点)。現時点で実名の導入が確認できるのは、ほぼ**診察中の会話からカルテ(SOAP形式=主観・客観・評価・計画の4区分)の下書きを作る「AIスクライブ」**に限られる。国内は実証から実運用に移ったばかりの段階で、海外では病院グループ単位の展開が進んでいる。
+
+### 新座どうぶつ病院(動物病院・規模の記載なし) — 対象業務: 診療記録(SOAP)の作成
+- **導入形態**: 専用SaaS導入(Joy with Pawsのカルテ作成支援AI「VetAsis」。ミニイクの電子カルテと連携した「VetAsis for ミニイク」)
+- **段階**: 部門展開(2025年11〜12月に数病院で実証し、2026年2月から同院で本格導入を開始)
+- **やったこと**: 診察中の獣医師と飼い主の会話を録音し、SOAP形式に自動要約して電子カルテへ入力する。実証では、獣医療特有の専門用語や話し言葉を含む会話での音声認識精度、SOAP要約の実用性、電子カルテへの自動入力の運用性を確認した
+- **効果**: 数値公表なし。獣医師から「そのままカルテの下書きとして使える」との評価があったとし、時間短縮などは今後定量評価するとしている(2026年2月、ベンダー公表)
+- **学べること**: 電子カルテと連携させ、要約をそのまま記録欄に入れられるかが運用定着の分かれ目。導入前に「専門用語・話し言葉を正しく拾えるか」を自院の診察で試すのが先
+- **出典**: [ASCII(PR TIMES配信): Joy with Paws「VetAsis」の実証と本格導入に関するリリース(2026年2月20日)](https://ascii.jp/elem/000/004/375/4375471/) / 最終確認日: 2026-11-19
+
+### VEG ER for Pets(米国・カナダで130超の救急動物病院を運営。海外事例) — 対象業務: 救急診療の記録作成
+- **導入形態**: 専用SaaS導入(VetRecのAIスクライブ)
+- **段階**: 全社展開中(6か月のパイロットを経て公式パートナーに選定。70%超の病院で稼働し、全社展開を進めている)
+- **やったこと**: 救急医療の現場で、診療記録の作成をAIで支援し、記録を早く締められるようにする。パイロット期間に、初期導入拠点の臨床医が10万件超の診療でVetRecを使った
+- **効果**: 削減時間の数値公表なし(2026年6月、ベンダー公表。利用実績は10万件超の診療)
+- **学べること**: 診療件数が多くシフト交代のある救急では、記録の後回しが溜まりやすい。パイロットで使用実績を積んでから全社展開を決める進め方は、病院グループの導入手順として参考になる
+- **出典**: [PR Newswire: VEG ER for Pets Partners with VetRec(2026年6月11日)](https://www.prnewswire.com/news-releases/veg-er-for-pets-partners-with-vetrec-to-advance-ai-powered-documentation-across-emergency-veterinary-care-302798165.html) / 最終確認日: 2026-11-19
+
+### Ethos Veterinary Health(米国で140超の専門・救急動物病院、獣医師1,500人超。海外事例) — 対象業務: 診療記録の下書き作成・既往歴の要約
+- **導入形態**: 専用SaaS導入(VetRec Scribe。複数年の提携)
+- **段階**: 全社展開の初期(提携の第1段階。医師600人超・スタッフ900人超が利用を始めた)
+- **やったこと**: 診察の内容を記録して診療記録の完全な下書きを作る。診察前には、その動物の過去の病歴の要約も作る
+- **効果**: 削減時間の数値公表なし(2025年9月、自社公表。利用者数のみ)
+- **学べること**: 紹介を受けて診る専門病院では、「前医の記録を読み込む時間」も大きい。記録作成だけでなく、診察前の既往歴要約まで対象にすると効果の範囲が広がる
+- **出典**: [Ethos Veterinary Health: Ethos Veterinary Health Partners with VetRec(2025年9月2日)](https://www.ethosvet.com/news-article/ethos-veterinary-health-partners-with-vetrec-to-revolutionize-clinical-efficiency-and-support-veterinary-teams/) / 最終確認日: 2026-11-19
+
+### 事例から見える傾向
+
+- 実名の導入事例はAIスクライブ(記録作成)に集中している。鑑別診断や治療方針の提案に生成AIを使った実名事例は、公表ベースでは見当たらない
+- 3件とも削減時間の数値は公表されておらず、公表されているのは利用者数や利用件数まで。自院で導入する場合は、1症例あたりの記録時間を導入前に測っておくと効果を確かめやすい
 
 ## 実務での使い方
 
@@ -187,6 +220,10 @@ Perplexity(Academicモード)やConsensusのような文献検索AIは、
 - [生成AI利用における情報漏洩対策](../part04-risk-security/information-leakage-prevention.md)
 
 ## 更新履歴
+
+### 2026-11-19: 導入事例カタログを新設(新座どうぶつ病院・VEG ER for Pets・Ethos Veterinary Health)
+- **内容**: 「導入事例カタログ」節を新設し、VetAsisによる会話からのSOAP自動要約と電子カルテ連携(新座どうぶつ病院、数値公表なし)、救急動物病院グループでのVetRec全社展開(VEG ER for Pets、海外)、専門・救急病院グループでの記録下書きと既往歴要約(Ethos Veterinary Health、海外)の3件と「事例から見える傾向」を追加
+- **出典**: [ASCII(新座どうぶつ病院)](https://ascii.jp/elem/000/004/375/4375471/) / [PR Newswire(VEG ER for Pets)](https://www.prnewswire.com/news-releases/veg-er-for-pets-partners-with-vetrec-to-advance-ai-powered-documentation-across-emergency-veterinary-care-302798165.html) / [Ethos Veterinary Health](https://www.ethosvet.com/news-article/ethos-veterinary-health-partners-with-vetrec-to-revolutionize-clinical-efficiency-and-support-veterinary-teams/)
 
 ### 2026-08-27: 初版執筆
 - **内容**: 獣医師個人の診療フロー(問診・カルテ記載・画像診断・投与量計算・文献調査・

@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-19
+- [獣医師における生成AI活用事例](topics/part15-job-role-cases/veterinarian-ai-use-cases.md): 導入事例カタログを新設し、新座どうぶつ病院(VetAsisによるSOAP自動要約と電子カルテ連携)・VEG ER for Pets(救急動物病院グループでのAIスクライブ全社展開)・Ethos Veterinary Health(記録下書きと既往歴要約)の3件を追加(海外2件。いずれも削減時間の数値公表なしと明記)
 - [アニメ・映像制作業界における生成AI活用事例](topics/part14-industry-cases/anime-video-production-industry-ai-use-cases.md): 導入事例カタログを新設し、Netflix×WIT STUDIO×rinna(背景美術に画像生成AIを使った実験作『犬と少年』)・WIT STUDIO(OP映像での方針外の生成AI使用と謝罪・差し替え)・DeNA×Utopai Studios(AIアニメ制作ワークフローの検証)の3件を追加(いずれも効率化の数値公表なし)
 - [社会保険労務士(社労士)における生成AI活用事例](topics/part15-job-role-cases/labor-social-security-consultant-ai-use-cases.md): 導入事例カタログを新設し、シンカ社会保険労務士法人(専用AIで助成金チェック約80%削減)・BIZARQ社会保険労務士法人(NotebookLM・Notion AIによる社内Q&Aとノウハウ共有)・プロセスコア(研修による定着とコラム執筆時間の短縮)の3件を追加(いずれもベンダー公表で、シンカは導入初期の数値と明記)
 - [学習塾・予備校における生成AI活用事例](topics/part14-industry-cases/cram-school-tutoring-industry-ai-use-cases.md): 導入事例カタログを新設し、ナガセ(GPT-4による英作文の即時添削)・河合塾(社内マニュアル検索による職員の学習提案準備)・明光ネットワークジャパン(AIアバターによる社員研修ロールプレイのトライアル)の3件を追加(学習効果・削減時間の数値はいずれも公表なしと明記)
