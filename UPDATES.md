@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-19
+- [動画配信・OTTプラットフォーム業界における生成AI活用事例](topics/part14-industry-cases/video-streaming-ott-industry-ai-use-cases.md): 導入事例カタログを新設し、Netflix(『エテルナウタ』の生成AI VFX)・Amazon Prime Video(アニメのAI吹き替えとあらすじ動画の撤回)・Crunchyroll(委託先によるAI字幕の無断使用)の3件を追加。Video Recapsの本文に取り下げの経緯を追記
 - [獣医師における生成AI活用事例](topics/part15-job-role-cases/veterinarian-ai-use-cases.md): 導入事例カタログを新設し、新座どうぶつ病院(VetAsisによるSOAP自動要約と電子カルテ連携)・VEG ER for Pets(救急動物病院グループでのAIスクライブ全社展開)・Ethos Veterinary Health(記録下書きと既往歴要約)の3件を追加(海外2件。いずれも削減時間の数値公表なしと明記)
 - [アニメ・映像制作業界における生成AI活用事例](topics/part14-industry-cases/anime-video-production-industry-ai-use-cases.md): 導入事例カタログを新設し、Netflix×WIT STUDIO×rinna(背景美術に画像生成AIを使った実験作『犬と少年』)・WIT STUDIO(OP映像での方針外の生成AI使用と謝罪・差し替え)・DeNA×Utopai Studios(AIアニメ制作ワークフローの検証)の3件を追加(いずれも効率化の数値公表なし)
 - [社会保険労務士(社労士)における生成AI活用事例](topics/part15-job-role-cases/labor-social-security-consultant-ai-use-cases.md): 導入事例カタログを新設し、シンカ社会保険労務士法人(専用AIで助成金チェック約80%削減)・BIZARQ社会保険労務士法人(NotebookLM・Notion AIによる社内Q&Aとノウハウ共有)・プロセスコア(研修による定着とコラム執筆時間の短縮)の3件を追加(いずれもベンダー公表で、シンカは導入初期の数値と明記)

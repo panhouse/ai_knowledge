@@ -4,7 +4,7 @@ part: 14
 chapter: "第7章 メディア・広告・エンタメ"
 tags: [動画配信, OTT, ストリーミング, レコメンデーション, 字幕生成, 吹き替え, 生成AI活用事例]
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-11-19
 ---
 
 # 動画配信・OTTプラットフォーム業界における生成AI活用事例
@@ -117,6 +117,8 @@ Netflixが自ら「かつて約6か月かかっていたローカライズが、
   ナレーション・せりふの抜粋・音楽を組み合わせた映像形式のあらすじ「Video Recaps」を
   ベータ提供開始。米国の「フォールアウト」「トム・クランシーのジャック・ライアン」
   「アップロード」などの対象作品で、シーズン開始前に数分の要約動画を視聴できる
+  (ただし2025年12月、『フォールアウト』のあらすじ動画に内容の誤りが見つかり、対象作品の
+  あらすじ動画はすべて取り下げられた。経緯は下の「導入事例カタログ」を参照)
 - **自社への応用ヒント**: 「テキスト要約で十分か、動画要約まで作る価値があるか」は
   コンテンツの性質次第。連続性の強いシリーズ作品・複雑な人間関係が絡む作品ほど
   動画要約の効果が出やすく、単発の映画・バラエティには過剰投資になりやすい
@@ -168,6 +170,34 @@ TVer・U-NEXTも大規模なレコメンド機能を運用しており、U-NEXT�
 業界横断で広がっている一般的パターンだが、配信事業者自身が公表した実名事例までは
 確認できていない。
 
+## 導入事例カタログ
+
+上の「実務での使い方」は各社の発表時点の機能紹介が中心である。ここでは、**配信事業者が生成AIの成果物を実際に視聴者へ出した結果どうなったか**まで追えた実名事例を、共通カード書式で集める(2026年11月時点)。成功例だけでなく、品質問題で撤回・謝罪に至った例も並べた。いずれも海外事例。
+
+### Netflix(世界最大級の動画配信事業者。海外事例) — 対象業務: オリジナルドラマのVFX(視覚効果)制作
+- **導入形態**: 内製(社内の制作技術部門Eyeline Studiosが制作)
+- **段階**: 全社展開(本番作品での採用。同社オリジナル作品で生成AIの映像が最終版に使われた初の例と説明)
+- **やったこと**: アルゼンチンのSFドラマ『エテルナウタ(El Eternauta)』で、ブエノスアイレスの建物が崩落するシーンを生成AIで制作した
+- **効果**: 従来のVFXツール・ワークフローより10倍速く完成。従来の手法では作品の予算内に収まらなかったと説明(2025年7月の第2四半期決算説明会での共同CEOの発言、自社公表。Reuters報道)
+- **学べること**: 生成AIの価値を「同じものを安く作る」だけでなく、「予算の都合で諦めていた表現を可能にする」と位置づけている。経営トップが成果を数値で語った点も、社内外への説明の型として参考になる
+- **出典**: [BNN Bloomberg(Reuters配信): Netflix says it used GenAI in Argentine TV series(2025年7月18日)](https://www.bnnbloomberg.ca/business/artificial-intelligence/2025/07/18/netflix-says-it-used-genai-in-argentine-tv-series/) / 最終確認日: 2026-11-19
+
+### Amazon(Prime Video。海外事例) — 対象業務: アニメのAI吹き替え、ドラマのあらすじ動画(Video Recaps)
+- **導入形態**: 内製(Prime Videoの機能として提供)
+- **段階**: PoC(いずれも「ベータ」として一般公開したのち撤回)
+- **やったこと**: 2025年12月初めまでに、『BANANA FISH』『ノーゲーム・ノーライフ』『ヴィンランド・サガ』に「AI beta」と表示した英語のAI吹き替えを追加した。声優団体や声優から強い批判を受け、英語吹き替えはひそかに取り下げられた(『ヴィンランド・サガ』のスペイン語AI吹き替えは残ったと報道)。同じ時期、生成AIで作るあらすじ動画「Video Recaps」が『フォールアウト』シーズン1の内容・時代設定を誤って要約し、2025年12月には対象作品すべてのあらすじ動画が見られなくなった
+- **効果**: 該当なし(効率化の数値公表なし。2025年12月、第三者取材。Engadget。Amazonの公式コメントは記事時点でなし)
+- **学べること**: 人のレビューを挟む前提で始めたパイロットでも、ファンの思い入れが強い作品では品質の小さなほころびが炎上につながる。対象作品の選び方と、公開前のチェックの厚さを作品の性質に合わせる必要がある
+- **出典**: [Engadget: Amazon halts AI anime dub 'beta' after widespread ridicule(2025年12月3日)](https://www.engadget.com/entertainment/amazon-halts-ai-anime-dub-beta-after-widespread-ridicule-141501051.html) / [Engadget: Amazon pulls its bad AI video recaps after Fallout fallout(2025年12月12日)](https://www.engadget.com/entertainment/streaming/amazon-pulls-its-bad-ai-video-recaps-after-fallout-fallout-220358758.html) / 最終確認日: 2026-11-19
+
+### Crunchyroll(アニメ専門の動画配信事業者。海外事例) — 対象業務: アニメの字幕翻訳(外部委託先による無断使用)
+- **導入形態**: 不明(会社として導入したものではなく、外部の字幕制作委託先が契約に反して生成AIを使用)
+- **段階**: 不明(配信中の作品で発覚)
+- **やったこと**: 2025年7月、配信中のアニメ『ネクロノミ子のコズミックホラーショウ』のドイツ語字幕に「ChatGPT said:」という文言が残っていることを視聴者が発見し、英語字幕の誤訳も批判された。Crunchyrollは「外部ベンダーが契約に反してAI生成の字幕を使った」と説明し、調査と修正を表明した。同社社長は2024年初めに、字幕作成への生成AIの活用を検証していると語っていた
+- **効果**: 該当なし(効率化の事例ではない。2025年7月、第三者取材。Engadget)
+- **学べること**: 自社が「使わない」と決めていても、委託先が使えば視聴者からは配信事業者の責任と見られる。委託契約にAI使用の可否を明記するだけでなく、納品物の検品で見抜ける体制が要る
+- **出典**: [Engadget: Crunchyroll blames third-party vendor for AI subtitle mess(2025年7月3日更新)](https://www.engadget.com/entertainment/streaming/crunchyrolls-lazy-ai-subtitles-have-anime-fans-furious-145621722.html) / 最終確認日: 2026-11-19
+
 ## 注意点・よくある誤解
 
 - **「AI吹き替え」への視聴者・現場からの反発は強い**: Amazon Prime Videoが一部アニメ作品に
@@ -202,6 +232,10 @@ AI吹き替えパイロットのように「少数タイトルで試し、必ず
 - [生成AIの著作権リスクと実務での注意点](../part04-risk-security/copyright-risks-in-generative-ai.md)
 
 ## 更新履歴
+
+### 2026-11-19: 導入事例カタログを新設(Netflix・Amazon Prime Video・Crunchyroll)
+- **内容**: 「導入事例カタログ」節を新設し、『エテルナウタ』での生成AIによるVFX制作(Netflix、10倍速は自社公表)、アニメのAI吹き替えとあらすじ動画の撤回(Amazon Prime Video、2025年12月)、外部委託先によるAI字幕の無断使用(Crunchyroll、2025年7月)の3件を追加(いずれも海外事例)
+- **出典**: [BNN Bloomberg(Reuters配信)](https://www.bnnbloomberg.ca/business/artificial-intelligence/2025/07/18/netflix-says-it-used-genai-in-argentine-tv-series/) / [Engadget(AI吹き替え)](https://www.engadget.com/entertainment/amazon-halts-ai-anime-dub-beta-after-widespread-ridicule-141501051.html) / [Engadget(Video Recaps)](https://www.engadget.com/entertainment/streaming/amazon-pulls-its-bad-ai-video-recaps-after-fallout-fallout-220358758.html) / [Engadget(Crunchyroll)](https://www.engadget.com/entertainment/streaming/crunchyrolls-lazy-ai-subtitles-have-anime-fans-furious-145621722.html)
 
 ### 2026-09-12: 初版執筆
 - **内容**: Part14(業種別 生成AI活用事例)のメディア・広告・エンタメの章に、
