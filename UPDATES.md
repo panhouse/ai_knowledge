@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-20
+- [理学療法士・作業療法士(リハビリ専門職)における生成AI活用事例](topics/part15-job-role-cases/pt-ot-rehabilitation-therapist-ai-use-cases.md): 導入事例カタログを新設し、蘇生会総合病院・生和会グループ・正幸会病院・Confluent Health(海外)の4件を追加(生和会・正幸会の数値は実証期間中のもの、蘇生会は院内研究、Confluent Healthは数値公表なし)
 - [産業用ロボット・FA(ファクトリーオートメーション)メーカーにおける生成AI活用事例](topics/part14-industry-cases/industrial-robotics-fa-ai-use-cases.md): AISI「AIロボティクスに関するセーフティ評価観点ガイド」(v1.0、2026年7月)の9評価観点とFA現場での読み替えチェック例を追加(対象は飲食店搬送・遠隔操作型配送ロボットでFAセル向けではない点を明記)
 
 ## 2026-11-19
