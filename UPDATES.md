@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-20
+- [廃棄物処理・リサイクル業界における生成AI活用事例](topics/part14-industry-cases/waste-management-recycling-ai-use-cases.md): 導入事例カタログを新設し、文京区「文京ごみナビ」・福岡市×LINEヤフーコミュニケーションズ・三豊市×東大松尾研・Veolia×Mistral AI(海外)の4件を追加(福岡市・三豊市の数値は実証段階の値、文京区・Veoliaは数値公表なし)。出典で確認できなかった別府市・佐賀市・横浜市の記述を修正
 - [AIエージェントとは何か](topics/part11-ai-agents/ai-agent-basics.md): 常時稼働型エージェント(OpenAI dots・Gemini Spark・Microsoft Scout)の分類を追加し、ClaudeのCowork統合を反映して最新化
 - [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 導入事例カタログに長野市民病院(SecuAiGent・年5,472時間の試算)・相澤病院・武蔵ヶ丘病院の3事例を追加し、「事例から見える傾向」を新設
 - [保育・幼児教育における生成AI活用事例](topics/part14-industry-cases/childcare-early-education-ai-use-cases.md): 導入事例カタログを新設し、ハイパーネットワーク社会研究所(大分市の保育所での月間指導計画の原案作成)・ちとせ交友会(職員向け理念伴走AI「AIちこちゃん」)・木の葉こども園(生成AIによる行事の企画・制作)の3件を追加(数値は大分市のPoC段階の自社公表のみ、他2件は数値公表なし)
