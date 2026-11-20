@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-20
+- [医療・ヘルスケアにおける生成AI活用事例](topics/part14-industry-cases/healthcare-ai-use-cases.md): 導入事例カタログに長野市民病院(SecuAiGent・年5,472時間の試算)・相澤病院・武蔵ヶ丘病院の3事例を追加し、「事例から見える傾向」を新設
 - [保育・幼児教育における生成AI活用事例](topics/part14-industry-cases/childcare-early-education-ai-use-cases.md): 導入事例カタログを新設し、ハイパーネットワーク社会研究所(大分市の保育所での月間指導計画の原案作成)・ちとせ交友会(職員向け理念伴走AI「AIちこちゃん」)・木の葉こども園(生成AIによる行事の企画・制作)の3件を追加(数値は大分市のPoC段階の自社公表のみ、他2件は数値公表なし)
 - [理学療法士・作業療法士(リハビリ専門職)における生成AI活用事例](topics/part15-job-role-cases/pt-ot-rehabilitation-therapist-ai-use-cases.md): 導入事例カタログを新設し、蘇生会総合病院・生和会グループ・正幸会病院・Confluent Health(海外)の4件を追加(生和会・正幸会の数値は実証期間中のもの、蘇生会は院内研究、Confluent Healthは数値公表なし)
 - [産業用ロボット・FA(ファクトリーオートメーション)メーカーにおける生成AI活用事例](topics/part14-industry-cases/industrial-robotics-fa-ai-use-cases.md): AISI「AIロボティクスに関するセーフティ評価観点ガイド」(v1.0、2026年7月)の9評価観点とFA現場での読み替えチェック例を追加(対象は飲食店搬送・遠隔操作型配送ロボットでFAセル向けではない点を明記)
