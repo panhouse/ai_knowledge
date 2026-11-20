@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-20
+- [産業用ロボット・FA(ファクトリーオートメーション)メーカーにおける生成AI活用事例](topics/part14-industry-cases/industrial-robotics-fa-ai-use-cases.md): AISI「AIロボティクスに関するセーフティ評価観点ガイド」(v1.0、2026年7月)の9評価観点とFA現場での読み替えチェック例を追加(対象は飲食店搬送・遠隔操作型配送ロボットでFAセル向けではない点を明記)
+
 ## 2026-11-19
 - [AIエージェント運用のガバナンス設計(権限ポリシー・監査ログ・コスト管理)](topics/part11-ai-agents/ai-agent-governance-basics.md): 「日本国内の動向」を最新化。デジタル庁「源内基準」第1版の統制措置を企業の規程に置き換える対応表を追加し、AI事業者ガイドライン第1.2版の記述を出典で確認できた内容に差し替え
 - [動画配信・OTTプラットフォーム業界における生成AI活用事例](topics/part14-industry-cases/video-streaming-ott-industry-ai-use-cases.md): 導入事例カタログを新設し、Netflix(『エテルナウタ』の生成AI VFX)・Amazon Prime Video(アニメのAI吹き替えとあらすじ動画の撤回)・Crunchyroll(委託先によるAI字幕の無断使用)の3件を追加。Video Recapsの本文に取り下げの経緯を追記
