@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-21
+- [NPO・非営利団体における生成AI活用事例](topics/part14-industry-cases/npo-nonprofit-ai-use-cases.md): 導入事例カタログを新設し、NPO法人eboard・NPO法人セイエン・International Rescue Committee(海外)・Infoxchange(海外)・Epilepsy Foundation(海外)の5件を追加(eboard・IRCの数値は実証/試験運用段階の値、Infoxchangeはベンダー公表、セイエン・Epilepsy Foundationは数値公表なし)。出典で確認できなかった匿名NPOの採択率事例・AI利用ポリシー未整備76%・Claude Teamの価格/最低シート数/対象モデル等の記述を削除・修正し、OpenAI for Nonprofitsの開始時期を訂正
 - [図書館・博物館業界における生成AI活用事例](topics/part14-industry-cases/library-museum-industry-ai-use-cases.md): 導入事例カタログを新設(横浜市立図書館・兵庫津ミュージアム/福岡市博物館・日本科学未来館・メトロポリタン美術館・クリーブランド美術館の5件)、裏取りできない本文記述を修正・削除
 - [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): 導入事例カタログにJCOM・三井住友銀行・かんぽ生命保険・三井住友海上火災保険の4件を追加し、「事例から見える傾向」を更新(JCOMの月約1,500時間削減は説明会での担当者の報告値、かんぽ生命の後処理短縮はPoC段階の値で日本IBM提供記事による。三井住友銀行・三井住友海上は数値公表なし)
 - [ChatGPTのエージェント機能(ChatGPT Work・dots)とスケジュールタスク](topics/part03-ai-chat-tools/chatgpt-agent-mode-feature.md): 常時稼働型エージェント「dots」の節とWork/dotsの使い分け表を追加し、Workのモデル・利用上限・クラウドブラウザ設定、スケジュールタスクの仕様を2026年11月時点に最新化
