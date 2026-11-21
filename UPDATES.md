@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-21
+- [Human in the Loop(人間参加型)の業務設計](topics/part12-business-practice/human-in-the-loop-basics.md): ワークスロップ(workslop)対策の節を新設(送り手側のセルフチェック・AI使用メモ・受け渡しルール)し、全体を最新化
 - [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 導入事例カタログにサイバーエージェント・DeNA・マネーフォワード・freeeの事例を追加し、「事例から見える傾向」を更新
 
 ## 2026-11-20
