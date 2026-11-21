@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-21
+- [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 導入事例カタログにサイバーエージェント・DeNA・マネーフォワード・freeeの事例を追加し、「事例から見える傾向」を更新
+
 ## 2026-11-20
 - [栄養士・調理師における生成AI活用事例](topics/part15-job-role-cases/dietitian-cook-ai-use-cases.md): 導入事例カタログを新設し、シニアライフクリエイト・Manchester Royal Infirmary・Thomas Jefferson University・東京大学ほか「匠2」の4件を追加(シニアライフクリエイトの削減時間は見込み値、Jefferson・匠2は研究段階で本番展開後の数値ではない)
 - [廃棄物処理・リサイクル業界における生成AI活用事例](topics/part14-industry-cases/waste-management-recycling-ai-use-cases.md): 導入事例カタログを新設し、文京区「文京ごみナビ」・福岡市×LINEヤフーコミュニケーションズ・三豊市×東大松尾研・Veolia×Mistral AI(海外)の4件を追加(福岡市・三豊市の数値は実証段階の値、文京区・Veoliaは数値公表なし)。出典で確認できなかった別府市・佐賀市・横浜市の記述を修正
