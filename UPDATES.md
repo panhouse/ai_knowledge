@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-21
+- [カスタマーサポート職における生成AI活用事例](topics/part15-job-role-cases/customer-support-ai-use-cases.md): 導入事例カタログにJCOM・三井住友銀行・かんぽ生命保険・三井住友海上火災保険の4件を追加し、「事例から見える傾向」を更新(JCOMの月約1,500時間削減は説明会での担当者の報告値、かんぽ生命の後処理短縮はPoC段階の値で日本IBM提供記事による。三井住友銀行・三井住友海上は数値公表なし)
 - [ChatGPTのエージェント機能(ChatGPT Work・dots)とスケジュールタスク](topics/part03-ai-chat-tools/chatgpt-agent-mode-feature.md): 常時稼働型エージェント「dots」の節とWork/dotsの使い分け表を追加し、Workのモデル・利用上限・クラウドブラウザ設定、スケジュールタスクの仕様を2026年11月時点に最新化
 - [Human in the Loop(人間参加型)の業務設計](topics/part12-business-practice/human-in-the-loop-basics.md): ワークスロップ(workslop)対策の節を新設(送り手側のセルフチェック・AI使用メモ・受け渡しルール)し、全体を最新化
 - [エンジニア・開発職における生成AI活用事例](topics/part15-job-role-cases/engineer-development-ai-use-cases.md): 導入事例カタログにサイバーエージェント・DeNA・マネーフォワード・freeeの事例を追加し、「事例から見える傾向」を更新
