@@ -1,141 +1,226 @@
 ---
-title: "ChatGPTのエージェント機能(旧ChatGPT Agent→ChatGPT Work)とスケジュールタスク(Tasks)"
+title: "ChatGPTのエージェント機能(ChatGPT Work・dots)とスケジュールタスク"
 part: 3
 chapter: 第4章 生成・分析の主要機能
-tags: [ChatGPT, ChatGPT Work, ChatGPT Agent, Work, Tasks, タスク自動化, ブラウザ操作, クラウドブラウザ]
+tags: [ChatGPT, ChatGPT Work, dots, ChatGPT Agent, 常時稼働型エージェント, スケジュールタスク, タスク自動化, ブラウザ操作, クラウドブラウザ]
 created: 2026-07-06
-updated: 2026-09-05
+updated: 2026-11-21
 ---
 
-# ChatGPTのエージェント機能(旧ChatGPT Agent→ChatGPT Work)とスケジュールタスク(Tasks)
+# ChatGPTのエージェント機能(ChatGPT Work・dots)とスケジュールタスク
 
 ## これは何か
 
-通常のChatGPTは、1回の質問に1回の回答を返すだけで、「このサイトを開いて」「フォームに入力して」「予約を確定して」といった実際の操作はユーザー自身がやるしかない。**ChatGPT Work(チャットGPT・ワーク)**は、ChatGPTに組み込まれた**クラウドブラウザ**(OpenAI側のサーバー上で動く仮想ブラウザ環境)を使って、ChatGPT自身がWebサイトを開き、検索・クリック・フォーム入力・ファイル作成といった複数ステップの作業を、人間の代わりに最後までやり切る機能である。「競合5社を調べて比較表を作る」「ある商品をカートに入れて確認画面まで進める」「ログインが必要な会計ソフトに請求書を提出する」のような、これまで人が何度もブラウザを往復して行っていた作業を、目的(ゴール)を渡すだけで代行し、スプレッドシート・スライド・ドキュメント・簡単なWebアプリといった**完成した成果物**として返してくれる。
+通常のChatGPTは、1回の質問に1回の回答を返すだけで、「このサイトを開いて」「フォームに入力して」「資料を仕上げて」といった実際の作業はユーザー自身がやるしかない。2026年11月時点のChatGPTには、この「作業そのもの」を任せるための仕組みが3つある。
 
-このChatGPT Workは、2026年7月9日にOpenAIが発表した名称で、それまで「**ChatGPT Agent**」「エージェントモード」と呼ばれていた機能が改名・拡張されたものである。ヘルプセンターの「ChatGPT agent」ページも現在は「ChatGPT agentは提供終了し、複数ステップの作業と成果物の作成にはChatGPT Workを使ってほしい」という案内に切り替わっている([ChatGPT Work and Codex | OpenAI Help Center](https://help.openai.com/en/articles/20001275))。本ページや社内の過去のやり取りで「ChatGPT Agent」「エージェントモード」という表記を見かけた場合は、現行のChatGPT Workのことだと読み替えてよい。
+- **ChatGPT Work(ワーク)**: 入力欄の上でモードを「Work」に切り替えて依頼すると、ChatGPTが**クラウドブラウザ**(OpenAI側のサーバー上で動く仮想ブラウザ)やアプリ連携を使い、検索・クリック・フォーム入力・ファイル作成といった複数ステップの作業を最後までやり切り、スプレッドシート・スライド・ドキュメントなどの**完成した成果物**として返す。「依頼したら動く」**依頼型**のエージェント
+- **dots(ドッツ)**: 2026年9月29日のDevDay 2026で発表された**常時稼働型**のエージェント。1つひとつの「dot」が専用のクラウドコンピュータを持ち、利用者が画面を閉じている間も目標に向けて下調べ・定期チェック・提案を続ける。ChatGPTのほか、Slack・Microsoft Teamsからも話しかけられる「専属アシスタント」に近い存在
+- **スケジュールタスク(Scheduled)**: 「毎週月曜9時に業界ニュースを要約して」のように、決まった時刻・周期、あるいは「新着メールが来たら」といったイベントをきっかけに、同じ依頼を自動で繰り返させる仕組み
 
-これとは別に、**Tasks(タスク/スケジュールタスク)**という機能もある。こちらはクラウドブラウザを伴わない軽量な仕組みで、「毎週月曜9時に業界ニュースを要約して送って」のように、決まった時刻・周期でChatGPTに同じ依頼を自動的に繰り返させるものである。「都度お願いするのを忘れる」「毎回同じ質問を打つのが手間」という悩みを解決する。本ページでは、この2つ(能動的に操作を代行するChatGPT Workと、時間で自動起動するTasks)をまとめて「ChatGPTの自律実行系機能」として扱う。
+旧称の「**ChatGPT Agent**」「エージェントモード」(2025年7月〜)は、2026年7月9日に「ChatGPT Work」へ改名・拡張された。社内の古いマニュアルでこの表記を見かけた場合は、現行のChatGPT Workのことだと読み替えてよい。
 
 ## 仕組み・背景
 
-### ChatGPT Agentの成り立ちと「ChatGPT Work」への改名(2026年7月)
+### 成り立ち: Operator → ChatGPT Agent → ChatGPT Work → dots
 
-現在のChatGPT Workは、もともと2つの機能が統合されて生まれたものである。
+- **Operator(2025年1月)**: 仮想ブラウザでWebサイト上の操作(予約・フォーム入力など)を代行する専用ツール。2025年8月31日に単体提供を終了
+- **ChatGPT agent(2025年7月17日)**: OperatorとDeep Research(出典付きレポートを作る調査モード)と通常の対話を統合した機能([Introducing ChatGPT agent | OpenAI](https://openai.com/index/introducing-chatgpt-agent/))
+- **ChatGPT Work(2026年7月9日)**: ChatGPTが**Chat(通常の対話)・Work(複数ステップの作業と成果物作成)・Codex(ソフトウェア開発)**の3モード構成に再編され、旧エージェントモードは「Work」に一本化された([ChatGPT is now a partner for your most ambitious work | OpenAI](https://openai.com/index/chatgpt-for-your-most-ambitious-work/))
+- **dots(2026年9月29日)**: Workが「頼まれた仕事を仕上げる」のに対し、dotsは「会話の外でも動き続け、自分から仕事を見つけて進める」常時稼働型として追加された([Introducing dots | OpenAI](https://openai.com/index/introducing-dots/))
 
-- **Operator**: 2025年1月に発表された、仮想ブラウザを操作してWebサイト上のタスク(予約・注文フォーム入力など)を代行する専用ツール
-- **Deep Research**: Web上の情報を自律的に調べ回り、出典付きの長文レポートにまとめる調査特化のモード(詳しくは[Deep Research機能](../part12-business-practice/ai-research-and-information-gathering.md)を参照)
+独自ブラウザ「ChatGPT Atlas」(2025年10月提供開始)は2026年8月9日に終了し、ブラウザ型エージェントの機能はChatGPT本体(クラウドブラウザ・デスクトップアプリ)などに統合されている。
 
-2025年7月17日、OpenAIはこの2つと通常のChatGPTの対話能力を統合し、単一の「ChatGPT agent」として再構成した([Introducing ChatGPT agent | OpenAI](https://openai.com/index/introducing-chatgpt-agent/))。単体ツールとしてのOperatorは2025年8月31日で提供終了し、その機能はChatGPT Agentに一本化された。
+### ChatGPT Workの動き方
 
-その後、2026年7月9日にOpenAIは新モデルファミリー「GPT-5.6」の投入に合わせ、ChatGPTを**Chat(通常の対話)・Work(複数ステップの自律作業)・Codex(ソフトウェア開発)**という3モード構成に再編し、旧「ChatGPT agent(エージェントモード)」は「**ChatGPT Work**」という名称に一本化された。OpenAIはこれを「答えを作るAIから、仕事を仕上げるAIへ」という位置付けで発表しており、数時間かかるような複雑なプロジェクトを小さなステップに分解し、独力で進め続けられる点を強調している([ChatGPT is now a partner for your most ambitious work | OpenAI](https://openai.com/index/chatgpt-for-your-most-ambitious-work/))。
+- **クラウドブラウザ**: OpenAIのサーバー上で動くブラウザを使うため、デスクトップ・Web・モバイルのどこから依頼しても、PCを閉じても作業が続く。AIが操作する様子は画面で確認でき、途中で止めたり指示を足したりできる。クラウドブラウザは手元の端末のログイン状態を使わず、独自のセッションを持つ([ChatGPTでのクラウドブラウザーの使用 | OpenAI Help Center](https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt))
+- **ローカルファイル**: デスクトップアプリのWorkは、許可したフォルダ・ファイルを扱える。Web・モバイルからは手元PCのファイルにはアクセスできない([ChatGPT Work and Codex | OpenAI Help Center](https://help.openai.com/en/articles/20001275))
+- **Plugins(プラグイン)とアプリ連携**: Gmail・Slack・GitHubなどの外部サービスとの連携(「アプリ」)を、Pluginsというカタログから有効化して使う。2026年11月発表のGPT-6.2系モデルは、タスクに応じてプラグイン経由の連携とcomputer use(画面を直接操作する機能)を使い分けるとされる([Introducing GPT-6.2 Astra and Sol | OpenAI](https://openai.com/index/introducing-gpt-6-2-astra-sol))
+- **音声**: Workでは音声での対話(Voice)も使える(Web・iOS・Android、およびデスクトップアプリ)
+- **モデル(2026年11月時点)**: Workのモデル選択(model picker)では、2026年11月17日に追加された**GPT-6.2 Astra**(難しい専門業務・コーディング向けの上位モデル)と**GPT-6.2 Sol**(日常業務向けの効率型モデル)が中心で、プランやワークスペース設定によってGPT-6.1 Sol・GPT-6.1 Terra・GPT-6 Sol・GPT-6 Lunaなども表示される([ChatGPT Work and Codex | OpenAI Help Center](https://help.openai.com/en/articles/20001275)、[ChatGPT release notes | OpenAI Help Center](https://help.openai.com/en/articles/6825453-chatgpt-release-notes))
 
-なお、「調査だけしてほしい(Deep Research相当)」の入口は今回の再編後も別モードとして残っており、2026年9月時点でもdeep researchはChatGPT Workに統合されず、ツールメニューの中に独立した選択肢として引き続き存在している。「調べるだけ」か「操作・成果物作成までしてほしい」かで使い分ける構図に変わりはない。
+#### 安全のための仕組み(クラウドブラウザ)
 
-### 「ChatGPT Atlas」終了とクラウドブラウザへの一本化(2026年8月)
+- **セキュアなサインインフォーム**: ログインが必要なサイトでは作業が一時停止し、専用フォームにID・パスワード(必要なら2要素認証コード)を入力する。入力内容はリモートのブラウザに直接渡り、AIモデルからは見えず、ChatGPTにも保存されない。フォームを出す前に、フィッシングや欺瞞がないかを別の審査モデルがチェックする。サインイン済みのセッションは有効期限まで次回以降の作業で再利用される
+- **Webサイトへのアクセス許可**: 「設定→クラウドブラウザ」で、既定の動作を「**Always ask**(毎回確認)」「**Auto approve**(URLを審査し、危険そうなときだけ停止)」「**Always allow**(すべて許可。非推奨)」から選べ、サイトごとの許可・ブロックも設定できる
+- **確認プロンプト**: 予約の確定や支払いなど、取り消しにくい操作の前にはチャット上で確認を求める。サイトを「許可」していてもこの確認は省略されない
+- **テイクオーバー(Take over)**: AIが行き詰まったときや自分で入力したいときは、スマホやPCからクラウドブラウザの操作を引き取り、終わったら「Return control」で返す
+- **セッションの削除**: 「設定→クラウドブラウザ→Browser data→Cookies」から、全サイトまたはサイト単位で保存データを消せる(消すとそのサイトからはサインアウトされる)
 
-独自ブラウザ「ChatGPT Atlas」(2025年10月提供開始)は、公開から1年足らずの**2026年8月9日にサービスを終了した**。OpenAIは7月9日の時点で終了を予告しており、Atlasが持っていたブラウザ型エージェント機能(エージェントモード・ブラウザ記憶)は、ChatGPT本体(デスクトップアプリ)・Chrome拡張機能・Codexへと統合された([OpenAIのブラウザ「ChatGPT Atlas」終了へ 公開から1年足らずで | ITmedia NEWS](https://www.itmedia.co.jp/news/articles/2607/13/news090.html))。ブックマーク・Cookie・ログインセッションは自動移行されないため、Atlasを使っていた場合は終了前にエクスポート・記録が必要だった。現在「AI内蔵ブラウザでの操作」を試したい場合は、ChatGPT Work(本体)またはChrome拡張機能(Claude in Chromeのような他社の拡張版に相当)を使う形に一本化されている。
+### dotsの動き方(2026年11月時点)
 
-### 動作の仕組み(2026年8月更新: クラウドブラウザ化)
+- **専用のクラウドコンピュータ**: 各dotは自分専用のクラウドコンピュータとブラウザを持ち、利用者のPCとは切り離されている(手元PCへのアクセスは初期状態でオフ。デスクトップアプリから「Allow access」で許可し、「Revoke access」で取り消せる)
+- **常時稼働・自発的な下調べ**: 指示がなくても、接続したアプリの情報を確認し、バックグラウンドで「proactive research(先回りの調査)」を行って提案する。この**バックグラウンドの調査は接続アプリへの読み取り専用のツールに制限**されている
+- **好みを学習**: ChatGPTのメモリーを引き継ぎつつ、フィードバックや接続アプリから独自のメモリーも作る
+- **4,000以上のアプリと連携**: Pluginsを通じて4,000を超えるアプリに接続できる。必要に応じてCodexやChatGPT Workに作業を振ることもできる
+- **話しかける場所**: ChatGPTのデスクトップ・Web・モバイル(メッセージまたは通話)、SlackとMicrosoft Teams。2026年11月19日にはモバイルアプリの新デザインでdot専用のタブが追加された(Pro先行)。米国などの一部Pro向けにはテキストメッセージ(iMessage/RCS)でのやり取りがベータ提供されている
+- **搭載モデル**: GPT-6 Astraを基盤とし、作業の部分ごとに別のモデルを使い分ける(2026年11月3日の更新でGPT-6.1 Terraも追加)
+- **安全策**: 監視システムが安全上の懸念を検知すると作業を一時停止・中止する。後述の「カスタムルール」で操作ごとの扱いを決められ、アカウントに影響する操作や情報共有につながる操作は自動レビュー(Auto-review)でチェックされる。パスワード変更のような機微な操作は常に利用者本人に残る。対応サイトでは保存済みパスワードを、モデルに見せずにサインインに使える。進捗はActivity View(アクティビティ表示)で追える([Introducing dots | OpenAI](https://openai.com/index/introducing-dots/))
+- **購入(米国のみ)**: 2026年11月13日から、米国の18歳以上のPro利用者向けに「ChatGPT Wallet」がdotsで段階展開され、利用者が生体認証で注文を承認したうえでdotが買い物を行える
 
-ChatGPT Workは、2026年8月の更新で**クラウドブラウザ**(OpenAI側のサーバー上で常時動くブラウザ環境)に切り替わり、デスクトップアプリだけでなくWeb版・モバイル版からもアクセスできるようになった。ユーザーは、AIがマウス操作・クリック・入力を行っている様子をリアルタイムの画面としてそのまま眺めることができ、途中で止めたり指示を追加したりできる。クラウド上で動くため、PCの電源を切ったり画面を閉じたりしても、裏側で作業を継続させたまま他の作業に移ることができる。仮想環境の中で検索・サイト巡回・フォーム入力に加えて、コードの実行や、スプレッドシート・スライド・簡易なWebアプリ(「Sites」と呼ばれる成果物形式)の作成まで行える。
+### スケジュールタスクの仕組み
 
-Gmail・Googleカレンダー・Google ドライブ・GitHub・Outlook・SharePoint・Dropbox・Box・HubSpot・Linear・Teams・Slack・Salesforce・Figma・Adobe Acrobat・Zoom・Canvaなどの外部サービスは、「**Plugins(プラグイン)**」ディレクトリを通じて連携できる。この呼び方は2025年12月に「コネクタ(connectors)」から「アプリ(apps)」へ、2026年7月にさらに「Plugins」へと変わったが、正確には「Plugins」は個々の連携(スキル・アプリ・テンプレート)を束ねて発見・有効化しやすくする**カタログ(ディレクトリ)の呼び名**で、Gmail・Slackのような個別の連携そのものは引き続き「**アプリ(apps)**」と呼ばれている([Apps in ChatGPT | OpenAI Help Center](https://help.openai.com/en/articles/11487775-connectors-in-chatgpt))。社内カレンダーの空き時間を見てメールを起草する、Salesforceの商談ステータスを更新する、といった横断作業も可能になっている。
+ChatGPTに「指定した日時・周期で同じ依頼を自動実行させる」軽量な仕組み。2026年11月時点のヘルプでは「**Scheduled**」という画面で管理する。
 
-安全面では、次の仕組みが用意されている。
+- **時刻ベース**: 1回だけ・毎日・毎週などの周期で実行。有料プランは最短1時間に1回まで、正確な時刻を指定できる。Freeは1日1回までで、「朝・午後・夜」のような幅のある時間帯での実行になる
+- **イベントトリガー(Plus以上)**: Gmailの新着メール、Slackチャンネルの新着メッセージ、GitHubのプルリクエストの動きなど、接続アプリの変化をきっかけにWorkのタスクを起動できる(全イベントトリガー合計で1時間30回・1日720回まで)
+- **共有**: 対象のクラウド上のスケジュールタスクは他の人に共有でき、受け取った側には別のコピーが作られる(チャット履歴やファイルは引き継がれない)
 
-- **セキュアなサインインフォーム(2026年8月25日〜)**: ログインが必要なサイトの操作を頼むと、専用の安全なサインイン画面が表示され、ユーザーがそこにID・パスワードを入力する。入力内容はChatGPT(AIモデル)側からは一切見えず、保存もされない仕組みになっている。2要素認証(2FA)の入力もこの画面内で行える。一度サインインすると、そのサイトのログインセッションはクラウドブラウザ上に保持され、次回以降の依頼でも再ログインなしで作業を継続できる([ChatGPT Work、ログイン必要なサイトも操作可能に「パスワードは一切見ない」| ITmedia NEWS](https://www.itmedia.co.jp/aiplus/article/2608/26/2000000788/)、[ChatGPTでのクラウドブラウザーの使用 | OpenAI Help Center](https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt))。保持されたセッションは、設定画面の「**設定→クラウドブラウザ**」からサイトごとに一覧・削除でき、まとめて「すべてクリア」することもできる
-- **テイクオーバーモード(takeover mode)**: 決済情報の入力など、上記のサインインフォームでカバーされない機微な操作が必要な場面では、ユーザーが画面を一時的に引き取って自分の手で入力する。入力した内容をChatGPT側が記録・保存することはない
-- **確認プロンプト**: メール送信・注文確定・予約確定など、後戻りしにくい(消費者にとって重要な)操作の直前で、AIが自動的に停止し「実行してよいか」を確認してくる。この確認を省略する「常に許可する(Always allow)」設定も用意されているが、認証・決済が絡む操作では毎回の確認を残すことが推奨されている
-- **ウォッチモード(watch mode)**: 金融機関のサイトなど特に慎重な扱いが必要なサイトのカテゴリでは、ユーザーが画面を見て見守っていることを前提に動作し、目を離すと一時停止する
+([Tasks in ChatGPT | OpenAI Help Center](https://help.openai.com/en/articles/10291617-tasks-in-chatgpt)、[ChatGPT Work and Codex | OpenAI Help Center](https://help.openai.com/en/articles/20001275))
 
-### 関連する製品群(2026年9月時点)
+### 関連する製品
 
-- **ChatGPT Workspace agents**: チームで共有・スケジュール実行できる、より本格的な業務ワークフロー向けのエージェント機能(週次の指標レポート作成、ITチケットの一次対応など)。Business/Enterprise/Edu向けの機能として、個人向けのChatGPT Workとは別のヘルプページ・設定画面で案内されている([ChatGPT Workspace Agents for Enterprise and Business | OpenAI Help Center](https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business))。本ページで扱う個人向けのChatGPT Work/Tasksとは別物で、対象読者(チーム管理者)や設定場所が異なる
-- **ChatGPT Atlas(ブラウザ)は終了済み**: 2025年10月に登場したOpenAI製の独立ブラウザは2026年8月9日にサービスを終了し、機能はChatGPT本体・Chrome拡張機能・Codexに統合された(前述)
-- **Codexモード**: 3モード再編で新設された、ソフトウェア開発に特化したモード。コーディング支援AIとしての位置付けであり、業務資料の作成・調査・操作の代行を目的とする本ページのChatGPT Workとは用途が異なる。WorkとCodexは利用枠(クレジット)を共有する
-- **GPT-6 Astra(2026年9月3日発表、展開開始直後)**: OpenAIが「コンピュータ操作」に特化した新世代モデルとして発表した最新モデル。既存アプリのUIを画面越しに直接操作できる「computer use」機能を持ち、ChatGPT Workと組み合わせることで、既存のテンプレート・書式に沿ったスライド・資料・スプレッドシート作成の精度向上が見込まれている。発表当日は招待制の「Daybreak」プログラム参加企業から先行提供され、数日以内にPlus・Pro・Business・Enterprise(API・AWS含む)へ順次拡大するとされているが、本ページ執筆時点(2026年9月5日)ではまだ展開の初期段階であり、対応範囲・料金体系は流動的な点に注意したい([OpenAI announces rollout of GPT-6 Astra model | CNBC](https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html))
-- **呼び方は今後も変わりうる**: ChatGPTのエージェント系機能は「Operator→ChatGPT Agent→ChatGPT Work」と1年半で2度名称が変わり、周辺機能も「Atlas終了→クラウドブラウザへ統合」「connectors→apps→Plugins」と目まぐるしく変化している。今後も呼び方・提供形態が変わる可能性がある点は念頭に置いておきたい
-
-### Tasksの仕組み
-
-Tasksは、ChatGPT Workのようなクラウドブラウザは使わない、より軽量な機能である。指定した日時・周期でChatGPTへの依頼(プロンプト)を自動的に再実行するだけの仕組みで、リマインダー・定期的な要約・簡単な監視(「値下げがあったら教えて」など、Web検索を伴う範囲まで)に向いている。ヘルプセンターの案内ページも、従来の「Scheduled tasks in ChatGPT」から「**Tasks in ChatGPT**」という見出しに変わっており、ChatGPT Work配下の一機能として位置付けられている([Tasks in ChatGPT | OpenAI Help Center](https://help.openai.com/en/articles/10291617-tasks-in-chatgpt))。
+- **ChatGPT workspace agents(Business・Enterprise向け)**: 管理者・業務担当者がテンプレートやビルダーで反復業務用のエージェントを作り、チームに共有・スケジュール実行・Slackで利用できる機能。個人のWork/dotsとは別のヘルプページ・管理画面で案内されている(Enterpriseでは初期状態でオフ)([ChatGPT Workspace Agents for Enterprise and Business | OpenAI Help Center](https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business))
+- **Codexモード**: ソフトウェア開発向けのモード。WorkとCodexは料金体系・クレジット・利用上限を共有する
+- **deep research**: 「調べるだけ」の調査モード。操作は行わない。詳しくは[Deep Research機能](../part12-business-practice/ai-research-and-information-gathering.md)
 
 ## 使いどころ・使い分け
 
-| 機能 | 何をしてくれるか | かかる時間 | 向いている場面 |
+### 機能の一覧
+
+| 機能 | 何をしてくれるか | 動くタイミング | 向いている場面 |
 |---|---|---|---|
-| 通常のチャット(Chatモード) | その場で1回答える | 数秒 | 一般知識の相談、下書き、アイデア出し |
-| [Web検索機能](./chatgpt-web-search-feature.md) | 1〜数回検索し、その場で要約して答える | 数秒〜数十秒 | 鮮度が必要な単発の事実確認 |
-| deep research(調査モード) | 自律的に多数のサイトを読み回り、出典付きレポートを作る(**読み取りのみ**、操作は行わない) | 数分〜数十分 | 競合比較・市場調査など複数ソースの横断調査。詳細は[Deep Research機能](../part12-business-practice/ai-research-and-information-gathering.md) |
-| **ChatGPT Work(旧ChatGPT Agent/エージェントモード)** | クラウドブラウザで実際にクリック・入力・購入・ログイン・ファイル作成まで**操作を実行**し、完成した成果物(表・資料・簡易Webアプリ)として返す | 数分〜数時間 | 予約・注文・フォーム提出・ログインが必要な社内SaaSを含む複数サイト横断作業の代行、成果物の作成まで一括で頼みたいとき |
-| **Tasks(スケジュールタスク)** | 指定した日時・周期でプロンプトを自動再実行する(クラウドブラウザなし) | 実行のたびに数秒〜数分 | 定期リマインダー、週次・日次の定型要約、簡易な定期監視 |
-| Codexモード | コードの生成・修正・実行に特化 | 数分〜 | ソフトウェア開発(本ページの対象外) |
+| 通常のチャット(Chat) | その場で1回答える | 依頼したとき | 相談、下書き、アイデア出し |
+| [Web検索](./chatgpt-web-search-feature.md) | 数回検索して要約する | 依頼したとき | 鮮度が必要な単発の事実確認 |
+| deep research | 多数のサイトを読み回り出典付きレポートを作る(**読み取りのみ**) | 依頼したとき | 市場調査・競合比較 |
+| **ChatGPT Work** | クラウドブラウザ・アプリ連携・ローカルファイルで**操作を実行**し、資料・表・ドキュメントなどの成果物を返す | 依頼したとき(数分〜数時間) | 成果物づくり、複数サイト横断作業、ログインが必要なSaaSでの作業 |
+| **dots** | 専用クラウドコンピュータで**常に待機・稼働**し、下調べ・定期チェック・提案・Work/Codexへの作業の振り分けを行う | 常時(利用者が見ていない間も) | 継続的に追う仕事(案件・顧客・プロジェクトの見張り役)、Slack/Teamsからの気軽な依頼 |
+| **スケジュールタスク** | 決まった時刻・周期・イベントで依頼を自動再実行 | 指定した時刻・イベント | 定期レポート、新着メールへの一次対応の下書き |
+| Codex | コードの生成・修正・実行 | 依頼したとき | ソフトウェア開発(本ページの対象外) |
 
-判断の目安は次の2つ。
+### ChatGPT Work と dots の使い分け
 
-1. **「調べるだけ」か「実際に操作・成果物作成までしてほしい」か**: 読み取りだけならdeep research、フォーム送信・注文・予約・ログイン・ファイル作成など「後戻りしにくい操作」や「完成品が欲しい」場合はChatGPT Work
-2. **「今すぐ1回」か「決まった周期で繰り返す」か**: 今すぐ1回で完結する作業ならChatGPT Work、同じ依頼を定期的に繰り返したいならTasks(Tasksの実行内容が調査中心であればdeep research相当の処理が、操作を含む場合はWork相当の処理が、裏側で毎回走る)
+| 観点 | ChatGPT Work(依頼型) | dots(常時稼働型) |
+|---|---|---|
+| 起点 | 利用者が依頼したとき | 依頼に加え、dot自身が気づいて動く |
+| 仕事の単位 | 1件のタスク・成果物(資料1本、表1つ) | 継続する目標・担当領域(「この案件を見張って」) |
+| 実行環境 | クラウドブラウザ(デスクトップ版はローカルファイルも可) | dot専用のクラウドコンピュータ(手元PCへのアクセスは任意でオン) |
+| 話しかける場所 | ChatGPT(デスクトップ・Web・モバイル) | ChatGPTに加え、Slack・Teams、一部Pro向けにテキストメッセージ(ベータ) |
+| 利用上限(2026年11月時点) | Codexと共通の利用枠を消費 | dotとの会話は利用上限に数えない。dotが始めたWork/Codexのタスクは通常どおり消費 |
+| 対象プラン(2026年11月時点) | Free〜Enterpriseの各プランに含まれる(クラウドブラウザは有料プランのみ) | Pro・Business Premiumが中心(Plus・Business Standardは一部で段階展開、Enterpriseは管理者経由) |
+| 向く人 | 「この作業を片付けて」と単発で頼みたい人 | 同じ領域を毎日追っていて、先回りしてほしい人 |
 
-なお、「ChatGPT Work」はOpenAIというひとつの提供元の実装名であり、Google・Anthropic・Microsoftなど各社にもブラウザ操作型・業務自動化型のエージェントが存在する。ベンダーを横断した「AIエージェントとは何か」という概念・分類・導入の判断軸は[AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)で扱っているので、社内でエージェント導入の方針を検討する際はそちらも参照してほしい。本ページはChatGPTというツールに閉じた「画面のどこで・どう使うか」の実務ガイドに徹する。
+判断の目安は次の3つ。
+
+1. **「調べるだけ」か「操作・成果物まで」か**: 読むだけならdeep research、成果物や操作が必要ならWork
+2. **「今回1回」か「繰り返し・継続」か**: 1回ならWork、決まった時刻やイベントで同じ依頼を回すならスケジュールタスク、何を見張るべきかの判断ごと任せたいならdots
+3. **「自分が指示する」か「AIに気づいてほしい」か**: 指示が明確に書けるならWork+スケジュールタスクで足りる。何が起きるか事前に決めきれない継続業務(顧客対応の進捗、プロジェクトの変更追従など)はdotsが向く
+
+なお「ChatGPT Work」「dots」はOpenAIの製品名であり、Google・Anthropic・Microsoftにも依頼型・常時稼働型のエージェントがある。ベンダー横断の分類と導入判断は[AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)で扱っている。本ページはChatGPTの「画面のどこで・どう使うか」の実務ガイドに徹する。
 
 ## 実務での使い方
 
-### ChatGPT Workの使い方(2026年9月時点)
+### ChatGPT Workの使い方(2026年11月時点)
 
-1. デスクトップアプリ・Web版・モバイル版とも、画面上部(左上)のモード切り替えから「**Work**」を選ぶ
-2. 依頼内容を入力すると、画面内にクラウドブラウザの実行画面が表示され、AIが検索・クリック・入力を進めていく様子がそのまま見える。クラウド上で実行されるため、PCをスリープ・シャットダウンしても裏側で処理が継続し、他の作業やモバイルからの進捗確認に移ることもできる
-3. ログインが必要な場面になると、セキュアなサインインフォームが表示されるので、その場でID・パスワード(必要なら2FA)を入力する。入力内容はAIモデル側には見えず、次回以降の依頼ではこのログインセッションが自動的に再利用される
-4. パスワード入力の枠に収まらない決済情報の入力などは、従来どおりテイクオーバーモードに切り替わる通知が出るので、その場面だけ自分の手で入力する
-5. メール送信や注文確定など後戻りしにくい操作の前には、確認ダイアログが出るので、内容を確認してから許可する(「常に許可する」は認証・決済が絡む操作では避ける)
-6. 完了すると、作業結果(作成したファイル・調べた内容の要約・実行済み操作の記録)がチャット欄に返ってくる
-7. 特定サイトへのログイン状態を維持したくない場合は、「設定→クラウドブラウザ」からそのサイトのセッションを個別に削除するか、「ブラウザデータをすべてクリア」で一括削除する
+1. **Web・モバイル**: ChatGPTを開き「**Work**」を選ぶ(モバイルはドロップダウンでChat/Workを切り替え)。**デスクトップアプリ**: メニューから「ChatGPT」を選び、トグルで「Work」を選ぶ
+2. 必要ならWorkのモデル選択でモデルを選ぶ(目的のモデルが表示されない場合、デスクトップアプリは「メニュー→Check for Updates」で更新)
+3. 依頼内容を入力する。クラウドブラウザでの操作の様子が表示され、PCを閉じても作業は続く
+4. ログインが必要な場面ではセキュアなサインインフォームに自分で入力する。行き詰まったら「Take over」で操作を引き取り、終わったら「Return control」で返す
+5. 予約確定・支払いなど取り消しにくい操作の前に確認が出るので、内容を読んでから許可する
+6. 結果(成果物・実行した操作の記録)がチャットに返る。クラウド上のWorkのチャットはWeb・モバイル・デスクトップで同期される
+7. 不要になったログイン状態は「設定→クラウドブラウザ→Browser data→Cookies」から削除する
 
-**対応プラン・利用量(2026年9月5日時点)**:
+**対応プラン・利用量(2026年11月時点)**:
 
-- **Web・モバイル版**: Plus・Pro・Business・Enterprise・Eduで利用可能。Free・Goは対象に含まれない
-- **デスクトップアプリ**: Free・Goでも「限定的なアクセス」として利用でき、使用モデルはGPT-5.6 Terra(軽量ティア)に固定される。Plus以上ではSol/Terra/Lunaを状況に応じて使い分けられる
-- **利用量**: Codexと共通の「エージェント利用枠(クレジット)」を消費する。**2026年8月25日、Plusプランに「5時間ごとのローリング制限」が復活**し、Work/Codexの利用がこの枠を共有するようになった(Proは当面この制限の対象外)。Plusでは5時間ごとの上限に加えて週単位の上限もあり、上限に達すると時間経過を待つか、追加クレジットを購入して継続する([ChatGPT Workが要ログインサイトの作業も代行。Plusは5時間制限復活 | PC Watch](https://pc.watch.impress.co.jp/docs/news/2135792.html))
-- **Business**: 同時期に、5倍相当の利用枠を持ち5時間制限が撤廃される「**Premiumシート**」(1ユーザー月払い$125程度)が新設され、従来の「Standardシート」と混在させて割り当てられるようになった(詳しくは[ChatGPTのプラン比較](./chatgpt-plan-comparison.md)を参照)
-- **ログイン必要サイトへの対応**: 2026年9月5日時点でPlus・Pro・Businessに展開済み。Free・Goは対象外、Enterprise・Eduは本ページ執筆時点でまだ対応が案内されていない
-- **GPT-6 Astra**: 2026年9月3日の発表直後で、Daybreakプログラム参加企業からの先行提供が始まった段階。Plus/Pro/Business/Enterpriseへの展開は「数日以内」とされているが、確定的な提供状況は変わりやすいため、利用時は画面上の表示・OpenAIの最新告知で確認する
+- **プランへの含まれ方**: ChatGPT WorkとCodexはFree・Go・Plus・Pro・Business・Edu・Enterpriseの各プランに含まれ、料金体系・クレジット・利用上限を共有する。ただしWeb・モバイルでのWorkは対象の有料プラン向けで、**クラウドブラウザはFree・Goでは使えない**。Enterprise・EduではWorkの利用にEKM(Enterprise Key Management)が必要で、管理者がオフにしない限り既定ロールで有効になっている
+- **料金の目安**: Plus月額20ドル、Proは月額100ドル・200ドル・500ドルの3段階(いずれも2026年11月時点)。Business・Enterpriseの詳細は[ChatGPTのプラン比較](./chatgpt-plan-comparison.md)を参照
+- **上限の構造**: PlusとBusiness Standardは「5時間ごと」の上限(モデルによって目安が大きく異なる)があり、加えて週単位の上限がかかることもある。**Proは2026年11月時点で5時間ごとの上限なし**。上限に達したPlus・Proはクレジットを追加購入して続行できる。2026年10月29日にはPro 100とPro 500のWork/Codex利用枠が従来の2倍になった([Pricing | ChatGPT Learn](https://learn.chatgpt.com/docs/pricing)、[ChatGPT release notes | OpenAI Help Center](https://help.openai.com/en/articles/6825453-chatgpt-release-notes))
+- **モデルの使える範囲**: GPT-6.2 Astra・Solは、Plus・Pro・Enterprise・EduのWorkとCodexで利用可能(Enterprise・Eduは管理者の有効化が必要)。GPT-6 Astraについては、Pro(100ドル・200ドル)とBusiness Premiumは含まれる利用枠をすべて使える一方、PlusとBusiness Standardは限定的な利用で、その後はクレジットで追加する形になっている
+
+### dotsの始め方(2026年11月時点)
+
+**対象プラン**:
+
+- **Pro**: 18歳以上で、EEA(欧州経済領域)・スイス・英国以外の利用者が対象
+- **Business Premium**: 対応地域で、ワークスペースの条件を満たす場合
+- **Plus**: EEA・英国・スイス以外の一部の利用者に段階展開中(サポートに頼んでも有効化できない)
+- **Business Standard**: 米国で展開中(利用上限あり)
+- **Enterprise・Edu・Healthcare**: 2026年11月18日までは管理者が有効化した場合のプレビュー。その後は管理者がオプトアウトしない限り既定で利用可能になる。1メンバーにつき個人用のdotは1つ。2027年1月13日までは無料で、2027年1月14日から作業の種類ごとの定額で課金が始まる(dotから起動したWork/Codexのスレッドは別課金)
+- **料金**: Pro・Business Premiumでは**最初の1つのdotはプランに含まれ追加料金なし**。追加のdotや処理量の拡張は今後提供予定とされ、価格は未公表
+
+([Getting started with your dot | OpenAI Help Center](https://help.openai.com/en/articles/20001530-getting-started-with-your-dot)、[Introducing dots | OpenAI](https://openai.com/index/introducing-dots/))
+
+**手順**:
+
+1. ChatGPTのデスクトップアプリ(Windows版含む)、デスクトップのWebブラウザ版、またはiOS/Androidアプリ(最新版)でdotを作成し、オンボーディングの案内に従う(モバイルのWebブラウザ版は非対応)
+2. セットアップ中にdotの名前を付ける。名前やアバターを変えるときは、dotの名前かアバターを選んでプロフィールを開き、鉛筆アイコンを選ぶ
+3. アプリをつなぐ: モバイルではプロフィールの「**Customize→Plugins**」から、権限を確認して接続する。Slackとの接続はデスクトップのChatGPTから行う
+4. ルールを決める: モバイルの「**Customize→Custom rules**」で既定のルールを確認し、ルールを追加する(下記のコピペ例)
+5. 仕事を頼む: 会話で内容と詳細を伝える。「+」からファイルや写真を添付できる。リマインダーや定期チェックも会話で頼める
+6. 進捗を見る: デスクトップでプロフィールを開くと、活動が「In progress(進行中)」「Scheduled(予定)」「Completed(完了)」に分けて表示される。プロフィールからdotのクラウドコンピュータを開いて操作を見たり、自分で操作したりもできる
+7. 止める・消す: プロフィールの「•••(その他のオプション)」→「Pause」で一時停止、「Delete」で削除(取り消し不可。dot自身のメモリーは削除され、メインの会話はアーカイブされる)
 
 ### コピペで使える実例
 
-読み取り中心で、後戻りしにくい操作を含まない依頼(初めて試すのに向く):
+#### dotsのカスタムルール
+
+カスタムルールは「対象の操作」を文章で書き、動作を次の4つから選ぶ: 「**Take action without asking**(確認なしで実行)」「**Take action if pre-approved**(依頼文で明示した場合のみ実行)」「**Ask before taking action**(実行前に確認)」「**Hand off to you**(利用者に引き渡す)」。最初は次のような保守的な設定から始めるとよい。
 
 ```
-Workモードで、来週の月曜〜水曜に東京→大阪を新幹線で移動する場合の
+ルール1
+対象の操作: 社外の相手へのメール・Slack・Teamsメッセージの送信
+動作: Ask before taking action(実行前に確認)
+
+ルール2
+対象の操作: 共有ドライブ・CRM・タスク管理ツール上のデータの削除、または上書き保存
+動作: Ask before taking action(実行前に確認)
+
+ルール3
+対象の操作: 支払い・購入・契約・申込みの確定
+動作: Hand off to you(利用者に引き渡す)
+
+ルール4
+対象の操作: 自分宛ての下書き作成、自分だけが見るメモやドキュメントへの追記
+動作: Take action without asking(確認なしで実行)
+```
+
+ヘルプには「下書きを頼んでも、送信を許可したことにはならない」「ルールはアプリやコンピュータへのアクセス権を与えるものではなく、組み込みの安全策も上書きしない」と明記されている。
+
+#### dotsへの最初の依頼(継続業務の見張り役)
+
+```
+あなたには「〇〇社案件」の見張り役をお願いします。
+- 毎朝9時に、接続しているGmail・Slack・カレンダーから、この案件に関する
+  前日以降の新しい動きを確認し、3行で要約して知らせてください
+- 先方からの質問や依頼で、48時間以上返信していないものがあれば、
+  返信の下書きを作って私に確認を求めてください(送信はしないでください)
+- 打合せが入ったら、前日までに過去のやり取りをもとに論点メモを作ってください
+- 判断に迷うこと、社外に何かを送ること、データを消すことは必ず先に聞いてください
+```
+
+#### ChatGPT Work: 読み取り中心の依頼(初めて試すのに向く)
+
+```
+来週の月曜〜水曜に東京→大阪を新幹線で移動する場合の
 時間帯別の空席状況と料金を調べて、比較しやすい表にまとめてください。
 チケットの購入や予約は行わず、調査結果の報告だけをお願いします。
 ```
 
-操作(注文確定手前まで)を含む依頼(確認プロンプトが挟まることを前提に):
+#### ChatGPT Work: 操作を含む依頼(確定の手前で止める)
 
 ```
-Workモードで、〇〇(通販サイト名)で△△(商品名)を検索し、
-条件に近い上位3件を比較したうえで、最も条件に合う商品をカートに入れてください。
+〇〇(通販サイト名)で△△(商品名)を検索し、条件に近い上位3件を比較したうえで、
+最も条件に合う商品をカートに入れてください。
 購入の確定は行わず、確認画面の手前で止めて私に知らせてください。
 ```
 
-ログインが必要な社内サイトを含む依頼(2026年8月以降の新機能を使う例):
+#### ChatGPT Work: ログインが必要な社内SaaS(読み取りのみ)
 
 ```
-Workモードで、経費精算システム(社内SaaS)にログインし、
-今月分の交通費の入力状況を確認してください。未入力の項目があれば
-一覧にして教えてください。新規の申請や承認操作は行わないでください。
+経費精算システム(社内SaaS)にログインし、今月分の交通費の入力状況を確認してください。
+未入力の項目があれば一覧にして教えてください。新規の申請や承認操作は行わないでください。
 ```
 
-### Tasksの設定・管理方法
+### スケジュールタスクの設定・管理方法(2026年11月時点)
 
-1. 依頼文の中で日時・周期を明示して頼む(例:「毎週月曜の朝9時に、業界ニュースを3行で要約して送って」)、または回答画面の時計アイコンから「タスクとして保存」を選ぶ
-2. サイドバーの「タスク(Tasks)」一覧から、設定済みのタスクを確認できる。次回実行時刻・実行内容が表示される
-3. 各タスクは一覧から一時停止・再開・内容の編集・削除ができる
-4. 実行結果は通知として届き、チャット履歴にも残る。長期間反応がないまま放置されたタスクは、自動的に一時停止扱いになることがある
+1. **作成**: 「Scheduled」を開いてスケジュールを設定する。会話の中で「毎週月曜の朝9時に〜して」と頼んでもよい
+2. **一覧の確認**: 「Scheduled」を開く、または「設定→通知→Manage tasks」。会話からは「•••」メニュー→「See scheduled tasks」
+3. **編集・一時停止・削除**: 会話内のタスク名を選んでタスクパネルを開く
+4. **通知**: 「設定→通知」で管理する
+5. **イベントトリガー**: 「設定→アプリ」で対象アプリ(Gmail・Slack・GitHubなど)を接続してから、Workでタスクを作成する
 
-**対応プラン・上限**: Tasksは2026年9月時点でGo・Plus・Pro・Business・Enterprise・Eduで利用でき(Freeは対象外)、同時に有効化できるタスク数の上限はGoが3件、Plusが5件、Business/Eduが10件、Pro/Enterpriseが15件となっている。1つのタスクを1時間に2回以上実行するような高頻度の設定はできない([Tasks in ChatGPT | OpenAI Help Center](https://help.openai.com/en/articles/10291617-tasks-in-chatgpt))。
+**同時に有効にできるタスク数(2026年11月時点)**: Free・Goが3件、Plusが5件、Business・Eduが10件、Pro・Enterpriseが15件。イベントトリガー型はPlus以上(Free・Go、FedRAMPワークスペースは対象外)([Tasks in ChatGPT | OpenAI Help Center](https://help.openai.com/en/articles/10291617-tasks-in-chatgpt))。
 
-コピペで使える例:
+コピペで使える例(時刻ベース):
 
 ```
 毎週月曜日の朝9時に、直近1週間の生成AI関連の主要ニュースをWeb検索で調べて、
@@ -143,30 +228,40 @@ Workモードで、経費精算システム(社内SaaS)にログインし、
 業務での使い方に影響しそうな話題を優先してください。
 ```
 
-### 主要ツールでの対応付け
+コピペで使える例(イベントトリガー。Workで作成):
+
+```
+Gmailに「見積」または「請求」を件名に含むメールが届いたら、
+送信者・金額・期限を抜き出して一覧に追記し、
+返信が必要なものは返信の下書きだけ作ってください。送信はしないでください。
+```
+
+### 主要ツールでの対応付け(2026年11月時点)
 
 | 概念 | ChatGPT(OpenAI) | Google | Anthropic | Microsoft |
 |---|---|---|---|---|
-| 呼び方 | ChatGPT Work(旧ChatGPT Agent/Operator+Deep Research) | Gemini Spark(旧Project Mariner系機能を統合) | Computer Use(Claude・Claude Code経由)/Claude Cowork | Copilot Cowork / Copilot Studio |
-| スケジュール実行 | Tasks | Gemini内のスケジュール機能 | Cowork内のスケジュールタスク/Claude Code Routines(開発者向け) | Copilot Tasks |
+| 依頼型(作業・成果物の代行) | ChatGPT Work | Gemini Spark(Workspaceアプリと深く統合されたエージェント型アシスタント) | Claude(2026年9月16日にCoworkを通常のチャットへ統合し、1つの会話から作業を任せられる) | Copilot |
+| 常時稼働型 | dots | — | — | Microsoft Scout(常時稼働型の「Autopilot」。限定プレビュー) |
+| 定期・自動実行 | Scheduled(時刻ベース・イベントトリガー) | Spark(毎朝のメール・カレンダー確認などのタスク) | 会話の中で定期実行を依頼 | 比較ページ参照 |
 
-各社の詳しい分類・導入判断は[AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)、機能名・対応プランの横並び比較は[主要AIチャットツールのエージェント機能・スケジュールタスク比較](./ai-chat-tools-agent-tasks-comparison.md)にまとめているので、そちらを参照してほしい。
+各社の分類・導入判断は[AIエージェントとは何か](../part11-ai-agents/ai-agent-basics.md)、機能名・対応プランの横並び比較は[主要AIチャットツールのエージェント機能・スケジュールタスク比較](./ai-chat-tools-agent-tasks-comparison.md)を参照。
 
 ## 注意点・よくある誤解
 
-- **「エージェントモード」という表記も「ChatGPT Atlas」という独立ブラウザも、現行UIにはもう存在しない**: 2026年7月9日以降、画面上の呼び方は「Work」に統一され、2026年8月9日にはブラウザ単体アプリの「ChatGPT Atlas」自体が終了した。社内マニュアルやブックマークした手順書に古い名称が書いてある場合は、モード切り替えから「Work」を選ぶ手順に読み替える
-- **ログインセッションがクラウド側に保持される点に注意**: 2026年8月以降、一度サイトにサインインすると、そのログインセッションはOpenAIのサーバー(クラウドブラウザ)上に保持され、次回以降の依頼で再利用される。共有PC・退職者アカウントの整理・機密性の高い社内システム(経理・人事など)を扱った後は、「設定→クラウドブラウザ」からセッションを都度クリアする運用ルールを決めておく
-- **「常に許可する(Always allow)」設定は慎重に使う**: 確認プロンプトを省略できる設定だが、ログイン・決済・送信など後戻りしにくい操作にまで適用すると、確認なしに実行されてしまう。認証・決済が絡む操作では毎回確認する設定のままにしておく
-- **確認プロンプトがあっても「丸投げして安全」にはならない**: 送信・注文・予約の直前には確認が入る設計だが、確認画面自体の内容を読まずに許可してしまえば事故は防げない。重要な操作を含む依頼では、確認ダイアログの内容を必ず読んでから許可する
-- **プロンプトインジェクションのリスクは解消されていない**: ブラウザ操作型AIに対するプロンプトインジェクション(閲覧先のページに埋め込まれた悪意ある指示にAIが誘導される攻撃)を完全に防ぐ方法は業界全体として確立されておらず、OpenAIも「完全に解決できない可能性がある」との立場を続けている([OpenAI says prompt injection is a problem it may never fully solve | CyberScoop](https://cyberscoop.com/openai-chatgpt-atlas-prompt-injection-browser-agent-security-update-head-of-preparedness/))。ログイン機能でアクセスできる範囲が広がった2026年8月以降は、見知らぬサイト・怪しいメールを読ませる作業では特に注意し、重要な操作は最終確認を人間が行う
-- **社内システムへの接続は権限を絞る**: Gmail・カレンダー・GitHub・Salesforceなどを「アプリ」として接続すると、ChatGPT Workがその中のデータを読み書きできるようになる。2026年8月以降はログインが必要な社内SaaSにも直接アクセスできるようになったため、業務で使う場合は必要最小限のサービス・アカウントだけを接続し、機密性の高いメール・ファイルを扱うアカウントでの利用は事前に社内ルールを確認する
-- **クレジット・実行回数はすぐに消費する**: 1つの依頼で何ステップも「検索→クリック→確認」を繰り返すため、通常のチャットより消費量が大きい。加えて2026年8月25日にPlusプランで5時間ごとのローリング制限が復活し、WorkとCodexで共通の枠を消費するため、重要でない検証にWorkを使いすぎると、コーディング用途も含めた利用枠を早く使い切ってしまう(Business Premiumシートやクレジット追加購入で緩和は可能)
-- **deep researchとChatGPT Workを混同しない**: 「調べて」だけの依頼ならdeep research(読み取り専用)で十分。「実際に操作(注文・予約・送信)や成果物作成まで」進めたい場合だけWorkモードを選ぶ。逆に、操作が必要な依頼をdeep researchに投げても実行はされない
-- **GPT-6 Astraは発表直後で流動的**: 2026年9月3日に発表されたばかりのモデルで、本ページ執筆時点では一部企業向けの先行提供段階にある。「使えるはず」という前提で業務フローを組む前に、自分の契約プランで実際に選択肢に表示されるかを確認する
+- **「エージェントモード」「ChatGPT Atlas」は現行UIに存在しない**: 2026年7月9日以降は「Work」に統一され、Atlasは2026年8月9日に終了した。古い手順書は「Workを選ぶ」に読み替える
+- **dotsは「見ていない時間」に動く前提で権限を絞る**: バックグラウンドの下調べは読み取り専用に制限されているが、会話で頼んだ作業では送信・更新も行える。OpenAI自身が「dotは間違えることがある(ルールに従う場面でも)」として重要な成果物の確認を求めている。最初はカスタムルールで送信・削除・購入を「確認」または「引き渡し」にしておき、慣れてから緩める
+- **dotを一時停止しても、別に動いているタスクは止まらない**: Pauseはdot本体の停止で、dotから起動したWork/Codexのタスクや個別に設定したスケジュールタスクは動き続けることがある。止めたいときはそれぞれ止める
+- **アプリの切断で、取得済みの情報は消えない**: dotからアプリを切断しても、それまでに得た情報は削除されない。機密性の高いアカウントは最初からつながない
+- **dotsのテキストメッセージはエンドツーエンド暗号化されていない**: 配信は第三者事業者(Linq)経由で、OpenAIはやり取りをdotの会話として保存する。機密情報はアプリ内で扱う
+- **「dotとの会話は無料」でも、その先は利用枠を消費する**: dotとの会話自体はChatGPTの利用上限に数えないが、dotがWork/Codexに作業を振ると通常どおり消費する。Plusは5時間ごとの上限もあるため、検証で使いすぎるとコーディング用途の枠まで減る
+- **クラウドブラウザのログイン状態はサーバー側に残る**: 経理・人事など機微なシステムを扱った後や異動・退職時は、「設定→クラウドブラウザ→Browser data→Cookies」から削除する運用を決めておく。「Always allow」は非推奨とされている
+- **プロンプトインジェクションは解消されていない**: 閲覧先ページに埋め込まれた悪意ある指示にAIが誘導される攻撃は、業界全体で完全な対策が確立されておらず、OpenAIも「完全には解決できない可能性がある」との立場である([OpenAI says prompt injection is a problem it may never fully solve | CyberScoop](https://cyberscoop.com/openai-chatgpt-atlas-prompt-injection-browser-agent-security-update-head-of-preparedness/))。常時稼働のdotsは見知らぬメールやページに触れる機会が多いため、送信・購入などの最終判断は人間が行う
+- **サイト側がエージェントを拒否することがある**: 自動化されたブラウザからのアクセスを制限するサイトがあり、最後の手続きは自分で行う必要がある場合もある
+- **呼び方・対象プランは数か月単位で変わる**: dotsは9月の発表時点からPlus・Business Standard・Enterpriseへと対象が広がり続けている。業務フローに組み込む前に、自分の契約で実際に表示されるかを確認する
 
 ## 最初の一歩
 
-まずは購入や送信を含まない、読み取り中心の依頼(上記の新幹線の比較調査の例など)をWorkモードで1回試し、AIが画面をどう操作しているかを実際に眺めてみる。慣れてきたら、毎週決まって確認している定型作業(業界ニュースの要約など)を1つ選び、Tasksとしてスケジュール登録してみるとよい。
+まずWorkで、購入や送信を含まない読み取り中心の依頼(上記の新幹線の比較調査など)を1回試し、AIの操作を眺めてみる。dotsが使えるプランなら、作成直後に「Customize→Custom rules」で「社外への送信は実行前に確認」のルールを1つ追加してから、見張ってほしい案件を1つだけ任せてみるとよい。
 
 ## 関連トピック
 
@@ -177,6 +272,10 @@ Workモードで、経費精算システム(社内SaaS)にログインし、
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較](./ai-chat-tools-agent-tasks-comparison.md)
 
 ## 更新履歴
+
+### 2026-11-21: 常時稼働型エージェント「dots」を追加し、Work・スケジュールタスクの仕様を2026年11月時点に最新化
+- **内容**: DevDay 2026(2026年9月29日)発表のdots(専用クラウドコンピュータ、読み取り専用のバックグラウンド調査、4,000以上のアプリ連携、Slack・Teams・テキスト、カスタムルールの4つの動作、プラン別の提供状況とEnterpriseの課金開始日、作成・Pause・Deleteの画面手順)を新設し、Work/dotsの使い分け表とカスタムルール・依頼文のコピペ例を追加。Workのアクセス手順・モデル(GPT-6.2 Astra/Sol、2026年11月17日)・プラン別の利用上限(Pro 3段階、Proは5時間上限なし、Pro 100/500の利用枠2倍)・クラウドブラウザのアクセス許可設定(Always ask/Auto approve/Always allow)とCookie削除の場所を現行に更新。スケジュールタスクの画面名(Scheduled)・Free対応・頻度上限・イベントトリガーを反映。終了済みのウォッチモードや展開初期のGPT-6 Astra・Atlas関連の古い記述を削除・整理
+- **出典**: [Introducing dots | OpenAI](https://openai.com/index/introducing-dots/)、[Getting started with your dot | OpenAI Help Center](https://help.openai.com/en/articles/20001530-getting-started-with-your-dot)、[OpenAI launches dots, always-on AI agents with their own cloud computers | The Next Web](https://thenextweb.com/news/openai-dots-always-on-ai-agents-cloud-computers-devday)、[ChatGPT Work and Codex | OpenAI Help Center](https://help.openai.com/en/articles/20001275)、[ChatGPTでのクラウドブラウザーの使用 | OpenAI Help Center](https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt)、[Tasks in ChatGPT | OpenAI Help Center](https://help.openai.com/en/articles/10291617-tasks-in-chatgpt)、[ChatGPT release notes | OpenAI Help Center](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)、[Introducing GPT-6.2 Astra and Sol | OpenAI](https://openai.com/index/introducing-gpt-6-2-astra-sol)、[Pricing | ChatGPT Learn](https://learn.chatgpt.com/docs/pricing)、[ChatGPT Workspace Agents for Enterprise and Business | OpenAI Help Center](https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business)、[Claude Cowork and chat are now one Claude | Claude by Anthropic](https://claude.com/blog/cowork-is-now-claude)、[Google is expanding access to its Gemini Spark agentic AI assistant | Engadget](https://engadget.com/2222303/google-expanding-access-gemini-spark)、[Introducing Microsoft Scout | Microsoft 365 Blog](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout/)
 
 ### 2026-09-05: クラウドブラウザ化・ログイン機能・Atlas終了・GPT-6 Astraを反映し全面更新
 - **内容**: 2026年8月9日にブラウザ単体アプリ「ChatGPT Atlas」が終了し機能がChatGPT本体・Chrome拡張・Codexへ統合された点、同8月にWorkの実行環境が「クラウドブラウザ」(サーバー上で常時動作、Web/モバイルからもアクセス可)へ切り替わった点、8月25日にログインが必要なサイトを安全に操作できる新機能(セキュアなサインインフォーム、セッション保持、設定→クラウドブラウザでの管理)が追加された点、同日Plusプランに5時間ごとのローリング制限が復活しBusinessにPremiumシートが新設された点、Free・Goでのデスクトップ限定・Terra固定という対応プランの実態、9月3日発表の新モデル「GPT-6 Astra」の位置づけと展開状況(先行提供段階)、「Plugins」と「アプリ」の呼び分けを反映し、対応プラン・注意点・コピペ例を現行の挙動に合わせて全面的に書き換えた
