@@ -278,7 +278,7 @@ updated: 2026-11-22
 - **やったこと**: 生成AIのコンテンツ制作基盤「CREAITECH(GenAI Beauty Content Lab)」でGoogleのImagen 3とGeminiを使い、マーケティングチームの企画・制作工程を変えた。Veo 2で静止画を8秒のアニメーションにする使い方も始めている。広告目的で人物を生成しない(製品の効能を示すためにリアルな顔・体・髪・肌を生成しない)ことを唯一のルールにしている
 - **効果**: マーケティングチームが最初のコンセプト案を作る時間が「数週間から数日」に短縮された(2025年4月9日時点、ベンダー公表〔Google Cloudブログ〕)
 - **学べること**: 「効能訴求にAI生成の人物を使わない」という線引きを先に決めてから全社に広げている。薬機法・景品表示法上の誇大表示リスクがある日本の化粧品広告でも参考になる考え方
-- **出典**: [How L'Oréal is using Veo, Imagen and Gemini in CREAITECH(Google Cloud Blog、2025年4月9日)](https://cloud.google.com/transform/loreal-ai-content-creation-veo-imagen-creaitech-next25) / 最終確認日: 2026-11-22
+- **出典**: [How L’Oréal Groupe pioneers responsible AI visuals with Veo and Imagen(Google Cloud Blog、2025年4月9日)](https://cloud.google.com/transform/loreal-ai-content-creation-veo-imagen-creaitech-next25) / 最終確認日: 2026-11-22
 
 ### セフォラ(海外・化粧品専門小売の世界大手・会員8,000万人超) — 対象業務: 顧客への美容相談と商品推奨
 - **導入形態**: 専用SaaS導入(ChatGPT内で動くアプリ「Sephora app」として提供)
