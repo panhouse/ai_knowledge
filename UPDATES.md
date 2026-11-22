@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-22
+- [主要AIチャットツールのエージェント機能・スケジュールタスク比較](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): 常時稼働型エージェント(OpenAI dots・Microsoft Autopilot〈旧Scout〉)の節と対応表の行を追加し、Claude Coworkの通常チャットへの統合(2026年9月16日)とTeam・Enterpriseでの一般提供を反映
+
 ## 2026-11-21
 - [情報システム(IT)部門における生成AI活用事例](topics/part15-job-role-cases/information-systems-ai-use-cases.md): 導入事例カタログにソフトバンク・日鉄興和不動産・CAMPFIRE・グリーホールディングスの国内4件を追加し、「事例から見える傾向」を新設(日鉄興和不動産の40〜50%削減は導入時の見込みで、ベンダー公表を報道したもの。ソフトバンクの約3人分の工数削減は担当者の体感。CAMPFIREの約20%減は実測値だが、AIと関係のない減少分を含む。グリーは数値公表なし)
 - [NPO・非営利団体における生成AI活用事例](topics/part14-industry-cases/npo-nonprofit-ai-use-cases.md): 導入事例カタログを新設し、NPO法人eboard・NPO法人セイエン・International Rescue Committee(海外)・Infoxchange(海外)・Epilepsy Foundation(海外)の5件を追加(eboard・IRCの数値は実証/試験運用段階の値、Infoxchangeはベンダー公表、セイエン・Epilepsy Foundationは数値公表なし)。出典で確認できなかった匿名NPOの採択率事例・AI利用ポリシー未整備76%・Claude Teamの価格/最低シート数/対象モデル等の記述を削除・修正し、OpenAI for Nonprofitsの開始時期を訂正
