@@ -5,7 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-22
-- [金融・保険業における生成AI活用事例](topics/part14-industry-cases/finance-insurance-ai-use-cases.md): 導入事例カタログに三井住友カード・京都銀行・北洋銀行・BBVA(海外)の4件を追加し、「事例から見える傾向」を新設(三井住友カードの生産性約2倍はベンダー公表の本番運用後の値、京都銀行は試行段階の値と見込み、北洋銀行の約4割減は体感、BBVAの週2.8時間は自己申告)
+- [金融・保険における生成AI活用事例](topics/part14-industry-cases/finance-insurance-ai-use-cases.md): 導入事例カタログに三井住友カード・京都銀行・北洋銀行・BBVA(海外)の4件を追加し、「事例から見える傾向」を新設(三井住友カードの生産性約2倍はベンダー公表の本番運用後の値、京都銀行は試行段階の値と見込み、北洋銀行の約4割減は体感、BBVAの週2.8時間は自己申告)
 - [主要AIチャットツールのエージェント機能・スケジュールタスク比較](topics/part03-ai-chat-tools/ai-chat-tools-agent-tasks-comparison.md): 常時稼働型エージェント(OpenAI dots・Microsoft Autopilot〈旧Scout〉)の節と対応表の行を追加し、Claude Coworkの通常チャットへの統合(2026年9月16日)とTeam・Enterpriseでの一般提供を反映
 
 ## 2026-11-21
