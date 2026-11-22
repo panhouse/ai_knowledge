@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-22
+- [化粧品業界における生成AI活用事例](topics/part14-industry-cases/cosmetics-industry-ai-use-cases.md): 導入事例カタログに花王(AI生活者による調査)・ロレアル(海外)・セフォラ(海外)の3件を追加(花王は実証段階の値、ロレアルはベンダー公表、セフォラは試験提供中で数値公表なし)
 - [製造業における生成AI活用事例](topics/part14-industry-cases/manufacturing-ai-use-cases.md): 導入事例カタログに日本ペイントグループ・旭化成・村田製作所・本田技研工業の4件を追加し、「事例から見える傾向」を新設(日本ペイントは実証実験の値、ホンダの40%以上短縮は見込み、村田製作所の月約3時間は全社基盤全体の値)
 - [データアナリスト/BIアナリスト職における生成AI活用事例](topics/part15-job-role-cases/data-analyst-ai-use-cases.md): 導入事例カタログにGrab(海外)・DeNA・BASE・Salesforce(海外)の4件を追加し、「事例から見える傾向」を新設(Grabは自社公表の実測値、DeNA・BASEは時間削減の数値公表なし、Salesforceは公開当初の正答率のみ)
 - [司法書士・行政書士における生成AI活用事例](topics/part15-job-role-cases/judicial-administrative-scrivener-ai-use-cases.md): 導入事例カタログを新設し、司法書士法人みつ葉グループ・司法書士法人丸山洋一郎事務所・司法書士事務所えみち・サンシアスの4件を追加(みつ葉・丸山は数値公表なし、えみちはベンダー公表の体感値、サンシアスは支援会社公表。行政書士単独の実名事例は確認できず)
