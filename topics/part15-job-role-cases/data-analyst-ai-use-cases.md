@@ -251,7 +251,7 @@ text-to-SQL・データ分析エージェントを構築した事例)である�
 - **やったこと**: 平易な英語の質問に対して、生成したSQL・回答・クエリの説明を返すtext-to-SQLエージェントを構築。最初に作ったWebアプリ版は使われず、Slackに載せてから利用が広がった
 - **効果**: 導入前は技術者が「週に数十時間」をカスタムクエリの対応に使っていた。公開当初の正答率は約50%と公表している。導入後の削減時間・利用者数は数値公表なし(2025年5月27日時点、自社公表)
 - **学べること**: 精度が完璧でなくても、利用者が普段いる場所(Slack)に置くことが普及の決め手になる。正答率を自ら公表し、改善前提で運用している点も参考になる
-- **出典**: [How we built a text-to-SQL agent(Salesforce Blog、2025年5月27日)](https://www.salesforce.com/blog/text-to-sql-agent/) / 最終確認日: 2026-11-22
+- **出典**: [How We Built a Text-To-SQL AI Agent to Get Instant Answers From Our Data(Salesforce Blog、2025年5月27日)](https://www.salesforce.com/blog/text-to-sql-agent/) / 最終確認日: 2026-11-22
 
 ### 事例から見える傾向
 
