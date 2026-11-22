@@ -1,17 +1,17 @@
 ---
-title: "主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Work/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)"
+title: "主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Work/dots/Tasks・Gemini Spark・Copilot Cowork/Autopilot・Claude Cowork)"
 part: 3
 chapter: 第4章 生成・分析の主要機能
-tags: [AIエージェント, スケジュールタスク, ChatGPT Work, Gemini Spark, Copilot Cowork, Claude Cowork, ツール比較]
+tags: [AIエージェント, スケジュールタスク, 常時稼働型エージェント, ChatGPT Work, dots, Gemini Spark, Copilot Cowork, Microsoft Autopilot, Claude Cowork, ツール比較]
 created: 2026-07-07
-updated: 2026-09-07
+updated: 2026-11-22
 ---
 
-# 主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Work/Tasks・Gemini Spark・Copilot Cowork・Claude Cowork)
+# 主要AIチャットツールのエージェント機能・スケジュールタスク比較(ChatGPT Work/dots/Tasks・Gemini Spark・Copilot Cowork/Autopilot・Claude Cowork)
 
 ## これは何か
 
-ChatGPT・Gemini・Microsoft Copilot・Claudeは、いずれも2025〜2026年にかけて「自律的にブラウザ・PCを操作して複数ステップの作業をやり切る**エージェントモード**」と「決まった周期・イベントで同じ依頼を自動的に繰り返す**スケジュールタスク**」の2種類の自律実行系機能を追加した。ところが各社の呼び方がまったく異なり(ChatGPT Work、Gemini Spark、Copilot Cowork、Claude Cowork……)、しかも「Cowork」のようにベンダーをまたいで同じ名前が使われているケースまであるため、「うちの会社はGeminiなのに、ネット記事に出てくるChatGPT Workの話がそのまま当てはまるのか」が非常に分かりにくい。本ページは、4社の機能名・対応プラン・できること/できないことを1枚の対応表に整理し、「自分が使っているツールでは何をどう呼ぶか」をすぐ調べられるようにする。
+ChatGPT・Gemini・Microsoft Copilot・Claudeは、いずれも2025〜2026年にかけて「自律的にブラウザ・PCを操作して複数ステップの作業をやり切る**エージェントモード**」と「決まった周期・イベントで同じ依頼を自動的に繰り返す**スケジュールタスク**」の2種類の自律実行系機能を追加した。ところが各社の呼び方がまったく異なり(ChatGPT Work、Gemini Spark、Copilot Cowork、Claude Cowork……)、しかも「Cowork」のようにベンダーをまたいで同じ名前が使われているケースまであるため、「うちの会社はGeminiなのに、ネット記事に出てくるChatGPT Workの話がそのまま当てはまるのか」が非常に分かりにくい。さらに2026年秋には、人が画面を閉じたあとも専用のクラウド環境で動き続ける**常時稼働型エージェント**(OpenAIのdots、MicrosoftのAutopilot〈旧Scout〉など)という3つ目の形も登場した。本ページは、4社の機能名・対応プラン・できること/できないことを1枚の対応表に整理し、「自分が使っているツールでは何をどう呼ぶか」をすぐ調べられるようにする。
 
 なお、個々のツールの詳しい仕組み・確認プロンプト・料金の内訳は各社の専用ページ([ChatGPTのエージェント機能とTasks](./chatgpt-agent-mode-feature.md)など)に譲り、本ページはツール横断の「見取り図」に徹する。
 
@@ -26,22 +26,33 @@ ChatGPT・Gemini・Microsoft Copilot・Claudeは、いずれも2025〜2026年に
 
 2026年8月前後からは、この2つの中間にあたる**イベント駆動トリガー**(「メールが届いたら」「Slackにメッセージが来たら」「PRがマージされたら」実行する仕組み)が各社で相次いで追加され、スケジュールタスク側がエージェントモードに近い判断力を持ち始めている。ChatGPTは2026年8月25日にGmail・Slack・GitHubのWebhookトリガーを追加し、Microsoft CopilotはCowork内の「Scheduled」タブを「**Automations**」に改称してOutlookメール・Teamsメッセージのイベントトリガーを統合、Claude Coworkのスケジュールタスクもファイル出現・アプリ状態変化・外部Webhookをトリガーにできるようになっている。それでも「仮想ブラウザ・PC環境を都度立ち上げて何十ステップも操作するか」「軽い判定・要約だけで完結するか」という計算コストの差は残っており、エージェントモードには依然として確認プロンプト(後戻りしにくい操作の前に人間の許可を求める仕組み)などの安全機構が重ねてある。
 
-### 各社の機能の成り立ち(2026年9月時点)
+### 3つ目の形: 常時稼働型エージェント(2026年11月時点)
 
-- **OpenAI**: 2025年1月の「Operator」(ブラウザ操作)と「Deep Research」(調査)を2025年7月に統合し「ChatGPT Agent」に一本化していたが、2026年7月9日、独自ブラウザ「ChatGPT Atlas」の機能も取り込む形で「ChatGPT Agent」は「**ChatGPT Work**」に統合・改称された。この名称は2026年9月時点でも継続しており、再改称はない。2026年9月3日には新フラッグシップモデル「**GPT-6 Astra**」が発表され、ブラウザ操作・コンピュータ操作・ソフトウェア開発で従来最高性能をうたう(Plus・Pro・Business・Enterprise・APIへ順次展開)。スケジュール実行は引き続き「**Tasks**」という別機能のまま存続しているが、**2026年8月25〜26日にGmail・Slack・GitHubの新着イベントをトリガーにできる機能が有料プラン(Plus/Pro/Business/Enterprise)向けに追加**され、同時に無料プラン・Go向けにも(Webhookトリガーなしの)スケジュール機能が解放された([詳細](./chatgpt-agent-mode-feature.md)参照)
+エージェントモードは「依頼された1件をやり切ったら終わる」、スケジュールタスクは「決めた時刻・条件で同じ依頼を繰り返す」ものだった。これに対し、2026年秋に各社がそろえ始めたのが、**専用のクラウド上のコンピュータを持ち、利用者が見ていない間も動き続け、自分から仕事を見つけて進める常時稼働型(always-on)エージェント**である。
+
+- **OpenAI「dots」**: 2026年9月29日発表。各dotが専用のクラウドコンピュータとブラウザを持ち、4,000以上のアプリと連携する。ChatGPT(デスクトップ・Web・モバイル)に加えSlack・Microsoft Teamsからも話しかけられる。利用者が見ていない間の「先回りの調査」は**読み取り専用のツールに限定**され、操作ごとに「許可/承認が必要/禁止」を決めるカスタムルールを設定できる
+- **Microsoft「Autopilot」(旧Scout)**: 2026年6月2日に「Autopilots」という新カテゴリの第1弾「Scout」として発表され、2026年9月25日の新しいCopilot(Home・Code・Autopilotの3モード)の発表で「Autopilot」に改称された。クラウドで動き、エージェントごとに専用のMicrosoft Entra ID(社内の利用者IDと同じ仕組みの固有ID)を持ち、機微な操作の前には人間の承認を求められる。Teams・Outlook・OneDrive・SharePointとつながる
+- **Google「Gemini Spark」**: 上記のエージェントモード欄で扱っている、Gmail・カレンダー・Driveなどを横断して作業を代行するGeminiアプリ内のエージェント。分類上は常時稼働型に位置づけられることもある(詳細は[Gemini Sparkの基本](./gemini-spark-basics.md))
+
+スケジュールタスクとの違いは、**「何をいつやるか」を人が決めるか、エージェントが判断するか**にある。スケジュールタスクは決めたとおりにしか動かないが、常時稼働型は「このプロジェクトを見張っておいて」のような曖昧な継続業務を任せられる代わりに、**人が見ていない時間に何をしてよいか**を先に決めておく必要がある。
+
+### 各社の機能の成り立ち(2026年9月時点。常時稼働型と統合の動きは2026年11月時点で追記)
+
+- **OpenAI**: 2025年1月の「Operator」(ブラウザ操作)と「Deep Research」(調査)を2025年7月に統合し「ChatGPT Agent」に一本化していたが、2026年7月9日、独自ブラウザ「ChatGPT Atlas」の機能も取り込む形で「ChatGPT Agent」は「**ChatGPT Work**」に統合・改称された。この名称は2026年9月時点でも継続しており、再改称はない。2026年9月3日には新フラッグシップモデル「**GPT-6 Astra**」が発表され、ブラウザ操作・コンピュータ操作・ソフトウェア開発で従来最高性能をうたう(Plus・Pro・Business・Enterprise・APIへ順次展開)。スケジュール実行は引き続き「**Tasks**」という別機能のまま存続しているが、**2026年8月25〜26日にGmail・Slack・GitHubの新着イベントをトリガーにできる機能が有料プラン(Plus/Pro/Business/Enterprise)向けに追加**され、同時に無料プラン・Go向けにも(Webhookトリガーなしの)スケジュール機能が解放された([詳細](./chatgpt-agent-mode-feature.md)参照)。**2026年9月29日のDevDay 2026では常時稼働型の「dots」が追加**され、Pro・Business Premium・Enterpriseなどで段階展開されている(Pro・Business Premiumでは最初の1つのdotはプランに含まれ追加料金なし)
 - **Google**: 2025年6月に軽量な「Scheduled actions(スケジュール機能)」をGemini appに追加。2026年5月のGoogle I/Oで、Gmail・カレンダー・Driveなどに24時間365日常駐して複数ステップの作業を代行する重量級エージェント「**Gemini Spark**」を発表し、同時にGoogle AI Ultraの価格を月$249.99から**月$99.99へ約6割値下げ**してSparkの主契約プランとした。当初は米国のGoogle AI Ultra契約者限定だったが、2026年7月16日に日本語対応が始まり日本からも利用可能になり、**2026年7月29日には米国・日本ともにGoogle AI Pro契約者(米国$19.99/月・日本¥2,900/月)にも対象を段階的に拡大**した(法人のGoogle Workspaceアカウントは2026年9月時点でも非対応)。Sparkが標準連携するのはGmail・カレンダー・Docs・Sheets・Drive・Keepで、MCP(Model Context Protocol)経由の外部連携も2026年夏の時点で30以上に拡大しているが、Outlook・Slack・Notionなど非Google系ツール中心の業務では依然として手薄
-- **Microsoft**: Microsoft 365 Copilotに組み込まれた調査特化の「Researcher」(OpenAIのdeep researchモデルを利用)、データ分析特化の「Analyst」(推論モデルによるライブPython実行)は2025年半ばに一般提供済み。エージェントモードの本命である「**Copilot Cowork**」は2026年6月16日に一般提供開始(要Microsoft 365 Copilotライセンス)し、同日以降は使用量課金(Copilot Credit、1クレジット$0.01)へ完全移行、2026年7月1日以降は課金設定をしていないテナントはCowork自体が使えなくなった。**2026年8月には、Cowork内でResearcher・Analystの定期実行を管理していた「Scheduled」タブが「Automations」タブに改称**され、時刻指定の定期実行に加えてOutlookメールの受信・Teamsチャンネルやチャットのメッセージ・自分宛てのメンションをトリガーにするイベント駆動タスクも同じ画面で扱えるようになった。さらに**2026年8月中旬(モバイル・Web)〜9月中旬(Windows・Mac)にかけて、個人向けCopilotアプリと企業向けMicrosoft 365 Copilotアプリが1つのアプリ(単一の名称・アイコン・URL)に統合**されている最中で、Coworkへの入り口も順次このアプリに一本化されつつある。個人のWeb閲覧を代行する機能は「Copilot Actions(Browse with Copilot)」、企業のIT部門が許可したサイトに限定して動く法人版は「Agent Mode for Edge for Business」という別の名称のまま
-- **Anthropic**: 開発者向けにはターミナルで動く「Claude Code」とその上の「Claude Agent SDK」「Computer Use(画面操作API)」が先行。2026年2月、非エンジニアでも使えるデスクトップ版の自律実行エージェント「**Claude Cowork**」をリリース。**2026年4月9日にはCowork内で使える「スケジュールタスク」機能が追加**され、時刻指定の定期実行に加えて、フォルダへのファイル出現・アプリの状態変化・外部Webhookをトリガーにする実行にも対応した。開発者向けにクラウド上で常時稼働する「Claude Code Routines」(スケジュール/APIのWebhook/GitHubイベントの3種のトリガー)も並行して提供されている。**2026年7月7日には、Coworkそのものがデスクトップに加えてWeb・モバイルでも使えるようベータ展開を開始**(Maxプランから先行し、Pro・Team・管理者が有効化したEnterpriseへ順次拡大中で、2026年9月時点でもなおベータの位置づけ)。この「リモートセッション」化により、PC本体の電源を切っても作業やスケジュールタスクが継続し、スマホから進捗確認・成果物受け取りができるようになった。7月21日には画面操作を1回録画するだけで再利用可能な手順(スキル)に変換する「Record a Skill」機能(Pro・Max・Team向け)も追加され、Microsoft 365向けの連携も単一の「Claude for Microsoft 365」アドインに統合された上でOutlookでのメール送信・予定登録、OneDrive/SharePointのファイル操作といった書き込み権限が加わっている。ブラウザ操作は「Claude in Chrome」という拡張機能(ベータ)で提供
+- **Microsoft**: Microsoft 365 Copilotに組み込まれた調査特化の「Researcher」(OpenAIのdeep researchモデルを利用)、データ分析特化の「Analyst」(推論モデルによるライブPython実行)は2025年半ばに一般提供済み。エージェントモードの本命である「**Copilot Cowork**」は2026年6月16日に一般提供開始(要Microsoft 365 Copilotライセンス)し、同日以降は使用量課金(Copilot Credit、1クレジット$0.01)へ完全移行、2026年7月1日以降は課金設定をしていないテナントはCowork自体が使えなくなった。**2026年8月には、Cowork内でResearcher・Analystの定期実行を管理していた「Scheduled」タブが「Automations」タブに改称**され、時刻指定の定期実行に加えてOutlookメールの受信・Teamsチャンネルやチャットのメッセージ・自分宛てのメンションをトリガーにするイベント駆動タスクも同じ画面で扱えるようになった。さらに**2026年8月中旬(モバイル・Web)〜9月中旬(Windows・Mac)にかけて、個人向けCopilotアプリと企業向けMicrosoft 365 Copilotアプリが1つのアプリ(単一の名称・アイコン・URL)に統合**されている最中で、Coworkへの入り口も順次このアプリに一本化されつつある。個人のWeb閲覧を代行する機能は「Copilot Actions(Browse with Copilot)」、企業のIT部門が許可したサイトに限定して動く法人版は「Agent Mode for Edge for Business」という別の名称のまま。**2026年9月25日にはCopilotをHome・Code・Autopilotの3モードを持つ新しいアプリとして発表**し、常時稼働型の「Scout」を「Autopilot」に改称した。Cowork・Code・Autopilotはいずれも使用量課金で、Autopilotは同月末からプライベートプレビューを拡大している段階(一般提供の時期は未公表)
+- **Anthropic**: 開発者向けにはターミナルで動く「Claude Code」とその上の「Claude Agent SDK」「Computer Use(画面操作API)」が先行。2026年2月、非エンジニアでも使えるデスクトップ版の自律実行エージェント「**Claude Cowork**」をリリース。**2026年4月9日にはCowork内で使える「スケジュールタスク」機能が追加**され、時刻指定の定期実行に加えて、フォルダへのファイル出現・アプリの状態変化・外部Webhookをトリガーにする実行にも対応した。開発者向けにクラウド上で常時稼働する「Claude Code Routines」(スケジュール/APIのWebhook/GitHubイベントの3種のトリガー)も並行して提供されている。**2026年7月7日には、Coworkそのものがデスクトップに加えてWeb・モバイルでも使えるようベータ展開を開始**(Maxプランから先行し、Pro・Team・管理者が有効化したEnterpriseへ順次拡大中で、2026年9月時点でもなおベータの位置づけ)。この「リモートセッション」化により、PC本体の電源を切っても作業やスケジュールタスクが継続し、スマホから進捗確認・成果物受け取りができるようになった。7月21日には画面操作を1回録画するだけで再利用可能な手順(スキル)に変換する「Record a Skill」機能(Pro・Max・Team向け)も追加され、Microsoft 365向けの連携も単一の「Claude for Microsoft 365」アドインに統合された上でOutlookでのメール送信・予定登録、OneDrive/SharePointのファイル操作といった書き込み権限が加わっている。ブラウザ操作は「Claude in Chrome」という拡張機能(ベータ)で提供。**2026年9月16日、CoworkはClaudeの通常のチャットと統合**され、利用者が入口を選ばなくても、作業内容に応じてClaudeがCoworkの機能を使うかを判断する形になった(Pro・Max等から順次展開し、Enterpriseは10月23日、Teamは11月12日の更新で一般提供)
 
 「Cowork」という名前がAnthropic(Claude Cowork)とMicrosoft(Copilot Cowork)の両方で使われている点は、単純な検索や社内会話で混同しやすいので要注意(詳細は後述の注意点)。
 
 ## 使いどころ・使い分け
 
-### 4社の機能名・対応表(2026年9月7日時点)
+### 4社の機能名・対応表(2026年9月7日時点。常時稼働型の行とClaude列のエージェントモード欄は2026年11月22日時点)
 
 | 項目 | ChatGPT(OpenAI) | Gemini(Google) | Microsoft Copilot | Claude(Anthropic) |
 |---|---|---|---|---|
-| エージェントモード(自律実行)の名称 | **ChatGPT Work**(2026年7月9日に「ChatGPT Agent」から改称・独自ブラウザ「ChatGPT Atlas」の機能も統合。2026年9月3日以降はGPT-6 Astraが順次搭載) | Gemini Spark | Copilot Cowork(個人のブラウザ操作は「Copilot Actions/Browse with Copilot」、法人ブラウザは「Agent Mode for Edge for Business」) | Claude Cowork(デスクトップ+Web/モバイル〈ベータ〉)/Claude in Chrome(ブラウザ、ベータ)/Computer Use・Claude Agent SDK(開発者向け) |
+| エージェントモード(自律実行)の名称 | **ChatGPT Work**(2026年7月9日に「ChatGPT Agent」から改称・独自ブラウザ「ChatGPT Atlas」の機能も統合。2026年9月3日以降はGPT-6 Astraが順次搭載) | Gemini Spark | Copilot Cowork(個人のブラウザ操作は「Copilot Actions/Browse with Copilot」、法人ブラウザは「Agent Mode for Edge for Business」) | Claude Cowork(2026年9月16日に通常のチャットと統合され、Claudeが必要に応じて自動で使い分ける。Enterpriseは10月23日、Teamは11月12日に一般提供)/Claude in Chrome(ブラウザ、ベータ)/Computer Use・Claude Agent SDK(開発者向け) |
+| 常時稼働型エージェントの名称 | **dots**(2026年9月29日発表。Pro・Business Premium・Enterprise等で段階展開。最初の1つはPro・Business Premiumのプランに含まれる。詳細は[ChatGPTのエージェント機能](./chatgpt-agent-mode-feature.md)) | Gemini Spark(エージェントモード欄と同じ製品。詳細は[Gemini Sparkの基本](./gemini-spark-basics.md)) | **Autopilot**(旧Scout。2026年9月25日に改称。プライベートプレビュー、使用量課金) | 専用の常時稼働型製品はなし(Coworkのスケジュールタスク・Claude Code Routinesで定期実行・イベント駆動は可能) |
 | スケジュールタスク(定期実行+イベント駆動)の名称 | Tasks(Work統合後も別機能として存続。2026年8月25日にGmail/Slack/GitHubのイベントトリガーを追加) | Scheduled actions | Cowork内「Automations」タブ(2026年8月に「Scheduled」タブから改称し、Outlookメール・Teamsメッセージのイベントトリガーを統合。Researcher/Analystの定期実行もここで管理) | Cowork内のスケジュールタスク(2026年4月〜、ファイル出現・アプリ状態変化・外部Webhookのイベントトリガー対応)/Claude Code Routines(開発者向け、クラウド常駐) |
 | 主な対応プラン | Work: Plus・Pro・Business・Enterprise・Edu(Free・Goは対象外)。Tasks: 全プラン(Free・Goは最大3件・イベントトリガー不可/Plusは最大5件/Business・Eduは最大10件/Pro・Enterpriseは最大15件、いずれもイベントトリガーはPlus以上) | Spark: Google AI Ultra(月$99.99〜、2026年5月に旧$249.99から値下げ)に加え、2026年7月29日から米国・日本のGoogle AI Pro(米国$19.99・日本¥2,900/月)にも拡大。法人のWorkspaceアカウントは非対応。Scheduled actions: Google AI Pro・Ultra、対象Workspace法人プラン(最大同時10件) | Cowork: Microsoft 365 Copilotライセンス(USL)必須。2026年6月16日のGA以降は使用量課金(Copilot Credit、$0.01/クレジット)に一本化、2026年7月1日以降は課金設定必須(未設定テナントは利用不可)。Actions in Edge: 個人の無料Copilotでも一部利用可 | Cowork・スケジュールタスク: Pro・Max・Team・Enterprise(Freeは不可)。Web/モバイル版はベータでMaxプランから展開中、他プランへ順次拡大。Claude in ChromeはProも含む全有償プラン(Proのみモデルがhaiku 4.5に固定) |
 | 日本からの利用 | 可(日本語対応) | Scheduled actionsは可。Gemini Sparkは2026年7月16日に日本語対応、7月29日から日本のGoogle AI Proにも展開開始(会社のGoogle Workspaceアカウントでは依然利用不可) | 可(日本語のMicrosoft 365テナントでも利用可) | 可(日本語対応) |
@@ -52,7 +63,8 @@ ChatGPT・Gemini・Microsoft Copilot・Claudeは、いずれも2025〜2026年に
 1. **「今すぐ1回、複数ステップの作業を代行してほしい」か「同じ依頼を定期的・イベント駆動で繰り返したい」か**: 前者はエージェントモード(ChatGPT Work/Gemini Spark/Copilot Cowork/Claude Cowork)、後者はスケジュールタスク(Tasks/Scheduled actions/Cowork内Automations・Routines)。2026年8月以降は各社ともスケジュールタスク側にイベント駆動トリガー(メール受信・チャットメッセージ・Webhook等)が加わっているため、「毎回同じ操作」だけでなく「条件が揃ったら動く」使い方も軽量な側で実現しやすくなっている
 2. **すでに契約しているツールのエコシステムに、扱いたいデータがあるか**: Gmail・Googleカレンダー中心の業務ならGemini、Word/Excel/Outlook中心ならCopilot、社内の技術文書・コードベース中心ならClaude、といった「データがどこにあるか」による選択が現実的
 3. **日本から使えるか、どのアカウント種別で使えるか**: Gemini Sparkは2026年7月に日本語対応し、同年7月29日以降は個人のGoogle AI Ultraに加えてGoogle AI Pro契約でも使えるようになったが、会社のGoogle Workspaceアカウントでは依然使えない。「日本で使えるようになった」という報道と「自分の契約・アカウントで使える」は別問題なので、導入検討の前に対象地域とアカウント種別の両方を確認する
-4. **開発者が使うか、非エンジニアが使うか**: Claude Agent SDK・Computer Use・Claude Code Routinesは開発者向けの構築部品。非エンジニアが画面から使うならChatGPT Work・Gemini Spark・Copilot Cowork・Claude Coworkのような完成品アプリを選ぶ
+4. **「決めたとおりに繰り返す」か「見張って判断してほしい」か**: 実行の条件と手順を書き切れる業務はスケジュールタスクで足りる。案件・顧客・プロジェクトの変化を追いかけ、何をすべきかの判断ごと任せたい継続業務は常時稼働型(dots・Autopilot)の候補になる。ただし見ていない時間に動くため、最初は読み取り・下書きまでに権限を絞る
+5. **開発者が使うか、非エンジニアが使うか**: Claude Agent SDK・Computer Use・Claude Code Routinesは開発者向けの構築部品。非エンジニアが画面から使うならChatGPT Work・Gemini Spark・Copilot Cowork・Claude Coworkのような完成品アプリを選ぶ
 
 ## 実務での使い方
 
@@ -108,7 +120,9 @@ ChatGPT・Gemini・Microsoft Copilot・Claudeは、いずれも2025〜2026年に
 
 ## 注意点・よくある誤解
 
-- **「Cowork」という名前がAnthropicとMicrosoftの両方に存在する**: Anthropicの個人向けデスクトップ(+Web/モバイル)エージェント「Claude Cowork」と、Microsoft 365 Copilotの法人向け自律実行エージェント「Copilot Cowork」は無関係の別製品。検索結果や社内チャットで「Coworkが使えるようになった」と言われたら、まずどちらの会社の機能かを確認する
+- **常時稼働型は「人が見ていない時間」の権限設計が先**: dotsはバックグラウンドの調査を読み取り専用に制限し、Autopilotは機微な操作の前に人間の承認を求められる設計だが、OpenAI自身が「dotsは間違えることがあるので、重要な成果物は必ず確認を」と注意喚起している。導入時は、送信・削除・購入を承認制にするルールを最初に設定してから任せる範囲を広げる。社内の権限ポリシーの作り方は[AIエージェント運用のガバナンス設計](../part11-ai-agents/ai-agent-governance-basics.md)を参照
+- **Microsoftの「Autopilot」はWindowsの「Windows Autopilot」とは別物**: Copilotの常時稼働型エージェント(旧Scout)と、PCの初期設定を自動化するWindowsの展開機能は無関係。情シス部門との会話では取り違えやすいので注意
+- **「Cowork」という名前がAnthropicとMicrosoftの両方に存在する**: Anthropicのエージェント機能「Claude Cowork」(2026年9月16日に通常のチャットと統合)と、Microsoft 365 Copilotの法人向け自律実行エージェント「Copilot Cowork」は無関係の別製品。検索結果や社内チャットで「Coworkが使えるようになった」と言われたら、まずどちらの会社の機能かを確認する
 - **Gemini Sparkは「日本で使える」=「自分のアカウントで使える」ではない**: 2026年7月16日に日本語対応が始まり、7月29日からは日本のGoogle AI Pro契約者にも対象が広がったが、会社のGoogle Workspaceアカウントでは依然利用できない。「Gemini Sparkが日本語対応した」というニュースだけを見て、会社のアカウントですぐ使えると誤解しないよう注意
 - **軽量なスケジュールタスクにもイベント駆動トリガーが付き、境界が曖昧になっている**: 2026年8月前後にChatGPT Tasks・Copilot CoworkのAutomations・Claude Coworkのスケジュールタスクが相次いでメール受信・チャットメッセージ・Webhookをトリガーにできるようになった。これらは「軽量」な位置づけのままだが、機密メールの内容をトリガー条件やAI応答の材料にするため、後述のプロンプトインジェクション対策の対象として扱う必要がある(「軽いから安全」と思い込まない)
 - **プロンプトインジェクションのリスクは、エージェントモードほど大きい**: ブラウザ・PCを操作するエージェントモード(ChatGPT Work、Gemini Spark、Copilot Cowork/Actions、Claude Cowork/Claude in Chrome)は、閲覧先のページや受信メールに埋め込まれた悪意ある指示に誘導される「間接的プロンプトインジェクション」のリスクを構造的に抱えている。特に「機密データへのアクセス」「信頼できない外部コンテンツへの接触」「外部への送信・実行手段」の3つが同時に揃う使い方は危険度が高い。詳しい仕組み・悪の三要素(lethal trifecta)による判断基準は[プロンプトインジェクションとは何か](../part04-risk-security/prompt-injection-basics.md)を参照。Claude Coworkのように端末がオフラインでも動くリモートセッション型の機能は、実行中に何をしているか気づきにくくなる点にも留意する
@@ -131,6 +145,10 @@ ChatGPT・Gemini・Microsoft Copilot・Claudeは、いずれも2025〜2026年に
 - [Claude(Anthropic)の基本](./claude-basics.md)
 
 ## 更新履歴
+
+### 2026-11-22: 常時稼働型エージェント(OpenAI dots・Microsoft Autopilot〈旧Scout〉)とClaude Coworkのチャット統合を反映
+- **内容**: 「3つ目の形: 常時稼働型エージェント」の節を新設し、dots(2026年9月29日発表、専用クラウドコンピュータ、4,000以上のアプリ、Slack・Teams、読み取り専用のバックグラウンド調査、カスタムルール、最初の1つはPro・Business Premiumに含まれる)とMicrosoft Autopilot(2026年6月2日にScoutとして発表、9月25日に改称、クラウド実行、エージェントごとのEntra ID、プライベートプレビュー、使用量課金)を整理。対応表に「常時稼働型エージェントの名称」行と判断の目安・注意点(見ていない時間の権限設計、Windows Autopilotとの混同)を追加。Claude Coworkが2026年9月16日に通常のチャットへ統合され、Enterprise(10月23日)・Team(11月12日)で一般提供された点を反映。Gemini Spark・Copilot Cowork・ChatGPT Tasksの料金・プラン欄は2026年9月7日時点の記述のまま(本更新では再確認していない)
+- **出典**: [OpenAI: Introducing dots](https://openai.com/index/introducing-dots/)、[Microsoft 365 Blog: Introducing Microsoft Scout](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout/)、[Microsoft: Introducing the new Copilot with Home, Code and Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)、[CIAOPS: Scout, Now Autopilot: How Microsoft's Always-On Agent Really Works](https://blog.ciaops.com/2026/10/27/scout-now-autopilot-how-microsofts-always-on-agent-really-works/)、[Claude by Anthropic: Claude Cowork and chat are now one Claude](https://claude.com/blog/cowork-is-now-claude)
 
 ### 2026-09-07: ChatGPT Tasksのイベントトリガー追加、Gemini SparkのGoogle AI Pro拡大・Ultra値下げ、Copilot Coworkの「Automations」改称、GPT-6 Astra登場を反映して全体を最新化
 - **内容**: (1)ChatGPTが2026年8月25〜26日にTasksへGmail/Slack/GitHubのイベントトリガーを追加し、無料プラン・Goにもスケジュール機能(最大3件、イベントトリガーは不可)を解放した点、(2)Gemini Sparkが2026年5月のGoogle AI Ultra値下げ(月$249.99→$99.99)とセットで登場し、2026年7月29日から米国・日本のGoogle AI Pro契約者(米国$19.99・日本¥2,900)にも対象拡大した点、(3)Copilot Cowork内の「Scheduled」タブが2026年8月に「Automations」へ改称されOutlookメール・Teamsメッセージのイベントトリガーを統合した点、および個人向けCopilotアプリとMicrosoft 365 Copilotアプリの統合(2026年8〜9月)、(4)2026年9月3日に発表されたGPT-6 Astra(ChatGPT Workの新モデル基盤)、(5)Claude Coworkのスケジュールタスクが2026年4月9日追加でファイル出現・アプリ状態変化・外部Webhookのイベントトリガーに対応済みである点とWeb/モバイルベータの継続状況を、それぞれ比較表・本文・料金表・実務例に反映。あわせてタイトル・タグの「ChatGPT Agent」表記を「ChatGPT Work」に修正(改称自体は2026年7月に発生済みだが表記の反映漏れがあったため)
