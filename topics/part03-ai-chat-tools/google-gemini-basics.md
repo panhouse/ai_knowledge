@@ -2,49 +2,52 @@
 title: Google Geminiの基本
 part: 3
 chapter: 第5章 主要ツール各論
-tags: [Gemini, Google, Gem, NotebookLM, Gemini Notebook]
+tags: [Gemini, Google, Gem, NotebookLM, Gemini Notebook, Gemini 4, Gemini Task]
 created: 2026-07-04
-updated: 2026-09-04
+updated: 2026-11-23
 ---
 
 # Google Geminiの基本
 
 ## これは何か
 
-Google Geminiは、ChatGPTと並ぶ代表的な生成AIだが、モデルの世代(Flash/Pro等)や周辺機能(Gem、NotebookLM改め「Gemini Notebook」)の呼び方がGoogle独自で分かりにくい。しかもFlash系モデルだけでも2026年7月21日(3.6)→8月13日(3.7)→9月2日(3.8)と、Google自身が「6週間で3回目のFlash更新」と語るほどのペースで刷新されており、他社よりモデルの入れ替わりが速い。ChatGPTを使い慣れた人はもちろん、以前Geminiを触ったことがある人でも「あれ、前と名前が違う」と戸惑いやすい。ここではGeminiのラインナップと周辺機能の関係を、2026年9月時点の最新状態で整理する。
+Google Geminiは、ChatGPTと並ぶ代表的な生成AIだが、モデルの世代や周辺機能(Gem、NotebookLM改め「Gemini Notebook」、旧Gemini Spark改め「Task」)の呼び方がGoogle独自で分かりにくい。しかも2026年秋には、それまでの「Gemini 3.x Flash/Pro」という命名をやめて、元素名で呼ぶ**Gemini 4ファミリー(Hydrogen・Neon・Carbonなど)**へ一気に世代交代した。以前Geminiを触ったことがある人ほど「Proはどこへ行った?」と戸惑いやすい。ここではGeminiのラインナップと周辺機能の関係を、2026年11月時点の最新状態で整理する。
 
 ## 仕組み・背景
 
-2026年9月時点でのGeminiのモデルラインナップは「Gemini 3」世代が中心で、性能・速度のバランスで複数段階に分かれている。
+### Gemini 4ファミリー(2026年11月時点)
 
-- **Gemini 3.5 Flash-Lite**: 低遅延・高頻度処理向けの最軽量モデル
-- **Gemini 3.6 Flash**(2026年7月21日公開): 無料版の既定モデル。従来の3.5 Flashより出力トークンを最大17%削減しつつ性能を底上げした汎用モデルで、2026年9月時点でも無料版ではこれが既定のまま
-- **Gemini 3.7 Flash**(2026年8月13日一般提供): 3.6 Flashをコーディング・エージェント用途に寄せた改良版。API(Google AI Studio)や自律実行エージェント「Gemini Spark」経由での利用が中心だった
-- **Gemini 3.8 Flash**(2026年9月2日一般提供): 3.7 Flashからさらにソフトウェア開発・エージェント処理・多段推論を強化した最新のワークホースモデル。入出力とも1Mトークンのコンテキスト窓(出力上限6.4万トークン)を持ち、API上の価格は3.7 Flashと同水準(2026年内は入力$0.75/出力$3.75の導入価格、2027年1月から2倍に改定予定)。Google AI Pro・Ultra契約者はGeminiアプリのチャットからも直接利用できるが、無料版では引き続き3.6 Flashが既定のまま
-- **Gemini 3.8 Flash Cyber**: サイバーセキュリティの脆弱性発見・修正に特化したモデル。旧「3.5 Flash Cyber」を置き換える形で登場し、新設の「Fairwind Program」を通じた信頼できるテスター向け限定提供にとどまる
-- **Gemini 3.1 Pro**: 現行のフラッグシップモデル(2026年2月公開)。複雑なタスク・専門用途向けで、応答時に「思考レベル」をLOW/MEDIUM/HIGHの3段階から選べ、HIGHにすると簡易版の並列推論モード(通称「Deep Think Mini」)として振る舞う
-- **Deep Think**: Google AI Ultra限定の最上位モード。Gemini 3.1 Proをベースにした本格的な並列推論で、国際数学オリンピック(IMO)金メダル相当のスコアを記録するなど、最も難しい調査・エンジニアリング用途向け
+Gemini 4は2026年9月30日に最初のモデル「Argon」が発表され(当初は一部のサイバーセキュリティパートナー向け)、11月に入って上位・普及版・中位のモデルが相次いで投入された。Geminiアプリのモデル選択メニューでは、モデル名ではなく用途名で表示される点に注意する。
 
-次期フラッグシップの「Gemini 3.5 Pro」は2026年5月のGoogle I/Oで予告されたものの、コーディング性能が社内基準に届かなかったことを理由に一般提供が繰り返し延期されており、2026年9月2日時点で6月・7月中旬・8月上旬の3回の目標時期をいずれも見送ったまま、モデルID・価格・提供時期のいずれも未公表の段階が続いている。さらに2026年7月21日には次々世代「Gemini 4」の事前学習を開始したことも公表されたが、2026年9月2日時点でもAPI・Vertex AIのモデル一覧に「gemini-4」の項目はなく、公開ドキュメントも存在しない(海外メディアは過去の投入間隔から「2026年11〜12月頃」と予想するにとどまる)。「Gemini 3.5 Proがもう使える」「Gemini 4が出た」といった記事も出回っているが、Google公式のアナウンスが出るまでは未確定情報として扱うのが安全。
+| モデル | 位置づけ | Geminiアプリでの表示と対象プラン | API価格(100万トークンあたり) |
+|---|---|---|---|
+| **Gemini 4 Hydrogen**(2026年11月12日) | 日常使い・エージェント処理向けの普及モデル。Flash系の後継にあたる | 「Everyday help」。有料プランはメニューから選べる。無料版は自動選択で振り分けられたときだけ使われる | 入力$1.50/出力$7.50、コンテキスト窓100万トークン |
+| **Gemini 4 Neon**(2026年11月18日) | HydrogenとCarbonの中間。複雑なコーディング・分析・ナレッジワーク向けの主力 | 「Deeper analysis」。Google AI Pro・Ultra | 入力$3/出力$15、コンテキスト窓100万トークン |
+| **Gemini 4 Carbon**(2026年11月10日にアプリ提供開始) | 最上位。最も難しい多段階の調査・コーディング・法務/金融などの高精度業務向け | 「Code & complex work」。Google AI Ultra | 入力$2/出力$10の導入価格(2026年11月30日まで)、以降は入力$4/出力$20 |
+| Gemini 4 Argon(2026年9月30日発表) | ファミリー最初のモデル。コード・分析向け | 一時はPro以上で提供されたが、アプリではNeonに置き換えられた | Carbonと同じ価格体系 |
+
+あわせて、長くフラッグシップだった**Gemini 3.1 ProはGeminiアプリから外れた**。次期モデルとして予告されていた「Gemini 3.5 Pro」は、Googleの広報担当者が「リリース計画を取りやめた」と説明しており(ロイター報道、2026年10月)、今後出てくることはない。ネット上の「3.5 Proの使い方」といった記事は古い情報として扱ってよい。
+
+### 無料版は「自動選択」に一本化
+
+2026年10月9日から、有料プランなしのGeminiアプリでは**手動でのモデル切り替えができなくなり、「Auto(自動選択)」だけ**になった。Googleの説明では、多くのプロンプトは最速のFlash-Liteで処理され、深い推論が必要なものだけが上位モデルに回される。自動選択をオフにすると、無料版ではすべての応答がFlash-Liteになる。あわせて推論の深さを「低・中・高」の3段階で選べるようになった(高いほど利用枠を多く消費する)。つまり**無料版で上位モデルを確実に使う方法はない**。精度が必要な業務で使うなら、有料プランが前提になる。
 
 画像生成は「Nano Banana」シリーズという名称で展開されている。2026年2月26日にGeminiアプリの既定画像生成モデルが「Nano Banana 2」(Gemini 3.1 Flash Image、高速・低コスト重視)に切り替わり、より高精度な文字入れ・複雑な構図・実データに基づいた描写が必要な場合は上位モデルの「Nano Banana Pro」(Gemini 3 Pro Image、2026年6月一般提供)を使う、という2段構成になっている。両モデルとも一般提供が完了しており、動画ファイルやYouTube URLを入力してサムネイル・映画風ポスター・要約インフォグラフィックを生成する「動画→画像」機能が追加されたほか、Nano Banana 2で作った1枚絵をVeo 3.1に渡してその構図のまま動画化する、という画像・動画モデルの連携もできるようになっている。
 
-Geminiアプリ本体にも大きな新機能が加わった。「Gemini Spark」は、Gmail・Googleカレンダー・ドキュメント・スプレッドシートなどを横断してタスクを自律的に進める常駐エージェントで、当初はGoogle AI Ultra限定だったが、2026年7月29日にGoogle AI Pro(月額2,900円、米国から順次)にも提供が拡大された。以降も改良が続いており、処理速度が旧版比50%以上向上したほか、Googleドキュメント・スプレッドシート・スライドの共有ファイルに直接画像を追加・編集できるようになった。2026年8月にはGemini Liveにも「Personal Intelligence」「Daily Brief」といった新機能が加わり、話しかけるだけで1日の予定確認や受信トレイの整理をハンズフリーで任せられるようになっている。詳細は[Gemini Spark(Google)の基本](gemini-spark-basics.md)を参照。
+Geminiアプリには自律実行エージェントも組み込まれている。2026年5月に「Gemini Spark」として発表された機能は、10月に**「Task」へ改称されて通常のチャット画面に統合**され、入力欄付近の「Chat/Task」の切り替えで呼び出す形になった。Gmail・Googleカレンダー・ドキュメント・スプレッドシートなどを横断して作業を進め、送信・購入などの前には必ず確認を求める。Google公式ヘルプでは、日本・米国など6か国では有料プランなしでも使えると案内されている(上位プランほど利用上限が大きい)。詳細は[Gemini Task(旧Gemini Spark)の基本](gemini-spark-basics.md)を参照。
 
-モデル・製品名の世代交代は非常に速く、2026年7月には音声・文書系ツールの「NotebookLM」が「Gemini Notebook」に改称されるなど、名前自体が変わることもある。記事や社内資料に具体的なモデル名・製品名を書く場合は、必ず[Google公式のGeminiリリースノート](https://gemini.google/release-notes/)で最新の呼称を確認することを推奨する。
+モデル・製品名の世代交代は非常に速く、2026年7月には音声・文書系ツールの「NotebookLM」が「Gemini Notebook」に、10月には「Gemini Spark」が「Task」に改称されるなど、名前自体が変わることもある。記事や社内資料に具体的なモデル名・製品名を書く場合は、必ず[Google公式のGeminiリリースノート](https://gemini.google/release-notes/)で最新の呼称を確認することを推奨する。
 
 ## 使いどころ・使い分け
 
 | 用途 | 向いているモデル・機能 |
 |---|---|
-| 簡単な質問・チャット | Gemini 3.6 Flash(無料版の既定モデル) |
-| 複雑な分析・専門的なタスク | Gemini 3.1 Pro |
-| 最難関の調査・研究・エンジニアリング | Deep Think(Ultra限定) |
-| コーディング・自律的なエージェント処理 | Gemini 3.8 Flash(Pro/Ultra契約者はアプリからも、それ以外はAPI・Gemini Spark経由) |
-| 大量・高頻度の軽い処理 | Gemini 3.5 Flash-Lite |
+| 簡単な質問・チャット | 自動選択(無料版はこれのみ)/有料版は「Everyday help」(Gemini 4 Hydrogen) |
+| 複雑な分析・資料作成・コーディング | 「Deeper analysis」(Gemini 4 Neon、Pro以上) |
+| 最難関の調査・高精度が求められる専門業務 | 「Code & complex work」(Gemini 4 Carbon、Ultra限定) |
 | 高速・低コストの画像生成 | Nano Banana 2 |
 | 高精度な文字入れ・複雑な構図の画像生成 | Nano Banana Pro |
-| メール・カレンダー・資料をまたいだ作業を丸ごと任せたい | Gemini Spark(Pro以上) |
+| メール・カレンダー・資料をまたいだ作業を丸ごと任せたい | Task(旧Gemini Spark。日本では有料プランなしでも利用可) |
 | 手元の資料だけを根拠に正確に調べたい | Gemini Notebook(旧NotebookLM) |
 | 幅広い一般知識も使って発想を広げたい | Geminiアプリ本体 |
 
@@ -52,19 +55,19 @@ GeminiアプリとGemini Notebook(旧NotebookLM)の使い分けが特によく�
 
 ## 実務での使い方
 
-### 個人向けプラン(2026年9月時点の目安)
+### 個人向けプラン(2026年11月時点の目安)
 
-2026年5月のGoogle I/Oで再編されたプラン体系は、9月時点でも同水準の価格で続いている。以下は執筆時点の目安。
+月額は2026年5月のプラン再編時に公表された日本の価格、各プランで使えるモデルは2026年11月時点のGoogle公式プランページの記載にもとづく。
 
 | プラン | 月額目安(日本) | 特徴 |
 |---|---|---|
-| 無料 | ¥0 | Gemini 3.6 Flashが既定モデル。Gemsも無料版で作成・利用可(回数制限あり)。Deep Researchは月5回程度まで、画像生成は1日あたり上限あり |
-| Google AI Plus | ¥725 | 無料版の2倍程度の利用枠、コンテキスト窓12.8万トークン、Omni Flashによる動画生成、Gemini Notebookの利用枠拡大など |
-| Google AI Pro | ¥2,900 | Gemini 3.1 Pro、Geminiアプリのチャットからも使えるGemini 3.8 Flash、Nano Banana Pro、Veo 3.1 Fast、Deep Research(1日20回目安)、Gemini Notebookの利用枠拡大、自律実行エージェント「Gemini Spark」(2026年7月29日提供開始、以降も高速化・機能拡張が継続中)、コーディングエージェント「Jules」、エージェント型IDE「Antigravity」などフロンティア機能一式 |
-| Google AI Ultra(5x) | ¥14,500 | ストレージ20TB。Proの5倍の利用量上限、Deep Research 1日120回目安 |
-| Google AI Ultra(20x) | ¥32,000 | ストレージ30TB。Proの20倍の利用量上限、Deep Think、Veo 3.1のフル機能、Project Mariner(エージェント型ブラウザ操作)、YouTube Premium同梱など最上位機能 |
+| 無料 | ¥0 | モデルは自動選択のみ(多くはFlash-Lite)。Gemsは回数制限付きで作成・利用可。Task(旧Spark)も日本では利用可 |
+| Google AI Plus | ¥1,200 | ストレージ400GB。Gemini 4 Hydrogenをメニューから選択可、Deep Research、Taskの利用枠拡大 |
+| Google AI Pro | ¥2,900 | ストレージ5TB。GeminiアプリでGemini 4 Neonが使える、Deep Research・Taskの利用枠拡大、エージェント型IDE「Antigravity」など |
+| Google AI Ultra(5x) | ¥14,500(月払いのみ) | ストレージ20TB。Gemini 4 Carbon、Neonの上限拡大、Taskの上限引き上げ |
+| Google AI Ultra(20x) | ¥32,000 | ストレージ30TB。5xよりさらに大きな利用上限 |
 
-Ultraは以前は単一プランだったが、I/O 2026でエントリー帯(5x)と最上位帯(20x)の2階層に再編され、最上位帯はむしろ値下げされた。料金は今後も変更される可能性が高いため、契約前に必ず[Google公式のプランページ](https://one.google.com/about/google-ai-plans/)で最新の金額を確認すること。なお、Gemini APIを自社システムやノーコードツールから従量課金で呼び出す場合の料金は、これらの個人向けサブスクとは別契約になる。詳しくは[Google Gemini APIの基本](../part09-api-development/google-gemini-api-basics.md)を参照。
+Ultraは以前は単一プラン(月額36,400円)だったが、2026年5月にエントリー帯(5x)と最上位帯(20x)の2階層に再編され、最上位帯はむしろ値下げされた。料金は今後も変更される可能性が高いため、契約前に必ず[Google公式のプランページ](https://one.google.com/about/google-ai-plans/)で最新の金額を確認すること。なお、Gemini APIを自社システムやノーコードツールから従量課金で呼び出す場合の料金は、これらの個人向けサブスクとは別契約になる。詳しくは[Google Gemini APIの基本](../part09-api-development/google-gemini-api-basics.md)を参照。
 
 ### Gem機能(ChatGPTのGPTsに相当)
 
@@ -90,11 +93,12 @@ Gemは「どんなトピックにも対応できる自分専用のカスタムAI
 
 ## 注意点・よくある誤解
 
-- **モデル名・製品名・料金の変更頻度が非常に高い**: Flash系だけでも2026年7月21日(3.6 Flash)→8月13日(3.7 Flash)→9月2日(3.8 Flash)と6週間で3回更新されており、本ページの数値・名称は目安に過ぎない。契約前・執筆前に必ず公式サイトで確認すること。
-- **「NotebookLM」の名前はもう存在しない**: 2026年7月16日以降、公式には「Gemini Notebook」に統一されている。過去の資料や検索結果には旧名の「NotebookLM」が数多く残っているため、社内資料を書く際はどちらの名前でも通じるよう両方併記しておくと親切。
-- **「Gemini 3.5 Pro」「Gemini 4」を混同しない**: どちらも未リリースだが状況は異なる。3.5 Proは2026年6月・7月中旬・8月上旬と3回投入目標を逃した末に9月時点でもモデルID・価格とも未公表なのに対し、Gemini 4は2026年7月に事前学習を開始した段階に過ぎず、リリース時期の見込みすら公表されていない。ブログ記事の中には未確定の噂を確定情報のように書いているものもあるため注意。
-- **無料版の既定モデルは変わっていない**: 3.7 Flash・3.8 Flashが登場しても、無料版のGeminiアプリで使えるのは引き続きGemini 3.6 Flash。3.8 FlashをGeminiアプリのチャットから直接使えるのはGoogle AI Pro・Ultra契約者のみで、それ以外はAPIやGemini Spark経由での利用が中心になる。「最新モデルが使えない」と感じたら、まず自分の契約プランと提供経路を確認する。
-- **無料版でGemが使えるかどうかは要確認**: 無料版でも基本的なGem作成・利用は可能になったが、利用回数や使えるモデルの性能には上限がある。実際の挙動は公式ヘルプで確認するのが確実。
+- **モデル名・製品名・料金の変更頻度が非常に高い**: 2026年夏はFlash系が6週間で3回更新され、秋にはGemini 4ファミリーへ命名ごと切り替わった。本ページの数値・名称は目安に過ぎない。契約前・執筆前に必ず公式サイトで確認すること。
+- **「Pro」はプラン名であってモデル名ではなくなった**: 以前は「Gemini 3.1 Pro」というモデルがあったため、「Proプラン=Proモデル」と覚えていた人が多い。いまはGoogle AI Proプランで使える上位モデルはGemini 4 Neonで、「Gemini 3.5 Pro」は出ないことが決まっている。社内資料のモデル名は書き換えが必要。
+- **アプリの表示名とモデル名が違う**: モデル選択メニューには「Everyday help」「Deeper analysis」のような用途名が並ぶ。マニュアルを作るときは「Deeper analysis(Gemini 4 Neon)」のように両方を併記すると、表示が変わっても追いやすい。
+- **無料版で上位モデルを指定することはできない**: 2026年10月9日以降、無料版は自動選択のみで、多くの質問はFlash-Liteで処理される。「無料版で試したら精度がいまひとつだった」という評価は、有料版の実力とは別物と考える。
+- **「NotebookLM」「Gemini Spark」の名前はもう使われていない**: それぞれ「Gemini Notebook」(2026年7月〜)、「Task」(2026年10月〜)に改称された。過去の資料や検索結果には旧名が多く残っているため、社内資料では新旧両方を併記しておくと親切。
+- **API料金にも期限付きの導入価格がある**: Gemini 4 Carbon・Argonは2026年11月30日までの導入価格が終わると単価が2倍になる。API経由で業務システムに組み込む場合は、導入価格前提で予算を組まない。
 
 ## 最初の一歩
 
@@ -103,10 +107,14 @@ Gemは「どんなトピックにも対応できる自分専用のカスタムAI
 ## 関連トピック
 
 - [ChatGPTのプラン比較](../part03-ai-chat-tools/chatgpt-plan-comparison.md)
-- [Gemini Spark(Google)の基本](gemini-spark-basics.md)
+- [Gemini Task(旧Gemini Spark)の基本](gemini-spark-basics.md)
 - [Google Gemini APIの基本](../part09-api-development/google-gemini-api-basics.md)
 
 ## 更新履歴
+
+### 2026-11-23: Gemini 4ファミリーへの世代交代・無料版の自動選択化・Task改称を反映して最新化
+- **内容**: モデル解説をGemini 3.x系からGemini 4ファミリー(Hydrogen・Neon・Carbon、Argon)に全面的に書き換え、Geminiアプリでの表示名・対象プラン・API価格を一覧化。Gemini 3.1 Proのアプリからの撤去とGemini 3.5 Proのリリース中止、2026年10月9日からの無料版の自動選択一本化(多くはFlash-Lite)を追記。Gemini SparkのTaskへの改称と日本での有料プランなし提供を反映。プラン表をGoogle公式プランページの記載に合わせて更新し、Google AI Plusの月額を¥1,200に訂正。陳腐化した3.6/3.7/3.8 Flash・Deep Thinkの記述を削除
+- **出典**: [Google公式ブログ: Introducing Gemini 4 Hydrogen](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/)、[Google公式ブログ: Gemini 4 Neon を発表](https://blog.google/intl/ja-jp/company-news/technology/introducing-gemini-4-neon/)、[9to5Google: Google launches Gemini 4 Neon(2026年11月18日)](https://9to5google.com/2026/11/18/gemini-4-neon-announcement/)、[9to5Google: Gemini 4 Carbon rolling out to Gemini app for AI Ultra(2026年11月10日)](https://9to5google.com/2026/11/10/gemini-app-4-carbon/)、[Khaleej Times(ロイター配信): Google announces Gemini 4 flagship AI model after months of delays](https://www.khaleejtimes.com/business/google-announces-gemini-4-flagship-ai-model-after-months-of-delays-2)、[9to5Google: Gemini free users move to Auto(2026年10月9日)](https://9to5google.com/2026/10/09/gemini-auto-free-users/)、[Google One: Google AI プラン](https://one.google.com/intl/ja_jp/about/google-ai-plans/)、[PC Watch: Google AI Ultra 5x新設とUltraの値下げ](https://pc.watch.impress.co.jp/docs/news/2110129.html)、[Gemini Apps ヘルプ: Manage your tasks & workflows](https://support.google.com/gemini/answer/17094507?hl=en)
 
 ### 2026-09-04: モデルラインナップとGemini Notebookの利用上限を2026年9月時点に更新
 - **内容**: Flash系モデルの最新版として2026年9月2日一般提供の「Gemini 3.8 Flash」(コンテキスト窓1Mトークン、API価格は3.7 Flashと同水準、Google AI Pro/Ultra契約者はGeminiアプリからも利用可)と「Gemini 3.8 Flash Cyber」(Fairwind Programの信頼できるテスター向け限定提供)を反映し、無料版の既定モデルは引き続きGemini 3.6 Flashであることを明記。Gemini 3.5 Proが6月・7月中旬・8月上旬の3回投入目標を逃したまま未公表が続いていること、Gemini 4はAPI・Vertex AIにまだ項目が存在せず海外報道は2026年11〜12月頃の投入を予想するにとどまることを追記。Nano Banana 2/Proが一般提供完了し「動画→画像」生成やVeo 3.1との連携が可能になったこと、Gemini Sparkの高速化・Docs/Sheets/Slidesへの画像編集対応・Gemini Liveの新機能(Personal Intelligence/Daily Brief)、Gemini Notebookの利用上限が2026年9月2日から「コンピューティング量ベース・5時間ごとリセット」に変更されたことを反映
