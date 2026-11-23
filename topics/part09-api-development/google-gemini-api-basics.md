@@ -2,9 +2,9 @@
 title: Google Gemini APIの基本
 part: 9
 chapter: 第1章 LLM APIの基礎
-tags: [Gemini API, Google AI Studio, Vertex AI, Gemini Enterprise Agent Platform, APIキー, LLM API]
+tags: [Gemini API, Google AI Studio, Vertex AI, Gemini Enterprise Agent Platform, APIキー, LLM API, Gemini 4]
 created: 2026-07-06
-updated: 2026-08-09
+updated: 2026-11-23
 ---
 
 # Google Gemini APIの基本
@@ -19,7 +19,7 @@ Gemini.app(gemini.google.com)やGoogle AI Pro/Ultraに課金していれば、Di
 - **Gemini API(Google AI Studio経由)**: 開発者向けのインターフェースで、個人開発者・スタートアップ・プロトタイピング向けの「最速で試せる」入口。aistudio.google.com上でAPIキーを発行し、`generativelanguage.googleapis.com`のエンドポイントにHTTPリクエストを送ってGeminiを呼び出す。Gemini.appのサブスク契約とは別会計で、Google AI Pro/Ultraに入っていてもAPI利用料は割引されない。逆にGemini.appを契約していなくてもGoogleアカウントさえあればAPIのみ無料枠で試せる。
 - **Gemini API(Gemini Enterprise Agent Platform経由)**: 同じGeminiモデルを、Google Cloudのプロジェクト・IAM(権限管理)・データ居住地(リージョン)制御・SLA(サービス品質保証)付きで呼び出す企業向けの入口。従来「Vertex AI」と呼ばれていたが、2026年4月23日のGoogle Cloud Next 26でAgentspace等を統合し「Gemini Enterprise Agent Platform」への改称・再編が発表され、同年5月末までに移行が完了した。Model Garden・AutoML・Model Registry・Endpoints・Pipelinesといった旧Vertex AIの機能群は、この「エージェント基盤」の中の一部として位置づけ直されている。呼称は変わったが、Gemini APIそのものの呼び出し方(エンドポイント・SDK)は後方互換で維持されているため、既存コードの書き換えは不要である。社内のガバナンス要件(データを学習に使わせない、リージョンを固定する等)が絡む本番導入ではこちらが選ばれることが多い。
 
-料金は「トークン(文章を分割した単位)」ごとの従量課金で、入力(プロンプト)側より出力(生成結果)側の単価が高く設定されている。モデルのグレード(後述のPro/Flash/Flash-Lite)によっても単価は大きく変わる。加えて、Gemini 3世代以降のモデルは回答前に内部で「思考(Thinking)」する推論型モデルであり、この思考過程もトークンとして生成され、ユーザーには見えない部分も含めて出力トークン料金で課金される点に注意が必要である(詳細は後述)。
+料金は「トークン(文章を分割した単位)」ごとの従量課金で、入力(プロンプト)側より出力(生成結果)側の単価が高く設定されている。モデルのグレード(後述のGemini 4ファミリーの各モデルやFlash-Lite)によっても単価は大きく変わる。加えて、Gemini 3世代以降のモデルは回答前に内部で「思考(Thinking)」する推論型モデルであり、この思考過程もトークンとして生成され、ユーザーには見えない部分も含めて出力トークン料金で課金される点に注意が必要である(詳細は後述)。
 
 ## 使いどころ・使い分け
 
@@ -31,7 +31,7 @@ Gemini.app(gemini.google.com)やGoogle AI Pro/Ultraに課金していれば、Di
 | データ居住地・IAM・SLAなど企業のガバナンス要件を満たしたい | Gemini API(Gemini Enterprise Agent Platform、旧Vertex AI経由) |
 | Difyやn8nなどノーコードツールでAIアプリを作りたい | Gemini API(ノーコードツール側にAPIキーを設定) |
 | 大量のデータを一括で要約・分類したい(即時応答不要) | Gemini APIのBatch API(通常の約50%引で処理できる) |
-| 100万トークン級の長大な資料・複数ドキュメントをまるごと読ませたい | Gemini 3.6 Flash/Gemini 3.1 Proなど長いコンテキストウィンドウに対応したモデル |
+| 100万トークン級の長大な資料・複数ドキュメントをまるごと読ませたい | Gemini 4 Hydrogen/Gemini 4 Neonなど100万トークンのコンテキストウィンドウを持つモデル |
 | 最新のWeb情報を踏まえて回答させたい | Grounding with Google Search機能を有効化した呼び出し(2026年以降は検索クエリ単位の課金に変更) |
 
 ## 実務での使い方
@@ -47,7 +47,7 @@ Gemini.app(gemini.google.com)やGoogle AI Pro/Ultraに課金していれば、Di
 ### 最小のコード例(Generative Language API)
 
 ```bash
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent" \
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-4-hydrogen:generateContent" \
   -H "x-goog-api-key: $GEMINI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -59,32 +59,36 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:g
 
 OpenAI API(`Authorization: Bearer`)やAnthropic API(`x-api-key`ヘッダー)と異なり、Gemini APIは`x-goog-api-key`ヘッダー、またはURLクエリパラメータ`?key=`でキーを渡す方式に対応している。クエリパラメータ方式はアクセスログやブラウザ履歴にキーが残るリスクがあるため、本番環境ではヘッダー渡しを使うのが安全である。
 
-### モデル指定の考え方(Pro / Flash / Flash-Lite)
+### モデル指定の考え方(Gemini 4ファミリー)
 
-2026年8月時点の主力ラインナップはおおむね3グレードに分かれる(モデル名は頻繁に更新されるため、必ず ai.google.dev/gemini-api/docs/models で最新のモデルIDを確認すること)。
+2026年秋に、Gemini APIの主力は「Pro/Flash/Flash-Lite」という3.x系の呼び分けから、元素名で呼ぶ**Gemini 4ファミリー**に切り替わった。2026年11月時点の公式チェンジログにもとづく構成は次のとおり(モデル名は頻繁に更新されるため、必ずGoogle AI Studioのドキュメントで最新のモデルIDを確認すること)。
 
-| グレード | 位置づけ | 向いている用途 |
-|---|---|---|
-| Pro(Gemini 3.1 Pro、プレビュー) | 現行の最上位。複雑な推論・高精度な多段階タスクに強い | 難しい分析・コード生成・専門的な質問応答 |
-| Flash(Gemini 3.6 Flash、GA) | バランス型。2026年7月21日にGemini 3.5 Flashを置き換える形でリリースされ、出力トークン消費量が旧世代比で約17%減、コーディング系ベンチマーク(DeepSWE)も37%→49%に向上 | チャットボット、要約、一般的な業務アプリのバックエンド、エージェント・コーディング用途 |
-| Flash-Lite(Gemini 3.5 Flash-Lite) | 同じく2026年7月21日にGemini 3.1 Flash-Liteを置き換えて登場。処理速度は毎秒350トークンとFlash系最速、価格も新たな最安水準 | 高頻度・大量呼び出しの分類・タグ付けなどコスト重視の処理 |
+| モデル(モデルID) | 一般提供開始 | 位置づけ | 向いている用途 |
+|---|---|---|---|
+| Gemini 4 Hydrogen(`gemini-4-hydrogen`) | 2026年11月12日 | 普及版。Gemini 3.8 Flashからの乗り換え先として位置づけられ、無料枠でも使える | チャットボット、要約、業務アプリのバックエンド、エージェント処理 |
+| Gemini 4 Neon(`gemini-4-neon`) | 2026年11月18日 | HydrogenとCarbonの中間。複雑なコーディング・分析・ナレッジワーク向け | 精度が要る分析、コード生成、複数資料の読み込み |
+| Gemini 4 Carbon(`gemini-4-carbon`) | 2026年11月10日 | 最上位。最も難しい多段階の調査・コーディング向け | 難問の分析、長期の開発タスク、高精度が要る専門業務 |
+| Gemini 4 Argon(`gemini-4-argon`) | 2026年10月13日 | ファミリー最初のモデル。コード・分析向け | 既存の検証環境。新規はNeonとの比較で選ぶ |
+| Gemini 3.5 Flash-Lite(`gemini-3.5-flash-lite`) | 2026年7月 | 3.x系の最軽量・最安クラス | 高頻度・大量呼び出しの分類・タグ付けなどコスト重視の処理 |
 
-なお同じ2026年7月21日、脆弱性検証・パッチ生成に特化した「Gemini 3.5 Flash Cyber」(セキュリティエージェントCodeMenderに統合)も発表されたが、現時点では政府機関・一部パートナー限定の提供であり、一般の業務利用では選択肢に入らない。
+3.x系の整理も進んでいる。`gemini-3.7-flash`は`gemini-3.8-flash`へ、`gemini-3.5-flash`は`gemini-3.6-flash`へ、それぞれリクエストが自動的に振り替えられる形で非推奨になった(2026年10月8日告知)。さらに2026年12月1日からは、`gemini-2.5-pro`へのリクエストが`gemini-3.8-flash`に、`gemini-2.5-flash`へのリクエストが`gemini-3.5-flash-lite`に振り替えられる。**振り替え後は出力の傾向や単価が変わる**ため、旧モデルIDを指定している既存システムは、Gemini 4系または現行の3.x系へ明示的に切り替えて動作を確かめておく。なお次期モデルとして予告されていた「Gemini 3.5 Pro」は、Googleがリリース計画を取りやめている。
 
-2026年8月9日時点、次世代の「Gemini 3.5 Pro」(2百万トークン級のコンテキストウィンドウが噂される)は依然として一般提供されていない。Google DeepMindはコーディング性能・複雑なツール呼び出しの精度が期待水準に届かず学習データを作り直すなど開発が難航しており、社内利用・一部エンタープライズ顧客によるGemini Enterprise Agent Platform経由の限定プレビューにとどまる。「8月中に出る」との観測報道もあるが、Google自身は具体的な日付を明言していない。社内資料に反映する際は「Gemini 3.5 Proは執筆時点で未GA、仕様・価格・提供時期は未確定」と明記し、憶測で断定しないこと。また旧世代のGemini 3 Pro/Gemini 3 Flash、およびさらに旧いGemini 2.5系(Pro/Flash/Flash-Lite)は新規開発には非推奨で、Gemini 2.5系はGemini Enterprise Agent Platform上で2026年10月16日以降(Gemini 3系のGA状況次第でさらに延びる可能性あり)順次廃止が予告されている。既存システムで旧モデルID(gemini-3.5-flash、gemini-3.1-flash-lite等)を指定している場合は、早めにGemini 3.1 Pro/Gemini 3.6 Flash/Gemini 3.5 Flash-Liteへの切り替えを検討する。
+迷ったら「**まずHydrogenで動かし、精度が足りない処理だけNeon(さらに足りなければCarbon)、コストが問題になった処理だけFlash-Liteに切り替える**」という段階的な選び方が実務的である。
 
-迷ったら「まずFlashで動かし、精度が足りない部分だけPro、コストが問題になった部分だけFlash-Liteに切り替える」という段階的な選び方が実務的である。
+### 料金体系のイメージ(2026年11月時点。価格は変更が頻繁なため、必ず公式の料金ページで最終確認すること)
 
-### 料金体系のイメージ(2026年8月時点、モデル名・価格は変更が非常に頻繁なため必ず公式ページ ai.google.dev/gemini-api/docs/pricing で最終確認すること)
+| モデル | 入力(100万トークンあたり) | 出力(100万トークンあたり) | 備考 |
+|---|---|---|---|
+| Gemini 4 Hydrogen | 1.50ドル | 7.50ドル | コンテキストの長さによらず同一単価。無料枠あり |
+| Gemini 4 Neon | 3.00ドル | 15.00ドル | キャッシュ済み入力は0.15ドル(95%引) |
+| Gemini 4 Carbon・Argon | 2.00ドル(2026年11月30日までの導入価格) | 10.00ドル(同) | 導入価格の終了後は入力4.00ドル/出力20.00ドル |
 
-- **Gemini 3.6 Flash**: 入力100万トークンあたり約1.5ドル、出力約7.5ドル(2026年7月21日にGemini 3.5 Flashから置き換わり、出力単価が約9ドル→約7.5ドルに下がった。出力トークン消費量自体も旧世代比で約17%減っているため、実質的な値下げ幅はさらに大きい)
-- **Gemini 3.1 Pro(プレビュー)**: 20万トークンまでは入力約2ドル/出力約12ドル、20万トークンを超える長いプロンプトは入力約4ドル/出力約18ドルに単価が上がる2段階制(変更なし)
-- **Gemini 3.5 Flash-Lite**: 入力約0.3ドル/出力約2.5ドルで、Gemini 3.1 Flash-Liteから置き換わり新たな最安水準に。最大約104万トークンの入力・最大65,536トークンの出力に対応し、処理速度は毎秒350トークン程度とFlash系最速
+- **導入価格の期限に注意**: Carbon・Argonは2026年11月30日を過ぎると単価が2倍になり、Neonのほうが安くなる。PoCの見積もりを導入価格で作ったまま本番予算にしない
 - **思考(Thinking)トークンも出力課金の対象**: Gemini 3世代の推論モデルは、回答を組み立てる前に内部で「思考」を行い、そのトークンも(ユーザーに見えない場合でも)出力トークン料金で課金される。単純なタスクでは数%程度だが、複雑な数学・コーディングタスクでは思考トークンが総コストの3割前後を占めることもあり、想定より請求額が大きくなる典型的な原因になっている
-- **Context Caching(直前と同じ長い前提文の再利用)**: キャッシュ済み入力は通常の入力より大幅に割引される(Gemini 3.6 Flashの場合、標準入力1.5ドル→キャッシュ利用時0.15ドルと約9割引)。ただしキャッシュを保持するストレージ自体にも別途課金があり(Flash系で100万トークン・1時間あたり約1ドル、Pro系で約4.5ドル程度が目安)、短時間しか再利用しないキャッシュはかえって割高になる場合がある
-- **Batch API(非同期処理)**: 同期呼び出しに比べて約50%安い(例: Gemini 3.6 Flashは同期の入力1.5ドル/出力7.5ドルがバッチでは0.75ドル/3.75ドルに)
+- **Context Caching(直前と同じ長い前提文の再利用)**: キャッシュ済み入力は通常の入力より大幅に割引される(Gemini 4 Neonの場合、標準入力3ドル→キャッシュ利用時0.15ドルと95%引)。ただしキャッシュを保持するストレージ自体にも別途課金があり(Flash系で100万トークン・1時間あたり約1ドル、Pro系で約4.5ドル程度が目安)、短時間しか再利用しないキャッシュはかえって割高になる場合がある
+- **Batch API(非同期処理)**: 同期呼び出しに比べて約50%安い
 - **Grounding with Google Search(組み込みWeb検索)**: Gemini 3系では月5,000件までの検索付きプロンプトが無料で、それを超えると「検索クエリ数」単位で1,000クエリあたり目安14ドルの課金になる。1回のプロンプトの中でモデルが3つの事柄を検索すれば3クエリ分課金される点に注意(プロンプト数=課金対象ではない)。旧Gemini 2.5系は「グラウンディングを使ったプロンプト数」単位(1,000プロンプトあたり目安35ドル程度)で課金方式そのものが異なるため、切り替え時は見積もりの前提を作り直す必要がある
-- **無料枠あり(ただし2026年4月に大幅縮小)**: Google AI Studio自体の利用(ブラウザでの試用)は常に無料。API経由でもFlash/Flash-Liteモデルには無料枠(リクエスト数・トークン数の上限付き)が用意されている。一方で2026年4月1日以降、Pro系モデル(Gemini 3.1 Proなど)は無料枠の対象から完全に外れ有料専用になったほか、毎月の利用上限(スペンドキャップ)が必須設定になり、上限に達すると自動的にAPI呼び出しが一時停止する仕組みが導入された
+- **無料枠あり(ただし2026年4月に大幅縮小)**: Google AI Studio自体の利用(ブラウザでの試用)は常に無料。API経由でもFlash/Flash-Lite系モデルと、2026年11月12日からはGemini 4 Hydrogenに無料枠(リクエスト数・トークン数の上限付き)が用意されている。一方で2026年4月1日以降、Pro系モデル(Gemini 3.1 Proなど)は無料枠の対象から完全に外れ有料専用になったほか、毎月の利用上限(スペンドキャップ)が必須設定になり、上限に達すると自動的にAPI呼び出しが一時停止する仕組みが導入された
 - 無料枠で送った入力・出力はGoogleのモデル改善に利用される場合があり、人手によるレビューが行われることもある。有料枠(課金アカウント経由)ではデータの取り扱い契約が異なり、原則としてモデル学習には使われない。データを学習に使われたくない場合は有料枠、またはGemini Enterprise Agent Platform(旧Vertex AI)経由の利用を検討する
 
 ### レート制限(呼び出し回数の上限)の考え方
@@ -114,7 +118,7 @@ Gemini APIのレート制限は、RPM(1分あたりのリクエスト数)・TPM(
 - **Context Caching**: 長いシステムプロンプトやマニュアルなど繰り返し使う前提文をキャッシュし、2回目以降の呼び出しコストを大幅に下げる仕組み(OpenAI/Anthropicのプロンプトキャッシュに相当)
 - **Batch API**: 大量のリクエストをまとめて非同期送信し、通常より安く(約半額)処理する仕組み
 - **Thinking(思考モード)**: Gemini 3世代以降で導入された推論機能。回答前に内部で段階的に考え、複雑な問題の精度を上げる一方、思考トークン分も出力課金の対象になる。API側で思考の「深さ」を調整できるモデルもある
-- **長いコンテキストウィンドウ**: Gemini 3.6 Flash/Gemini 3.1 Proなど主力モデルは標準で100万トークン級の入力に対応しており、複数の長文資料をまるごと読ませる用途で強みを持つ(2百万トークンへの拡張は次世代のGemini 3.5 Proで噂されているが2026年8月時点で未確定)
+- **長いコンテキストウィンドウ**: Gemini 4 Hydrogen/Neonなど主力モデルは100万トークンの入力に対応しており、複数の長文資料をまるごと読ませる用途で強みを持つ
 
 ### OpenAI API・Anthropic APIとの比較表
 
@@ -123,7 +127,7 @@ Gemini APIのレート制限は、RPM(1分あたりのリクエスト数)・TPM(
 | 管理画面 | platform.openai.com | platform.claude.com | aistudio.google.com |
 | 認証方法 | `Authorization: Bearer <キー>` | `x-api-key: <キー>` | `x-goog-api-key: <キー>`(またはURLクエリ`?key=`) |
 | 中核エンドポイント | `/v1/chat/completions` または `/v1/responses` | `/v1/messages` | `/v1beta/models/{model}:generateContent` |
-| モデルの呼び分け軸 | GPT系のグレード | Opus(最上位)/Sonnet(バランス)/Haiku(軽量) | Pro(最上位、Gemini 3.1 Pro)/Flash(バランス、Gemini 3.6 Flash)/Flash-Lite(軽量、Gemini 3.5 Flash-Lite) |
+| モデルの呼び分け軸 | GPT系のグレード | Opus(最上位)/Sonnet(バランス)/Haiku(軽量) | Gemini 4 Carbon(最上位)/Neon(中位)/Hydrogen(普及版)、軽量処理はFlash-Lite |
 | 無料枠 | 基本的になし(要クレジット購入) | 基本的になし | AI Studioの利用自体は常に無料、APIもFlash/Flash-Liteに無料枠あり(2026年4月以降Proは有料専用、月間スペンドキャップも必須化) |
 | 外部関数呼び出し | Function Calling | Tool Use | Function Calling |
 | JSON/構造化出力 | Structured Outputs | ツール指定によるJSON強制等 | Structured Outputs(response_schema) |
@@ -141,14 +145,14 @@ Gemini APIのレート制限は、RPM(1分あたりのリクエスト数)・TPM(
 - **Gemini.app課金とAPI課金は別会計**: Google AI Pro/Ultraの月額料金はAPI利用料の割引にはならない。混同して「なぜ別料金が発生するのか」と驚かないよう、契約前に整理しておく。
 - **思考(Thinking)トークンが請求額を押し上げる**: Gemini 3世代の推論型モデルは、見えている回答文が短くても、背後で大量の思考トークンを消費していることがある。想定より請求額が大きい場合は、まずこの「見えない出力トークン」を疑う。
 - **無料枠のデータはモデル改善に使われる可能性がある**: 個人情報や機密情報を含むデータを無料枠で送ると、Googleの学習データとして利用され得る。社内の機密文書を扱う場合は有料枠、またはデータを学習に使わないGemini Enterprise Agent Platform(旧Vertex AI)経由の利用を検討する。
-- **2026年4月以降、Proモデルは無料枠の対象外・月間スペンドキャップが必須**: 以前は無料枠でPro系モデルも一定回数まで試せたが、現在はFlash/Flash-Liteのみが無料枠の対象で、Pro系は有料契約が必須になっている。加えて新規のGoogle Cloudアカウントは前払い請求設定が必要になり、月間の利用上限(スペンドキャップ)設定も必須化された。
-- **モデル名・世代の入れ替わりが非常に速い**: 2026年7月21日にGemini 3.5 Flash/Gemini 3.1 Flash-LiteがGemini 3.6 Flash/Gemini 3.5 Flash-Liteに置き換わったばかりで、プレビュー中の現行最上位はGemini 3.1 Pro。旧世代のGemini 3 Pro/Flash・Gemini 2.5系は非推奨〜段階的廃止(Gemini 2.5系はGemini Enterprise Agent Platform上で2026年10月16日以降廃止予定、時期は変動しうる)に向かっている。噂の「Gemini 3.5 Pro」は複数回延期されており、2026年8月9日時点でも正式なGA日程・価格は未確定(観測報道では「8月中」との見方もあるが未確認)。記事や社内資料に具体的なモデル名・価格を書く場合は、必ず公式サイトの最新情報を都度確認する。
+- **2026年4月以降、Proモデルは無料枠の対象外・月間スペンドキャップが必須**: 以前は無料枠でPro系モデルも一定回数まで試せたが、現在の無料枠はFlash/Flash-Lite系とGemini 4 Hydrogenが中心で、上位モデルの本格利用には有料契約が前提になる。加えて新規のGoogle Cloudアカウントは前払い請求設定が必要になり、月間の利用上限(スペンドキャップ)設定も必須化された。
+- **モデル名・世代の入れ替わりが非常に速い**: 2026年7月に3.6 Flash、9月に3.8 Flashが出たばかりで、10〜11月にはGemini 4ファミリー(Argon・Carbon・Hydrogen・Neon)へ主力が移った。旧モデルIDは非推奨になると新しいモデルへ自動で振り替えられることがあり(例: 2026年12月1日から`gemini-2.5-pro`→`gemini-3.8-flash`)、気づかないうちに出力や請求額が変わる。記事や社内資料に具体的なモデル名・価格を書く場合は、必ず公式サイトの最新情報を都度確認する。
 - **URLクエリでのAPIキー渡しはログに残るリスクがある**: `?key=`方式は手軽だが、アクセスログやブラウザ履歴にキーが残る可能性がある。本番環境では`x-goog-api-key`ヘッダーでの送信、またはサーバー側でのキー管理を徹底する。
 - **「Vertex AI」と「Gemini Enterprise Agent Platform」の名称混乱**: 2026年4月のリブランド発表・5月末の移行完了以降も、社内資料や過去の検索結果には「Vertex AI」表記が残っていることが多い。API呼び出し自体は後方互換のため、名称よりも「IAM・データ居住地・SLAが必要ならこちらの入口」という判断軸で捉えておくとよい。
 
 ## 最初の一歩
 
-自社でDifyやGASなどのノーコード連携を検討しているなら、まずaistudio.google.comでAPIキーを1つ発行し、無料枠のGemini 3.5 Flash-LiteモデルにcurlまたはPostmanで1回リクエストを送ってみる。
+自社でDifyやGASなどのノーコード連携を検討しているなら、まずaistudio.google.comでAPIキーを1つ発行し、無料枠で使えるGemini 4 Hydrogen(`gemini-4-hydrogen`)にcurlまたはPostmanで1回リクエストを送ってみる。
 
 ## 関連トピック
 
@@ -158,6 +162,10 @@ Gemini APIのレート制限は、RPM(1分あたりのリクエスト数)・TPM(
 - [Google Geminiの基本](../part03-ai-chat-tools/google-gemini-basics.md)
 
 ## 更新履歴
+
+### 2026-11-23: Gemini 4ファミリーへの主力モデル交代と3.x系・2.5系の振り替え予定を反映
+- **内容**: モデル指定の節をGemini 4ファミリー(Hydrogen・Neon・Carbon・Argon)のモデルID・一般提供日・位置づけに全面更新し、料金表を2026年11月時点の単価(Carbon・Argonの導入価格の期限を含む)に差し替え。`gemini-3.7-flash`・`gemini-3.5-flash`の非推奨と自動振り替え、2026年12月1日からの`gemini-2.5-pro`・`gemini-2.5-flash`の振り替え、Gemini 4 Hydrogenの無料枠提供、Gemini 3.5 Proのリリース中止を反映。コード例・比較表・最初の一歩のモデル名を更新
+- **出典**: [Google AI Studio: Release notes(Changelog)](https://aistudio.google.com/docs/changelog)、[Google公式ブログ: Introducing Gemini 4 Hydrogen](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/)、[Google公式ブログ: Gemini 4 Neon を発表](https://blog.google/intl/ja-jp/company-news/technology/introducing-gemini-4-neon/)、[9to5Google: Gemini 4 Carbon rolling out(2026年11月10日)](https://9to5google.com/2026/11/10/gemini-app-4-carbon/)、[Khaleej Times(ロイター配信): Google announces Gemini 4 flagship AI model after months of delays](https://www.khaleejtimes.com/business/google-announces-gemini-4-flagship-ai-model-after-months-of-delays-2)
 
 ### 2026-08-09: Flashラインナップの世代交代(3.6 Flash/3.5 Flash-Lite)・レート制限のティア表・グラウンディング課金の詳細を反映
 - **内容**: 2026年7月21日にGemini 3.5 Flash→Gemini 3.6 Flash、Gemini 3.1 Flash-Lite→Gemini 3.5 Flash-Liteへ主力Flash系モデルが置き換わったことを反映し、モデル指定表・料金体系・コード例・比較表のモデル名と価格(3.6 Flash: 入力1.5ドル/出力7.5ドル、3.5 Flash-Lite: 入力0.3ドル/出力2.5ドル)を更新した。あわせて政府・パートナー限定の「Gemini 3.5 Flash Cyber」の存在を追記。「Gemini 3.5 Pro」は2026年8月9日時点でも依然未GA(コーディング性能の作り直しで開発難航、8月中との観測報道はあるが未確定)であることを更新。レート制限を無料/Tier1/Tier2/Tier3の表に整理し、新たに判明した「直近10分間のスペンドベース制限」(Tier1で10ドル、Tier2・3で200ドル)を追記。Grounding with Google Searchの課金が「検索クエリ単位」かつ「1プロンプト内の複数検索は複数クエリ課金」である点、月5,000件の無料枠があることを明確化した
