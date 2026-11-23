@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-23
+- [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): Gemini 4ファミリー(Hydrogen・Neon・Carbon)への世代交代、無料版の自動選択一本化、Gemini SparkのTask改称を反映し、プラン表(Google AI Plusの月額を訂正)と注意点を最新化
+
 ## 2026-11-22
 - [BACKLOG.md](BACKLOG.md): Gemini SparkのTask改称を比較ページ等へ反映する候補を追加し、美容業界(理美容)の事例追加を見送りとして記録
 - [Gemini Task(旧Gemini Spark)の基本](topics/part03-ai-chat-tools/gemini-spark-basics.md): 2026年10月の「Task」への改称・通常チャットへの統合と、日本など6か国での有料プランなしの提供を反映して全面改訂(利用条件・同時実行上限・確認が必要な操作・スケジュールの挙動・依頼文の例)
