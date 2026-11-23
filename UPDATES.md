@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-23
+- [経営者・管理職における生成AI活用事例](topics/part15-job-role-cases/executive-management-ai-use-cases.md): 導入事例カタログに第一三共ヘルスケア・パーソルホールディングス・Zoom(海外)・三井住友フィナンシャルグループの4件を追加し「事例から見える傾向」を新設、本文のAI-CEOの記述を一次情報に合わせて訂正
 - [物流・運輸における生成AI活用事例](topics/part14-industry-cases/logistics-transportation-ai-use-cases.md): 導入事例カタログにヤマトコンタクトサービス・鴻池運輸・SGシステムの国内3件を追加(鴻池運輸は体感値、SGシステムは実証段階の数値と明記)
 - [教育における生成AI活用事例](topics/part14-industry-cases/education-ai-use-cases.md): 導入事例カタログに東京都教育委員会・愛媛大学・California State University(海外)・北アイルランド教育庁C2k(海外)の4件を追加し、「事例から見える傾向」を新設(北アイルランドの数値はパイロット段階の自己申告と明記)
 - [主要AIチャットツールのプラン・料金・モデル横断比較](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): ChatGPT(GPT-6/GPT-6.2)・Gemini(Gemini 4、無料版の自動選択化、AI Plus値下げ)・Claude(5.5世代・Fable 5.2、Max/Ultra改称)の2026年11月時点の料金・モデルに更新
