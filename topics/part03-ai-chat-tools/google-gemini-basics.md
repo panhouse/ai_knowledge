@@ -57,12 +57,12 @@ GeminiアプリとGemini Notebook(旧NotebookLM)の使い分けが特によく�
 
 ### 個人向けプラン(2026年11月時点の目安)
 
-月額は2026年5月のプラン再編時に公表された日本の価格、各プランで使えるモデルは2026年11月時点のGoogle公式プランページの記載にもとづく。
+月額は2026年5〜6月に公表された日本の価格(Plusは6月の値下げ後)、各プランで使えるモデルは2026年11月時点のGoogle公式プランページの記載にもとづく。
 
 | プラン | 月額目安(日本) | 特徴 |
 |---|---|---|
 | 無料 | ¥0 | モデルは自動選択のみ(多くはFlash-Lite)。Gemsは回数制限付きで作成・利用可。Task(旧Spark)も日本では利用可 |
-| Google AI Plus | ¥1,200 | ストレージ400GB。Gemini 4 Hydrogenをメニューから選択可、Deep Research、Taskの利用枠拡大 |
+| Google AI Plus | ¥725(2026年6月に¥1,200から値下げ) | ストレージ400GB。Gemini 4 Hydrogenをメニューから選択可、Deep Research、Taskの利用枠拡大 |
 | Google AI Pro | ¥2,900 | ストレージ5TB。GeminiアプリでGemini 4 Neonが使える、Deep Research・Taskの利用枠拡大、エージェント型IDE「Antigravity」など |
 | Google AI Ultra(5x) | ¥14,500(月払いのみ) | ストレージ20TB。Gemini 4 Carbon、Neonの上限拡大、Taskの上限引き上げ |
 | Google AI Ultra(20x) | ¥32,000 | ストレージ30TB。5xよりさらに大きな利用上限 |
@@ -112,8 +112,12 @@ Gemは「どんなトピックにも対応できる自分専用のカスタムAI
 
 ## 更新履歴
 
+### 2026-11-23: Google AI Plusの月額の誤りを訂正
+- **内容**: 同日の改訂でGoogle AI Plusの月額を¥1,200としていたが、2026年6月に¥725へ値下げされている(既存ユーザーも次回更新から適用)ため訂正
+- **出典**: [ケータイ Watch: 「Google AI Plus」が月額725円に値下げ、ストレージは400GBに倍増](https://k-tai.watch.impress.co.jp/docs/news/2115643.html)
+
 ### 2026-11-23: Gemini 4ファミリーへの世代交代・無料版の自動選択化・Task改称を反映して最新化
-- **内容**: モデル解説をGemini 3.x系からGemini 4ファミリー(Hydrogen・Neon・Carbon、Argon)に全面的に書き換え、Geminiアプリでの表示名・対象プラン・API価格を一覧化。Gemini 3.1 Proのアプリからの撤去とGemini 3.5 Proのリリース中止、2026年10月9日からの無料版の自動選択一本化(多くはFlash-Lite)を追記。Gemini SparkのTaskへの改称と日本での有料プランなし提供を反映。プラン表をGoogle公式プランページの記載に合わせて更新し、Google AI Plusの月額を¥1,200に訂正。陳腐化した3.6/3.7/3.8 Flash・Deep Thinkの記述を削除
+- **内容**: モデル解説をGemini 3.x系からGemini 4ファミリー(Hydrogen・Neon・Carbon、Argon)に全面的に書き換え、Geminiアプリでの表示名・対象プラン・API価格を一覧化。Gemini 3.1 Proのアプリからの撤去とGemini 3.5 Proのリリース中止、2026年10月9日からの無料版の自動選択一本化(多くはFlash-Lite)を追記。Gemini SparkのTaskへの改称と日本での有料プランなし提供を反映。プラン表をGoogle公式プランページの記載に合わせて更新。陳腐化した3.6/3.7/3.8 Flash・Deep Thinkの記述を削除
 - **出典**: [Google公式ブログ: Introducing Gemini 4 Hydrogen](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/)、[Google公式ブログ: Gemini 4 Neon を発表](https://blog.google/intl/ja-jp/company-news/technology/introducing-gemini-4-neon/)、[9to5Google: Google launches Gemini 4 Neon(2026年11月18日)](https://9to5google.com/2026/11/18/gemini-4-neon-announcement/)、[9to5Google: Gemini 4 Carbon rolling out to Gemini app for AI Ultra(2026年11月10日)](https://9to5google.com/2026/11/10/gemini-app-4-carbon/)、[Khaleej Times(ロイター配信): Google announces Gemini 4 flagship AI model after months of delays](https://www.khaleejtimes.com/business/google-announces-gemini-4-flagship-ai-model-after-months-of-delays-2)、[9to5Google: Gemini free users move to Auto(2026年10月9日)](https://9to5google.com/2026/10/09/gemini-auto-free-users/)、[Google One: Google AI プラン](https://one.google.com/intl/ja_jp/about/google-ai-plans/)、[PC Watch: Google AI Ultra 5x新設とUltraの値下げ](https://pc.watch.impress.co.jp/docs/news/2110129.html)、[Gemini Apps ヘルプ: Manage your tasks & workflows](https://support.google.com/gemini/answer/17094507?hl=en)
 
 ### 2026-09-04: モデルラインナップとGemini Notebookの利用上限を2026年9月時点に更新
