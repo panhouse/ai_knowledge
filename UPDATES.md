@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-23
+- [教育における生成AI活用事例](topics/part14-industry-cases/education-ai-use-cases.md): 導入事例カタログに東京都教育委員会・愛媛大学・California State University(海外)・北アイルランド教育庁C2k(海外)の4件を追加し、「事例から見える傾向」を新設(北アイルランドの数値はパイロット段階の自己申告と明記)
 - [主要AIチャットツールのプラン・料金・モデル横断比較](topics/part03-ai-chat-tools/ai-chat-tools-plan-model-comparison.md): ChatGPT(GPT-6/GPT-6.2)・Gemini(Gemini 4、無料版の自動選択化、AI Plus値下げ)・Claude(5.5世代・Fable 5.2、Max/Ultra改称)の2026年11月時点の料金・モデルに更新
 - [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): モデル指定と料金表をGemini 4ファミリー(Hydrogen・Neon・Carbon・Argon)に更新し、3.x系・2.5系の非推奨と自動振り替え予定を反映
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): チャットはGPT-6 Sol/GPT-6 Pro、Work・CodexはGPT-6.2 Astra・Solという2026年11月時点の構成に合わせて全面改訂(プラン別の選べる段階・利用上限・社内マニュアル用ひな形)
