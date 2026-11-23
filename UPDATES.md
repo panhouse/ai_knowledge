@@ -8,6 +8,7 @@
 - [Google Gemini APIの基本](topics/part09-api-development/google-gemini-api-basics.md): モデル指定と料金表をGemini 4ファミリー(Hydrogen・Neon・Carbon・Argon)に更新し、3.x系・2.5系の非推奨と自動振り替え予定を反映
 - [ChatGPTのモデル一覧と使い分け](topics/part03-ai-chat-tools/chatgpt-model-lineup.md): チャットはGPT-6 Sol/GPT-6 Pro、Work・CodexはGPT-6.2 Astra・Solという2026年11月時点の構成に合わせて全面改訂(プラン別の選べる段階・利用上限・社内マニュアル用ひな形)
 - [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): Gemini 4ファミリー(Hydrogen・Neon・Carbon)への世代交代、無料版の自動選択一本化、Gemini SparkのTask改称を反映し、プラン表(Google AI Plusの月額を訂正)と注意点を最新化
+- [Google Geminiの基本](topics/part03-ai-chat-tools/google-gemini-basics.md): 同日改訂で誤って¥1,200としたGoogle AI Plusの月額を¥725(2026年6月値下げ後)に訂正
 
 ## 2026-11-22
 - [BACKLOG.md](BACKLOG.md): Gemini SparkのTask改称を比較ページ等へ反映する候補を追加し、美容業界(理美容)の事例追加を見送りとして記録
