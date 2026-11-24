@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-24
+- [看護師・医療従事者における生成AI活用事例](topics/part15-job-role-cases/nurse-medical-staff-ai-use-cases.md): 導入事例カタログに橋本市民病院・恵寿総合病院・東京都済生会向島病院・相澤病院の4件を追加し、「事例から見える傾向」を新設(橋本市民病院は実証期間の値、済生会向島病院は数値公表なし)
 - [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): 導入事例カタログにローソン(AI発案商品の本格発売)・花王×NTTデータ(AI生活者の実証)・Nestlé USA(海外)の3件を追加し、「事例から見える傾向」を新設
 - [広報・PR職における生成AI活用事例](topics/part15-job-role-cases/pr-communications-ai-use-cases.md): 導入事例カタログにフェズ・BCG(海外)・北海道当別町・コロプラの4件を追加し、「事例から見える傾向」を新設(当別町の広報分野・コロプラは数値公表なし)
 - [生成AI導入のROI測定・効果測定の考え方](topics/part12-business-practice/ai-roi-measurement.md): 国内企業の全社KPIの実例としてパナソニック コネクトの2025年度実績(総労働時間の3.4%・78.8万時間削減、2030年10%目標)を追加
