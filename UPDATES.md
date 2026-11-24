@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-24
+- [家電量販店業界における生成AI活用事例](topics/part14-industry-cases/consumer-electronics-retail-industry-ai-use-cases.md): 導入事例カタログを新設し、MediaMarktSaturn(海外)・Best Buy(海外)・ヤマダHD×avatarin・上新電機の4件を追加(国内2件は数値公表なし)
 - [自動車業界における生成AI活用事例](topics/part14-industry-cases/automotive-industry-ai-use-cases.md): 導入事例カタログにトヨタ自動車(O-Beya)・SUBARU(GenU内製)・GM(海外)の3件を追加し、「事例から見える傾向」を新設
 - [看護師・医療従事者における生成AI活用事例](topics/part15-job-role-cases/nurse-medical-staff-ai-use-cases.md): 導入事例カタログに橋本市民病院・恵寿総合病院・東京都済生会向島病院・相澤病院の4件を追加し、「事例から見える傾向」を新設(橋本市民病院は実証期間の値、済生会向島病院は数値公表なし)
 - [企画職における生成AI活用](topics/part15-job-role-cases/planning-ai-use-cases.md): 導入事例カタログにローソン(AI発案商品の本格発売)・花王×NTTデータ(AI生活者の実証)・Nestlé USA(海外)の3件を追加し、「事例から見える傾向」を新設
