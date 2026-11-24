@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-24
+- [生成AI導入のROI測定・効果測定の考え方](topics/part12-business-practice/ai-roi-measurement.md): 国内企業の全社KPIの実例としてパナソニック コネクトの2025年度実績(総労働時間の3.4%・78.8万時間削減、2030年10%目標)を追加
+
 ## 2026-11-23
 - [購買・調達職における生成AI活用事例](topics/part15-job-role-cases/procurement-ai-use-cases.md): 導入事例カタログに静岡県湖西市・BMWグループ(海外)・ソフトバンクの3件を追加し、「事例から見える傾向」を新設(湖西市は試行段階、ソフトバンクはPoCと明記)
 - [デザイナー・クリエイティブ職における生成AI活用事例](topics/part15-job-role-cases/designer-creative-ai-use-cases.md): 導入事例カタログに楽天・Findable(海外)・Klarna(海外)の3件を追加し、UI/UXデザインの事例と「事例から見える傾向」を補強
