@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-25
+- [上下水道(水道インフラ)業界における生成AI活用事例](topics/part14-industry-cases/water-utility-industry-ai-use-cases.md): 導入事例カタログを新設し、横浜市下水道河川局(Copilotでマクロ作成、報告作業75%減)・名古屋市上下水道局・Southern Water(海外)・Balibago Waterworks(海外)の4件を追加(名古屋市はPoC、Balibagoは試行段階の値)
 - [造船業における生成AI活用事例](topics/part14-industry-cases/shipbuilding-industry-ai-use-cases.md): 導入事例カタログを新設し、今治造船・HD現代三湖(海外)・HD韓国造船海洋(海外)・ハンファオーシャン(海外)の4件を追加(今治造船・ハンファオーシャンはPoC段階、いずれも効果数値の公表なし)
 
 ## 2026-11-24
