@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-25
+- [造船業における生成AI活用事例](topics/part14-industry-cases/shipbuilding-industry-ai-use-cases.md): 導入事例カタログを新設し、今治造船・HD現代三湖(海外)・HD韓国造船海洋(海外)・ハンファオーシャン(海外)の4件を追加(今治造船・ハンファオーシャンはPoC段階、いずれも効果数値の公表なし)
+
 ## 2026-11-24
 - [家電量販店業界における生成AI活用事例](topics/part14-industry-cases/consumer-electronics-retail-industry-ai-use-cases.md): 導入事例カタログを新設し、MediaMarktSaturn(海外)・Best Buy(海外)・ヤマダHD×avatarin・上新電機の4件を追加(国内2件は数値公表なし)
 - [自動車業界における生成AI活用事例](topics/part14-industry-cases/automotive-industry-ai-use-cases.md): 導入事例カタログにトヨタ自動車(O-Beya)・SUBARU(GenU内製)・GM(海外)の3件を追加し、「事例から見える傾向」を新設
