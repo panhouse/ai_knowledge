@@ -140,3 +140,4 @@
 | 自動車部品サプライヤー業界における生成AI活用事例 — 追記ネタ: デンソー人事部門のキャリア支援レポート自動生成・人事FAQ作成(経団連「HR部門におけるAI等の活用に関する報告書」2026年4月14日。約5,400時間→約15時間は試算値) | 14/第1章 | 事例追加 | https://www.keidanren.or.jp/policy/2026/016_jirei06.pdf | 2026-11-24 | C | 未着手 |
 | 造船業における生成AI活用事例 | 14/第1章 | 事例追加 | https://www.marinelink.com/news/kr-hd-hyundai-samho-complete-aipowered-539972 / https://www.logi-today.com/969748 | 2026-11-25 | B | 完了(2026-11-25。カタログ未保有ページから選定。常石造船のAI駆動開発は生成AIの利用が出典で明示されず見送り) |
 | 上下水道(水道インフラ)業界における生成AI活用事例 | 14/第12章 | 事例追加 | https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/torikumi/happyo/kenpatu2026.files/0103_20260825.pdf / https://classmethod.jp/cases/water-city-nagoya/ | 2026-11-25 | B | 完了(2026-11-25。カタログ未保有ページから選定。本文の神戸市ボイスボットの記述は出典ページが取得できず未再確認) |
+| 記者・編集者における生成AI活用事例 | 15/第18章 | 事例追加 | https://www.hokkaido-np.co.jp/article/1329903/ / https://jiji.co.jp/company/news/show/106 | 2026-11-25 | B | 完了(2026-11-25。事例3件のページから選定) |
