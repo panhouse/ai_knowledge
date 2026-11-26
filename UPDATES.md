@@ -4,6 +4,9 @@
 
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
+## 2026-11-26
+- [店舗・販売スタッフ職における生成AI活用事例](topics/part15-job-role-cases/retail-store-staff-ai-use-cases.md): 導入事例カタログにツルハHD(店舗マニュアル検索・1カ月で1,000店超)・ヒマラヤ(AI副店長)・Target(海外)・Walmart(海外)の4件を追加し、「事例から見える傾向」を新設(Walmartの90分→30分は初期結果の見積もり)
+
 ## 2026-11-25
 - [翻訳・通訳担当における生成AI活用事例](topics/part15-job-role-cases/translation-interpretation-ai-use-cases.md): 導入事例カタログにWFS(LLM翻訳の内製)・住友商事(DeepL for Enterprise)・Atlassian(海外)の3件を追加し、「事例から見える傾向」を新設(住友商事はベンダー公表、Atlassianの費用50%削減は見込み)
 - [記者・編集者における生成AI活用事例](topics/part15-job-role-cases/journalist-editor-ai-use-cases.md): 導入事例カタログに北海道新聞社(D-ai)・時事通信社(英文AI校正)・熊本朝日放送(StoryHub)・The Philadelphia Inquirer(海外)の4件を追加し、「事例から見える傾向」を新設(熊本朝日放送はベンダー公表、Inquirerはプロトタイプ段階)
