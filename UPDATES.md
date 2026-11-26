@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-26
+- [総務職における生成AI活用事例](topics/part15-job-role-cases/general-affairs-ai-use-cases.md): 導入事例カタログにラック(株主総会の想定問答生成)・日立製作所(株主総会Q&A選定エージェント、正答率80%)・三井物産×MBKデジタル(検索特化の質疑応答支援)・東芝デジタルエンジニアリング(社内規程Q&A)の4件を追加し、「事例から見える傾向」を新設
 - [コンビニエンスストア業界における生成AI活用事例](topics/part14-industry-cases/convenience-store-industry-ai-use-cases.md): 導入事例カタログにファミリーマート(本部業務50%削減見込み・RAGのPoC)・GSリテール(ChatGPT連携の商品推薦、海外)・Casey's(契約管理、海外)の4件を追加し、「事例から見える傾向」を新設
 - [カスタマーサクセス職における生成AI活用事例](topics/part15-job-role-cases/customer-success-ai-use-cases.md): 導入事例カタログにWorkato(日本法人、Claude+MCPで打ち合わせ準備)・DLPO(Salesforce連携のヘルススコア内製)・HiBob(海外)の3件を追加し、「事例から見える傾向」を新設(Workatoの3〜4倍は取材での発言、HiBobはベンダー公表)
 - [外食・フードサービス業における生成AI活用事例](topics/part14-industry-cases/food-service-ai-use-cases.md): 導入事例カタログにトリドールHD(AIレコメンド・AI粟田さん)・かつや/8番らーめん(LLM音声の電話テイクアウト受付)・Wendy's(海外)の4件を追加し、「事例から見える傾向」を新設(電話テイクアウト80%自動化はβ版実証の値)
