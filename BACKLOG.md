@@ -143,3 +143,4 @@
 | 記者・編集者における生成AI活用事例 | 15/第18章 | 事例追加 | https://www.hokkaido-np.co.jp/article/1329903/ / https://jiji.co.jp/company/news/show/106 | 2026-11-25 | B | 完了(2026-11-25。事例3件のページから選定) |
 | 翻訳・通訳担当における生成AI活用事例 | 15/第15章 | 事例追加 | https://speakerdeck.com/gree_tech/cedec2025-0722-4-1340 / https://www.atlassian.com/blog/how-we-build/scaling-localization-at-atlassian-keeping-translation-at-the-pace-of-ai-era-development | 2026-11-25 | B | 完了(2026-11-25。長島・大野・常松法律事務所〈DeepL〉は利用者が弁護士のため見送り、メルカリのLLM翻訳ブログはサイト保守中で未確認) |
 | 店舗・販売スタッフ職における生成AI活用事例 | 15/第18章 | 事例追加 | https://it.impress.co.jp/articles/-/29135 / https://corporate.walmart.com/news/2025/06/24/walmart-unveils-new-ai-powered-tools-to-empower-1-5-million-associates/ | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定) |
+| 外食・フードサービス業における生成AI活用事例 | 14/第12章 | 事例追加 | https://digitalpr.jp/r/120072 / https://prtimes.jp/main/html/rd/p/000000056.000077961.html | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定) |
