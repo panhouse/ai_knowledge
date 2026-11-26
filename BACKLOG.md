@@ -145,3 +145,4 @@
 | 店舗・販売スタッフ職における生成AI活用事例 | 15/第18章 | 事例追加 | https://it.impress.co.jp/articles/-/29135 / https://corporate.walmart.com/news/2025/06/24/walmart-unveils-new-ai-powered-tools-to-empower-1-5-million-associates/ | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定) |
 | 外食・フードサービス業における生成AI活用事例 | 14/第12章 | 事例追加 | https://digitalpr.jp/r/120072 / https://prtimes.jp/main/html/rd/p/000000056.000077961.html | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定) |
 | カスタマーサクセス職における生成AI活用事例 | 15/第4章 | 事例追加 | https://taskhub.jp/magazine/interview/15823/ / https://prtimes.jp/main/html/rd/p/000000012.000166537.html | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件・国内事例なしのページから選定) |
+| コンビニエンスストア業界における生成AI活用事例 | 14/第2章 | 事例追加 | https://www.family.co.jp/company/news_releases/2024/20240418_1.html / https://byline.network/2026/09/01_gsretail/ | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定。2025〜26年の国内新規事例は確認できず、2024年公表のファミリーマート2件を採用) |
