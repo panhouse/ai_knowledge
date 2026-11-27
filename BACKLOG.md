@@ -147,3 +147,4 @@
 | カスタマーサクセス職における生成AI活用事例 | 15/第4章 | 事例追加 | https://taskhub.jp/magazine/interview/15823/ / https://prtimes.jp/main/html/rd/p/000000012.000166537.html | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件・国内事例なしのページから選定) |
 | コンビニエンスストア業界における生成AI活用事例 | 14/第2章 | 事例追加 | https://www.family.co.jp/company/news_releases/2024/20240418_1.html / https://byline.network/2026/09/01_gsretail/ | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定。2025〜26年の国内新規事例は確認できず、2024年公表のファミリーマート2件を採用) |
 | 総務職における生成AI活用事例 | 15/第9章 | 事例追加 | https://www.lac.co.jp/lacwatch/casestudy/20250115_004248.html / https://www.hitachi.com/ja-jp/products/digital/highlights/usecases/ai-frontrunner/dh260002/ | 2026-11-26 | B | 完了(2026-11-26。カタログの事例が3件のページから選定) |
+| 銀行員(窓口・融資担当)における生成AI活用事例 | 15/第18章 | 事例追加 | https://www.nttdata.com/global/ja/news/topics/2026/070901 / https://it.impress.co.jp/articles/-/27069 | 2026-11-27 | B | 完了(2026-11-27。カタログの事例が3件の主要職種ページから選定。窓口カウンター業務そのものの数値付き事例は見つからず) |
