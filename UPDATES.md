@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-27
+- [内部監査職における生成AI活用事例](topics/part15-job-role-cases/internal-audit-ai-use-cases.md): 導入事例カタログにマツダ(内部監査のAIエージェント化PoC、数値公表なし)・Banco Bradesco(海外、計画フェーズ65%削減など)・Uniper(海外、50〜80%は見込み値)の3件を追加し、「事例から見える傾向」を新設
 - [スーパーマーケット業界における生成AI活用事例](topics/part14-industry-cases/supermarket-industry-ai-use-cases.md): 導入事例カタログにPLANT(チラシ自動生成の実証、閲覧数1.3倍・来店回数1.8倍)・サンエー(Amazon Bedrockで旧システムのコード解析、見込み値)・Albertsons Companies(海外、数値公表なし)の3件を追加し、「事例から見える傾向」を新設
 - [製薬業界における生成AI活用事例](topics/part14-industry-cases/pharmaceutical-industry-ai-use-cases.md): 導入事例カタログに参天製薬(M365 Copilot全社展開1年・月間アクティブ率95%)・第一三共(内製基盤DS-GAI)・中外製薬(PV手順書のRAG検索)・小野薬品工業(生成AIの品質監視)の4件を追加し、塩野義製薬×日立はCRA・CRCページへリンク、「事例から見える傾向」を新設
 - [研究開発(R&D)職における生成AI活用事例](topics/part15-job-role-cases/rd-ai-use-cases.md): 導入事例カタログに三井化学(構造式を読む生成AIエージェント、文献調査80%以上削減は実証段階)・花王(ChatSenseで研究報告書を探索、数値公表なし)・ライオン(RAG型LINK Chat)の3件を追加し、「事例から見える傾向」を新設
