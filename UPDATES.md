@@ -5,6 +5,7 @@
 <!-- 新しいエントリはこの行のすぐ下に追加する -->
 
 ## 2026-11-28
+- [公認会計士・監査法人職員における生成AI活用事例](topics/part15-job-role-cases/cpa-external-auditor-ai-use-cases.md): 導入事例カタログに仰星監査法人(Difyで固有リスク要因の洗い出し作業87%削減)・RSM US(海外、Ask Luca)・Grant Thornton UK(海外、Claude全社導入計画)の3件を追加し、「事例から見える傾向」を新設
 - [レンタル・リース業界における生成AI活用事例](topics/part14-industry-cases/rental-leasing-industry-ai-use-cases.md): 導入事例カタログを新設し、三井住友ファイナンス&リース(SMFL-GAI・Replitで業務アプリ開発、3分の1は見込み)・みずほリース(exaBase 生成AIのトライアル)・Hertz(海外、パイロットで解決時間15%超短縮)の3件を追加し、「事例から見える傾向」を新設
 - [ビル管理・ファシリティマネジメント業界における生成AI活用事例](topics/part14-industry-cases/facility-management-ai-use-cases.md): 導入事例カタログを新設し、日本管財HD(NK-AIbot、1日平均約350回利用)・三菱電機ビルソリューションズ(保守技術者向けRAGアプリ、運用開始前)・三井不動産×日立(SLMのオフライン災害対策支援、実証段階)の3件を追加し、「事例から見える傾向」を新設
 - [保険営業(生命保険・損害保険)における生成AI活用事例](topics/part15-job-role-cases/insurance-agent-ai-use-cases.md): 導入事例カタログに第一生命(デジタルバディ・約3万5000人で本格稼働)・明治安田生命(MYパレット)・東京海上日動パートナーズ×Finatext(TNP Navi)・あいおいニッセイ同和損保×DNP(代理店向けFAQチャットボット、照会半減は目標値)の4件を追加し、「事例から見える傾向」を新設
